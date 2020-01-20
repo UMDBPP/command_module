@@ -2836,7 +2836,6 @@ Based on the following sources:
 <library name="cmdLibs">
 <packages>
 <package name="SC-75">
-<description>SC-75a Package</description>
 <smd name="P$1" x="0.178" y="0.251" dx="0.356" dy="0.503" layer="1"/>
 <smd name="P$2" x="1.18" y="0.251" dx="0.356" dy="0.503" layer="1"/>
 <smd name="P$3" x="0.686" y="1.55" dx="0.356" dy="0.503" layer="1"/>
@@ -2844,8 +2843,6 @@ Based on the following sources:
 <wire x1="1.54" y1="0.49" x2="1.54" y2="1.36" width="0.1016" layer="21"/>
 <wire x1="1.54" y1="1.36" x2="-0.16" y2="1.36" width="0.1016" layer="21"/>
 <wire x1="-0.16" y1="1.36" x2="-0.16" y2="0.49" width="0.1016" layer="21"/>
-<text x="1.778" y="0.889" size="0.3048" layer="25">&gt;NAME</text>
-<text x="1.778" y="0.508" size="0.254" layer="27">&gt;VALUE</text>
 </package>
 </packages>
 </library>
@@ -3198,7 +3195,7 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <attribute name="NAME" x="-31.369" y="-31.369" size="1.27" layer="25"/>
 <attribute name="VALUE" x="-31.369" y="-33.909" size="1.27" layer="27"/>
 </element>
-<element name="T1" library="cmdLibs" package="SC-75" value="SI1013" x="-36.068" y="-32.512" smashed="yes"/>
+<element name="U$1" library="cmdLibs" package="SC-75" value="SI1013" x="-34.036" y="-34.29" smashed="yes"/>
 </elements>
 <signals>
 <signal name="GND">
@@ -3372,25 +3369,13 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <wire x1="27.94" y1="64.516" x2="27.94" y2="60.706" width="0.4064" layer="16"/>
 <contactref element="U$4" pad="VSS"/>
 <contactref element="U$4" pad="VDD"/>
-<contactref element="T1" pad="P$2"/>
+<contactref element="U$1" pad="P$2"/>
 <contactref element="X2" pad="9"/>
-<contactref element="L1" pad="P$2"/>
-<contactref element="R18" pad="2"/>
-<contactref element="C4" pad="1"/>
-<contactref element="C11" pad="1"/>
-<contactref element="U$2" pad="3.3V1"/>
-<contactref element="U$2" pad="3.3V"/>
-<wire x1="26.924" y1="65.532" x2="35.092" y2="83.496" width="0" layer="19" extent="1-1"/>
-<wire x1="27.94" y1="64.516" x2="26.924" y2="65.532" width="0" layer="19" extent="16-16"/>
-<wire x1="14.198" y1="70.55" x2="26.924" y2="65.532" width="0" layer="19" extent="1-1"/>
-<wire x1="16.764" y1="93.472" x2="35.092" y2="83.496" width="0" layer="19" extent="1-1"/>
+<wire x1="27.94" y1="64.516" x2="35.092" y2="83.496" width="0" layer="19" extent="1-16"/>
+<wire x1="14.198" y1="70.55" x2="27.94" y2="64.516" width="0" layer="19" extent="1-16"/>
 <wire x1="-23.366" y1="45.782" x2="12.7" y2="70.55" width="0" layer="19" extent="1-1"/>
 <wire x1="-25.566" y1="45.782" x2="-23.366" y2="45.782" width="0" layer="19" extent="1-1"/>
-<wire x1="-26.67" y1="-7.747" x2="-25.566" y2="45.782" width="0" layer="19" extent="1-1"/>
-<wire x1="-24.98" y1="-20.574" x2="-26.67" y2="-7.747" width="0" layer="19" extent="1-1"/>
-<wire x1="-17.106" y1="-20.574" x2="-24.98" y2="-20.574" width="0" layer="19" extent="1-1"/>
-<wire x1="-23.28" y1="-32.004" x2="-24.98" y2="-20.574" width="0" layer="19" extent="1-1"/>
-<wire x1="-34.888" y1="-32.261" x2="-23.28" y2="-32.004" width="0" layer="19" extent="1-1"/>
+<wire x1="-32.856" y1="-34.039" x2="-25.566" y2="45.782" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="MOSI">
 <contactref element="U$2" pad="11"/>
@@ -3707,8 +3692,8 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <wire x1="3.7824" y1="78.0116" x2="3.7824" y2="77.30870625" width="0.4064" layer="1"/>
 <wire x1="3.7824" y1="77.30870625" x2="6.66910625" y2="74.422" width="0.4064" layer="1"/>
 <wire x1="2.338" y1="78.356" x2="3.438" y2="78.356" width="0.508" layer="1"/>
-<contactref element="T1" pad="P$3"/>
-<wire x1="-35.382" y1="-30.962" x2="6.66910625" y2="74.422" width="0" layer="19" extent="1-1"/>
+<contactref element="U$1" pad="P$3"/>
+<wire x1="-33.35" y1="-32.74" x2="6.66910625" y2="74.422" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="V_BCKP">
 <contactref element="U$7" pad="6_V_BCKP"/>
@@ -3771,8 +3756,21 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 </signal>
 <signal name="N$9">
 <contactref element="R11" pad="1"/>
-<contactref element="T1" pad="P$1"/>
-<wire x1="-35.89" y1="-32.261" x2="20.0778" y2="75.9714" width="0" layer="19" extent="1-1"/>
+<contactref element="U$1" pad="P$1"/>
+<wire x1="-33.858" y1="-34.039" x2="20.0778" y2="75.9714" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="REG_OUT">
+<contactref element="L1" pad="P$2"/>
+<contactref element="R18" pad="2"/>
+<contactref element="C4" pad="1"/>
+<contactref element="C11" pad="1"/>
+<contactref element="U$2" pad="3.3V1"/>
+<contactref element="U$2" pad="3.3V"/>
+<wire x1="26.924" y1="65.532" x2="16.764" y2="93.472" width="0" layer="19" extent="1-1"/>
+<wire x1="-26.67" y1="-7.747" x2="26.924" y2="65.532" width="0" layer="19" extent="1-1"/>
+<wire x1="-24.98" y1="-20.574" x2="-26.67" y2="-7.747" width="0" layer="19" extent="1-1"/>
+<wire x1="-17.106" y1="-20.574" x2="-24.98" y2="-20.574" width="0" layer="19" extent="1-1"/>
+<wire x1="-23.28" y1="-32.004" x2="-24.98" y2="-20.574" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$14">
 </signal>

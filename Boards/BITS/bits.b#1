@@ -3378,12 +3378,8 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <contactref element="R18" pad="2"/>
 <contactref element="C4" pad="1"/>
 <contactref element="C11" pad="1"/>
-<contactref element="U$2" pad="3.3V1"/>
-<contactref element="U$2" pad="3.3V"/>
-<wire x1="26.924" y1="65.532" x2="35.092" y2="83.496" width="0" layer="19" extent="1-1"/>
-<wire x1="27.94" y1="64.516" x2="26.924" y2="65.532" width="0" layer="19" extent="16-16"/>
-<wire x1="14.198" y1="70.55" x2="26.924" y2="65.532" width="0" layer="19" extent="1-1"/>
-<wire x1="16.764" y1="93.472" x2="35.092" y2="83.496" width="0" layer="19" extent="1-1"/>
+<wire x1="27.94" y1="64.516" x2="35.092" y2="83.496" width="0" layer="19" extent="1-16"/>
+<wire x1="14.198" y1="70.55" x2="27.94" y2="64.516" width="0" layer="19" extent="1-16"/>
 <wire x1="-23.366" y1="45.782" x2="12.7" y2="70.55" width="0" layer="19" extent="1-1"/>
 <wire x1="-25.566" y1="45.782" x2="-23.366" y2="45.782" width="0" layer="19" extent="1-1"/>
 <wire x1="-26.67" y1="-7.747" x2="-25.566" y2="45.782" width="0" layer="19" extent="1-1"/>
@@ -3773,6 +3769,11 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <contactref element="R11" pad="1"/>
 <contactref element="T1" pad="P$1"/>
 <wire x1="-35.89" y1="-32.261" x2="20.0778" y2="75.9714" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="REG_OUT">
+<contactref element="U$2" pad="3.3V1"/>
+<contactref element="U$2" pad="3.3V"/>
+<wire x1="26.924" y1="65.532" x2="16.764" y2="93.472" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$14">
 </signal>

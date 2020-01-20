@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.3.0">
+<eagle version="7.6.0">
 <drawing>
 <settings>
-<setting alwaysvectorfont="no"/>
-<setting keepoldvectorfont="yes"/>
+<setting alwaysvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
 <grid distance="10" unitdist="mil" unit="mil" style="lines" multiple="5" display="yes" altdistance="1" altunitdist="mil" altunit="mil"/>
@@ -2716,6 +2715,28 @@ Based on the following sources:
 </package>
 </packages>
 </library>
+<library name="zetex">
+<description>&lt;b&gt;Zetex Power MOS FETs, Bridges, Diodes&lt;/b&gt;&lt;p&gt;
+http://www.zetex.com&lt;p&gt;
+&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
+<packages>
+<package name="SOT-23">
+<description>&lt;b&gt;Small Outline Transistor&lt;/b&gt;</description>
+<wire x1="-1.4224" y1="0.381" x2="1.4732" y2="0.381" width="0.1524" layer="21"/>
+<wire x1="1.4732" y1="0.381" x2="1.4732" y2="-0.381" width="0.1524" layer="21"/>
+<wire x1="1.4732" y1="-0.381" x2="-1.4224" y2="-0.381" width="0.1524" layer="21"/>
+<wire x1="-1.4224" y1="-0.381" x2="-1.4224" y2="0.381" width="0.1524" layer="21"/>
+<smd name="3" x="0.9906" y="1.016" dx="0.7874" dy="0.889" layer="1"/>
+<smd name="2" x="-0.9398" y="1.016" dx="0.7874" dy="0.889" layer="1"/>
+<smd name="1" x="0.0254" y="-1.016" dx="0.7874" dy="0.889" layer="1"/>
+<text x="-1.397" y="1.778" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
+<text x="-1.397" y="3.302" size="1.27" layer="25" ratio="10">&gt;NAME</text>
+<rectangle x1="0.7874" y1="0.4318" x2="1.1684" y2="0.9398" layer="51"/>
+<rectangle x1="-1.143" y1="0.4318" x2="-0.762" y2="0.9398" layer="51"/>
+<rectangle x1="-0.1778" y1="-0.9398" x2="0.2032" y2="-0.4318" layer="51"/>
+</package>
+</packages>
+</library>
 <library name="NR_connectors">
 <packages>
 <package name="MICRO_SD_HINGED">
@@ -2833,22 +2854,6 @@ Based on the following sources:
 </package>
 </packages>
 </library>
-<library name="cmdLibs">
-<packages>
-<package name="SC-75">
-<description>SC-75a Package</description>
-<smd name="P$1" x="0.178" y="0.251" dx="0.356" dy="0.503" layer="1"/>
-<smd name="P$2" x="1.18" y="0.251" dx="0.356" dy="0.503" layer="1"/>
-<smd name="P$3" x="0.686" y="1.55" dx="0.356" dy="0.503" layer="1"/>
-<wire x1="-0.16" y1="0.49" x2="1.54" y2="0.49" width="0.1016" layer="21"/>
-<wire x1="1.54" y1="0.49" x2="1.54" y2="1.36" width="0.1016" layer="21"/>
-<wire x1="1.54" y1="1.36" x2="-0.16" y2="1.36" width="0.1016" layer="21"/>
-<wire x1="-0.16" y1="1.36" x2="-0.16" y2="0.49" width="0.1016" layer="21"/>
-<text x="1.778" y="0.889" size="0.3048" layer="25">&gt;NAME</text>
-<text x="1.778" y="0.508" size="0.254" layer="27">&gt;VALUE</text>
-</package>
-</packages>
-</library>
 </libraries>
 <attributes>
 </attributes>
@@ -2928,14 +2933,10 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <param name="slThermalsForVias" value="0"/>
 <param name="dpMaxLengthDifference" value="10mm"/>
 <param name="dpGapFactor" value="2.5"/>
+<param name="checkGrid" value="0"/>
 <param name="checkAngle" value="0"/>
 <param name="checkFont" value="1"/>
 <param name="checkRestrict" value="1"/>
-<param name="checkStop" value="0"/>
-<param name="checkValues" value="0"/>
-<param name="checkNames" value="1"/>
-<param name="checkWireStubs" value="1"/>
-<param name="checkPolygonWidth" value="0"/>
 <param name="useDiameter" value="13"/>
 <param name="maxErrors" value="50"/>
 </designrules>
@@ -3136,69 +3137,40 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <attribute name="NAME" x="12.065" y="69.215" size="1.27" layer="25" rot="R90"/>
 <attribute name="VALUE" x="14.605" y="69.215" size="1.27" layer="27" rot="R90"/>
 </element>
+<element name="T1" library="zetex" package="SOT-23" value="Si1013" x="12.7" y="73.406" smashed="yes">
+<attribute name="MF" value="" x="12.7" y="73.406" size="1.778" layer="27" display="off"/>
+<attribute name="MPN" value="" x="12.7" y="73.406" size="1.778" layer="27" display="off"/>
+<attribute name="NAME" x="11.303" y="76.708" size="1.27" layer="25" ratio="10"/>
+<attribute name="OC_FARNELL" value="unknown" x="12.7" y="73.406" size="1.778" layer="27" display="off"/>
+<attribute name="OC_NEWARK" value="unknown" x="12.7" y="73.406" size="1.778" layer="27" display="off"/>
+<attribute name="SPICEPREFIX" value="J" x="12.7" y="73.406" size="1.778" layer="27" display="off"/>
+<attribute name="VALUE" x="11.303" y="75.184" size="1.27" layer="27" ratio="10"/>
+</element>
+<element name="R8" library="rcl" package="R0603" value="100k" x="14.224" y="71.374" smashed="yes" rot="R270">
+<attribute name="NAME" x="14.859" y="72.009" size="1.27" layer="25" rot="R270"/>
+<attribute name="SPICEPREFIX" value="R" x="14.224" y="71.374" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="VALUE" x="12.319" y="72.009" size="1.27" layer="27" rot="R270"/>
+</element>
 <element name="R11" library="rcl" package="R0603" value="100" x="19.2278" y="75.9714" smashed="yes" rot="R180">
 <attribute name="NAME" x="19.8628" y="75.3364" size="1.27" layer="25" rot="R180"/>
 <attribute name="SPICEPREFIX" value="R" x="19.2278" y="75.9714" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="VALUE" x="19.8628" y="77.8764" size="1.27" layer="27" rot="R180"/>
 </element>
-<element name="U$4" library="NR_connectors" package="MICRO_SD_HINGED" value="MICRO_SD" x="-20.066" y="59.182" smashed="yes"/>
-<element name="R17" library="resistor" package="R0603" value="23.3k" x="-24.13" y="-27.178" smashed="yes">
-<attribute name="NAME" x="-24.765" y="-26.543" size="1.27" layer="25"/>
-<attribute name="VALUE" x="-24.765" y="-29.083" size="1.27" layer="27"/>
-</element>
-<element name="L1" library="library" package="CDRH104R" value="CDRH104R" x="-26.67" y="-3.302" smashed="yes">
-<attribute name="NAME" x="-31.57" y="2.098" size="1.27" layer="25"/>
-<attribute name="VALUE" x="-31.75" y="-10.287" size="1.27" layer="25"/>
-</element>
-<element name="R18" library="resistor" package="R0603" value="75k" x="-24.13" y="-32.004" smashed="yes">
-<attribute name="NAME" x="-24.765" y="-31.369" size="1.27" layer="25"/>
-<attribute name="VALUE" x="-24.765" y="-33.909" size="1.27" layer="27"/>
-</element>
-<element name="R19" library="resistor" package="R0603" value="13.3k" x="-17.526" y="-27.178" smashed="yes">
-<attribute name="NAME" x="-18.161" y="-26.543" size="1.27" layer="25"/>
-<attribute name="VALUE" x="-18.161" y="-29.083" size="1.27" layer="27"/>
-</element>
-<element name="C2" library="resistor" package="C0603" value=".1 uF" x="-30.734" y="-27.178" smashed="yes">
-<attribute name="NAME" x="-31.369" y="-26.543" size="1.27" layer="25"/>
-<attribute name="VALUE" x="-31.369" y="-29.083" size="1.27" layer="27"/>
-</element>
-<element name="C3" library="resistor" package="C1210" value="10 uF" x="-11.938" y="-14.478" smashed="yes">
-<attribute name="NAME" x="-13.843" y="-12.573" size="1.27" layer="25"/>
-<attribute name="VALUE" x="-13.843" y="-17.653" size="1.27" layer="27"/>
-</element>
-<element name="C4" library="resistor" package="C0603" value=".18 uF" x="-24.13" y="-20.574" smashed="yes">
-<attribute name="NAME" x="-24.765" y="-19.939" size="1.27" layer="25"/>
-<attribute name="VALUE" x="-24.765" y="-22.479" size="1.27" layer="27"/>
-</element>
-<element name="C5" library="resistor" package="C1210" value="2.2 uF" x="-19.558" y="-14.478" smashed="yes">
-<attribute name="NAME" x="-21.463" y="-12.573" size="1.27" layer="25"/>
-<attribute name="VALUE" x="-21.463" y="-17.653" size="1.27" layer="27"/>
-</element>
-<element name="C11" library="resistor" package="C0603" value="10 uF" x="-16.256" y="-20.574" smashed="yes">
-<attribute name="NAME" x="-16.891" y="-19.939" size="1.27" layer="25"/>
-<attribute name="VALUE" x="-16.891" y="-22.479" size="1.27" layer="27"/>
-</element>
-<element name="U1" library="HASP" package="SO8" value="LMR16020" x="-16.51" y="-2.286" smashed="yes">
-<attribute name="NAME" x="-20.32" y="2.159" size="1.27" layer="25"/>
-<attribute name="VALUE" x="-20.955" y="-8.001" size="1.27" layer="27"/>
-</element>
-<element name="D3" library="HASP" package="DO-214AC" value="DO-214AC" x="-28.702" y="-14.478" smashed="yes">
-<attribute name="NAME" x="-31.877" y="-12.573" size="1.27" layer="25"/>
-<attribute name="VALUE" x="-31.877" y="-17.653" size="1.27" layer="27"/>
-</element>
-<element name="JP1" library="pinhead" package="1X02" value="" x="-28.956" y="-22.098" smashed="yes">
-<attribute name="NAME" x="-31.5722" y="-20.2692" size="1.27" layer="25" ratio="10"/>
-<attribute name="VALUE" x="-31.496" y="-25.273" size="1.27" layer="27"/>
-</element>
-<element name="R20" library="resistor" package="R0603" value="23.3k" x="-10.922" y="-27.178" smashed="yes">
-<attribute name="NAME" x="-11.557" y="-26.543" size="1.27" layer="25"/>
-<attribute name="VALUE" x="-11.557" y="-29.083" size="1.27" layer="27"/>
-</element>
-<element name="R21" library="resistor" package="R0603" value="23.3k" x="-30.734" y="-32.004" smashed="yes">
-<attribute name="NAME" x="-31.369" y="-31.369" size="1.27" layer="25"/>
-<attribute name="VALUE" x="-31.369" y="-33.909" size="1.27" layer="27"/>
-</element>
-<element name="T1" library="cmdLibs" package="SC-75" value="SI1013" x="-36.068" y="-32.512" smashed="yes"/>
+<element name="U$4" library="NR_connectors" package="MICRO_SD_HINGED" value="MICRO_SD" x="-20.066" y="59.182"/>
+<element name="R17" library="resistor" package="R0603" value="23.3k" x="-24.13" y="-27.178"/>
+<element name="L1" library="library" package="CDRH104R" value="CDRH104R" x="-26.67" y="-3.302"/>
+<element name="R18" library="resistor" package="R0603" value="75k" x="-24.13" y="-32.004"/>
+<element name="R19" library="resistor" package="R0603" value="13.3k" x="-17.526" y="-27.178"/>
+<element name="C2" library="resistor" package="C0603" value=".1 uF" x="-30.734" y="-27.178"/>
+<element name="C3" library="resistor" package="C1210" value="10 uF" x="-11.938" y="-14.478"/>
+<element name="C4" library="resistor" package="C0603" value=".18 uF" x="-24.13" y="-20.574"/>
+<element name="C5" library="resistor" package="C1210" value="2.2 uF" x="-19.558" y="-14.478"/>
+<element name="C11" library="resistor" package="C0603" value="10 uF" x="-16.256" y="-20.574"/>
+<element name="U1" library="HASP" package="SO8" value="LMR16020" x="-16.51" y="-2.286"/>
+<element name="D3" library="HASP" package="DO-214AC" value="DO-214AC" x="-28.702" y="-14.478"/>
+<element name="JP1" library="pinhead" package="1X02" value="" x="-28.956" y="-22.098"/>
+<element name="R20" library="resistor" package="R0603" value="23.3k" x="-10.922" y="-27.178"/>
+<element name="R21" library="resistor" package="R0603" value="23.3k" x="-30.734" y="-32.004"/>
 </elements>
 <signals>
 <signal name="GND">
@@ -3370,27 +3342,19 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <wire x1="12.7" y1="70.55" x2="14.198" y2="70.55" width="0.4064" layer="1"/>
 <wire x1="12.7" y1="70.55" x2="12.7" y2="72.3646" width="0.4064" layer="1"/>
 <wire x1="27.94" y1="64.516" x2="27.94" y2="60.706" width="0.4064" layer="16"/>
+<contactref element="U$2" pad="3.3V"/>
+<contactref element="U$2" pad="3.3V1"/>
+<contactref element="T1" pad="2"/>
+<contactref element="R8" pad="1"/>
 <contactref element="U$4" pad="VSS"/>
 <contactref element="U$4" pad="VDD"/>
-<contactref element="T1" pad="P$2"/>
-<contactref element="X2" pad="9"/>
-<contactref element="L1" pad="P$2"/>
-<contactref element="R18" pad="2"/>
-<contactref element="C4" pad="1"/>
-<contactref element="C11" pad="1"/>
-<contactref element="U$2" pad="3.3V1"/>
-<contactref element="U$2" pad="3.3V"/>
-<wire x1="26.924" y1="65.532" x2="35.092" y2="83.496" width="0" layer="19" extent="1-1"/>
+<wire x1="11.7602" y1="74.422" x2="16.764" y2="93.472" width="0" layer="19" extent="1-1"/>
+<wire x1="12.7" y1="72.3646" x2="11.7602" y2="74.422" width="0" layer="19" extent="1-1"/>
+<wire x1="14.224" y1="72.224" x2="12.7" y2="72.3646" width="0" layer="19" extent="1-1"/>
+<wire x1="26.924" y1="65.532" x2="14.198" y2="70.55" width="0" layer="19" extent="1-1"/>
 <wire x1="27.94" y1="64.516" x2="26.924" y2="65.532" width="0" layer="19" extent="16-16"/>
-<wire x1="14.198" y1="70.55" x2="26.924" y2="65.532" width="0" layer="19" extent="1-1"/>
-<wire x1="16.764" y1="93.472" x2="35.092" y2="83.496" width="0" layer="19" extent="1-1"/>
 <wire x1="-23.366" y1="45.782" x2="12.7" y2="70.55" width="0" layer="19" extent="1-1"/>
 <wire x1="-25.566" y1="45.782" x2="-23.366" y2="45.782" width="0" layer="19" extent="1-1"/>
-<wire x1="-26.67" y1="-7.747" x2="-25.566" y2="45.782" width="0" layer="19" extent="1-1"/>
-<wire x1="-24.98" y1="-20.574" x2="-26.67" y2="-7.747" width="0" layer="19" extent="1-1"/>
-<wire x1="-17.106" y1="-20.574" x2="-24.98" y2="-20.574" width="0" layer="19" extent="1-1"/>
-<wire x1="-23.28" y1="-32.004" x2="-24.98" y2="-20.574" width="0" layer="19" extent="1-1"/>
-<wire x1="-34.888" y1="-32.261" x2="-23.28" y2="-32.004" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="MOSI">
 <contactref element="U$2" pad="11"/>
@@ -3485,8 +3449,10 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <wire x1="7.5015" y1="81.8515" x2="7.420315625" y2="96.719684375" width="0" layer="19" extent="16-16"/>
 </signal>
 <signal name="+5V">
+<contactref element="U$2" pad="VIN"/>
 <contactref element="X2" pad="8"/>
 <contactref element="X1" pad="2"/>
+<wire x1="17.3926125" y1="98.552" x2="16.764" y2="98.552" width="0.5588" layer="1"/>
 <wire x1="17.7736125" y1="98.933" x2="17.3926125" y2="98.552" width="0.5588" layer="1"/>
 <wire x1="37.084" y1="92.837" x2="35.0647" y2="94.8563" width="0.5588" layer="1"/>
 <wire x1="35.0647" y1="94.8563" x2="31.5252875" y2="94.8563" width="0.5588" layer="1"/>
@@ -3570,6 +3536,9 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <wire x1="34.50910625" y1="81.026" x2="35.062" y2="81.026" width="0.4064" layer="1"/>
 <wire x1="33.8364" y1="81.69870625" x2="34.50910625" y2="81.026" width="0.4064" layer="1"/>
 </signal>
+<signal name="LIONIN">
+<contactref element="X2" pad="9"/>
+</signal>
 <signal name="RX3">
 <contactref element="U$2" pad="7"/>
 <contactref element="R2" pad="2"/>
@@ -3625,7 +3594,9 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <wire x1="19.558" y1="77.2696" x2="20.0778" y2="76.7498" width="0.4064" layer="1"/>
 <wire x1="17.8435" y1="77.78485625" x2="18.35875625" y2="77.2696" width="0.4064" layer="16"/>
 <contactref element="R11" pad="2"/>
+<contactref element="R8" pad="2"/>
 <wire x1="18.35875625" y1="77.2696" x2="18.3778" y2="75.9714" width="0" layer="19" extent="1-16"/>
+<wire x1="14.224" y1="70.524" x2="15.074" y2="71.374" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="BAT_CELL1">
 <contactref element="U$2" pad="14/A0"/>
@@ -3707,8 +3678,8 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <wire x1="3.7824" y1="78.0116" x2="3.7824" y2="77.30870625" width="0.4064" layer="1"/>
 <wire x1="3.7824" y1="77.30870625" x2="6.66910625" y2="74.422" width="0.4064" layer="1"/>
 <wire x1="2.338" y1="78.356" x2="3.438" y2="78.356" width="0.508" layer="1"/>
-<contactref element="T1" pad="P$3"/>
-<wire x1="-35.382" y1="-30.962" x2="6.66910625" y2="74.422" width="0" layer="19" extent="1-1"/>
+<contactref element="T1" pad="1"/>
+<wire x1="6.66910625" y1="74.422" x2="12.7254" y2="72.39" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="V_BCKP">
 <contactref element="U$7" pad="6_V_BCKP"/>
@@ -3771,8 +3742,17 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 </signal>
 <signal name="N$9">
 <contactref element="R11" pad="1"/>
-<contactref element="T1" pad="P$1"/>
-<wire x1="-35.89" y1="-32.261" x2="20.0778" y2="75.9714" width="0" layer="19" extent="1-1"/>
+<contactref element="T1" pad="3"/>
+<wire x1="13.6906" y1="74.422" x2="20.0778" y2="75.9714" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="REG_OUT">
+<contactref element="L1" pad="P$2"/>
+<contactref element="R18" pad="2"/>
+<contactref element="C4" pad="1"/>
+<contactref element="C11" pad="1"/>
+<wire x1="-24.98" y1="-20.574" x2="-23.28" y2="-32.004" width="0" layer="19" extent="1-1"/>
+<wire x1="-17.106" y1="-20.574" x2="-24.98" y2="-20.574" width="0" layer="19" extent="1-1"/>
+<wire x1="-26.67" y1="-7.747" x2="-24.98" y2="-20.574" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$14">
 </signal>
@@ -3851,17 +3831,7 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <wire x1="-10.072" y1="-27.178" x2="-31.584" y2="-32.004" width="0" layer="19" extent="1-1"/>
 <wire x1="-15.86" y1="-5.161" x2="-10.072" y2="-27.178" width="0" layer="19" extent="1-1"/>
 </signal>
-<signal name="VIN">
-<contactref element="U$2" pad="VIN"/>
-</signal>
 </signals>
-<mfgpreviewcolors>
-<mfgpreviewcolor name="soldermaskcolor" color="0xC8008000"/>
-<mfgpreviewcolor name="silkscreencolor" color="0xFFFEFEFE"/>
-<mfgpreviewcolor name="backgroundcolor" color="0xFF282828"/>
-<mfgpreviewcolor name="coppercolor" color="0xFFFFBF00"/>
-<mfgpreviewcolor name="substratecolor" color="0xFF786E46"/>
-</mfgpreviewcolors>
 <errors>
 <approved hash="21,19,0f680f6c0f500f50"/>
 </errors>
