@@ -14504,6 +14504,7 @@ In this library the device names are the same as the pin names of the symbols, t
 <wire x1="1.54" y1="1.36" x2="-0.16" y2="1.36" width="0.1016" layer="21"/>
 <wire x1="-0.16" y1="1.36" x2="-0.16" y2="0.49" width="0.1016" layer="21"/>
 <text x="1.778" y="0.889" size="0.3048" layer="25">&gt;NAME</text>
+<text x="1.778" y="0.508" size="0.254" layer="27">&gt;VALUE</text>
 </package>
 </packages>
 <symbols>
@@ -14542,6 +14543,7 @@ In this library the device names are the same as the pin names of the symbols, t
 </symbols>
 <devicesets>
 <deviceset name="SI1013">
+<description>A PMOS that can be found in LTSPICE</description>
 <gates>
 <gate name="G$1" symbol="P_MOSFET" x="5.08" y="2.54"/>
 </gates>

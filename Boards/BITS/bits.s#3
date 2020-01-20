@@ -15102,6 +15102,19 @@ In this library the device names are the same as the pin names of the symbols, t
 <wire x1="190.5" y1="198.12" x2="193.04" y2="198.12" width="0.1524" layer="91"/>
 <label x="193.04" y="198.12" size="1.016" layer="95" xref="yes"/>
 </segment>
+<segment>
+<pinref part="L1" gate="G$1" pin="P$2"/>
+<pinref part="R18" gate="G$1" pin="2"/>
+<wire x1="121.92" y1="147.32" x2="124.46" y2="147.32" width="0.1524" layer="91"/>
+<wire x1="124.46" y1="147.32" x2="132.08" y2="147.32" width="0.1524" layer="91"/>
+<pinref part="C4" gate="G$1" pin="1"/>
+<wire x1="132.08" y1="147.32" x2="142.24" y2="147.32" width="0.1524" layer="91"/>
+<junction x="132.08" y="147.32"/>
+<pinref part="C11" gate="G$1" pin="1"/>
+<junction x="142.24" y="147.32"/>
+<wire x1="142.24" y1="147.32" x2="154.94" y2="147.32" width="0.1524" layer="91"/>
+<label x="154.94" y="147.32" size="1.778" layer="95" xref="yes"/>
+</segment>
 </net>
 <net name="MOSI" class="0">
 <segment>
@@ -15506,19 +15519,6 @@ In this library the device names are the same as the pin names of the symbols, t
 </net>
 <net name="REG_OUT" class="0">
 <segment>
-<pinref part="L1" gate="G$1" pin="P$2"/>
-<pinref part="R18" gate="G$1" pin="2"/>
-<wire x1="121.92" y1="147.32" x2="124.46" y2="147.32" width="0.1524" layer="91"/>
-<wire x1="124.46" y1="147.32" x2="132.08" y2="147.32" width="0.1524" layer="91"/>
-<pinref part="C4" gate="G$1" pin="1"/>
-<wire x1="132.08" y1="147.32" x2="142.24" y2="147.32" width="0.1524" layer="91"/>
-<junction x="132.08" y="147.32"/>
-<pinref part="C11" gate="G$1" pin="1"/>
-<junction x="142.24" y="147.32"/>
-<wire x1="142.24" y1="147.32" x2="154.94" y2="147.32" width="0.1524" layer="91"/>
-<label x="154.94" y="147.32" size="1.778" layer="95" xref="yes"/>
-</segment>
-<segment>
 <pinref part="U$2" gate="G$1" pin="3.3V"/>
 <wire x1="66.04" y1="233.68" x2="68.58" y2="233.68" width="0.1524" layer="91"/>
 <pinref part="+3V3" gate="G$1" pin="+3V3"/>
@@ -15559,27 +15559,11 @@ In this library the device names are the same as the pin names of the symbols, t
 </sheet>
 </sheets>
 <errors>
-<approved hash="102,1,234.95,71.882,VSS,GND,,,,"/>
-<approved hash="102,1,234.95,74.422,VDD,+3V3,,,,"/>
-<approved hash="102,1,234.95,66.802,GND1,GND,,,,"/>
-<approved hash="204,1,71.12,86.36,U$2,AGND,,,,"/>
-<approved hash="104,1,71.12,104.14,U$2,3.3V,+3V3,,,"/>
-<approved hash="204,1,71.12,88.9,U$2,AREF,,,,"/>
-<approved hash="204,1,71.12,109.22,U$2,VUSB,,,,"/>
-<approved hash="104,1,71.12,106.68,U$2,VIN,+5V,,,"/>
-<approved hash="104,1,99.06,88.9,U$7,10_GND,GND,,,"/>
-<approved hash="104,1,99.06,78.74,U$7,12_GND,GND,,,"/>
-<approved hash="204,1,144.78,88.9,U$7,9_V_RESET_N,,,,"/>
-<approved hash="104,1,144.78,83.82,U$7,8_VCC,N$11,,,"/>
-<approved hash="104,1,144.78,78.74,U$7,7_VCC_IO,N$11,,,"/>
-<approved hash="104,1,144.78,48.26,U$7,1_GND,GND,,,"/>
-<approved hash="106,1,198.12,50.8,CTS,,,,,"/>
-<approved hash="106,1,198.12,68.58,LIONIN,,,,,"/>
-<approved hash="106,1,198.12,55.88,NETAV,,,,,"/>
-<approved hash="106,1,198.12,53.34,RTS,,,,,"/>
-<approved hash="113,1,124.46,107.95,C1,,,,,"/>
-<approved hash="113,1,106.68,114.882,D1,,,,,"/>
-<approved hash="113,1,158.145,109.22,T1,,,,,"/>
+<approved hash="204,1,66.04,215.9,U$2,AGND,,,,"/>
+<approved hash="204,1,66.04,218.44,U$2,AREF,,,,"/>
+<approved hash="204,1,66.04,238.76,U$2,VUSB,,,,"/>
+<approved hash="204,1,66.04,236.22,U$2,VIN,,,,"/>
+<approved hash="204,1,147.32,238.76,U$7,9_V_RESET_N,,,,"/>
 </errors>
 </schematic>
 </drawing>
