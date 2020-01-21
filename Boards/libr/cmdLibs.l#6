@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.2.2">
+<eagle version="9.3.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -52,7 +52,7 @@
 <layer number="42" name="bRestrict" color="1" fill="10" visible="yes" active="yes"/>
 <layer number="43" name="vRestrict" color="2" fill="10" visible="yes" active="yes"/>
 <layer number="44" name="Drills" color="7" fill="1" visible="no" active="yes"/>
-<layer number="45" name="Holes" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="45" name="Holes" color="7" fill="1" visible="no" active="yes"/>
 <layer number="46" name="Milling" color="3" fill="1" visible="no" active="yes"/>
 <layer number="47" name="Measures" color="7" fill="1" visible="no" active="yes"/>
 <layer number="48" name="Document" color="7" fill="1" visible="yes" active="yes"/>
@@ -64,7 +64,7 @@
 <layer number="90" name="Modules" color="5" fill="1" visible="yes" active="yes"/>
 <layer number="91" name="Nets" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="92" name="Busses" color="1" fill="1" visible="yes" active="yes"/>
-<layer number="93" name="Pins" color="2" fill="1" visible="yes" active="yes"/>
+<layer number="93" name="Pins" color="2" fill="1" visible="no" active="yes"/>
 <layer number="94" name="Symbols" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="95" name="Names" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="96" name="Values" color="7" fill="1" visible="yes" active="yes"/>
@@ -84,17 +84,6 @@
 <wire x1="-0.16" y1="1.36" x2="-0.16" y2="0.49" width="0.1016" layer="21"/>
 <text x="1.778" y="0.889" size="0.3048" layer="25">&gt;NAME</text>
 <text x="1.778" y="0.508" size="0.254" layer="27">&gt;VALUE</text>
-</package>
-<package name="MOLEX_NANOFIT_2">
-<hole x="0" y="-1.34" drill="1.35"/>
-<pad name="P$1" x="1.25" y="0" drill="1.2"/>
-<pad name="P$2" x="-1.25" y="0" drill="1.2"/>
-<pad name="P$3" x="3.42" y="0" drill="1.6" diameter="2.2"/>
-<pad name="P$4" x="-3.42" y="0" drill="1.6" diameter="2.2"/>
-<wire x1="-4.3" y1="-1.7" x2="4.3" y2="-1.7" width="0.1524" layer="21"/>
-<wire x1="4.3" y1="-1.7" x2="4.3" y2="1.8" width="0.1524" layer="21"/>
-<wire x1="4.3" y1="1.8" x2="-4.3" y2="1.8" width="0.1524" layer="21"/>
-<wire x1="-4.3" y1="1.8" x2="-4.3" y2="-1.7" width="0.1524" layer="21"/>
 </package>
 </packages>
 <symbols>
@@ -130,20 +119,6 @@
 <vertex x="2.032" y="0.508"/>
 </polygon>
 </symbol>
-<symbol name="MOLEX_NANOFIT_2">
-<wire x1="0" y1="5.08" x2="0" y2="0" width="0.1524" layer="94"/>
-<wire x1="0" y1="-2.54" x2="0" y2="-7.62" width="0.1524" layer="94"/>
-<wire x1="0" y1="-7.62" x2="-7.62" y2="-7.62" width="0.1524" layer="94"/>
-<wire x1="-7.62" y1="-7.62" x2="-7.62" y2="5.08" width="0.1524" layer="94"/>
-<wire x1="-7.62" y1="5.08" x2="0" y2="5.08" width="0.1524" layer="94"/>
-<pin name="P1" x="2.54" y="2.54" length="short" rot="R180"/>
-<pin name="P2" x="2.54" y="-5.08" length="short" rot="R180"/>
-<text x="-7.112" y="6.096" size="1.778" layer="95">&gt;NAME</text>
-<text x="-7.112" y="-9.906" size="1.778" layer="96">&gt;VALUE</text>
-<wire x1="0" y1="-2.54" x2="2.54" y2="-2.54" width="0.1524" layer="94"/>
-<wire x1="2.54" y1="-2.54" x2="2.54" y2="0" width="0.1524" layer="94"/>
-<wire x1="2.54" y1="0" x2="0" y2="0" width="0.1524" layer="94"/>
-</symbol>
 </symbols>
 <devicesets>
 <deviceset name="SI1013">
@@ -157,23 +132,6 @@
 <connect gate="G$1" pin="D" pad="P$3"/>
 <connect gate="G$1" pin="G" pad="P$1"/>
 <connect gate="G$1" pin="S" pad="P$2"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-<deviceset name="MOLEX_NANOFIT_2">
-<description>Molex Nanofit positive locking vertical connector</description>
-<gates>
-<gate name="G$1" symbol="MOLEX_NANOFIT_2" x="2.54" y="0"/>
-</gates>
-<devices>
-<device name="" package="MOLEX_NANOFIT_2">
-<connects>
-<connect gate="G$1" pin="P1" pad="P$1"/>
-<connect gate="G$1" pin="P2" pad="P$2"/>
 </connects>
 <technologies>
 <technology name=""/>

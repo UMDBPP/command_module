@@ -89,8 +89,8 @@
 <hole x="0" y="-1.34" drill="1.35"/>
 <pad name="P$1" x="1.25" y="0" drill="1.2"/>
 <pad name="P$2" x="-1.25" y="0" drill="1.2"/>
-<pad name="P$3" x="3.42" y="0" drill="1.6" diameter="2.2"/>
-<pad name="P$4" x="-3.42" y="0" drill="1.6" diameter="2.2"/>
+<pad name="P$3" x="3.42" y="0" drill="1.6"/>
+<pad name="P$4" x="-3.42" y="0" drill="1.6"/>
 <wire x1="-4.3" y1="-1.7" x2="4.3" y2="-1.7" width="0.1524" layer="21"/>
 <wire x1="4.3" y1="-1.7" x2="4.3" y2="1.8" width="0.1524" layer="21"/>
 <wire x1="4.3" y1="1.8" x2="-4.3" y2="1.8" width="0.1524" layer="21"/>
@@ -157,23 +157,6 @@
 <connect gate="G$1" pin="D" pad="P$3"/>
 <connect gate="G$1" pin="G" pad="P$1"/>
 <connect gate="G$1" pin="S" pad="P$2"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-<deviceset name="MOLEX_NANOFIT_2">
-<description>Molex Nanofit positive locking vertical connector</description>
-<gates>
-<gate name="G$1" symbol="MOLEX_NANOFIT_2" x="2.54" y="0"/>
-</gates>
-<devices>
-<device name="" package="MOLEX_NANOFIT_2">
-<connects>
-<connect gate="G$1" pin="P1" pad="P$1"/>
-<connect gate="G$1" pin="P2" pad="P$2"/>
 </connects>
 <technologies>
 <technology name=""/>
