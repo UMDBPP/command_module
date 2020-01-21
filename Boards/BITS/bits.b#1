@@ -3219,6 +3219,7 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 </signal>
 <signal name="+3V3">
 <contactref element="X4" pad="3"/>
+<contactref element="D1" pad="A"/>
 <contactref element="X2" pad="9"/>
 <contactref element="L1" pad="P$2"/>
 <contactref element="R18" pad="2"/>
@@ -3229,7 +3230,6 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <contactref element="T1" pad="P$2"/>
 <contactref element="U$4" pad="VSS"/>
 <contactref element="U$4" pad="VDD"/>
-<contactref element="D1" pad="A"/>
 <wire x1="26.625375" y1="33.53325" x2="34.544" y2="43.434" width="0" layer="19" extent="1-1"/>
 <wire x1="34.401125" y1="21.574125" x2="26.625375" y2="33.53325" width="0" layer="19" extent="1-1"/>
 <wire x1="20.755875" y1="13.001625" x2="34.401125" y2="21.574125" width="0" layer="19" extent="1-1"/>
