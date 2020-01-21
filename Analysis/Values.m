@@ -5,13 +5,14 @@
 V_in = 7.4; % Volts
 V_out = 3.3; % Volts 
 Vin_Max = 8.7; % Volts
-I_out = 1.75; % Amps
-L = 10e-6; % H
-I_en = 1e-6; % Amps
-I_hys = 3.6e-6; % Amps
+I_out = 100e-3; % Amps
+L = 100e-6; % H
 V_start = 7; % Volts
 V_stop = 6.3; % Volts
 V_en = 1; % Volts
+
+I_en = 1e-6; % Amps
+I_hys = 3.6e-6; % Amps
 
 max_overshoot_fraction = 0.05;
 max_undershoot_fraction = 0.05;

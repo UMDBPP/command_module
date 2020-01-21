@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.3.0">
+<eagle version="7.6.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
-<setting keepoldvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
 <grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
@@ -12116,15 +12115,13 @@ In this library the device names are the same as the pin names of the symbols, t
 </library>
 <library name="inductors">
 <packages>
-<package name="TAIYO_YUDEN_NONSTANDARD">
-<smd name="P$1" x="-2.35" y="0" dx="1.6" dy="5.7" layer="1"/>
-<smd name="P$2" x="2.35" y="0" dx="1.6" dy="5.7" layer="1"/>
+<package name="ABRACON">
+<smd name="P$1" x="1.4" y="0" dx="1.7" dy="5.7" layer="1" rot="R180"/>
+<smd name="P$2" x="-1.4" y="0" dx="1.7" dy="5.7" layer="1" rot="R180"/>
 <wire x1="-3" y1="3" x2="3" y2="3" width="0.127" layer="21"/>
 <wire x1="3" y1="3" x2="3" y2="-3" width="0.127" layer="21"/>
 <wire x1="3" y1="-3" x2="-3" y2="-3" width="0.127" layer="21"/>
 <wire x1="-3" y1="-3" x2="-3" y2="3" width="0.127" layer="21"/>
-<text x="-3.81" y="3.81" size="1.27" layer="25">&gt;NAME</text>
-<text x="-3.81" y="-5.08" size="1.27" layer="27">&gt;VALUE</text>
 </package>
 </packages>
 <symbols>
@@ -12141,12 +12138,12 @@ In this library the device names are the same as the pin names of the symbols, t
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="587-2099-1-ND" prefix="L" uservalue="yes">
+<deviceset name="ASPI-6045S-560M-TCT-ND" prefix="L">
 <gates>
 <gate name="G$1" symbol="INDUCTOR" x="0" y="0"/>
 </gates>
 <devices>
-<device name="" package="TAIYO_YUDEN_NONSTANDARD">
+<device name="" package="ABRACON">
 <connects>
 <connect gate="G$1" pin="P$1" pad="P$1"/>
 <connect gate="G$1" pin="P$2" pad="P$2"/>
@@ -12350,9 +12347,9 @@ In this library the device names are the same as the pin names of the symbols, t
 <part name="D2" library="HASP" deviceset="DO-214AC" device=""/>
 <part name="JP3" library="pinhead" deviceset="PINHD-1X2" device=""/>
 <part name="R9" library="resistor" deviceset="R-US_" device="R0603" value="31.6k"/>
-<part name="R10" library="resistor" deviceset="R-US_" device="R0603" value="196k"/>
+<part name="R10" library="resistor" deviceset="R-US_" device="R0603" value="190k"/>
 <part name="SUPPLY1" library="supply2" deviceset="GND" device=""/>
-<part name="L1" library="inductors" deviceset="587-2099-1-ND" device=""/>
+<part name="L1" library="inductors" deviceset="ASPI-6045S-560M-TCT-ND" device=""/>
 <part name="+3V6" library="supply1" deviceset="+3V3" device=""/>
 <part name="SUPPLY2" library="supply2" deviceset="GND" device=""/>
 <part name="U$3" library="NR_connectors" deviceset="MICRO_SD" device=""/>
