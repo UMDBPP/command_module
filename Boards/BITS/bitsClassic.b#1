@@ -3334,11 +3334,11 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <attribute name="SPICEPREFIX" value="R" x="26.085" y="28.441" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="VALUE" x="26.72" y="30.346" size="1.27" layer="27" rot="R180"/>
 </element>
-<element name="U$8" library="Tracksoar v2 " package="SPARKFUN-GPS_ANT-GPS-2X7MM" value="1.575GHz" x="29.9795" y="1.70475" smashed="yes">
-<attribute name="NAME" x="29.9795" y="2.94775" size="0.6096" layer="25" font="vector" ratio="20" align="bottom-center"/>
-<attribute name="PROD_ID" value="ANT-09087" x="29.9795" y="1.70475" size="1.778" layer="27" display="off"/>
-<attribute name="SF_ID" value="GPS-09131" x="29.9795" y="1.70475" size="1.778" layer="27" display="off"/>
-<attribute name="VALUE" x="29.9795" y="0.46175" size="0.6096" layer="27" font="vector" ratio="20" align="top-center"/>
+<element name="U$8" library="Tracksoar v2 " package="SPARKFUN-GPS_ANT-GPS-2X7MM" value="1.575GHz" x="29.9795" y="2.40475" smashed="yes">
+<attribute name="NAME" x="29.9795" y="3.64775" size="0.6096" layer="25" font="vector" ratio="20" align="bottom-center"/>
+<attribute name="PROD_ID" value="ANT-09087" x="29.9795" y="2.40475" size="1.778" layer="27" display="off"/>
+<attribute name="SF_ID" value="GPS-09131" x="29.9795" y="2.40475" size="1.778" layer="27" display="off"/>
+<attribute name="VALUE" x="29.9795" y="1.16175" size="0.6096" layer="27" font="vector" ratio="20" align="top-center"/>
 </element>
 <element name="C1" library="jmolterLib" package="ELNASUPERCAP" value="" x="31.290375" y="33.592375" smashed="yes" rot="R90">
 <attribute name="NAME" x="23.790375" y="31.592375" size="0.8128" layer="25" rot="R90"/>
@@ -3908,8 +3908,8 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <signal name="N$1">
 <contactref element="U$8" pad="1"/>
 <contactref element="U$7" pad="11_RF_IN"/>
-<wire x1="26.5795" y1="1.70475" x2="26.5795" y2="5.48875" width="0.6096" layer="1"/>
-<wire x1="26.5795" y1="5.48875" x2="26.616125" y2="5.525375" width="0.6096" layer="1"/>
+<wire x1="26.5795" y1="2.40475" x2="26.5795" y2="5.48875" width="1.016" layer="1"/>
+<wire x1="26.5795" y1="5.48875" x2="26.616125" y2="5.525375" width="1.016" layer="1"/>
 </signal>
 <signal name="N$2">
 <contactref element="D1" pad="C"/>

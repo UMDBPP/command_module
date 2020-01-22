@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.2.2">
+<eagle version="7.6.0">
 <drawing>
 <settings>
-<setting alwaysvectorfont="yes"/>
-<setting keepoldvectorfont="yes"/>
+<setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
 <grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
@@ -14223,15 +14222,14 @@ In this library the device names are the same as the pin names of the symbols, t
 </package>
 <package name="MOLEX_NANOFIT_2">
 <hole x="0" y="-1.34" drill="1.3"/>
-<pad name="P$1" x="1.25" y="0" drill="1.2" diameter="1.7"/>
-<pad name="P$2" x="-1.25" y="0" drill="1.2" diameter="1.7"/>
-<pad name="P$3" x="3.42" y="0" drill="1.6" diameter="1.9304"/>
-<pad name="P$4" x="-3.42" y="0" drill="1.6" diameter="1.9304"/>
+<pad name="P$1" x="1.25" y="0" drill="1.2" diameter="1.778"/>
+<pad name="P$2" x="-1.25" y="0" drill="1.2" diameter="1.778"/>
+<pad name="P$3" x="3.42" y="0" drill="1.6" diameter="2.1844"/>
+<pad name="P$4" x="-3.42" y="0" drill="1.6" diameter="2.1844"/>
 <wire x1="-4.33" y1="-1.74" x2="4.33" y2="-1.74" width="0.1524" layer="21"/>
 <wire x1="4.33" y1="-1.74" x2="4.33" y2="1.74" width="0.1524" layer="21"/>
 <wire x1="4.33" y1="1.74" x2="-4.33" y2="1.74" width="0.1524" layer="21"/>
 <wire x1="-4.33" y1="1.74" x2="-4.33" y2="-1.74" width="0.1524" layer="21"/>
-<wire x1="0" y1="1.27" x2="0" y2="1.651" width="0.1524" layer="21"/>
 </package>
 </packages>
 <symbols>
@@ -15110,8 +15108,8 @@ Source: MaxStream, Inc. xbee_productmanual.pdf</description>
 <part name="XB1" library="maxstream" deviceset="XBEE" device="-PRO"/>
 <part name="+3V5" library="supply1@1" deviceset="+3V3" device=""/>
 <part name="GND6" library="supply1@1" deviceset="GND" device=""/>
-<part name="SUPPLY1" library="supply2" deviceset="GND" device=""/>
 <part name="U$1" library="cmdLibs" deviceset="MOLEX_NANOFIT_2" device=""/>
+<part name="SUPPLY1" library="supply2" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -15370,12 +15368,9 @@ Source: MaxStream, Inc. xbee_productmanual.pdf</description>
 <instance part="GND6" gate="1" x="185.42" y="177.8" smashed="yes">
 <attribute name="VALUE" x="182.88" y="175.26" size="1.778" layer="96"/>
 </instance>
+<instance part="U$1" gate="G$1" x="15.24" y="139.7"/>
 <instance part="SUPPLY1" gate="GND" x="20.32" y="129.54" smashed="yes">
 <attribute name="VALUE" x="18.415" y="126.365" size="1.778" layer="96"/>
-</instance>
-<instance part="U$1" gate="G$1" x="15.24" y="139.7" smashed="yes">
-<attribute name="NAME" x="8.128" y="145.796" size="1.778" layer="95"/>
-<attribute name="VALUE" x="8.128" y="129.794" size="1.778" layer="96"/>
 </instance>
 </instances>
 <busses>
@@ -15505,10 +15500,10 @@ Source: MaxStream, Inc. xbee_productmanual.pdf</description>
 <wire x1="185.42" y1="182.88" x2="190.5" y2="182.88" width="0.1524" layer="91"/>
 </segment>
 <segment>
+<pinref part="U$1" gate="G$1" pin="P2"/>
 <wire x1="17.78" y1="134.62" x2="20.32" y2="134.62" width="0.1524" layer="91"/>
 <wire x1="20.32" y1="134.62" x2="20.32" y2="132.08" width="0.1524" layer="91"/>
 <pinref part="SUPPLY1" gate="GND" pin="GND"/>
-<pinref part="U$1" gate="G$1" pin="P2"/>
 </segment>
 </net>
 <net name="+3V3" class="0">
@@ -15933,8 +15928,8 @@ Source: MaxStream, Inc. xbee_productmanual.pdf</description>
 <pinref part="U1" gate="G$1" pin="VIN"/>
 <pinref part="R21" gate="G$1" pin="2"/>
 <wire x1="45.72" y1="139.7" x2="45.72" y2="142.24" width="0.1524" layer="91"/>
-<wire x1="27.94" y1="142.24" x2="17.78" y2="142.24" width="0.1524" layer="91"/>
 <pinref part="U$1" gate="G$1" pin="P1"/>
+<wire x1="27.94" y1="142.24" x2="17.78" y2="142.24" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="R1" gate="G$1" pin="1"/>

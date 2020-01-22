@@ -91,7 +91,7 @@
 <pad name="P$1" x="1.25" y="0" drill="1.2" diameter="1.7"/>
 <pad name="P$2" x="-1.25" y="0" drill="1.2" diameter="1.7"/>
 <pad name="P$3" x="3.42" y="0" drill="1.6" diameter="1.9304"/>
-<pad name="P$4" x="-3.42" y="0" drill="1.6" diameter="1.9304"/>
+<pad name="P$4" x="-3.42" y="0" drill="1.6" diameter="3.048"/>
 <wire x1="-4.33" y1="-1.74" x2="4.33" y2="-1.74" width="0.1524" layer="21"/>
 <wire x1="4.33" y1="-1.74" x2="4.33" y2="1.74" width="0.1524" layer="21"/>
 <wire x1="4.33" y1="1.74" x2="-4.33" y2="1.74" width="0.1524" layer="21"/>

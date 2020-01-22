@@ -15777,9 +15777,9 @@ Source: MaxStream, Inc. xbee_productmanual.pdf</description>
 <label x="370.84" y="213.36" size="1.016" layer="95" xref="yes"/>
 </segment>
 <segment>
-<pinref part="U$2" gate="G$1" pin="15/A1/T"/>
-<wire x1="20.32" y1="198.12" x2="17.78" y2="198.12" width="0.1524" layer="91"/>
-<label x="17.78" y="198.12" size="1.016" layer="95" rot="R180" xref="yes"/>
+<pinref part="U$2" gate="G$1" pin="A10"/>
+<wire x1="66.04" y1="200.66" x2="68.58" y2="200.66" width="0.1524" layer="91"/>
+<label x="68.58" y="200.66" size="1.016" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="LED1" class="0">
@@ -16014,13 +16014,6 @@ Source: MaxStream, Inc. xbee_productmanual.pdf</description>
 <pinref part="U$2" gate="G$1" pin="A11"/>
 <wire x1="66.04" y1="203.2" x2="68.58" y2="203.2" width="0.1524" layer="91"/>
 <label x="68.58" y="203.2" size="1.016" layer="95" xref="yes"/>
-</segment>
-</net>
-<net name="N$37" class="0">
-<segment>
-<pinref part="U$2" gate="G$1" pin="A10"/>
-<wire x1="66.04" y1="200.66" x2="68.58" y2="200.66" width="0.1524" layer="91"/>
-<label x="68.58" y="200.66" size="1.016" layer="95" xref="yes"/>
 </segment>
 </net>
 </nets>
