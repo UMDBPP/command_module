@@ -12023,96 +12023,6 @@ In this library the device names are the same as the pin names of the symbols, t
 </deviceset>
 </devicesets>
 </library>
-<library name="pinhead">
-<description>&lt;b&gt;Pin Header Connectors&lt;/b&gt;&lt;p&gt;
-&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
-<packages>
-<package name="1X02">
-<description>&lt;b&gt;PIN HEADER&lt;/b&gt;</description>
-<wire x1="-1.905" y1="1.27" x2="-0.635" y2="1.27" width="0.1524" layer="21"/>
-<wire x1="-0.635" y1="1.27" x2="0" y2="0.635" width="0.1524" layer="21"/>
-<wire x1="0" y1="0.635" x2="0" y2="-0.635" width="0.1524" layer="21"/>
-<wire x1="0" y1="-0.635" x2="-0.635" y2="-1.27" width="0.1524" layer="21"/>
-<wire x1="-2.54" y1="0.635" x2="-2.54" y2="-0.635" width="0.1524" layer="21"/>
-<wire x1="-1.905" y1="1.27" x2="-2.54" y2="0.635" width="0.1524" layer="21"/>
-<wire x1="-2.54" y1="-0.635" x2="-1.905" y2="-1.27" width="0.1524" layer="21"/>
-<wire x1="-0.635" y1="-1.27" x2="-1.905" y2="-1.27" width="0.1524" layer="21"/>
-<wire x1="0" y1="0.635" x2="0.635" y2="1.27" width="0.1524" layer="21"/>
-<wire x1="0.635" y1="1.27" x2="1.905" y2="1.27" width="0.1524" layer="21"/>
-<wire x1="1.905" y1="1.27" x2="2.54" y2="0.635" width="0.1524" layer="21"/>
-<wire x1="2.54" y1="0.635" x2="2.54" y2="-0.635" width="0.1524" layer="21"/>
-<wire x1="2.54" y1="-0.635" x2="1.905" y2="-1.27" width="0.1524" layer="21"/>
-<wire x1="1.905" y1="-1.27" x2="0.635" y2="-1.27" width="0.1524" layer="21"/>
-<wire x1="0.635" y1="-1.27" x2="0" y2="-0.635" width="0.1524" layer="21"/>
-<pad name="1" x="-1.27" y="0" drill="1.016" shape="long" rot="R90"/>
-<pad name="2" x="1.27" y="0" drill="1.016" shape="long" rot="R90"/>
-<text x="-2.6162" y="1.8288" size="1.27" layer="25" ratio="10">&gt;NAME</text>
-<text x="-2.54" y="-3.175" size="1.27" layer="27">&gt;VALUE</text>
-<rectangle x1="-1.524" y1="-0.254" x2="-1.016" y2="0.254" layer="51"/>
-<rectangle x1="1.016" y1="-0.254" x2="1.524" y2="0.254" layer="51"/>
-</package>
-<package name="1X02/90">
-<description>&lt;b&gt;PIN HEADER&lt;/b&gt;</description>
-<wire x1="-2.54" y1="-1.905" x2="0" y2="-1.905" width="0.1524" layer="21"/>
-<wire x1="0" y1="-1.905" x2="0" y2="0.635" width="0.1524" layer="21"/>
-<wire x1="0" y1="0.635" x2="-2.54" y2="0.635" width="0.1524" layer="21"/>
-<wire x1="-2.54" y1="0.635" x2="-2.54" y2="-1.905" width="0.1524" layer="21"/>
-<wire x1="-1.27" y1="6.985" x2="-1.27" y2="1.27" width="0.762" layer="21"/>
-<wire x1="0" y1="-1.905" x2="2.54" y2="-1.905" width="0.1524" layer="21"/>
-<wire x1="2.54" y1="-1.905" x2="2.54" y2="0.635" width="0.1524" layer="21"/>
-<wire x1="2.54" y1="0.635" x2="0" y2="0.635" width="0.1524" layer="21"/>
-<wire x1="1.27" y1="6.985" x2="1.27" y2="1.27" width="0.762" layer="21"/>
-<pad name="1" x="-1.27" y="-3.81" drill="1.016" shape="long" rot="R90"/>
-<pad name="2" x="1.27" y="-3.81" drill="1.016" shape="long" rot="R90"/>
-<text x="-3.175" y="-3.81" size="1.27" layer="25" ratio="10" rot="R90">&gt;NAME</text>
-<text x="4.445" y="-3.81" size="1.27" layer="27" rot="R90">&gt;VALUE</text>
-<rectangle x1="-1.651" y1="0.635" x2="-0.889" y2="1.143" layer="21"/>
-<rectangle x1="0.889" y1="0.635" x2="1.651" y2="1.143" layer="21"/>
-<rectangle x1="-1.651" y1="-2.921" x2="-0.889" y2="-1.905" layer="21"/>
-<rectangle x1="0.889" y1="-2.921" x2="1.651" y2="-1.905" layer="21"/>
-</package>
-</packages>
-<symbols>
-<symbol name="PINHD2">
-<wire x1="-6.35" y1="-2.54" x2="1.27" y2="-2.54" width="0.4064" layer="94"/>
-<wire x1="1.27" y1="-2.54" x2="1.27" y2="5.08" width="0.4064" layer="94"/>
-<wire x1="1.27" y1="5.08" x2="-6.35" y2="5.08" width="0.4064" layer="94"/>
-<wire x1="-6.35" y1="5.08" x2="-6.35" y2="-2.54" width="0.4064" layer="94"/>
-<text x="-6.35" y="5.715" size="1.778" layer="95">&gt;NAME</text>
-<text x="-6.35" y="-5.08" size="1.778" layer="96">&gt;VALUE</text>
-<pin name="1" x="-2.54" y="2.54" visible="pad" length="short" direction="pas" function="dot"/>
-<pin name="2" x="-2.54" y="0" visible="pad" length="short" direction="pas" function="dot"/>
-</symbol>
-</symbols>
-<devicesets>
-<deviceset name="PINHD-1X2" prefix="JP" uservalue="yes">
-<description>&lt;b&gt;PIN HEADER&lt;/b&gt;</description>
-<gates>
-<gate name="G$1" symbol="PINHD2" x="0" y="0"/>
-</gates>
-<devices>
-<device name="" package="1X02">
-<connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-<device name="/90" package="1X02/90">
-<connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-</devicesets>
-</library>
 <library name="inductors">
 <packages>
 <package name="ABRACON">
@@ -12246,6 +12156,18 @@ In this library the device names are the same as the pin names of the symbols, t
 <text x="1.778" y="0.889" size="0.3048" layer="25">&gt;NAME</text>
 <text x="1.778" y="0.508" size="0.254" layer="27">&gt;VALUE</text>
 </package>
+<package name="MOLEX_NANOFIT_2">
+<hole x="0" y="-1.34" drill="1.3"/>
+<pad name="P$1" x="1.25" y="0" drill="1.2" diameter="1.7"/>
+<pad name="P$2" x="-1.25" y="0" drill="1.2" diameter="1.7"/>
+<pad name="P$3" x="3.42" y="0" drill="1.6" diameter="1.9304"/>
+<pad name="P$4" x="-3.42" y="0" drill="1.6" diameter="1.9304"/>
+<wire x1="-4.33" y1="-1.74" x2="4.33" y2="-1.74" width="0.1524" layer="21"/>
+<wire x1="4.33" y1="-1.74" x2="4.33" y2="1.74" width="0.1524" layer="21"/>
+<wire x1="4.33" y1="1.74" x2="-4.33" y2="1.74" width="0.1524" layer="21"/>
+<wire x1="-4.33" y1="1.74" x2="-4.33" y2="-1.74" width="0.1524" layer="21"/>
+<wire x1="0" y1="1.27" x2="0" y2="1.651" width="0.1524" layer="21"/>
+</package>
 </packages>
 <symbols>
 <symbol name="P_MOSFET">
@@ -12280,6 +12202,20 @@ In this library the device names are the same as the pin names of the symbols, t
 <vertex x="2.032" y="0.508"/>
 </polygon>
 </symbol>
+<symbol name="MOLEX_NANOFIT_2">
+<wire x1="0" y1="5.08" x2="0" y2="0" width="0.1524" layer="94"/>
+<wire x1="0" y1="-2.54" x2="0" y2="-7.62" width="0.1524" layer="94"/>
+<wire x1="0" y1="-7.62" x2="-7.62" y2="-7.62" width="0.1524" layer="94"/>
+<wire x1="-7.62" y1="-7.62" x2="-7.62" y2="5.08" width="0.1524" layer="94"/>
+<wire x1="-7.62" y1="5.08" x2="0" y2="5.08" width="0.1524" layer="94"/>
+<pin name="P1" x="2.54" y="2.54" length="short" rot="R180"/>
+<pin name="P2" x="2.54" y="-5.08" length="short" rot="R180"/>
+<text x="-7.112" y="6.096" size="1.778" layer="95">&gt;NAME</text>
+<text x="-7.112" y="-9.906" size="1.778" layer="96">&gt;VALUE</text>
+<wire x1="0" y1="-2.54" x2="2.54" y2="-2.54" width="0.1524" layer="94"/>
+<wire x1="2.54" y1="-2.54" x2="2.54" y2="0" width="0.1524" layer="94"/>
+<wire x1="2.54" y1="0" x2="0" y2="0" width="0.1524" layer="94"/>
+</symbol>
 </symbols>
 <devicesets>
 <deviceset name="SI1013">
@@ -12293,6 +12229,23 @@ In this library the device names are the same as the pin names of the symbols, t
 <connect gate="G$1" pin="D" pad="P$3"/>
 <connect gate="G$1" pin="G" pad="P$1"/>
 <connect gate="G$1" pin="S" pad="P$2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="MOLEX_NANOFIT_2">
+<description>Molex Nanofit positive locking vertical connector</description>
+<gates>
+<gate name="G$1" symbol="MOLEX_NANOFIT_2" x="2.54" y="0"/>
+</gates>
+<devices>
+<device name="" package="MOLEX_NANOFIT_2">
+<connects>
+<connect gate="G$1" pin="P1" pad="P$1"/>
+<connect gate="G$1" pin="P2" pad="P$2"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -12345,7 +12298,6 @@ In this library the device names are the same as the pin names of the symbols, t
 <part name="SUPPLY11" library="supply2" deviceset="GND" device=""/>
 <part name="U2" library="HASP" deviceset="LMR16020" device=""/>
 <part name="D2" library="HASP" deviceset="DO-214AC" device=""/>
-<part name="JP3" library="pinhead" deviceset="PINHD-1X2" device=""/>
 <part name="R9" library="resistor" deviceset="R-US_" device="R0603" value="31.6k"/>
 <part name="R10" library="resistor" deviceset="R-US_" device="R0603" value="190k"/>
 <part name="SUPPLY1" library="supply2" deviceset="GND" device=""/>
@@ -12356,6 +12308,7 @@ In this library the device names are the same as the pin names of the symbols, t
 <part name="GND6" library="supply1" deviceset="GND" device=""/>
 <part name="+3V7" library="supply1" deviceset="+3V3" device=""/>
 <part name="U$2" library="cmdLibs" deviceset="SI1013" device=""/>
+<part name="U$4" library="cmdLibs" deviceset="MOLEX_NANOFIT_2" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -12491,10 +12444,6 @@ In this library the device names are the same as the pin names of the symbols, t
 <attribute name="NAME" x="86.868" y="98.298" size="1.778" layer="95"/>
 <attribute name="VALUE" x="86.614" y="91.44" size="1.778" layer="95"/>
 </instance>
-<instance part="JP3" gate="G$1" x="10.16" y="88.9" smashed="yes" rot="R180">
-<attribute name="NAME" x="16.51" y="83.185" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="16.51" y="93.98" size="1.778" layer="96" rot="R180"/>
-</instance>
 <instance part="R9" gate="G$1" x="45.72" y="68.58" smashed="yes" rot="R90">
 <attribute name="NAME" x="44.2214" y="64.77" size="1.778" layer="95" rot="R90"/>
 <attribute name="VALUE" x="49.022" y="64.77" size="1.778" layer="96" rot="R90"/>
@@ -12513,8 +12462,8 @@ In this library the device names are the same as the pin names of the symbols, t
 <instance part="+3V6" gate="G$1" x="127" y="81.28" smashed="yes" rot="R270">
 <attribute name="VALUE" x="127" y="78.74" size="1.778" layer="96"/>
 </instance>
-<instance part="SUPPLY2" gate="GND" x="17.78" y="81.28" smashed="yes">
-<attribute name="VALUE" x="15.875" y="78.105" size="1.778" layer="96"/>
+<instance part="SUPPLY2" gate="GND" x="20.32" y="73.66" smashed="yes">
+<attribute name="VALUE" x="18.415" y="70.485" size="1.778" layer="96"/>
 </instance>
 <instance part="U$3" gate="G$1" x="208.28" y="172.72" smashed="yes"/>
 <instance part="GND6" gate="1" x="228.6" y="162.56" smashed="yes">
@@ -12527,6 +12476,7 @@ In this library the device names are the same as the pin names of the symbols, t
 <attribute name="VALUE" x="217.424" y="133.604" size="1.778" layer="96" rot="R180"/>
 <attribute name="NAME" x="209.042" y="132.08" size="1.778" layer="95" rot="R180"/>
 </instance>
+<instance part="U$4" gate="G$1" x="10.16" y="83.82" rot="R180"/>
 </instances>
 <busses>
 </busses>
@@ -12610,10 +12560,10 @@ In this library the device names are the same as the pin names of the symbols, t
 <pinref part="SUPPLY1" gate="GND" pin="GND"/>
 </segment>
 <segment>
-<pinref part="JP3" gate="G$1" pin="1"/>
-<wire x1="12.7" y1="86.36" x2="17.78" y2="86.36" width="0.1524" layer="91"/>
-<wire x1="17.78" y1="86.36" x2="17.78" y2="83.82" width="0.1524" layer="91"/>
+<wire x1="20.32" y1="81.28" x2="20.32" y2="76.2" width="0.1524" layer="91"/>
 <pinref part="SUPPLY2" gate="GND" pin="GND"/>
+<pinref part="U$4" gate="G$1" pin="P1"/>
+<wire x1="7.62" y1="81.28" x2="20.32" y2="81.28" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="U$3" gate="G$1" pin="G1"/>
@@ -12903,11 +12853,10 @@ In this library the device names are the same as the pin names of the symbols, t
 <wire x1="35.56" y1="88.9" x2="27.94" y2="88.9" width="0.1524" layer="91"/>
 <pinref part="C9" gate="G$1" pin="1"/>
 <pinref part="U2" gate="G$1" pin="VIN"/>
-<pinref part="JP3" gate="G$1" pin="2"/>
-<junction x="27.94" y="88.9"/>
-<wire x1="27.94" y1="88.9" x2="12.7" y2="88.9" width="0.1524" layer="91"/>
 <pinref part="R10" gate="G$1" pin="2"/>
 <wire x1="45.72" y1="86.36" x2="45.72" y2="88.9" width="0.1524" layer="91"/>
+<pinref part="U$4" gate="G$1" pin="P2"/>
+<wire x1="7.62" y1="88.9" x2="27.94" y2="88.9" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="EN" class="0">
