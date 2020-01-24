@@ -10395,87 +10395,48 @@ Source: U6 OnSemi Inductive Load Driver MDC3105-D.PDF</description>
 </deviceset>
 </devicesets>
 </library>
-<library name="pinhead">
-<description>&lt;b&gt;Pin Header Connectors&lt;/b&gt;&lt;p&gt;
-&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
+<library name="cmdLibs">
 <packages>
-<package name="1X02">
-<description>&lt;b&gt;PIN HEADER&lt;/b&gt;</description>
-<wire x1="-1.905" y1="1.27" x2="-0.635" y2="1.27" width="0.1524" layer="21"/>
-<wire x1="-0.635" y1="1.27" x2="0" y2="0.635" width="0.1524" layer="21"/>
-<wire x1="0" y1="0.635" x2="0" y2="-0.635" width="0.1524" layer="21"/>
-<wire x1="0" y1="-0.635" x2="-0.635" y2="-1.27" width="0.1524" layer="21"/>
-<wire x1="-2.54" y1="0.635" x2="-2.54" y2="-0.635" width="0.1524" layer="21"/>
-<wire x1="-1.905" y1="1.27" x2="-2.54" y2="0.635" width="0.1524" layer="21"/>
-<wire x1="-2.54" y1="-0.635" x2="-1.905" y2="-1.27" width="0.1524" layer="21"/>
-<wire x1="-0.635" y1="-1.27" x2="-1.905" y2="-1.27" width="0.1524" layer="21"/>
-<wire x1="0" y1="0.635" x2="0.635" y2="1.27" width="0.1524" layer="21"/>
-<wire x1="0.635" y1="1.27" x2="1.905" y2="1.27" width="0.1524" layer="21"/>
-<wire x1="1.905" y1="1.27" x2="2.54" y2="0.635" width="0.1524" layer="21"/>
-<wire x1="2.54" y1="0.635" x2="2.54" y2="-0.635" width="0.1524" layer="21"/>
-<wire x1="2.54" y1="-0.635" x2="1.905" y2="-1.27" width="0.1524" layer="21"/>
-<wire x1="1.905" y1="-1.27" x2="0.635" y2="-1.27" width="0.1524" layer="21"/>
-<wire x1="0.635" y1="-1.27" x2="0" y2="-0.635" width="0.1524" layer="21"/>
-<pad name="1" x="-1.27" y="0" drill="1.016" shape="long" rot="R90"/>
-<pad name="2" x="1.27" y="0" drill="1.016" shape="long" rot="R90"/>
-<text x="-2.6162" y="1.8288" size="1.27" layer="25" ratio="10">&gt;NAME</text>
-<text x="-2.54" y="-3.175" size="1.27" layer="27">&gt;VALUE</text>
-<rectangle x1="-1.524" y1="-0.254" x2="-1.016" y2="0.254" layer="51"/>
-<rectangle x1="1.016" y1="-0.254" x2="1.524" y2="0.254" layer="51"/>
-</package>
-<package name="1X02/90">
-<description>&lt;b&gt;PIN HEADER&lt;/b&gt;</description>
-<wire x1="-2.54" y1="-1.905" x2="0" y2="-1.905" width="0.1524" layer="21"/>
-<wire x1="0" y1="-1.905" x2="0" y2="0.635" width="0.1524" layer="21"/>
-<wire x1="0" y1="0.635" x2="-2.54" y2="0.635" width="0.1524" layer="21"/>
-<wire x1="-2.54" y1="0.635" x2="-2.54" y2="-1.905" width="0.1524" layer="21"/>
-<wire x1="-1.27" y1="6.985" x2="-1.27" y2="1.27" width="0.762" layer="21"/>
-<wire x1="0" y1="-1.905" x2="2.54" y2="-1.905" width="0.1524" layer="21"/>
-<wire x1="2.54" y1="-1.905" x2="2.54" y2="0.635" width="0.1524" layer="21"/>
-<wire x1="2.54" y1="0.635" x2="0" y2="0.635" width="0.1524" layer="21"/>
-<wire x1="1.27" y1="6.985" x2="1.27" y2="1.27" width="0.762" layer="21"/>
-<pad name="1" x="-1.27" y="-3.81" drill="1.016" shape="long" rot="R90"/>
-<pad name="2" x="1.27" y="-3.81" drill="1.016" shape="long" rot="R90"/>
-<text x="-3.175" y="-3.81" size="1.27" layer="25" ratio="10" rot="R90">&gt;NAME</text>
-<text x="4.445" y="-3.81" size="1.27" layer="27" rot="R90">&gt;VALUE</text>
-<rectangle x1="-1.651" y1="0.635" x2="-0.889" y2="1.143" layer="21"/>
-<rectangle x1="0.889" y1="0.635" x2="1.651" y2="1.143" layer="21"/>
-<rectangle x1="-1.651" y1="-2.921" x2="-0.889" y2="-1.905" layer="21"/>
-<rectangle x1="0.889" y1="-2.921" x2="1.651" y2="-1.905" layer="21"/>
+<package name="MOLEX_NANOFIT_2">
+<hole x="0" y="-1.34" drill="1.3"/>
+<pad name="P$1" x="1.25" y="0" drill="1.2" diameter="1.7"/>
+<pad name="P$2" x="-1.25" y="0" drill="1.2" diameter="1.7"/>
+<pad name="P$3" x="3.42" y="0" drill="1.6" diameter="1.9304"/>
+<pad name="P$4" x="-3.42" y="0" drill="1.6" diameter="1.9304"/>
+<wire x1="-4.33" y1="-1.74" x2="4.33" y2="-1.74" width="0.1524" layer="21"/>
+<wire x1="4.33" y1="-1.74" x2="4.33" y2="1.74" width="0.1524" layer="21"/>
+<wire x1="4.33" y1="1.74" x2="-4.33" y2="1.74" width="0.1524" layer="21"/>
+<wire x1="-4.33" y1="1.74" x2="-4.33" y2="-1.74" width="0.1524" layer="21"/>
+<wire x1="0" y1="1.27" x2="0" y2="1.651" width="0.1524" layer="21"/>
 </package>
 </packages>
 <symbols>
-<symbol name="PINHD2">
-<wire x1="-6.35" y1="-2.54" x2="1.27" y2="-2.54" width="0.4064" layer="94"/>
-<wire x1="1.27" y1="-2.54" x2="1.27" y2="5.08" width="0.4064" layer="94"/>
-<wire x1="1.27" y1="5.08" x2="-6.35" y2="5.08" width="0.4064" layer="94"/>
-<wire x1="-6.35" y1="5.08" x2="-6.35" y2="-2.54" width="0.4064" layer="94"/>
-<text x="-6.35" y="5.715" size="1.778" layer="95">&gt;NAME</text>
-<text x="-6.35" y="-5.08" size="1.778" layer="96">&gt;VALUE</text>
-<pin name="1" x="-2.54" y="2.54" visible="pad" length="short" direction="pas" function="dot"/>
-<pin name="2" x="-2.54" y="0" visible="pad" length="short" direction="pas" function="dot"/>
+<symbol name="MOLEX_NANOFIT_2">
+<wire x1="0" y1="5.08" x2="0" y2="0" width="0.1524" layer="94"/>
+<wire x1="0" y1="-2.54" x2="0" y2="-7.62" width="0.1524" layer="94"/>
+<wire x1="0" y1="-7.62" x2="-7.62" y2="-7.62" width="0.1524" layer="94"/>
+<wire x1="-7.62" y1="-7.62" x2="-7.62" y2="5.08" width="0.1524" layer="94"/>
+<wire x1="-7.62" y1="5.08" x2="0" y2="5.08" width="0.1524" layer="94"/>
+<pin name="P1" x="2.54" y="2.54" length="short" rot="R180"/>
+<pin name="P2" x="2.54" y="-5.08" length="short" rot="R180"/>
+<text x="-7.112" y="6.096" size="1.778" layer="95">&gt;NAME</text>
+<text x="-7.112" y="-9.906" size="1.778" layer="96">&gt;VALUE</text>
+<wire x1="0" y1="-2.54" x2="2.54" y2="-2.54" width="0.1524" layer="94"/>
+<wire x1="2.54" y1="-2.54" x2="2.54" y2="0" width="0.1524" layer="94"/>
+<wire x1="2.54" y1="0" x2="0" y2="0" width="0.1524" layer="94"/>
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="PINHD-1X2" prefix="JP" uservalue="yes">
-<description>&lt;b&gt;PIN HEADER&lt;/b&gt;</description>
+<deviceset name="MOLEX_NANOFIT_2">
+<description>Molex Nanofit positive locking vertical connector</description>
 <gates>
-<gate name="G$1" symbol="PINHD2" x="0" y="0"/>
+<gate name="G$1" symbol="MOLEX_NANOFIT_2" x="2.54" y="0"/>
 </gates>
 <devices>
-<device name="" package="1X02">
+<device name="" package="MOLEX_NANOFIT_2">
 <connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-<device name="/90" package="1X02/90">
-<connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
+<connect gate="G$1" pin="P1" pad="P$1"/>
+<connect gate="G$1" pin="P2" pad="P$2"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -10504,8 +10465,6 @@ Source: U6 OnSemi Inductive Load Driver MDC3105-D.PDF</description>
 <part name="GND7" library="supply1" deviceset="GND" device=""/>
 <part name="GND8" library="supply1" deviceset="GND" device=""/>
 <part name="R4" library="resistor" deviceset="R-US_" device="R0603" value="100k"/>
-<part name="J1" library="pinhead" deviceset="PINHD-1X2" device=""/>
-<part name="J2" library="pinhead" deviceset="PINHD-1X2" device=""/>
 <part name="GND9" library="supply1" deviceset="GND" device=""/>
 <part name="GND10" library="supply1" deviceset="GND" device=""/>
 <part name="R5" library="resistor" deviceset="R-US_" device="R0603" value="1M"/>
@@ -10537,6 +10496,8 @@ Source: U6 OnSemi Inductive Load Driver MDC3105-D.PDF</description>
 <part name="D2" library="LR_zener" deviceset="DZ2J120M0L" device=""/>
 <part name="D3" library="LR_zener" deviceset="DZ2J120M0L" device=""/>
 <part name="Q2" library="LR_transistor" deviceset="RK7002BMT116" device=""/>
+<part name="U$1" library="cmdLibs" deviceset="MOLEX_NANOFIT_2" device=""/>
+<part name="U$2" library="cmdLibs" deviceset="MOLEX_NANOFIT_2" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -10601,14 +10562,6 @@ All capacitors +/- 10% tolerance</text>
 <attribute name="NAME" x="39.37" y="46.7614" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="39.37" y="43.942" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="J1" gate="G$1" x="236.22" y="182.88" smashed="yes" rot="R180">
-<attribute name="NAME" x="238.76" y="177.292" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="259.08" y="187.96" size="1.778" layer="96" rot="R180"/>
-</instance>
-<instance part="J2" gate="G$1" x="241.3" y="154.94" smashed="yes">
-<attribute name="NAME" x="236.22" y="152.908" size="1.778" layer="95"/>
-<attribute name="VALUE" x="215.9" y="149.86" size="1.778" layer="96"/>
-</instance>
 <instance part="GND9" gate="1" x="248.92" y="147.32"/>
 <instance part="GND10" gate="1" x="228.6" y="172.72"/>
 <instance part="R5" gate="G$1" x="180.34" y="185.42" smashed="yes" rot="R270">
@@ -10664,6 +10617,8 @@ All capacitors +/- 10% tolerance</text>
 <instance part="D2" gate="A" x="55.88" y="88.9" rot="R90"/>
 <instance part="D3" gate="A" x="243.84" y="93.98" rot="R180"/>
 <instance part="Q2" gate="G$1" x="48.26" y="55.88"/>
+<instance part="U$1" gate="G$1" x="243.84" y="180.34" rot="R180"/>
+<instance part="U$2" gate="G$1" x="233.68" y="157.48"/>
 </instances>
 <busses>
 </busses>
@@ -10680,16 +10635,20 @@ All capacitors +/- 10% tolerance</text>
 <pinref part="R4" gate="G$1" pin="2"/>
 </segment>
 <segment>
-<pinref part="J2" gate="G$1" pin="2"/>
 <wire x1="238.76" y1="154.94" x2="248.92" y2="154.94" width="0.1524" layer="91"/>
 <wire x1="248.92" y1="154.94" x2="248.92" y2="149.86" width="0.1524" layer="91"/>
 <pinref part="GND9" gate="1" pin="GND"/>
+<pinref part="U$2" gate="G$1" pin="P2"/>
+<wire x1="238.76" y1="154.94" x2="238.76" y2="152.4" width="0.1524" layer="91"/>
+<wire x1="238.76" y1="152.4" x2="236.22" y2="152.4" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <wire x1="228.6" y1="180.34" x2="228.6" y2="175.26" width="0.1524" layer="91"/>
 <pinref part="GND10" gate="1" pin="GND"/>
-<pinref part="J1" gate="G$1" pin="1"/>
 <wire x1="238.76" y1="180.34" x2="228.6" y2="180.34" width="0.1524" layer="91"/>
+<pinref part="U$1" gate="G$1" pin="P1"/>
+<wire x1="238.76" y1="180.34" x2="238.76" y2="177.8" width="0.1524" layer="91"/>
+<wire x1="238.76" y1="177.8" x2="241.3" y2="177.8" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="R6" gate="G$1" pin="2"/>
@@ -10829,8 +10788,10 @@ All capacitors +/- 10% tolerance</text>
 <segment>
 <wire x1="228.6" y1="182.88" x2="228.6" y2="187.96" width="0.1524" layer="91"/>
 <label x="228.6" y="187.96" size="1.016" layer="95" rot="R90" xref="yes"/>
-<pinref part="J1" gate="G$1" pin="2"/>
 <wire x1="238.76" y1="182.88" x2="228.6" y2="182.88" width="0.1524" layer="91"/>
+<pinref part="U$1" gate="G$1" pin="P2"/>
+<wire x1="238.76" y1="182.88" x2="238.76" y2="185.42" width="0.1524" layer="91"/>
+<wire x1="238.76" y1="185.42" x2="241.3" y2="185.42" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <wire x1="33.02" y1="180.34" x2="20.32" y2="180.34" width="0.1524" layer="91"/>
@@ -10870,10 +10831,12 @@ All capacitors +/- 10% tolerance</text>
 </net>
 <net name="VDD" class="0">
 <segment>
-<pinref part="J2" gate="G$1" pin="1"/>
 <pinref part="VDD1" gate="G$1" pin="VDD"/>
 <wire x1="238.76" y1="157.48" x2="248.92" y2="157.48" width="0.1524" layer="91"/>
 <wire x1="248.92" y1="157.48" x2="248.92" y2="162.56" width="0.1524" layer="91"/>
+<pinref part="U$2" gate="G$1" pin="P1"/>
+<wire x1="238.76" y1="157.48" x2="238.76" y2="160.02" width="0.1524" layer="91"/>
+<wire x1="238.76" y1="160.02" x2="236.22" y2="160.02" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="VDD2" gate="G$1" pin="VDD"/>
