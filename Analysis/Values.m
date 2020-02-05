@@ -9,7 +9,7 @@ I_out = 100e-3; % Amps
 L = 100e-6; % H
 V_start = 7; % Volts
 V_stop = 6.3; % Volts
-V_en = 1; % Volts
+V_en = 1.2; % Volts
 
 I_en = 1e-6; % Amps
 I_hys = 3.6e-6; % Amps

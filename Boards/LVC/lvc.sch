@@ -10672,38 +10672,42 @@ DIN A4, landscape with location and doc. field</description>
 </library>
 <library name="NR_connectors">
 <packages>
-<package name="MICROCLASP">
-<wire x1="-3.999990625" y1="3.35" x2="3.999990625" y2="3.35" width="0.127" layer="21"/>
-<wire x1="3.999990625" y1="3.35" x2="3.999990625" y2="-3.35" width="0.127" layer="21"/>
-<wire x1="3.999990625" y1="-3.35" x2="-3.999990625" y2="-3.35" width="0.127" layer="21"/>
-<wire x1="-3.999990625" y1="-3.35" x2="-3.999990625" y2="3.35" width="0.127" layer="21"/>
-<pad name="P$1" x="1" y="0" drill="0.8"/>
-<pad name="P$2" x="-1" y="0" drill="0.8"/>
-<hole x="2.99999375" y="1.9" drill="1.3"/>
-<text x="-3.81" y="3.81" size="1.27" layer="21">&gt;NAME</text>
+<package name="4_PIN_MICROCLASP">
+<pad name="P$1" x="-1" y="0" drill="0.8"/>
+<pad name="P$2" x="-3" y="0" drill="0.8"/>
+<pad name="P$3" x="1" y="0" drill="0.8"/>
+<pad name="P$4" x="3" y="0" drill="0.8"/>
+<wire x1="-6" y1="-3.35" x2="6" y2="-3.35" width="0.127" layer="21"/>
+<wire x1="6" y1="-3.35" x2="6" y2="3.35" width="0.127" layer="21"/>
+<wire x1="6" y1="3.35" x2="-6" y2="3.35" width="0.127" layer="21"/>
+<wire x1="-6" y1="3.35" x2="-6" y2="-3.35" width="0.127" layer="21"/>
 </package>
 </packages>
 <symbols>
-<symbol name="2_PIN">
-<wire x1="-2.54" y1="2.54" x2="5.08" y2="2.54" width="0.254" layer="94"/>
-<wire x1="5.08" y1="2.54" x2="5.08" y2="-5.08" width="0.254" layer="94"/>
+<symbol name="4_PIN">
+<wire x1="-2.54" y1="7.62" x2="5.08" y2="7.62" width="0.254" layer="94"/>
+<wire x1="5.08" y1="7.62" x2="5.08" y2="-5.08" width="0.254" layer="94"/>
 <wire x1="5.08" y1="-5.08" x2="-2.54" y2="-5.08" width="0.254" layer="94"/>
-<wire x1="-2.54" y1="-5.08" x2="-2.54" y2="2.54" width="0.254" layer="94"/>
-<pin name="P$1" x="10.16" y="0" length="middle" rot="R180"/>
-<pin name="P$2" x="10.16" y="-2.54" length="middle" rot="R180"/>
-<text x="-2.54" y="5.08" size="1.778" layer="95">&gt;NAME</text>
+<wire x1="-2.54" y1="-5.08" x2="-2.54" y2="7.62" width="0.254" layer="94"/>
+<pin name="P$1" x="10.16" y="5.08" length="middle" rot="R180"/>
+<pin name="P$2" x="10.16" y="2.54" length="middle" rot="R180"/>
+<pin name="P$3" x="10.16" y="0" length="middle" rot="R180"/>
+<pin name="P$4" x="10.16" y="-2.54" length="middle" rot="R180"/>
+<text x="-2.54" y="10.16" size="1.778" layer="95">&gt;NAME</text>
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="MICROCLASP" uservalue="yes">
+<deviceset name="MICROCLASP_4">
 <gates>
-<gate name="G$1" symbol="2_PIN" x="2.54" y="0"/>
+<gate name="G$1" symbol="4_PIN" x="0" y="0"/>
 </gates>
 <devices>
-<device name="" package="MICROCLASP">
+<device name="" package="4_PIN_MICROCLASP">
 <connects>
 <connect gate="G$1" pin="P$1" pad="P$1"/>
 <connect gate="G$1" pin="P$2" pad="P$2"/>
+<connect gate="G$1" pin="P$3" pad="P$3"/>
+<connect gate="G$1" pin="P$4" pad="P$4"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -10732,8 +10736,6 @@ DIN A4, landscape with location and doc. field</description>
 <part name="GND7" library="supply1" deviceset="GND" device=""/>
 <part name="GND8" library="supply1" deviceset="GND" device=""/>
 <part name="R4" library="resistor" deviceset="R-US_" device="R0603" value="100k"/>
-<part name="GND9" library="supply1" deviceset="GND" device=""/>
-<part name="GND10" library="supply1" deviceset="GND" device=""/>
 <part name="R5" library="resistor" deviceset="R-US_" device="R0603" value="1M"/>
 <part name="R6" library="resistor" deviceset="R-US_" device="R0603" value="1M"/>
 <part name="GND12" library="supply1" deviceset="GND" device=""/>
@@ -10769,8 +10771,9 @@ DIN A4, landscape with location and doc. field</description>
 <part name="GND2" library="supply1" deviceset="GND" device=""/>
 <part name="GND13" library="supply1" deviceset="GND" device=""/>
 <part name="+3V1" library="supply1" deviceset="+3V3" device=""/>
-<part name="LED_STATUS" library="NR_connectors" deviceset="MICROCLASP" device=""/>
-<part name="INPUT" library="NR_connectors" deviceset="MICROCLASP" device=""/>
+<part name="U$1" library="NR_connectors" deviceset="MICROCLASP_4" device=""/>
+<part name="R1" library="resistor" deviceset="R-US_" device="R0603"/>
+<part name="GND9" library="supply1" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -10780,7 +10783,7 @@ DIN A4, landscape with location and doc. field</description>
 <wire x1="73.66" y1="91.44" x2="5.08" y2="91.44" width="0.1524" layer="97" style="shortdash"/>
 <text x="5.08" y="170.18" size="3.81" layer="97">Voltage Regulator</text>
 <text x="10.16" y="81.28" size="3.81" layer="97">Switching</text>
-<text x="147.32" y="167.64" size="3.81" layer="97">Dividers</text>
+<text x="147.32" y="167.64" size="3.81" layer="97">Divider</text>
 <wire x1="73.66" y1="5.08" x2="73.66" y2="91.44" width="0.1524" layer="97" style="shortdash"/>
 <wire x1="256.54" y1="91.44" x2="182.88" y2="91.44" width="0.1524" layer="97" style="shortdash"/>
 <text x="185.42" y="167.64" size="3.81" layer="97">Connectors</text>
@@ -10817,8 +10820,6 @@ All capacitors +/- 10% tolerance</text>
 <attribute name="NAME" x="16.51" y="21.3614" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="16.51" y="18.542" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="GND9" gate="1" x="236.22" y="144.78"/>
-<instance part="GND10" gate="1" x="195.58" y="144.78"/>
 <instance part="R5" gate="G$1" x="172.72" y="162.56" smashed="yes" rot="R270">
 <attribute name="NAME" x="173.99" y="164.0586" size="1.778" layer="95"/>
 <attribute name="VALUE" x="173.99" y="161.798" size="1.778" layer="96"/>
@@ -10831,7 +10832,7 @@ All capacitors +/- 10% tolerance</text>
 <instance part="P+13" gate="1" x="159.258" y="69.85" smashed="yes" rot="R90">
 <attribute name="VALUE" x="159.258" y="72.39" size="1.778" layer="96"/>
 </instance>
-<instance part="VDD1" gate="G$1" x="238.76" y="154.94" rot="R270"/>
+<instance part="VDD1" gate="G$1" x="208.28" y="154.94" rot="R270"/>
 <instance part="VDD2" gate="G$1" x="171.958" y="46.99" smashed="yes" rot="R180">
 <attribute name="VALUE" x="174.498" y="44.45" size="1.778" layer="96" rot="R180"/>
 </instance>
@@ -10877,8 +10878,9 @@ All capacitors +/- 10% tolerance</text>
 <instance part="GND2" gate="1" x="198.12" y="124.46"/>
 <instance part="GND13" gate="1" x="198.12" y="109.22"/>
 <instance part="+3V1" gate="G$1" x="236.22" y="129.54" rot="R270"/>
-<instance part="LED_STATUS" gate="G$1" x="210.82" y="152.4" rot="R180"/>
-<instance part="INPUT" gate="G$1" x="220.98" y="154.94"/>
+<instance part="U$1" gate="G$1" x="187.96" y="149.86"/>
+<instance part="R1" gate="G$1" x="205.74" y="147.32" rot="R90"/>
+<instance part="GND9" gate="1" x="200.66" y="142.24"/>
 </instances>
 <busses>
 </busses>
@@ -10893,18 +10895,6 @@ All capacitors +/- 10% tolerance</text>
 <pinref part="GND8" gate="1" pin="GND"/>
 <wire x1="17.78" y1="15.24" x2="17.78" y2="12.7" width="0.1524" layer="91"/>
 <pinref part="R4" gate="G$1" pin="2"/>
-</segment>
-<segment>
-<wire x1="231.14" y1="152.4" x2="236.22" y2="152.4" width="0.1524" layer="91"/>
-<wire x1="236.22" y1="152.4" x2="236.22" y2="147.32" width="0.1524" layer="91"/>
-<pinref part="GND9" gate="1" pin="GND"/>
-<pinref part="INPUT" gate="G$1" pin="P$2"/>
-</segment>
-<segment>
-<wire x1="195.58" y1="152.4" x2="195.58" y2="147.32" width="0.1524" layer="91"/>
-<pinref part="GND10" gate="1" pin="GND"/>
-<wire x1="200.66" y1="152.4" x2="195.58" y2="152.4" width="0.1524" layer="91"/>
-<pinref part="LED_STATUS" gate="G$1" pin="P$1"/>
 </segment>
 <segment>
 <pinref part="R6" gate="G$1" pin="2"/>
@@ -10971,6 +10961,15 @@ All capacitors +/- 10% tolerance</text>
 <pinref part="JP3" gate="G$1" pin="1"/>
 <wire x1="190.5" y1="111.76" x2="198.12" y2="111.76" width="0.1524" layer="91"/>
 <pinref part="GND13" gate="1" pin="GND"/>
+</segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="P$3"/>
+<wire x1="198.12" y1="149.86" x2="200.66" y2="149.86" width="0.1524" layer="91"/>
+<wire x1="200.66" y1="149.86" x2="200.66" y2="147.32" width="0.1524" layer="91"/>
+<pinref part="U$1" gate="G$1" pin="P$4"/>
+<wire x1="200.66" y1="147.32" x2="200.66" y2="144.78" width="0.1524" layer="91"/>
+<wire x1="198.12" y1="147.32" x2="200.66" y2="147.32" width="0.1524" layer="91"/>
+<pinref part="GND9" gate="1" pin="GND"/>
 </segment>
 </net>
 <net name="V+" class="0">
@@ -11074,8 +11073,8 @@ All capacitors +/- 10% tolerance</text>
 <net name="VDD" class="0">
 <segment>
 <pinref part="VDD1" gate="G$1" pin="VDD"/>
-<wire x1="231.14" y1="154.94" x2="236.22" y2="154.94" width="0.1524" layer="91"/>
-<pinref part="INPUT" gate="G$1" pin="P$1"/>
+<wire x1="198.12" y1="154.94" x2="205.74" y2="154.94" width="0.1524" layer="91"/>
+<pinref part="U$1" gate="G$1" pin="P$1"/>
 </segment>
 <segment>
 <pinref part="VDD2" gate="G$1" pin="VDD"/>
@@ -11200,14 +11199,21 @@ All capacitors +/- 10% tolerance</text>
 </net>
 <net name="STATUS" class="0">
 <segment>
-<label x="195.58" y="154.94" size="1.016" layer="95" rot="R180" xref="yes"/>
-<wire x1="200.66" y1="154.94" x2="195.58" y2="154.94" width="0.1524" layer="91"/>
-<pinref part="LED_STATUS" gate="G$1" pin="P$2"/>
-</segment>
-<segment>
 <pinref part="JP2" gate="A" pin="1"/>
 <wire x1="226.06" y1="114.3" x2="233.68" y2="114.3" width="0.1524" layer="91"/>
 <label x="233.68" y="114.3" size="1.016" layer="95" xref="yes"/>
+</segment>
+<segment>
+<pinref part="R1" gate="G$1" pin="1"/>
+<wire x1="205.74" y1="142.24" x2="205.74" y2="139.7" width="0.1524" layer="91"/>
+<label x="205.74" y="139.7" size="1.016" layer="95" xref="yes"/>
+</segment>
+</net>
+<net name="N$1" class="0">
+<segment>
+<pinref part="U$1" gate="G$1" pin="P$2"/>
+<pinref part="R1" gate="G$1" pin="2"/>
+<wire x1="198.12" y1="152.4" x2="205.74" y2="152.4" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>

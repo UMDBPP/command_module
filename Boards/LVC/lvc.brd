@@ -2697,15 +2697,15 @@ Source: U6 OnSemi Inductive Load Driver MDC3105-D.PDF</description>
 </library>
 <library name="NR_connectors">
 <packages>
-<package name="MICROCLASP">
-<wire x1="-3.999990625" y1="3.35" x2="3.999990625" y2="3.35" width="0.127" layer="21"/>
-<wire x1="3.999990625" y1="3.35" x2="3.999990625" y2="-3.35" width="0.127" layer="21"/>
-<wire x1="3.999990625" y1="-3.35" x2="-3.999990625" y2="-3.35" width="0.127" layer="21"/>
-<wire x1="-3.999990625" y1="-3.35" x2="-3.999990625" y2="3.35" width="0.127" layer="21"/>
-<pad name="P$1" x="1" y="0" drill="0.8"/>
-<pad name="P$2" x="-1" y="0" drill="0.8"/>
-<hole x="2.99999375" y="1.9" drill="1.3"/>
-<text x="-3.81" y="3.81" size="1.27" layer="21">&gt;NAME</text>
+<package name="4_PIN_MICROCLASP">
+<pad name="P$1" x="-1" y="0" drill="0.8"/>
+<pad name="P$2" x="-3" y="0" drill="0.8"/>
+<pad name="P$3" x="1" y="0" drill="0.8"/>
+<pad name="P$4" x="3" y="0" drill="0.8"/>
+<wire x1="-6" y1="-3.35" x2="6" y2="-3.35" width="0.127" layer="21"/>
+<wire x1="6" y1="-3.35" x2="6" y2="3.35" width="0.127" layer="21"/>
+<wire x1="6" y1="3.35" x2="-6" y2="3.35" width="0.127" layer="21"/>
+<wire x1="-6" y1="3.35" x2="-6" y2="-3.35" width="0.127" layer="21"/>
 </package>
 </packages>
 </library>
@@ -2933,8 +2933,8 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <element name="JP1" library="pinhead" package="1X02" value="" x="6.35" y="2.54"/>
 <element name="JP2" library="pinhead" package="1X07" value="" x="20.32" y="29.21" rot="R180"/>
 <element name="JP3" library="pinhead" package="1X02" value="" x="6.35" y="29.21"/>
-<element name="LED_STATUS" library="NR_connectors" package="MICROCLASP" value="" x="26.431875" y="23.01875" rot="R270"/>
-<element name="INPUT" library="NR_connectors" package="MICROCLASP" value="" x="26.590625" y="14.366875" rot="R270"/>
+<element name="U$1" library="NR_connectors" package="4_PIN_MICROCLASP" value="MICROCLASP_4" x="27.14625" y="15.08125" rot="R270"/>
+<element name="R1" library="resistor" package="R0603" value="" x="27.94" y="24.13" rot="R270"/>
 </elements>
 <signals>
 <signal name="GND">
@@ -2974,14 +2974,20 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <via x="18.335625" y="16.8275" extent="1-16" drill="0.5"/>
 <contactref element="JP1" pad="1"/>
 <contactref element="JP3" pad="1"/>
-<contactref element="LED_STATUS" pad="P$1"/>
-<contactref element="INPUT" pad="P$2"/>
-<wire x1="26.590625" y1="15.366875" x2="26.431875" y2="22.01875" width="0" layer="19" extent="1-1"/>
-<wire x1="18.335625" y1="16.8275" x2="26.590625" y2="15.366875" width="0" layer="19" extent="1-1"/>
+<contactref element="U$1" pad="P$3"/>
+<contactref element="U$1" pad="P$4"/>
+<wire x1="27.14625" y1="12.08125" x2="27.14625" y2="14.08125" width="0" layer="19" extent="1-1"/>
+<wire x1="5.08" y1="2.54" x2="27.14625" y2="12.08125" width="0" layer="19" extent="1-1"/>
+<wire x1="6.588125" y1="8.175625" x2="5.08" y2="2.54" width="0" layer="19" extent="1-1"/>
+<wire x1="5.635625" y1="10.239375" x2="6.61125" y2="8.19875" width="0" layer="19" extent="1-1"/>
+<wire x1="11.43" y1="10.963275" x2="7.62" y2="8.19875" width="0" layer="19" extent="1-1"/>
+<wire x1="15.24" y1="8.19875" x2="11.43" y2="10.963275" width="0" layer="19" extent="1-1"/>
+<wire x1="17.383125" y1="8.5725" x2="15.24" y2="8.19875" width="0" layer="19" extent="1-1"/>
+<wire x1="17.097375" y1="13.70875" x2="17.383125" y2="8.5725" width="0" layer="19" extent="1-1"/>
+<wire x1="15.644125" y1="15.5575" x2="17.097375" y2="13.70875" width="0" layer="19" extent="1-1"/>
+<wire x1="18.335625" y1="16.8275" x2="15.644125" y2="15.5575" width="0" layer="19" extent="1-1"/>
 <wire x1="18.176875" y1="17.961875" x2="18.335625" y2="16.8275" width="0" layer="19" extent="1-1"/>
 <wire x1="15.954375" y1="19.011" x2="18.176875" y2="17.961875" width="0" layer="19" extent="1-1"/>
-<wire x1="15.644125" y1="15.5575" x2="18.335625" y2="16.8275" width="0" layer="19" extent="1-1"/>
-<wire x1="17.097375" y1="13.70875" x2="15.644125" y2="15.5575" width="0" layer="19" extent="1-1"/>
 <wire x1="13.335" y1="22.89" x2="15.954375" y2="19.011" width="0" layer="19" extent="1-1"/>
 <wire x1="13.890625" y1="24.209375" x2="13.335" y2="22.89" width="0" layer="19" extent="1-1"/>
 <wire x1="11.66" y1="25.4" x2="13.890625" y2="24.209375" width="0" layer="19" extent="1-1"/>
@@ -2993,12 +2999,6 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <wire x1="3.81" y1="21.59" x2="6.82625" y2="25.24125" width="0" layer="19" extent="1-1"/>
 <wire x1="2.780625" y1="20.288125" x2="3.81" y2="21.59" width="0" layer="19" extent="1-1"/>
 <wire x1="6.905625" y1="17.390375" x2="2.780625" y2="20.288125" width="0" layer="19" extent="1-1"/>
-<wire x1="17.383125" y1="8.5725" x2="17.097375" y2="13.70875" width="0" layer="19" extent="1-1"/>
-<wire x1="15.24" y1="8.19875" x2="17.383125" y2="8.5725" width="0" layer="19" extent="1-1"/>
-<wire x1="11.43" y1="10.963275" x2="15.24" y2="8.19875" width="0" layer="19" extent="1-1"/>
-<wire x1="7.62" y1="8.19875" x2="11.43" y2="10.963275" width="0" layer="19" extent="1-1"/>
-<wire x1="5.635625" y1="10.239375" x2="6.61125" y2="8.19875" width="0" layer="19" extent="1-1"/>
-<wire x1="5.08" y1="2.54" x2="6.588125" y2="8.175625" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="V+">
 <contactref element="R2" pad="1"/>
@@ -3052,9 +3052,9 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <contactref element="Q1" pad="7"/>
 <contactref element="Q1" pad="8"/>
 <contactref element="Q1" pad="8L"/>
-<contactref element="INPUT" pad="P$1"/>
-<wire x1="13.335" y1="12.65875" x2="26.590625" y2="13.366875" width="0" layer="19" extent="1-1"/>
-<wire x1="12.04" y1="12.50375" x2="13.335" y2="12.65875" width="0" layer="19" extent="1-1"/>
+<contactref element="U$1" pad="P$1"/>
+<wire x1="12.04" y1="12.50375" x2="27.14625" y2="16.08125" width="0" layer="19" extent="1-1"/>
+<wire x1="13.335" y1="12.65875" x2="12.04" y2="12.50375" width="0" layer="19" extent="1-1"/>
 <wire x1="12.56" y1="14.76375" x2="13.335" y2="12.65875" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$6">
@@ -3119,9 +3119,14 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <wire x1="7.62" y1="2.54" x2="7.62" y2="9.89875" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="STATUS">
-<contactref element="LED_STATUS" pad="P$2"/>
 <contactref element="JP2" pad="1"/>
-<wire x1="27.94" y1="29.21" x2="26.431875" y2="24.01875" width="0" layer="19" extent="1-1"/>
+<contactref element="R1" pad="1"/>
+<wire x1="27.94" y1="29.21" x2="27.94" y2="24.98" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="N$1">
+<contactref element="U$1" pad="P$2"/>
+<contactref element="R1" pad="2"/>
+<wire x1="27.14625" y1="18.08125" x2="27.94" y2="23.28" width="0" layer="19" extent="1-1"/>
 </signal>
 </signals>
 <errors>
