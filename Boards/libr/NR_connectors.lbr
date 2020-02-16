@@ -164,6 +164,10 @@
 <wire x1="6" y1="3.35" x2="-6" y2="3.35" width="0.127" layer="21"/>
 <wire x1="-6" y1="3.35" x2="-6" y2="-3.35" width="0.127" layer="21"/>
 </package>
+<package name="LITEAPRS">
+<pad name="P$1" x="-1.397" y="0" drill="0.8" shape="long" rot="R90"/>
+<pad name="P$2" x="1.397" y="0" drill="0.8" shape="long" rot="R90"/>
+</package>
 </packages>
 <symbols>
 <symbol name="1S-BATTERY">
@@ -375,6 +379,22 @@
 <connect gate="G$1" pin="P$2" pad="P$2"/>
 <connect gate="G$1" pin="P$3" pad="P$3"/>
 <connect gate="G$1" pin="P$4" pad="P$4"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="LITEAPRS">
+<gates>
+<gate name="G$1" symbol="2_PIN" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="LITEAPRS">
+<connects>
+<connect gate="G$1" pin="P$1" pad="P$1"/>
+<connect gate="G$1" pin="P$2" pad="P$2"/>
 </connects>
 <technologies>
 <technology name=""/>

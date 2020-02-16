@@ -15981,13 +15981,6 @@ Source: MaxStream, Inc. xbee_productmanual.pdf</description>
 <label x="17.78" y="185.42" size="1.016" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
-<net name="N$13" class="0">
-<segment>
-<pinref part="U$2" gate="G$1" pin="21/A7/PWM"/>
-<wire x1="20.32" y1="182.88" x2="17.78" y2="182.88" width="0.1524" layer="91"/>
-<label x="17.78" y="182.88" size="1.016" layer="95" rot="R180" xref="yes"/>
-</segment>
-</net>
 <net name="A" class="0">
 <segment>
 <pinref part="U$2" gate="G$1" pin="16/A2/T"/>
@@ -16011,14 +16004,14 @@ Source: MaxStream, Inc. xbee_productmanual.pdf</description>
 </net>
 <net name="SWITCH_LED" class="0">
 <segment>
-<pinref part="U$2" gate="G$1" pin="14/A0"/>
-<wire x1="20.32" y1="200.66" x2="17.78" y2="200.66" width="0.1524" layer="91"/>
-<label x="17.78" y="200.66" size="1.016" layer="95" rot="R180" xref="yes"/>
-</segment>
-<segment>
 <pinref part="R5" gate="G$1" pin="1"/>
 <wire x1="127" y1="111.76" x2="127" y2="109.22" width="0.1524" layer="91"/>
 <label x="127" y="109.22" size="1.016" layer="95" xref="yes"/>
+</segment>
+<segment>
+<pinref part="U$2" gate="G$1" pin="21/A7/PWM"/>
+<wire x1="20.32" y1="182.88" x2="17.78" y2="182.88" width="0.1524" layer="91"/>
+<label x="17.78" y="182.88" size="1.016" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="C" class="0">
@@ -16036,6 +16029,13 @@ Source: MaxStream, Inc. xbee_productmanual.pdf</description>
 <wire x1="127" y1="137.16" x2="121.92" y2="137.16" width="0.1524" layer="91"/>
 </segment>
 </net>
+<net name="E" class="0">
+<segment>
+<pinref part="U$2" gate="G$1" pin="14/A0"/>
+<wire x1="20.32" y1="200.66" x2="17.78" y2="200.66" width="0.1524" layer="91"/>
+<label x="17.78" y="200.66" size="1.016" layer="95" rot="R180" xref="yes"/>
+</segment>
+</net>
 </nets>
 </sheet>
 </sheets>
@@ -16044,7 +16044,6 @@ Source: MaxStream, Inc. xbee_productmanual.pdf</description>
 <approved hash="204,1,66.04,218.44,U$2,AREF,,,,"/>
 <approved hash="204,1,66.04,238.76,U$2,VUSB,,,,"/>
 <approved hash="204,1,66.04,236.22,U$2,VIN,,,,"/>
-<approved hash="204,1,147.32,238.76,U$7,9_V_RESET_N,,,,"/>
 </errors>
 </schematic>
 </drawing>

@@ -12333,12 +12333,10 @@ DIN A4, landscape with location and doc. field</description>
 <wire x1="119.38" y1="88.9" x2="50.8" y2="88.9" width="0.1524" layer="97" style="longdash"/>
 <wire x1="119.38" y1="109.22" x2="119.38" y2="88.9" width="0.1524" layer="97" style="longdash"/>
 <wire x1="119.38" y1="109.22" x2="144.78" y2="109.22" width="0.1524" layer="97" style="longdash"/>
-<wire x1="119.38" y1="45.72" x2="119.38" y2="71.12" width="0.1524" layer="97" style="longdash"/>
-<wire x1="119.38" y1="71.12" x2="119.38" y2="88.9" width="0.1524" layer="97" style="longdash"/>
+<wire x1="119.38" y1="45.72" x2="119.38" y2="88.9" width="0.1524" layer="97" style="longdash"/>
 <wire x1="162.56" y1="45.72" x2="119.38" y2="45.72" width="0.1524" layer="97" style="longdash"/>
 <wire x1="162.56" y1="45.72" x2="162.56" y2="25.4" width="0.1524" layer="97" style="longdash"/>
-<wire x1="256.54" y1="109.22" x2="170.18" y2="109.22" width="0.1524" layer="97" style="longdash"/>
-<wire x1="170.18" y1="109.22" x2="144.78" y2="109.22" width="0.1524" layer="97" style="longdash"/>
+<wire x1="256.54" y1="109.22" x2="144.78" y2="109.22" width="0.1524" layer="97" style="longdash"/>
 </plain>
 <instances>
 <instance part="U$1" gate="G$1" x="91.44" y="129.54" smashed="yes">
@@ -12483,10 +12481,10 @@ DIN A4, landscape with location and doc. field</description>
 <attribute name="NAME" x="234.442" y="78.74" size="1.778" layer="95" rot="R180"/>
 </instance>
 <instance part="FRAME1" gate="G$1" x="0" y="0"/>
-<instance part="U$4" gate="G$1" x="7.62" y="43.18"/>
-<instance part="R8" gate="G$1" x="25.4" y="40.64" rot="R90"/>
-<instance part="SUPPLY2" gate="1" x="20.32" y="33.02" smashed="yes">
-<attribute name="VALUE" x="18.415" y="29.845" size="1.778" layer="96"/>
+<instance part="U$4" gate="G$1" x="7.62" y="45.72"/>
+<instance part="R8" gate="G$1" x="22.86" y="55.88" rot="R180"/>
+<instance part="SUPPLY2" gate="1" x="20.32" y="35.56" smashed="yes">
+<attribute name="VALUE" x="18.415" y="32.385" size="1.778" layer="96"/>
 </instance>
 </instances>
 <busses>
@@ -12590,11 +12588,11 @@ DIN A4, landscape with location and doc. field</description>
 </segment>
 <segment>
 <pinref part="U$4" gate="G$1" pin="P$3"/>
-<wire x1="17.78" y1="43.18" x2="20.32" y2="43.18" width="0.1524" layer="91"/>
-<wire x1="20.32" y1="43.18" x2="20.32" y2="40.64" width="0.1524" layer="91"/>
+<wire x1="17.78" y1="45.72" x2="20.32" y2="45.72" width="0.1524" layer="91"/>
+<wire x1="20.32" y1="45.72" x2="20.32" y2="43.18" width="0.1524" layer="91"/>
 <pinref part="U$4" gate="G$1" pin="P$4"/>
-<wire x1="20.32" y1="40.64" x2="20.32" y2="35.56" width="0.1524" layer="91"/>
-<wire x1="17.78" y1="40.64" x2="20.32" y2="40.64" width="0.1524" layer="91"/>
+<wire x1="20.32" y1="43.18" x2="20.32" y2="38.1" width="0.1524" layer="91"/>
+<wire x1="17.78" y1="43.18" x2="20.32" y2="43.18" width="0.1524" layer="91"/>
 <pinref part="SUPPLY2" gate="1" pin="GND"/>
 </segment>
 </net>
@@ -12869,8 +12867,8 @@ DIN A4, landscape with location and doc. field</description>
 <pinref part="U2" gate="G$1" pin="VIN"/>
 <pinref part="R10" gate="G$1" pin="2"/>
 <wire x1="50.8" y1="45.72" x2="50.8" y2="48.26" width="0.1524" layer="91"/>
+<pinref part="U$4" gate="G$1" pin="P$2"/>
 <wire x1="17.78" y1="48.26" x2="33.02" y2="48.26" width="0.1524" layer="91"/>
-<pinref part="U$4" gate="G$1" pin="P$1"/>
 </segment>
 </net>
 <net name="EN" class="0">
@@ -12898,8 +12896,8 @@ DIN A4, landscape with location and doc. field</description>
 </segment>
 <segment>
 <pinref part="R8" gate="G$1" pin="1"/>
-<wire x1="25.4" y1="35.56" x2="25.4" y2="30.48" width="0.1524" layer="91"/>
-<label x="25.4" y="30.48" size="1.016" layer="95" xref="yes"/>
+<wire x1="27.94" y1="55.88" x2="33.02" y2="55.88" width="0.1524" layer="91"/>
+<label x="33.02" y="55.88" size="1.016" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="N$15" class="0">
@@ -12923,11 +12921,11 @@ DIN A4, landscape with location and doc. field</description>
 <label x="66.04" y="142.24" size="1.016" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
-<net name="N$13" class="0">
+<net name="N$12" class="0">
 <segment>
 <pinref part="R8" gate="G$1" pin="2"/>
-<pinref part="U$4" gate="G$1" pin="P$2"/>
-<wire x1="25.4" y1="45.72" x2="17.78" y2="45.72" width="0.1524" layer="91"/>
+<pinref part="U$4" gate="G$1" pin="P$1"/>
+<wire x1="17.78" y1="55.88" x2="17.78" y2="50.8" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>

@@ -10409,50 +10409,6 @@ DIN A4, landscape with location and doc. field</description>
 <description>&lt;b&gt;Pin Header Connectors&lt;/b&gt;&lt;p&gt;
 &lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
 <packages>
-<package name="1X02">
-<description>&lt;b&gt;PIN HEADER&lt;/b&gt;</description>
-<wire x1="-1.905" y1="1.27" x2="-0.635" y2="1.27" width="0.1524" layer="21"/>
-<wire x1="-0.635" y1="1.27" x2="0" y2="0.635" width="0.1524" layer="21"/>
-<wire x1="0" y1="0.635" x2="0" y2="-0.635" width="0.1524" layer="21"/>
-<wire x1="0" y1="-0.635" x2="-0.635" y2="-1.27" width="0.1524" layer="21"/>
-<wire x1="-2.54" y1="0.635" x2="-2.54" y2="-0.635" width="0.1524" layer="21"/>
-<wire x1="-1.905" y1="1.27" x2="-2.54" y2="0.635" width="0.1524" layer="21"/>
-<wire x1="-2.54" y1="-0.635" x2="-1.905" y2="-1.27" width="0.1524" layer="21"/>
-<wire x1="-0.635" y1="-1.27" x2="-1.905" y2="-1.27" width="0.1524" layer="21"/>
-<wire x1="0" y1="0.635" x2="0.635" y2="1.27" width="0.1524" layer="21"/>
-<wire x1="0.635" y1="1.27" x2="1.905" y2="1.27" width="0.1524" layer="21"/>
-<wire x1="1.905" y1="1.27" x2="2.54" y2="0.635" width="0.1524" layer="21"/>
-<wire x1="2.54" y1="0.635" x2="2.54" y2="-0.635" width="0.1524" layer="21"/>
-<wire x1="2.54" y1="-0.635" x2="1.905" y2="-1.27" width="0.1524" layer="21"/>
-<wire x1="1.905" y1="-1.27" x2="0.635" y2="-1.27" width="0.1524" layer="21"/>
-<wire x1="0.635" y1="-1.27" x2="0" y2="-0.635" width="0.1524" layer="21"/>
-<pad name="1" x="-1.27" y="0" drill="1.016" shape="long" rot="R90"/>
-<pad name="2" x="1.27" y="0" drill="1.016" shape="long" rot="R90"/>
-<text x="-2.6162" y="1.8288" size="1.27" layer="25" ratio="10">&gt;NAME</text>
-<text x="-2.54" y="-3.175" size="1.27" layer="27">&gt;VALUE</text>
-<rectangle x1="-1.524" y1="-0.254" x2="-1.016" y2="0.254" layer="51"/>
-<rectangle x1="1.016" y1="-0.254" x2="1.524" y2="0.254" layer="51"/>
-</package>
-<package name="1X02/90">
-<description>&lt;b&gt;PIN HEADER&lt;/b&gt;</description>
-<wire x1="-2.54" y1="-1.905" x2="0" y2="-1.905" width="0.1524" layer="21"/>
-<wire x1="0" y1="-1.905" x2="0" y2="0.635" width="0.1524" layer="21"/>
-<wire x1="0" y1="0.635" x2="-2.54" y2="0.635" width="0.1524" layer="21"/>
-<wire x1="-2.54" y1="0.635" x2="-2.54" y2="-1.905" width="0.1524" layer="21"/>
-<wire x1="-1.27" y1="6.985" x2="-1.27" y2="1.27" width="0.762" layer="21"/>
-<wire x1="0" y1="-1.905" x2="2.54" y2="-1.905" width="0.1524" layer="21"/>
-<wire x1="2.54" y1="-1.905" x2="2.54" y2="0.635" width="0.1524" layer="21"/>
-<wire x1="2.54" y1="0.635" x2="0" y2="0.635" width="0.1524" layer="21"/>
-<wire x1="1.27" y1="6.985" x2="1.27" y2="1.27" width="0.762" layer="21"/>
-<pad name="1" x="-1.27" y="-3.81" drill="1.016" shape="long" rot="R90"/>
-<pad name="2" x="1.27" y="-3.81" drill="1.016" shape="long" rot="R90"/>
-<text x="-3.175" y="-3.81" size="1.27" layer="25" ratio="10" rot="R90">&gt;NAME</text>
-<text x="4.445" y="-3.81" size="1.27" layer="27" rot="R90">&gt;VALUE</text>
-<rectangle x1="-1.651" y1="0.635" x2="-0.889" y2="1.143" layer="21"/>
-<rectangle x1="0.889" y1="0.635" x2="1.651" y2="1.143" layer="21"/>
-<rectangle x1="-1.651" y1="-2.921" x2="-0.889" y2="-1.905" layer="21"/>
-<rectangle x1="0.889" y1="-2.921" x2="1.651" y2="-1.905" layer="21"/>
-</package>
 <package name="1X07">
 <description>&lt;b&gt;PIN HEADER&lt;/b&gt;</description>
 <wire x1="3.81" y1="0.635" x2="4.445" y2="1.27" width="0.1524" layer="21"/>
@@ -10579,16 +10535,6 @@ DIN A4, landscape with location and doc. field</description>
 </package>
 </packages>
 <symbols>
-<symbol name="PINHD2">
-<wire x1="-6.35" y1="-2.54" x2="1.27" y2="-2.54" width="0.4064" layer="94"/>
-<wire x1="1.27" y1="-2.54" x2="1.27" y2="5.08" width="0.4064" layer="94"/>
-<wire x1="1.27" y1="5.08" x2="-6.35" y2="5.08" width="0.4064" layer="94"/>
-<wire x1="-6.35" y1="5.08" x2="-6.35" y2="-2.54" width="0.4064" layer="94"/>
-<text x="-6.35" y="5.715" size="1.778" layer="95">&gt;NAME</text>
-<text x="-6.35" y="-5.08" size="1.778" layer="96">&gt;VALUE</text>
-<pin name="1" x="-2.54" y="2.54" visible="pad" length="short" direction="pas" function="dot"/>
-<pin name="2" x="-2.54" y="0" visible="pad" length="short" direction="pas" function="dot"/>
-</symbol>
 <symbol name="PINHD7">
 <wire x1="-6.35" y1="-10.16" x2="1.27" y2="-10.16" width="0.4064" layer="94"/>
 <wire x1="1.27" y1="-10.16" x2="1.27" y2="10.16" width="0.4064" layer="94"/>
@@ -10606,32 +10552,6 @@ DIN A4, landscape with location and doc. field</description>
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="PINHD-1X2" prefix="JP" uservalue="yes">
-<description>&lt;b&gt;PIN HEADER&lt;/b&gt;</description>
-<gates>
-<gate name="G$1" symbol="PINHD2" x="0" y="0"/>
-</gates>
-<devices>
-<device name="" package="1X02">
-<connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-<device name="/90" package="1X02/90">
-<connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
 <deviceset name="PINHD-1X7" prefix="JP" uservalue="yes">
 <description>&lt;b&gt;PIN HEADER&lt;/b&gt;</description>
 <gates>
@@ -10682,6 +10602,10 @@ DIN A4, landscape with location and doc. field</description>
 <wire x1="6" y1="3.35" x2="-6" y2="3.35" width="0.127" layer="21"/>
 <wire x1="-6" y1="3.35" x2="-6" y2="-3.35" width="0.127" layer="21"/>
 </package>
+<package name="LITEAPRS">
+<pad name="P$1" x="-1.397" y="0" drill="0.8" shape="long" rot="R90"/>
+<pad name="P$2" x="1.397" y="0" drill="0.8" shape="long" rot="R90"/>
+</package>
 </packages>
 <symbols>
 <symbol name="4_PIN">
@@ -10694,6 +10618,15 @@ DIN A4, landscape with location and doc. field</description>
 <pin name="P$3" x="10.16" y="0" length="middle" rot="R180"/>
 <pin name="P$4" x="10.16" y="-2.54" length="middle" rot="R180"/>
 <text x="-2.54" y="10.16" size="1.778" layer="95">&gt;NAME</text>
+</symbol>
+<symbol name="2_PIN">
+<wire x1="-2.54" y1="2.54" x2="5.08" y2="2.54" width="0.254" layer="94"/>
+<wire x1="5.08" y1="2.54" x2="5.08" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="5.08" y1="-5.08" x2="-2.54" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="-2.54" y1="-5.08" x2="-2.54" y2="2.54" width="0.254" layer="94"/>
+<pin name="P$1" x="10.16" y="0" length="middle" rot="R180"/>
+<pin name="P$2" x="10.16" y="-2.54" length="middle" rot="R180"/>
+<text x="-2.54" y="5.08" size="1.778" layer="95">&gt;NAME</text>
 </symbol>
 </symbols>
 <devicesets>
@@ -10708,6 +10641,22 @@ DIN A4, landscape with location and doc. field</description>
 <connect gate="G$1" pin="P$2" pad="P$2"/>
 <connect gate="G$1" pin="P$3" pad="P$3"/>
 <connect gate="G$1" pin="P$4" pad="P$4"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="LITEAPRS">
+<gates>
+<gate name="G$1" symbol="2_PIN" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="LITEAPRS">
+<connects>
+<connect gate="G$1" pin="P$1" pad="P$1"/>
+<connect gate="G$1" pin="P$2" pad="P$2"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -10765,15 +10714,15 @@ DIN A4, landscape with location and doc. field</description>
 <part name="D3" library="LR_zener" deviceset="DZ2J120M0L" device=""/>
 <part name="Q2" library="LR_transistor" deviceset="RK7002BMT116" device=""/>
 <part name="FRAME1" library="frames" deviceset="A4L-LOC" device=""/>
-<part name="JP1" library="pinhead" deviceset="PINHD-1X2" device=""/>
 <part name="JP2" library="pinhead" deviceset="PINHD-1X7" device=""/>
-<part name="JP3" library="pinhead" deviceset="PINHD-1X2" device=""/>
 <part name="GND2" library="supply1" deviceset="GND" device=""/>
 <part name="GND13" library="supply1" deviceset="GND" device=""/>
 <part name="+3V1" library="supply1" deviceset="+3V3" device=""/>
 <part name="U$1" library="NR_connectors" deviceset="MICROCLASP_4" device=""/>
 <part name="R1" library="resistor" deviceset="R-US_" device="R0603"/>
 <part name="GND9" library="supply1" deviceset="GND" device=""/>
+<part name="U$2" library="NR_connectors" deviceset="LITEAPRS" device=""/>
+<part name="U$3" library="NR_connectors" deviceset="LITEAPRS" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -10872,15 +10821,15 @@ All capacitors +/- 10% tolerance</text>
 <instance part="D3" gate="A" x="177.038" y="69.85" rot="R180"/>
 <instance part="Q2" gate="G$1" x="25.4" y="30.48"/>
 <instance part="FRAME1" gate="G$1" x="0" y="0"/>
-<instance part="JP1" gate="G$1" x="187.96" y="129.54" rot="R180"/>
 <instance part="JP2" gate="A" x="223.52" y="121.92" rot="R180"/>
-<instance part="JP3" gate="G$1" x="187.96" y="114.3" rot="R180"/>
 <instance part="GND2" gate="1" x="198.12" y="124.46"/>
 <instance part="GND13" gate="1" x="198.12" y="109.22"/>
 <instance part="+3V1" gate="G$1" x="236.22" y="129.54" rot="R270"/>
 <instance part="U$1" gate="G$1" x="187.96" y="149.86"/>
 <instance part="R1" gate="G$1" x="205.74" y="147.32" rot="R90"/>
 <instance part="GND9" gate="1" x="200.66" y="142.24"/>
+<instance part="U$2" gate="G$1" x="180.34" y="129.54"/>
+<instance part="U$3" gate="G$1" x="180.34" y="114.3"/>
 </instances>
 <busses>
 </busses>
@@ -10953,14 +10902,14 @@ All capacitors +/- 10% tolerance</text>
 <wire x1="121.92" y1="43.18" x2="121.92" y2="40.64" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="JP1" gate="G$1" pin="1"/>
 <wire x1="190.5" y1="127" x2="198.12" y2="127" width="0.1524" layer="91"/>
 <pinref part="GND2" gate="1" pin="GND"/>
+<pinref part="U$2" gate="G$1" pin="P$2"/>
 </segment>
 <segment>
-<pinref part="JP3" gate="G$1" pin="1"/>
 <wire x1="190.5" y1="111.76" x2="198.12" y2="111.76" width="0.1524" layer="91"/>
 <pinref part="GND13" gate="1" pin="GND"/>
+<pinref part="U$3" gate="G$1" pin="P$2"/>
 </segment>
 <segment>
 <pinref part="U$1" gate="G$1" pin="P$3"/>
@@ -11187,14 +11136,14 @@ All capacitors +/- 10% tolerance</text>
 <wire x1="60.96" y1="68.58" x2="58.42" y2="68.58" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="JP1" gate="G$1" pin="2"/>
 <wire x1="190.5" y1="129.54" x2="198.12" y2="129.54" width="0.1524" layer="91"/>
 <label x="198.12" y="129.54" size="1.016" layer="95" xref="yes"/>
+<pinref part="U$2" gate="G$1" pin="P$1"/>
 </segment>
 <segment>
-<pinref part="JP3" gate="G$1" pin="2"/>
 <wire x1="190.5" y1="114.3" x2="198.12" y2="114.3" width="0.1524" layer="91"/>
 <label x="198.12" y="114.3" size="1.016" layer="95" xref="yes"/>
+<pinref part="U$3" gate="G$1" pin="P$1"/>
 </segment>
 </net>
 <net name="STATUS" class="0">
