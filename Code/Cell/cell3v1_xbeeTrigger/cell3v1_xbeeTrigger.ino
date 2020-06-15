@@ -28,6 +28,9 @@ void setup() {
   Serial1.begin(9600);
   delay(1000);
   xbee.setSerial(xbeeSerial); //Sets which serial the xbee object listens to
+
+  String("xbeeTrigger_ON").getBytes(xbeeSendBuf,xbeeSendBufSize);
+  xbeeSend(GroundSL,xbeeSendBuf);
 }
 
 void loop() {
@@ -92,19 +95,19 @@ void processBitsMessage(){ //Just print things to the monitor
   Serial.println("RecFromBits");
   Serial.write(xbeeRecBuf,xbeeRecBufSize);
 
-  if(strstr((char*)xbeeRecBuf,"test")){ //Checks if "test" is within buffer
+  if(strstr((char*)xbeeRecBuf,"gndtest")){ //Checks if "test" is within buffer
       Serial.println("");
       Serial.println("ackTest");
       String("PacketAck").getBytes(xbeeSendBuf,xbeeSendBufSize);
       xbeeSend(GroundSL,xbeeSendBuf);
   }
-  if(strstr((char*)xbeeRecBuf,"TG")){ //Checks if "test" is within buffer
+  if(strstr((char*)xbeeRecBuf,"TG")){ 
       Serial.println("");
       Serial.println("ToGround");
       String("ToGNDAck").getBytes(xbeeSendBuf,xbeeSendBufSize);
       xbeeSend(BitsSL,xbeeSendBuf);
   }
-  if(strstr((char*)xbeeRecBuf,"terminate")){ //Checks if "test" is within buffer
+  if(strstr((char*)xbeeRecBuf,"terminate")){ 
       Serial.println("");
       Serial.println("Terminate");
       String("ToGNDAckTerm").getBytes(xbeeSendBuf,xbeeSendBufSize);
@@ -122,19 +125,19 @@ void processGroundMessage(){
   Serial.print("RecFromGND: ");
   Serial.write(xbeeRecBuf,xbeeRecBufSize);
   
-  if(strstr((char*)xbeeRecBuf,"test")){ //Checks if "test" is within buffer
+  if(strstr((char*)xbeeRecBuf,"gndtest")){
       Serial.println("");
       Serial.println("ackTest");
       String("PacketAck").getBytes(xbeeSendBuf,xbeeSendBufSize);
       xbeeSend(GroundSL,xbeeSendBuf);
   }
-  if(strstr((char*)xbeeRecBuf,"TG")){ //Checks if "test" is within buffer
+  if(strstr((char*)xbeeRecBuf,"TG")){ 
       Serial.println("");
       Serial.println("ToGround");
       String("ToGNDAck").getBytes(xbeeSendBuf,xbeeSendBufSize);
       xbeeSend(GroundSL,xbeeSendBuf);
   }
-  if(strstr((char*)xbeeRecBuf,"terminate")){ //Checks if "test" is within buffer
+  if(strstr((char*)xbeeRecBuf,"terminate")){ 
       Serial.println("");
       Serial.println("Terminate");
       String("ToGNDAckTerm").getBytes(xbeeSendBuf,xbeeSendBufSize);
