@@ -5901,7 +5901,7 @@ Source: AVX .. aphvc.pdf</description>
 </library>
 <library name="Teensy_3_and_LC_Series_Boards_v1.4">
 <packages>
-<package name="TEENSY_3.0-3.2&amp;LC_ALL_PINS">
+<package name="TEENSY_3.0-3.2&amp;LC_OUTER_ROW">
 <pad name="GND" x="-7.62" y="16.51" drill="0.9652"/>
 <pad name="0" x="-7.62" y="13.97" drill="0.9652"/>
 <pad name="1" x="-7.62" y="11.43" drill="0.9652"/>
@@ -5947,16 +5947,12 @@ Source: AVX .. aphvc.pdf</description>
 <wire x1="-8.89" y1="-17.78" x2="-8.89" y2="17.78" width="0.2032" layer="21"/>
 <wire x1="-8.89" y1="17.78" x2="-1.27" y2="17.78" width="0.2032" layer="21"/>
 <wire x1="-1.27" y1="17.78" x2="-1.27" y2="16.51" width="0.2032" layer="21"/>
-<text x="-3.81" y="13.97" size="1.27" layer="25" font="vector">&gt;NAME</text>
+<text x="-2.54" y="13.97" size="1.27" layer="25" font="vector">&gt;NAME</text>
 <text x="-3.81" y="-13.97" size="1.27" layer="27" font="vector">&gt;VALUE</text>
-<pad name="VUSB" x="5.08" y="13.97" drill="0.9652"/>
-<pad name="AREF" x="5.08" y="8.89" drill="0.9652"/>
-<pad name="A10" x="5.08" y="6.35" drill="0.9652"/>
-<pad name="A11" x="5.08" y="3.81" drill="0.9652"/>
 </package>
 </packages>
 <symbols>
-<symbol name="TEENSY_3.1-3.2_ALL_PINS">
+<symbol name="TEENSY_3.1-3.2_OUTER_ROW">
 <wire x1="-17.78" y1="-35.56" x2="17.78" y2="-35.56" width="0.254" layer="94"/>
 <wire x1="17.78" y1="-35.56" x2="17.78" y2="33.02" width="0.254" layer="94"/>
 <wire x1="17.78" y1="33.02" x2="-17.78" y2="33.02" width="0.254" layer="94"/>
@@ -5969,7 +5965,7 @@ Source: AVX .. aphvc.pdf</description>
 <pin name="7/RX3" x="-22.86" y="10.16" visible="pin" length="middle"/>
 <pin name="6/PWM" x="-22.86" y="12.7" visible="pin" length="middle"/>
 <pin name="5/PWM" x="-22.86" y="15.24" visible="pin" length="middle"/>
-<pin name="4/CAN-RX/PWM" x="-22.86" y="17.78" visible="pin" length="middle"/>
+<pin name="4/CAN-RX-PWM" x="-22.86" y="17.78" visible="pin" length="middle"/>
 <pin name="3/CAN-TX/PWM" x="-22.86" y="20.32" visible="pin" length="middle"/>
 <pin name="2" x="-22.86" y="22.86" visible="pin" length="middle"/>
 <pin name="1/TX1/T" x="-22.86" y="25.4" visible="pin" length="middle"/>
@@ -5992,22 +5988,18 @@ Source: AVX .. aphvc.pdf</description>
 <pin name="VBAT" x="22.86" y="22.86" visible="pin" length="middle" direction="pwr" rot="R180"/>
 <text x="-5.588" y="34.29" size="1.27" layer="95" font="vector" ratio="15">&gt;NAME</text>
 <text x="-2.794" y="-38.1" size="1.27" layer="96" font="vector" ratio="15">&gt;VALUE</text>
-<pin name="A10" x="22.86" y="-7.62" visible="pin" length="middle" rot="R180"/>
-<pin name="A11" x="22.86" y="-5.08" visible="pin" length="middle" rot="R180"/>
-<pin name="AREF" x="22.86" y="10.16" visible="pin" length="middle" direction="pwr" rot="R180"/>
-<pin name="VUSB" x="22.86" y="30.48" visible="pin" length="middle" direction="pwr" rot="R180"/>
 <pin name="A14/DAC" x="22.86" y="2.54" visible="pin" length="middle" rot="R180"/>
 <pin name="VIN" x="22.86" y="27.94" visible="pin" length="middle" direction="pwr" rot="R180"/>
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="TEENSY_3.1-3.2_ALL_PINS">
-<description>Footprint for Teensy 3.1 or 3.2 board using all through-holes, i.e. the entire perimeter plus the 4 through-holes inboard (A10,A11,AREF, VUSB)</description>
+<deviceset name="TEENSY_3.1-3.2_OUTER_ROW">
+<description>Footprint for Teensy 3.1 or 3.2 board using all pin connections on the outer perimeter</description>
 <gates>
-<gate name="G$1" symbol="TEENSY_3.1-3.2_ALL_PINS" x="0" y="0"/>
+<gate name="G$1" symbol="TEENSY_3.1-3.2_OUTER_ROW" x="0" y="0"/>
 </gates>
 <devices>
-<device name="" package="TEENSY_3.0-3.2&amp;LC_ALL_PINS">
+<device name="" package="TEENSY_3.0-3.2&amp;LC_OUTER_ROW">
 <connects>
 <connect gate="G$1" pin="0/RX1/T" pad="0"/>
 <connect gate="G$1" pin="1/TX1/T" pad="1"/>
@@ -6026,24 +6018,20 @@ Source: AVX .. aphvc.pdf</description>
 <connect gate="G$1" pin="21/A7/PWM" pad="21/A7"/>
 <connect gate="G$1" pin="22/A8/T/PWM" pad="22/A8"/>
 <connect gate="G$1" pin="23/A9/T/PWM" pad="23/A9"/>
-<connect gate="G$1" pin="3.3V" pad="3.3V 3.3V1"/>
+<connect gate="G$1" pin="3.3V" pad="3.3V 3.3V1" route="any"/>
 <connect gate="G$1" pin="3/CAN-TX/PWM" pad="3"/>
-<connect gate="G$1" pin="4/CAN-RX/PWM" pad="4"/>
+<connect gate="G$1" pin="4/CAN-RX-PWM" pad="4"/>
 <connect gate="G$1" pin="5/PWM" pad="5"/>
 <connect gate="G$1" pin="6/PWM" pad="6"/>
 <connect gate="G$1" pin="7/RX3" pad="7"/>
 <connect gate="G$1" pin="8/TX3" pad="8"/>
 <connect gate="G$1" pin="9/RX2/PWM" pad="9"/>
-<connect gate="G$1" pin="A10" pad="A10"/>
-<connect gate="G$1" pin="A11" pad="A11"/>
 <connect gate="G$1" pin="A14/DAC" pad="RESET/DAC"/>
 <connect gate="G$1" pin="AGND" pad="AGND"/>
-<connect gate="G$1" pin="AREF" pad="AREF"/>
 <connect gate="G$1" pin="GND" pad="GND GND1"/>
 <connect gate="G$1" pin="PGM" pad="PGM"/>
 <connect gate="G$1" pin="VBAT" pad="VBAT"/>
 <connect gate="G$1" pin="VIN" pad="VIN"/>
-<connect gate="G$1" pin="VUSB" pad="VUSB"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -14872,11 +14860,11 @@ DIN A4, landscape with location and doc. field</description>
 </class>
 </classes>
 <parts>
-<part name="U$2" library="Teensy_3_and_LC_Series_Boards_v1.4" deviceset="TEENSY_3.1-3.2_ALL_PINS" device=""/>
+<part name="U$2" library="Teensy_3_and_LC_Series_Boards_v1.4" deviceset="TEENSY_3.1-3.2_OUTER_ROW" device=""/>
 <part name="GND2" library="supply1" deviceset="GND" device=""/>
 <part name="X2" library="con-molex" deviceset="53?-10" device="398"/>
-<part name="R1" library="resistor" deviceset="R-US_" device="R0603" value="18k"/>
-<part name="R3" library="resistor" deviceset="R-US_" device="R0603" value="10k"/>
+<part name="R1" library="resistor" deviceset="R-US_" device="R0603" value="180k"/>
+<part name="R3" library="resistor" deviceset="R-US_" device="R0603" value="100k"/>
 <part name="GND4" library="supply1" deviceset="GND" device=""/>
 <part name="R9" library="resistor" deviceset="R-US_" device="R0603" value="470"/>
 <part name="R10" library="resistor" deviceset="R-US_" device="R0603" value="470"/>
@@ -14899,7 +14887,7 @@ DIN A4, landscape with location and doc. field</description>
 <part name="L1" library="inductors" deviceset="ASPI-6045S-560M-TCT-ND" device=""/>
 <part name="R18" library="resistor" deviceset="R-US_" device="R0603" value="45k"/>
 <part name="R19" library="resistor" deviceset="R-US_" device="R0603" value="13.3k"/>
-<part name="C2" library="resistor" deviceset="C-US" device="C0603" value=".1 uF"/>
+<part name="C2" library="resistor" deviceset="C-US" device="C0603" value="0.1uF"/>
 <part name="C3" library="resistor" deviceset="C-US" device="C1210" value="10 uF"/>
 <part name="C4" library="resistor" deviceset="C-US" device="C0603" value=".18 uF"/>
 <part name="C5" library="resistor" deviceset="C-US" device="C1210" value="2.2 uF"/>
@@ -15056,9 +15044,9 @@ DIN A4, landscape with location and doc. field</description>
 <attribute name="NAME" x="215.9" y="150.114" size="1.778" layer="95"/>
 <attribute name="VALUE" x="212.852" y="145.542" size="1.016" layer="95"/>
 </instance>
-<instance part="R18" gate="G$1" x="233.68" y="142.24" smashed="yes" rot="R90">
-<attribute name="NAME" x="232.1814" y="140.462" size="1.27" layer="95" rot="R90"/>
-<attribute name="VALUE" x="236.474" y="140.716" size="1.27" layer="96" rot="R90"/>
+<instance part="R18" gate="G$1" x="233.68" y="139.7" smashed="yes" rot="R90">
+<attribute name="NAME" x="232.1814" y="137.922" size="1.27" layer="95" rot="R90"/>
+<attribute name="VALUE" x="236.474" y="138.176" size="1.27" layer="96" rot="R90"/>
 </instance>
 <instance part="R19" gate="G$1" x="233.68" y="124.46" smashed="yes" rot="R90">
 <attribute name="NAME" x="232.1814" y="120.65" size="1.778" layer="95" rot="R90"/>
@@ -15349,19 +15337,20 @@ DIN A4, landscape with location and doc. field</description>
 <segment>
 <pinref part="+3V6" gate="G$1" pin="+3V3"/>
 <wire x1="251.46" y1="147.32" x2="251.46" y2="152.4" width="0.1524" layer="91"/>
-<pinref part="R18" gate="G$1" pin="2"/>
-<pinref part="L1" gate="G$1" pin="P$2"/>
-<wire x1="231.14" y1="147.32" x2="233.68" y2="147.32" width="0.1524" layer="91"/>
-<wire x1="233.68" y1="147.32" x2="241.3" y2="147.32" width="0.1524" layer="91"/>
-<junction x="233.68" y="147.32"/>
 <pinref part="C4" gate="G$1" pin="1"/>
 <wire x1="241.3" y1="147.32" x2="248.92" y2="147.32" width="0.1524" layer="91"/>
 <wire x1="248.92" y1="147.32" x2="251.46" y2="147.32" width="0.1524" layer="91"/>
 <wire x1="241.3" y1="144.78" x2="241.3" y2="147.32" width="0.1524" layer="91"/>
-<junction x="241.3" y="147.32"/>
 <pinref part="C11" gate="G$1" pin="1"/>
 <wire x1="248.92" y1="144.78" x2="248.92" y2="147.32" width="0.1524" layer="91"/>
 <junction x="248.92" y="147.32"/>
+<junction x="233.68" y="147.32"/>
+<pinref part="L1" gate="G$1" pin="P$2"/>
+<wire x1="231.14" y1="147.32" x2="233.68" y2="147.32" width="0.1524" layer="91"/>
+<pinref part="R18" gate="G$1" pin="2"/>
+<wire x1="233.68" y1="144.78" x2="233.68" y2="147.32" width="0.1524" layer="91"/>
+<wire x1="233.68" y1="147.32" x2="241.3" y2="147.32" width="0.1524" layer="91"/>
+<junction x="241.3" y="147.32"/>
 </segment>
 <segment>
 <pinref part="+3V2" gate="G$1" pin="+3V3"/>
@@ -15570,7 +15559,7 @@ DIN A4, landscape with location and doc. field</description>
 <label x="81.28" y="111.252" size="1.016" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<pinref part="U$2" gate="G$1" pin="4/CAN-RX/PWM"/>
+<pinref part="U$2" gate="G$1" pin="4/CAN-RX-PWM"/>
 <wire x1="20.32" y1="226.06" x2="17.78" y2="226.06" width="0.1524" layer="91"/>
 <label x="17.78" y="226.06" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
@@ -15679,7 +15668,7 @@ DIN A4, landscape with location and doc. field</description>
 <wire x1="198.12" y1="132.08" x2="233.68" y2="132.08" width="0.1524" layer="91"/>
 <wire x1="233.68" y1="132.08" x2="233.68" y2="129.54" width="0.1524" layer="91"/>
 <pinref part="R18" gate="G$1" pin="1"/>
-<wire x1="233.68" y1="137.16" x2="233.68" y2="132.08" width="0.1524" layer="91"/>
+<wire x1="233.68" y1="134.62" x2="233.68" y2="132.08" width="0.1524" layer="91"/>
 <junction x="233.68" y="132.08"/>
 <pinref part="U1" gate="G$1" pin="FB"/>
 </segment>
