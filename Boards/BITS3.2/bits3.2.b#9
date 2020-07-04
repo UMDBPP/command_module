@@ -3317,7 +3317,7 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <attribute name="NAME" x="12.0308" y="13.233775" size="1.27" layer="25" rot="R90"/>
 <attribute name="VALUE" x="14.5708" y="13.233775" size="1.27" layer="27" rot="R90"/>
 </element>
-<element name="C2" library="resistor" package="C0603" value=".1 uF" x="3.997" y="14.928475" smashed="yes">
+<element name="C2" library="resistor" package="C0603" value="0.1uF" x="3.997" y="14.928475" smashed="yes">
 <attribute name="NAME" x="3.362" y="15.563475" size="1.27" layer="25"/>
 <attribute name="VALUE" x="3.362" y="13.023475" size="1.27" layer="27"/>
 </element>
@@ -3472,8 +3472,6 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <vertex x="11.0744" y="25.527"/>
 <vertex x="10.6426" y="25.527"/>
 </polygon>
-<contactref element="L1" pad="P$2"/>
-<contactref element="R18" pad="2"/>
 <contactref element="C4" pad="1"/>
 <contactref element="C11" pad="1"/>
 <contactref element="U$7" pad="7_VCC_IO"/>
@@ -3506,7 +3504,13 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <wire x1="28.160525" y1="14.880975" x2="27.816125" y2="15.225375" width="0.4064" layer="1"/>
 <wire x1="27.816125" y1="15.225375" x2="26.716125" y2="15.225375" width="0.4064" layer="1"/>
 <wire x1="29.424303125" y1="12.914303125" x2="29.424303125" y2="12.914303125" width="0.4064" layer="1"/>
-<wire x1="12.7027" y1="17.97535" x2="26.716125" y2="15.225375" width="0" layer="19" extent="1-1"/>
+<contactref element="L1" pad="P$2"/>
+<contactref element="R18" pad="2"/>
+<wire x1="11.330775" y1="26.091475" x2="13.5185" y2="26.12355" width="0" layer="19" extent="1-1"/>
+<wire x1="14.72475" y1="23.0554" x2="13.5185" y2="26.12355" width="0" layer="19" extent="1-1"/>
+<wire x1="11.955875" y1="21.956075" x2="14.72475" y2="23.0554" width="0" layer="19" extent="1-1"/>
+<wire x1="12.7027" y1="17.97535" x2="11.955875" y2="21.956075" width="0" layer="19" extent="1-1"/>
+<wire x1="26.716125" y1="15.225375" x2="12.7027" y2="17.97535" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="MOSI">
 <contactref element="U$2" pad="11"/>

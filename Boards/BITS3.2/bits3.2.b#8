@@ -7,7 +7,7 @@
 <setting keepoldvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="10" unitdist="mil" unit="mil" style="lines" multiple="1" display="yes" altdistance="0.001" altunitdist="inch" altunit="mil"/>
+<grid distance="1" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="0.1" altunitdist="mm" altunit="mm"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="16" fill="1" visible="no" active="no"/>
@@ -188,6 +188,7 @@
 <text x="23.796" y="0.7674" size="1.778" layer="21" font="vector" rot="R90">Vin</text>
 <text x="26.1588" y="0.6166" size="1.778" layer="21" font="vector" rot="R90">GND</text>
 <text x="3.4668" y="30.0058" size="2.54" layer="21" font="vector" rot="R270" align="center">BITS V3.2</text>
+<dimension x1="45.2" y1="47" x2="0.2" y2="47" x3="22.7" y3="50" textsize="1.778" layer="1" extoffset="1"/>
 </plain>
 <libraries>
 <library name="resistor">
