@@ -13938,41 +13938,6 @@ Source: http://www.diodes.com/datasheets/ds23001.pdf</description>
 </deviceset>
 </devicesets>
 </library>
-<library name="supply2">
-<description>&lt;b&gt;Supply Symbols&lt;/b&gt;&lt;p&gt;
-GND, VCC, 0V, +5V, -5V, etc.&lt;p&gt;
-Please keep in mind, that these devices are necessary for the
-automatic wiring of the supply signals.&lt;p&gt;
-The pin name defined in the symbol is identical to the net which is to be wired automatically.&lt;p&gt;
-In this library the device names are the same as the pin names of the symbols, therefore the correct signal names appear next to the supply symbols in the schematic.&lt;p&gt;
-&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
-<packages>
-</packages>
-<symbols>
-<symbol name="GND">
-<wire x1="-1.27" y1="0" x2="1.27" y2="0" width="0.254" layer="94"/>
-<wire x1="1.27" y1="0" x2="0" y2="-1.27" width="0.254" layer="94"/>
-<wire x1="0" y1="-1.27" x2="-1.27" y2="0" width="0.254" layer="94"/>
-<text x="-1.905" y="-3.175" size="1.778" layer="96">&gt;VALUE</text>
-<pin name="GND" x="0" y="2.54" visible="off" length="short" direction="sup" rot="R270"/>
-</symbol>
-</symbols>
-<devicesets>
-<deviceset name="GND" prefix="SUPPLY">
-<description>&lt;b&gt;SUPPLY SYMBOL&lt;/b&gt;</description>
-<gates>
-<gate name="GND" symbol="GND" x="0" y="0"/>
-</gates>
-<devices>
-<device name="">
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-</devicesets>
-</library>
 <library name="HASP">
 <packages>
 <package name="DO-214AC">
@@ -15188,7 +15153,6 @@ wire to board 1.25 mm (.049 inch) pitch header</description>
 <part name="SUPPLY6" library="supply1" deviceset="GND" device=""/>
 <part name="SUPPLY7" library="supply1" deviceset="GND" device=""/>
 <part name="SUPPLY8" library="supply1" deviceset="GND" device=""/>
-<part name="SUPPLY9" library="supply2" deviceset="GND" device=""/>
 <part name="U1" library="HASP" deviceset="LMR16020" device=""/>
 <part name="D3" library="HASP" deviceset="DO-214AC" device=""/>
 <part name="R20" library="resistor" deviceset="R-US_" device="R0603" value="39k"/>
@@ -15211,6 +15175,7 @@ wire to board 1.25 mm (.049 inch) pitch header</description>
 <part name="X1" library="con-molex" library_urn="urn:adsk.eagle:library:165" deviceset="53?-04" device="261"/>
 <part name="+3V7" library="supply1@1" deviceset="+3V3" device=""/>
 <part name="GND11" library="supply1@1" deviceset="GND" device=""/>
+<part name="SUPPLY9" library="supply1" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -15350,32 +15315,32 @@ wire to board 1.25 mm (.049 inch) pitch header</description>
 <attribute name="VALUE" x="54.356" y="135.509" size="1.778" layer="96"/>
 </instance>
 <instance part="C3" gate="G$1" x="33.02" y="121.92" smashed="yes">
-<attribute name="NAME" x="34.036" y="122.555" size="1.778" layer="95"/>
-<attribute name="VALUE" x="36.957" y="112.014" size="1.778" layer="96" rot="R90"/>
+<attribute name="NAME" x="34.036" y="122.555" size="1.27" layer="95"/>
+<attribute name="VALUE" x="34.925" y="114.046" size="1.27" layer="96" rot="R90"/>
 </instance>
 <instance part="C4" gate="G$1" x="127" y="127" smashed="yes">
 <attribute name="NAME" x="127.254" y="127.381" size="1.778" layer="95"/>
 <attribute name="VALUE" x="123.952" y="122.301" size="1.27" layer="96"/>
 </instance>
 <instance part="C5" gate="G$1" x="40.64" y="121.92" smashed="yes">
-<attribute name="NAME" x="41.656" y="122.555" size="1.778" layer="95"/>
-<attribute name="VALUE" x="43.307" y="111.76" size="1.778" layer="96" rot="R90"/>
+<attribute name="NAME" x="41.656" y="122.555" size="1.27" layer="95"/>
+<attribute name="VALUE" x="42.545" y="113.538" size="1.27" layer="96" rot="R90"/>
 </instance>
 <instance part="C11" gate="G$1" x="134.62" y="127" smashed="yes">
 <attribute name="NAME" x="134.874" y="127.381" size="1.778" layer="95"/>
 <attribute name="VALUE" x="135.636" y="122.809" size="1.27" layer="96"/>
 </instance>
 <instance part="SUPPLY2" gate="1" x="33.02" y="111.76" smashed="yes">
-<attribute name="VALUE" x="31.115" y="108.585" size="1.778" layer="96"/>
+<attribute name="VALUE" x="30.861" y="109.093" size="1.778" layer="96"/>
 </instance>
 <instance part="SUPPLY3" gate="1" x="40.64" y="111.76" smashed="yes">
-<attribute name="VALUE" x="38.735" y="108.585" size="1.778" layer="96"/>
+<attribute name="VALUE" x="38.481" y="109.601" size="1.778" layer="96"/>
 </instance>
 <instance part="SUPPLY4" gate="1" x="55.88" y="96.52" smashed="yes">
 <attribute name="VALUE" x="53.975" y="93.345" size="1.778" layer="96"/>
 </instance>
-<instance part="SUPPLY5" gate="1" x="96.52" y="111.76" smashed="yes">
-<attribute name="VALUE" x="94.615" y="108.585" size="1.778" layer="96"/>
+<instance part="SUPPLY5" gate="1" x="96.52" y="109.22" smashed="yes">
+<attribute name="VALUE" x="94.615" y="106.045" size="1.778" layer="96"/>
 </instance>
 <instance part="SUPPLY6" gate="1" x="119.38" y="101.6" smashed="yes">
 <attribute name="VALUE" x="117.475" y="98.425" size="1.778" layer="96"/>
@@ -15386,9 +15351,6 @@ wire to board 1.25 mm (.049 inch) pitch header</description>
 <instance part="SUPPLY8" gate="1" x="134.62" y="116.84" smashed="yes">
 <attribute name="VALUE" x="132.715" y="113.665" size="1.778" layer="96"/>
 </instance>
-<instance part="SUPPLY9" gate="GND" x="88.9" y="124.46" smashed="yes">
-<attribute name="VALUE" x="86.995" y="121.285" size="1.778" layer="96"/>
-</instance>
 <instance part="U1" gate="G$1" x="68.58" y="124.46" smashed="yes">
 <attribute name="NAME" x="60.96" y="135.382" size="1.778" layer="95"/>
 <attribute name="VALUE" x="60.706" y="111.76" size="1.778" layer="95"/>
@@ -15397,9 +15359,9 @@ wire to board 1.25 mm (.049 inch) pitch header</description>
 <attribute name="NAME" x="97.79" y="122.428" size="1.778" layer="95"/>
 <attribute name="VALUE" x="93.98" y="120.142" size="1.27" layer="95" rot="R90"/>
 </instance>
-<instance part="R20" gate="G$1" x="48.26" y="106.68" smashed="yes" rot="R90">
-<attribute name="NAME" x="46.7614" y="102.87" size="1.778" layer="95" rot="R90"/>
-<attribute name="VALUE" x="51.562" y="102.87" size="1.778" layer="96" rot="R90"/>
+<instance part="R20" gate="G$1" x="48.26" y="104.14" smashed="yes" rot="R90">
+<attribute name="NAME" x="46.7614" y="100.33" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="51.562" y="100.33" size="1.778" layer="96" rot="R90"/>
 </instance>
 <instance part="R21" gate="G$1" x="48.26" y="119.38" smashed="yes" rot="R90">
 <attribute name="NAME" x="46.7614" y="115.57" size="1.778" layer="95" rot="R90"/>
@@ -15440,7 +15402,7 @@ wire to board 1.25 mm (.049 inch) pitch header</description>
 <attribute name="NAME" x="10.16" y="132.08" size="1.778" layer="95"/>
 </instance>
 <instance part="SUPPLY1" gate="1" x="25.4" y="114.3" smashed="yes">
-<attribute name="VALUE" x="23.495" y="111.125" size="1.778" layer="96"/>
+<attribute name="VALUE" x="22.987" y="111.633" size="1.778" layer="96"/>
 </instance>
 <instance part="R5" gate="G$1" x="27.94" y="104.14" smashed="yes" rot="R90">
 <attribute name="NAME" x="26.4414" y="100.33" size="1.778" layer="95" rot="R90"/>
@@ -15472,6 +15434,9 @@ wire to board 1.25 mm (.049 inch) pitch header</description>
 </instance>
 <instance part="GND11" gate="1" x="144.78" y="152.4" smashed="yes">
 <attribute name="VALUE" x="142.24" y="149.86" size="1.778" layer="96"/>
+</instance>
+<instance part="SUPPLY9" gate="1" x="88.9" y="109.22" smashed="yes">
+<attribute name="VALUE" x="86.995" y="106.045" size="1.778" layer="96"/>
 </instance>
 </instances>
 <busses>
@@ -15567,7 +15532,7 @@ wire to board 1.25 mm (.049 inch) pitch header</description>
 <pinref part="SUPPLY4" gate="1" pin="GND"/>
 </segment>
 <segment>
-<wire x1="96.52" y1="119.38" x2="96.52" y2="114.3" width="0.1524" layer="91"/>
+<wire x1="96.52" y1="119.38" x2="96.52" y2="111.76" width="0.1524" layer="91"/>
 <pinref part="SUPPLY5" gate="1" pin="GND"/>
 <pinref part="D3" gate="G$1" pin="P$1"/>
 </segment>
@@ -15586,13 +15551,7 @@ wire to board 1.25 mm (.049 inch) pitch header</description>
 <wire x1="134.62" y1="121.92" x2="134.62" y2="119.38" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="SUPPLY9" gate="GND" pin="GND"/>
-<pinref part="U1" gate="G$1" pin="GND"/>
-<wire x1="88.9" y1="127" x2="83.82" y2="127" width="0.1524" layer="91"/>
-</segment>
-<segment>
 <pinref part="R20" gate="G$1" pin="1"/>
-<wire x1="48.26" y1="101.6" x2="48.26" y2="99.06" width="0.1524" layer="91"/>
 <pinref part="SUPPLY20" gate="1" pin="GND"/>
 </segment>
 <segment>
@@ -15621,6 +15580,12 @@ wire to board 1.25 mm (.049 inch) pitch header</description>
 <pinref part="X1" gate="-4" pin="S"/>
 <wire x1="144.78" y1="154.94" x2="144.78" y2="157.48" width="0.1524" layer="91"/>
 <wire x1="144.78" y1="157.48" x2="149.86" y2="157.48" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="U1" gate="G$1" pin="GND"/>
+<wire x1="88.9" y1="127" x2="83.82" y2="127" width="0.1524" layer="91"/>
+<pinref part="SUPPLY9" gate="1" pin="GND"/>
+<wire x1="88.9" y1="111.76" x2="88.9" y2="127" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="+3V3" class="0">
@@ -16023,18 +15988,6 @@ wire to board 1.25 mm (.049 inch) pitch header</description>
 <label x="208.28" y="172.72" size="1.016" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
-<net name="N$34" class="0">
-<segment>
-<pinref part="U1" gate="G$1" pin="EN"/>
-<wire x1="55.88" y1="121.92" x2="53.34" y2="121.92" width="0.1524" layer="91"/>
-<wire x1="53.34" y1="121.92" x2="53.34" y2="111.76" width="0.1524" layer="91"/>
-<pinref part="R20" gate="G$1" pin="2"/>
-<wire x1="53.34" y1="111.76" x2="48.26" y2="111.76" width="0.1524" layer="91"/>
-<pinref part="R21" gate="G$1" pin="1"/>
-<wire x1="48.26" y1="111.76" x2="48.26" y2="114.3" width="0.1524" layer="91"/>
-<junction x="48.26" y="111.76"/>
-</segment>
-</net>
 <net name="SWITCH_LED" class="0">
 <segment>
 <pinref part="R5" gate="G$1" pin="1"/>
@@ -16061,12 +16014,35 @@ wire to board 1.25 mm (.049 inch) pitch header</description>
 <wire x1="149.86" y1="162.56" x2="147.32" y2="162.56" width="0.1524" layer="91"/>
 <label x="147.32" y="162.56" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
+<segment>
+<pinref part="U$2" gate="G$1" pin="14/A0"/>
+<wire x1="20.32" y1="205.74" x2="17.78" y2="205.74" width="0.1524" layer="91"/>
+<label x="17.78" y="205.74" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
 </net>
 <net name="IN_B" class="0">
 <segment>
 <pinref part="X1" gate="-3" pin="S"/>
 <wire x1="149.86" y1="160.02" x2="147.32" y2="160.02" width="0.1524" layer="91"/>
 <label x="147.32" y="160.02" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<pinref part="U$2" gate="G$1" pin="15/A1/T"/>
+<wire x1="20.32" y1="203.2" x2="17.78" y2="203.2" width="0.1524" layer="91"/>
+<label x="17.78" y="203.2" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+</net>
+<net name="N$7" class="0">
+<segment>
+<pinref part="U1" gate="G$1" pin="EN"/>
+<wire x1="55.88" y1="121.92" x2="53.34" y2="121.92" width="0.1524" layer="91"/>
+<wire x1="53.34" y1="121.92" x2="53.34" y2="111.76" width="0.1524" layer="91"/>
+<pinref part="R20" gate="G$1" pin="2"/>
+<pinref part="R21" gate="G$1" pin="1"/>
+<wire x1="48.26" y1="109.22" x2="48.26" y2="111.76" width="0.1524" layer="91"/>
+<wire x1="48.26" y1="111.76" x2="48.26" y2="114.3" width="0.1524" layer="91"/>
+<wire x1="53.34" y1="111.76" x2="48.26" y2="111.76" width="0.1524" layer="91"/>
+<junction x="48.26" y="111.76"/>
 </segment>
 </net>
 </nets>
