@@ -3091,11 +3091,11 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <attribute name="NAME" x="47.197925" y="11.137875" size="1.27" layer="25" rot="R270"/>
 <attribute name="VALUE" x="34.812925" y="11.317875" size="1.27" layer="25" rot="R270"/>
 </element>
-<element name="R18" library="resistor" package="R0603" value="45k" x="46.62865" y="8.3847" smashed="yes" rot="R180">
+<element name="R18" library="resistor" package="R0603" value="170k" x="46.62865" y="8.3847" smashed="yes" rot="R180">
 <attribute name="NAME" x="47.26365" y="7.7497" size="1.27" layer="25" rot="R180"/>
 <attribute name="VALUE" x="47.26365" y="10.2897" size="1.27" layer="27" rot="R180"/>
 </element>
-<element name="R19" library="resistor" package="R0603" value="13.3k" x="49.885225" y="8.3478" smashed="yes" rot="R180">
+<element name="R19" library="resistor" package="R0603" value="50k" x="49.885225" y="8.3478" smashed="yes" rot="R180">
 <attribute name="NAME" x="50.520225" y="7.7128" size="1.27" layer="25" rot="R180"/>
 <attribute name="VALUE" x="50.520225" y="10.2528" size="1.27" layer="27" rot="R180"/>
 </element>
@@ -3127,11 +3127,11 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <attribute name="NAME" x="43.989975" y="-4.0907" size="1.27" layer="25" rot="R90"/>
 <attribute name="VALUE" x="49.069975" y="-4.0907" size="1.27" layer="27" rot="R90"/>
 </element>
-<element name="R20" library="resistor" package="R0603" value="39k" x="55.250425" y="6.240625" smashed="yes" rot="R270">
+<element name="R20" library="resistor" package="R0603" value="30.1k" x="55.250425" y="6.240625" smashed="yes" rot="R270">
 <attribute name="NAME" x="55.885425" y="6.875625" size="1.27" layer="25" rot="R270"/>
 <attribute name="VALUE" x="53.345425" y="6.875625" size="1.27" layer="27" rot="R270"/>
 </element>
-<element name="R21" library="resistor" package="R0603" value="195k" x="55.26315" y="3.005275" smashed="yes" rot="R270">
+<element name="R21" library="resistor" package="R0603" value="140k" x="55.26315" y="3.005275" smashed="yes" rot="R270">
 <attribute name="NAME" x="55.89815" y="3.640275" size="1.27" layer="25" rot="R270"/>
 <attribute name="VALUE" x="53.35815" y="3.640275" size="1.27" layer="27" rot="R270"/>
 </element>

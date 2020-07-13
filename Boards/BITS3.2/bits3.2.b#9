@@ -169,23 +169,22 @@
 </layers>
 <board>
 <plain>
-<wire x1="61.954" y1="40.882" x2="20.754" y2="40.882" width="0.0254" layer="20"/>
+<wire x1="62.208" y1="40.374" x2="21.008" y2="40.374" width="0.0254" layer="20"/>
 <hole x="60.604" y="-1.168" drill="2.5"/>
-<hole x="21.904" y="-1.168" drill="2.5"/>
-<circle x="21.904" y="-1.168" radius="2.5" width="0.0254" layer="21"/>
+<hole x="21.396" y="-1.168" drill="2.5"/>
+<circle x="21.396" y="-1.168" radius="2.5" width="0.0254" layer="21"/>
 <circle x="60.604" y="-1.168" radius="2.5" width="0.0254" layer="21"/>
 <hole x="60.604" y="37.532" drill="2.5"/>
 <circle x="60.604" y="37.532" radius="2.5" width="0.0254" layer="21"/>
-<hole x="21.904" y="37.532" drill="2.5"/>
-<circle x="21.904" y="37.532" radius="2.5" width="0.0254" layer="21"/>
-<wire x1="18.754" y1="38.882" x2="18.754" y2="-2.118" width="0.0254" layer="20"/>
+<hole x="21.396" y="37.532" drill="2.5"/>
+<circle x="21.396" y="37.532" radius="2.5" width="0.0254" layer="21"/>
+<wire x1="18.754" y1="38.628" x2="18.754" y2="-2.372" width="0.0254" layer="20"/>
 <wire x1="20.754" y1="-4.118" x2="61.954" y2="-4.118" width="0.0254" layer="20"/>
-<wire x1="20.754" y1="-4.118" x2="18.754" y2="-2.118" width="0.0254" layer="20" curve="-90"/>
-<wire x1="18.754" y1="38.882" x2="20.754" y2="40.882" width="0.0254" layer="20" curve="-90"/>
-<wire x1="61.954" y1="40.882" x2="63.754" y2="38.682" width="0.0254" layer="20" curve="-90"/>
+<wire x1="20.754" y1="-4.118" x2="18.754" y2="-2.372" width="0.0254" layer="20" curve="-90"/>
+<wire x1="18.754" y1="38.628" x2="21.008" y2="40.374" width="0.0254" layer="20" curve="-90"/>
+<wire x1="62.208" y1="40.374" x2="63.754" y2="38.682" width="0.0254" layer="20" curve="-90"/>
 <wire x1="63.754" y1="-2.318" x2="61.954" y2="-4.118" width="0.0254" layer="20" curve="-90"/>
 <text x="34.5102" y="-1.1052" size="2.54" layer="21" font="vector" align="center">BITS V3.2</text>
-<dimension x1="16.754" y1="40.882" x2="16.754" y2="-4.118" x3="13.754" y3="18.382" textsize="1.778" layer="1" extoffset="1"/>
 <wire x1="63.754" y1="-2.286" x2="63.754" y2="22.606" width="0.0254" layer="20"/>
 <wire x1="63.754" y1="22.606" x2="65.151" y2="24.0792" width="0.0254" layer="20" curve="-90"/>
 <wire x1="65.151" y1="24.0792" x2="68.199" y2="24.0792" width="0.0254" layer="20"/>
@@ -195,7 +194,6 @@
 <wire x1="68.2752" y1="26.8986" x2="65.2272" y2="26.8986" width="0.0254" layer="20"/>
 <wire x1="65.2272" y1="26.8986" x2="63.754" y2="28.448" width="0.0254" layer="20" curve="-90"/>
 <wire x1="63.754" y1="28.448" x2="63.754" y2="38.862" width="0.0254" layer="20"/>
-<dimension x1="68.58" y1="30.48" x2="18.796" y2="31.242" x3="43.688" y3="30.861" textsize="1.778" layer="1" dtype="vertical" extoffset="1"/>
 <text x="52.324" y="38.608" size="0.8128" layer="22" rot="MR270">3V3&gt;</text>
 <text x="57.404" y="23.368" size="0.8128" layer="22" rot="MR270">GND&gt;</text>
 <text x="27.686" y="24.13" size="0.8128" layer="22" rot="MR0">3V3&gt;</text>
@@ -211,6 +209,7 @@ OUT_A
 GND
 LED
 VIN</text>
+<text x="56.134" y="12.954" size="1.778" layer="22" rot="MR270">2S LiPo</text>
 </plain>
 <libraries>
 <library name="resistor">
@@ -3178,8 +3177,8 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <vertex x="65.144" y="-5.318"/>
 </polygon>
 <polygon width="0.3048" layer="16" rank="6">
-<vertex x="17.4844" y="-6.318"/>
-<vertex x="17.4844" y="43.682"/>
+<vertex x="17.9924" y="-6.318"/>
+<vertex x="17.9924" y="43.6786625"/>
 <vertex x="58.89091875" y="43.40988125"/>
 <vertex x="58.825309375" y="12.24"/>
 <vertex x="66.984" y="12.24"/>
@@ -3188,7 +3187,7 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <via x="27.9908" y="3.1496" extent="1-16" drill="0.5"/>
 <via x="29.6164" y="12.7762" extent="1-16" drill="0.5"/>
 <via x="28.5242" y="23.368" extent="1-16" drill="0.5"/>
-<via x="20.828" y="22.5552" extent="1-16" drill="0.5"/>
+<via x="20.32" y="19.5072" extent="1-16" drill="0.5"/>
 <via x="25.4508" y="32.9946" extent="1-16" drill="0.5"/>
 <via x="35.7632" y="36.703" extent="1-16" drill="0.5"/>
 <via x="36.703" y="32.5628" extent="1-16" drill="0.5"/>

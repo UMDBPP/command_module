@@ -14827,8 +14827,8 @@ wire to board 1.25 mm (.049 inch) pitch header</description>
 <part name="GND1" library="supply1" deviceset="GND" device=""/>
 <part name="R17" library="resistor" deviceset="R-US_" device="R0603" value="23.3k"/>
 <part name="L1" library="inductors" deviceset="ASPI-6045S-560M-TCT-ND" device=""/>
-<part name="R18" library="resistor" deviceset="R-US_" device="R0603" value="45k"/>
-<part name="R19" library="resistor" deviceset="R-US_" device="R0603" value="13.3k"/>
+<part name="R18" library="resistor" deviceset="R-US_" device="R0603" value="170k"/>
+<part name="R19" library="resistor" deviceset="R-US_" device="R0603" value="50k"/>
 <part name="C2" library="resistor" deviceset="C-US" device="C0603" value="0.1uF"/>
 <part name="C3" library="resistor" deviceset="C-US" device="C1210" value="10 uF"/>
 <part name="C4" library="resistor" deviceset="C-US" device="C0603" value=".18 uF"/>
@@ -14843,8 +14843,8 @@ wire to board 1.25 mm (.049 inch) pitch header</description>
 <part name="SUPPLY8" library="supply1" deviceset="GND" device=""/>
 <part name="U1" library="HASP" deviceset="LMR16020" device=""/>
 <part name="D3" library="HASP" deviceset="DO-214AC" device=""/>
-<part name="R20" library="resistor" deviceset="R-US_" device="R0603" value="39k"/>
-<part name="R21" library="resistor" deviceset="R-US_" device="R0603" value="195k"/>
+<part name="R20" library="resistor" deviceset="R-US_" device="R0603" value="30.1k"/>
+<part name="R21" library="resistor" deviceset="R-US_" device="R0603" value="140k"/>
 <part name="SUPPLY20" library="supply1" deviceset="GND" device=""/>
 <part name="+3V3" library="supply1@1" deviceset="+3V3" device=""/>
 <part name="+3V2" library="supply1@1" deviceset="+3V3" device=""/>

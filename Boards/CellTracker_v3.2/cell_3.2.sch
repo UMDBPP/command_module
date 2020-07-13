@@ -23426,8 +23426,8 @@ DIN A3, landscape with location and doc. field</description>
 <part name="GND7" library="supply1" deviceset="GND" device=""/>
 <part name="GND8" library="supply1" deviceset="GND" device=""/>
 <part name="R3" library="resistor" deviceset="R-US_" device="R0603" value="23.3k"/>
-<part name="R4" library="resistor" deviceset="R-US_" device="R0603" value="340k"/>
-<part name="R5" library="resistor" deviceset="R-US_" device="R0603" value="100k"/>
+<part name="R4" library="resistor" deviceset="R-US_" device="R0603" value="170k"/>
+<part name="R5" library="resistor" deviceset="R-US_" device="R0603" value="50k"/>
 <part name="C6" library="resistor" deviceset="C-US" device="C0805" value="0.1 uF"/>
 <part name="C9" library="resistor" deviceset="C-US" device="C1210" value="10 uF"/>
 <part name="C7" library="resistor" deviceset="C-US" device="C0603" value=".18uF"/>
@@ -23519,7 +23519,10 @@ DIN A3, landscape with location and doc. field</description>
 <instance part="+3V3" gate="G$1" x="58.42" y="233.68" smashed="yes">
 <attribute name="VALUE" x="54.61" y="234.442" size="1.778" layer="96"/>
 </instance>
-<instance part="LED1" gate="G$1" x="119.38" y="167.64" smashed="yes"/>
+<instance part="LED1" gate="G$1" x="119.38" y="167.64" smashed="yes">
+<attribute name="NAME" x="115.316" y="163.068" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="122.809" y="162.306" size="1.778" layer="96" rot="R90"/>
+</instance>
 <instance part="GND5" gate="1" x="119.38" y="157.48" smashed="yes">
 <attribute name="VALUE" x="116.84" y="154.94" size="1.778" layer="96"/>
 </instance>
