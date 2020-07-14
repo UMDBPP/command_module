@@ -14827,8 +14827,8 @@ wire to board 1.25 mm (.049 inch) pitch header</description>
 <part name="GND1" library="supply1" deviceset="GND" device=""/>
 <part name="R17" library="resistor" deviceset="R-US_" device="R0603" value="23.3k"/>
 <part name="L1" library="inductors" deviceset="ASPI-6045S-560M-TCT-ND" device=""/>
-<part name="R18" library="resistor" deviceset="R-US_" device="R0603" value="170k"/>
-<part name="R19" library="resistor" deviceset="R-US_" device="R0603" value="50k"/>
+<part name="R18" library="resistor" deviceset="R-US_" device="R0603" value="340k"/>
+<part name="R19" library="resistor" deviceset="R-US_" device="R0603" value="100k"/>
 <part name="C2" library="resistor" deviceset="C-US" device="C0603" value="0.1uF"/>
 <part name="C3" library="resistor" deviceset="C-US" device="C1210" value="10 uF"/>
 <part name="C4" library="resistor" deviceset="C-US" device="C0603" value=".18 uF"/>

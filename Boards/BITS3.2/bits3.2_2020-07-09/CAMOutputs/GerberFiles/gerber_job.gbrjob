@@ -1,0 +1,24 @@
+{
+    "Header": {
+        "Comment": "All values are metric (mm)",
+        "CreationDate": "2020-07-09T15:05:44Z",
+        "GenerationSoftware": {
+            "Application": "EAGLE",
+            "Vendor": "Autodesk",
+            "Version": "9.2.2"
+        },
+        "Part": "Single"
+    },
+    "Overall": {
+        "BoardThickness": 1.671119,
+        "LayerNumber": 2,
+        "Name": {
+            "ProjectId": "bits3.2"
+        },
+        "Owner": "Jonathan Molter <jonathan.molter99@gmail.com>",
+        "Size": {
+            "X": 50.038,
+            "Y": 44.704
+        }
+    }
+}

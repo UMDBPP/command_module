@@ -184,7 +184,7 @@
 <wire x1="18.754" y1="38.628" x2="21.008" y2="40.374" width="0.0254" layer="20" curve="-90"/>
 <wire x1="62.208" y1="40.374" x2="63.754" y2="38.682" width="0.0254" layer="20" curve="-90"/>
 <wire x1="63.754" y1="-2.318" x2="61.954" y2="-4.118" width="0.0254" layer="20" curve="-90"/>
-<text x="34.5102" y="-1.1052" size="2.54" layer="21" font="vector" align="center">BITS V3.2</text>
+<text x="34.5102" y="-1.1052" size="2.54" layer="21" font="vector" align="center">BITS v3.2</text>
 <wire x1="63.754" y1="-2.286" x2="63.754" y2="22.606" width="0.0254" layer="20"/>
 <wire x1="63.754" y1="22.606" x2="65.151" y2="24.0792" width="0.0254" layer="20" curve="-90"/>
 <wire x1="65.151" y1="24.0792" x2="68.199" y2="24.0792" width="0.0254" layer="20"/>

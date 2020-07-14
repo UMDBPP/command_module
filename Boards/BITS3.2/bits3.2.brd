@@ -3091,11 +3091,11 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <attribute name="NAME" x="47.197925" y="11.137875" size="1.27" layer="25" rot="R270"/>
 <attribute name="VALUE" x="34.812925" y="11.317875" size="1.27" layer="25" rot="R270"/>
 </element>
-<element name="R18" library="resistor" package="R0603" value="170k" x="46.62865" y="8.3847" smashed="yes" rot="R180">
+<element name="R18" library="resistor" package="R0603" value="340k" x="46.62865" y="8.3847" smashed="yes" rot="R180">
 <attribute name="NAME" x="47.26365" y="7.7497" size="1.27" layer="25" rot="R180"/>
 <attribute name="VALUE" x="47.26365" y="10.2897" size="1.27" layer="27" rot="R180"/>
 </element>
-<element name="R19" library="resistor" package="R0603" value="50k" x="49.885225" y="8.3478" smashed="yes" rot="R180">
+<element name="R19" library="resistor" package="R0603" value="100k" x="49.885225" y="8.3478" smashed="yes" rot="R180">
 <attribute name="NAME" x="50.520225" y="7.7128" size="1.27" layer="25" rot="R180"/>
 <attribute name="VALUE" x="50.520225" y="10.2528" size="1.27" layer="27" rot="R180"/>
 </element>
