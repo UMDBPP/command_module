@@ -19,12 +19,7 @@ const char hexList[] PROGMEM = {
 };
 
 void GPSINIT(){
-  pinMode(GPS_ON,OUTPUT); //GPS transistor pin
-  pinMode(GPS_ON,HIGH);    //Turns off GPS (remember its a PMOS)
-  delay(500);
-  pinMode(GPS_ON,LOW);    //Turns on GPS
-  
-	for(int i = 0;i<sizeof(hexList);i++){
+  for(int i = 0;i<sizeof(hexList);i++){
 		gpsserial.write(pgm_read_byte(hexList+i));
 		delay(10);
 	}

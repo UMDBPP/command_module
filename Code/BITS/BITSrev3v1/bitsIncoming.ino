@@ -1,4 +1,7 @@
+// Supporting uplink command for BITS
+
 // Everything related from ground to BITS commands
+
 void uplink(){
     //---------------------------------------------ARMING SECTION -------------------------------------
     if(strstr((char*)rxBuf,"disarm"))
@@ -37,6 +40,7 @@ void uplink(){
           strncat(downlinkMessage2,"NOT_ARMED",(downlinkMessageSize - strlen(downlinkMessage2) - 1));
         }
     }
+    
     //------------------------------------Close_Drop_Section--------------------------------------
     else if(strstr((char*)rxBuf,"test"))
     {
@@ -71,48 +75,107 @@ void uplink(){
           //strcat(downlinkMessage2,",rS");
           strncat(downlinkMessage2,",rS",(downlinkMessageSize - strlen(downlinkMessage2) - 1));
         }
+        else if(strstr((char*)rxBuf,"slow")){
+          OutputSerial.println("SET_RATE_LANDED");
+          logprintln("SET_RATE_SLOW");
+          messageTimeInterval = 3600000; //1 hour
+          downlinkData = true;
+          //strcat(downlinkMessage2,",rS");
+          strncat(downlinkMessage2,",rL",(downlinkMessageSize - strlen(downlinkMessage2) - 1));
+        }
     }
-    
+
+    //------------------------------------Check_XBEE--------------------------------------
     else if(strstr((char*)rxBuf,"xbeetest")){ //Sends test message to ground XBee
         OutputSerial.println("PingXbee");
         logprintln("PingXbee");
         String("TestCommand").getBytes(xbeeSendBuf,xbeeSendBufSize);
         xbeeSend(GroundSL,xbeeSendBuf);
     }
+
+    //------------------------------------Check_BLUE_XBEE--------------------------------------
     else if(strstr((char*)rxBuf,"pingblue")){
         OutputSerial.println("pingMars");
         logprintln("pingMars");
         String("TestCommand").getBytes(xbeeSendBuf,xbeeSendBufSize);
         xbeeSend(BlueSL,xbeeSendBuf);
     }
-    
+
+    //------------------------------------PASSTHROUGH_SECTION--------------------------------------
     else if(strstr((char*)rxBuf,"BLUEPASS")){ //Blue passthrough
       OutputSerial.println("BluePass");
-      logprintln("BluePass");
-      strcat((char*)xbeeSendBuf,(char*)rxBuf);
-      xbeeSend(BlueSL,xbeeSendBuf);
+      strcat((char*)xbeeSendBuf,(char*)rxBuf); // assemble passthrough packet
+      char conf[15] = ",GND";
+      
+      if(xbeeSend(BlueSL,xbeeSendBuf))  //try to passthrough with xbee
+      {      
+        logprintln("BluePass");               // if success, log it
+        strcat(conf,"PASS");
+      }
+      else if(xbeeSend(BlueSL,xbeeSendBuf)) //try again if failed
+      {
+        logprintln("BluePass"); 
+        strcat(conf,"PASS");
+      }
+      else
+      {
+        logprintln("BluePassFail"); // if failed twice, log the fail // TODO write a retry system
+        strcat(conf,"FAIL");
+      }
+      
       downlinkData = true;
-      //strcat(downlinkMessage2,"RecBlue");
       strncat(downlinkMessage2,",BluePass",(downlinkMessageSize - strlen(downlinkMessage2) - 1));
     }
     
     else if(strstr((char*)rxBuf,"GNDPASS")){ //Ground passthrough
       OutputSerial.println("GNDPASS");
-      logprintln("GNDPASS");
       strcat((char*)xbeeSendBuf,(char*)rxBuf);
-      xbeeSend(GroundSL,xbeeSendBuf);
+      char conf[15] = ",GND";
+
+      if(xbeeSend(GroundSL,xbeeSendBuf))  //try to passthrough with xbee
+      {      
+        logprintln("GNDPASS");               // if success, log it
+        strcat(conf,"PASS");
+      }
+      else if(xbeeSend(GroundSL,xbeeSendBuf)) //try again if failed
+      {
+        logprintln("GNDPASS");
+        strcat(conf,"PASS"); 
+      }
+      else
+      {
+        logprintln("GNDPASSFail"); // if failed twice, log the fail // TODO write a retry system
+        strcat(conf,"FAIL");
+      }
+      
       downlinkData = true;
       //strcat(downlinkMessage2,"recconf");
-      strncat(downlinkMessage2,",GNDPass",(downlinkMessageSize - strlen(downlinkMessage2) - 1));
+      strncat(downlinkMessage2,conf,(downlinkMessageSize - strlen(downlinkMessage2) - 1));
     }
 
     else if(strstr((char*)rxBuf,"WIREPASS")){ //Ground passthrough
       OutputSerial.println("WIREPASS");
       logprintln("WIREPASS");
       strcat((char*)xbeeSendBuf,(char*)rxBuf);
-      xbeeSend(WireSL,xbeeSendBuf);
+      char conf[15] = ",Wire";
+
+      if(xbeeSend(WireSL,xbeeSendBuf))  //try to passthrough with xbee
+      {      
+        logprintln("WIREPASS");               // if success, log it
+        strcat(conf,"PASS");
+      }
+      else if(xbeeSend(WireSL,xbeeSendBuf)) //try again if failed
+      {
+        logprintln("WIREPASS"); 
+        strcat(conf,"PASS");
+      }
+      else
+      {
+        logprintln("WIREPASS_FAIL"); // if failed twice, log the fail // TODO write a retry system
+        strcat(conf,"FAIL");
+      }
+      
       downlinkData = true;
-      //strcat(downlinkMessage2,"recconf");
-      strncat(downlinkMessage2,",WirePass",(downlinkMessageSize - strlen(downlinkMessage2) - 1));
+      strncat(downlinkMessage2,conf,(downlinkMessageSize - strlen(downlinkMessage2) - 1));
     }
 }

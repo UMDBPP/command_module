@@ -6,7 +6,7 @@ bool xbeeSend(uint32_t TargetSL,uint8_t* payload){
   ZBTxRequest zbTx = ZBTxRequest(TargetAddress, payload, xbeeSendBufSize); //Assembles Packet
   xbee.send(zbTx);              			//Sends packet
   memset(xbeeSendBuf, 0, xbeeSendBufSize);  //Clear tx_buf
-  if (xbee.readPacket(500)) {               //Checks Reception for 500ms
+  if (xbee.readPacket(50)) {               //Checks Reception for 50ms
     if (xbee.getResponse().getApiId() == ZB_TX_STATUS_RESPONSE) {
       xbee.getResponse().getZBTxStatusResponse(txStatus);
       if (txStatus.getDeliveryStatus() == SUCCESS) { 
@@ -55,10 +55,13 @@ void xbeeRead(){
     } 
 }
 
+// Each XBee has its own function set, which allows more control over what payloads are allowed to do.
+//  ex. non-command payloads can have no ability to trigger others
+
 // Begin the section with Individual process messages, this will probably become a new tab to avoid confusion
 // Still the same tab, because what is good 2am software without bad organization
 
-//Message From Ground
+//---------------------------------------Message From Ground--------------------------------------------------
 void processGroundMessage(){
   
   OutputSerial.println("RecGround");//DEBUG
@@ -71,7 +74,7 @@ void processGroundMessage(){
       xbeeSend(GroundSL,xbeeSendBuf);
   }
   
-  //To Ground Data Test
+  // Relay message through Iridium to the ground
   if(strstr((char*)xbeeRecBuf,"TG")){ //If contains TG tag, commence
 	  OutputSerial.println("TG");
       logprintln("TGgnd");
@@ -90,6 +93,8 @@ void processGroundMessage(){
 void processBlueMessage(){
   OutputSerial.println("RecBlue");
   logprintln("RecBlue");
+
+  // To Ground Relay
   if(strstr((char*)xbeeRecBuf,"TG")){
       OutputSerial.println("TG_Blue");
       logprintln("TG_Blue");
@@ -100,6 +105,8 @@ void processBlueMessage(){
       logprintln(downlinkMessage2);
       //concat(   target      ,     source      ,downlink_buffer_size - current_downlink_packet_size) //Prevents payloads from overflowing the downlink and nuking BITS
   }
+
+  // PING-PONG
   if(strstr((char*)xbeeRecBuf,"ping")){
       OutputSerial.println("BluePingPong");
       logprintln("BluePingPong");
@@ -111,6 +118,8 @@ void processBlueMessage(){
 void processWireMessage(){
   OutputSerial.println("RecWire");
   logprintln("RecWire");
+
+  // To Ground Relay
   if(strstr((char*)xbeeRecBuf,"TG")){
       OutputSerial.println("TG_Wire");
       logprintln("TG_Wire");
@@ -119,8 +128,9 @@ void processWireMessage(){
       strncat(downlinkMessage2,(char*)xbeeRecBuf,downlinkMessageSize - strlen(downlinkMessage2) - 1);
       logprint("WireDownAppend");
       logprintln(downlinkMessage2);
-      //concat(   target      ,     source      ,downlink_buffer_size - current_downlink_packet_size) //Prevents payloads from overflowing the downlink and nuking BITS
   }
+
+  // PING-PONG
   if(strstr((char*)xbeeRecBuf,"ping")){
       OutputSerial.println("WirePingPong");
       logprintln("WirePingPong");

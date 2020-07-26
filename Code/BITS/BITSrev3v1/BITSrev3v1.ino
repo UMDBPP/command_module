@@ -1,7 +1,8 @@
 //UMD Nearspace Iridium Tracking Payload (BITS) {Balloon Iridium Tracking System)
 //Written by Jonathan Molter and Luke Renegar
 //Uses an Iridium 9603 SBD Modem for effective unlimited range, without the need for our own RF blackmagics*
-//This software is specifically written with the bits3 board revisision
+//This software is specifically written with the bits3 board revisision in mind
+// ACTIVE REV, 7/25/20
 
 #include <XBee.h> //If using 900HP's this must be the custom cpp (or really any post gen2 XBees)
 #include <IridiumSBD.h>
@@ -13,6 +14,7 @@
 #define IridiumSerial Serial1   //Iridium 9603
 #define XBeeSerial Serial2      //XBee
 #define gpsserial Serial3       //GPS
+
 //Pins
 #define SLEEP_PIN_NO 5    // Iridium Sleep Pin
 #define RING_PIN_NO 23    // Iridium Ring Alert Pin
@@ -21,10 +23,11 @@
 #define redLED 4          // Red Status LED (3 on new)
 #define GPS_ON 21         // 21 is placeholder (4 on new)
 
+// Config Settings
 #define DIAGNOSTICS false // Change this to see diagnostics
 #define XBEE_DEBUG true
 const bool USEGPS = true; // Should be true 99% of the time
-bool sendingMessages = true; // Whether or not the device is sending messages; begins as true TODO
+const bool sendingMessages = true; // Whether or not the device is sending messages; begins as true TODO
 
 //Setting default datarates
 #define GPS_BAUD 115200
@@ -62,7 +65,11 @@ GPSdata gpsInfo;
 //Interval definitions
 const long signalCheckInterval = 15000;
 unsigned long messageTimeInterval = 60000; // In milliseconds; 300000 is 5 minutes; defines how frequently the program sends messages, now changeable                                                                      
-const long shutdownTimeInterval = 14400000; // In milliseconds; 14400000 is 4 hours; defines after what period of time the program stops sending messages
+
+// Hard shutdowns are a bad idea, trace NS-88
+//const long shutdownTimeInterval = 14400000; // In milliseconds; 14400000 is 4 hours; defines after what period of time the program stops sending messages
+const long gpsLogInterval = 1000;
+const long gpsLandedInterval = 1000;
 
 //Initializing Log Files; Must be in form XXXXXXXX.log; no more than 8 'X' characters
 File gpsLogFile;
@@ -126,7 +133,7 @@ void setup()
   gpsserial.end();
   gpsserial.begin(GPS_BAUD);
   IridiumSerial.begin(SBD_BAUD);
-  Serial2.begin(9600);
+  Serial2.begin(115200);
   xbee.setSerial(Serial2);
   startBlinks();
 
@@ -263,7 +270,8 @@ void loop()
   LogPacket();
   
 //Check Signal Quality
-  if (((millis() - lastSignalCheck) > signalCheckInterval) && (millis() < shutdownTimeInterval)) {
+  //if (((millis() - lastSignalCheck) > signalCheckInterval) && (millis() < shutdownTimeInterval)) {
+  if (((millis() - lastSignalCheck) > signalCheckInterval)) {
     int new_csq = 0;
     int csq_err = modem.getSignalQuality(new_csq);
     if(csq_err == 0) // if executed during an Iridium session, this will yield an ISBD_REENTRANT; keep previous value
@@ -281,7 +289,8 @@ void loop()
 
 //Transmit Via Iridium
   // If not currently transmitting, and at time, and transmitting messages ON, transmit
-  if ((sbd_csq > 0 && (millis() - lastMillisOfMessage) > messageTimeInterval) && (millis() < shutdownTimeInterval) && sendingMessages) {
+  //if ((sbd_csq > 0 && (millis() - lastMillisOfMessage) > messageTimeInterval) && (millis() < shutdownTimeInterval) && sendingMessages) {
+  if ((sbd_csq > 0 && (millis() - lastMillisOfMessage) > messageTimeInterval) && sendingMessages) {
 
     size_t rx_buf_size = RX_BUF_LENGTH; //RECENT CHANGE via TODO(1)
 
@@ -410,7 +419,7 @@ void ISBDDiagsCallback(IridiumSBD *device, char c)
 #endif
 
 void LogPacket(){
-  if(millis()-lastLog>1000){
+  if(millis()-lastLog>gpsLogInterval){
     char gpsLogPacket2[35];
     
     char exactTime[9];//A somewhat convaluted way of adding : into the integer timestamp... //TEST

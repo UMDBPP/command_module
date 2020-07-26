@@ -1,17 +1,20 @@
-//Using the hardware from cellv2rev1 to put an XBee on a payload in overkill fashion
-//Jonathan
+//Using the hardware from cellv3rev1 to put an XBee on a payload in overkill fashion
+// Code by Jonathan
+// XBee library by Andrew Rapp, modified for gen3 XBees by Jonathan
 
 #include <XBee.h>
 
 XBee xbee = XBee();
 XBeeResponse response = XBeeResponse();
-#define xbeeSerial Serial1 
+#define xbeeSerial Serial1
+
+#define triggerPin 3
 
 const uint32_t BitsSL = 0x417B4A3B;   //BITS   (white)Specific to the XBee on Bits (the Serial Low address value)
 const uint32_t GroundSL = 0x417B4A36; //GndStn (u.fl)
 const uint32_t BlueSL = 0x417B4A3A;   //Mars   (blue)
 const uint32_t WireSL = 0x419091AC;   //Tardis (wire antenna)
-const uint32_t UniSH = 0x0013A200;//Common across any and all XBees
+const uint32_t UniSH = 0x0013A200;    //Common across any and all XBees
 
 ZBTxStatusResponse txStatus = ZBTxStatusResponse(); //What lets the library check if things went through
 ZBRxResponse rx = ZBRxResponse();                   //Similar to above
@@ -31,6 +34,9 @@ void setup() {
 
   String("xbeeTrigger_ON").getBytes(xbeeSendBuf,xbeeSendBufSize);
   xbeeSend(GroundSL,xbeeSendBuf);
+
+  pinMode(triggerPin,OUTPUT);
+  digitalWrite(triggerPin,HIGH);
 }
 
 void loop() {
@@ -146,6 +152,17 @@ void processGroundMessage(){
   }
 }
 
+// Cutdown command
 void terminate(){
-  Serial.println("TERMINATING");  
+  Serial.println("TERMINATING");
+  // Trigger sets triggerPin LOW
+  digitalWrite(triggerPin,LOW);
+
+  // Send confirmation to ground XBee
+  String("Terminated").getBytes(xbeeSendBuf,xbeeSendBufSize);
+  xbeeSend(GroundSL,xbeeSendBuf);
+
+  // Send confirmation via BITS
+  String("ToGNDAckTerm").getBytes(xbeeSendBuf,xbeeSendBufSize);
+  xbeeSend(BitsSL,xbeeSendBuf);
 }
