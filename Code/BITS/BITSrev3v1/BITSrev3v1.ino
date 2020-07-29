@@ -68,7 +68,7 @@ unsigned long messageTimeInterval = 60000; // In milliseconds; 300000 is 5 minut
 
 // Hard shutdowns are a bad idea, trace NS-88
 //const long shutdownTimeInterval = 14400000; // In milliseconds; 14400000 is 4 hours; defines after what period of time the program stops sending messages
-const long gpsLogInterval = 1000;
+const long gpsLogInterval = 200;
 const long gpsLandedInterval = 1000;
 
 //Initializing Log Files; Must be in form XXXXXXXX.log; no more than 8 'X' characters
@@ -158,7 +158,10 @@ void setup()
   String("Init").getBytes(xbeeSendBuf,xbeeSendBufSize);   //Convert "Init" 2 bytes, dump into Message buffer
   xbeeSend(GroundSL,xbeeSendBuf);                         //(Target,Message)
   
-int err;
+  int err;
+
+
+
 #ifdef SBD  // Begin satellite modem operation
   OutputSerial.println("Starting modem...");
   err = modem.begin();
@@ -207,8 +210,10 @@ int err;
   OutputSerial.println(sbd_csq);
 #endif
 
-String gpsPacket;
 
+
+// HOLD UNTIL LOCK
+String gpsPacket;
 if(USEGPS){
   OutputSerial.println("TryingGPS");
 
@@ -230,6 +235,12 @@ if(USEGPS){
     logprintln("GotLock");
     gpsLockBlink();
     OutputSerial.println("gpsPacket  " +String(gpsPacket));
+
+    //Got Lock Notification
+    String("gotLock").getBytes(xbeeSendBuf,xbeeSendBufSize);
+    xbeeSend(GroundSL,xbeeSendBuf); 
+
+    
 }else{
   OutputSerial.println("Not Using GPS");
   gpsPacket = "test";
