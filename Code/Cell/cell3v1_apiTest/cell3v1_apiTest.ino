@@ -4,15 +4,16 @@
 
 jtXBee celltracker(xbeeSerial);
 
-char xbeeBuffer[100];
+
+//char xbeeBuffer[100];
 
 void setup(){
   xbeeSerial.begin(9600);
   Serial.begin(9600);
   
-  char packetData[160] = "x?";//"131717,39.6967,-78.1957,172,test";
+  char packetData[100] = "x?";//"131717,39.6967,-78.1957,172,test";
   char phonenumber[12] = "7324849689";
-  //celltracker.txSMS(phonenumber, packetData);
+  celltracker.txSMS(phonenumber, packetData);
 }
 
 void loop(){
