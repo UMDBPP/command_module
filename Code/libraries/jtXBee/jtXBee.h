@@ -8,13 +8,12 @@ class jtXBee
 public:
 
 	jtXBee(char* buffer, int bufSize);
-	
     void txSMS(char* phonenumber, char* packetData, char* outputData);
 	int datalength;
 	void nukeBuffer();
 	bool process(int byte);
-	bool isAvailable();
-	void markRead();
+	bool is_sms_ready();
+	bool rxSMS(char* phonenumber, char* data, int datasize);
 	
 private:
 
@@ -23,8 +22,7 @@ private:
 	int _pos = 0;
 	int _packetLength = 100;
 	bool process_packet();
-	bool _ready = false;
-	void rxSMS();
+	bool _sms_ready = false;
 	
 };
 

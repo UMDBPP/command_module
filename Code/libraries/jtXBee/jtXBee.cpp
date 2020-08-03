@@ -6,7 +6,7 @@
 jtXBee::jtXBee(char* buffer, int bufSize){
 	_buffer = buffer;
 	_bufSize = bufSize;
-	_ready = false;
+	_sms_ready = false;
 }
 
 bool jtXBee::process(int byte){
@@ -31,20 +31,22 @@ bool jtXBee::process(int byte){
 		_packetLength += byte;
 	}
 	
+	Serial.println(byte);
 	if(_pos >= (3+_packetLength)){
 		_pos = 0;
+		Serial.println("proc");
 		process_packet();
 	}
 }
 
-bool jtXBee::isAvailable(){
-	return _ready;
+bool jtXBee::is_sms_ready(){
+	return _sms_ready;
 }
 
 bool jtXBee::process_packet(){
 	// Dump for Test
 	for(int i = 0; i < _bufSize; i++){
-		Serial.println((int)_buffer[i]);
+		//Serial.println((int)_buffer[i]);
 	}
 	
 	// Calculate correct checksum
@@ -54,118 +56,77 @@ bool jtXBee::process_packet(){
 	}
 	
 	// Check the checksum
-	if((255 - (sum&0xFF)) == int(_buffer[_packetLength+3])){
+	if((255 - (sum&0xFF)) != int(_buffer[_packetLength+3])){
 		return false;
 	}
 	
 	// Switch through different packet types
+	Serial.println("3rdBuf");
+	Serial.println(_buffer[3]);
 	switch((int)_buffer[3]){
 		// 9F / SMS_RX
 		case 159 : 
-			rxSMS();
+			_sms_ready = true;
+			Serial.println("pckt_159");
 			break;
 		
 		default : 
 			return false;
 	}
+	
+	return true;
 }
 
+// Nuke the buffer
 void jtXBee::nukeBuffer(){
 	memset(_buffer,0,_bufSize);
 }
 
-void jtXBee::markRead(){
-	_ready = false;
-}
-
-void jtXBee::rxSMS(){
-	Serial.println("got a text");
-	_ready = true;
+bool jtXBee::rxSMS(char* phonenumber, char* data, int datasize){
+	
+	// Get the number
+	for(int i = 6; i <= 15; i++){
+		phonenumber[i-6] = _buffer[i];
+	}
+	
+	// Get the data
+	for(int i = 24; i <= _packetLength+2; i++){
+		if((i-24) > datasize){
+			return false;
+		}
+		data[i-24] = _buffer[i];
+	}
+	
+	_sms_ready = false;
+	
+	return true;
 }
 
 void jtXBee::txSMS(char* phonenumber, char* packetData, char* outputData){
-    int outputDataINT[100];
+    
 
-    //int startdelimINT = 126;
-    //int frameTypeINT = 31;
-    //int frameIdINT = 1;
-    //int optionsINT = 0;
-
-    //int length = 3;
     int sum = 32;//1+31 (10 + 1F)
-    int finalData[100];
-    memset(finalData, 0, 100);
+    
+	int datalength = 23+strlen(packetData);
 
-    int counter = 0;
-
-    //length += 20;
-	int length = 23;
-
-    //Number minus string
-    int numberINT[22];
-    counter = 0;
-    for(int i=0;i<20;i++){
-        if(counter<strlen(phonenumber)){
-            numberINT[counter] = (phonenumber[i]);
-            sum+=int(phonenumber[i]);
-        }else{
-            numberINT[counter] = 0;
-        }
-        counter++;
-    }
-
-    length+=strlen(packetData);
-
-    int packetDataLength = strlen(packetData);
-
-    counter = 0;
-    for(int i = 0;i<packetDataLength;i++){
-        outputDataINT[i] = int(packetData[i]);
+	// Data
+    for(int i = 0;i<strlen(packetData);i++){
+		outputData[26+i] = (packetData[i]);
         sum+=packetData[i];
     }
 
-    //int checkINT = sum;
-    //cout << "checkINT: " << checkINT << endl;
-
-    //int decvalINT = 255 - checkINT&0xFF;
-	//int decvalINT = 255 - sum&0xFF;
-    //cout << "decvalINT: " << decvalINT << endl;
-
-
-    //int packetLengthINT = (length);
-
-    counter = 0;
-    for(int i:numberINT){
-        finalData[6+counter] = i;
-        counter++;
-    }
-
-    counter = 0;
-    for(int iter = 0;iter<packetDataLength;iter++){
-        finalData[26+counter] = (outputDataINT[iter]);
-        counter++;
-    }
-
-    //int
-    finalData[0] = 126;//startdelimINT;
-    finalData[1] = 0;
-    finalData[2] = length;
-    finalData[3] = 31;//frameTypeINT;
-    finalData[4] = 1;//frameIdINT;
-    finalData[5] = 0;//optionsINT;
-    finalData[26+counter] = (255 - (sum&0xFF));
-
-    datalength = 27+counter;
-	
-	
-	for(int i = 0; i < 99; i++){
-		outputData[i] = (char)finalData[i];
+	// phone#
+	for(int i=0; i<strlen(phonenumber); i++){
+		outputData[i+6] = phonenumber[i];
+		sum+=phonenumber[i];
 	}
 	
-	/**
-    for(int i = 0;i<datalength;i++){
-	    _xbeeSerial.write(finalData[i]);
-	    delay(1);
-    }
-	*/
+	
+	outputData[0] = 126;//startdelimINT;
+    outputData[1] = 0;
+    outputData[2] = datalength;
+    outputData[3] = 31;//frameTypeINT;
+    outputData[4] = 1;//frameIdINT;
+    outputData[5] = 0;//optionsINT;
+    outputData[datalength+3] = (char)(255 - (sum&0xFF));
 }
