@@ -1,14 +1,21 @@
+// Celltracker Code, for the medium old celltracker board v2
+// Written by Shailesh and Jonathan along with the use of some public libraries
+// Transmits its position over the cell network and logs position
+
+// Runs on a literal $2 Arduino Nano clone, we really need new hardware...
+
 #include <TinyGPS.h>
 #include <SoftwareSerial.h>
 #include <SD.h>
 #include <jtXBee.h>
 
+#define GPSBaud 9600
 
-static const int RXPin = 5, TXPin = 6, GPSon = 2, SDpin = 10; //SDpin = 9;
-static const int GPSBaud = 9600;
+const int RXPin = 5, TXPin = 6, GPSon = 2, SDpin = 10;
+
 File GPSlog;
 
-//Need to use Old Bootloader to compile
+//Need to use Old Bootloader to compile // WHAT DOES THIS MEAN THOUGH
 // The TinyGPS++ object
 TinyGPS gps;
 
@@ -27,7 +34,7 @@ GPSdata gpsInfo; //Current obj
 //GPSdata preserve;//Last obj (for getting deltas)
 // The serial connection to the GPS device
 SoftwareSerial gpsserial(RXPin, TXPin);
-SoftwareSerial Xbee(3, 2);
+SoftwareSerial xbeeSerial(3, 2);
 const int t1 = 1000;
 const long int t3 = 300000;
 unsigned long previousMillis1 = 0;
@@ -36,51 +43,56 @@ unsigned long previousMillis3 = 0;
 int x = 0;
 
 
-jtXBee celltracker(Xbee);
+char xbeeBuffer[100];
+const int bufSize = 100;
+jtXBee celltracker(xbeeBuffer, bufSize);
+
+char packetData[50] = "init";
 char phonenumber[12] = "7324849689";
-char packetData[50] = "test";
 
 void setup()
 {
-  //pinMode(GPSon,OUTPUT);
-  //pinMode(10, OUTPUT);
-  //digitalWrite(GPSon,LOW);
-  Xbee.begin(9600);
+  xbeeSerial.begin(9600);
 
   GPSINIT(GPSBaud);
-  delay(2000);
+  delay(1000);
   Serial.begin(57600);
   delay(10);
   
 
-  Serial.println("INIT_TEXT");
-  //String initPacket = "abcd";
-  //initPacket.toCharArray(packetData,100);
-  celltracker.txSMS(phonenumber, packetData);
-  //memset(packetData, 0, 100);
-  //delay(1000);
+  Serial.println(F("INIT_TEXT"));
+
+  // Generate outputData containing packetData to be txSMS to phonenumber
+  char outputData[80];
+  memset(outputData, 0, 80);
+  celltracker.txSMS(phonenumber, packetData, outputData);
+  // Send outputData to XBee
+  for(int i = 0; i < 80; i++){
+    //xbeeSerial.write(outputData[i]);
+    Serial.println((int)outputData[i]);
+  }
+  celltracker.nukeBuffer();
+  
   delay(10);
   
   if (!SD.begin(SDpin)) {
-    Serial.println("SD init fail");
+    Serial.println(F("SD init fail"));
     return;
   }else{
-    Serial.println("SD init");
+    Serial.println(F("SD init"));
   }
   GPSlog = SD.open("log.txt", FILE_WRITE);
   if (GPSlog) {
-    Serial.println("log init");
-    GPSlog.println("Started");
+    Serial.println(F("log init"));
+    //GPSlog.println(F("Started")); Kinda obvious tbh
   } else {
-    Serial.println("log init err");
+    Serial.println(F("log init err"));
   }
-  
-  
   
 }
 
 
-
+// The frickin simplest loop() I've seen in a while
 void loop() {
  while (gpsserial.available() > 0)
 
@@ -94,24 +106,13 @@ void loop() {
       outputSerial();
     }
     
-//    if ((millis() - previousMillis2) >= t2 && gps.altitude.meters()<1000 && x<5) {
-//      previousMillis2 = millis(); 
-//        sendXbeeInfo();
-//        x++;        
-//    }
 
     //SMS_TX
-
     if(((millis() - previousMillis3)>t3) && (gpsInfo.GPSAlt<1000) && (x<50)){
-      outputXbee();
+      sendText();
       previousMillis3 = millis();
       x++;
-      Serial.println("SMS_TX");
+      Serial.println(F("SMS_TX"));
     }
-    
-//    if ((millis() - previousMillis3) >= t3 && gps.altitude()/100.<1000 && x<101) {
-//      outputXbee();
-//      previousMillis3 = millis();
-//      x++;
-//   }
+
 }

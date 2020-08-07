@@ -61,7 +61,7 @@ void GPSINIT(int baud){
 //          }
 //      break;
     default:
-    Serial.println("GPSINIT_ERR");
+    Serial.println(F("GPSINIT_ERR"));
       break;
 	}
 	for(int i = 0;i<sizeof(hexList);i++){
@@ -107,29 +107,68 @@ GPSdata getGPS(){
   return gpsInfo;
 }
 
+//void outputSerial(){
+//  String gpspacket;
+//  if(gpsInfo.GPSSats!=-1){
+//    gpspacket = String(gpsInfo.GPSTime)+","+String(gpsInfo.GPSLat,4) + "," + String(gpsInfo.GPSLon,4)+","+gpsInfo.GPSAlt;
+//  }else{
+//    //gpspacket = String(preserve.GPSTime/100)+","+String(preserve.GPSLat,6) + "," + String(preserve.GPSLon,6)+","+preserve.GPSAlt+","+preserve.GPSSats;
+//    gpspacket = "err";
+//  }
+//  Serial.println(gpspacket);
+//}
+
+
 void outputSerial(){
-  String gpspacket;
+  char gpsBuf[50];
+  memset(gpsBuf,0,50);
+  
   if(gpsInfo.GPSSats!=-1){
-    gpspacket = String(gpsInfo.GPSTime)+","+String(gpsInfo.GPSLat,4) + "," + String(gpsInfo.GPSLon,4)+","+gpsInfo.GPSAlt;
+    //gpspacket = String(gpsInfo.GPSTime)+","+String(gpsInfo.GPSLat,4) + "," + String(gpsInfo.GPSLon,4)+","+gpsInfo.GPSAlt;
+    char bypasslat[20];
+    char bypasslon[10];
+    dtostrf(gpsInfo.GPSLat,7,4,bypasslat);
+    dtostrf(gpsInfo.GPSLon,8,4,bypasslon);
+    strncat(bypasslat,bypasslon,10);
+    snprintf(gpsBuf,50,"%2.6u%s,%s,%u",gpsInfo.GPSTime,bypasslat,gpsInfo.GPSAlt);
   }else{
-    //gpspacket = String(preserve.GPSTime/100)+","+String(preserve.GPSLat,6) + "," + String(preserve.GPSLon,6)+","+preserve.GPSAlt+","+preserve.GPSSats;
-    gpspacket = "err" + String(gpsInfo.GPSTime)+","+String(gpsInfo.GPSLat,4) + "," + String(gpsInfo.GPSLon,4)+","+gpsInfo.GPSAlt;
+    //gpsBuf = "err";
+    snprintf(gpsBuf,50,"err");
   }
-  Serial.println(gpspacket);
+
+  
+  Serial.println(gpsBuf);
 }
 
-void outputXbee(){
-  String gpspacket;
+void sendText(){
+  char gpsBuf[50];
+  memset(gpsBuf,0,50);
+  
+  //String gpspacket;
   if(gpsInfo.GPSSats!=-1){
-    gpspacket = String(gpsInfo.GPSTime)+","+String(gpsInfo.GPSLat,4) + "," + String(gpsInfo.GPSLon,4)+","+gpsInfo.GPSAlt;
+    //gpspacket = String(gpsInfo.GPSTime)+","+String(gpsInfo.GPSLat,4) + "," + String(gpsInfo.GPSLon,4)+","+gpsInfo.GPSAlt;
+    char bypasslat[20];
+    char bypasslon[10];
+    dtostrf(gpsInfo.GPSLat,7,4,bypasslat);
+    dtostrf(gpsInfo.GPSLon,8,4,bypasslon);
+    strncat(bypasslat,bypasslon,10);
+    snprintf(gpsBuf,50,"%2.6u%s,%s,%u",gpsInfo.GPSTime,bypasslat,gpsInfo.GPSAlt);
   }else{
-    gpspacket = "err" + String(gpsInfo.GPSTime)+","+String(gpsInfo.GPSLat,4) + "," + String(gpsInfo.GPSLon,4)+","+gpsInfo.GPSAlt;
+    //gpsBuf = "err";
+    snprintf(gpsBuf,50,"err");
   }
-  gpspacket.toCharArray(packetData,50);
-  celltracker.txSMS(phonenumber, packetData);
-  //memcpy(packetData,0,100);
-  //memset(packetData, 0, 100);
-  //Xbee.println(gpspacket);
+  
+  //gpspacket.toCharArray(packetData,50);
+  // Generate outputData containing packetData to be txSMS to phonenumber
+  char outputData[80];
+  memset(outputData, 0, 80);
+  celltracker.txSMS(phonenumber, gpsBuf, outputData);
+  // Send outputData to XBee
+  for(int i = 0; i < 80; i++){
+    xbeeSerial.write(outputData[i]);
+    Serial.println((int)outputData[i]);
+  }
+  celltracker.nukeBuffer();
 }
 
 void outputSD(){
@@ -138,7 +177,7 @@ void outputSD(){
     gpspacket = String(gpsInfo.GPSTime)+","+String(gpsInfo.GPSLat,4) + "," + String(gpsInfo.GPSLon,4)+","+gpsInfo.GPSAlt;
   }else{
     //gpspacket = String(preserve.GPSTime/100)+","+String(preserve.GPSLat,6) + "," + String(preserve.GPSLon,6)+","+preserve.GPSAlt+","+preserve.GPSSats;
-    gpspacket = "err" + String(gpsInfo.GPSTime)+","+String(gpsInfo.GPSLat,4) + "," + String(gpsInfo.GPSLon,4)+","+gpsInfo.GPSAlt;
+    gpspacket = "err";
   }
   GPSlog.println(gpspacket);
   GPSlog.flush();

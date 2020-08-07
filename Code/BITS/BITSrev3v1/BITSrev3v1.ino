@@ -1,4 +1,4 @@
-//UMD Nearspace Iridium Tracking Payload (BITS) {Balloon Iridium Tracking System)
+ //UMD Nearspace Iridium Tracking Payload (BITS) {Balloon Iridium Tracking System)
 //Written by Jonathan Molter and Luke Renegar
 //Uses an Iridium 9603 SBD Modem for effective unlimited range, without the need for our own RF blackmagics*
 //This software is specifically written with the bits3 board revisision in mind
