@@ -75,7 +75,7 @@ void uplink(){
           //strcat(downlinkMessage2,",rS");
           strncat(downlinkMessage2,",rS",(downlinkMessageSize - strlen(downlinkMessage2) - 1));
         }
-        else if(strstr((char*)rxBuf,"slow")){
+        else if(strstr((char*)rxBuf,"land")){
           OutputSerial.println("SET_RATE_LANDED");
           logprintln("SET_RATE_SLOW");
           messageTimeInterval = 3600000; //1 hour
@@ -153,7 +153,7 @@ void uplink(){
       strncat(downlinkMessage2,conf,(downlinkMessageSize - strlen(downlinkMessage2) - 1));
     }
 
-    else if(strstr((char*)rxBuf,"WIREPASS")){ //Ground passthrough
+    else if(strstr((char*)rxBuf,"WIREPASS")){ //Wire passthrough
       OutputSerial.println("WIREPASS");
       logprintln("WIREPASS");
       strcat((char*)xbeeSendBuf,(char*)rxBuf);

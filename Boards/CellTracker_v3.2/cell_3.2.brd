@@ -5214,11 +5214,11 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <attribute name="NAME" x="32.178625" y="16.017875" size="1.016" layer="25" font="vector"/>
 <attribute name="VALUE" x="29.448125" y="14.620875" size="1.27" layer="27" rot="R270"/>
 </element>
-<element name="R4" library="resistor" package="R0603" value="170k" x="25.161875" y="14.017625" smashed="yes" rot="R90">
+<element name="R4" library="resistor" package="R0603" value="340k" x="25.161875" y="14.017625" smashed="yes" rot="R90">
 <attribute name="NAME" x="24.717375" y="17.446625" size="1.016" layer="25" font="vector" rot="R270"/>
 <attribute name="VALUE" x="27.066875" y="13.382625" size="1.27" layer="27" rot="R90"/>
 </element>
-<element name="R5" library="resistor" package="R0603" value="50k" x="27.352625" y="14.00175" smashed="yes" rot="R270">
+<element name="R5" library="resistor" package="R0603" value="100k" x="27.352625" y="14.00175" smashed="yes" rot="R270">
 <attribute name="NAME" x="25.066625" y="13.04925" size="1.016" layer="25" font="vector" rot="R270"/>
 <attribute name="VALUE" x="25.447625" y="14.63675" size="1.27" layer="27" rot="R270"/>
 </element>

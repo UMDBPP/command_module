@@ -23816,8 +23816,8 @@ DIN A3, landscape with location and doc. field</description>
 <attribute name="NAME" x="255.524" y="87.122" size="1.778" layer="95" font="vector"/>
 <attribute name="VALUE" x="254.508" y="84.074" size="1.778" layer="96" font="vector"/>
 </instance>
-<instance part="+3V2" gate="G$1" x="314.96" y="99.06" smashed="yes">
-<attribute name="VALUE" x="312.42" y="99.06" size="1.778" layer="96" rot="R180"/>
+<instance part="+3V2" gate="G$1" x="320.04" y="99.06" smashed="yes">
+<attribute name="VALUE" x="317.5" y="99.06" size="1.778" layer="96" rot="R180"/>
 </instance>
 <instance part="XB1" gate="G$1" x="40.64" y="200.66" smashed="yes" rot="MR0">
 <attribute name="NAME" x="53.34" y="229.87" size="1.778" layer="95" rot="MR0"/>
@@ -23955,9 +23955,9 @@ DIN A3, landscape with location and doc. field</description>
 <attribute name="NAME" x="343.9414" y="80.01" size="1.778" layer="95" rot="R90"/>
 <attribute name="VALUE" x="347.726" y="83.312" size="1.778" layer="96"/>
 </instance>
-<instance part="D1" gate="G$1" x="325.12" y="91.44" smashed="yes">
-<attribute name="NAME" x="323.85" y="93.7006" size="1.778" layer="95"/>
-<attribute name="VALUE" x="327.406" y="89.6366" size="1.016" layer="96"/>
+<instance part="D1" gate="G$1" x="330.2" y="91.44" smashed="yes">
+<attribute name="NAME" x="328.93" y="93.7006" size="1.778" layer="95"/>
+<attribute name="VALUE" x="332.486" y="89.6366" size="1.016" layer="96"/>
 </instance>
 <instance part="ISO7021" gate="G$1" x="332.74" y="198.12" smashed="yes">
 <attribute name="NAME" x="332.994" y="219.456" size="1.778" layer="95"/>
@@ -24175,17 +24175,17 @@ DIN A3, landscape with location and doc. field</description>
 </segment>
 <segment>
 <pinref part="U$7" gate="G$1" pin="8_VCC"/>
-<wire x1="312.42" y1="86.36" x2="314.96" y2="86.36" width="0.1524" layer="91"/>
-<wire x1="314.96" y1="81.28" x2="314.96" y2="86.36" width="0.1524" layer="91"/>
+<wire x1="312.42" y1="86.36" x2="320.04" y2="86.36" width="0.1524" layer="91"/>
+<wire x1="320.04" y1="81.28" x2="320.04" y2="86.36" width="0.1524" layer="91"/>
 <pinref part="U$7" gate="G$1" pin="7_VCC_IO"/>
-<wire x1="312.42" y1="81.28" x2="314.96" y2="81.28" width="0.1524" layer="91"/>
+<wire x1="312.42" y1="81.28" x2="320.04" y2="81.28" width="0.1524" layer="91"/>
 <pinref part="+3V2" gate="G$1" pin="+3V3"/>
-<wire x1="314.96" y1="86.36" x2="314.96" y2="91.44" width="0.1524" layer="91"/>
-<junction x="314.96" y="86.36"/>
+<wire x1="320.04" y1="86.36" x2="320.04" y2="91.44" width="0.1524" layer="91"/>
+<junction x="320.04" y="86.36"/>
 <pinref part="D1" gate="G$1" pin="A"/>
-<wire x1="314.96" y1="91.44" x2="314.96" y2="96.52" width="0.1524" layer="91"/>
-<wire x1="322.58" y1="91.44" x2="314.96" y2="91.44" width="0.1524" layer="91"/>
-<junction x="314.96" y="91.44"/>
+<wire x1="320.04" y1="91.44" x2="320.04" y2="96.52" width="0.1524" layer="91"/>
+<wire x1="327.66" y1="91.44" x2="320.04" y2="91.44" width="0.1524" layer="91"/>
+<junction x="320.04" y="91.44"/>
 </segment>
 </net>
 <net name="RX3" class="0">
@@ -24512,7 +24512,7 @@ DIN A3, landscape with location and doc. field</description>
 <segment>
 <pinref part="D1" gate="G$1" pin="C"/>
 <pinref part="R7" gate="G$1" pin="2"/>
-<wire x1="327.66" y1="91.44" x2="345.44" y2="91.44" width="0.1524" layer="91"/>
+<wire x1="332.74" y1="91.44" x2="345.44" y2="91.44" width="0.1524" layer="91"/>
 <wire x1="345.44" y1="91.44" x2="345.44" y2="88.9" width="0.1524" layer="91"/>
 </segment>
 </net>

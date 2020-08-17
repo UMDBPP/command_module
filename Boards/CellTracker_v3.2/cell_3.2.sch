@@ -23426,8 +23426,8 @@ DIN A3, landscape with location and doc. field</description>
 <part name="GND7" library="supply1" deviceset="GND" device=""/>
 <part name="GND8" library="supply1" deviceset="GND" device=""/>
 <part name="R3" library="resistor" deviceset="R-US_" device="R0603" value="23.3k"/>
-<part name="R4" library="resistor" deviceset="R-US_" device="R0603" value="170k"/>
-<part name="R5" library="resistor" deviceset="R-US_" device="R0603" value="50k"/>
+<part name="R4" library="resistor" deviceset="R-US_" device="R0603" value="340k"/>
+<part name="R5" library="resistor" deviceset="R-US_" device="R0603" value="100k"/>
 <part name="C6" library="resistor" deviceset="C-US" device="C0805" value="0.1 uF"/>
 <part name="C9" library="resistor" deviceset="C-US" device="C1210" value="10 uF"/>
 <part name="C7" library="resistor" deviceset="C-US" device="C0603" value=".18uF"/>
