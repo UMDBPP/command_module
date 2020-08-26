@@ -129,7 +129,9 @@ void setup()
   delay(5);
   Serial.println("BITSrev3v1");
   gpsserial.begin(9600);
+
   GPSINIT(); //Setup the GPS
+  
   gpsserial.end();
   gpsserial.begin(GPS_BAUD);
   IridiumSerial.begin(SBD_BAUD);
@@ -444,7 +446,7 @@ void LogPacket(){
     snprintf(gpsLogPacket2,35,"%s,%4.4f,%4.4f,%u",exactTime,gpsInfo.GPSLat,gpsInfo.GPSLon,gpsInfo.GPSAlt); //Fix Timestep
     gpsLogFile.println(gpsLogPacket2);
     
-    gpsLogFile.flush();
+    gpsLogFile.flush(); //WIP
     lastLog=millis();
   }
 }

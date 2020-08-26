@@ -1,184 +1,354 @@
-//EZgpsmethods for adding simple preconfigured gps magic -Jonathan
+//----------------------------------------------------------------Configuration Hex------------------------------------------------------------------------------------
+// This section contains the preconfigured arrays of hex to change GPS configurations. Could be partially calculated in advance, but no need
 
-const char baudNineSix[] PROGMEM = {
-  //new 9600
-  0xB5,0x62,0x06,0x00,0x14,0x00,0x01,0x00,0x00,0x00,0xD0,0x08,0x00,0x00,0x80,0x25,0x00,0x00,0x07,0x00,0x03,0x00,0x00,0x00,0x00,0x00,0xA2,0xB5
-};
-const char baudOneOneFive[] PROGMEM = {
-  //new 115200
-  0xB5,0x62,0x06,0x00,0x14,0x00,0x01,0x00,0x00,0x00,0xD0,0x08,0x00,0x00,0x00,0xC2,0x01,0x00,0x07,0x00,0x03,0x00,0x00,0x00,0x00,0x00,0xC0,0x7E
-};
-//const char baudNineTwoOne[] PROGMEM = {
-//  //new 921600 //This works, but is too quick for an Arduino Mega
-//  0xB5,0x62,0x06,0x00,0x14,0x00,0x01,0x00,0x00,0x00,0xD0,0x08,0x00,0x00,0x00,0x10,0x0E,0x00,0x07,0x00,0x03,0x00,0x00,0x00,0x00,0x00,0x1B,0x5A  
-//};
+//-----------------------------------------Disable Unused Messages---(UBX-CFG-MSG)----------------------------------
+void gps_nuke_messages(){
 
-const char hexList[] PROGMEM = {
-	 //RATES
-  0xB5, 0x62, 0x06, 0x08 ,0x06 ,0x00 ,0xE8 ,0x03 ,0x01 ,0x00 ,0x01 ,0x00 ,0x01 ,0x39, //1Hz
-  //0xB5 ,0x62 ,0x06 ,0x08 ,0x06 ,0x00 ,0xF4 ,0x01 ,0x01 ,0x00 ,0x01 ,0x00 ,0x0B ,0x77, //2Hz
-  //0xB5 ,0x62 ,0x06 ,0x08 ,0x06 ,0x00 ,0xFA ,0x00 ,0x01 ,0x00 ,0x01 ,0x00 ,0x10 ,0x96, //4Hz
-  //0xB5 ,0x62 ,0x06 ,0x08 ,0x06 ,0x00 ,0xC8 ,0x00 ,0x01 ,0x00 ,0x01 ,0x00 ,0xDE ,0x6A, //5Hz
-  //0xB5 ,0x62 ,0x06 ,0x08 ,0x06 ,0x00 ,0x64 ,0x00 ,0x01 ,0x00 ,0x01 ,0x00 ,0x7A ,0x12, //10Hz
-      
-      //BAUD might be in need of work, test new
-     //0xB5,0x62,0x06,0x00,0x14,0x00,0x01,0x00,0x00,0x00,0xD0,0x08,0x00,0x00,0x80,0x25,0x00,0x00,0x07,0x00,0x03,0x00,0x00,0x00,0x00,0x00,0xA2,0xB5, //9600
-     //0xB5 ,0x62 ,0x06 ,0x00 ,0x14 ,0x00 ,0x01 ,0x00 ,0x00 ,0x00 ,0xD0 ,0x08 ,0x00 ,0x00 ,0x00 ,0xC2 ,0x01 ,0x00 ,0x07 ,0x00 ,0x03 ,0x00 ,0x00 ,0x00 ,0x00 ,0x00 ,0xC0 ,0x7E, //115200
+  const char nuke_msg[] PROGMEM = {
+    0xB5, 0x62, 0x06, 0x01, 0x08, 0x00, 0xF0, 0x04, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x03, 0x3F, //RMC
+    0xB5, 0x62, 0x06, 0x01, 0x08, 0x00, 0xF0, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x2A, //GLL
+    0xB5, 0x62, 0x06, 0x01, 0x08, 0x00, 0xF0, 0x02, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01, 0x31, //GSA
+    0xB5, 0x62, 0x06, 0x01, 0x08, 0x00, 0xF0, 0x03, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0x38, //GSV
+    0xB5, 0x62, 0x06, 0x01, 0x08, 0x00, 0xF0, 0x05, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x04, 0x46 //VTG
+  };
+
+  gps_write(nuke_msg,sizeof(nuke_msg));
+}
+
+void gps_set_GGA(){
   
-  
-  //NAV5 AIRBORNE >1g
-  //NEW
-  0xB5, 0x62, 0x06, 0x24, 0x24, 0x00, 0xFF, 0xFF, 0x06, 0x03, 0x00, 0x00, 0x00, 0x00, 0x10, 0x27, 0x00, 0x00, 0x05, 0x00, 0xFA, 0x00, 0xFA, 0x00, 0x64, 0x00, 0x2C, 0x01, 0x00, 0x00, 0x00, 0x00, 0x10, 0x27, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x4D, 0xDB,
-  //0xB5 ,0x62 ,0x06 ,0x24 ,0x24 ,0x00 ,0xFF ,0xFF ,0x08 ,0x03 ,0x00 ,0x00 ,0x00 ,0x00 ,0x10 ,0x27 ,0x00 ,0x00 ,0x05 ,0x00 ,0xFA ,0x00 ,0xFA ,0x00 ,0x64 ,0x00 ,0x2C ,0x01 ,0x00 ,0x3C ,0x00 ,0x00 ,0x00 ,0x00 ,0x00 ,0x00 ,0x00 ,0x00 ,0x00 ,0x00 ,0x00 ,0x00 ,0x54 ,0x2C,
-  //SAVE
-  0xB5 ,0x62 ,0x06 ,0x09 ,0x0D ,0x00 ,0x00 ,0x00 ,0x00 ,0x00 ,0xFF ,0xFF ,0x00 ,0x00 ,0x00 ,0x00 ,0x00 ,0x00 ,0x03 ,0x1D ,0xAB
-};
+  const char gga_msg[] PROGMEM = {
+    0xB5, 0x62, 0x06, 0x01, 0x08, 0x00, 0xF0, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x28
+  };
 
-void GPSINIT(int baud){
-	switch(baud){
-	  case 9600:
-        gpsserial.begin(115200);
-        for(int i = 0;i<sizeof(hexList);i++){
-          gpsserial.write(pgm_read_byte(baudNineSix+i));
-          //delay(10);
+  gps_write(gga_msg,sizeof(gga_msg));
+}
+
+//-------------------------------------------UpdateHz----- (UBX-CFG-RATE)-------------------------------------------
+
+void set_gps_one_hertz(){
+  const char one_hertz[] PROGMEM = {0xB5, 0x62, 0x06, 0x08 ,0x06 ,0x00 ,0xE8 ,0x03 ,0x01 ,0x00 ,0x01 ,0x00 ,0x01 ,0x39};
+
+  gps_write(one_hertz,sizeof(one_hertz));
+}
+
+void set_gps_five_hertz(){
+  const char five_hertz[] PROGMEM = {0xB5 ,0x62 ,0x06 ,0x08 ,0x06 ,0x00 ,0xC8 ,0x00 ,0x01 ,0x00 ,0x01 ,0x00 ,0xDE ,0x6A};
+
+  gps_write(five_hertz,sizeof(five_hertz));
+}
+
+void set_gps_ten_hertz(){
+  const char ten_hertz[] PROGMEM = {0xB5 ,0x62 ,0x06 ,0x08 ,0x06 ,0x00 ,0x64 ,0x00 ,0x01 ,0x00 ,0x01 ,0x00 ,0x7A ,0x12};
+
+  gps_write(ten_hertz,sizeof(ten_hertz));
+}
+
+//-----------------------------------------------Baud----(UBX-CFG-PRT)---------------------------------------------
+
+void gps_set_baud_default(){ //9600
+
+  const char defaultBaud[] PROGMEM = {
+    0xB5,0x62,0x06,0x00,0x14,0x00,0x01,0x00,0x00,0x00,0xD0,0x08,0x00,0x00,
+    0x80,0x25,0x00,0x00,0x07,0x00,0x03,0x00,0x00,0x00,0x00,0x00,0xA2,0xB5
+  };
+  gps_write(defaultBaud,sizeof(defaultBaud));
+}
+
+void gps_set_baud_fast(){ //115200
+  
+  const char quickBaud[] PROGMEM = {
+    0xB5,0x62,0x06,0x00,0x14,0x00,0x01,0x00 ,0x00 ,0x00,0xD0,0x08,0x00,0x00,
+    0x00,0xC2,0x01,0x00,0x07,0x00,0x03,0x00,0x00,0x00,0x00,0x00,0xC0,0x7E
+  };
+  gps_write(quickBaud,sizeof(quickBaud));
+}
+
+void gps_set_baud_ultra(){
+  
+  const char ultraBaud[] PROGMEM = { //921600
+    0xB5,0x62,0x06,0x00,0x14,0x00,0x01,0x00,0x00,0x00,0xD0,0x08,0x00,0x00,
+    0x00,0x10,0x0E,0x00,0x07,0x00,0x03,0x00,0x00,0x00,0x00,0x00,0x1B,0x5A
+  };
+  gps_write(ultraBaud,sizeof(ultraBaud));
+}
+
+//-------------------------------------------------Nav Mode---- (UBX-CFG-NAV5)----------------------------------------
+
+bool gps_set_navmode_one_g(){
+  
+  const char navmode_one_g[] PROGMEM = {
+    0xB5, 0x62, 0x06, 0x24, 0x24, 0x00, 0xFF, 0xFF, 0x06, 0x03, 0x00, 0x00, 0x00, 0x00, 0x10, 0x27, 0x00, 0x00, 0x05, 0x00, 0xFA, 0x00, 0xFA, 0x00, 
+    0x64, 0x00, 0x2C, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x16, 0xDC
+  };
+
+  const char navmode_poll[] PROGMEM = {0xB5, 0x62, 0x06, 0x24, 0x00, 0x00, 0x2A, 0x84};
+  
+  gps_write(navmode_one_g,sizeof(navmode_one_g));
+
+  delay(1000);
+  
+  int stop_time = millis() + 5000;
+  gps_write(navmode_poll,sizeof(navmode_poll));
+
+  //---------------Parse UBX return ---------------
+  bool rec_ubx_first = false;
+  bool rec_ubx = false;
+  int ubx_index = 2;
+
+  //Sit in a loop until either a UBX packet is parsed or until a timeout is hit
+  while(stop_time > millis()){
+      if(gpsserial.available()){
+        
+        int parsed_char = gpsserial.read();
+        
+        if(rec_ubx){
+          if(parsed_char == pgm_read_byte(navmode_one_g+ubx_index)){
+            ubx_index++;
+            if(ubx_index > 43){
+              return true;
+            }
+          }else{
+            return false;
+          }
         }
-        gpsserial.end();
-        gpsserial.begin(9600);
-      break;
-//    case 115200:
-//        gpsserial.begin(9600);
-//        for(int i = 0;i<sizeof(hexList);i++){
-//          gpsserial.write(pgm_read_byte(baudOneOneFive+i));
-//          delay(10);
-//        }
-//        gpsserial.end();
-//        gpsserial.begin(115200);
-//      break;
-//    case 921600:
-//          for(int i = 0;i<sizeof(hexList);i++){
-//            gpsserial.write(pgm_read_byte(baudNineTwoOne+i));
-//            delay(10);
-//          }
-//      break;
-    default:
-    Serial.println(F("GPSINIT_ERR"));
-      break;
-	}
-	for(int i = 0;i<sizeof(hexList);i++){
-		gpsserial.write(pgm_read_byte(hexList+i));
-		//delay(10);
-	}
- gpsserial.write("");
+        
+        if(parsed_char == 181){
+          //Serial.println("starting_cap");
+          rec_ubx_first = true;
+        }else if(parsed_char == 98 && rec_ubx_first == true){
+          rec_ubx = true;
+        }else{
+          rec_ubx_first = false;  
+        }
+
+      }
+  }
+  return false; // Return after timeout
 }
 
-void gpsRun(){
-  //preserve = gpsInfo;
-  while (gpsserial.available()){
-   if (gps.encode(gpsserial.read())){
-   gpsInfo = getGPS();
-     break;
-   }
- }
+//-------Save------- (UBX-CFG-CFG)
+void gps_save_config(){
+  const char save_gps_conf[] PROGMEM = {
+    0xB5,0x62,0x06,0x09,0x0D,0x00,0x00,0x00,0x00,0x00,0xFF,0xFF,0x00,0x00,0x00,0x00,0x00,0x00,0x03,0x1D,0xAB
+  };
+
+  gps_write(save_gps_conf,sizeof(save_gps_conf));
 }
 
-GPSdata getGPS(){
-  GPSdata gpsInfo;
+// ------------------------------------------ Initialize ------------------------------------------
+void gps_init(){  
+
+  //init GPS at proper baud
+  gps_baud_init();
   
-    float GPSLat, GPSLon;
-    int GPSSats;
-    long GPSAlt;
-    unsigned long date,fix_age,GPSTime, GPSSpeed,GPSCourse;
-    
-    gps.f_get_position(&GPSLat, &GPSLon, &fix_age);
-    GPSSats = gps.satellites();
-    gps.get_datetime(&date, &GPSTime, &fix_age);
-    GPSAlt = gps.altitude()/100.;
-    GPSSpeed = gps.f_speed_mps();
-    GPSCourse = gps.course();
-
-    gpsInfo.GPSLat = GPSLat;
-    gpsInfo.GPSLon = GPSLon;
-    gpsInfo.GPSTime = GPSTime/100;
-    gpsInfo.GPSSats = GPSSats;
-    gpsInfo.GPSAlt = GPSAlt;
-    gpsInfo.GPSSpeed = GPSSpeed;
-    gpsInfo.GPSCourse = GPSCourse;
+  // nuke uneeded NMEA msgs
+  gps_nuke_messages();
   
-  return gpsInfo;
-}
+  // Make sure the GxGGA msg is active
+  gps_set_GGA();
 
-//void outputSerial(){
-//  String gpspacket;
-//  if(gpsInfo.GPSSats!=-1){
-//    gpspacket = String(gpsInfo.GPSTime)+","+String(gpsInfo.GPSLat,4) + "," + String(gpsInfo.GPSLon,4)+","+gpsInfo.GPSAlt;
-//  }else{
-//    //gpspacket = String(preserve.GPSTime/100)+","+String(preserve.GPSLat,6) + "," + String(preserve.GPSLon,6)+","+preserve.GPSAlt+","+preserve.GPSSats;
-//    gpspacket = "err";
-//  }
-//  Serial.println(gpspacket);
-//}
-
-
-void outputSerial(){
-  char gpsBuf[50];
-  memset(gpsBuf,0,50);
-  
-  if(gpsInfo.GPSSats!=-1){
-    //gpspacket = String(gpsInfo.GPSTime)+","+String(gpsInfo.GPSLat,4) + "," + String(gpsInfo.GPSLon,4)+","+gpsInfo.GPSAlt;
-    char bypasslat[20];
-    char bypasslon[10];
-    dtostrf(gpsInfo.GPSLat,7,4,bypasslat);
-    dtostrf(gpsInfo.GPSLon,8,4,bypasslon);
-    strncat(bypasslat,bypasslon,10);
-    snprintf(gpsBuf,50,"%2.6u%s,%s,%u",gpsInfo.GPSTime,bypasslat,gpsInfo.GPSAlt);
+  if(!gps_set_navmode_one_g()){
+    Serial.println("navmode_conf_fail");
   }else{
-    //gpsBuf = "err";
-    snprintf(gpsBuf,50,"err");
+    Serial.println("itworked");
   }
 
-  
-  Serial.println(gpsBuf);
+  set_gps_ten_hertz();
+
+  gps_save_config();
 }
 
-void sendText(){
-  char gpsBuf[50];
-  memset(gpsBuf,0,50);
-  
-  //String gpspacket;
-  if(gpsInfo.GPSSats!=-1){
-    //gpspacket = String(gpsInfo.GPSTime)+","+String(gpsInfo.GPSLat,4) + "," + String(gpsInfo.GPSLon,4)+","+gpsInfo.GPSAlt;
-    char bypasslat[20];
-    char bypasslon[10];
-    dtostrf(gpsInfo.GPSLat,7,4,bypasslat);
-    dtostrf(gpsInfo.GPSLon,8,4,bypasslon);
-    strncat(bypasslat,bypasslon,10);
-    snprintf(gpsBuf,50,"%2.6u%s,%s,%u",gpsInfo.GPSTime,bypasslat,gpsInfo.GPSAlt);
-  }else{
-    //gpsBuf = "err";
-    snprintf(gpsBuf,50,"err");
-  }
-  
-  //gpspacket.toCharArray(packetData,50);
-  // Generate outputData containing packetData to be txSMS to phonenumber
-  char outputData[80];
-  memset(outputData, 0, 80);
-  celltracker.txSMS(phonenumber, gpsBuf, outputData);
-  // Send outputData to XBee
-  for(int i = 0; i < 80; i++){
-    xbeeSerial.write(outputData[i]);
-    Serial.println((int)outputData[i]);
-  }
-  celltracker.nukeBuffer();
+void gps_baud_init(){
+    gpsserial.begin(9600);
+	delay(50);
+    gps_set_baud_fast();
+    gpsserial.end();
+    gpsserial.begin(115200);
+	delay(100);
+	gps_set_baud_ultra();
+	gpsserial.end();
+	gpsserial.begin(921600);
+	
+    delay(100);
 }
 
-void outputSD(){
-  String gpspacket;
-  if(gpsInfo.GPSSats!=-1){
-    gpspacket = String(gpsInfo.GPSTime)+","+String(gpsInfo.GPSLat,4) + "," + String(gpsInfo.GPSLon,4)+","+gpsInfo.GPSAlt;
-  }else{
-    //gpspacket = String(preserve.GPSTime/100)+","+String(preserve.GPSLat,6) + "," + String(preserve.GPSLon,6)+","+preserve.GPSAlt+","+preserve.GPSSats;
-    gpspacket = "err";
+// Write the GPS hex code to the GPS port
+void gps_write(const char* config_string, int char_length){
+    //Serial.println(char_length);
+    for(int i = 0; i<char_length;i++){
+      gpsserial.write(pgm_read_byte(config_string+i));
+    }
+}
+// ------------------------------------------------------------------------------------------------ RUN GPS--------------------------------------------------
+
+// $GNGGA,062422.80,3859.72361,N,07655.84891,W,2,06,1.59,22.1,M,-34.7,M,,0000*47
+// $GNGGA,061808.00,,,,,0,04,78.68,,,,,,0000*7A
+
+
+void myGPS(){
+  
+  
+  
+  if(gpsserial.available()){
+    while (gpsserial.available()){
+      char parsed_byte = gpsserial.read();
+        
+      //Start of string
+      if(parsed_byte == '$'){
+		//Serial.print('\n');
+        //Serial.println("Last String Size: " + String(gps_index));
+
+        // Print Last MSG
+        char gpsBuf[100];
+        memset(gpsBuf,0,100);
+        //snprintf(gpsBuf,100,"MSG_Type: %.5s  Time: %6.2f Lat: %6.5f Lon: %6.5f Alt: %d DOP:%0.2f \n",gps_type,gps_time,latitude,longitude,gps_alt,gps_hdop);
+        //Serial.println(gpsBuf);
+        
+        memset(gps_buffer,0,20);
+        
+        gps_comma_lag = 0;
+        gps_index = -1;
+        gps_comma = 0;
+		
+		
+      }
+      else if(parsed_byte == ','){ //If Comma
+        gps_comma++;
+        gps_index = -1;
+      }
+      else                         //Process Data
+      {
+        switch (gps_comma)
+        {
+          
+          case 0: // Build GNGGA
+            break;
+          
+          case 1: // Build Time: 123456.20
+            if(gps_comma_lag < gps_comma){ //Lock TYPE
+              gps_comma_lag++;
+              strcpy(gps_type,gps_buffer);
+              memset(gps_buffer,0,20);
+            }
+            break;
+            
+          case 2: // Build Latitude: DDmm.mmmmm
+            if(gps_comma_lag < gps_comma){ //Lock Time
+              gps_comma_lag++;
+              gps_time = atof(gps_buffer);
+              memset(gps_buffer,0,20);
+            }
+            break;
+            
+          case 3: // Build lat dir: N
+            if(gps_comma_lag < gps_comma){ //hold lat
+              gps_comma_lag++;
+              temp_pos = atof(gps_buffer);
+              clear_buf(gps_buffer,20);
+            }
+            break;
+			
+          case 4:
+            if(gps_comma_lag < gps_comma){ //Lock lat
+              gps_comma_lag++;
+              latitude_direction = gps_buffer[0];
+              clear_buf(gps_buffer,20);
+			  
+			  latitude = int(temp_pos/100) + (temp_pos-int(temp_pos/100)*100)/60;
+			  if(longitude_direction == 'S'){
+				latitude = latitude*-1;
+			  }
+            }
+            break;
+			
+          case 5:
+            if(gps_comma_lag < gps_comma){ //hold lon
+              gps_comma_lag++;
+              temp_pos = atof(gps_buffer);
+              clear_buf(gps_buffer,20);
+            }
+            break;
+			
+          case 6:
+            if(gps_comma_lag < gps_comma){ //Lock lon
+              gps_comma_lag++;
+              longitude_direction = gps_buffer[0];
+              clear_buf(gps_buffer,20);
+			  
+			  longitude = int(temp_pos/100) + (temp_pos-int(temp_pos/100)*100)/60;
+			  if(longitude_direction == 'W'){
+				longitude = longitude*-1;
+			  }
+            }
+            break;
+			
+          case 7:
+            if(gps_comma_lag < gps_comma){ //Lock quality
+              gps_comma_lag++;
+              gps_quality = atoi(gps_buffer);
+              clear_buf(gps_buffer,20);
+            }
+            break;
+			
+          case 8:
+            if(gps_comma_lag < gps_comma){ //Lock SATS
+              gps_comma_lag++;
+              gps_sats = atoi(gps_buffer);
+              clear_buf(gps_buffer,20);
+            }
+            break;
+			
+          case 9:
+            if(gps_comma_lag < gps_comma){ //Lock hdop
+              gps_comma_lag++;
+              gps_hdop = atof(gps_buffer);
+              clear_buf(gps_buffer,20);
+            }
+            break;
+			
+          case 10:
+            if(gps_comma_lag < gps_comma){ //Lock ALT
+              gps_comma_lag++;
+              gps_alt = atoi(gps_buffer);
+              clear_buf(gps_buffer,20);
+            }
+            break;
+			
+          case 11:
+            if(gps_comma_lag < gps_comma){ //Unit
+              gps_comma_lag++;
+              //gps_alt = atoi(gps_buffer);
+              //clear_buf(gps_buffer,20);
+            }
+            break;
+			
+          case 12:
+            if(gps_comma_lag < gps_comma){ //Alt Correction
+              gps_comma_lag++;
+              gps_alt += atoi(gps_buffer);
+              clear_buf(gps_buffer,20);
+            }
+            break;
+			
+          case 13:
+		  
+            break;
+			
+          case 14:
+            
+            break;
+        }
+		gps_buffer[gps_index] = parsed_byte;
+      }
+      
+      //Serial.print(parsed_byte);
+      gps_index++;
+    }
   }
-  GPSlog.println(gpspacket);
-  GPSlog.flush();
+  
+}
+
+void clear_buf(char* buf, int length){
+	memset(buf,0,length);
 }

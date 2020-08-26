@@ -4,7 +4,6 @@
 
 // For use with the celltracker3.2 board
 
-#include <TinyGPS.h>
 #include <SD.h>
 #include <jtXBee.h>
 
@@ -14,57 +13,67 @@
 
 #define SDpin 5
 
-//const int RXPin = 5, TXPin = 6, GPSon = 2, SDpin = 10; <DELETE>
-
 File GPSlog;
 
-// The TinyGPS++ object (isn't this a not plus plus version?)
-TinyGPS gps;
+int gps_index = 0;
+int gps_comma = 0;
+int gps_comma_lag = 0;
 
-struct GPSdata{
-  float GPSLat=-1;
-  float GPSLon=-1;
-  unsigned long GPSTime=-1;
-  unsigned long GPSSpeed=-1;
-  long GPSAlt=-1;
-  int GPSSats=-1;
-  long GPSCourse = -1;
-};
+char gps_buffer[20];
+
+char gps_type[6] = "nlock";
+float gps_time = 123456.78;
+
+float temp_pos = 0.0;
+
+char latitude_direction = '_';
+char longitude_direction = '_';
+float latitude = 0.0;
+float longitude = 0.0;
+
+int gps_quality = -1;
+int gps_sats = -1;
+unsigned int gps_alt = -1;
+float gps_hdop = -1;
 
 
-//unsigned long cur = 0; del
-GPSdata gpsInfo; //Current obj
+const unsigned long flush_interval = 10000;
+const unsigned int log_interval = 100;
+const unsigned int text_interval = 300000;
 
-const int t1 = 1000;
-const long int t3 = 300000;
-unsigned long previousMillis1 = 0;
-unsigned long previousMillis2 = 0;
-unsigned long previousMillis3 = 0;
+unsigned long next_flush = 0;
+unsigned long next_log = 0;
+unsigned long next_text = 0;
+
 int x = 0;
 
+int max_gps_alt = 0;
 
 char xbeeBuffer[100];
 const int bufSize = 100;
 jtXBee celltracker(xbeeBuffer, bufSize);
 
-char packetData[50] = "init";
 char phonenumber[12] = "7324849689";
 
 void setup()
 {
   xbeeSerial.begin(9600);
-  GPSINIT(GPSBaud);
+  
   Serial.begin(115200);
   
   while(!Serial){}
   
+  gps_init();
 
   Serial.println(F("INIT_TEXT"));
 
   // Generate outputData containing packetData to be txSMS to phonenumber
   char outputData[80];
   memset(outputData, 0, 80);
+  char packetData[10] = "init";
+  
   celltracker.txSMS(phonenumber, packetData, outputData);
+  
   // Send outputData to XBee
   for(int i = 0; i < 80; i++){
     xbeeSerial.write(outputData[i]);
@@ -72,9 +81,73 @@ void setup()
   }
   celltracker.nukeBuffer();
   
-  delay(10);
-  
-  if (!SD.begin(SDpin)) {
+  sd_init();
+}
+
+
+// The frickin simplest loop() I've seen in a while
+void loop() {
+
+    //PARSE
+    myGPS();
+
+    //LOG
+    if (millis() > next_log) {
+      outputSD();
+	  next_log = millis() + log_interval;
+    }
+    
+
+    //SMS_TX
+    if((millis() > next_text) && (gps_alt<1000) && (x<50)){
+      sendText();
+      x++;
+      Serial.println(F("SMS_TX"));
+	  next_text = millis() + text_interval;
+    }
+
+}
+
+void sendText(){
+	
+	char gpsBuf[100];
+	memset(gpsBuf,0,100);
+	snprintf(gpsBuf,100,"%6.2f,%6.5f,%6.5f,%d,%d,%0.2f",gps_time,latitude,longitude,gps_alt,gps_sats,gps_hdop);
+
+
+	// Generate outputData containing packetData to be txSMS to phonenumber
+	char outputData[100];
+	memset(outputData, 0, 100);
+	celltracker.txSMS(phonenumber, gpsBuf, outputData);
+	// Send outputData to XBee
+	for(int i = 0; i < 100; i++){
+		xbeeSerial.write(outputData[i]);
+		Serial.println((int)outputData[i]);
+	}
+	celltracker.nukeBuffer();
+}
+
+
+void outputSD(){
+
+	char gpsBuf[100];
+	memset(gpsBuf,0,100);
+	snprintf(gpsBuf,100,"%6.2f,%6.5f,%6.5f,%d,%d,%0.2f",gps_time,latitude,longitude,gps_alt,gps_sats,gps_hdop);
+	
+	GPSlog.println(gpsBuf);
+	
+	if(millis() > next_flush){
+		GPSlog.flush();
+		next_flush = millis() + flush_interval;
+	}
+	
+	if(gps_alt > max_gps_alt){
+		max_gps_alt = gps_alt;
+	}
+}
+
+void sd_init(){
+	if (!SD.begin(SDpin)) {
     Serial.println(F("SD init fail"));
     return;
   }else{
@@ -87,31 +160,15 @@ void setup()
   } else {
     Serial.println(F("log init err"));
   }
-  
 }
 
 
-// The frickin simplest loop() I've seen in a while
-void loop() {
- while (gpsserial.available() > 0)
 
-    //PARSE
-    gpsRun();
+void outputSerial(){
+  
+	char gpsBuf[100];
+	memset(gpsBuf,0,100);
+	snprintf(gpsBuf,100,"%6.2f,%6.5f,%6.5f,%d,%d,%0.2f,%d",gps_time,latitude,longitude,gps_alt,gps_sats,gps_hdop,max_gps_alt);
 
-    //LOG
-    if ((millis() - previousMillis1) >= t1) {
-      previousMillis1 = millis(); 
-      outputSD();
-      outputSerial();
-    }
-    
-
-    //SMS_TX
-    if(((millis() - previousMillis3)>t3) && (gpsInfo.GPSAlt<1000) && (x<50)){
-      sendText();
-      previousMillis3 = millis();
-      x++;
-      Serial.println(F("SMS_TX"));
-    }
-
+	Serial.println(gpsBuf);
 }
