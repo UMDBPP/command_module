@@ -88,7 +88,7 @@ bool gps_set_navmode_one_g(){
 
   delay(1000);
   
-  int stop_time = millis() + 5000;
+  unsigned int stop_time = millis() + 5000;
   gps_write(navmode_poll,sizeof(navmode_poll));
 
   //---------------Parse UBX return ---------------
@@ -154,7 +154,7 @@ void gps_init(){
     Serial.println("itworked");
   }
 
-  set_gps_ten_hertz();
+  set_gps_five_hertz();
 
   gps_save_config();
 }
@@ -166,9 +166,9 @@ void gps_baud_init(){
     gpsserial.end();
     gpsserial.begin(115200);
 	delay(100);
-	gps_set_baud_ultra();
-	gpsserial.end();
-	gpsserial.begin(921600);
+	//gps_set_baud_ultra();
+	//gpsserial.end();
+	//gpsserial.begin(921600);
 	
     delay(100);
 }
@@ -196,29 +196,52 @@ void myGPS(){
         
       //Start of string
       if(parsed_byte == '$'){
-		//Serial.print('\n');
-        //Serial.println("Last String Size: " + String(gps_index));
-
-        // Print Last MSG
-        char gpsBuf[100];
-        memset(gpsBuf,0,100);
-        //snprintf(gpsBuf,100,"MSG_Type: %.5s  Time: %6.2f Lat: %6.5f Lon: %6.5f Alt: %d DOP:%0.2f \n",gps_type,gps_time,latitude,longitude,gps_alt,gps_hdop);
-        //Serial.println(gpsBuf);
         
-        memset(gps_buffer,0,20);
+        // Print Last MSG
+        //char gpsBuf[100];
+        //memset(gpsBuf,0,100);
         
         gps_comma_lag = 0;
         gps_index = -1;
         gps_comma = 0;
+        _checksum = 0;
+        _read_check = false;
 		
-		
+      }
+      else if(parsed_byte == '*'){
+         //Serial.print("Check: ");
+         //Serial.println(_checksum);
+         _read_check = true;
+		 gps_index = -1;
+      }
+      else if(parsed_byte == 13){
+         //Serial.println("");
+         char * pEnd;
+		 if(_checksum == strtol(gps_buffer,&pEnd,16)){
+			//Serial.println("Match");
+			
+			gps_time = _gps_time;
+			latitude = _latitude;
+			longitude = _longitude;
+			gps_quality = _gps_quality;
+			gps_sats = _gps_sats;
+			gps_alt = _gps_alt;
+			gps_hdop = _gps_hdop;
+			
+		 }
+         _read_check = false;
       }
       else if(parsed_byte == ','){ //If Comma
         gps_comma++;
         gps_index = -1;
+        _checksum = _checksum ^ parsed_byte;
       }
       else                         //Process Data
       {
+        if(!_read_check){
+          _checksum = _checksum ^ parsed_byte;  
+        }
+        
         switch (gps_comma)
         {
           
@@ -228,7 +251,7 @@ void myGPS(){
           case 1: // Build Time: 123456.20
             if(gps_comma_lag < gps_comma){ //Lock TYPE
               gps_comma_lag++;
-              strcpy(gps_type,gps_buffer);
+              strcpy(_gps_type,gps_buffer);
               memset(gps_buffer,0,20);
             }
             break;
@@ -236,7 +259,7 @@ void myGPS(){
           case 2: // Build Latitude: DDmm.mmmmm
             if(gps_comma_lag < gps_comma){ //Lock Time
               gps_comma_lag++;
-              gps_time = atof(gps_buffer);
+              _gps_time = atof(gps_buffer);
               memset(gps_buffer,0,20);
             }
             break;
@@ -244,7 +267,7 @@ void myGPS(){
           case 3: // Build lat dir: N
             if(gps_comma_lag < gps_comma){ //hold lat
               gps_comma_lag++;
-              temp_pos = atof(gps_buffer);
+              _temp_pos = atof(gps_buffer);
               clear_buf(gps_buffer,20);
             }
             break;
@@ -252,20 +275,20 @@ void myGPS(){
           case 4:
             if(gps_comma_lag < gps_comma){ //Lock lat
               gps_comma_lag++;
-              latitude_direction = gps_buffer[0];
+              _latitude_direction = gps_buffer[0];
               clear_buf(gps_buffer,20);
 			  
-			  latitude = int(temp_pos/100) + (temp_pos-int(temp_pos/100)*100)/60;
-			  if(longitude_direction == 'S'){
-				latitude = latitude*-1;
-			  }
+      			  _latitude = int(_temp_pos/100) + (_temp_pos-int(_temp_pos/100)*100)/60;
+      			  if(_latitude_direction == 'S'){
+      				  _latitude = _latitude*-1;
+      			  }
             }
             break;
 			
           case 5:
             if(gps_comma_lag < gps_comma){ //hold lon
               gps_comma_lag++;
-              temp_pos = atof(gps_buffer);
+              _temp_pos = atof(gps_buffer);
               clear_buf(gps_buffer,20);
             }
             break;
@@ -273,20 +296,20 @@ void myGPS(){
           case 6:
             if(gps_comma_lag < gps_comma){ //Lock lon
               gps_comma_lag++;
-              longitude_direction = gps_buffer[0];
+              _longitude_direction = gps_buffer[0];
               clear_buf(gps_buffer,20);
 			  
-			  longitude = int(temp_pos/100) + (temp_pos-int(temp_pos/100)*100)/60;
-			  if(longitude_direction == 'W'){
-				longitude = longitude*-1;
-			  }
+      			  _longitude = int(_temp_pos/100) + (_temp_pos-int(_temp_pos/100)*100)/60;
+      			  if(_longitude_direction == 'W'){
+      				  _longitude = _longitude*-1;
+      			  }
             }
             break;
 			
           case 7:
             if(gps_comma_lag < gps_comma){ //Lock quality
               gps_comma_lag++;
-              gps_quality = atoi(gps_buffer);
+              _gps_quality = atoi(gps_buffer);
               clear_buf(gps_buffer,20);
             }
             break;
@@ -294,7 +317,7 @@ void myGPS(){
           case 8:
             if(gps_comma_lag < gps_comma){ //Lock SATS
               gps_comma_lag++;
-              gps_sats = atoi(gps_buffer);
+              _gps_sats = atoi(gps_buffer);
               clear_buf(gps_buffer,20);
             }
             break;
@@ -302,7 +325,7 @@ void myGPS(){
           case 9:
             if(gps_comma_lag < gps_comma){ //Lock hdop
               gps_comma_lag++;
-              gps_hdop = atof(gps_buffer);
+              _gps_hdop = atof(gps_buffer);
               clear_buf(gps_buffer,20);
             }
             break;
@@ -310,13 +333,13 @@ void myGPS(){
           case 10:
             if(gps_comma_lag < gps_comma){ //Lock ALT
               gps_comma_lag++;
-              gps_alt = atoi(gps_buffer);
+              _gps_alt = atoi(gps_buffer);
               clear_buf(gps_buffer,20);
             }
             break;
 			
           case 11:
-            if(gps_comma_lag < gps_comma){ //Unit
+            if(gps_comma_lag < gps_comma){ //Lock Unit
               gps_comma_lag++;
               //gps_alt = atoi(gps_buffer);
               //clear_buf(gps_buffer,20);
@@ -324,22 +347,33 @@ void myGPS(){
             break;
 			
           case 12:
-            if(gps_comma_lag < gps_comma){ //Alt Correction
+            if(gps_comma_lag < gps_comma){ //Lock Alt Correction
               gps_comma_lag++;
-              gps_alt += atoi(gps_buffer);
+              _gps_alt += atoi(gps_buffer);
               clear_buf(gps_buffer,20);
             }
             break;
 			
-          case 13:
-		  
+          case 13: 
+		        if(gps_comma_lag < gps_comma){ // Lock Alt Correction Unit
+              gps_comma_lag++;
+            }
             break;
 			
           case 14:
-            
+            if(gps_comma_lag < gps_comma){ // Lcok diffAge
+              gps_comma_lag++;
+            }
+            break;
+
+          case 15:
+            if(gps_comma_lag < gps_comma){ // Lcok diffAge
+              gps_comma_lag++;
+            }
             break;
         }
-		gps_buffer[gps_index] = parsed_byte;
+        
+		    gps_buffer[gps_index] = parsed_byte;
       }
       
       //Serial.print(parsed_byte);
