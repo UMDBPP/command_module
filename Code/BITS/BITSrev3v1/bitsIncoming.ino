@@ -93,6 +93,15 @@ void uplink(){
         xbeeSend(GroundSL,xbeeSendBuf);
     }
 
+
+    else if(strstr((char*)rxBuf,"gps_reset")){ //Sends test message to ground XBee
+        OutputSerial.println("gps_reset");
+        logprintln("gps_reset");
+        String("gps_reset").getBytes(xbeeSendBuf,xbeeSendBufSize);
+        xbeeSend(GroundSL,xbeeSendBuf);
+        gps_reset();
+    }
+
     //------------------------------------Check_BLUE_XBEE--------------------------------------
     else if(strstr((char*)rxBuf,"pingblue")){
         OutputSerial.println("pingMars");
@@ -162,6 +171,16 @@ void uplink(){
       if(xbeeSend(WireSL,xbeeSendBuf))  //try to passthrough with xbee
       {      
         logprintln("WIREPASS");               // if success, log it
+        strcat(conf,"PASS");
+      }
+      else if(xbeeSend(WireSL,xbeeSendBuf)) //try again if failed
+      {
+        logprintln("WIREPASS"); 
+        strcat(conf,"PASS");
+      }
+      else if(xbeeSend(WireSL,xbeeSendBuf)) //try again if failed
+      {
+        logprintln("WIREPASS"); 
         strcat(conf,"PASS");
       }
       else if(xbeeSend(WireSL,xbeeSendBuf)) //try again if failed

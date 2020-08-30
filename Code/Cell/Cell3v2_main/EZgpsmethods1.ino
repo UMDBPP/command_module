@@ -154,7 +154,7 @@ void gps_init(){
     Serial.println("itworked");
   }
 
-  set_gps_five_hertz();
+  set_gps_one_hertz();
 
   gps_save_config();
 }

@@ -68,7 +68,7 @@ unsigned long messageTimeInterval = 60000; // In milliseconds; 300000 is 5 minut
 
 // Hard shutdowns are a bad idea, trace NS-88
 //const long shutdownTimeInterval = 14400000; // In milliseconds; 14400000 is 4 hours; defines after what period of time the program stops sending messages
-const long gpsLogInterval = 200;
+const long gpsLogInterval = 1000;
 const long gpsLandedInterval = 1000;
 
 //Initializing Log Files; Must be in form XXXXXXXX.log; no more than 8 'X' characters
@@ -125,17 +125,21 @@ IridiumSBD modem(IridiumSerial);
 
 void setup()
 {
-  Serial.begin(9600);
-  delay(5);
-  Serial.println("BITSrev3v1");
-  gpsserial.begin(9600);
-
-  GPSINIT(); //Setup the GPS
-  
-  gpsserial.end();
-  gpsserial.begin(GPS_BAUD);
-  IridiumSerial.begin(SBD_BAUD);
+  Serial.begin(115200);
   Serial2.begin(115200);
+  IridiumSerial.begin(SBD_BAUD);
+  //while(!Serial){}
+  delay(1000);
+  Serial.println("BITSrev3v1");
+  //gpsserial.begin(9600);
+
+  gps_init(); //Setup the GPS
+  
+  //gpsserial.end();
+  //gpsserial.begin(GPS_BAUD);
+  
+  
+  //while(!Serial2){}
   xbee.setSerial(Serial2);
   startBlinks();
 

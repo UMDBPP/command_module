@@ -54,7 +54,7 @@ float gps_hdop = -1;
 //snprintf(gpsBuf,100,"%09.2f,%6.5f,%6.5f,%d,%d,%0.2f ",gps_time,latitude,longitude,gps_alt,gps_sats,gps_hdop);
 
 const unsigned long flush_interval = 10000;
-const unsigned int log_interval = 200;
+const unsigned int log_interval = 1000;
 const unsigned int text_interval = 300000;
 
 unsigned long next_flush = 0;
@@ -77,7 +77,8 @@ void setup()
   
   Serial.begin(115200);
   
-  while(!Serial){}
+  //while(!Serial){}
+  delay(2000);
   
   gps_init();
 
