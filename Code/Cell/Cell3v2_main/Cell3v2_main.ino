@@ -92,8 +92,8 @@ void setup()
 
   // Send outputData to XBee
   for(int i = 0; i < 80; i++){
-    //xbeeSerial.write(outputData[i]);
-    //Serial.println((int)outputData[i]);
+    xbeeSerial.write(outputData[i]);
+    Serial.println((int)outputData[i]);
   }
   celltracker.nukeBuffer();
 
@@ -106,8 +106,6 @@ void setup()
   // Hold for lock
   unsigned int gps_hold_timer = 0;
 
-//  gps_sats = 0;
-//  Serial.println(gps_sats);
   while((gps_sats < 4)){
     myGPS();
     if(millis() > gps_hold_timer){
@@ -126,7 +124,7 @@ void setup()
   celltracker.txSMS(phonenumber, lockMSG, outputData);
 
   for(int i = 0; i < 80; i++){
-    //xbeeSerial.write(outputData[i]);
+    xbeeSerial.write(outputData[i]);
   }
   celltracker.nukeBuffer();
 
@@ -142,7 +140,7 @@ void loop() {
 
     //LOG
     if (millis() > next_log) {
-		  Serial.println("LOGBLPUIISIDSF");
+		  //Serial.println("LOGBLPUIISIDSF");
       outputSD();
       outputSerial();
 	  
@@ -151,7 +149,7 @@ void loop() {
 
     //SMS_TX
     if((millis() > next_text) && (gps_alt<1000) && (x<50)){
-      //sendText();
+      sendText();
       x++;
       Serial.println(F("SMS_TX"));
 	    next_text = millis() + text_interval;
