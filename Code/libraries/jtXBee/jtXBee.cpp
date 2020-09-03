@@ -102,25 +102,29 @@ bool jtXBee::rxSMS(char* phonenumber, char* data, int datasize){
 	return true;
 }
 
-void jtXBee::txSMS(char* phonenumber, char* packetData, char* outputData){
+bool jtXBee::txSMS(char* phonenumber, char* packetData, char* outputData, int output_size){
     
-
     int sum = 32;//1+31 (10 + 1F)
     
 	int datalength = 23+strlen(packetData);
-
-	// Data
-    for(int i = 0;i<strlen(packetData);i++){
-		outputData[26+i] = (packetData[i]);
-        sum+=packetData[i];
-    }
-
+	
+	// Stop if output will exceed buffer
+	if(datalength+3 > output_size){
+		return false;
+	}
+	
 	// phone#
 	for(int i=0; i<strlen(phonenumber); i++){
 		outputData[i+6] = phonenumber[i];
 		sum+=phonenumber[i];
 	}
 	
+	// Data
+    for(int i = 0;i<strlen(packetData);i++){
+		outputData[26+i] = (packetData[i]);
+        sum+=packetData[i];
+    }
+
 	
 	outputData[0] = 126;//startdelimINT;
     outputData[1] = 0;
@@ -129,4 +133,6 @@ void jtXBee::txSMS(char* phonenumber, char* packetData, char* outputData){
     outputData[4] = 1;//frameIdINT;
     outputData[5] = 0;//optionsINT;
     outputData[datalength+3] = (char)(255 - (sum&0xFF));
+	
+	return true;
 }

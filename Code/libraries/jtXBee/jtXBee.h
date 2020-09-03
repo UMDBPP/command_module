@@ -8,7 +8,7 @@ class jtXBee
 public:
 
 	jtXBee(char* buffer, int bufSize);
-    void txSMS(char* phonenumber, char* packetData, char* outputData);
+    bool txSMS(char* phonenumber, char* packetData, char* outputData, int output_size);
 	int datalength;
 	void nukeBuffer();
 	bool process(int byte);
