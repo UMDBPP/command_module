@@ -13,12 +13,15 @@
 #define SDpin 5
 
 File GPSlog;
+File event_log;
 
 int gps_index = 0;
 int gps_comma = 0;
 int gps_comma_lag = 0;
 
 char gps_buffer[20];
+const int outputDataSize = 100;
+const int gpsBufSize = 50;
 
 
 // Internal to be put into library
@@ -48,9 +51,7 @@ int gps_alt = 1;
 float gps_hdop = -1;
 
 
-//snprintf(gpsBuf,100,"%\n09.2f,%6.5f,%6.5f,%d,%d,%0.2f ",gps_time,latitude,longitude,gps_alt,gps_sats,gps_hdop);
-
-const unsigned long flush_interval = 10000;
+const unsigned int flush_interval = 10000;
 const unsigned int log_interval = 1000;
 const unsigned int text_interval = 300000;
 
@@ -60,11 +61,11 @@ unsigned long next_text = 0;
 
 int x = 0;
 
-int max_gps_alt = 0;
+unsigned int max_gps_alt = 0;
 
 char xbeeBuffer[100];
-const int bufSize = 100;
-jtXBee celltracker(xbeeBuffer, bufSize);
+const int xbeeBufSize = 100;
+jtXBee celltracker(xbeeBuffer, xbeeBufSize);
 
 char phonenumber[12] = "7324849689";
 
@@ -73,9 +74,9 @@ void setup()
   xbeeSerial.begin(9600);
   
   Serial.begin(115200);
-  
-  //while(!Serial){}
-  while(millis()<5000){}
+
+  // Hold for Serial initialization
+  while(millis()<3000){}
   
   gps_init();
 
@@ -83,22 +84,22 @@ void setup()
 
   delay(500);
 
+
 // Generate outputData containing packetData to be txSMS to phonenumber
   Serial.println(F("INIT_TEXT"));
   
-  char packetData[6] = "init"; //payload
+  char packetData[6] = "init"; //payload 
+  char outputData[outputDataSize];         //buffer
+  memset(outputData, 0, outputDataSize);   //Nukebuffer
   
-  char outputData[40];         //buffer
-  memset(outputData, 0, 40);   //Nukebuffer
-  
-  if(!celltracker.txSMS(phonenumber, packetData, outputData, 40)){ //fill buffer with data
+  if(!celltracker.txSMS(phonenumber, packetData, outputData, outputDataSize)){ //fill buffer with data
     Serial.println("packet_gen_fail");
   } else {
     Serial.println("init_msg_gen");
   }
 
   // Send outputData to XBee over xbeeSerial
-  for(int i = 0; i < 40; i++){
+  for(int i = 0; i < outputDataSize; i++){
     xbeeSerial.write(outputData[i]);
     Serial.println((int)outputData[i]);
   }
@@ -120,16 +121,16 @@ void setup()
   Serial.println("sats");
   Serial.println(gps_sats);
   
-  memset(outputData, 0, 80);
+  memset(outputData, 0, outputDataSize);
   char lockMSG[10] = "got_lock";
 
   GPSlog.println(F("got_lock"));
   
-  if(!celltracker.txSMS(phonenumber, lockMSG, outputData, 80)){
+  if(!celltracker.txSMS(phonenumber, lockMSG, outputData, outputDataSize)){
     Serial.println("packet_gen_fail");
   }
 
-  for(int i = 0; i < 80; i++){
+  for(int i = 0; i < outputDataSize; i++){
     xbeeSerial.write(outputData[i]);
   }
   celltracker.nukeBuffer();
@@ -147,7 +148,6 @@ void loop() {
 
     //LOG
     if (millis() > next_log) {
-		  //Serial.println("LOGBLPUIISIDSF");
       outputSD();
       outputSerial();
 	  
@@ -167,17 +167,17 @@ void loop() {
 
 void sendText(){
 	
-	char gpsBuf[100];
-	memset(gpsBuf,0,100);
-	int string_size = snprintf(gpsBuf,100,"%\n09.2f,%6.5f,%6.5f,%d,%d,%0.2f",gps_time,latitude,longitude,gps_alt,gps_sats,gps_hdop);
+	char gpsBuf[gpsBufSize];
+	memset(gpsBuf,0,gpsBufSize);
+	int string_size = snprintf(gpsBuf,gpsBufSize,"%\n09.2f,%6.5f,%6.5f,%d,%d,%0.2f",gps_time,latitude,longitude,gps_alt,gps_sats,gps_hdop);
 
 	// Generate outputData containing packetData to be txSMS to phonenumber
-	char outputData[100];
-	memset(outputData, 0, 100);
+	char outputData[outputDataSize];
+	memset(outputData, 0, outputDataSize);
  
-	if(celltracker.txSMS(phonenumber, gpsBuf, outputData, 100)){
+	if(celltracker.txSMS(phonenumber, gpsBuf, outputData, outputDataSize)){
 	  
-    for(int i = 0; i < 100; i++){ 
+    for(int i = 0; i < outputDataSize; i++){ 
       xbeeSerial.write(outputData[i]);
       Serial.println((int)outputData[i]);
     }
@@ -188,14 +188,21 @@ void sendText(){
  
 }
 
+
+
 void outputSD(){
 
-	char gpsBuf[80];
-	memset(gpsBuf,0,80);
-	int string_size = snprintf(gpsBuf,80,"\n%09.2f,%6.5f,%6.5f,%d,%d,%0.2f",gps_time,latitude,longitude,gps_alt,gps_sats,gps_hdop);
-	
-	GPSlog.write(gpsBuf,string_size+1);
-	
+	char gpsBuf[gpsBufSize];
+	memset(gpsBuf,0,gpsBufSize);
+  
+	int string_size = snprintf(gpsBuf,gpsBufSize,"\n%09.2f,%6.5f,%6.5f,%d,%d,%0.2f",gps_time,latitude,longitude,gps_alt,gps_sats,gps_hdop);
+
+  if(string_size < gpsBufSize){
+	  GPSlog.write(gpsBuf, string_size+1);
+  }else{
+    event_log.println("gpsBuf_ovflw");  
+  }
+  
 	if(millis() > next_flush){
 		GPSlog.flush();
 		next_flush = millis() + flush_interval;
@@ -207,26 +214,30 @@ void outputSD(){
 }
 
 void outputSerial(){
-	char gpsBuf[100];
-	memset(gpsBuf,0,100);
+  
+	char gpsBuf[gpsBufSize];
+	memset(gpsBuf,0,gpsBufSize);
  
-	snprintf(gpsBuf,100,"\n%09.2f,%6.5f,%6.5f,%d,%d,%0.2f",gps_time,latitude,longitude,gps_alt,gps_sats,gps_hdop);
+	snprintf(gpsBuf,gpsBufSize,"\n%09.2f,%6.5f,%6.5f,%d,%d,%0.2f",gps_time,latitude,longitude,gps_alt,gps_sats,gps_hdop);
 	Serial.println(gpsBuf);
 }
 
 
 void sd_init(){
-  if (!SD.begin(SDpin)) {
-    Serial.println(F("SD init fail"));
-    return;
-  }else{
-    Serial.println(F("SD init"));
-  }
-  GPSlog = SD.open("log.txt", FILE_WRITE);
+  
+  if (!SD.begin(SDpin)) {return;}
+  
+  GPSlog = SD.open("gps.txt", FILE_WRITE);
+  event_log = SD.open("event.txt", FILE_WRITE);
+  
   if (GPSlog) {
-    Serial.println(F("log init"));
-    GPSlog.println(F("Started")); //Kinda obvious tbh
-  } else {
-    Serial.println(F("log init err"));
-  }
+    GPSlog.println(F("init")); //Kinda obvious tbh
+  } else {return;}
+
+  if (event_log) {
+    event_log.println(F("init")); //Kinda obvious tbh
+  } else {return;}
+  
+  Serial.println(F("sd init success"));
 }
+
