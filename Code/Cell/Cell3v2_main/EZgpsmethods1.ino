@@ -150,6 +150,9 @@ void gps_init(){
 
   if(!gps_set_navmode_one_g()){
     Serial.println("navmode_conf_fail");
+    delay(1000);
+  }else if(!gps_set_navmode_one_g()){
+    Serial.println("navmode_conf_fail");
   }else{
     Serial.println("itworked");
   }

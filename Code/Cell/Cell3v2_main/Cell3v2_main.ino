@@ -100,8 +100,8 @@ void setup()
 
   // Send outputData to XBee over xbeeSerial
   for(int i = 0; i < outputDataSize; i++){
-    xbeeSerial.write(outputData[i]);
-    Serial.println((int)outputData[i]);
+    //xbeeSerial.write(outputData[i]);
+    //Serial.println((int)outputData[i]);
   }
   
 	
@@ -109,15 +109,16 @@ void setup()
 // Hold for lock
   unsigned int gps_hold_timer = 0;
 
-  while((gps_sats < 4)){
-    myGPS();
-    if(millis() > gps_hold_timer){
-      gps_hold_timer = millis() + 1000;
-      outputSerial();
-	    outputSD();
-      Serial.println("waiting");
-    }
-  }
+//  while((gps_sats < 4)){
+//    myGPS();
+//    if(millis() > gps_hold_timer){
+//      gps_hold_timer = millis() + 1000;
+//      outputSerial();
+//	    outputSD();
+//      Serial.println("waiting");
+//    }
+//  }
+  
   Serial.println("sats");
   Serial.println(gps_sats);
   
@@ -131,8 +132,9 @@ void setup()
   }
 
   for(int i = 0; i < outputDataSize; i++){
-    xbeeSerial.write(outputData[i]);
+    //xbeeSerial.write(outputData[i]);
   }
+  
   celltracker.nukeBuffer();
 
   Serial.println("EnterLoop");
@@ -146,6 +148,8 @@ void loop() {
     //PARSE
     myGPS();
 
+    handle_cell();
+
     //LOG
     if (millis() > next_log) {
       outputSD();
@@ -156,7 +160,7 @@ void loop() {
 
     //SMS_TX
     if((millis() > next_text) && (gps_alt<1000) && (x<50)){
-      sendText();
+      //sendText();
       x++;
       Serial.println(F("SMS_TX"));
       GPSlog.println(F("SMS_TX"));
@@ -164,6 +168,9 @@ void loop() {
     }
 
 }
+//END LOOP
+
+// ---------------------------------------------------- Methods ------------------------------------------------------- //
 
 void sendText(){
 	
@@ -239,5 +246,52 @@ void sd_init(){
   } else {return;}
   
   Serial.println(F("sd init success"));
+}
+
+void handle_cell(){
+  
+  // Check if incoming data
+  if(xbeeSerial.available()){
+      celltracker.nukeBuffer();
+      while(xbeeSerial.available()>0){
+        celltracker.process(xbeeSerial.read());
+      }
+  }
+
+  // If received a text
+  if(celltracker.is_sms_ready()){
+      
+      char rxNumber[10];
+      char rxData[20];
+      memset(rxNumber,0,10);
+      memset(rxData,0,20);
+      
+      if(celltracker.rxSMS(rxNumber, rxData, 20)){
+        Serial.println("GoodRec");
+      }
+
+      // Print Number
+      Serial.println("rxNumber");
+      for(int i = 0; i < 10; i++){
+        Serial.println((char)rxNumber[i]);  
+      }
+
+      // Print Data
+      Serial.println("rxData");
+      for(int i = 0; i < 20; i++){
+        Serial.println((char)rxData[i]);  
+      }
+
+      if(strstr(rxNumber,phonenumber)){
+        Serial.println("Got message from my phone");
+
+        if(strstr(rxData,"start")){
+          Serial.println("startTexts");
+        }else if(strstr(rxData,"stop")){
+          Serial.println("stopTexts");
+        }
+        
+      }
+  }  
 }
 
