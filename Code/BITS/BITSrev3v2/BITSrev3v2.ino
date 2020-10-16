@@ -437,7 +437,7 @@ void ISBDDiagsCallback(IridiumSBD *device, char c)
 
 void LogPacket(){
   if(millis()-lastLog>gpsLogInterval){
-    char gpsLogPacket2[35];
+    char gpsLogPacket2[50];
     
     char exactTime[9];//A somewhat convaluted way of adding : into the integer timestamp... //TEST
     snprintf(exactTime,7,"%d",gpsInfo.GPSTime);
@@ -447,7 +447,8 @@ void LogPacket(){
     strncpy(sec, &exactTime[4], 2);sec[2] = '\0';
     snprintf(exactTime,9,"%s:%s:%s",hour,min,sec);
     
-    snprintf(gpsLogPacket2,35,"%s,%4.4f,%4.4f,%u",exactTime,gpsInfo.GPSLat,gpsInfo.GPSLon,gpsInfo.GPSAlt); //Fix Timestep
+    //snprintf(gpsLogPacket2,35,"%s,%4.4f,%4.4f,%u",exactTime,gpsInfo.GPSLat,gpsInfo.GPSLon,gpsInfo.GPSAlt); //Fix Timestep
+    snprintf(gpsLogPacket2,45,"%06d,%4.5f,%4.5f,%u",gpsInfo.GPSTime,gpsInfo.GPSLat,gpsInfo.GPSLon,gpsInfo.GPSAlt); //Build the packet
     gpsLogFile.println(gpsLogPacket2);
     
     gpsLogFile.flush(); //WIP

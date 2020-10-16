@@ -32,7 +32,7 @@
 
 //****************************************************************************
 char  CallSign[7]="W3EAX"; //DO NOT FORGET TO CHANGE YOUR CALLSIGN
-int   CallNumber=11; //SSID http://www.aprs.org/aprs11/SSIDs.txt
+int   CallNumber=10; //SSID http://www.aprs.org/aprs11/SSIDs.txt
 char  Symbol='O'; // '/O' for balloon, '/>' for car, for more info : http://www.aprs.org/symbols/symbols-new.txt
 bool alternateSymbolTable = false ; //false = '/' , true = '\'
 
@@ -43,7 +43,7 @@ char StatusMessage[50] = "umdbpp";
 //*****************************************************************************
 
 
-unsigned int   BeaconWait=56;  //seconds sleep for next beacon (TX).
+unsigned int   BeaconWait=64;  //seconds sleep for next beacon (TX).
 unsigned int   BattWait=60;    //seconds sleep if super capacitors/batteries are below BattMin (important if power source is solar panel) 
 float BattMin=4.5;        // min Volts to wake up.
 float DraHighVolt=10.0;    // min Volts for radio module (DRA818V) to transmit (TX) 1 Watt, below this transmit 0.5 Watt. You don't need 1 watt on a balloon. Do not change this.
