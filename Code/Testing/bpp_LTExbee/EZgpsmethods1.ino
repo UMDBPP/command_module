@@ -64,6 +64,15 @@ void gps_set_baud_fast(){ //115200
   gps_write(quickBaud,sizeof(quickBaud));
 }
 
+void gps_set_baud_ultra(){
+  
+  const char ultraBaud[] PROGMEM = { //921600
+    0xB5,0x62,0x06,0x00,0x14,0x00,0x01,0x00,0x00,0x00,0xD0,0x08,0x00,0x00,
+    0x00,0x10,0x0E,0x00,0x07,0x00,0x03,0x00,0x00,0x00,0x00,0x00,0x1B,0x5A
+  };
+  gps_write(ultraBaud,sizeof(ultraBaud));
+}
+
 //-------------------------------------------------Nav Mode---- (UBX-CFG-NAV5)----------------------------------------
 
 bool gps_set_navmode_one_g(){
@@ -159,7 +168,12 @@ void gps_baud_init(){
     gps_set_baud_fast();
     gpsserial.end();
     gpsserial.begin(115200);
-  delay(100);
+	delay(100);
+	//gps_set_baud_ultra();
+	//gpsserial.end();
+	//gpsserial.begin(921600);
+	
+    delay(100);
 }
 
 // Write the GPS hex code to the GPS port
