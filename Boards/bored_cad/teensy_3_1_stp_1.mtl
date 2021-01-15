@@ -1,0 +1,28 @@
+# 
+# Wavefront material file
+# Created with Kaydara FBX
+# 
+
+newmtl Teensy_3_1_stp_1Material0
+Ka 0.596063 0.666667 0.686259
+Kd 0.596063 0.666667 0.686259
+Ks 0.000000 0.000000 0.000000
+illum 2
+Ns 20.000000
+Tr 1.000000
+
+newmtl Teensy_3_1_stp_1Material1
+Ka 0.219593 0.470573 0.752941
+Kd 0.219593 0.470573 0.752941
+Ks 0.000000 0.000000 0.000000
+illum 2
+Ns 20.000000
+Tr 1.000000
+
+newmtl Teensy_3_1_stp_1Material2
+Ka 0.000000 0.000000 0.000000
+Kd 0.000000 0.000000 0.000000
+Ks 0.000000 0.000000 0.000000
+illum 2
+Ns 20.000000
+Tr 1.000000
