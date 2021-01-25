@@ -6451,7 +6451,6 @@ Source: AVX .. aphvc.pdf</description>
 <part name="+3V6" library="supply1@1" deviceset="+3V3" device=""/>
 <part name="U$4" library="NR_connectors" deviceset="MICROCLASP_4" device=""/>
 <part name="SUPPLY1" library="supply1" deviceset="GND" device=""/>
-<part name="R5" library="resistor" deviceset="R-US_" device="R0603" value="470"/>
 <part name="SUPPLY9" library="supply1" deviceset="GND" device=""/>
 </parts>
 <sheets>
@@ -6567,10 +6566,6 @@ All capacitors +/- 10% tolerance</text>
 <instance part="SUPPLY1" gate="1" x="38.1" y="83.82" smashed="yes">
 <attribute name="VALUE" x="35.687" y="81.153" size="1.778" layer="96"/>
 </instance>
-<instance part="R5" gate="G$1" x="40.64" y="73.66" smashed="yes" rot="R90">
-<attribute name="NAME" x="39.1414" y="69.85" size="1.778" layer="95" rot="R90"/>
-<attribute name="VALUE" x="43.942" y="69.85" size="1.778" layer="96" rot="R90"/>
-</instance>
 <instance part="SUPPLY9" gate="1" x="101.6" y="78.74" smashed="yes">
 <attribute name="VALUE" x="99.695" y="75.565" size="1.778" layer="96"/>
 </instance>
@@ -6623,27 +6618,16 @@ All capacitors +/- 10% tolerance</text>
 <pinref part="SUPPLY20" gate="1" pin="GND"/>
 </segment>
 <segment>
-<pinref part="U$4" gate="G$1" pin="P$3"/>
-<wire x1="35.56" y1="91.44" x2="38.1" y2="91.44" width="0.1524" layer="91"/>
-<wire x1="38.1" y1="91.44" x2="38.1" y2="88.9" width="0.1524" layer="91"/>
 <pinref part="U$4" gate="G$1" pin="P$4"/>
 <wire x1="38.1" y1="88.9" x2="38.1" y2="86.36" width="0.1524" layer="91"/>
 <wire x1="35.56" y1="88.9" x2="38.1" y2="88.9" width="0.1524" layer="91"/>
 <pinref part="SUPPLY1" gate="1" pin="GND"/>
-<junction x="38.1" y="88.9"/>
 </segment>
 <segment>
 <pinref part="U1" gate="G$1" pin="GND"/>
 <wire x1="101.6" y1="96.52" x2="96.52" y2="96.52" width="0.1524" layer="91"/>
 <pinref part="SUPPLY9" gate="1" pin="GND"/>
 <wire x1="101.6" y1="81.28" x2="101.6" y2="96.52" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$9" class="0">
-<segment>
-<pinref part="JP2" gate="A" pin="7"/>
-<wire x1="233.68" y1="127" x2="241.3" y2="127" width="0.1524" layer="91"/>
-<pinref part="+3V1" gate="G$1" pin="+3V3"/>
 </segment>
 </net>
 <net name="RST" class="0">
@@ -6681,13 +6665,6 @@ All capacitors +/- 10% tolerance</text>
 <label x="241.3" y="114.3" size="1.016" layer="95" xref="yes"/>
 </segment>
 </net>
-<net name="VREG" class="0">
-<segment>
-<wire x1="198.12" y1="127" x2="205.74" y2="127" width="0.1524" layer="91"/>
-<label x="205.74" y="127" size="1.016" layer="95" xref="yes"/>
-<pinref part="U$2" gate="G$1" pin="P$1"/>
-</segment>
-</net>
 <net name="STATUS" class="0">
 <segment>
 <pinref part="JP2" gate="A" pin="1"/>
@@ -6713,6 +6690,12 @@ All capacitors +/- 10% tolerance</text>
 <wire x1="132.08" y1="99.06" x2="132.08" y2="101.6" width="0.1524" layer="91"/>
 <wire x1="132.08" y1="101.6" x2="139.7" y2="101.6" width="0.1524" layer="91"/>
 <junction x="139.7" y="101.6"/>
+</segment>
+<segment>
+<pinref part="JP2" gate="A" pin="7"/>
+<wire x1="233.68" y1="127" x2="241.3" y2="127" width="0.1524" layer="91"/>
+<pinref part="+3V1" gate="G$1" pin="+3V3"/>
+<label x="243.84" y="127" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$29" class="0">
@@ -6773,21 +6756,6 @@ All capacitors +/- 10% tolerance</text>
 <junction x="60.96" y="96.52"/>
 <wire x1="53.34" y1="96.52" x2="53.34" y2="99.06" width="0.1524" layer="91"/>
 <label x="53.34" y="99.06" size="1.27" layer="95" xref="yes"/>
-</segment>
-</net>
-<net name="SWITCH_LED" class="0">
-<segment>
-<pinref part="R5" gate="G$1" pin="1"/>
-<wire x1="40.64" y1="68.58" x2="40.64" y2="66.04" width="0.1524" layer="91"/>
-<label x="40.64" y="66.04" size="1.016" layer="95" xref="yes"/>
-</segment>
-</net>
-<net name="N$33" class="0">
-<segment>
-<pinref part="U$4" gate="G$1" pin="P$2"/>
-<pinref part="R5" gate="G$1" pin="2"/>
-<wire x1="40.64" y1="78.74" x2="40.64" y2="93.98" width="0.1524" layer="91"/>
-<wire x1="40.64" y1="93.98" x2="35.56" y2="93.98" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$7" class="0">

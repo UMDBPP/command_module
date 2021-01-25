@@ -452,43 +452,6 @@ DIN A4, landscape with location and doc. field</description>
 </deviceset>
 </devicesets>
 </library>
-<library name="NR_connectors">
-<packages>
-<package name="LITEAPRS">
-<pad name="P$1" x="-1.397" y="0" drill="0.8" shape="long" rot="R90"/>
-<pad name="P$2" x="1.397" y="0" drill="0.8" shape="long" rot="R90"/>
-</package>
-</packages>
-<symbols>
-<symbol name="2_PIN">
-<wire x1="-2.54" y1="2.54" x2="5.08" y2="2.54" width="0.254" layer="94"/>
-<wire x1="5.08" y1="2.54" x2="5.08" y2="-5.08" width="0.254" layer="94"/>
-<wire x1="5.08" y1="-5.08" x2="-2.54" y2="-5.08" width="0.254" layer="94"/>
-<wire x1="-2.54" y1="-5.08" x2="-2.54" y2="2.54" width="0.254" layer="94"/>
-<pin name="P$1" x="10.16" y="0" length="middle" rot="R180"/>
-<pin name="P$2" x="10.16" y="-2.54" length="middle" rot="R180"/>
-<text x="-2.54" y="5.08" size="1.778" layer="95">&gt;NAME</text>
-</symbol>
-</symbols>
-<devicesets>
-<deviceset name="LITEAPRS">
-<gates>
-<gate name="G$1" symbol="2_PIN" x="0" y="0"/>
-</gates>
-<devices>
-<device name="" package="LITEAPRS">
-<connects>
-<connect gate="G$1" pin="P$1" pad="P$1"/>
-<connect gate="G$1" pin="P$2" pad="P$2"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-</devicesets>
-</library>
 <library name="resistor">
 <description>&lt;b&gt;Resistors, Capacitors, Inductors&lt;/b&gt;&lt;p&gt;
 Based on the previous libraries:
@@ -6471,6 +6434,67 @@ Manuf: Nidec Copal Electronics</description>
 </deviceset>
 </devicesets>
 </library>
+<library name="pinhead" urn="urn:adsk.eagle:library:325">
+<description>&lt;b&gt;Pin Header Connectors&lt;/b&gt;&lt;p&gt;
+&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
+<packages>
+<package name="1X01" urn="urn:adsk.eagle:footprint:22382/1" library_version="3">
+<description>&lt;b&gt;PIN HEADER&lt;/b&gt;</description>
+<wire x1="-0.635" y1="1.27" x2="0.635" y2="1.27" width="0.1524" layer="21"/>
+<wire x1="0.635" y1="1.27" x2="1.27" y2="0.635" width="0.1524" layer="21"/>
+<wire x1="1.27" y1="0.635" x2="1.27" y2="-0.635" width="0.1524" layer="21"/>
+<wire x1="1.27" y1="-0.635" x2="0.635" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="-1.27" y1="0.635" x2="-1.27" y2="-0.635" width="0.1524" layer="21"/>
+<wire x1="-0.635" y1="1.27" x2="-1.27" y2="0.635" width="0.1524" layer="21"/>
+<wire x1="-1.27" y1="-0.635" x2="-0.635" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="0.635" y1="-1.27" x2="-0.635" y2="-1.27" width="0.1524" layer="21"/>
+<pad name="1" x="0" y="0" drill="1.016" shape="octagon"/>
+<text x="-1.3462" y="1.8288" size="1.27" layer="25" ratio="10">&gt;NAME</text>
+<text x="-1.27" y="-3.175" size="1.27" layer="27">&gt;VALUE</text>
+<rectangle x1="-0.254" y1="-0.254" x2="0.254" y2="0.254" layer="51"/>
+</package>
+</packages>
+<packages3d>
+<package3d name="1X01" urn="urn:adsk.eagle:package:22485/2" type="model" library_version="3">
+<description>PIN HEADER</description>
+<packageinstances>
+<packageinstance name="1X01"/>
+</packageinstances>
+</package3d>
+</packages3d>
+<symbols>
+<symbol name="PINHD1" urn="urn:adsk.eagle:symbol:22381/1" library_version="3">
+<wire x1="-6.35" y1="-2.54" x2="1.27" y2="-2.54" width="0.4064" layer="94"/>
+<wire x1="1.27" y1="-2.54" x2="1.27" y2="2.54" width="0.4064" layer="94"/>
+<wire x1="1.27" y1="2.54" x2="-6.35" y2="2.54" width="0.4064" layer="94"/>
+<wire x1="-6.35" y1="2.54" x2="-6.35" y2="-2.54" width="0.4064" layer="94"/>
+<text x="-6.35" y="3.175" size="1.778" layer="95">&gt;NAME</text>
+<text x="-6.35" y="-5.08" size="1.778" layer="96">&gt;VALUE</text>
+<pin name="1" x="-2.54" y="0" visible="pad" length="short" direction="pas" function="dot"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="PINHD-1X1" urn="urn:adsk.eagle:component:22540/2" prefix="JP" uservalue="yes" library_version="3">
+<description>&lt;b&gt;PIN HEADER&lt;/b&gt;</description>
+<gates>
+<gate name="G$1" symbol="PINHD1" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="1X01">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:22485/2"/>
+</package3dinstances>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 <attribute name="DOC_NUM" value="1"/>
@@ -6485,9 +6509,7 @@ Manuf: Nidec Copal Electronics</description>
 <parts>
 <part name="FRAME1" library="frames" deviceset="A4L-LOC" device=""/>
 <part name="JP2" library="pinhead" deviceset="PINHD-1X7" device=""/>
-<part name="GND2" library="supply1" deviceset="GND" device=""/>
 <part name="+3V1" library="supply1" deviceset="+3V3" device=""/>
-<part name="U$2" library="NR_connectors" deviceset="LITEAPRS" device=""/>
 <part name="R17" library="resistor" deviceset="R-US_" device="R0603" value="23.3k"/>
 <part name="L1" library="inductors" deviceset="ASPI-6045S-560M-TCT-ND" device=""/>
 <part name="R18" library="resistor" deviceset="R-US_" device="R0603" value="340k"/>
@@ -6515,6 +6537,8 @@ Manuf: Nidec Copal Electronics</description>
 <part name="U$1" library="jmolterLib" deviceset="559350210" device=""/>
 <part name="U$3" library="jmolterLib" deviceset="CL-SB-12B-01" device=""/>
 <part name="SUPPLY10" library="supply1" deviceset="GND" device=""/>
+<part name="SUPPLY11" library="supply1" deviceset="GND" device=""/>
+<part name="JP3" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X1" device="" package3d_urn="urn:adsk.eagle:package:22485/2"/>
 </parts>
 <sheets>
 <sheet>
@@ -6534,13 +6558,9 @@ All capacitors +/- 10% tolerance</text>
 <attribute name="NAME" x="237.49" y="108.585" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="237.49" y="132.08" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="GND2" gate="1" x="205.74" y="121.92" smashed="yes">
-<attribute name="VALUE" x="203.2" y="119.38" size="1.778" layer="96"/>
-</instance>
 <instance part="+3V1" gate="G$1" x="243.84" y="127" smashed="yes" rot="R270">
 <attribute name="VALUE" x="238.76" y="129.54" size="1.778" layer="96"/>
 </instance>
-<instance part="U$2" gate="G$1" x="187.96" y="127" smashed="yes"/>
 <instance part="R17" gate="G$1" x="68.58" y="76.2" smashed="yes" rot="R90">
 <attribute name="NAME" x="67.0814" y="72.39" size="1.778" layer="95" rot="R90"/>
 <attribute name="VALUE" x="71.882" y="72.39" size="1.778" layer="96" rot="R90"/>
@@ -6635,16 +6655,18 @@ All capacitors +/- 10% tolerance</text>
 <instance part="SUPPLY10" gate="1" x="50.8" y="50.8" smashed="yes">
 <attribute name="VALUE" x="48.895" y="47.625" size="1.778" layer="96"/>
 </instance>
+<instance part="SUPPLY11" gate="1" x="213.36" y="109.22" smashed="yes">
+<attribute name="VALUE" x="210.947" y="106.553" size="1.778" layer="96"/>
+</instance>
+<instance part="JP3" gate="G$1" x="200.66" y="111.76" smashed="yes" rot="R180">
+<attribute name="NAME" x="207.01" y="108.585" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="207.01" y="116.84" size="1.778" layer="96" rot="R180"/>
+</instance>
 </instances>
 <busses>
 </busses>
 <nets>
 <net name="GND" class="0">
-<segment>
-<wire x1="198.12" y1="124.46" x2="205.74" y2="124.46" width="0.1524" layer="91"/>
-<pinref part="GND2" gate="1" pin="GND"/>
-<pinref part="U$2" gate="G$1" pin="P$2"/>
-</segment>
 <segment>
 <pinref part="C3" gate="G$1" pin="2"/>
 <pinref part="SUPPLY2" gate="1" pin="GND"/>
@@ -6700,6 +6722,11 @@ All capacitors +/- 10% tolerance</text>
 <wire x1="43.18" y1="60.96" x2="50.8" y2="60.96" width="0.1524" layer="91"/>
 <pinref part="SUPPLY10" gate="1" pin="GND"/>
 <wire x1="50.8" y1="60.96" x2="50.8" y2="53.34" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="JP3" gate="G$1" pin="1"/>
+<pinref part="SUPPLY11" gate="1" pin="GND"/>
+<wire x1="203.2" y1="111.76" x2="213.36" y2="111.76" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="RST" class="0">
@@ -6853,11 +6880,15 @@ All capacitors +/- 10% tolerance</text>
 </sheet>
 </sheets>
 <errors>
-<approved hash="104,1,93.98,182.88,U$1,VCC,V_DIV,,,"/>
-<approved hash="104,1,124.46,83.82,U2,V-,GND,,,"/>
-<approved hash="113,1,139.596,107.846,FRAME1,,,,,"/>
-<approved hash="113,1,203.426,93.7429,JP1,,,,,"/>
-<approved hash="113,1,15.5617,74.93,LED1,,,,,"/>
+<approved hash="106,1,233.68,114.3,MISO_6,,,,,"/>
+<approved hash="106,1,233.68,124.46,RST,,,,,"/>
+<approved hash="106,1,233.68,116.84,SCK_7,,,,,"/>
+<approved hash="106,1,233.68,121.92,SCL_16,,,,,"/>
+<approved hash="106,1,233.68,119.38,SDA_17,,,,,"/>
+<approved hash="106,1,233.68,111.76,STATUS,,,,,"/>
+<approved hash="113,1,130.071,89.431,FRAME1,,,,,"/>
+<approved hash="113,1,233.443,117.979,JP2,,,,,"/>
+<approved hash="113,1,202.963,110.359,JP3,,,,,"/>
 </errors>
 </schematic>
 </drawing>
@@ -6865,6 +6896,21 @@ All capacitors +/- 10% tolerance</text>
 <note version="6.3" minversion="6.2.2" severity="warning">
 Since Version 6.2.2 text objects can contain more than one line,
 which will not be processed correctly with this version.
+</note>
+<note version="8.2" severity="warning">
+Since Version 8.2, EAGLE supports online libraries. The ids
+of those online libraries will not be understood (or retained)
+with this version.
+</note>
+<note version="8.3" severity="warning">
+Since Version 8.3, EAGLE supports URNs for individual library
+assets (packages, symbols, and devices). The URNs of those assets
+will not be understood (or retained) with this version.
+</note>
+<note version="8.3" severity="warning">
+Since Version 8.3, EAGLE supports the association of 3D packages
+with devices in libraries, schematics, and board files. Those 3D
+packages will not be understood (or retained) with this version.
 </note>
 </compatibility>
 </eagle>
