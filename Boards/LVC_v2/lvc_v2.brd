@@ -7,7 +7,7 @@
 <setting keepoldvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.25" unitdist="mm" unit="mm" style="lines" multiple="4" display="yes" altdistance="0.1" altunitdist="mm" altunit="mm"/>
+<grid distance="0.25" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="0.1" altunitdist="mm" altunit="mm"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -56,7 +56,7 @@
 <layer number="45" name="Holes" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="46" name="Milling" color="3" fill="1" visible="no" active="yes"/>
 <layer number="47" name="Measures" color="7" fill="1" visible="no" active="yes"/>
-<layer number="48" name="Document" color="7" fill="1" visible="no" active="yes"/>
+<layer number="48" name="Document" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="49" name="Reference" color="7" fill="1" visible="no" active="yes"/>
 <layer number="50" name="dxf" color="7" fill="1" visible="no" active="no"/>
 <layer number="51" name="tDocu" color="13" fill="1" visible="yes" active="yes"/>
@@ -189,6 +189,8 @@ FR-4 or 408
 <text x="13.1" y="28.6" size="0.8128" layer="21">^3V3</text>
 <text x="11.4" y="31" size="0.6096" layer="21" rot="R90">GND</text>
 <text x="14.5" y="14.5" size="0.6096" layer="21">&lt;/CMD&gt;</text>
+<dimension x1="7.25" y1="38.25" x2="32.75" y2="38.25" x3="20" y3="39.75" textsize="1.778" layer="48"/>
+<dimension x1="36.5" y1="33.75" x2="36.5" y2="10.25" x3="48" y3="22" textsize="1.778" layer="48"/>
 </plain>
 <libraries>
 <library name="pinhead">
@@ -1768,7 +1770,8 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <via x="30.5" y="30.25" extent="1-16" drill="0.6"/>
 <via x="22.25" y="19.5" extent="1-16" drill="0.3"/>
 <via x="19.75" y="29.25" extent="1-16" drill="0.6"/>
-<wire x1="16.397" y1="22.4" x2="18.762" y2="22" width="0" layer="19" extent="1-1"/>
+<wire x1="16.397" y1="22.4" x2="18.622" y2="22.4" width="0.4064" layer="1"/>
+<wire x1="18.622" y1="22.4" x2="19.272" y2="23.05" width="0.4064" layer="1"/>
 </signal>
 <signal name="N$2">
 </signal>
@@ -1863,7 +1866,6 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <vertex x="18.542" y="18.288"/>
 <vertex x="18.796" y="18.542"/>
 <vertex x="23.114" y="18.542"/>
-<vertex x="23.114" y="18.542"/>
 <vertex x="24.13" y="19.558"/>
 <vertex x="24.13" y="21.844"/>
 <vertex x="24.638" y="22.352"/>
@@ -1896,30 +1898,12 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <mfgpreviewcolor name="substratecolor" color="0xFF786E46"/>
 </mfgpreviewcolors>
 <errors>
-<approved hash="7,39,42ac0034001b4283"/>
-<approved hash="7,39,606c7770f9a99690"/>
-<approved hash="7,39,12ec007400091291"/>
-<approved hash="7,39,e06e30170ecdc6d2"/>
-<approved hash="7,39,30e60e5bd8886e2a"/>
-<approved hash="7,39,12df8047bf852d1d"/>
-<approved hash="7,39,10646bf5ed289eac"/>
-<approved hash="7,39,bfa650efb88d2fe1"/>
-<approved hash="7,39,31e419304ff2ef08"/>
-<approved hash="7,39,ef2859fe99a8a761"/>
-<approved hash="7,39,dfe2063ab8e7792b"/>
-<approved hash="7,39,8033c18279d8207d"/>
-<approved hash="7,39,ee264ea80ede267e"/>
-<approved hash="7,39,bfa0f7cbcfed9fe0"/>
-<approved hash="7,39,4faabc512c08d7e6"/>
-<approved hash="7,39,53df8047bf856c1d"/>
-<approved hash="7,39,cdfe60066076cd8e"/>
-<approved hash="7,39,7fe8f3a1ee967ae4"/>
-<approved hash="7,39,ff9212f7dfa18aee"/>
-<approved hash="7,39,263c733310f9fddc"/>
-<approved hash="7,39,26623201a1eaadb2"/>
-<approved hash="7,39,03ac0034001b0383"/>
-<approved hash="7,39,0efe740674760e8e"/>
-<approved hash="7,39,53ec007400095391"/>
+<approved hash="19,1,5a725960452c463e"/>
+<approved hash="19,1,1d1a001b0c571156"/>
+<approved hash="19,1,1a4a195b15171606"/>
+<approved hash="19,1,5d2240205c6c416e"/>
+<approved hash="19,1,5d025800444c414e"/>
+<approved hash="19,1,1d3a183b14771176"/>
 </errors>
 </board>
 </drawing>

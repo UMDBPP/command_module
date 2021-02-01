@@ -1715,6 +1715,7 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <via x="19.762" y="24" extent="1-16" drill="0.35"/>
 <via x="18.762" y="24" extent="1-16" drill="0.35"/>
 <via x="28.956" y="24.892" extent="1-16" drill="0.35"/>
+<via x="9.4" y="31.84" extent="1-16" drill="0.85"/>
 </signal>
 <signal name="N$2">
 </signal>
@@ -1832,9 +1833,6 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <wire x1="24.67609375" y1="23.7" x2="22.147" y2="23.7" width="0.4064" layer="1"/>
 <wire x1="24.9014" y1="23.683975" x2="26.335375" y2="22.25" width="0.4064" layer="1"/>
 <wire x1="26.335375" y1="22.25" x2="26.762" y2="22.25" width="0.4064" layer="1"/>
-</signal>
-<signal name="N$1">
-<via x="9.4" y="31.84" extent="1-16" drill="0.85"/>
 </signal>
 </signals>
 <mfgpreviewcolors>
