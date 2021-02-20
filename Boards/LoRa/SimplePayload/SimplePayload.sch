@@ -92,8 +92,13 @@
 <layer number="111" name="MPL" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="112" name="tSilk" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="113" name="ReferenceLS" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="114" name="ANT" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="115" name="usb" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="116" name="Patch_BOT" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="117" name="BACKMAAT1" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="118" name="Rect_Pads" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="119" name="KAP_TEKEN" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="120" name="KAP_MAAT1" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="121" name="sName" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="122" name="_bPlace" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="123" name="tTestmark" color="7" fill="1" visible="yes" active="yes"/>
@@ -103,9 +108,16 @@
 <layer number="127" name="_tValues" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="128" name="_bValues" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="129" name="Mask" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="130" name="SMDSTROOK" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="131" name="tAdjust" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="132" name="bAdjust" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="133" name="bottom_silk" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="144" name="Drill_legend" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="145" name="DrillLegend_01-02" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="146" name="DrillLegend_01-15" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="147" name="DrillLegend_01-16" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="148" name="DrillLegend_01-20" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="149" name="DrillLegend_02-15" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="150" name="Notes" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="151" name="HeatSink" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="152" name="_bDocu" color="7" fill="1" visible="yes" active="yes"/>
@@ -4175,6 +4187,149 @@ Metric Code Size 5664</description>
 </deviceset>
 </devicesets>
 </library>
+<library name="supply1">
+<description>&lt;b&gt;Supply Symbols&lt;/b&gt;&lt;p&gt;
+ GND, VCC, 0V, +5V, -5V, etc.&lt;p&gt;
+ Please keep in mind, that these devices are necessary for the
+ automatic wiring of the supply signals.&lt;p&gt;
+ The pin name defined in the symbol is identical to the net which is to be wired automatically.&lt;p&gt;
+ In this library the device names are the same as the pin names of the symbols, therefore the correct signal names appear next to the supply symbols in the schematic.&lt;p&gt;
+ &lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
+<packages>
+</packages>
+<symbols>
+<symbol name="GND">
+<wire x1="-1.905" y1="0" x2="1.905" y2="0" width="0.254" layer="94"/>
+<text x="-2.54" y="-2.54" size="1.778" layer="96">&gt;VALUE</text>
+<pin name="GND" x="0" y="2.54" visible="off" length="short" direction="sup" rot="R270"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="GND" prefix="GND">
+<description>&lt;b&gt;SUPPLY SYMBOL&lt;/b&gt;</description>
+<gates>
+<gate name="1" symbol="GND" x="0" y="0"/>
+</gates>
+<devices>
+<device name="">
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
+<library name="NR_connectors">
+<packages>
+<package name="MICRO_SD_HINGED">
+<smd name="GND4" x="-9.8" y="-12.9" dx="1" dy="2.6" layer="1"/>
+<smd name="DAT2" x="0" y="-13.4" dx="0.7" dy="2" layer="1"/>
+<smd name="CD" x="-1.1" y="-13.4" dx="0.7" dy="2" layer="1"/>
+<smd name="CMD" x="-2.2" y="-13.4" dx="0.7" dy="2" layer="1"/>
+<smd name="VDD" x="-3.3" y="-13.4" dx="0.7" dy="2" layer="1"/>
+<smd name="CLK" x="-4.4" y="-13.4" dx="0.7" dy="2" layer="1"/>
+<smd name="VSS" x="-5.5" y="-13.4" dx="0.7" dy="2" layer="1"/>
+<smd name="DAT0" x="-6.6" y="-13.4" dx="0.7" dy="2" layer="1"/>
+<smd name="DAT1" x="-7.7" y="-13.4" dx="0.7" dy="2" layer="1"/>
+<smd name="GND1" x="3.55" y="-12.9" dx="1.5" dy="2.6" layer="1"/>
+<smd name="GND3" x="-6.3" y="-0.7" dx="2.7" dy="1.4" layer="1"/>
+<smd name="CD1" x="-1.4" y="-0.7" dx="2.7" dy="1.4" layer="1"/>
+<smd name="GND2" x="1.65" y="-0.6" dx="1.2" dy="1.2" layer="1"/>
+<wire x1="-10.2" y1="0" x2="-10.2" y2="-14.4" width="0.127" layer="21"/>
+<wire x1="-10.2" y1="-14.4" x2="3.95" y2="-14.4" width="0.127" layer="21"/>
+<wire x1="3.95" y1="-14.4" x2="3.95" y2="0" width="0.127" layer="21"/>
+<wire x1="3.95" y1="0" x2="-10.2" y2="0" width="0.127" layer="21"/>
+<wire x1="-8.7" y1="-15.45" x2="2.3" y2="-15.45" width="0.127" layer="21"/>
+<wire x1="2.286" y1="-15.4305" x2="3.3655" y2="-14.4145" width="0.127" layer="21" curve="90"/>
+<wire x1="-9.652" y1="-14.4145" x2="-8.636" y2="-15.4305" width="0.127" layer="21" curve="90"/>
+</package>
+</packages>
+<symbols>
+<symbol name="MICRO_SD">
+<wire x1="-10.16" y1="22.86" x2="10.16" y2="22.86" width="0.254" layer="94"/>
+<wire x1="10.16" y1="22.86" x2="10.16" y2="-22.86" width="0.254" layer="94"/>
+<wire x1="10.16" y1="-22.86" x2="-10.16" y2="-22.86" width="0.254" layer="94"/>
+<wire x1="-10.16" y1="-22.86" x2="-10.16" y2="22.86" width="0.254" layer="94"/>
+<pin name="DAT2" x="-15.24" y="20.32" length="middle"/>
+<pin name="CD" x="-15.24" y="15.24" length="middle"/>
+<pin name="CMD" x="-15.24" y="10.16" length="middle"/>
+<pin name="VDD" x="-15.24" y="5.08" length="middle"/>
+<pin name="CLK" x="-15.24" y="0" length="middle"/>
+<pin name="VSS" x="-15.24" y="-5.08" length="middle"/>
+<pin name="DAT0" x="-15.24" y="-10.16" length="middle"/>
+<pin name="DAT1" x="-15.24" y="-15.24" length="middle"/>
+<pin name="G1" x="15.24" y="20.32" length="middle" rot="R180"/>
+<pin name="G2" x="15.24" y="15.24" length="middle" rot="R180"/>
+<pin name="G3" x="15.24" y="10.16" length="middle" rot="R180"/>
+<pin name="G4" x="15.24" y="5.08" length="middle" rot="R180"/>
+<pin name="CD1" x="15.24" y="0" length="middle" rot="R180"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="MICRO_SD">
+<gates>
+<gate name="G$1" symbol="MICRO_SD" x="-2.54" y="-5.08"/>
+</gates>
+<devices>
+<device name="" package="MICRO_SD_HINGED">
+<connects>
+<connect gate="G$1" pin="CD" pad="CD"/>
+<connect gate="G$1" pin="CD1" pad="CD1"/>
+<connect gate="G$1" pin="CLK" pad="CLK"/>
+<connect gate="G$1" pin="CMD" pad="CMD"/>
+<connect gate="G$1" pin="DAT0" pad="DAT0"/>
+<connect gate="G$1" pin="DAT1" pad="DAT1"/>
+<connect gate="G$1" pin="DAT2" pad="DAT2"/>
+<connect gate="G$1" pin="G1" pad="GND1"/>
+<connect gate="G$1" pin="G2" pad="GND2"/>
+<connect gate="G$1" pin="G3" pad="GND3"/>
+<connect gate="G$1" pin="G4" pad="GND4"/>
+<connect gate="G$1" pin="VDD" pad="VDD"/>
+<connect gate="G$1" pin="VSS" pad="VSS"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
+<library name="supply1@1">
+<description>&lt;b&gt;Supply Symbols&lt;/b&gt;&lt;p&gt;
+ GND, VCC, 0V, +5V, -5V, etc.&lt;p&gt;
+ Please keep in mind, that these devices are necessary for the
+ automatic wiring of the supply signals.&lt;p&gt;
+ The pin name defined in the symbol is identical to the net which is to be wired automatically.&lt;p&gt;
+ In this library the device names are the same as the pin names of the symbols, therefore the correct signal names appear next to the supply symbols in the schematic.&lt;p&gt;
+ &lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
+<packages>
+</packages>
+<symbols>
+<symbol name="+3V3">
+<wire x1="1.27" y1="-1.905" x2="0" y2="0" width="0.254" layer="94"/>
+<wire x1="0" y1="0" x2="-1.27" y2="-1.905" width="0.254" layer="94"/>
+<text x="-2.54" y="-5.08" size="1.778" layer="96" rot="R90">&gt;VALUE</text>
+<pin name="+3V3" x="0" y="-2.54" visible="off" length="short" direction="sup" rot="R90"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="+3V3" prefix="+3V3">
+<description>&lt;b&gt;SUPPLY SYMBOL&lt;/b&gt;</description>
+<gates>
+<gate name="G$1" symbol="+3V3" x="0" y="0"/>
+</gates>
+<devices>
+<device name="">
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -4208,10 +4363,15 @@ Metric Code Size 5664</description>
 <part name="GND10" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="GND11" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="C4" library="adafruit" deviceset="C-US" device="C0805" value="10uF"/>
+<part name="U$4" library="NR_connectors" deviceset="MICRO_SD" device=""/>
+<part name="GND12" library="supply1" deviceset="GND" device=""/>
+<part name="+3V4" library="supply1@1" deviceset="+3V3" device=""/>
+<part name="GND13" library="supply1" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
 <plain>
+<text x="209.55" y="137.414" size="6.4516" layer="97">SD Card</text>
 </plain>
 <instances>
 <instance part="U$1" gate="G$1" x="48.26" y="55.88" smashed="yes">
@@ -4292,6 +4452,16 @@ Metric Code Size 5664</description>
 <instance part="C4" gate="G$1" x="195.58" y="24.13" smashed="yes">
 <attribute name="NAME" x="196.596" y="24.765" size="1.778" layer="95"/>
 <attribute name="VALUE" x="196.596" y="19.939" size="1.778" layer="96"/>
+</instance>
+<instance part="U$4" gate="G$1" x="229.87" y="112.014" smashed="yes"/>
+<instance part="GND12" gate="1" x="247.65" y="96.774" smashed="yes">
+<attribute name="VALUE" x="241.3" y="97.536" size="1.778" layer="96"/>
+</instance>
+<instance part="+3V4" gate="G$1" x="207.01" y="119.634" smashed="yes">
+<attribute name="VALUE" x="204.724" y="115.062" size="1.778" layer="96"/>
+</instance>
+<instance part="GND13" gate="1" x="207.01" y="104.394" smashed="yes">
+<attribute name="VALUE" x="205.994" y="107.188" size="1.778" layer="96"/>
 </instance>
 </instances>
 <busses>
@@ -4388,6 +4558,33 @@ Metric Code Size 5664</description>
 <pinref part="U1" gate="G$1" pin="GND@2"/>
 <wire x1="137.16" y1="35.56" x2="152.4" y2="35.56" width="0.1524" layer="91"/>
 </segment>
+<segment>
+<pinref part="U$4" gate="G$1" pin="G1"/>
+<wire x1="245.11" y1="132.334" x2="247.65" y2="132.334" width="0.1524" layer="91"/>
+<wire x1="247.65" y1="132.334" x2="247.65" y2="127.254" width="0.1524" layer="91"/>
+<pinref part="U$4" gate="G$1" pin="G2"/>
+<wire x1="247.65" y1="127.254" x2="247.65" y2="122.174" width="0.1524" layer="91"/>
+<wire x1="247.65" y1="122.174" x2="247.65" y2="117.094" width="0.1524" layer="91"/>
+<wire x1="247.65" y1="117.094" x2="247.65" y2="112.014" width="0.1524" layer="91"/>
+<wire x1="247.65" y1="112.014" x2="247.65" y2="99.314" width="0.1524" layer="91"/>
+<wire x1="245.11" y1="127.254" x2="247.65" y2="127.254" width="0.1524" layer="91"/>
+<pinref part="U$4" gate="G$1" pin="G3"/>
+<wire x1="245.11" y1="122.174" x2="247.65" y2="122.174" width="0.1524" layer="91"/>
+<pinref part="U$4" gate="G$1" pin="G4"/>
+<wire x1="245.11" y1="117.094" x2="247.65" y2="117.094" width="0.1524" layer="91"/>
+<pinref part="U$4" gate="G$1" pin="CD1"/>
+<wire x1="245.11" y1="112.014" x2="247.65" y2="112.014" width="0.1524" layer="91"/>
+<pinref part="GND12" gate="1" pin="GND"/>
+<junction x="247.65" y="112.014"/>
+<junction x="247.65" y="117.094"/>
+<junction x="247.65" y="122.174"/>
+<junction x="247.65" y="127.254"/>
+</segment>
+<segment>
+<pinref part="U$4" gate="G$1" pin="VSS"/>
+<wire x1="214.63" y1="106.934" x2="207.01" y2="106.934" width="0.1524" layer="91"/>
+<pinref part="GND13" gate="1" pin="GND"/>
+</segment>
 </net>
 <net name="N$2" class="0">
 <segment>
@@ -4415,6 +4612,11 @@ Metric Code Size 5664</description>
 <junction x="20.32" y="81.28"/>
 <pinref part="U$1" gate="G$1" pin="VDDIO"/>
 <wire x1="20.32" y1="83.82" x2="22.86" y2="83.82" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="U$4" gate="G$1" pin="VDD"/>
+<wire x1="207.01" y1="117.094" x2="214.63" y2="117.094" width="0.1524" layer="91"/>
+<pinref part="+3V4" gate="G$1" pin="+3V3"/>
 </segment>
 </net>
 <net name="N$3" class="0">
@@ -4476,6 +4678,11 @@ Metric Code Size 5664</description>
 <wire x1="22.86" y1="43.18" x2="20.32" y2="43.18" width="0.1524" layer="91"/>
 <label x="20.32" y="43.18" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
+<segment>
+<pinref part="U$4" gate="G$1" pin="CLK"/>
+<wire x1="214.63" y1="112.014" x2="212.09" y2="112.014" width="0.1524" layer="91"/>
+<label x="212.09" y="112.014" size="1.016" layer="95" rot="R180" xref="yes"/>
+</segment>
 </net>
 <net name="MOSI" class="0">
 <segment>
@@ -4488,6 +4695,11 @@ Metric Code Size 5664</description>
 <wire x1="22.86" y1="45.72" x2="20.32" y2="45.72" width="0.1524" layer="91"/>
 <label x="20.32" y="45.72" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
+<segment>
+<pinref part="U$4" gate="G$1" pin="CMD"/>
+<wire x1="214.63" y1="122.174" x2="212.09" y2="122.174" width="0.1524" layer="91"/>
+<label x="212.09" y="122.174" size="1.016" layer="95" rot="R180" xref="yes"/>
+</segment>
 </net>
 <net name="MISO" class="0">
 <segment>
@@ -4499,6 +4711,11 @@ Metric Code Size 5664</description>
 <pinref part="U$1" gate="G$1" pin="PA12/I12/I2C/SERCOM2+4.0"/>
 <wire x1="99.06" y1="58.42" x2="101.6" y2="58.42" width="0.1524" layer="91"/>
 <label x="101.6" y="58.42" size="1.27" layer="95" xref="yes"/>
+</segment>
+<segment>
+<pinref part="U$4" gate="G$1" pin="DAT0"/>
+<wire x1="214.63" y1="101.854" x2="212.09" y2="101.854" width="0.1524" layer="91"/>
+<label x="212.09" y="101.854" size="1.016" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="RFM_CS" class="0">
@@ -4556,6 +4773,13 @@ Metric Code Size 5664</description>
 <pinref part="U$1" gate="G$1" pin="PA22/I2C/I6/SERCOM3+5.0"/>
 <wire x1="99.06" y1="27.94" x2="101.6" y2="27.94" width="0.1524" layer="91"/>
 <label x="101.6" y="27.94" size="1.27" layer="95" xref="yes"/>
+</segment>
+</net>
+<net name="SD_CS" class="0">
+<segment>
+<pinref part="U$4" gate="G$1" pin="CD"/>
+<wire x1="214.63" y1="127.254" x2="212.09" y2="127.254" width="0.1524" layer="91"/>
+<label x="212.09" y="127.254" size="1.016" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 </nets>
