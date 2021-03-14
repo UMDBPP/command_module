@@ -1451,6 +1451,13 @@ for trimmer refence see : &lt;u&gt;www.electrospec-inc.com/cross_references/trim
 </package>
 </packages>
 </library>
+<library name="adafruit">
+<packages>
+<package name="1X1-BIGPOGO">
+<pad name="P$1" x="0" y="0" drill="1.4" diameter="2.54" shape="long"/>
+</package>
+</packages>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -1681,6 +1688,7 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 </element>
 <element name="U$1" library="jmolterLib" package="559350210" value="559350210" x="37.592" y="19.098" smashed="yes" rot="R270"/>
 <element name="U$3" library="jmolterLib" package="CL-SB-12B-01" value="CL-SB-12B-01" x="30.762" y="29" smashed="yes" rot="R270"/>
+<element name="JP1" library="adafruit" package="1X1-BIGPOGO" value="" x="-87.5" y="-11" smashed="yes"/>
 </elements>
 <signals>
 <signal name="GND">
@@ -1716,6 +1724,8 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <via x="18.762" y="24" extent="1-16" drill="0.35"/>
 <via x="28.956" y="24.892" extent="1-16" drill="0.35"/>
 <via x="9.4" y="31.84" extent="1-16" drill="0.85"/>
+<contactref element="JP1" pad="P$1"/>
+<wire x1="10.759575" y1="18.129375" x2="-87.5" y2="-11" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$2">
 </signal>
