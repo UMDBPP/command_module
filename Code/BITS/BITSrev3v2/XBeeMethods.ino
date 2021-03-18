@@ -1,5 +1,8 @@
 //This file is for storing XBee methods used for communication via the XBee
 
+
+// -----------------------------------------TX/RX Methods------------------------------------------
+
 //Transmit
 bool xbeeSend(uint32_t TargetSL,uint8_t* payload){
   XBeeAddress64 TargetAddress = XBeeAddress64(UniSH,TargetSL);
@@ -55,13 +58,14 @@ void xbeeRead(){
     } 
 }
 
+//---------------------------------------Message Processing--------------------------------------------------
+
 // Each XBee has its own function set, which allows more control over what payloads are allowed to do.
-//  ex. non-command payloads can have no ability to trigger others
+//  ex. Commands are locked to specific senders, so while command might be able to send a trigger, a secondary could not
+// 
+// Without a proper naming scheme, the current XBee's are named Bits, Ground, Blue and Wire
 
-// Begin the section with Individual process messages, this will probably become a new tab to avoid confusion
-// Still the same tab, because what is good 2am software without bad organization
-
-//---------------------------------------Message From Ground--------------------------------------------------
+//----------------------Ground Messages----------------------
 void processGroundMessage(){
   
   OutputSerial.println("RecGround");//DEBUG
@@ -90,6 +94,7 @@ void processGroundMessage(){
   }
 }
 
+//----------------------Blue XBee Messages----------------------
 void processBlueMessage(){
   OutputSerial.println("RecBlue");
   logprintln("RecBlue");
@@ -115,6 +120,7 @@ void processBlueMessage(){
   }
 }
 
+//----------------------Wire XBee Messages----------------------
 void processWireMessage(){
   OutputSerial.println("RecWire");
   logprintln("RecWire");

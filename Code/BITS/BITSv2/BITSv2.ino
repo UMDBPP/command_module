@@ -107,16 +107,17 @@ void setup()
 {
   Serial.begin(9600);
   delay(5);
-  Serial.println("BITS2019SUM");
+  
   gpsserial.begin(9600);
   GPSINIT();
   gpsserial.end();
   gpsserial.begin(9600);//To get the GPS into Airborne mode
   IridiumSerial.begin(SBD_BAUD);
-  Serial2.begin(9600);
+  Serial2.begin(115200);
   xbee.setSerial(Serial2);
   startBlinks();
-
+  Serial.println("BITS2019SUM");
+  
 //Open Files
   SD.begin(chipSelect);
   gpsLogFile = SD.open(gpsLogName, FILE_WRITE);
