@@ -199,6 +199,10 @@
 <hole x="0.85" y="-1.75" drill="0.85"/>
 <hole x="7.65" y="-1.75" drill="0.85"/>
 </package>
+<package name="BS_LDR">
+<pad name="P$1" x="0" y="5.08" drill="0.6" shape="square"/>
+<pad name="P$2" x="0" y="-6.35" drill="0.6" shape="square"/>
+</package>
 </packages>
 <symbols>
 <symbol name="DCK-3RE204T614-E">
@@ -345,6 +349,32 @@
 <pin name="P2" x="0" y="2.54" visible="pad" length="short" rot="R90"/>
 <pin name="P3" x="5.08" y="2.54" visible="pad" length="short" rot="R90"/>
 <text x="-7.62" y="12.7" size="1.778" layer="95">&gt;NAME</text>
+</symbol>
+<symbol name="LDR">
+<pin name="P$1" x="-5.08" y="12.7" visible="off" length="point"/>
+<pin name="P$2" x="-5.08" y="-1.27" visible="off" length="point"/>
+<wire x1="-3.81" y1="8.89" x2="-6.35" y2="7.62" width="0.254" layer="94"/>
+<wire x1="-6.35" y1="7.62" x2="-3.81" y2="6.35" width="0.254" layer="94"/>
+<wire x1="-3.81" y1="6.35" x2="-6.35" y2="5.08" width="0.254" layer="94"/>
+<wire x1="-6.35" y1="5.08" x2="-3.81" y2="3.81" width="0.254" layer="94"/>
+<wire x1="-3.81" y1="3.81" x2="-6.35" y2="2.54" width="0.254" layer="94"/>
+<wire x1="-3.81" y1="8.89" x2="-5.08" y2="9.652" width="0.254" layer="94"/>
+<wire x1="-5.08" y1="9.652" x2="-5.08" y2="12.7" width="0.254" layer="94"/>
+<circle x="-5.08" y="5.842" radius="5.622528125" width="0.254" layer="94"/>
+<wire x1="-6.35" y1="2.54" x2="-5.08" y2="1.778" width="0.254" layer="94"/>
+<wire x1="-5.08" y1="1.778" x2="-5.08" y2="-1.27" width="0.254" layer="94"/>
+<wire x1="-11.43" y1="10.16" x2="-15.24" y2="13.97" width="0.254" layer="94"/>
+<wire x1="-10.16" y1="11.43" x2="-13.97" y2="15.24" width="0.254" layer="94"/>
+<polygon width="0.254" layer="94">
+<vertex x="-11.43" y="10.16"/>
+<vertex x="-12.446" y="10.414"/>
+<vertex x="-11.684" y="11.176"/>
+</polygon>
+<polygon width="0.254" layer="94">
+<vertex x="-10.16" y="11.43"/>
+<vertex x="-11.176" y="11.684"/>
+<vertex x="-10.414" y="12.446"/>
+</polygon>
 </symbol>
 </symbols>
 <devicesets>
@@ -559,6 +589,22 @@ Manuf: Nidec Copal Electronics</description>
 <connect gate="G$1" pin="P1" pad="P$1"/>
 <connect gate="G$1" pin="P2" pad="P$2"/>
 <connect gate="G$1" pin="P3" pad="P$3"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="BS-LDR">
+<gates>
+<gate name="G$1" symbol="LDR" x="5.08" y="-2.54"/>
+</gates>
+<devices>
+<device name="" package="BS_LDR">
+<connects>
+<connect gate="G$1" pin="P$1" pad="P$1"/>
+<connect gate="G$1" pin="P$2" pad="P$2"/>
 </connects>
 <technologies>
 <technology name=""/>

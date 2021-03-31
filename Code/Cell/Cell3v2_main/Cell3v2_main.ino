@@ -160,7 +160,7 @@ void loop() {
 
     //SMS_TX
     if((millis() > next_text) && (gps_alt<1000) && (x<50)){
-      //sendText();
+      sendText();
       x++;
       Serial.println(F("SMS_TX"));
       GPSlog.println(F("SMS_TX"));

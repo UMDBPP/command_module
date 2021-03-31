@@ -220,6 +220,8 @@ VIN</text>
 <wire x1="21.336" y1="40.386" x2="18.542" y2="37.592" width="0.0762" layer="20" curve="90"/>
 <wire x1="18.542" y1="37.592" x2="18.542" y2="-1.27" width="0.0762" layer="20"/>
 <wire x1="18.542" y1="-1.27" x2="21.59" y2="-4.318" width="0.0762" layer="20" curve="90"/>
+<dimension x1="21.336" y1="38.862" x2="60.6044" y2="38.862" x3="40.9702" y3="47.498" textsize="1.778" layer="51" dtype="diameter"/>
+<dimension x1="20.066" y1="-1.1684" x2="20.066" y2="37.592" x3="13.97" y3="18.2118" textsize="1.778" layer="51" dtype="diameter"/>
 </plain>
 <libraries>
 <library name="resistor">
