@@ -435,6 +435,22 @@
 <text x="2.54" y="2.54" size="1.778" layer="95">&gt;NAME</text>
 <text x="3.302" y="-1.778" size="1.27" layer="96">&gt;VALUE</text>
 </symbol>
+<symbol name="NE555">
+<wire x1="-12.7" y1="12.7" x2="-12.7" y2="-17.78" width="0.254" layer="94"/>
+<wire x1="-12.7" y1="-17.78" x2="12.7" y2="-17.78" width="0.254" layer="94"/>
+<wire x1="12.7" y1="-17.78" x2="12.7" y2="12.7" width="0.254" layer="94"/>
+<wire x1="12.7" y1="12.7" x2="-12.7" y2="12.7" width="0.254" layer="94"/>
+<circle x="-13.97" y="7.62" radius="1.27" width="0.254" layer="94"/>
+<pin name="GND" x="0" y="-20.32" length="short" rot="R90"/>
+<pin name="TRIG" x="-15.24" y="-12.7" length="short"/>
+<pin name="OUT" x="15.24" y="0" length="short" rot="R180"/>
+<pin name="_RESET" x="-17.78" y="7.62" length="short"/>
+<pin name="CONT" x="-2.54" y="15.24" length="short" rot="R270"/>
+<pin name="THRES" x="-15.24" y="-7.62" length="short"/>
+<pin name="DISCH" x="-15.24" y="2.54" length="short"/>
+<pin name="VCC" x="7.62" y="15.24" length="short" rot="R270"/>
+<text x="-12.7" y="20.32" size="1.778" layer="95">&gt;NAME</text>
+</symbol>
 </symbols>
 <devicesets>
 <deviceset name="DCK-3R3E204T614-E" prefix="C" uservalue="yes">
@@ -714,6 +730,33 @@ Part: 7447462220
 <connects>
 <connect gate="G$1" pin="P$1" pad="P$1"/>
 <connect gate="G$1" pin="P$2" pad="P$2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="NE555-13">
+<description>NE555S-13 Type Osciallator
+
+4.5-16V input
+500kHz
+8-SOIC</description>
+<gates>
+<gate name="G$1" symbol="NE555" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="8-SOIC">
+<connects>
+<connect gate="G$1" pin="CONT" pad="P$5"/>
+<connect gate="G$1" pin="DISCH" pad="P$7"/>
+<connect gate="G$1" pin="GND" pad="P$1"/>
+<connect gate="G$1" pin="OUT" pad="P$3"/>
+<connect gate="G$1" pin="THRES" pad="P$6"/>
+<connect gate="G$1" pin="TRIG" pad="P$2"/>
+<connect gate="G$1" pin="VCC" pad="P$8"/>
+<connect gate="G$1" pin="_RESET" pad="P$4"/>
 </connects>
 <technologies>
 <technology name=""/>

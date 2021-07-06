@@ -32,7 +32,7 @@
 
 //****************************************************************************
 char  CallSign[7]="W3EAX"; //DO NOT FORGET TO CHANGE YOUR CALLSIGN
-int   CallNumber=8; //SSID http://www.aprs.org/aprs11/SSIDs.txt
+int   CallNumber=7; //SSID http://www.aprs.org/aprs11/SSIDs.txt
 char  Symbol='O'; // '/O' for balloon, '/>' for car, for more info : http://www.aprs.org/symbols/symbols-new.txt
 bool alternateSymbolTable = false ; //false = '/' , true = '\'
 
@@ -87,6 +87,7 @@ void setup() {
 
   RfOFF;
   GpsOFF;
+  GpsON;
   RfPwrLow;
   RfPttOFF;
   AprsPinInput;
