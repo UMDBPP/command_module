@@ -449,6 +449,25 @@
 <pin name="THRES" x="-15.24" y="-7.62" length="short"/>
 <pin name="DISCH" x="-15.24" y="2.54" length="short"/>
 <pin name="VCC" x="7.62" y="15.24" length="short" rot="R270"/>
+<text x="-12.7" y="20.32" size="1.778" layer="95">&gt;NAME</text>
+</symbol>
+<symbol name="LM20242">
+<wire x1="-12.7" y1="12.7" x2="15.24" y2="12.7" width="0.254" layer="94"/>
+<wire x1="15.24" y1="12.7" x2="15.24" y2="-27.94" width="0.254" layer="94"/>
+<wire x1="15.24" y1="-27.94" x2="-12.7" y2="-27.94" width="0.254" layer="94"/>
+<wire x1="-12.7" y1="-27.94" x2="-12.7" y2="12.7" width="0.254" layer="94"/>
+<pin name="SS/TRK" x="-15.24" y="-17.78" length="short"/>
+<pin name="FB" x="17.78" y="-7.62" length="short" rot="R180"/>
+<pin name="PGOOD" x="17.78" y="-12.7" length="short" rot="R180"/>
+<pin name="COMP" x="-15.24" y="-12.7" length="short"/>
+<pin name="VIN" x="-15.24" y="7.62" length="short"/>
+<pin name="SW" x="17.78" y="0" length="short" rot="R180"/>
+<pin name="GND" x="7.62" y="-30.48" length="short" rot="R90"/>
+<pin name="AGND" x="-5.08" y="-30.48" length="short" rot="R90"/>
+<pin name="BOOT" x="17.78" y="7.62" length="short" rot="R180"/>
+<pin name="VCC" x="17.78" y="-20.32" length="short" rot="R180"/>
+<pin name="EN" x="-15.24" y="0" length="short"/>
+<pin name="RT" x="-15.24" y="-7.62" length="short"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -729,6 +748,33 @@ Part: 7447462220
 <connects>
 <connect gate="G$1" pin="P$1" pad="P$1"/>
 <connect gate="G$1" pin="P$2" pad="P$2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="NE555-13">
+<description>NE555S-13 Type Osciallator
+
+4.5-16V input
+500kHz
+8-SOIC</description>
+<gates>
+<gate name="G$1" symbol="NE555" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="8-SOIC">
+<connects>
+<connect gate="G$1" pin="CONT" pad="P$5"/>
+<connect gate="G$1" pin="DISCH" pad="P$7"/>
+<connect gate="G$1" pin="GND" pad="P$1"/>
+<connect gate="G$1" pin="OUT" pad="P$3"/>
+<connect gate="G$1" pin="THRES" pad="P$6"/>
+<connect gate="G$1" pin="TRIG" pad="P$2"/>
+<connect gate="G$1" pin="VCC" pad="P$8"/>
+<connect gate="G$1" pin="_RESET" pad="P$4"/>
 </connects>
 <technologies>
 <technology name=""/>

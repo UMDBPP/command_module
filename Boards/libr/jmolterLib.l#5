@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="1" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="mm" altunit="mm"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="16" fill="1" visible="no" active="yes"/>
@@ -435,6 +435,21 @@
 <text x="2.54" y="2.54" size="1.778" layer="95">&gt;NAME</text>
 <text x="3.302" y="-1.778" size="1.27" layer="96">&gt;VALUE</text>
 </symbol>
+<symbol name="NE555">
+<wire x1="-12.7" y1="12.7" x2="-12.7" y2="-17.78" width="0.254" layer="94"/>
+<wire x1="-12.7" y1="-17.78" x2="12.7" y2="-17.78" width="0.254" layer="94"/>
+<wire x1="12.7" y1="-17.78" x2="12.7" y2="12.7" width="0.254" layer="94"/>
+<wire x1="12.7" y1="12.7" x2="-12.7" y2="12.7" width="0.254" layer="94"/>
+<circle x="-13.97" y="7.62" radius="1.27" width="0.254" layer="94"/>
+<pin name="GND" x="0" y="-20.32" length="short" rot="R90"/>
+<pin name="TRIG" x="-15.24" y="-12.7" length="short"/>
+<pin name="OUT" x="15.24" y="0" length="short" rot="R180"/>
+<pin name="_RESET" x="-17.78" y="7.62" length="short"/>
+<pin name="CONT" x="-2.54" y="15.24" length="short" rot="R270"/>
+<pin name="THRES" x="-15.24" y="-7.62" length="short"/>
+<pin name="DISCH" x="-15.24" y="2.54" length="short"/>
+<pin name="VCC" x="7.62" y="15.24" length="short" rot="R270"/>
+</symbol>
 </symbols>
 <devicesets>
 <deviceset name="DCK-3R3E204T614-E" prefix="C" uservalue="yes">
@@ -690,6 +705,30 @@ SOT-23-6</description>
 <connect gate="G$1" pin="GND" pad="P$2"/>
 <connect gate="G$1" pin="SW" pad="P$6"/>
 <connect gate="G$1" pin="VIN" pad="P$5"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="WE-TI_7447462220">
+<description>WE-TI Radial Leaded Wire Wound
+Inductor
+
+Part: 7447462220
+
+22uH
+1.7A
+0.1ohm</description>
+<gates>
+<gate name="G$1" symbol="INDUCTOR" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="WE-TI_5075">
+<connects>
+<connect gate="G$1" pin="P$1" pad="P$1"/>
+<connect gate="G$1" pin="P$2" pad="P$2"/>
 </connects>
 <technologies>
 <technology name=""/>
