@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE eagle SYSTEM "eagle.dtd">
+<eagle>
+    <drawing>
+        <grid unitdist="mm" unit="mm"/>
+        <layers>
+            <layer name="Top" color="4" number="1" visible="yes" active="yes" fill="1"/>
+            <layer name="Bottom" color="4" number="16" visible="yes" active="yes" fill="1"/>
+            <layer name="tPlace" color="7" number="21" visible="yes" active="yes" fill="1"/>
+            <layer name="bPlace" color="7" number="22" visible="yes" active="yes" fill="1"/>
+            <layer name="tNames" color="7" number="25" visible="yes" active="yes" fill="1"/>
+            <layer name="bNames" color="7" number="26" visible="yes" active="yes" fill="1"/>
+            <layer name="tValues" color="7" number="27" visible="yes" active="yes" fill="1"/>
+            <layer name="bValues" color="7" number="28" visible="yes" active="yes" fill="1"/>
+            <layer name="tStop" color="7" number="29" visible="yes" active="yes" fill="1"/>
+            <layer name="bStop" color="7" number="30" visible="yes" active="yes" fill="1"/>
+            <layer name="tCream" color="7" number="31" visible="yes" active="yes" fill="1"/>
+            <layer name="bCream" color="7" number="32" visible="yes" active="yes" fill="1"/>
+            <layer name="tKeepout" color="4" number="39" visible="yes" active="yes" fill="1"/>
+            <layer name="bKeepout" color="4" number="40" visible="yes" active="yes" fill="1"/>
+            <layer name="tRestrict" color="0" number="41" visible="yes" active="yes" fill="1"/>
+            <layer name="bRestrict" color="0" number="42" visible="yes" active="yes" fill="1"/>
+            <layer name="tDocu" color="7" number="51" visible="yes" active="yes" fill="1"/>
+            <layer name="bDocu" color="7" number="52" visible="yes" active="yes" fill="1"/>
+            <layer name="Nets" color="2" number="91" visible="yes" active="yes" fill="1"/>
+            <layer name="Busses" color="1" number="92" visible="yes" active="yes" fill="1"/>
+            <layer name="Pins" color="2" number="93" visible="yes" active="yes" fill="1"/>
+            <layer name="Symbols" color="4" number="94" visible="yes" active="yes" fill="1"/>
+            <layer name="Names" color="7" number="95" visible="yes" active="yes" fill="1"/>
+            <layer name="Values" color="7" number="96" visible="yes" active="yes" fill="1"/>
+            <layer name="Info" color="7" number="97" visible="yes" active="yes" fill="1"/>
+            <layer name="Guide" color="6" number="98" visible="yes" active="yes" fill="1"/>
+        </layers>
+        <library name="Upverter Library">
+            <description>Upverter Parts Library
+
+Created by Upverter.com</description>
+            <packages>
+                <package name="TI_NATIONAL_SEMICONDUCTOR_LM20242MHE-NOPB_0">
+                    <description>PM-REG-LM20242</description>
+                    <wire layer="21" y2="3.3" width="0.15" x2="1.85" y1="3.3" x1="-1.85"/>
+                    <wire layer="21" y2="-3.3" width="0.15" x2="1.85" y1="-3.3" x1="-1.85"/>
+                    <wire layer="51" y2="3.3" width="0.1" x2="-2.25" y1="-3.3" x1="-2.25"/>
+                    <wire layer="51" y2="3.3" width="0.1" x2="2.25" y1="-3.3" x1="2.25"/>
+                    <wire layer="51" y2="3.3" width="0.1" x2="2.25" y1="3.3" x1="-2.25"/>
+                    <wire layer="51" y2="-3.3" width="0.1" x2="2.25" y1="-3.3" x1="-2.25"/>
+                    <wire layer="39" y2="3.4" width="0.1" x2="-3.55" y1="-3.4" x1="-3.55"/>
+                    <wire layer="39" y2="3.4" width="0.1" x2="3.55" y1="3.4" x1="-3.55"/>
+                    <wire layer="39" y2="-3.4" width="0.1" x2="3.55" y1="3.4" x1="3.55"/>
+                    <wire layer="39" y2="-3.4" width="0.1" x2="-3.55" y1="-3.4" x1="3.55"/>
+                    <text layer="25" align="bottom-left" y="-0.508" x="-1.524" rot="R0" size="1.016">&gt;NAME</text>
+                    <circle y="3.675" x="-2.85" layer="21" radius="0.125" width="0.25"/>
+                    <circle y="2.4" x="-1.35" layer="51" radius="0.5" width="0.1"/>
+                    <pad diameter="0.5" name="pad_1" shape="round" drill="0.2" y="1.5" x="0.0" rot="R0"/>
+                    <pad diameter="0.5" name="pad_2" shape="round" drill="0.2" y="1.5" x="1.0" rot="R0"/>
+                    <pad diameter="0.5" name="pad_3" shape="round" drill="0.2" y="1.5" x="-1.0" rot="R0"/>
+                    <pad diameter="0.5" name="pad_4" shape="round" drill="0.2" y="0.5" x="-1.0" rot="R0"/>
+                    <pad diameter="0.5" name="pad_5" shape="round" drill="0.2" y="-0.5" x="-1.0" rot="R0"/>
+                    <pad diameter="0.5" name="pad_6" shape="round" drill="0.2" y="-1.5" x="-1.0" rot="R0"/>
+                    <pad diameter="0.5" name="pad_7" shape="round" drill="0.2" y="-1.5" x="1.0" rot="R0"/>
+                    <pad diameter="0.5" name="pad_8" shape="round" drill="0.2" y="-1.5" x="0.0" rot="R0"/>
+                    <pad diameter="0.5" name="pad_9" shape="round" drill="0.2" y="-0.5" x="1.0" rot="R0"/>
+                    <pad diameter="0.5" name="pad_10" shape="round" drill="0.2" y="-0.5" x="0.0" rot="R0"/>
+                    <pad diameter="0.5" name="pad_11" shape="round" drill="0.2" y="0.5" x="1.0" rot="R0"/>
+                    <pad diameter="0.5" name="pad_12" shape="round" drill="0.2" y="0.5" x="0.0" rot="R0"/>
+                    <smd layer="1" thermals="yes" name="21" stop="yes" roundness="6" dx="3.0" dy="4.2" y="-0.0" x="0.0" rot="R0" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="1" stop="yes" roundness="50" dx="0.4" dy="1.2" y="2.925" x="-2.85" rot="R90" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="2" stop="yes" roundness="50" dx="0.4" dy="1.2" y="2.275" x="-2.85" rot="R90" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="3" stop="yes" roundness="50" dx="0.4" dy="1.2" y="1.625" x="-2.85" rot="R90" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="4" stop="yes" roundness="50" dx="0.4" dy="1.2" y="0.975" x="-2.85" rot="R90" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="5" stop="yes" roundness="50" dx="0.4" dy="1.2" y="0.325" x="-2.85" rot="R90" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="6" stop="yes" roundness="50" dx="0.4" dy="1.2" y="-0.325" x="-2.85" rot="R90" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="7" stop="yes" roundness="50" dx="0.4" dy="1.2" y="-0.975" x="-2.85" rot="R90" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="8" stop="yes" roundness="50" dx="0.4" dy="1.2" y="-1.625" x="-2.85" rot="R90" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="9" stop="yes" roundness="50" dx="0.4" dy="1.2" y="-2.275" x="-2.85" rot="R90" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="10" stop="yes" roundness="50" dx="0.4" dy="1.2" y="-2.925" x="-2.85" rot="R90" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="20" stop="yes" roundness="50" dx="0.4" dy="1.2" y="2.925" x="2.85" rot="R90" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="19" stop="yes" roundness="50" dx="0.4" dy="1.2" y="2.275" x="2.85" rot="R90" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="18" stop="yes" roundness="50" dx="0.4" dy="1.2" y="1.625" x="2.85" rot="R90" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="17" stop="yes" roundness="50" dx="0.4" dy="1.2" y="0.975" x="2.85" rot="R90" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="16" stop="yes" roundness="50" dx="0.4" dy="1.2" y="0.325" x="2.85" rot="R90" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="15" stop="yes" roundness="50" dx="0.4" dy="1.2" y="-0.325" x="2.85" rot="R90" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="14" stop="yes" roundness="50" dx="0.4" dy="1.2" y="-0.975" x="2.85" rot="R90" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="13" stop="yes" roundness="50" dx="0.4" dy="1.2" y="-1.625" x="2.85" rot="R90" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="12" stop="yes" roundness="50" dx="0.4" dy="1.2" y="-2.275" x="2.85" rot="R90" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="11" stop="yes" roundness="50" dx="0.4" dy="1.2" y="-2.925" x="2.85" rot="R90" cream="yes"/>
+                </package>
+                <package name="TI_NATIONAL_SEMICONDUCTOR_LM20242MHE-NOPB_1">
+                    <description>PM-REG-LM20242</description>
+                    <wire layer="21" y2="3.3" width="0.15" x2="1.85" y1="3.3" x1="-1.85"/>
+                    <wire layer="21" y2="-3.3" width="0.15" x2="1.85" y1="-3.3" x1="-1.85"/>
+                    <wire layer="51" y2="3.3" width="0.1" x2="-2.25" y1="-3.3" x1="-2.25"/>
+                    <wire layer="51" y2="3.3" width="0.1" x2="2.25" y1="-3.3" x1="2.25"/>
+                    <wire layer="51" y2="3.3" width="0.1" x2="2.25" y1="3.3" x1="-2.25"/>
+                    <wire layer="51" y2="-3.3" width="0.1" x2="2.25" y1="-3.3" x1="-2.25"/>
+                    <wire layer="39" y2="3.55" width="0.1" x2="-3.9" y1="-3.55" x1="-3.9"/>
+                    <wire layer="39" y2="3.55" width="0.1" x2="3.9" y1="3.55" x1="-3.9"/>
+                    <wire layer="39" y2="-3.55" width="0.1" x2="3.9" y1="3.55" x1="3.9"/>
+                    <wire layer="39" y2="-3.55" width="0.1" x2="-3.9" y1="-3.55" x1="3.9"/>
+                    <text layer="25" align="bottom-left" y="-0.508" x="-1.524" rot="R0" size="1.016">&gt;NAME</text>
+                    <circle y="3.7" x="-2.95" layer="21" radius="0.125" width="0.25"/>
+                    <circle y="2.4" x="-1.35" layer="51" radius="0.5" width="0.1"/>
+                    <pad diameter="0.5" name="pad_1" shape="round" drill="0.2" y="1.5" x="0.0" rot="R0"/>
+                    <pad diameter="0.5" name="pad_2" shape="round" drill="0.2" y="1.5" x="1.0" rot="R0"/>
+                    <pad diameter="0.5" name="pad_3" shape="round" drill="0.2" y="1.5" x="-1.0" rot="R0"/>
+                    <pad diameter="0.5" name="pad_4" shape="round" drill="0.2" y="0.5" x="-1.0" rot="R0"/>
+                    <pad diameter="0.5" name="pad_5" shape="round" drill="0.2" y="-0.5" x="-1.0" rot="R0"/>
+                    <pad diameter="0.5" name="pad_6" shape="round" drill="0.2" y="-1.5" x="-1.0" rot="R0"/>
+                    <pad diameter="0.5" name="pad_7" shape="round" drill="0.2" y="-1.5" x="1.0" rot="R0"/>
+                    <pad diameter="0.5" name="pad_8" shape="round" drill="0.2" y="-1.5" x="0.0" rot="R0"/>
+                    <pad diameter="0.5" name="pad_9" shape="round" drill="0.2" y="-0.5" x="1.0" rot="R0"/>
+                    <pad diameter="0.5" name="pad_10" shape="round" drill="0.2" y="-0.5" x="0.0" rot="R0"/>
+                    <pad diameter="0.5" name="pad_11" shape="round" drill="0.2" y="0.5" x="1.0" rot="R0"/>
+                    <pad diameter="0.5" name="pad_12" shape="round" drill="0.2" y="0.5" x="0.0" rot="R0"/>
+                    <smd layer="1" thermals="yes" name="21" stop="yes" roundness="6" dx="3.0" dy="4.2" y="-0.0" x="0.0" rot="R0" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="1" stop="yes" roundness="44" dx="0.45" dy="1.4" y="2.925" x="-2.95" rot="R90" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="2" stop="yes" roundness="44" dx="0.45" dy="1.4" y="2.275" x="-2.95" rot="R90" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="3" stop="yes" roundness="44" dx="0.45" dy="1.4" y="1.625" x="-2.95" rot="R90" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="4" stop="yes" roundness="44" dx="0.45" dy="1.4" y="0.975" x="-2.95" rot="R90" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="5" stop="yes" roundness="44" dx="0.45" dy="1.4" y="0.325" x="-2.95" rot="R90" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="6" stop="yes" roundness="44" dx="0.45" dy="1.4" y="-0.325" x="-2.95" rot="R90" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="7" stop="yes" roundness="44" dx="0.45" dy="1.4" y="-0.975" x="-2.95" rot="R90" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="8" stop="yes" roundness="44" dx="0.45" dy="1.4" y="-1.625" x="-2.95" rot="R90" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="9" stop="yes" roundness="44" dx="0.45" dy="1.4" y="-2.275" x="-2.95" rot="R90" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="10" stop="yes" roundness="44" dx="0.45" dy="1.4" y="-2.925" x="-2.95" rot="R90" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="20" stop="yes" roundness="44" dx="0.45" dy="1.4" y="2.925" x="2.95" rot="R90" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="19" stop="yes" roundness="44" dx="0.45" dy="1.4" y="2.275" x="2.95" rot="R90" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="18" stop="yes" roundness="44" dx="0.45" dy="1.4" y="1.625" x="2.95" rot="R90" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="17" stop="yes" roundness="44" dx="0.45" dy="1.4" y="0.975" x="2.95" rot="R90" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="16" stop="yes" roundness="44" dx="0.45" dy="1.4" y="0.325" x="2.95" rot="R90" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="15" stop="yes" roundness="44" dx="0.45" dy="1.4" y="-0.325" x="2.95" rot="R90" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="14" stop="yes" roundness="44" dx="0.45" dy="1.4" y="-0.975" x="2.95" rot="R90" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="13" stop="yes" roundness="44" dx="0.45" dy="1.4" y="-1.625" x="2.95" rot="R90" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="12" stop="yes" roundness="44" dx="0.45" dy="1.4" y="-2.275" x="2.95" rot="R90" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="11" stop="yes" roundness="44" dx="0.45" dy="1.4" y="-2.925" x="2.95" rot="R90" cream="yes"/>
+                </package>
+                <package name="TI_NATIONAL_SEMICONDUCTOR_LM20242MHE-NOPB_2">
+                    <description>PM-REG-LM20242</description>
+                    <wire layer="21" y2="3.3" width="0.15" x2="1.85" y1="3.3" x1="-1.85"/>
+                    <wire layer="21" y2="-3.3" width="0.15" x2="1.85" y1="-3.3" x1="-1.85"/>
+                    <wire layer="51" y2="3.3" width="0.1" x2="-2.25" y1="-3.3" x1="-2.25"/>
+                    <wire layer="51" y2="3.3" width="0.1" x2="2.25" y1="-3.3" x1="2.25"/>
+                    <wire layer="51" y2="3.3" width="0.1" x2="2.25" y1="3.3" x1="-2.25"/>
+                    <wire layer="51" y2="-3.3" width="0.1" x2="2.25" y1="-3.3" x1="-2.25"/>
+                    <wire layer="39" y2="3.8" width="0.1" x2="-4.35" y1="-3.8" x1="-4.35"/>
+                    <wire layer="39" y2="3.8" width="0.1" x2="4.35" y1="3.8" x1="-4.35"/>
+                    <wire layer="39" y2="-3.8" width="0.1" x2="4.35" y1="3.8" x1="4.35"/>
+                    <wire layer="39" y2="-3.8" width="0.1" x2="-4.35" y1="-3.8" x1="4.35"/>
+                    <text layer="25" align="bottom-left" y="-0.508" x="-1.524" rot="R0" size="1.016">&gt;NAME</text>
+                    <circle y="3.7" x="-3.05" layer="21" radius="0.125" width="0.25"/>
+                    <circle y="2.4" x="-1.35" layer="51" radius="0.5" width="0.1"/>
+                    <pad diameter="0.5" name="pad_1" shape="round" drill="0.2" y="1.5" x="0.0" rot="R0"/>
+                    <pad diameter="0.5" name="pad_2" shape="round" drill="0.2" y="1.5" x="1.0" rot="R0"/>
+                    <pad diameter="0.5" name="pad_3" shape="round" drill="0.2" y="1.5" x="-1.0" rot="R0"/>
+                    <pad diameter="0.5" name="pad_4" shape="round" drill="0.2" y="0.5" x="-1.0" rot="R0"/>
+                    <pad diameter="0.5" name="pad_5" shape="round" drill="0.2" y="-0.5" x="-1.0" rot="R0"/>
+                    <pad diameter="0.5" name="pad_6" shape="round" drill="0.2" y="-1.5" x="-1.0" rot="R0"/>
+                    <pad diameter="0.5" name="pad_7" shape="round" drill="0.2" y="-1.5" x="1.0" rot="R0"/>
+                    <pad diameter="0.5" name="pad_8" shape="round" drill="0.2" y="-1.5" x="0.0" rot="R0"/>
+                    <pad diameter="0.5" name="pad_9" shape="round" drill="0.2" y="-0.5" x="1.0" rot="R0"/>
+                    <pad diameter="0.5" name="pad_10" shape="round" drill="0.2" y="-0.5" x="0.0" rot="R0"/>
+                    <pad diameter="0.5" name="pad_11" shape="round" drill="0.2" y="0.5" x="1.0" rot="R0"/>
+                    <pad diameter="0.5" name="pad_12" shape="round" drill="0.2" y="0.5" x="0.0" rot="R0"/>
+                    <smd layer="1" thermals="yes" name="21" stop="yes" roundness="6" dx="3.0" dy="4.2" y="-0.0" x="0.0" rot="R0" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="1" stop="yes" roundness="44" dx="0.45" dy="1.6" y="2.925" x="-3.05" rot="R90" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="2" stop="yes" roundness="44" dx="0.45" dy="1.6" y="2.275" x="-3.05" rot="R90" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="3" stop="yes" roundness="44" dx="0.45" dy="1.6" y="1.625" x="-3.05" rot="R90" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="4" stop="yes" roundness="44" dx="0.45" dy="1.6" y="0.975" x="-3.05" rot="R90" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="5" stop="yes" roundness="44" dx="0.45" dy="1.6" y="0.325" x="-3.05" rot="R90" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="6" stop="yes" roundness="44" dx="0.45" dy="1.6" y="-0.325" x="-3.05" rot="R90" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="7" stop="yes" roundness="44" dx="0.45" dy="1.6" y="-0.975" x="-3.05" rot="R90" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="8" stop="yes" roundness="44" dx="0.45" dy="1.6" y="-1.625" x="-3.05" rot="R90" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="9" stop="yes" roundness="44" dx="0.45" dy="1.6" y="-2.275" x="-3.05" rot="R90" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="10" stop="yes" roundness="44" dx="0.45" dy="1.6" y="-2.925" x="-3.05" rot="R90" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="20" stop="yes" roundness="44" dx="0.45" dy="1.6" y="2.925" x="3.05" rot="R90" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="19" stop="yes" roundness="44" dx="0.45" dy="1.6" y="2.275" x="3.05" rot="R90" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="18" stop="yes" roundness="44" dx="0.45" dy="1.6" y="1.625" x="3.05" rot="R90" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="17" stop="yes" roundness="44" dx="0.45" dy="1.6" y="0.975" x="3.05" rot="R90" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="16" stop="yes" roundness="44" dx="0.45" dy="1.6" y="0.325" x="3.05" rot="R90" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="15" stop="yes" roundness="44" dx="0.45" dy="1.6" y="-0.325" x="3.05" rot="R90" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="14" stop="yes" roundness="44" dx="0.45" dy="1.6" y="-0.975" x="3.05" rot="R90" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="13" stop="yes" roundness="44" dx="0.45" dy="1.6" y="-1.625" x="3.05" rot="R90" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="12" stop="yes" roundness="44" dx="0.45" dy="1.6" y="-2.275" x="3.05" rot="R90" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="11" stop="yes" roundness="44" dx="0.45" dy="1.6" y="-2.925" x="3.05" rot="R90" cream="yes"/>
+                </package>
+            </packages>
+            <symbols>
+                <symbol name="TI_NATIONAL_SEMICONDUCTOR_LM20242MHE-NOPB_0_0">
+                    <description>PM-REG-LM20242</description>
+                    <wire layer="94" y2="-5.08" width="0.508" x2="0.0" y1="-48.26" x1="0.0"/>
+                    <wire layer="94" y2="-5.08" width="0.508" x2="20.32" y1="-5.08" x1="0.0"/>
+                    <wire layer="94" y2="-48.26" width="0.508" x2="20.32" y1="-5.08" x1="20.32"/>
+                    <wire layer="94" y2="-48.26" width="0.508" x2="0.0" y1="-48.26" x1="20.32"/>
+                    <wire layer="94" y2="-12.7" width="0.15" x2="20.32" y1="-12.7" x1="20.32"/>
+                    <wire layer="94" y2="-25.4" width="0.15" x2="20.32" y1="-25.4" x1="20.32"/>
+                    <wire layer="94" y2="-30.48" width="0.15" x2="0.0" y1="-30.48" x1="0.0"/>
+                    <wire layer="94" y2="-12.7" width="0.15" x2="0.0" y1="-12.7" x1="0.0"/>
+                    <wire layer="94" y2="-15.24" width="0.15" x2="20.32" y1="-15.24" x1="20.32"/>
+                    <wire layer="94" y2="-15.24" width="0.15" x2="0.0" y1="-15.24" x1="0.0"/>
+                    <wire layer="94" y2="-17.78" width="0.15" x2="0.0" y1="-17.78" x1="0.0"/>
+                    <wire layer="94" y2="-20.32" width="0.15" x2="0.0" y1="-20.32" x1="0.0"/>
+                    <wire layer="94" y2="-33.02" width="0.15" x2="20.32" y1="-33.02" x1="20.32"/>
+                    <wire layer="94" y2="-7.62" width="0.15" x2="0.0" y1="-7.62" x1="0.0"/>
+                    <wire layer="94" y2="-25.4" width="0.15" x2="0.0" y1="-25.4" x1="0.0"/>
+                    <wire layer="94" y2="-45.72" width="0.15" x2="0.0" y1="-45.72" x1="0.0"/>
+                    <wire layer="94" y2="-43.18" width="0.15" x2="20.32" y1="-43.18" x1="20.32"/>
+                    <wire layer="94" y2="-43.18" width="0.15" x2="0.0" y1="-43.18" x1="0.0"/>
+                    <wire layer="94" y2="-40.64" width="0.15" x2="0.0" y1="-40.64" x1="0.0"/>
+                    <wire layer="94" y2="-45.72" width="0.15" x2="20.32" y1="-45.72" x1="20.32"/>
+                    <wire layer="94" y2="-17.78" width="0.15" x2="20.32" y1="-17.78" x1="20.32"/>
+                    <wire layer="94" y2="-20.32" width="0.15" x2="20.32" y1="-20.32" x1="20.32"/>
+                    <wire layer="94" y2="-35.56" width="0.15" x2="0.0" y1="-35.56" x1="0.0"/>
+                    <wire layer="94" y2="-7.62" width="0.15" x2="20.32" y1="-7.62" x1="20.32"/>
+                    <wire layer="94" y2="-38.1" width="0.15" x2="20.32" y1="-38.1" x1="20.32"/>
+                    <text layer="95" align="top-left" y="-2.54" x="0.0" rot="R0" size="2.54">&gt;NAME</text>
+                    <text layer="95" align="top-left" y="-53.34" x="0.0" rot="R0" size="2.54">LM20242MHE/NOPB</text>
+                    <pin direction="pwr" name="3_SW" visible="both" length="middle" y="-12.7" x="25.4" rot="R180"/>
+                    <pin direction="in" name="FB" visible="both" length="middle" y="-25.4" x="25.4" rot="R180"/>
+                    <pin direction="pas" name="SS/TRK" visible="both" length="middle" y="-30.48" x="-5.08"/>
+                    <pin direction="pwr" name="3_VIN" visible="both" length="middle" y="-12.7" x="-5.08"/>
+                    <pin direction="pwr" name="4_SW" visible="both" length="middle" y="-15.24" x="25.4" rot="R180"/>
+                    <pin direction="pwr" name="4_VIN" visible="both" length="middle" y="-15.24" x="-5.08"/>
+                    <pin direction="pwr" name="1_VIN" visible="both" length="middle" y="-17.78" x="-5.08"/>
+                    <pin direction="pwr" name="2_VIN" visible="both" length="middle" y="-20.32" x="-5.08"/>
+                    <pin direction="pas" name="COMP" visible="both" length="middle" y="-33.02" x="25.4" rot="R180"/>
+                    <pin direction="oc" name="PGOOD" visible="both" length="middle" y="-7.62" x="-5.08"/>
+                    <pin direction="pas" name="EN" visible="both" length="middle" y="-25.4" x="-5.08"/>
+                    <pin direction="pwr" name="3_GND" visible="both" length="middle" y="-45.72" x="-5.08"/>
+                    <pin direction="pwr" name="AGND" visible="both" length="middle" y="-43.18" x="25.4" rot="R180"/>
+                    <pin direction="pwr" name="1_GND" visible="both" length="middle" y="-43.18" x="-5.08"/>
+                    <pin direction="pwr" name="2_GND" visible="both" length="middle" y="-40.64" x="-5.08"/>
+                    <pin direction="pwr" name="DAP" visible="both" length="middle" y="-45.72" x="25.4" rot="R180"/>
+                    <pin direction="pwr" name="1_SW" visible="both" length="middle" y="-17.78" x="25.4" rot="R180"/>
+                    <pin direction="pwr" name="2_SW" visible="both" length="middle" y="-20.32" x="25.4" rot="R180"/>
+                    <pin direction="in" name="RT" visible="both" length="middle" y="-35.56" x="-5.08"/>
+                    <pin direction="pas" name="BOOT" visible="both" length="middle" y="-7.62" x="25.4" rot="R180"/>
+                    <pin direction="pwr" name="VCC" visible="both" length="middle" y="-38.1" x="25.4" rot="R180"/>
+                </symbol>
+            </symbols>
+            <devicesets>
+                <deviceset prefix="U" name="TI_NATIONAL_SEMICONDUCTOR_LM20242MHE-NOPB">
+                    <description>PM-REG-LM20242</description>
+                    <gates>
+                        <gate name="G$0" symbol="TI_NATIONAL_SEMICONDUCTOR_LM20242MHE-NOPB_0_0" x="0"/>
+                    </gates>
+                    <devices>
+                        <device name="TI_NATIONAL_SEMICONDUCTOR_LM20242MHE-NOPB_0_0" package="TI_NATIONAL_SEMICONDUCTOR_LM20242MHE-NOPB_0">
+                            <connects>
+                                <connect gate="G$0" pad="1" pin="SS/TRK"/>
+                                <connect gate="G$0" pad="10" pin="1_GND"/>
+                                <connect gate="G$0" pad="11" pin="2_GND"/>
+                                <connect gate="G$0" pad="12" pin="AGND"/>
+                                <connect gate="G$0" pad="13" pin="1_SW"/>
+                                <connect gate="G$0" pad="14" pin="2_SW"/>
+                                <connect gate="G$0" pad="15" pin="1_VIN"/>
+                                <connect gate="G$0" pad="16" pin="2_VIN"/>
+                                <connect gate="G$0" pad="17" pin="BOOT"/>
+                                <connect gate="G$0" pad="18" pin="VCC"/>
+                                <connect gate="G$0" pad="19" pin="EN"/>
+                                <connect gate="G$0" pad="2" pin="FB"/>
+                                <connect gate="G$0" pad="20" pin="RT"/>
+                                <connect gate="G$0" pad="21" pin="DAP"/>
+                                <connect gate="G$0" pad="3" pin="PGOOD"/>
+                                <connect gate="G$0" pad="4" pin="COMP"/>
+                                <connect gate="G$0" pad="5" pin="3_VIN"/>
+                                <connect gate="G$0" pad="6" pin="4_VIN"/>
+                                <connect gate="G$0" pad="7" pin="3_SW"/>
+                                <connect gate="G$0" pad="8" pin="4_SW"/>
+                                <connect gate="G$0" pad="9" pin="3_GND"/>
+                            </connects>
+                            <technologies>
+                                <technology>
+                                    <attribute name="Code__IPC" value=""/>
+                                    <attribute name="ciiva_ids" value="1490726"/>
+                                    <attribute name="Comp_Type" value="Switcher"/>
+                                    <attribute name="Component_Link_1_Description" value="Datasheet URL"/>
+                                    <attribute name="vault_guid" value="3837F751-FFDA-45D0-A972-9457BC8C977B"/>
+                                    <attribute name="Package_Top_Marking" value="NSUZXYTT*20242*MH"/>
+                                    <attribute name="Component_Link_1_URL" value="http://www.ti.com/general/docs/lit/getliterature.tsp?genericPartNumber=LM20242&amp;fileType=pdf"/>
+                                    <attribute name="imported" value="yes"/>
+                                    <attribute name="vault_revision" value="DB6983F7-91C3-4F88-8B29-BB9202A2DCF1"/>
+                                    <attribute name="Power_Wise" value="Y"/>
+                                    <attribute name="prefix" value="U"/>
+                                    <attribute name="import_ts" value="1521854401"/>
+                                    <attribute name="Code__JEDEC" value="MO-153-ACT"/>
+                                    <attribute name="release_date" value="1464081014"/>
+                                    <attribute name="MPN" value="LM20242MHE/NOPB"/>
+                                    <attribute name="footprint_variant_name_0" value="Level C"/>
+                                    <attribute name="Package_Description" value="Molded TSSOP, Jedec, 6.5 x 4.4 x 0.9mm Body, 20 Lead, 0.65mm Pitch, Exposed Pad"/>
+                                    <attribute name="imported_from" value="vault"/>
+                                    <attribute name="Pin_Count" value="20"/>
+                                    <attribute name="High__Reliability" value=""/>
+                                    <attribute name="footprint_variant_name_1" value="Level B"/>
+                                    <attribute name="footprint_variant_name_2" value="Level A"/>
+                                    <attribute name="MF" value="TI National Semiconductor"/>
+                                    <attribute name="rohs" value="Yes"/>
+                                    <attribute name="package" value="PWP0020A"/>
+                                </technology>
+                            </technologies>
+                        </device>
+                        <device name="TI_NATIONAL_SEMICONDUCTOR_LM20242MHE-NOPB_0_1" package="TI_NATIONAL_SEMICONDUCTOR_LM20242MHE-NOPB_1">
+                            <connects>
+                                <connect gate="G$0" pad="1" pin="SS/TRK"/>
+                                <connect gate="G$0" pad="10" pin="1_GND"/>
+                                <connect gate="G$0" pad="11" pin="2_GND"/>
+                                <connect gate="G$0" pad="12" pin="AGND"/>
+                                <connect gate="G$0" pad="13" pin="1_SW"/>
+                                <connect gate="G$0" pad="14" pin="2_SW"/>
+                                <connect gate="G$0" pad="15" pin="1_VIN"/>
+                                <connect gate="G$0" pad="16" pin="2_VIN"/>
+                                <connect gate="G$0" pad="17" pin="BOOT"/>
+                                <connect gate="G$0" pad="18" pin="VCC"/>
+                                <connect gate="G$0" pad="19" pin="EN"/>
+                                <connect gate="G$0" pad="2" pin="FB"/>
+                                <connect gate="G$0" pad="20" pin="RT"/>
+                                <connect gate="G$0" pad="21" pin="DAP"/>
+                                <connect gate="G$0" pad="3" pin="PGOOD"/>
+                                <connect gate="G$0" pad="4" pin="COMP"/>
+                                <connect gate="G$0" pad="5" pin="3_VIN"/>
+                                <connect gate="G$0" pad="6" pin="4_VIN"/>
+                                <connect gate="G$0" pad="7" pin="3_SW"/>
+                                <connect gate="G$0" pad="8" pin="4_SW"/>
+                                <connect gate="G$0" pad="9" pin="3_GND"/>
+                            </connects>
+                            <technologies>
+                                <technology>
+                                    <attribute name="Code__IPC" value=""/>
+                                    <attribute name="ciiva_ids" value="1490726"/>
+                                    <attribute name="Comp_Type" value="Switcher"/>
+                                    <attribute name="Component_Link_1_Description" value="Datasheet URL"/>
+                                    <attribute name="vault_guid" value="3837F751-FFDA-45D0-A972-9457BC8C977B"/>
+                                    <attribute name="Package_Top_Marking" value="NSUZXYTT*20242*MH"/>
+                                    <attribute name="Component_Link_1_URL" value="http://www.ti.com/general/docs/lit/getliterature.tsp?genericPartNumber=LM20242&amp;fileType=pdf"/>
+                                    <attribute name="imported" value="yes"/>
+                                    <attribute name="vault_revision" value="DB6983F7-91C3-4F88-8B29-BB9202A2DCF1"/>
+                                    <attribute name="Power_Wise" value="Y"/>
+                                    <attribute name="prefix" value="U"/>
+                                    <attribute name="import_ts" value="1521854401"/>
+                                    <attribute name="Code__JEDEC" value="MO-153-ACT"/>
+                                    <attribute name="release_date" value="1464081014"/>
+                                    <attribute name="MPN" value="LM20242MHE/NOPB"/>
+                                    <attribute name="footprint_variant_name_0" value="Level C"/>
+                                    <attribute name="Package_Description" value="Molded TSSOP, Jedec, 6.5 x 4.4 x 0.9mm Body, 20 Lead, 0.65mm Pitch, Exposed Pad"/>
+                                    <attribute name="imported_from" value="vault"/>
+                                    <attribute name="Pin_Count" value="20"/>
+                                    <attribute name="High__Reliability" value=""/>
+                                    <attribute name="footprint_variant_name_1" value="Level B"/>
+                                    <attribute name="footprint_variant_name_2" value="Level A"/>
+                                    <attribute name="MF" value="TI National Semiconductor"/>
+                                    <attribute name="rohs" value="Yes"/>
+                                    <attribute name="package" value="PWP0020A"/>
+                                </technology>
+                            </technologies>
+                        </device>
+                        <device name="TI_NATIONAL_SEMICONDUCTOR_LM20242MHE-NOPB_0_2" package="TI_NATIONAL_SEMICONDUCTOR_LM20242MHE-NOPB_2">
+                            <connects>
+                                <connect gate="G$0" pad="1" pin="SS/TRK"/>
+                                <connect gate="G$0" pad="10" pin="1_GND"/>
+                                <connect gate="G$0" pad="11" pin="2_GND"/>
+                                <connect gate="G$0" pad="12" pin="AGND"/>
+                                <connect gate="G$0" pad="13" pin="1_SW"/>
+                                <connect gate="G$0" pad="14" pin="2_SW"/>
+                                <connect gate="G$0" pad="15" pin="1_VIN"/>
+                                <connect gate="G$0" pad="16" pin="2_VIN"/>
+                                <connect gate="G$0" pad="17" pin="BOOT"/>
+                                <connect gate="G$0" pad="18" pin="VCC"/>
+                                <connect gate="G$0" pad="19" pin="EN"/>
+                                <connect gate="G$0" pad="2" pin="FB"/>
+                                <connect gate="G$0" pad="20" pin="RT"/>
+                                <connect gate="G$0" pad="21" pin="DAP"/>
+                                <connect gate="G$0" pad="3" pin="PGOOD"/>
+                                <connect gate="G$0" pad="4" pin="COMP"/>
+                                <connect gate="G$0" pad="5" pin="3_VIN"/>
+                                <connect gate="G$0" pad="6" pin="4_VIN"/>
+                                <connect gate="G$0" pad="7" pin="3_SW"/>
+                                <connect gate="G$0" pad="8" pin="4_SW"/>
+                                <connect gate="G$0" pad="9" pin="3_GND"/>
+                            </connects>
+                            <technologies>
+                                <technology>
+                                    <attribute name="Code__IPC" value=""/>
+                                    <attribute name="ciiva_ids" value="1490726"/>
+                                    <attribute name="Comp_Type" value="Switcher"/>
+                                    <attribute name="Component_Link_1_Description" value="Datasheet URL"/>
+                                    <attribute name="vault_guid" value="3837F751-FFDA-45D0-A972-9457BC8C977B"/>
+                                    <attribute name="Package_Top_Marking" value="NSUZXYTT*20242*MH"/>
+                                    <attribute name="Component_Link_1_URL" value="http://www.ti.com/general/docs/lit/getliterature.tsp?genericPartNumber=LM20242&amp;fileType=pdf"/>
+                                    <attribute name="imported" value="yes"/>
+                                    <attribute name="vault_revision" value="DB6983F7-91C3-4F88-8B29-BB9202A2DCF1"/>
+                                    <attribute name="Power_Wise" value="Y"/>
+                                    <attribute name="prefix" value="U"/>
+                                    <attribute name="import_ts" value="1521854401"/>
+                                    <attribute name="Code__JEDEC" value="MO-153-ACT"/>
+                                    <attribute name="release_date" value="1464081014"/>
+                                    <attribute name="MPN" value="LM20242MHE/NOPB"/>
+                                    <attribute name="footprint_variant_name_0" value="Level C"/>
+                                    <attribute name="Package_Description" value="Molded TSSOP, Jedec, 6.5 x 4.4 x 0.9mm Body, 20 Lead, 0.65mm Pitch, Exposed Pad"/>
+                                    <attribute name="imported_from" value="vault"/>
+                                    <attribute name="Pin_Count" value="20"/>
+                                    <attribute name="High__Reliability" value=""/>
+                                    <attribute name="footprint_variant_name_1" value="Level B"/>
+                                    <attribute name="footprint_variant_name_2" value="Level A"/>
+                                    <attribute name="MF" value="TI National Semiconductor"/>
+                                    <attribute name="rohs" value="Yes"/>
+                                    <attribute name="package" value="PWP0020A"/>
+                                </technology>
+                            </technologies>
+                        </device>
+                    </devices>
+                </deviceset>
+            </devicesets>
+        </library>
+    </drawing>
+</eagle>
