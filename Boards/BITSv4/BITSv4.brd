@@ -248,7 +248,7 @@
 <wire x1="61.722" y1="13.97" x2="63.5" y2="12.192" width="0.0762" layer="20" curve="-90"/>
 <wire x1="63.5" y1="12.192" x2="63.5" y2="-1.27" width="0.0762" layer="20"/>
 <wire x1="63.5" y1="-1.27" x2="60.96" y2="-3.81" width="0.0762" layer="20" curve="-90"/>
-<text x="58.674" y="4.572" size="1.778" layer="22" rot="MR0">Designed
+<text x="42.418" y="-2.794" size="1.778" layer="22" rot="MR0">Designed
 Q3 2021
 J. Molter
 M. Kalin</text>
