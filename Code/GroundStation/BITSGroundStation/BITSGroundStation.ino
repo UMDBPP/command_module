@@ -13,8 +13,8 @@ SoftwareSerial xbeeSerial(2, 3);
 
 const uint32_t BitsSL = 0x417B4A3B;   //BITS   (white)Specific to the XBee on Bits (the Serial Low address value)
 const uint32_t GroundSL = 0x417B4A36; //GndStn (u.fl)
-const uint32_t BlueSL = 0x417B4A3A;   //Mars   (blue)
-const uint32_t WireSL = 0x419091AC;   //Choppy (wire antenna)
+const uint32_t BlueSL = 0x417B4A3A;   //Choppy 2 (blue)
+const uint32_t WireSL = 0x419091AC;   //Choppy 1 (wire antenna)
 const uint32_t UniSH = 0x0013A200;//Common across any and all XBees
 
 ZBTxStatusResponse txStatus = ZBTxStatusResponse(); //What lets the library check if things went through
@@ -64,7 +64,7 @@ void loop() {
         }
       }else if(pick=='3')
       {
-        Serial.println("ToChoppy"); //Really should color code these XBees instead of using payload names
+        Serial.println("ToChoppy1"); //Really should color code these XBees instead of using payload names
         delay(100);
         while(!Serial.available()){}
         if(Serial.available()>0){
@@ -74,6 +74,19 @@ void loop() {
           Serial.println();
           //Display what you've attempted to send
           xbeeSend(WireSL,xbeeSendBuf);
+        }
+      }else if(pick=='4')
+      {
+        Serial.println("ToChoppy2"); //Really should color code these XBees instead of using payload names
+        delay(100);
+        while(!Serial.available()){}
+        if(Serial.available()>0){
+          Serial.print("Sending: ");
+          Serial.readBytes((char*)xbeeSendBuf,xbeeSendBufSize); //Read bytes in over serial
+          Serial.write(xbeeSendBuf,xbeeSendBufSize);
+          Serial.println();
+          //Display what you've attempted to send
+          xbeeSend(BlueSL,xbeeSendBuf);
         }
       }
       else if(pick=='r') //Clear the terminal
@@ -163,7 +176,7 @@ void xbeeRead(){
 }
 void startPrompt(){
   Serial.println("XBee Ground Station Box:");
-  Serial.println("Enter Message Target (1 BITS, 2 Mars, 3 Choppy)");
+  Serial.println("Enter Message Target (1 BITS, 2 Mars, 3 Choppy1, 4 Choppy2)");
 }
 
 void processBitsMessage(){ //Just print things to the monitor
