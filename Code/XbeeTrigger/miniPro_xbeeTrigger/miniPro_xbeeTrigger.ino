@@ -6,7 +6,7 @@
 
 XBee xbee = XBee();
 XBeeResponse response = XBeeResponse();
-#define xbeeSerial Serial1
+//#define xbeeSerial Serial1
 
 #define triggerPin 3
 
@@ -25,12 +25,12 @@ uint8_t xbeeRecBuf[xbeeRecBufSize];
 uint8_t xbeeSendBuf[xbeeSendBufSize];
 
 void setup() {
-  Serial.begin(115200);
+  Serial.begin(9600);
   delay(1000);
-  Serial.println("INIT");
-  Serial1.begin(9600);
+  //Serial.println("INIT");
+  //Serial1.begin(9600);
   delay(1000);
-  xbee.setSerial(xbeeSerial); //Sets which serial the xbee object listens to
+  xbee.setSerial(Serial); //Sets which serial the xbee object listens to
 
   String("xbeeTrigger_ON").getBytes(xbeeSendBuf,xbeeSendBufSize);
   xbeeSend(GroundSL,xbeeSendBuf);
@@ -53,18 +53,18 @@ bool xbeeSend(uint32_t TargetSL,uint8_t* payload){
     if (xbee.getResponse().getApiId() == ZB_TX_STATUS_RESPONSE) {   //If rec
       xbee.getResponse().getZBTxStatusResponse(txStatus);
       if (txStatus.getDeliveryStatus() == SUCCESS) {                //If positive transmit response
-        Serial.println("SuccessfulTransmit");
+        //Serial.println("SuccessfulTransmit");
         return true;
       } else {
-        Serial.println("TxFail");
+        //Serial.println("TxFail");
         return false;
       } 
     }
   } else if (xbee.getResponse().isError()) { //Stil have yet to see this trigger, might be broken...
-    Serial.print("Error reading packet.  Error code: ");
-    Serial.println(xbee.getResponse().getErrorCode());
+    //Serial.print("Error reading packet.  Error code: ");
+    //Serial.println(xbee.getResponse().getErrorCode());
   } else {
-    Serial.println("Send Failure, check that remote XBee is powered on");  
+    //Serial.println("Send Failure, check that remote XBee is powered on");  
   }
   return false;
 }
@@ -76,11 +76,11 @@ void xbeeRead(){
         xbee.getResponse().getZBRxResponse(rx);
         
         uint32_t incominglsb = rx.getRemoteAddress64().getLsb(); //The SL of the sender
-        Serial.print("Incoming Packet From: ");
-        Serial.println(incominglsb,HEX);
+        //Serial.print("Incoming Packet From: ");
+        //Serial.println(incominglsb,HEX);
         if(rx.getPacketLength()>=xbeeRecBufSize){                //Probably means something is done broke
-          Serial.print("Oversized Message: ");
-          Serial.println(rx.getPacketLength());
+          //Serial.print("Oversized Message: ");
+          //Serial.println(rx.getPacketLength());
         }
         memset(xbeeRecBuf, 0, xbeeRecBufSize); // Nukes old buffer
         memcpy(xbeeRecBuf,rx.getData(),rx.getPacketLength());
@@ -98,24 +98,24 @@ void xbeeRead(){
 }
 
 void processBitsMessage(){ //Just print things to the monitor
-  Serial.println("RecFromBits");
-  Serial.write(xbeeRecBuf,xbeeRecBufSize);
+  //Serial.println("RecFromBits");
+  //Serial.write(xbeeRecBuf,xbeeRecBufSize);
 
   if(strstr((char*)xbeeRecBuf,"gndtest")){ //Checks if "test" is within buffer
-      Serial.println("");
-      Serial.println("ackTest");
+      //Serial.println("");
+      //Serial.println("ackTest");
       String("PacketAck").getBytes(xbeeSendBuf,xbeeSendBufSize);
       xbeeSend(GroundSL,xbeeSendBuf);
   }
   if(strstr((char*)xbeeRecBuf,"TG")){ 
-      Serial.println("");
-      Serial.println("ToGround");
+      //Serial.println("");
+      //Serial.println("ToGround");
       String("ToGNDAck").getBytes(xbeeSendBuf,xbeeSendBufSize);
       xbeeSend(BitsSL,xbeeSendBuf);
   }
   if(strstr((char*)xbeeRecBuf,"terminate")){ 
-      Serial.println("");
-      Serial.println("Terminate");
+      //Serial.println("");
+      //Serial.println("Terminate");
       String("ToGNDAckTerm").getBytes(xbeeSendBuf,xbeeSendBufSize);
       xbeeSend(BitsSL,xbeeSendBuf);
       terminate();
@@ -123,29 +123,29 @@ void processBitsMessage(){ //Just print things to the monitor
 }
 
 void processBlueMessage(){ //Just print things to the monitor
-  Serial.println("RecFromBlue");
-  Serial.write(xbeeRecBuf,xbeeRecBufSize);
+  //Serial.println("RecFromBlue");
+  //Serial.write(xbeeRecBuf,xbeeRecBufSize);
 }
 
 void processGroundMessage(){
-  Serial.print("RecFromGND: ");
-  Serial.write(xbeeRecBuf,xbeeRecBufSize);
+  //Serial.print("RecFromGND: ");
+  //Serial.write(xbeeRecBuf,xbeeRecBufSize);
   
   if(strstr((char*)xbeeRecBuf,"gndtest")){
-      Serial.println("");
-      Serial.println("ackTest");
+      //Serial.println("");
+      //Serial.println("ackTest");
       String("PacketAck").getBytes(xbeeSendBuf,xbeeSendBufSize);
       xbeeSend(GroundSL,xbeeSendBuf);
   }
   if(strstr((char*)xbeeRecBuf,"TG")){ 
-      Serial.println("");
-      Serial.println("ToGround");
+      //Serial.println("");
+      //Serial.println("ToGround");
       String("ToGNDAck").getBytes(xbeeSendBuf,xbeeSendBufSize);
       xbeeSend(GroundSL,xbeeSendBuf);
   }
   if(strstr((char*)xbeeRecBuf,"terminate")){ 
-      Serial.println("");
-      Serial.println("Terminate");
+      //Serial.println("");
+      //Serial.println("Terminate");
       String("ToGNDAckTerm").getBytes(xbeeSendBuf,xbeeSendBufSize);
       xbeeSend(GroundSL,xbeeSendBuf);
       terminate();
