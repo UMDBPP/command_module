@@ -126,7 +126,7 @@ IridiumSBD modem(IridiumSerial);
 void setup()
 {
   Serial.begin(115200);
-  Serial2.begin(115200);
+  Serial2.begin(9600);
   IridiumSerial.begin(SBD_BAUD);
   
   delay(1000);
