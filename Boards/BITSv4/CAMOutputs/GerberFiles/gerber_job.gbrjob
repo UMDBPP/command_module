@@ -1,0 +1,24 @@
+{
+    "Header": {
+        "Comment": "All values are metric (mm)",
+        "CreationDate": "2021-10-20T00:02:17Z",
+        "GenerationSoftware": {
+            "Application": "EAGLE",
+            "Vendor": "Autodesk",
+            "Version": "9.2.2"
+        },
+        "Part": "Single"
+    },
+    "Overall": {
+        "BoardThickness": 1.671119,
+        "LayerNumber": 2,
+        "Name": {
+            "ProjectId": "BITSv4"
+        },
+        "Owner": "Jonathan Molter <jmolter@umd.edu>",
+        "Size": {
+            "X": 50.038,
+            "Y": 44.196
+        }
+    }
+}
