@@ -1,57 +1,64 @@
- //UMD Nearspace Iridium Tracking Payload (BITS) {Balloon Iridium Tracking System)
-//Written by Jonathan Molter and Luke Renegar
-//Uses an Iridium 9603 SBD Modem for effective unlimited range, without the need for our own RF blackmagics*
-//This software is specifically written with the bits3 board revisision in mind
-// ACTIVE REV, 7/25/20
+// Balloon Iridium Telemetry Systems (BITS)
+// Developed for the UMD Balloon Payload Program
+//
+// Provides capabilities for high altitude balloon position, altitude, telemetry values, and signal relay to other payloads
+// Implements a Rockblock 9603 Iridium Carrier board, 900HP XBee, and Teensy3.2.
+// BITSv4 board designed and assembled in-house.
+// J. Molter
 
-#include <XBee.h> //If using 900HP's this must be the custom cpp (or really any post gen2 XBees)
+// Included Libraries
+#include <XBee.h>       //If using 900HP's this must be the custom cpp (or really any post gen2 XBees)
 #include <IridiumSBD.h>
 #include <SD.h>
 #include <TinyGPS.h>
 
-//Serial Ports (sketch requires 4 {Wellll technically 3 + DEBUG})
-#define OutputSerial Serial     //USB debug
-#define IridiumSerial Serial1   //Iridium 9603
-#define XBeeSerial Serial2      //XBee
-#define gpsserial Serial3       //GPS
+// Serial Ports
+#define OutputSerial  Serial  //USB debug
+#define IridiumSerial Serial1 //Iridium 9603
+#define XBeeSerial    Serial2 //XBee
+#define gpsserial     Serial3 //GPS
 
-//Pins
-#define SLEEP_PIN_NO 5    // Iridium Sleep Pin
-#define RING_PIN_NO 2    // Iridium Ring Alert Pin
-#define NET_AV_PIN 3
-#define chipSelect 6      // Pin for SPI (6 on new board)
-#define greenLED 4        // Green Status LED
-#define bat_cell1 22
+// Pin Assignments
+#define SLEEP_PIN_NO  5 // Iridium Sleep Pin
+#define RING_PIN_NO   2 // Iridium Ring Alert Pin
+#define NET_AV_PIN    3
+#define chipSelect    6 // C.S. Pin for SPI (6 on new board)
+#define greenLED      4 // Green Status LED
+#define bat_cell     22 // Battery Voltage Analog Pin
 
-// Config Settings
-#define DIAGNOSTICS false // Change this to see diagnostics
-#define XBEE_DEBUG true
-const bool USEGPS = true; // Should be true 99% of the time
-const bool sendingMessages = true; // Whether or not the device is sending messages; begins as true TODO
+// Configuration Flags
+#define DIAGNOSTICS     false // Diagnostics enabled (?)
+#define XBEE_DEBUG      true
+#define USEGPS          true  // GPS enabled (?)
+#define sendingMessages true  // Iridium transmit enabled (?)
 
-//Setting default datarates
-#define GPS_BAUD 115200
-#define SBD_BAUD 19200
+// Default Baud Rates
+#define COM_BAUD  115200
+#define SBD_BAUD  19200
+#define XBEE_BAUD 9600
+#define GPS_BAUD  115200
 
-//XBee Addresses
-const uint32_t BitsSL = 0x417B4A3B;   //BITS (white)Specific to the XBee on Bits (the Serial Low address value)
+// XBee Address Assignments
+const uint32_t BitsSL   = 0x417B4A3B; //BITS (white)Specific to the XBee on Bits (the Serial Low address value)
 const uint32_t GroundSL = 0x417B4A36; //GroundStations (u.fl)
-const uint32_t BlueSL = 0x417B4A3A;   //Blue (Blue Tape)
-const uint32_t WireSL = 0x419091AC;   //Wire (wire antenna)
-const uint32_t UniSH = 0x0013A200;    //Common across any and all XBees
+const uint32_t BlueSL   = 0x417B4A3A; //Blue (Blue Tape)
+const uint32_t WireSL   = 0x419091AC; //Wire (wire antenna)
+const uint32_t UniSH    = 0x0013A200; //Common across any and all XBees
 
-//XBee object / global variables
+// XBee Object Creation
 XBee xbee = XBee();
 XBeeResponse response = XBeeResponse();
 ZBTxStatusResponse txStatus = ZBTxStatusResponse();
 ZBRxResponse rx = ZBRxResponse();
 ModemStatusResponse msr = ModemStatusResponse();
-const int xbeeRecBufSize = 49; //Rec must be ~15bytes larger than send
-const int xbeeSendBufSize = 34;
+
+// XBee Data Buffers
+const int xbeeRecBufSize  = 49;      // Received XBee Buffer Size
+const int xbeeSendBufSize = 34;      // Send XBee Buffer Size, must be ~15 bytes less than the Recieve Buffer
 uint8_t xbeeRecBuf[xbeeRecBufSize];
 uint8_t xbeeSendBuf[xbeeSendBufSize];
 
-//GPS data struct and object
+// GPS Data Structure
 struct GPSdata{
   float GPSLat=-1;
   float GPSLon=-1;
@@ -59,56 +66,51 @@ struct GPSdata{
   long GPSAlt=-1;
   int GPSSats=-1;
 };
+
+// Create GPS object and an instance of structure
 TinyGPS gps;
 GPSdata gpsInfo;
 
-//Interval definitions
-const long signalCheckInterval = 15000;
-unsigned long messageTimeInterval = 60000; // In milliseconds; 300000 is 5 minutes; defines how frequently the program sends messages, now changeable                                                                      
+// Timing Intervals
+const long signalCheckInterval    = 15000; // Time between Iridium Signal Quality (CSQ) checks [ms]
+unsigned long messageTimeInterval = 60000; // Time between Iridium Packets [ms]                                                                     
+const long gpsLogInterval         = 1000;  // Time between GPS packets [ms]
 
-// Hard shutdowns are a bad idea, trace NS-88
-//const long shutdownTimeInterval = 14400000; // In milliseconds; 14400000 is 4 hours; defines after what period of time the program stops sending messages
-const long gpsLogInterval = 1000;
-const long gpsLandedInterval = 1000;
+// Program Timers
+unsigned long lastMillisOfMessage = 0;
+unsigned long lastSignalCheck     = 0;
+unsigned long lastLog             = 0;
 
-//Initializing Log Files; Must be in form XXXXXXXX.log; no more than 8 'X' characters
+// Create Log File Objects
 File gpsLogFile;
 File rxLogFile;
 File txLogFile;
 
-const String gpsLogName =   "GPS.LOG";  //1 sec position/altitude updates
-const String eventLogName = "EVENT.LOG";//Events Iridium/XBee (Special one thanks to Luke)
-const String rxLogName =    "RX.LOG";   //Iridium Uplinks   (toBalloon)
-const String txLogName =    "TX.LOG";   //Iridium Downlinks (toGround)
-
-
-
-// Program Timing
-unsigned long startTime;
-unsigned long lastMillisOfMessage = 0;
-unsigned long lastSignalCheck = 0;
-unsigned long lastLog = 0;
+// Log File Names
+const char gpsLogName[]   = "GPS.LOG";  //1 sec position/altitude updates
+const char eventLogName[] = "EVENT.LOG";//Events Iridium/XBee (Special one thanks to Luke)
+const char rxLogName[]    = "RX.LOG";   //Iridium Uplinks   (toBalloon)
+const char txLogName[]    = "TX.LOG";   //Iridium Downlinks (toGround)
 
 // Iridium Global Buffers
-//#define SBD_RX_BUFFER_SIZE 100 // Max size of an SBD message TODO(1) DELETE
-#define maxPacketSize 128		//Standard(GPS/TIME, etc.) + Message Data
-#define downlinkMessageSize 100 //Message Data
-#define RX_BUF_LENGTH 49		//Uplink Buffer Size
+#define maxPacketSize 128       // Total Downlink Packet Size (Includes dowlinkMessageSize)
+#define downlinkMessageSize 100 // Additional Downlink Message Size
+#define RX_BUF_LENGTH 49		    // Uplink Buffer Size
 
-uint8_t rxBuf[RX_BUF_LENGTH]; 			   //Uplink Buffer
-//uint8_t sbd_rx_buf[SBD_RX_BUFFER_SIZE];  //TODO(1) DELETE ?(what is this even doing...)
-char downlinkMessage2[downlinkMessageSize];//Downlink Buffer
+// Create Iridium Buffers
+char downlinkMessage2[downlinkMessageSize]; //Downlink Buffer
+uint8_t rxBuf[RX_BUF_LENGTH]; 			        //Uplink Buffer
 bool downlinkData;
 
-int sbd_csq; //Signal Qual
+int sbd_csq; // Signal Qual
 
-// The best global
-int arm_status = 42;//armed when = 42
+// Status value locking out a drop command, likely unecessary, TODO
+int arm_status = 42; // Armed when = 42
 
 // Declare the IridiumSBD object
 IridiumSBD modem(IridiumSerial);
 
-//Possible Iridium Error Codes
+// Possible Iridium Error Codes
 #define ISBD_SUCCESS             0
 #define ISBD_ALREADY_AWAKE       1
 #define ISBD_SERIAL_FAILURE      2
@@ -123,23 +125,32 @@ IridiumSBD modem(IridiumSerial);
 #define ISBD_NO_SLEEP_PIN        11
 #define SBD
 
+// Begin Setup
 void setup()
 {
-  Serial.begin(115200);
-  Serial2.begin(9600);
+  delay(1000);
+  
+  // Initialize Serial Ports
+  OutputSerial.begin(COM_BAUD);
+  XBeeSerial.begin(XBEE_BAUD);
   IridiumSerial.begin(SBD_BAUD);
   
-  delay(1000);
-  Serial.println("BITSrev3v2");
-  
-  gps_init(); //Setup the GPS
-  
-  
-  xbee.setSerial(Serial2);
+  delay(500);
+  OutputSerial.println("BITSv4");
+
+  // Run GPS Initialization Method
+  gps_init();
+
+  // Set XBee object to XBee Serial Port
+  xbee.setSerial(XBeeSerial);
+
+  // Run Startblinks
   startBlinks();
 
-//Open Files
+  // Open SD card
   SD.begin(chipSelect);
+
+  // Open SD card files, write init msg, and flush the file
   gpsLogFile = SD.open(gpsLogName, FILE_WRITE);
   rxLogFile = SD.open(rxLogName, FILE_WRITE);
   txLogFile = SD.open(txLogName, FILE_WRITE);
@@ -150,38 +161,45 @@ void setup()
   gpsLogFile.flush();
   rxLogFile.flush();
   txLogFile.flush();
-  Serial.println("MadeLogs");
   logprintln("INIT_LOG_LOG");
 
-  //memset(sbd_rx_buf, 0, SBD_RX_BUFFER_SIZE); //TODO(1) DELETE ?
+  OutputSerial.println("MadeLogs");
 
-  //XBee Init Message to ground stations
-  String("Init").getBytes(xbeeSendBuf,xbeeSendBufSize);   //Convert "Init" 2 bytes, dump into Message buffer
-  xbeeSend(GroundSL,xbeeSendBuf);                         //(Target,Message)
+  // XBee Init Message to ground stations
+  // TODO: Verify Removal Via Test
+  // String("Init").getBytes(xbeeSendBuf,xbeeSendBufSize);   //Convert "Init" 2 bytes, dump into Message buffer
+  // xbeeSend(GroundSL,xbeeSendBuf);                         //(Target,Message)
+  xbeeSend(GroundSL,"Program Init, Made Logs");                            //(Target,Message)
   
   int err;
 
-#ifdef SBD  // Begin satellite modem operation
-  OutputSerial.println("Starting modem...");
+// Begin satellite modem operation
+#ifdef SBD
+  
   err = modem.begin();
-  modem.useMSSTMWorkaround(false);//SUPER NF TESTTHIS TODO(2)
-  modem.adjustSendReceiveTimeout(120);
+  
   if (err != ISBD_SUCCESS)
   {
     OutputSerial.print("Begin failed: error ");
     OutputSerial.println(err);
     logprint("Begin failed: error ");
     logprintln(err);
-    if ((err == ISBD_NO_MODEM_DETECTED) || (err == 5))
-      Serial.println("No modem detected: check wiring.");
-    return;
   }
+
+  // Modem Settings
+  modem.useMSSTMWorkaround(false); // TODO, determine the impact of this line
+  modem.adjustSendReceiveTimeout(120);
   
   OutputSerial.println("Modem started");
-  String("ModemStarted").getBytes(xbeeSendBuf,xbeeSendBufSize);
-  xbeeSend(GroundSL,xbeeSendBuf);
 
-  #ifdef ISBD_CHECK_FIRMWARE // Example: Print the firmware revision
+  // TODO: Verify Removal Via Test
+  // String("ModemStarted").getBytes(xbeeSendBuf,xbeeSendBufSize);
+  // xbeeSend(GroundSL,xbeeSendBuf);
+  xbeeSend(GroundSL,"ModemStarted");
+
+  // TODO: Verify Removal Via Test
+  /*
+  #ifdef ISBD_CHECK_FIRMWARE
     char version[12];
     err = modem.getFirmwareVersion(version, sizeof(version));
     if (err != ISBD_SUCCESS)
@@ -195,8 +213,9 @@ void setup()
     OutputSerial.print("Firmware Version is ");
     OutputSerial.println(version);
   #endif
-
-  // From 0-5, 2 or better is preferred (Still works at 0)
+  */
+  
+  // Check Signal Quality of Modem. From 0-5, 2 or better is preferred (Still works at 0)
   err = modem.getSignalQuality(sbd_csq);
   if (err != ISBD_SUCCESS)
   {
@@ -205,26 +224,36 @@ void setup()
     logprint("SignalQuality failed: error ");
     logprintln(err);
     sbd_csq = -1;
-    return;
   }
 
   OutputSerial.print("From 0 to 5, signal qual is: ");
   OutputSerial.println(sbd_csq);
 
+  // TODO: Remove Capital String occurance, compress to single line
   String("ModemCSQ:"+String(sbd_csq)).getBytes(xbeeSendBuf,xbeeSendBufSize);
   xbeeSend(GroundSL,xbeeSendBuf);
+
 #endif
+// End SBD ifdef
 
-  String("GPS_Acquisition_Phase").getBytes(xbeeSendBuf,xbeeSendBufSize);
-  xbeeSend(GroundSL,xbeeSendBuf);
+  // Force a hold on setup until GPS lock is acquired
+  // Stable lock is achieved when altitude is within acceptable bounds
+  
+  // TODO: Verify Removal on Test
+  //String("GPS_Acquisition_Phase").getBytes(xbeeSendBuf,xbeeSendBufSize);
+  //xbeeSend(GroundSL,xbeeSendBuf);
+  xbeeSend(GroundSL,"GPS_Acquisition_Phase");
 
-// HOLD UNTIL LOCK
-String gpsPacket;
-if(USEGPS){
-  OutputSerial.println("TryingGPS");
+  // TODO: Move code to a gpsHold method
+  // TODO: Remove instance of String
+  String gpsPacket;
+  
+  if (USEGPS) {
+    OutputSerial.println("TryingGPS");
 
-  //GPS LOCK INIT
-    while((gpsInfo.GPSAlt<=0)||(gpsInfo.GPSAlt>100000)) //Outside of a reasonable range
+    // While GPSAlt is outside of an acceptable range, continually read until it becomes available
+    // TODO: Implement some method of status during this process to indicate lock is imrpoving
+    while((gpsInfo.GPSAlt<=0)||(gpsInfo.GPSAlt>100000))
     {
       //delay(500);
       //output();
@@ -247,10 +276,10 @@ if(USEGPS){
     xbeeSend(GroundSL,xbeeSendBuf); 
 
     
-}else{
-  OutputSerial.println("Not Using GPS");
-  gpsPacket = "test";
-}
+  } else {
+    OutputSerial.println("Not Using GPS");
+    gpsPacket = "test";
+  }
 
 
 //Honestly consider canning this whole section, really not needed considering loop does the same thing
