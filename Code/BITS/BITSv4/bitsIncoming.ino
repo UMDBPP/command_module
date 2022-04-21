@@ -2,7 +2,7 @@
 
 // Everything related from ground to BITS commands
 
-void uplink(){
+void sbdUplink(){
     //------------------------------------ARMING SECTION------------------------------------
     if(strstr((char*)rxBuf,"disarm"))
     {

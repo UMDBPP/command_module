@@ -250,5 +250,18 @@ void output(){
   //pulseRed();
 }
 
+void gpsWaitForLock(){
+  while((gpsInfo.GPSAlt<=0)||(gpsInfo.GPSAlt>100000))
+    {
+      //delay(500);
+      //output();
+      while (gpsserial.available()){
+          if (gps.encode(gpsserial.read())){
+          gpsInfo = getGPS();
+        break;
+        }
+      }
+    }  
+}
 
 
