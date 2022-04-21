@@ -1,18 +1,13 @@
 //Advanced blinking
+
 void startBlinks(){
-    //LED Indicators
-    //pinMode(redLED,OUTPUT);//Red
     pinMode(greenLED,OUTPUT);//Green
-    digitalWrite(4, LOW);
-    digitalWrite(5, LOW);
     for (int i = 0; i < 10; i++)
     {
         Serial.println(i);
-        delay(100);
-        //digitalWrite(redLED, HIGH);
+        delay(500);
         digitalWrite(greenLED, HIGH);
-        delay(25);
-        //digitalWrite(redLED, LOW);
+        delay(250);
         digitalWrite(greenLED, LOW);
     }
 }
@@ -30,20 +25,17 @@ void pingBlink(){
 void gpsLockBlink(){
     for (int i = 0; i < 5; i++)
     {
-        delay(500);
+        delay(1000);
         digitalWrite(greenLED, HIGH);
-        delay(250);
+        delay(500);
         digitalWrite(greenLED, LOW);
     }
 }
 
 void transmitBlink(){
     for (int i=0;i<3;i++){
-        //digitalWrite(redLED,HIGH);
-        //delay(100);
-        //digitalWrite(redLED,LOW);
         digitalWrite(greenLED,HIGH);
-        delay(100);
+        delay(300);
         digitalWrite(greenLED,LOW);
     }
 }

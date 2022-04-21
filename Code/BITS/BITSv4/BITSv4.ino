@@ -23,9 +23,9 @@
 #define SLEEP_PIN_NO  5 // Iridium Sleep Pin
 #define RING_PIN_NO   2 // Iridium Ring Alert Pin
 #define NET_AV_PIN    3
-#define chipSelect    6 // C.S. Pin for SPI (6 on new board)
+#define chipSelect    6 // C.S. Pin for SPI
 #define greenLED      4 // Green Status LED
-#define bat_cell     22 // Battery Voltage Analog Pin
+#define batteryPin   16 // Battery Voltage Analog Pin
 
 // Configuration Flags (true/false)
 #define DIAGNOSTICS     false // Diagnostics enabled
@@ -175,7 +175,17 @@ void setup()
     // TODO: Verify Removal Via Test
     // String("Init").getBytes(xbeeSendBuf,xbeeSendBufSize);   // Convert "Init" 2 bytes, dump into Message buffer
     // xbeeSend(GroundSL,xbeeSendBuf);                         // (Target,Message)
-    xbeeSend(GroundSL,"Program Init, Made Logs");              // (Target,Message)
+    snprintf(xbeeSendBuf, xbeeSendBufSize-1 , "Made Logs ");
+    xbeeSend(GroundSL,xbeeSendBuf);
+    memset(xbeeSendBuf,0,xbeeSendBufSize);
+
+    // TODO: New code to test
+    // Measure the battery voltage, and output over Serial and XBee
+    float initVolts = 2.8 * analogRead(batteryPin);
+    OutputSerial.print("VOLTS: ");OutputSerial.println(initVolts);
+    snprintf(xbeeSendBuf, xbeeSendBufSize-1 , "VOLTS: %f", initVolts);
+    xbeeSend(GroundSL,xbeeSendBuf);
+    memset(xbeeSendBuf,0,xbeeSendBufSize);
     
     int err;
   
@@ -319,6 +329,7 @@ void loop()
     ISBDCallback();
   
     xbeeRead();
+    
     LogPacket();
     
     // Check Signal Quality if its been more than signalCheckInterval since the last check
@@ -342,11 +353,15 @@ void loop()
     // If Signal Quality is not an error, and messageTimeInterval time has elapsed, and sendingMessages flag is true:    
     if ((sbd_csq > 0 && (millis() - lastMillisOfMessage) > messageTimeInterval) && sendingMessages) {
         size_t rx_buf_size = RX_BUF_LENGTH;
+
+        // TODO: New code to test
+        // Measure the battery voltage, and output over Serial and XBee
+        float initVolts = 2.8 * analogRead(batteryPin);
           
         // Assesmble the packet to be sent to the ground
         // gpsInfo is maintained in global, so no need to parse values
         char Packet2[maxPacketSize];
-        snprintf(Packet2,maxPacketSize,"%06d,%4.4f,%4.4f,%u",gpsInfo.GPSTime,gpsInfo.GPSLat,gpsInfo.GPSLon,gpsInfo.GPSAlt); //Build the packet
+        snprintf(Packet2,maxPacketSize,"%06d,%4.4f,%4.4f,%u,%3.1f",gpsInfo.GPSTime,gpsInfo.GPSLat,gpsInfo.GPSLon,gpsInfo.GPSAlt,initVolts); //Build the packet
     
         // If there is XBee data to downlink, then add that data to the SBD Packet
         if(downlinkData){ 
