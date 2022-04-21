@@ -11,7 +11,6 @@ void sbdUplink(){
         OutputSerial.println("Payload Disarmed");
         logprintln("Payload Disarmed");
         downlinkData = true;
-        //strcat(downlinkMessage2,"SAFED");
         strncat(downlinkMessage2,"SAFED",(downlinkMessageSize - strlen(downlinkMessage2) - 1));
         
     }else if(strstr((char*)rxBuf,"arm"))
@@ -21,7 +20,6 @@ void sbdUplink(){
         OutputSerial.println("Payload Armed");
         logprintln("Payload Armed");
         downlinkData = true;
-        //strcat(downlinkMessage2,"ARMED");
         strncat(downlinkMessage2,"ARMED",(downlinkMessageSize - strlen(downlinkMessage2) - 1));
            
     }else if(strstr((char*)rxBuf,"drop"))
@@ -36,7 +34,6 @@ void sbdUplink(){
           logprintln("UNARMED_DROP_ATTEMPT");
           OutputSerial.println("UNARMED_DROP_ATTEMPT");  
           downlinkData = true;
-          //strcat(downlinkMessage2,"NOT_ARMED");
           strncat(downlinkMessage2,"NOT_ARMED",(downlinkMessageSize - strlen(downlinkMessage2) - 1));
         }
     }
@@ -45,34 +42,30 @@ void sbdUplink(){
     else if(strstr((char*)rxBuf,"setrate")) //Change SBD message frequency
     {
         if(strstr((char*)rxBuf,"fast")){      //For testing / accurate drops
-          OutputSerial.println("SET_RATE_FAST");
-          logprintln("SET_RATE_FAST");
-          messageTimeInterval = 60000;// 1 minute
-          downlinkData = true;
-          //strcat(downlinkMessage2,",rF");
-          strncat(downlinkMessage2,",rF",(downlinkMessageSize - strlen(downlinkMessage2) - 1));
+            OutputSerial.println("SET_RATE_FAST");
+            logprintln("SET_RATE_FAST");
+            messageTimeInterval = 60000;// 1 minute
+            downlinkData = true;
+            strncat(downlinkMessage2,",rF",(downlinkMessageSize - strlen(downlinkMessage2) - 1));
         }
         else if(strstr((char*)rxBuf,"norm")){
-          OutputSerial.println("SET_RATE_NORM");
-          logprintln("SET_RATE_NORM");
-          messageTimeInterval = 300000; //5 minutes
-          downlinkData = true;
-          //strcat(downlinkMessage2,",rN");
-          strncat(downlinkMessage2,",rN",(downlinkMessageSize - strlen(downlinkMessage2) - 1));
+            OutputSerial.println("SET_RATE_NORM");
+            logprintln("SET_RATE_NORM");
+            messageTimeInterval = 300000; //5 minutes
+            downlinkData = true;
+            strncat(downlinkMessage2,",rN",(downlinkMessageSize - strlen(downlinkMessage2) - 1));
         }else if(strstr((char*)rxBuf,"slow")){
-          OutputSerial.println("SET_RATE_SLOW");
-          logprintln("SET_RATE_SLOW");
-          messageTimeInterval = 900000; //15 minutes
-          downlinkData = true;
-          //strcat(downlinkMessage2,",rS");
-          strncat(downlinkMessage2,",rS",(downlinkMessageSize - strlen(downlinkMessage2) - 1));
+            OutputSerial.println("SET_RATE_SLOW");
+            logprintln("SET_RATE_SLOW");
+            messageTimeInterval = 900000; //15 minutes
+            downlinkData = true;
+            strncat(downlinkMessage2,",rS",(downlinkMessageSize - strlen(downlinkMessage2) - 1));
         }
         else if(strstr((char*)rxBuf,"land")){
           OutputSerial.println("SET_RATE_LANDED");
           logprintln("SET_RATE_SLOW");
           messageTimeInterval = 3600000; //1 hour
           downlinkData = true;
-          //strcat(downlinkMessage2,",rS");
           strncat(downlinkMessage2,",rL",(downlinkMessageSize - strlen(downlinkMessage2) - 1));
         }
     }
@@ -92,9 +85,7 @@ void sbdUplink(){
         OutputSerial.println("TEST_SUCCESS");
         logprintln("TEST_PASS");
         downlinkData = true;
-        //strcat(downlinkMessage2,"test");
         strncat(downlinkMessage2,"test",(downlinkMessageSize - strlen(downlinkMessage2) - 1));
-        
     }
     
     //------------------------------------Check_GND--------------------------------------
@@ -123,30 +114,30 @@ void sbdUplink(){
 
     //------------------------------------PASSTHROUGH_SECTION--------------------------------------
     
-    //Blue passthrough
+    // Blue passthrough
     else if(strstr((char*)rxBuf,"BLUEPASS")){ 
-      OutputSerial.println("BluePass");
-      strcat((char*)xbeeSendBuf,(char*)rxBuf); // assemble passthrough packet
-      char conf[15] = ",GND";
-      
-      if(xbeeSend(BlueSL,xbeeSendBuf))  //try to passthrough with xbee
-      {      
-        logprintln("BluePass");               // if success, log it
-        strcat(conf,"PASS");
-      }
-      else if(xbeeSend(BlueSL,xbeeSendBuf)) //try again if failed
-      {
-        logprintln("BluePass"); 
-        strcat(conf,"PASS");
-      }
-      else
-      {
-        logprintln("BluePassFail"); // if failed twice, log the fail // TODO write a retry system
-        strcat(conf,"FAIL");
-      }
-      
-      downlinkData = true;
-      strncat(downlinkMessage2,",BluePass",(downlinkMessageSize - strlen(downlinkMessage2) - 1));
+        OutputSerial.println("BluePass");
+        strcat((char*)xbeeSendBuf,(char*)rxBuf); // assemble passthrough packet
+        char conf[15] = ",GND";
+        
+        if(xbeeSend(BlueSL,xbeeSendBuf))         // try to passthrough with xbee
+        {      
+            logprintln("BluePass");              // if success, log it
+            strcat(conf,"PASS");
+        }
+        else if(xbeeSend(BlueSL,xbeeSendBuf))    // try again if failed
+        {
+            logprintln("BluePass"); 
+            strcat(conf,"PASS");
+        }
+        else
+        {
+            logprintln("BluePassFail");          // if failed twice, log the fail // TODO write a retry system
+            strcat(conf,"FAIL");
+        }
+        
+        downlinkData = true;
+        strncat(downlinkMessage2,",BluePass",(downlinkMessageSize - strlen(downlinkMessage2) - 1));
     }
 
     //Ground passthrough
@@ -155,7 +146,7 @@ void sbdUplink(){
       strcat((char*)xbeeSendBuf,(char*)rxBuf);
       char conf[15] = ",GND";
 
-      if(xbeeSend(GroundSL,xbeeSendBuf))  //try to passthrough with xbee
+      if(xbeeSend(GroundSL,xbeeSendBuf))  // try to passthrough with xbee
       {      
         logprintln("GNDPASS");               // if success, log it
         strcat(conf,"PASS");
@@ -172,44 +163,43 @@ void sbdUplink(){
       }
       
       downlinkData = true;
-      //strcat(downlinkMessage2,"recconf");
       strncat(downlinkMessage2,conf,(downlinkMessageSize - strlen(downlinkMessage2) - 1));
     }
 
     //Wire passthrough
     else if(strstr((char*)rxBuf,"WIREPASS")){ 
-      OutputSerial.println("WIREPASS");
-      logprintln("WIREPASS");
-      strcat((char*)xbeeSendBuf,(char*)rxBuf);
-      char conf[15] = ",Wire";
-
-      if(xbeeSend(WireSL,xbeeSendBuf))  //try to passthrough with xbee
-      {      
-        logprintln("WIREPASS");               // if success, log it
-        strcat(conf,"PASS");
-      }
-      else if(xbeeSend(WireSL,xbeeSendBuf)) //try again if failed
-      {
-        logprintln("WIREPASS"); 
-        strcat(conf,"PASS");
-      }
-      else if(xbeeSend(WireSL,xbeeSendBuf)) //try again if failed
-      {
-        logprintln("WIREPASS"); 
-        strcat(conf,"PASS");
-      }
-      else if(xbeeSend(WireSL,xbeeSendBuf)) //try again if failed
-      {
-        logprintln("WIREPASS"); 
-        strcat(conf,"PASS");
-      }
-      else
-      {
-        logprintln("WIREPASS_FAIL"); // if failed twice, log the fail // TODO write a retry system
-        strcat(conf,"FAIL");
-      }
-      
-      downlinkData = true;
-      strncat(downlinkMessage2,conf,(downlinkMessageSize - strlen(downlinkMessage2) - 1));
+        OutputSerial.println("WIREPASS");
+        logprintln("WIREPASS");
+        strcat((char*)xbeeSendBuf,(char*)rxBuf);
+        char conf[15] = ",Wire";
+  
+        if(xbeeSend(WireSL,xbeeSendBuf))  //try to passthrough with xbee
+        {      
+            logprintln("WIREPASS");               // if success, log it
+            strcat(conf,"PASS");
+        }
+        else if(xbeeSend(WireSL,xbeeSendBuf)) //try again if failed
+        {
+            logprintln("WIREPASS"); 
+            strcat(conf,"PASS");
+        }
+        else if(xbeeSend(WireSL,xbeeSendBuf)) //try again if failed
+        {
+            logprintln("WIREPASS"); 
+            strcat(conf,"PASS");
+        }
+        else if(xbeeSend(WireSL,xbeeSendBuf)) //try again if failed
+        {
+            logprintln("WIREPASS"); 
+            strcat(conf,"PASS");
+        }
+        else
+        {
+            logprintln("WIREPASS_FAIL"); // if failed twice, log the fail // TODO write a retry system
+            strcat(conf,"FAIL");
+        }
+        
+        downlinkData = true;
+        strncat(downlinkMessage2,conf,(downlinkMessageSize - strlen(downlinkMessage2) - 1));
     }
 }
