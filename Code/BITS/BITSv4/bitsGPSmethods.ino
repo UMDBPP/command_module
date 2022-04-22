@@ -253,23 +253,51 @@ void output(){
     Serial.println(gpspacket);
 }
 
+// Method that runs while waiting for initial GPS aquisition in setup
 void gpsWaitForLock(){
     int lastSats = -1;
+
+    // Stay here until altitude is in a valid possible range
     while((gpsInfo.GPSAlt<=0)||(gpsInfo.GPSAlt>100000)){
+        // while there is data in the buffer do:
         while (gpsserial.available()){
+            // if gps.encode works do:
             if (gps.encode(gpsserial.read())){
                 gpsInfo = getGPS();
+                
+                // While still in the loop if new sats is more than old sats, output sat count
+                if(gpsInfo.GPSSats > lastSats){
+                    lastSats = gpsInfo.GPSSats;
+                    snprintf(xbeeSendBuf, xbeeSendBufSize-1 , "Sats: %d", lastSats);
+                    OutputSerial.println((char*)xbeeSendBuf);
+                    xbeeSend(GroundSL,xbeeSendBuf);
+                    //memset(xbeeSendBuf,0,xbeeSendBufSize);
+                }
+                
                 break;
             }
         }
-        if(gpsInfo.GPSSats > lastSats){
-            lastSats = gpsInfo.GPSSats;
-            snprintf(xbeeSendBuf, xbeeSendBufSize-1 , "Sats: %d", lastSats);
-            OutputSerial.println((char*)xbeeSendBuf);
-            xbeeSend(GroundSL,xbeeSendBuf);
-            //memset(xbeeSendBuf,0,xbeeSendBufSize);
-        }
-        
     }  
 }
 
+// Maintain a table of values for rolling average calculations for ascent rate
+void maintainAvgAscentTable(){
+    if(millis() > nextAverageAscentTime){
+        if(ascentIndex>sizeAvgAscentTable-1){
+              ascentIndex = 0;
+        }
+        avgAscentTable[ascentIndex] = gpsInfo.GPSAlt;
+        ascentIndex++;
+        nextAverageAscentTime = millis() + AverageAscentInterval;
+    }
+}
+
+// Sum the avgAscentTable array and return a float average
+float getAvgAscentRate(){
+      int sumAltitude = 0;
+      for (int i = 0 ; i<sizeAvgAscentTable ; i++){
+          sumAltitude += avgAscentTable[i];
+      }
+      // float() cast needed to return float value
+      return float(sumAltitude)/sizeAvgAscentTable;
+}

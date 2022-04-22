@@ -71,19 +71,26 @@ struct GPSdata{
   int GPSSats=-1;
 };
 
+// set number of values in the average ascent rate table, and define table
+#define sizeAvgAscentTable 20
+uint8_t avgAscentTable[sizeAvgAscentTable];
+int ascentIndex = 0;                          // Current index in the avgAscentTable to update
+
 // Create GPS object and an instance of structure
 TinyGPS gps;
 GPSdata gpsInfo;
 
 // Timing Intervals [ms]
-const long signalCheckInterval    = 15000; // Time between Iridium Signal Quality (CSQ) checks
-unsigned long messageTimeInterval = 60000; // Time between Iridium Packets                                                      
-const long gpsLogInterval         = 1000;  // Time between GPS packets, for more than 1 Hz, GPS settings must be modified
+const unsigned int signalCheckInterval    = 15000; // Time between Iridium Signal Quality (CSQ) checks
+unsigned long messageTimeInterval         = 60000; // Time between Iridium Packets (Can be changed during runtime)
+const unsigned int gpsLogInterval         = 1000;  // Time between GPS packets, for more than 1 Hz, GPS settings must be modified
+const unsigned int AverageAscentInterval  = 1000;  // Time between updating values in average ascent rate table, should be 1000ms
 
 // Initialize Program Timers
-unsigned long lastMillisOfMessage = 0;
-unsigned long lastSignalCheck     = 0;
-unsigned long lastLog             = 0;
+unsigned long lastMillisOfMessage   = 0;
+unsigned long lastSignalCheck       = 0;
+unsigned long lastLog               = 0;
+unsigned long nextAverageAscentTime = 0;
 
 // Create Log File Objects
 File gpsLogFile;
@@ -331,6 +338,8 @@ void loop()
     xbeeRead();
     
     LogPacket();
+
+    maintainAvgAscentTable();
     
     // Check Signal Quality if its been more than signalCheckInterval since the last check
     if (((millis() - lastSignalCheck) > signalCheckInterval)) {
@@ -357,11 +366,12 @@ void loop()
         // TODO: New code to test
         // Measure the battery voltage, and output over Serial and XBee
         float initVolts = 2.8 * analogRead(batteryPin);
+        float avgAscent = getAvgAscentRate();
           
         // Assesmble the packet to be sent to the ground
         // gpsInfo is maintained in global, so no need to parse values
         char Packet2[maxPacketSize];
-        snprintf(Packet2,maxPacketSize,"%06d,%4.4f,%4.4f,%u,%3.1f",gpsInfo.GPSTime,gpsInfo.GPSLat,gpsInfo.GPSLon,gpsInfo.GPSAlt,initVolts); //Build the packet
+        snprintf(Packet2,maxPacketSize,"%06d,%4.4f,%4.4f,%u,%3.1f,%3.lf",gpsInfo.GPSTime,gpsInfo.GPSLat,gpsInfo.GPSLon,gpsInfo.GPSAlt,initVolts,avgAscent); //Build the packet
         
         // If there is XBee data to downlink, then add that data to the SBD Packet
         if(downlinkData){ 
