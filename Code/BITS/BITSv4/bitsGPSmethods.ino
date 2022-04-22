@@ -243,29 +243,33 @@ GPSdata getGPS(){
 
 // DEBUG PRINT METHOD
 void output(){
-  String gpspacket;
-  if(gpsInfo.GPSSats!=-1){
-    gpspacket = String(gpsInfo.GPSTime)+","+String(gpsInfo.GPSLat,6) + "," + String(gpsInfo.GPSLon,6)+","+gpsInfo.GPSAlt+","+gpsInfo.GPSSats;
-  }else{
-    //gpspacket = String(preserve.GPSTime/100)+","+String(preserve.GPSLat,6) + "," + String(preserve.GPSLon,6)+","+preserve.GPSAlt+","+preserve.GPSSats;
-    gpspacket = "err" + String(gpsInfo.GPSTime/100)+","+String(gpsInfo.GPSLat,6) + "," + String(gpsInfo.GPSLon,6)+","+gpsInfo.GPSAlt+","+gpsInfo.GPSSats;
-  }
-  Serial.println(gpspacket);
-  //pulseRed();
+    String gpspacket;
+    if(gpsInfo.GPSSats!=-1){
+        gpspacket = String(gpsInfo.GPSTime)+","+String(gpsInfo.GPSLat,6) + "," + String(gpsInfo.GPSLon,6)+","+gpsInfo.GPSAlt+","+gpsInfo.GPSSats;
+    }else{
+        //gpspacket = String(preserve.GPSTime/100)+","+String(preserve.GPSLat,6) + "," + String(preserve.GPSLon,6)+","+preserve.GPSAlt+","+preserve.GPSSats;
+        gpspacket = "err" + String(gpsInfo.GPSTime/100)+","+String(gpsInfo.GPSLat,6) + "," + String(gpsInfo.GPSLon,6)+","+gpsInfo.GPSAlt+","+gpsInfo.GPSSats;
+    }
+    Serial.println(gpspacket);
 }
 
 void gpsWaitForLock(){
-  while((gpsInfo.GPSAlt<=0)||(gpsInfo.GPSAlt>100000))
-    {
-      //delay(500);
-      //output();
-      while (gpsserial.available()){
-          if (gps.encode(gpsserial.read())){
-          gpsInfo = getGPS();
-        break;
+    int lastSats = -1;
+    while((gpsInfo.GPSAlt<=0)||(gpsInfo.GPSAlt>100000)){
+        while (gpsserial.available()){
+            if (gps.encode(gpsserial.read())){
+                gpsInfo = getGPS();
+                break;
+            }
         }
-      }
+        if(gpsInfo.GPSSats > lastSats){
+            lastSats = gpsInfo.GPSSats;
+            snprintf(xbeeSendBuf, xbeeSendBufSize-1 , "Sats: %d", lastSats);
+            OutputSerial.println((char*)xbeeSendBuf);
+            xbeeSend(GroundSL,xbeeSendBuf);
+            //memset(xbeeSendBuf,0,xbeeSendBufSize);
+        }
+        
     }  
 }
-
 

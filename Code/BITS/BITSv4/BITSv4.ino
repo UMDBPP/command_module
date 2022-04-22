@@ -169,23 +169,23 @@ void setup()
     txLogFile.flush();
     logprintln("INIT_LOG_LOG");
   
-    OutputSerial.println("MadeLogs");
-  
+    
     // XBee Init Message to ground stations
     // TODO: Verify Removal Via Test
     // String("Init").getBytes(xbeeSendBuf,xbeeSendBufSize);   // Convert "Init" 2 bytes, dump into Message buffer
     // xbeeSend(GroundSL,xbeeSendBuf);                         // (Target,Message)
-    snprintf(xbeeSendBuf, xbeeSendBufSize-1 , "Made Logs ");
+    snprintf(xbeeSendBuf, xbeeSendBufSize-1 , "Made Logs");
+    OutputSerial.println((char*)xbeeSendBuf);
     xbeeSend(GroundSL,xbeeSendBuf);
-    memset(xbeeSendBuf,0,xbeeSendBufSize);
+    //memset(xbeeSendBuf,0,xbeeSendBufSize);
 
     // TODO: New code to test
     // Measure the battery voltage, and output over Serial and XBee
     float initVolts = 2.8 * analogRead(batteryPin);
-    OutputSerial.print("VOLTS: ");OutputSerial.println(initVolts);
-    snprintf(xbeeSendBuf, xbeeSendBufSize-1 , "VOLTS: %f", initVolts);
+    snprintf(xbeeSendBuf, xbeeSendBufSize-1 , "VOLTS: %3.1f", initVolts);
+    OutputSerial.println((char*)xbeeSendBuf);
     xbeeSend(GroundSL,xbeeSendBuf);
-    memset(xbeeSendBuf,0,xbeeSendBufSize);
+    //memset(xbeeSendBuf,0,xbeeSendBufSize);
     
     int err;
   
@@ -243,12 +243,12 @@ void setup()
         sbd_csq = -1;
     }
   
-    OutputSerial.print("From 0 to 5, signal qual is: ");
-    OutputSerial.println(sbd_csq);
+    OutputSerial.print("From 0 to 5, signal qual is: ");    
   
     // TODO: Verify Removal Via Test
     // String("ModemCSQ:"+String(sbd_csq)).getBytes(xbeeSendBuf,xbeeSendBufSize);
     snprintf(xbeeSendBuf, xbeeSendBufSize-1 , "ModemCSQ: %d", sbd_csq);
+    OutputSerial.println((char*)xbeeSendBuf);
     xbeeSend(GroundSL,xbeeSendBuf);
 
   #endif
@@ -353,7 +353,7 @@ void loop()
     // If Signal Quality is not an error, and messageTimeInterval time has elapsed, and sendingMessages flag is true:    
     if ((sbd_csq > 0 && (millis() - lastMillisOfMessage) > messageTimeInterval) && sendingMessages) {
         size_t rx_buf_size = RX_BUF_LENGTH;
-
+        
         // TODO: New code to test
         // Measure the battery voltage, and output over Serial and XBee
         float initVolts = 2.8 * analogRead(batteryPin);
@@ -362,7 +362,7 @@ void loop()
         // gpsInfo is maintained in global, so no need to parse values
         char Packet2[maxPacketSize];
         snprintf(Packet2,maxPacketSize,"%06d,%4.4f,%4.4f,%u,%3.1f",gpsInfo.GPSTime,gpsInfo.GPSLat,gpsInfo.GPSLon,gpsInfo.GPSAlt,initVolts); //Build the packet
-    
+        
         // If there is XBee data to downlink, then add that data to the SBD Packet
         if(downlinkData){ 
             logprint("XbeeDown: ");
@@ -374,43 +374,43 @@ void loop()
             downlinkData = false;
             // Nuke the downlinkMessage2 buffer
             memset(downlinkMessage2, 0, downlinkMessageSize);
-          }    
-      
-      logprint(Packet2);
-      logprintln("Loop Sending");
-      OutputSerial.println("Loop Sending");
-      
-      // Write the SBD TX packet to the txFile, then flush the file
-      txLogFile.println(Packet2);
-      txLogFile.flush();
+        }
+        
+        logprint(Packet2);
+        logprintln("Loop Sending");
+        OutputSerial.println("Loop Sending");
+        
+        // Write the SBD TX packet to the txFile, then flush the file
+        txLogFile.println(Packet2);
+        txLogFile.flush();
+    
+        // SBD Modem Send
+        uint8_t sbd_err = modem.sendReceiveSBDText(Packet2,rxBuf,rx_buf_size);  //Message, RecieveBuffer, SizeOfBuffer
+    
+        logprint("SBD tx/rx completed. Return Code: ");
+        logprintln(sbd_err); // 0 is good
+        
+        OutputSerial.println("Send Error:  " +String(sbd_err));
   
-      // SBD Modem Send
-      uint8_t sbd_err = modem.sendReceiveSBDText(Packet2,rxBuf,rx_buf_size);  //Message, RecieveBuffer, SizeOfBuffer
+        // TODO: Verify Removal Via Test
+        // rxLogFile.print(String(gpsInfo.GPSTime)); //Log time of RX
+        // rxLogFile.print("\t");
+        rxLogFile.println(gpsInfo.GPSTime);
+        
+        // Process Uplink Messages Recieved during the SBDText
+        sbdUplink();
   
-      logprint("SBD tx/rx completed. Return Code: ");
-      logprintln(sbd_err); // 0 is good
-      
-      OutputSerial.println("Send Error:  " +String(sbd_err));
-
-      // TODO: Verify Removal Via Test
-      // rxLogFile.print(String(gpsInfo.GPSTime)); //Log time of RX
-      // rxLogFile.print("\t");
-      rxLogFile.println(gpsInfo.GPSTime);
-      
-      // Process Uplink Messages Recieved during the SBDText
-      sbdUplink();
-
-      // Dump the raw rxBuf to the rxLogFile
-      for (int k = 0; k < rx_buf_size; k++)
-      {
-          rxLogFile.write(rxBuf[k]); // Trying write instead of print, shoud fix garbage data
-          rxBuf[k] = 0;
-          delay(1);
-      }
-      rxLogFile.println();
-      rxLogFile.flush();
-  
-      lastMillisOfMessage = millis();
+        // Dump the raw rxBuf to the rxLogFile
+        for (int k = 0; k < rx_buf_size; k++)
+        {
+            rxLogFile.write(rxBuf[k]); // Trying write instead of print, shoud fix garbage data
+            rxBuf[k] = 0;
+            delay(1);
+        }
+        rxLogFile.println();
+        rxLogFile.flush();
+    
+        lastMillisOfMessage = millis();
     }
 }
 // ---------------------------------------- End of Loop ----------------------------------------
