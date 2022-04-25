@@ -181,7 +181,7 @@ void setup()
     // TODO: Verify Removal Via Test
     // String("Init").getBytes(xbeeSendBuf,xbeeSendBufSize);   // Convert "Init" 2 bytes, dump into Message buffer
     // xbeeSend(GroundSL,xbeeSendBuf);                         // (Target,Message)
-    snprintf(xbeeSendBuf, xbeeSendBufSize-1 , "Made Logs");
+    snprintf((char*)xbeeSendBuf, xbeeSendBufSize-1 ,"MadeLogs");
     OutputSerial.println((char*)xbeeSendBuf);
     xbeeSend(GroundSL,xbeeSendBuf);
     //memset(xbeeSendBuf,0,xbeeSendBufSize);
@@ -189,7 +189,7 @@ void setup()
     // TODO: New code to test
     // Measure the battery voltage, and output over Serial and XBee
     float initVolts = 2.8 * analogRead(batteryPin);
-    snprintf(xbeeSendBuf, xbeeSendBufSize-1 , "VOLTS: %3.1f", initVolts);
+    snprintf((char*)xbeeSendBuf, xbeeSendBufSize-1 , "VOLTS: %3.1f", initVolts);
     OutputSerial.println((char*)xbeeSendBuf);
     xbeeSend(GroundSL,xbeeSendBuf);
     //memset(xbeeSendBuf,0,xbeeSendBufSize);
@@ -219,7 +219,7 @@ void setup()
     // TODO: Verify Removal Via Test
     // String("ModemStarted").getBytes(xbeeSendBuf,xbeeSendBufSize);
     // xbeeSend(GroundSL,xbeeSendBuf);
-    xbeeSend(GroundSL,"ModemStarted");
+    xbeeSend(GroundSL,(uint8_t*)"ModemStarted");
   
     // TODO: Verify Removal Via Test
     /*
@@ -254,7 +254,7 @@ void setup()
   
     // TODO: Verify Removal Via Test
     // String("ModemCSQ:"+String(sbd_csq)).getBytes(xbeeSendBuf,xbeeSendBufSize);
-    snprintf(xbeeSendBuf, xbeeSendBufSize-1 , "ModemCSQ: %d", sbd_csq);
+    snprintf((char*)xbeeSendBuf, xbeeSendBufSize-1 , "ModemCSQ: %d", sbd_csq);
     OutputSerial.println((char*)xbeeSendBuf);
     xbeeSend(GroundSL,xbeeSendBuf);
 
@@ -267,7 +267,7 @@ void setup()
     // TODO: Verify Removal Via Test
     //String("GPS_Acquisition_Phase").getBytes(xbeeSendBuf,xbeeSendBufSize);
     //xbeeSend(GroundSL,xbeeSendBuf);
-    xbeeSend(GroundSL,"GPS_Acquisition_Phase");
+    xbeeSend(GroundSL,(uint8_t*)"GPS_Acquisition_Phase");
   
     // TODO: Remove instance of String
     // TODO: Verify Removal Via Test
@@ -291,7 +291,7 @@ void setup()
         // Indicate GPS Lock has been acquired
         // TODO: Verify Removal Via Test
         //String("gotLock").getBytes(xbeeSendBuf,xbeeSendBufSize);
-        xbeeSend(GroundSL,"GPS_LOCK");  
+        xbeeSend(GroundSL,(uint8_t*)"GPS_LOCK");  
     } else {
         OutputSerial.println("Not Using GPS");
     }
@@ -325,7 +325,7 @@ void setup()
     // TODO: Verify Removal Via Test
     // String("EnteringLoop").getBytes(xbeeSendBuf,xbeeSendBufSize);
     // xbeeSend(GroundSL,xbeeSendBuf);
-    xbeeSend(GroundSL,"EnteringLoop");
+    xbeeSend(GroundSL,(uint8_t*)"EnteringLoop");
 }
 
 // -------------------------------- End of Setup Beginning of Loop --------------------------------
@@ -371,7 +371,7 @@ void loop()
         // Assesmble the packet to be sent to the ground
         // gpsInfo is maintained in global, so no need to parse values
         char Packet2[maxPacketSize];
-        snprintf(Packet2,maxPacketSize,"%06d,%4.4f,%4.4f,%u,%3.1f,%3.lf",gpsInfo.GPSTime,gpsInfo.GPSLat,gpsInfo.GPSLon,gpsInfo.GPSAlt,initVolts,avgAscent); //Build the packet
+        snprintf(Packet2,maxPacketSize,"%06ld,%4.4f,%4.4f,%ld,%3.1f,%3.lf",gpsInfo.GPSTime,gpsInfo.GPSLat,gpsInfo.GPSLon,gpsInfo.GPSAlt,initVolts,avgAscent); //Build the packet
         
         // If there is XBee data to downlink, then add that data to the SBD Packet
         if(downlinkData){ 
@@ -411,7 +411,7 @@ void loop()
         sbdUplink();
   
         // Dump the raw rxBuf to the rxLogFile
-        for (int k = 0; k < rx_buf_size; k++)
+        for (unsigned int k = 0; k < rx_buf_size; k++)
         {
             rxLogFile.write(rxBuf[k]); // Trying write instead of print, shoud fix garbage data
             rxBuf[k] = 0;
@@ -531,7 +531,7 @@ void LogPacket(){
     // Build the GPS packet
     // TODO: Verify Removal Via Test
     //snprintf(gpsLogPacket2,35,"%s,%4.4f,%4.4f,%u",exactTime,gpsInfo.GPSLat,gpsInfo.GPSLon,gpsInfo.GPSAlt); //Fix Timestep
-    snprintf(gpsLogPacket2,45,"%06d,%4.5f,%4.5f,%u",gpsInfo.GPSTime,gpsInfo.GPSLat,gpsInfo.GPSLon,gpsInfo.GPSAlt); //Build the packet
+    snprintf(gpsLogPacket2,45,"%06lu,%4.5f,%4.5f,%ld",gpsInfo.GPSTime,gpsInfo.GPSLat,gpsInfo.GPSLon,gpsInfo.GPSAlt); //Build the packet
 
     // Write packet to file, and flush the file
     gpsLogFile.println(gpsLogPacket2);
@@ -540,4 +540,3 @@ void LogPacket(){
     lastLog=millis();
   }
 }
-
