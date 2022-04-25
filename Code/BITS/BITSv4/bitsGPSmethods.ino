@@ -268,7 +268,7 @@ void gpsWaitForLock(){
                 // While still in the loop if new sats is more than old sats, output sat count
                 if(gpsInfo.GPSSats > lastSats){
                     lastSats = gpsInfo.GPSSats;
-                    snprintf(xbeeSendBuf, xbeeSendBufSize-1 , "Sats: %d", lastSats);
+                    snprintf((char*)xbeeSendBuf, xbeeSendBufSize-1 , "Sats: %d", lastSats);
                     OutputSerial.println((char*)xbeeSendBuf);
                     xbeeSend(GroundSL,xbeeSendBuf);
                     //memset(xbeeSendBuf,0,xbeeSendBufSize);
