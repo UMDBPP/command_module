@@ -53,7 +53,10 @@ void xbeeRead(){
         }
         else if(incominglsb == WireSL){
           processWireMessage();
-        }    
+        }  
+        else if(incominglsb == GHOULSL){
+          processGHOULMessage();
+        }
       }
     } 
 }
@@ -142,5 +145,20 @@ void processWireMessage(){
       logprintln("WirePingPong");
       String("pong").getBytes(xbeeSendBuf,xbeeSendBufSize);
       xbeeSend(BlueSL,xbeeSendBuf);
+  }
+}
+
+void processGHOULMessage(){
+  OutputSerial.println("RecGHOUL");
+  logprintln("RecGHOUL");
+
+  if(strstr((char*)xbeeRecBuf,"Ack")){
+    OutputSerial.println("Ack_GHOUL");
+    logprintln("Ack_GHOUL");
+    downlinkData = true;
+    //strcat(downlinkMessage2,(char*)xbeeRecBuf);//DELETE on TEST
+    strncat(downlinkMessage2,(char*)xbeeRecBuf,downlinkMessageSize - strlen(downlinkMessage2) - 1);
+    logprint("GHOULDownAppend");
+    logprintln(downlinkMessage2);
   }
 }

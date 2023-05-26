@@ -38,6 +38,7 @@ const uint32_t BitsSL = 0x417B4A3B;   //BITS (white)Specific to the XBee on Bits
 const uint32_t GroundSL = 0x417B4A36; //GroundStations (u.fl)
 const uint32_t BlueSL = 0x417B4A3A;   //Blue (Blue Tape)
 const uint32_t WireSL = 0x419091AC;   //Wire (wire antenna)
+const uint32_t GHOULSL = 0x4210F7E6;  //GHOUL
 const uint32_t UniSH = 0x0013A200;    //Common across any and all XBees
 
 //XBee object / global variables
@@ -80,8 +81,6 @@ const String gpsLogName =   "GPS.LOG";  //1 sec position/altitude updates
 const String eventLogName = "EVENT.LOG";//Events Iridium/XBee (Special one thanks to Luke)
 const String rxLogName =    "RX.LOG";   //Iridium Uplinks   (toBalloon)
 const String txLogName =    "TX.LOG";   //Iridium Downlinks (toGround)
-
-
 
 // Program Timing
 unsigned long startTime;
@@ -130,7 +129,7 @@ void setup()
   IridiumSerial.begin(SBD_BAUD);
   
   delay(1000);
-  Serial.println("BITSrev3v2");
+  Serial.println("BITSrev4");
   
   gps_init(); //Setup the GPS
   

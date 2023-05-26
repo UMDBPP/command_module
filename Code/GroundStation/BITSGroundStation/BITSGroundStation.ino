@@ -15,7 +15,8 @@ const uint32_t BitsSL = 0x417B4A3B;   //BITS   (white)Specific to the XBee on Bi
 const uint32_t GroundSL = 0x417B4A36; //GndStn (u.fl)
 const uint32_t BlueSL = 0x417B4A3A;   //Choppy 2 (blue)
 const uint32_t WireSL = 0x419091AC;   //Choppy 1 (wire antenna)
-const uint32_t UniSH = 0x0013A200;//Common across any and all XBees
+const uint32_t GHOULSL = 0x4210F7DD;  //GHOUL
+const uint32_t UniSH = 0x0013A200;    //Common across any and all XBees
 
 ZBTxStatusResponse txStatus = ZBTxStatusResponse(); //What lets the library check if things went through
 ZBRxResponse rx = ZBRxResponse();                   //Similar to above
@@ -87,6 +88,20 @@ void loop() {
           Serial.println();
           //Display what you've attempted to send
           xbeeSend(BlueSL,xbeeSendBuf);
+        }
+      }
+      else if(pick=='5')
+      {
+        Serial.println("ToGHOUL"); //Really should color code these XBees instead of using payload names
+        delay(100);
+        while(!Serial.available()){}
+        if(Serial.available()>0){
+          Serial.print("Sending: ");
+          Serial.readBytes((char*)xbeeSendBuf,xbeeSendBufSize); //Read bytes in over serial
+          Serial.write(xbeeSendBuf,xbeeSendBufSize);
+          Serial.println();
+          //Display what you've attempted to send
+          xbeeSend(GHOULSL,xbeeSendBuf);
         }
       }
       else if(pick=='r') //Clear the terminal
@@ -171,12 +186,15 @@ void xbeeRead(){
         if(incominglsb == WireSL){ //Config for Choppy
           processChoppyMessage();
         }    
+        if(incominglsb == GHOULSL){ //Config for Choppy
+          processGHOULMessage();
+        }    
       }
     }
 }
 void startPrompt(){
   Serial.println("XBee Ground Station Box:");
-  Serial.println("Enter Message Target (1 BITS, 2 Mars, 3 Choppy1, 4 Choppy2)");
+  Serial.println("Enter Message Target (1 BITS, 2 Mars, 3 Choppy1, 4 Choppy2, 5 GHOUL)");
 }
 
 void processBitsMessage(){ //Just print things to the monitor
@@ -195,6 +213,13 @@ void processMarsMessage(){ //Just print things to the monitor
 
 void processChoppyMessage(){ //Just print things to the monitor
   Serial.println("RecFromChoppy");
+  Serial.write(xbeeRecBuf,xbeeRecBufSize);
+  Serial.println();
+  //startPrompt();
+}
+
+void processGHOULMessage(){ //Just print things to the monitor
+  Serial.println("RecFromGHOUL");
   Serial.write(xbeeRecBuf,xbeeRecBufSize);
   Serial.println();
   //startPrompt();

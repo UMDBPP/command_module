@@ -25,11 +25,14 @@ uint8_t xbeeRecBuf[xbeeRecBufSize];
 uint8_t xbeeSendBuf[xbeeSendBufSize];
 
 void setup() {
-  Serial.begin(115200);
+  Serial.begin(9600);
   delay(1000);
   Serial.println("INIT");
   Serial1.begin(9600);
   delay(1000);
+  xbeeSerial.setRX(27);
+  xbeeSerial.setTX(26);
+  xbeeSerial.begin(9600);
   xbee.setSerial(xbeeSerial); //Sets which serial the xbee object listens to
 
   String("xbeeTrigger_ON").getBytes(xbeeSendBuf,xbeeSendBufSize);

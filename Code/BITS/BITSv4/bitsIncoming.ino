@@ -212,4 +212,41 @@ void uplink(){
       downlinkData = true;
       strncat(downlinkMessage2,conf,(downlinkMessageSize - strlen(downlinkMessage2) - 1));
     }
+
+    //GHOUL Passthrough
+    else if(strstr((char*)rxBuf,"GHOULPASS")){ 
+      OutputSerial.println("GHOULPASS");
+      logprintln("GHOULPASS");
+      strcat((char*)xbeeSendBuf,(char*)rxBuf);
+      char conf[15] = ",GHOUL";
+
+      if(xbeeSend(GHOULSL,xbeeSendBuf))  //try to passthrough with xbee
+      {      
+        logprintln("GHOULPASS");               // if success, log it
+        strcat(conf,"PASS");
+      }
+      else if(xbeeSend(GHOULSL,xbeeSendBuf)) //try again if failed
+      {
+        logprintln("GHOULPASS"); 
+        strcat(conf,"PASS");
+      }
+      else if(xbeeSend(GHOULSL,xbeeSendBuf)) //try again if failed
+      {
+        logprintln("GHOULPASS"); 
+        strcat(conf,"PASS");
+      }
+      else if(xbeeSend(GHOULSL,xbeeSendBuf)) //try again if failed
+      {
+        logprintln("GHOULPASS"); 
+        strcat(conf,"PASS");
+      }
+      else
+      {
+        logprintln("GHOULPASS_FAIL"); // if failed twice, log the fail // TODO write a retry system
+        strcat(conf,"FAIL");
+      }
+      
+      downlinkData = true;
+      strncat(downlinkMessage2,conf,(downlinkMessageSize - strlen(downlinkMessage2) - 1));
+    }
 }

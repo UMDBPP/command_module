@@ -31,9 +31,9 @@
 #define DEVMODE // Development mode. Uncomment to enable for debugging.
 
 //****************************************************************************
-char  CallSign[7]="W3EAX"; //DO NOT FORGET TO CHANGE YOUR CALLSIGN
+char  CallSign[7]="KC3SKW"; //DO NOT FORGET TO CHANGE YOUR CALLSIGN
 
-int   CallNumber=7; //SSID http://www.aprs.org/aprs11/SSIDs.txt
+int   CallNumber=8; //SSID http://www.aprs.org/aprs11/SSIDs.txt
 
 char  Symbol='O'; // '/O' for balloon, '/>' for car, for more info : http://www.aprs.org/symbols/symbols-new.txt
 bool alternateSymbolTable = false ; //false = '/' , true = '\'
@@ -42,13 +42,15 @@ char Frequency[9]="144.3900"; //default frequency. 144.3900 for US, 144.8000 for
 
 char comment[50] = "umdbpp"; // Max 50 char
 char StatusMessage[50] = "umdbpp"; 
+
+double prev_alt = 0.0;
+int prev_time = 0.0;
+
 //*****************************************************************************
-
-
 unsigned int   BeaconWait=64;  //seconds sleep for next beacon (TX).
 unsigned int   BattWait=60;    //seconds sleep if super capacitors/batteries are below BattMin (important if power source is solar panel) 
 float BattMin=4.5;        // min Volts to wake up.
-float DraHighVolt=10.0;    // min Volts for radio module (DRA818V) to transmit (TX) 1 Watt, below this transmit 0.5 Watt. You don't need 1 watt on a balloon. Do not change this.
+float DraHighVolt=1.0;    // min Volts for radio module (DRA818V) to transmit (TX) 1 Watt, below this transmit 0.5 Watt. You don't need 1 watt on a balloon. Do not change this.
 //float GpsMinVolt=4.0; //min Volts for GPS to wake up. (important if power source is solar panel) 
 
 boolean aliveStatus = true; //for tx status message on first wake-up just once.
@@ -300,9 +302,7 @@ void updatePosition() {
   APRS_setLon(lonStr);
 }
 
-
-void updateTelemetry() {
- 
+void updateTelemetry() { 
   sprintf(telemetry_buff, "%03d", gps.course.isValid() ? (int)gps.course.deg() : 0);
   telemetry_buff[3] += '/';
   sprintf(telemetry_buff + 4, "%03d", gps.speed.isValid() ? (int)gps.speed.knots() : 0);
@@ -330,14 +330,25 @@ void updateTelemetry() {
   sprintf(telemetry_buff + 50, "%02d", gps.satellites.isValid() ? (int)gps.satellites.value() : 0);
   telemetry_buff[52] = 'S';
   telemetry_buff[53] = ' ';
-  sprintf(telemetry_buff + 54, "%s", comment);
-  
+  double alt = gps.altitude.meters();
+  double curr_time = gps.time.hour()*3600 + gps.time.minute()*60 + gps.time.second();
+  double ascent_rate = (alt - prev_alt)/(curr_time - prev_time);
+  prev_alt = alt;
+  prev_time = curr_time;
+  dtostrf(ascent_rate, 4, 1, telemetry_buff + 54);
+  telemetry_buff[58] = 'm';
+  telemetry_buff[59] = '/';
+  telemetry_buff[60] = 's';
+  telemetry_buff[61] = 'V';
+  telemetry_buff[62] = ' ';
+  sprintf(telemetry_buff + 63, "%s", comment);
 
 #if defined(DEVMODE)
   Serial.println(telemetry_buff);
 #endif
 
 }
+
 
 void sendLocation() {
 
