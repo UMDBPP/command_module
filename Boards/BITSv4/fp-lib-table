@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "BITSv4")(type "KiCad")(uri "$(KIPRJMOD)/BITSv4.pretty")(options "")(descr ""))
+)
