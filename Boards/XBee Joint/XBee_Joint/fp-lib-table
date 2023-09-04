@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "BITSv5")(type "KiCad")(uri "/Users/michaelshipman/Developer/command_module/Boards/BITSv5/BITSv5/libraries/BITSv5.pretty")(options "")(descr ""))
+)
