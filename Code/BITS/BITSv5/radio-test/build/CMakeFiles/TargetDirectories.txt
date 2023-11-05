@@ -1,4 +1,4 @@
-/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/radio-test/build/CMakeFiles/test.dir
+/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/radio-test/build/CMakeFiles/radio-test.dir
 /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/radio-test/build/CMakeFiles/ELF2UF2Build.dir
 /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/radio-test/build/CMakeFiles/edit_cache.dir
 /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/radio-test/build/CMakeFiles/rebuild_cache.dir
