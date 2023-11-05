@@ -31,7 +31,10 @@ jobs:
           sudo apt update
           sudo apt install -y cmake gcc-arm-none-eabi libnewlib-arm-none-eabi build-essential
           pwd
-          cd Code/BITS/BITSv5/test/build
+          cd Code/BITS/BITSv5/test
+          rm -rf build
+          mkdir build
+          cd build
           export PICO_SDK_PATH=../../pico-sdk
           cmake ..
           make
