@@ -39,3 +39,9 @@ jobs:
           export PICO_SDK_PATH=../../pico-sdk
           cmake ..
           make
+
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            test.uf2
