@@ -1896,6 +1896,7 @@
     (uuid fc2e4dc5-ff21-4e41-be23-4faff4f6ca75)
   )
 
+  (no_connect (at 100.33 50.8) (uuid 07b0b099-2f9f-431c-b93e-77c82282d584))
   (no_connect (at 100.33 88.9) (uuid 131bd045-eaae-4242-b63c-00c6c8495e7c))
   (no_connect (at 207.01 146.05) (uuid 177e7f29-3b6a-48c1-9e51-f0c76e5a7043))
   (no_connect (at 100.33 78.74) (uuid 1ff8f958-aa96-4d4a-a416-8e5c4f3a2567))

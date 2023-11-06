@@ -1,4 +1,4 @@
-# Install script for directory: /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_sync
+# Install script for directory: /Users/michaelshipman/Developer/command_module/code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_sync
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

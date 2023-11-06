@@ -1,5 +1,5 @@
 CMakeFiles/pioasm.dir/pio_disassembler.cpp.o: \
-  /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/tools/pioasm/pio_disassembler.cpp \
+  /Users/michaelshipman/Developer/command_module/code/BITS/BITSv5/pico-sdk/tools/pioasm/pio_disassembler.cpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/array \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/__algorithm/equal.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/__algorithm/comp.h \
@@ -792,4 +792,4 @@ CMakeFiles/pioasm.dir/pio_disassembler.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/__bsd_locale_defaults.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/cstdarg \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/iomanip \
-  /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/tools/pioasm/pio_disassembler.h
+  /Users/michaelshipman/Developer/command_module/code/BITS/BITSv5/pico-sdk/tools/pioasm/pio_disassembler.h

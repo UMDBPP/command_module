@@ -1,4 +1,4 @@
-# Install script for directory: /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_util
+# Install script for directory: /Users/michaelshipman/Developer/command_module/code/BITS/BITSv5/pico-sdk/src/common/pico_util
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

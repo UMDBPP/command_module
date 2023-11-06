@@ -1,6 +1,6 @@
 CMakeFiles/pioasm.dir/hex_output.cpp.o: \
-  /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/tools/pioasm/hex_output.cpp \
-  /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/tools/pioasm/output_format.h \
+  /Users/michaelshipman/Developer/command_module/code/BITS/BITSv5/pico-sdk/tools/pioasm/hex_output.cpp \
+  /Users/michaelshipman/Developer/command_module/code/BITS/BITSv5/pico-sdk/tools/pioasm/output_format.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/vector \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/__algorithm/copy.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/__algorithm/copy_move_common.h \
