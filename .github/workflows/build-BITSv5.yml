@@ -45,4 +45,4 @@ jobs:
         with:
           tag_name: BITSv5-v0.0.0
           files: |
-            test.uf2
+            /home/runner/work/command_module/command_module/Code/BITS/BITSv5/test/build/test.uf2
