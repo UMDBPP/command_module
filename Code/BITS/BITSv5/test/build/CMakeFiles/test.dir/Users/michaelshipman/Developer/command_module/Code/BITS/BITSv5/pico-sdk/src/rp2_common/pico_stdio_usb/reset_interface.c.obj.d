@@ -1,5 +1,5 @@
-CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj: \
- /Users/michaelshipman/Developer/command_module/code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c \
+CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj: \
+ /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c \
  /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/tusb.h \
  /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/common/tusb_common.h \
  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/lib/gcc/arm-none-eabi/13.2.1/include/stdbool.h \
@@ -30,24 +30,24 @@ CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/code/BITS/BITS
  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/sys/stdio.h \
  /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/tusb_option.h \
  /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/common/tusb_compiler.h \
- /Users/michaelshipman/Developer/command_module/code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/include/tusb_config.h \
- /Users/michaelshipman/Developer/command_module/code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/include/pico/stdio_usb.h \
- /Users/michaelshipman/Developer/command_module/code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio/include/pico/stdio.h \
- /Users/michaelshipman/Developer/command_module/code/BITS/BITSv5/pico-sdk/src/common/pico_base/include/pico.h \
- /Users/michaelshipman/Developer/command_module/code/BITS/BITSv5/pico-sdk/src/common/pico_base/include/pico/types.h \
- /Users/michaelshipman/Developer/command_module/code/BITS/BITSv5/pico-sdk/src/common/pico_base/include/pico/assert.h \
+ /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/include/tusb_config.h \
+ /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/include/pico/stdio_usb.h \
+ /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio/include/pico/stdio.h \
+ /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_base/include/pico.h \
+ /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_base/include/pico/types.h \
+ /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_base/include/pico/assert.h \
  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/assert.h \
- /Users/michaelshipman/Developer/command_module/code/BITS/BITSv5/test/build/generated/pico_base/pico/version.h \
- /Users/michaelshipman/Developer/command_module/code/BITS/BITSv5/pico-sdk/src/common/pico_base/include/pico/config.h \
- /Users/michaelshipman/Developer/command_module/code/BITS/BITSv5/test/build/generated/pico_base/pico/config_autogen.h \
- /Users/michaelshipman/Developer/command_module/code/BITS/BITSv5/pico-sdk/src/boards/include/boards/pico.h \
- /Users/michaelshipman/Developer/command_module/code/BITS/BITSv5/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
- /Users/michaelshipman/Developer/command_module/code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_platform/include/pico/platform.h \
- /Users/michaelshipman/Developer/command_module/code/BITS/BITSv5/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
- /Users/michaelshipman/Developer/command_module/code/BITS/BITSv5/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
- /Users/michaelshipman/Developer/command_module/code/BITS/BITSv5/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
- /Users/michaelshipman/Developer/command_module/code/BITS/BITSv5/pico-sdk/src/common/pico_base/include/pico/types.h \
- /Users/michaelshipman/Developer/command_module/code/BITS/BITSv5/pico-sdk/src/common/pico_base/include/pico/error.h \
+ /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/test/build/generated/pico_base/pico/version.h \
+ /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_base/include/pico/config.h \
+ /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/test/build/generated/pico_base/pico/config_autogen.h \
+ /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/boards/include/boards/pico.h \
+ /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
+ /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_platform/include/pico/platform.h \
+ /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
+ /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
+ /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
+ /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_base/include/pico/types.h \
+ /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_base/include/pico/error.h \
  /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/common/tusb_mcu.h \
  /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/common/tusb_compiler.h \
  /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/common/tusb_verify.h \
@@ -57,16 +57,16 @@ CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/code/BITS/BITS
  /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/osal/osal.h \
  /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/common/tusb_common.h \
  /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/osal/osal_pico.h \
- /Users/michaelshipman/Developer/command_module/code/BITS/BITSv5/pico-sdk/src/common/pico_time/include/pico/time.h \
- /Users/michaelshipman/Developer/command_module/code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_timer/include/hardware/timer.h \
- /Users/michaelshipman/Developer/command_module/code/BITS/BITSv5/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/timer.h \
- /Users/michaelshipman/Developer/command_module/code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h \
- /Users/michaelshipman/Developer/command_module/code/BITS/BITSv5/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/timer.h \
- /Users/michaelshipman/Developer/command_module/code/BITS/BITSv5/pico-sdk/src/common/pico_sync/include/pico/sem.h \
- /Users/michaelshipman/Developer/command_module/code/BITS/BITSv5/pico-sdk/src/common/pico_sync/include/pico/lock_core.h \
- /Users/michaelshipman/Developer/command_module/code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_sync/include/hardware/sync.h \
- /Users/michaelshipman/Developer/command_module/code/BITS/BITSv5/pico-sdk/src/common/pico_sync/include/pico/mutex.h \
- /Users/michaelshipman/Developer/command_module/code/BITS/BITSv5/pico-sdk/src/common/pico_sync/include/pico/critical_section.h \
+ /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_time/include/pico/time.h \
+ /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_timer/include/hardware/timer.h \
+ /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/timer.h \
+ /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h \
+ /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/timer.h \
+ /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_sync/include/pico/sem.h \
+ /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_sync/include/pico/lock_core.h \
+ /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_sync/include/hardware/sync.h \
+ /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_sync/include/pico/mutex.h \
+ /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_sync/include/pico/critical_section.h \
  /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/common/tusb_fifo.h \
  /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/osal/osal.h \
  /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/common/tusb_fifo.h \
@@ -74,10 +74,10 @@ CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/code/BITS/BITS
  /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd.h \
  /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.h \
  /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/class/cdc/cdc.h \
- /Users/michaelshipman/Developer/command_module/code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_bootrom/include/pico/bootrom.h \
- /Users/michaelshipman/Developer/command_module/code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/include/pico/stdio_usb/reset_interface.h \
- /Users/michaelshipman/Developer/command_module/code/BITS/BITSv5/pico-sdk/src/common/pico_usb_reset_interface/include/pico/usb_reset_interface.h \
- /Users/michaelshipman/Developer/command_module/code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_watchdog/include/hardware/watchdog.h \
- /Users/michaelshipman/Developer/command_module/code/BITS/BITSv5/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/watchdog.h \
- /Users/michaelshipman/Developer/command_module/code/BITS/BITSv5/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/watchdog.h \
+ /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_bootrom/include/pico/bootrom.h \
+ /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/include/pico/stdio_usb/reset_interface.h \
+ /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_usb_reset_interface/include/pico/usb_reset_interface.h \
+ /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_watchdog/include/hardware/watchdog.h \
+ /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/watchdog.h \
+ /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/watchdog.h \
  /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd_pvt.h

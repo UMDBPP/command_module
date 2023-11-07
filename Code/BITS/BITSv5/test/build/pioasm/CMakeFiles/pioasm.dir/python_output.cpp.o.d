@@ -1,5 +1,5 @@
 CMakeFiles/pioasm.dir/python_output.cpp.o: \
-  /Users/michaelshipman/Developer/command_module/code/BITS/BITSv5/pico-sdk/tools/pioasm/python_output.cpp \
+  /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/tools/pioasm/python_output.cpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/array \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/__algorithm/equal.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/__algorithm/comp.h \
@@ -793,7 +793,7 @@ CMakeFiles/pioasm.dir/python_output.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/cstdarg \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/iomanip \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/iostream \
-  /Users/michaelshipman/Developer/command_module/code/BITS/BITSv5/pico-sdk/tools/pioasm/output_format.h \
+  /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/tools/pioasm/output_format.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/map \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/__tree \
-  /Users/michaelshipman/Developer/command_module/code/BITS/BITSv5/pico-sdk/tools/pioasm/pio_disassembler.h
+  /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/tools/pioasm/pio_disassembler.h

@@ -53,10 +53,10 @@ RM = /opt/homebrew/Cellar/cmake/3.27.7/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/michaelshipman/Developer/command_module/code/BITS/BITSv5/test
+CMAKE_SOURCE_DIR = /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/test
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/michaelshipman/Developer/command_module/code/BITS/BITSv5/test/build
+CMAKE_BINARY_DIR = /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/test/build
 
 # Utility rule file for bs2_default_padded_checksummed_asm.
 
@@ -69,12 +69,12 @@ include pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default_padded_checks
 pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default_padded_checksummed_asm: pico-sdk/src/rp2_common/boot_stage2/bs2_default_padded_checksummed.S
 
 pico-sdk/src/rp2_common/boot_stage2/bs2_default_padded_checksummed.S: pico-sdk/src/rp2_common/boot_stage2/bs2_default.bin
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/Users/michaelshipman/Developer/command_module/code/BITS/BITSv5/test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating bs2_default_padded_checksummed.S"
-	cd /Users/michaelshipman/Developer/command_module/code/BITS/BITSv5/test/build/pico-sdk/src/rp2_common/boot_stage2 && /opt/homebrew/Frameworks/Python.framework/Versions/3.12/bin/python3.12 /Users/michaelshipman/Developer/command_module/code/BITS/BITSv5/pico-sdk/src/rp2_common/boot_stage2/pad_checksum -s 0xffffffff /Users/michaelshipman/Developer/command_module/code/BITS/BITSv5/test/build/pico-sdk/src/rp2_common/boot_stage2/bs2_default.bin /Users/michaelshipman/Developer/command_module/code/BITS/BITSv5/test/build/pico-sdk/src/rp2_common/boot_stage2/bs2_default_padded_checksummed.S
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating bs2_default_padded_checksummed.S"
+	cd /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/test/build/pico-sdk/src/rp2_common/boot_stage2 && /opt/homebrew/Frameworks/Python.framework/Versions/3.12/bin/python3.12 /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/boot_stage2/pad_checksum -s 0xffffffff /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/test/build/pico-sdk/src/rp2_common/boot_stage2/bs2_default.bin /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/test/build/pico-sdk/src/rp2_common/boot_stage2/bs2_default_padded_checksummed.S
 
 pico-sdk/src/rp2_common/boot_stage2/bs2_default.bin: pico-sdk/src/rp2_common/boot_stage2/bs2_default.elf
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/Users/michaelshipman/Developer/command_module/code/BITS/BITSv5/test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating bs2_default.bin"
-	cd /Users/michaelshipman/Developer/command_module/code/BITS/BITSv5/test/build/pico-sdk/src/rp2_common/boot_stage2 && /opt/homebrew/bin/arm-none-eabi-objcopy -Obinary /Users/michaelshipman/Developer/command_module/code/BITS/BITSv5/test/build/pico-sdk/src/rp2_common/boot_stage2/bs2_default.elf /Users/michaelshipman/Developer/command_module/code/BITS/BITSv5/test/build/pico-sdk/src/rp2_common/boot_stage2/bs2_default.bin
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating bs2_default.bin"
+	cd /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/test/build/pico-sdk/src/rp2_common/boot_stage2 && /opt/homebrew/bin/arm-none-eabi-objcopy -Obinary /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/test/build/pico-sdk/src/rp2_common/boot_stage2/bs2_default.elf /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/test/build/pico-sdk/src/rp2_common/boot_stage2/bs2_default.bin
 
 bs2_default_padded_checksummed_asm: pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default_padded_checksummed_asm
 bs2_default_padded_checksummed_asm: pico-sdk/src/rp2_common/boot_stage2/bs2_default.bin
@@ -87,10 +87,10 @@ pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default_padded_checksummed_as
 .PHONY : pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default_padded_checksummed_asm.dir/build
 
 pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default_padded_checksummed_asm.dir/clean:
-	cd /Users/michaelshipman/Developer/command_module/code/BITS/BITSv5/test/build/pico-sdk/src/rp2_common/boot_stage2 && $(CMAKE_COMMAND) -P CMakeFiles/bs2_default_padded_checksummed_asm.dir/cmake_clean.cmake
+	cd /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/test/build/pico-sdk/src/rp2_common/boot_stage2 && $(CMAKE_COMMAND) -P CMakeFiles/bs2_default_padded_checksummed_asm.dir/cmake_clean.cmake
 .PHONY : pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default_padded_checksummed_asm.dir/clean
 
 pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default_padded_checksummed_asm.dir/depend:
-	cd /Users/michaelshipman/Developer/command_module/code/BITS/BITSv5/test/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/michaelshipman/Developer/command_module/code/BITS/BITSv5/test /Users/michaelshipman/Developer/command_module/code/BITS/BITSv5/pico-sdk/src/rp2_common/boot_stage2 /Users/michaelshipman/Developer/command_module/code/BITS/BITSv5/test/build /Users/michaelshipman/Developer/command_module/code/BITS/BITSv5/test/build/pico-sdk/src/rp2_common/boot_stage2 /Users/michaelshipman/Developer/command_module/code/BITS/BITSv5/test/build/pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default_padded_checksummed_asm.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/test/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/test /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/boot_stage2 /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/test/build /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/test/build/pico-sdk/src/rp2_common/boot_stage2 /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/test/build/pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default_padded_checksummed_asm.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default_padded_checksummed_asm.dir/depend
 

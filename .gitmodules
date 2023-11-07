@@ -6,3 +6,6 @@
 	path = Code/BITS/BITSv5/pico-sdk
 	url = https://github.com/raspberrypi/pico-sdk.git
 	branch = master
+[submodule "Code/BITS/BITSv5/test/littlefs"]
+	path = Code/BITS/BITSv5/test/littlefs
+	url = https://github.com/littlefs-project/littlefs.git

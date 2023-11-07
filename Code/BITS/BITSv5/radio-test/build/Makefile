@@ -1711,6 +1711,30 @@ Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/radio-test.dir/build.make CMakeFiles/radio-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.s
 .PHONY : Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.s
 
+radio.obj: radio.cpp.obj
+.PHONY : radio.obj
+
+# target to build an object file
+radio.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/radio-test.dir/build.make CMakeFiles/radio-test.dir/radio.cpp.obj
+.PHONY : radio.cpp.obj
+
+radio.i: radio.cpp.i
+.PHONY : radio.i
+
+# target to preprocess a source file
+radio.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/radio-test.dir/build.make CMakeFiles/radio-test.dir/radio.cpp.i
+.PHONY : radio.cpp.i
+
+radio.s: radio.cpp.s
+.PHONY : radio.s
+
+# target to generate assembly for a file
+radio.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/radio-test.dir/build.make CMakeFiles/radio-test.dir/radio.cpp.s
+.PHONY : radio.cpp.s
+
 radio_test.obj: radio_test.cpp.obj
 .PHONY : radio_test.obj
 
@@ -1734,6 +1758,54 @@ radio_test.s: radio_test.cpp.s
 radio_test.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/radio-test.dir/build.make CMakeFiles/radio-test.dir/radio_test.cpp.s
 .PHONY : radio_test.cpp.s
+
+sx126x-board.obj: sx126x-board.cpp.obj
+.PHONY : sx126x-board.obj
+
+# target to build an object file
+sx126x-board.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/radio-test.dir/build.make CMakeFiles/radio-test.dir/sx126x-board.cpp.obj
+.PHONY : sx126x-board.cpp.obj
+
+sx126x-board.i: sx126x-board.cpp.i
+.PHONY : sx126x-board.i
+
+# target to preprocess a source file
+sx126x-board.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/radio-test.dir/build.make CMakeFiles/radio-test.dir/sx126x-board.cpp.i
+.PHONY : sx126x-board.cpp.i
+
+sx126x-board.s: sx126x-board.cpp.s
+.PHONY : sx126x-board.s
+
+# target to generate assembly for a file
+sx126x-board.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/radio-test.dir/build.make CMakeFiles/radio-test.dir/sx126x-board.cpp.s
+.PHONY : sx126x-board.cpp.s
+
+sx126x.obj: sx126x.cpp.obj
+.PHONY : sx126x.obj
+
+# target to build an object file
+sx126x.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/radio-test.dir/build.make CMakeFiles/radio-test.dir/sx126x.cpp.obj
+.PHONY : sx126x.cpp.obj
+
+sx126x.i: sx126x.cpp.i
+.PHONY : sx126x.i
+
+# target to preprocess a source file
+sx126x.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/radio-test.dir/build.make CMakeFiles/radio-test.dir/sx126x.cpp.i
+.PHONY : sx126x.cpp.i
+
+sx126x.s: sx126x.cpp.s
+.PHONY : sx126x.s
+
+# target to generate assembly for a file
+sx126x.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/radio-test.dir/build.make CMakeFiles/radio-test.dir/sx126x.cpp.s
+.PHONY : sx126x.cpp.s
 
 # Help Target
 help:
@@ -1938,9 +2010,18 @@ help:
 	@echo "... Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_unique_id/unique_id.obj"
 	@echo "... Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_unique_id/unique_id.i"
 	@echo "... Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_unique_id/unique_id.s"
+	@echo "... radio.obj"
+	@echo "... radio.i"
+	@echo "... radio.s"
 	@echo "... radio_test.obj"
 	@echo "... radio_test.i"
 	@echo "... radio_test.s"
+	@echo "... sx126x-board.obj"
+	@echo "... sx126x-board.i"
+	@echo "... sx126x-board.s"
+	@echo "... sx126x.obj"
+	@echo "... sx126x.i"
+	@echo "... sx126x.s"
 .PHONY : help
 
 

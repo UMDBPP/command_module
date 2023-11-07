@@ -4,7 +4,7 @@
 # compile CXX with /Library/Developer/CommandLineTools/usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/Users/michaelshipman/Developer/command_module/code/BITS/BITSv5/pico-sdk/src/common/boot_uf2/include
+CXX_INCLUDES = -I/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/boot_uf2/include
 
 CXX_FLAGSarm64 = -std=gnu++14 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk
 
