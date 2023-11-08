@@ -6,7 +6,7 @@ Current POC:
 Shipman + JB
 
  ## Design Priciples
-As the command module is required to fly on every flight (for reasons currently unknown by our team) mass reduction is a primary focus. For this reason a switch from perfboard to custom PCB's was done, and a substantial reduction in box volume is underway. Reliability is incredibly important and for this reason the payload operates its tracking systems in a full 4N redundant method.
+As the command module needs to fly on every flight mass reduction is a primary focus. For this reason a switch from perfboard to custom PCB's was done, and a substantial reduction in box volume is underway. Reliability is incredibly important and for this reason the payload operates its tracking systems in a full 4N redundant method.
 ### Tracking systems include (system/function):
 #### 2x LiteAPRS 2m transmitters on 144.390 MHz
 In flight position updates every minute. By nature of APRS tracking in hilly terrain unlikely to receive exact coordinates under 500m unless operating our own radios.
