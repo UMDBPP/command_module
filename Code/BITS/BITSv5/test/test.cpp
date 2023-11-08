@@ -69,11 +69,16 @@ int main() {
 
     uint8_t i;
 
+    int input;
+
     while (true) {
         value = *p;  // Store the value at this address for later use
 
         printf("Value at %X is %X\n", p, value);
-        printf("Hello, BITS! Transmitting %d\n", i);
+        printf("Enter a number: ");
+        scanf("%d", input);
+
+        printf("Hello, BITS! You entered %d Transmitting %d now\n", input, i);
 
         lora.Send(&i, 1, SX126x_TXMODE_SYNC);
         i++;

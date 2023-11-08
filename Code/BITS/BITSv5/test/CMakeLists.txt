@@ -14,6 +14,7 @@ add_executable(test
     test.cpp
     SX126x.cpp
 )
+
 pico_enable_stdio_usb(test 1)
 
 pico_add_extra_outputs(test)
