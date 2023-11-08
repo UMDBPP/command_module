@@ -2877,7 +2877,8 @@ CMakeFiles/radio-test.dir/radio_test.cpp.obj: /Users/michaelshipman/Developer/co
   generated/pico_base/pico/version.h \
   /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/radio-test/radio.h \
   /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/radio-test/sx126x-board.h \
-  /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/radio-test/sx126x.h
+  /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/radio-test/sx126x.h \
+  /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/radio-test/timer1.h
 
 CMakeFiles/radio-test.dir/sx126x-board.cpp.obj: /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/radio-test/sx126x-board.cpp \
   /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/_ansi.h \
@@ -2943,6 +2944,79 @@ CMakeFiles/radio-test.dir/sx126x-board.cpp.obj: /Users/michaelshipman/Developer/
   /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/radio-test/sx126x-board.h \
   /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/radio-test/sx126x.h
 
+CMakeFiles/radio-test.dir/sx126x.cpp.obj: /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/radio-test/sx126x.cpp \
+  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/_ansi.h \
+  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/_newlib_version.h \
+  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/alloca.h \
+  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/c++/13.2.1/arm-none-eabi/thumb/v6-m/nofp/bits/c++config.h \
+  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/c++/13.2.1/arm-none-eabi/thumb/v6-m/nofp/bits/cpu_defines.h \
+  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/c++/13.2.1/arm-none-eabi/thumb/v6-m/nofp/bits/os_defines.h \
+  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/c++/13.2.1/bit \
+  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/c++/13.2.1/bits/concept_check.h \
+  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/c++/13.2.1/bits/cpp_type_traits.h \
+  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/c++/13.2.1/bits/exception_defines.h \
+  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/c++/13.2.1/bits/functexcept.h \
+  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/c++/13.2.1/bits/move.h \
+  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/c++/13.2.1/bits/predefined_ops.h \
+  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/c++/13.2.1/bits/ptr_traits.h \
+  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/c++/13.2.1/bits/requires_hosted.h \
+  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/c++/13.2.1/bits/specfun.h \
+  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/c++/13.2.1/bits/std_abs.h \
+  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/c++/13.2.1/bits/stl_algobase.h \
+  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/c++/13.2.1/bits/stl_iterator.h \
+  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/c++/13.2.1/bits/stl_iterator_base_funcs.h \
+  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/c++/13.2.1/bits/stl_iterator_base_types.h \
+  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/c++/13.2.1/bits/stl_pair.h \
+  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/c++/13.2.1/bits/utility.h \
+  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/c++/13.2.1/cmath \
+  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/c++/13.2.1/debug/assertions.h \
+  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/c++/13.2.1/debug/debug.h \
+  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/c++/13.2.1/ext/numeric_traits.h \
+  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/c++/13.2.1/ext/type_traits.h \
+  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/c++/13.2.1/limits \
+  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/c++/13.2.1/math.h \
+  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/c++/13.2.1/pstl/pstl_config.h \
+  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/c++/13.2.1/tr1/bessel_function.tcc \
+  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/c++/13.2.1/tr1/beta_function.tcc \
+  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/c++/13.2.1/tr1/ell_integral.tcc \
+  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/c++/13.2.1/tr1/exp_integral.tcc \
+  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/c++/13.2.1/tr1/gamma.tcc \
+  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/c++/13.2.1/tr1/hypergeometric.tcc \
+  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/c++/13.2.1/tr1/legendre_function.tcc \
+  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/c++/13.2.1/tr1/modified_bessel_func.tcc \
+  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/c++/13.2.1/tr1/poly_hermite.tcc \
+  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/c++/13.2.1/tr1/poly_laguerre.tcc \
+  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/c++/13.2.1/tr1/riemann_zeta.tcc \
+  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/c++/13.2.1/tr1/special_function_util.h \
+  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/c++/13.2.1/type_traits \
+  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/machine/_default_types.h \
+  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/machine/_types.h \
+  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/machine/ieeefp.h \
+  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/machine/stdlib.h \
+  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/math.h \
+  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/newlib.h \
+  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/stdint.h \
+  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/stdlib.h \
+  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/string.h \
+  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/strings.h \
+  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/sys/_intsup.h \
+  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/sys/_locale.h \
+  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/sys/_stdint.h \
+  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/sys/_types.h \
+  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/sys/cdefs.h \
+  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/sys/config.h \
+  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/sys/features.h \
+  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/sys/lock.h \
+  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/sys/reent.h \
+  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/sys/string.h \
+  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/lib/gcc/arm-none-eabi/13.2.1/include/stdbool.h \
+  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/lib/gcc/arm-none-eabi/13.2.1/include/stddef.h \
+  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/lib/gcc/arm-none-eabi/13.2.1/include/stdint.h \
+  /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/radio-test/sx126x-board.h \
+  /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/radio-test/sx126x.h
+
+
+/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/radio-test/timer1.h:
 
 /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/radio-test/sx126x.h:
 
@@ -3301,6 +3375,8 @@ generated/pico_base/pico/version.h:
 /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/watchdog.h:
 
 /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_sync/include/pico/lock_core.h:
+
+/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/radio-test/sx126x.cpp:
 
 /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/io_bank0.h:
 

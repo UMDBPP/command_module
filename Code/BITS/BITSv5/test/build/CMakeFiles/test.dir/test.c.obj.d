@@ -71,4 +71,5 @@ CMakeFiles/test.dir/test.c.obj: \
  /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/uart.h \
  /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/dreq.h \
  /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_uart/include/pico/stdio_uart.h \
- /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/include/pico/stdio_usb.h
+ /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/include/pico/stdio_usb.h \
+ /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/test/SX126x.h

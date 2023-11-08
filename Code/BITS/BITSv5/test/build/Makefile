@@ -207,6 +207,30 @@ cyw43_driver_picow_cyw43_bus_pio_spi_pio_h/fast:
 	$(MAKE) $(MAKESILENT) -f pico-sdk/src/rp2_common/pico_cyw43_driver/CMakeFiles/cyw43_driver_picow_cyw43_bus_pio_spi_pio_h.dir/build.make pico-sdk/src/rp2_common/pico_cyw43_driver/CMakeFiles/cyw43_driver_picow_cyw43_bus_pio_spi_pio_h.dir/build
 .PHONY : cyw43_driver_picow_cyw43_bus_pio_spi_pio_h/fast
 
+SX126x.obj: SX126x.cpp.obj
+.PHONY : SX126x.obj
+
+# target to build an object file
+SX126x.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/SX126x.cpp.obj
+.PHONY : SX126x.cpp.obj
+
+SX126x.i: SX126x.cpp.i
+.PHONY : SX126x.i
+
+# target to preprocess a source file
+SX126x.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/SX126x.cpp.i
+.PHONY : SX126x.cpp.i
+
+SX126x.s: SX126x.cpp.s
+.PHONY : SX126x.s
+
+# target to generate assembly for a file
+SX126x.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/SX126x.cpp.s
+.PHONY : SX126x.cpp.s
+
 Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/class/audio/audio_device.obj: Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.obj
 .PHONY : Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/class/audio/audio_device.obj
 
@@ -1015,6 +1039,30 @@ Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_pll/pll.c.s
 .PHONY : Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_pll/pll.c.s
 
+Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_spi/spi.obj: Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_spi/spi.c.obj
+.PHONY : Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_spi/spi.obj
+
+# target to build an object file
+Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_spi/spi.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_spi/spi.c.obj
+.PHONY : Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_spi/spi.c.obj
+
+Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_spi/spi.i: Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_spi/spi.c.i
+.PHONY : Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_spi/spi.i
+
+# target to preprocess a source file
+Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_spi/spi.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_spi/spi.c.i
+.PHONY : Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_spi/spi.c.i
+
+Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_spi/spi.s: Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_spi/spi.c.s
+.PHONY : Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_spi/spi.s
+
+# target to generate assembly for a file
+Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_spi/spi.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_spi/spi.c.s
+.PHONY : Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_spi/spi.c.s
+
 Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_sync/sync.obj: Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
 .PHONY : Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_sync/sync.obj
 
@@ -1687,29 +1735,29 @@ Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.s
 .PHONY : Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.s
 
-test.obj: test.c.obj
+test.obj: test.cpp.obj
 .PHONY : test.obj
 
 # target to build an object file
-test.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/test.c.obj
-.PHONY : test.c.obj
+test.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/test.cpp.obj
+.PHONY : test.cpp.obj
 
-test.i: test.c.i
+test.i: test.cpp.i
 .PHONY : test.i
 
 # target to preprocess a source file
-test.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/test.c.i
-.PHONY : test.c.i
+test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/test.cpp.i
+.PHONY : test.cpp.i
 
-test.s: test.c.s
+test.s: test.cpp.s
 .PHONY : test.s
 
 # target to generate assembly for a file
-test.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/test.c.s
-.PHONY : test.c.s
+test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/test.cpp.s
+.PHONY : test.cpp.s
 
 # Help Target
 help:
@@ -1726,6 +1774,9 @@ help:
 	@echo "... cyw43_driver_picow_cyw43_bus_pio_spi_pio_h"
 	@echo "... bs2_default"
 	@echo "... test"
+	@echo "... SX126x.obj"
+	@echo "... SX126x.i"
+	@echo "... SX126x.s"
 	@echo "... Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/class/audio/audio_device.obj"
 	@echo "... Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/class/audio/audio_device.i"
 	@echo "... Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/class/audio/audio_device.s"
@@ -1827,6 +1878,9 @@ help:
 	@echo "... Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_pll/pll.obj"
 	@echo "... Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_pll/pll.i"
 	@echo "... Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_pll/pll.s"
+	@echo "... Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_spi/spi.obj"
+	@echo "... Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_spi/spi.i"
+	@echo "... Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_spi/spi.s"
 	@echo "... Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_sync/sync.obj"
 	@echo "... Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_sync/sync.i"
 	@echo "... Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_sync/sync.s"

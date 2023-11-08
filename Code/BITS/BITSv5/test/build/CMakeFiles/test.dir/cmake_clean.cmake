@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/test.dir/SX126x.cpp.obj"
+  "CMakeFiles/test.dir/SX126x.cpp.obj.d"
   "CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.obj"
   "CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.obj.d"
   "CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj"
@@ -67,6 +69,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.obj"
   "CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj"
   "CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj.d"
+  "CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_spi/spi.c.obj"
+  "CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_spi/spi.c.obj.d"
   "CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj"
   "CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj.d"
   "CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj"
@@ -126,8 +130,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj.d"
   "CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj"
   "CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj.d"
-  "CMakeFiles/test.dir/test.c.obj"
-  "CMakeFiles/test.dir/test.c.obj.d"
+  "CMakeFiles/test.dir/test.cpp.obj"
+  "CMakeFiles/test.dir/test.cpp.obj.d"
   "test.elf"
   "test.pdb"
 )

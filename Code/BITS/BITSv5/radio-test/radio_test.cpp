@@ -64,8 +64,65 @@ int main() {
 
     SX126xIoInit();  // Initializes the radio I/Os pins
 
+    spi_init(spi0, 2000000);
+
+    // Radio initialization
+    RadioEvents.TxDone = OnTxDone;
+    RadioEvents.RxDone = OnRxDone;
+    RadioEvents.TxTimeout = OnTxTimeout;
+    RadioEvents.RxTimeout = OnRxTimeout;
+    RadioEvents.RxError = OnRxError;
+
+    Radio.Init(&RadioEvents);
+    Radio.SetChannel(RF_FREQUENCY);
+
+    Radio.SetTxConfig(MODEM_LORA, TX_OUTPUT_POWER, 0, LORA_BANDWIDTH,
+                      LORA_SPREADING_FACTOR, LORA_CODINGRATE,
+                      LORA_PREAMBLE_LENGTH, LORA_FIX_LENGTH_PAYLOAD_ON, true, 0,
+                      0, LORA_IQ_INVERSION_ON, 3000);
+
+    Radio.SetRxConfig(MODEM_LORA, LORA_BANDWIDTH, LORA_SPREADING_FACTOR,
+                      LORA_CODINGRATE, 0, LORA_PREAMBLE_LENGTH,
+                      LORA_SYMBOL_TIMEOUT, LORA_FIX_LENGTH_PAYLOAD_ON, 0, true,
+                      0, 0, LORA_IQ_INVERSION_ON, true);
+
+    if (USER_MODE_RX == mode) {
+        Radio.Rx(0);
+        printf("Now is RX");
+    } else {
+        Radio.Send((uint8_t *)&i, 1);
+    }
+
     while (true) {
         printf("Hello, BITS!\n");
         sleep_ms(1000);
     }
+}
+void OnTxDone(void) {
+    //    Radio.Sleep( );
+    State = TX;
+}
+
+void OnRxDone(uint8_t *payload, uint16_t size, int16_t rssi, int8_t snr) {
+    //    Radio.Sleep( );
+    BufferSize = size;
+    memcpy(Buffer, payload, BufferSize);
+    RssiValue = rssi;
+    SnrValue = snr;
+    State = RX;
+}
+
+void OnTxTimeout(void) {
+    //   Radio.Sleep( );
+    State = TX_TIMEOUT;
+}
+
+void OnRxTimeout(void) {
+    //    Radio.Sleep( );
+    State = RX_TIMEOUT;
+}
+
+void OnRxError(void) {
+    //    Radio.Sleep( );
+    State = RX_ERROR;
 }
