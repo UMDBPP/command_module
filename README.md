@@ -10,7 +10,7 @@ As the command module is required to fly on every flight (for reasons currently 
 ### Tracking systems include (system/function):
 #### 2x LiteAPRS 2m transmitters on 144.390 MHz
 In flight position updates every minute. By nature of APRS tracking in hilly terrain unlikely to receive exact coordinates under 500m unless operating our own radios.
-#### 1x Celltracker
-Exact coordinates on landing, in flight data logging. Works on 4G LTE-m. Eventually will post to server. BLE configuration in the works.
+#### 1x SPOT Trace Tracker
+COTS tracker from SPOT. Gives exact coordinates on landing.
 #### 1x BITS (Balloon Iridium Telemetry System)
 Exact coordinates throughout the flight, variable transmission rate 1min-15minutes (technically 10s-inf). Datalogger. XBee 900 HP allows for commands to be relayed through Iridium to other payloads and telemetry from payloads to be sent to ground. Possibility of ground to payload XBee communication without Iridium allowing for low latency high rate commanding.
