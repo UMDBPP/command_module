@@ -1,6 +1,7 @@
 #include "SX126x.h"
 
 #include <math.h>
+#include <stdio.h>
 
 #include "hardware/gpio.h"
 #include "hardware/spi.h"
@@ -26,7 +27,17 @@ SX126x::SX126x(int spiSelect, int reset, int busy, int interrupt) {
     gpio_init(SX126x_INT0);
     gpio_set_dir(SX126x_INT0, GPIO_IN);
 
-    spi_init(spi0, 2000000);
+    gpio_set_function(24, GPIO_FUNC_SPI);
+    gpio_set_function(26, GPIO_FUNC_SPI);
+    gpio_set_function(27, GPIO_FUNC_SPI);
+
+    spi_init(spi1, 2000000);
+
+    spi_set_format(spi1,           // SPI instance
+                   8,              // Number of bits per transfer
+                   (spi_cpol_t)1,  // Polarity (CPOL)
+                   (spi_cpha_t)1,  // Phase (CPHA)
+                   SPI_MSB_FIRST);
 }
 
 int16_t SX126x::begin(uint8_t packetType, uint32_t frequencyInHz,
@@ -73,7 +84,12 @@ int16_t SX126x::LoRaConfig(uint8_t spreadingFactor, uint8_t bandwidth,
                            uint8_t payloadLen, bool crcOn, bool invertIrq) {
     uint8_t ldro;  // LowDataRateOptimize
 
+    printf("LoRaConfig1\n");
+
     SetStopRxTimerOnPreambleDetect(false);
+
+    printf("LoRaConfig2\n");
+
     SetLoRaSymbNumTimeout(0);
     SetPacketType(
         SX126X_PACKET_TYPE_LORA);  // RadioSetModem( (
@@ -81,6 +97,8 @@ int16_t SX126x::LoRaConfig(uint8_t spreadingFactor, uint8_t bandwidth,
                                    // == PACKET_TYPE_GFSK ) ?
                                    // MODEM_FSK : MODEM_LORA );
     SetModulationParams(spreadingFactor, bandwidth, codingRate, ldro);
+
+    printf("LoRaConfig3\n");
 
     PacketParams[0] = (preambleLength >> 8) & 0xFF;
     PacketParams[1] = preambleLength;
@@ -111,6 +129,8 @@ int16_t SX126x::LoRaConfig(uint8_t spreadingFactor, uint8_t bandwidth,
                     SX126X_IRQ_NONE);
     // receive state no receive timeoout
     SetRx(0xFFFFFF);
+
+    return 0;
 }
 
 uint8_t SX126x::Receive(uint8_t *pData, uint16_t len) {
@@ -138,7 +158,7 @@ bool SX126x::Send(uint8_t *pData, uint8_t len, uint8_t mode) {
         ClearIrqStatus(SX126X_IRQ_TX_DONE | SX126X_IRQ_TIMEOUT);
 
         WriteBuffer(pData, len);
-        SetTx(500);
+        SetTx(0);
 
         if (mode & SX126x_TXMODE_SYNC) {
             irq = GetIrqStatus();
@@ -724,12 +744,12 @@ uint8_t SX126x::ReadBuffer(uint8_t *rxData, uint8_t *rxDataLen,
     uint8_t temp1 = SX126X_CMD_READ_BUFFER;
     uint8_t temp2 = SX126X_CMD_NOP;
 
-    spi_write_blocking(spi0, &temp1, 1);
-    spi_write_blocking(spi0, &offset, 1);
-    spi_write_blocking(spi0, &temp1, 1);
+    spi_write_blocking(spi1, &temp1, 1);
+    spi_write_blocking(spi1, &offset, 1);
+    spi_write_blocking(spi1, &temp1, 1);
 
     for (uint16_t i = 0; i < *rxDataLen; i++) {
-        spi_write_read_blocking(spi0, &temp2, &rxData[i], 1);
+        spi_write_read_blocking(spi1, &temp2, &rxData[i], 1);
     }
     gpio_put(SX126x_SPI_SELECT, true);
 
@@ -758,13 +778,13 @@ uint8_t SX126x::WriteBuffer(uint8_t *txData, uint8_t txDataLen) {
     // SPI.beginTransaction(SPISettings(2000000, MSBFIRST, SPI_MODE0));
     const uint8_t temp1 = SX126X_CMD_WRITE_BUFFER;
 
-    spi_write_blocking(spi0, &temp1, 1);
-    spi_write_blocking(spi0, 0, 1);
+    spi_write_blocking(spi1, &temp1, 1);
+    spi_write_blocking(spi1, 0, 1);
     // Serial.print(" 0 ");
     for (uint16_t i = 0; i < txDataLen; i++) {
         // Serial.print(txData[i]);
         // Serial.print(" ");
-        spi_write_blocking(spi0, &txData[i], 2);
+        spi_write_blocking(spi1, &txData[i], 2);
     }
     gpio_put(SX126x_SPI_SELECT, true);
     // Serial.println("");
@@ -786,17 +806,19 @@ void SX126x::SPIreadCommand(uint8_t cmd, uint8_t *data, uint8_t numBytes,
 
 void SX126x::SPItransfer(uint8_t cmd, bool write, uint8_t *dataOut,
                          uint8_t *dataIn, uint8_t numBytes, bool waitForBusy) {
-    // ensure BUSY is low (state meachine ready)
+    printf("SPI transfer 1\n");
+    // ensure BUSY is low (state machine ready)
     // TODO timeout
-    while (gpio_get(SX126x_BUSY))
-        ;
+    while (gpio_get(SX126x_BUSY)) {
+        printf("Radio is BUSY\n");
+    }
 
     // start transfer
     gpio_put(SX126x_SPI_SELECT, false);
     // SPI.beginTransaction(SPISettings(2000000, MSBFIRST, SPI_MODE0));
 
     // send command byte
-    spi_write_blocking(spi0, &cmd, 1);
+    spi_write_blocking(spi1, &cmd, 1);
 
     // send/receive all bytes
     if (write) {
@@ -805,7 +827,7 @@ void SX126x::SPItransfer(uint8_t cmd, bool write, uint8_t *dataOut,
         // Serial.print(" DataOut: ");
         for (uint8_t n = 0; n < numBytes; n++) {
             uint8_t in = 0;
-            spi_write_read_blocking(spi0, &in, &dataOut[n], 1);
+            spi_write_read_blocking(spi1, &in, &dataOut[n], 1);
             // Serial.print(dataOut[n], HEX);
             // Serial.print(" ");
         }
@@ -813,14 +835,14 @@ void SX126x::SPItransfer(uint8_t cmd, bool write, uint8_t *dataOut,
     } else {
         // Serial.print("SPI read:  CMD=0x");
         // Serial.print(cmd, HEX);
-        //  skip the first byte for read-type commands (status-only)
+        // skip the first byte for read-type commands (status-only)
         uint8_t in = 0;
-        spi_write_read_blocking(spi0, &in, SX126X_CMD_NOP, 1);
+        spi_write_read_blocking(spi1, &in, SX126X_CMD_NOP, 1);
         ////Serial.println((SX126X_CMD_NOP, HEX));
         // Serial.print(" DataIn: ");
 
         for (uint8_t n = 0; n < numBytes; n++) {
-            spi_write_read_blocking(spi0, &dataIn[n], SX126X_CMD_NOP, 1);
+            spi_write_read_blocking(spi1, &dataIn[n], SX126X_CMD_NOP, 1);
             ////Serial.println((SX126X_CMD_NOP, HEX));
             // Serial.print(dataIn[n], HEX);
             // Serial.print(" ");
@@ -829,7 +851,7 @@ void SX126x::SPItransfer(uint8_t cmd, bool write, uint8_t *dataOut,
     }
 
     // stop transfer
-    spi_deinit(spi0);
+    // spi_deinit(spi1);
     gpio_put(SX126x_SPI_SELECT, true);
 
     // wait for BUSY to go high and then low
