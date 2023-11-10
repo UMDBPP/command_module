@@ -236,7 +236,7 @@ void radio_spi_init() {
 }
 
 void set_radio_packet_type_lora() {
-    printf("Setting Packet Type to LoRa");
+    printf("Setting Packet Type to LoRa\n");
 
     gpio_put(cs_pin, 0);
     spi_write_blocking(spi, &set_packet_type_cmd, 1);
@@ -245,8 +245,8 @@ void set_radio_packet_type_lora() {
 }
 
 void set_radio_pa_config() {
-    const uint8_t pa_duty = 0x02;
-    const uint8_t hp_max = 0x02;
+    const uint8_t pa_duty = 0x04;
+    const uint8_t hp_max = 0x07;
     const uint8_t device_sel = 0x00;
     const uint8_t pa_lut = 0x01;
 
@@ -285,7 +285,7 @@ void set_radio_rf_freq() {
 }
 
 void set_tx_params() {
-    const uint8_t power = 0x00;
+    const uint8_t power = 0x16;
     const uint8_t ramp_time = 0x04;
 
     gpio_put(cs_pin, 0);
