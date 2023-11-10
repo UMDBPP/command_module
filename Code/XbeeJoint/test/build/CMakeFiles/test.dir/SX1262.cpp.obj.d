@@ -1,5 +1,6 @@
-CMakeFiles/test.dir/test.cpp.obj: \
- /Users/michaelshipman/Developer/command_module/Code/XbeeJoint/test/test.cpp \
+CMakeFiles/test.dir/SX1262.cpp.obj: \
+ /Users/michaelshipman/Developer/command_module/Code/XbeeJoint/test/SX1262.cpp \
+ /Users/michaelshipman/Developer/command_module/Code/XbeeJoint/test/SX1262.h \
  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/c++/13.2.1/math.h \
  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/c++/13.2.1/cmath \
  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/c++/13.2.1/bits/requires_hosted.h \
@@ -64,12 +65,7 @@ CMakeFiles/test.dir/test.cpp.obj: \
  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/sys/stdio.h \
  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/c++/13.2.1/stdlib.h \
  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/c++/13.2.1/cstdlib \
- /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/string.h \
- /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/sys/_locale.h \
- /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/strings.h \
- /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/sys/string.h \
- /Users/michaelshipman/Developer/command_module/Code/XbeeJoint/test/SX1262.h \
- /Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/rp2_common/hardware_flash/include/hardware/flash.h \
+ /Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/rp2_common/hardware_gpio/include/hardware/gpio.h \
  /Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/common/pico_base/include/pico.h \
  /Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/common/pico_base/include/pico/types.h \
  /Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/common/pico_base/include/pico/assert.h \
@@ -91,7 +87,6 @@ CMakeFiles/test.dir/test.cpp.obj: \
  /Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
  /Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/common/pico_base/include/pico/types.h \
  /Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/common/pico_base/include/pico/error.h \
- /Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/rp2_common/hardware_gpio/include/hardware/gpio.h \
  /Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/sio.h \
  /Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h \
  /Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/interp.h \
@@ -106,10 +101,6 @@ CMakeFiles/test.dir/test.cpp.obj: \
  /Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/spi.h \
  /Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/spi.h \
  /Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/dreq.h \
- /Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/common/pico_binary_info/include/pico/binary_info.h \
- /Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/common/pico_binary_info/include/pico/binary_info/defs.h \
- /Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/common/pico_binary_info/include/pico/binary_info/structure.h \
- /Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/common/pico_binary_info/include/pico/binary_info/code.h \
  /Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/common/pico_stdlib/include/pico/stdlib.h \
  /Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/rp2_common/pico_stdio/include/pico/stdio.h \
  /Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/common/pico_time/include/pico/time.h \

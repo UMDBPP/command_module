@@ -1,8 +1,6 @@
 #ifndef _SX126X_H
 #define _SX126X_H
 
-#include "pico/stdlib.h"
-
 // return values
 #define ERR_NONE 0
 #define ERR_PACKET_TOO_LONG 1
@@ -444,69 +442,30 @@
 #define SX126x_TXMODE_SYNC 0x02
 #define SX126x_TXMODE_BACK2RX 0x04
 
-// common low-level SPI interface
-class SX126x {
-   public:
-    SX126x(int spiSelect, int reset, int busy, int interrupt);
+#define CS_PIN 21
 
-    int16_t begin(uint8_t packetType, uint32_t frequencyInHz,
-                  int8_t txPowerInDbm);
-    int16_t LoRaConfig(uint8_t spreadingFactor, uint8_t bandwidth,
-                       uint8_t codingRate, uint16_t preambleLength,
-                       uint8_t payloadLen, bool crcOn, bool invertIrq);
-    uint8_t Receive(uint8_t *pData, uint16_t len);
-    bool Send(uint8_t *pData, uint8_t len, uint8_t mode);
-    bool ReceiveMode(void);
-    void ReceiveStatus(uint8_t *rssiPacket, uint8_t *snrPacket);
-    void SetTxPower(int8_t txPowerInDbm);
-
-   private:
-    uint8_t PacketParams[6];
-    bool txActive;
-
-    int SX126x_SPI_SELECT;
-    int SX126x_RESET;
-    int SX126x_BUSY;
-    int SX126x_INT0;
-
-    void SPIwriteCommand(uint8_t cmd, uint8_t *data, uint8_t numBytes,
-                         bool waitForBusy = true);
-    void SPIreadCommand(uint8_t cmd, uint8_t *data, uint8_t numBytes,
-                        bool waitForBusy = true);
-    void SPItransfer(uint8_t cmd, bool write, uint8_t *dataOut, uint8_t *dataIn,
-                     uint8_t numBytes, bool waitForBusy);
-
-    void SetDio3AsTcxoCtrl(uint8_t tcxoVoltage, uint32_t timeout);
-    void SetDio2AsRfSwitchCtrl(uint8_t enable);
-    void Reset(void);
-    uint8_t GetStatus(void);
-    void SetStandby(uint8_t mode);
-    void WaitOnBusy(void);
-    void SetRfFrequency(uint32_t frequency);
-    void Calibrate(uint8_t calibParam);
-    void CalibrateImage(uint32_t frequency);
-    void SetRegulatorMode(uint8_t mode);
-    void SetBufferBaseAddress(uint8_t txBaseAddress, uint8_t rxBaseAddress);
-    void SetPowerConfig(int8_t power, uint8_t rampTime);
-    void SetOvercurrentProtection(uint8_t value);
-    void SetPaConfig(uint8_t paDutyCycle, uint8_t hpMax, uint8_t deviceSel,
-                     uint8_t paLut);
-    void SetDioIrqParams(uint16_t irqMask, uint16_t dio1Mask, uint16_t dio2Mask,
-                         uint16_t dio3Mask);
-    void SetStopRxTimerOnPreambleDetect(bool enable);
-    void SetLoRaSymbNumTimeout(uint8_t SymbNum);
-    void SetPacketType(uint8_t packetType);
-    void SetModulationParams(uint8_t spreadingFactor, uint8_t bandwidth,
-                             uint8_t codingRate, uint8_t lowDataRateOptimize);
-    uint16_t GetIrqStatus(void);
-    void ClearIrqStatus(uint16_t irq);
-    void SetRx(uint32_t timeout);
-    void SetTx(uint32_t timeoutInMs);
-    void GetRxBufferStatus(uint8_t *payloadLength,
-                           uint8_t *rxStartBufferPointer);
-    void Wakeup(void);
-    uint8_t ReadBuffer(uint8_t *rxData, uint8_t *rxDataLen, uint8_t maxLen);
-    uint8_t WriteBuffer(uint8_t *txData, uint8_t txDataLen);
-};
+void get_radio_status(void);
+void set_radio_standby(void);
+void get_radio_errors(void);
+void read_radio_registers(void);
+void radio_spi_init(void);
+void set_radio_packet_type_lora(void);
+void set_radio_pa_config(void);
+void set_radio_rf_freq(void);
+void set_buffer_base_address(void);
+void set_radio_modulation_param(void);
+void set_dio2_rf_switch(void);
+void write_radio_buffer(void);
+void set_packet_parameters(void);
+void set_radio_sync_word(void);
+void set_tx(void);
+void set_tx_continuous_wave(void);
+void set_dio3_as_tcxo(void);
+void set_regulator_mode(void);
+void set_tx_params(void);
+void clear_radio_errors(void);
+void radio_init(void);
+void radio_send(void);
+void radio_receive_cont(void);
 
 #endif

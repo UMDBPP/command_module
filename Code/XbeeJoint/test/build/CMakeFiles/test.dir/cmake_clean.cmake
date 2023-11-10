@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/test.dir/SX126x.cpp.obj"
-  "CMakeFiles/test.dir/SX126x.cpp.obj.d"
+  "CMakeFiles/test.dir/SX1262.cpp.obj"
+  "CMakeFiles/test.dir/SX1262.cpp.obj.d"
   "CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.obj"
   "CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.obj.d"
   "CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj"

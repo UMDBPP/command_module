@@ -83,19 +83,19 @@ CMakeFiles/test.dir/test.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/test.dir/test.cpp.s"
 	/opt/homebrew/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/michaelshipman/Developer/command_module/Code/XbeeJoint/test/test.cpp -o CMakeFiles/test.dir/test.cpp.s
 
-CMakeFiles/test.dir/SX126x.cpp.obj: CMakeFiles/test.dir/flags.make
-CMakeFiles/test.dir/SX126x.cpp.obj: /Users/michaelshipman/Developer/command_module/Code/XbeeJoint/test/SX126x.cpp
-CMakeFiles/test.dir/SX126x.cpp.obj: CMakeFiles/test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/michaelshipman/Developer/command_module/Code/XbeeJoint/test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/test.dir/SX126x.cpp.obj"
-	/opt/homebrew/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/test.dir/SX126x.cpp.obj -MF CMakeFiles/test.dir/SX126x.cpp.obj.d -o CMakeFiles/test.dir/SX126x.cpp.obj -c /Users/michaelshipman/Developer/command_module/Code/XbeeJoint/test/SX126x.cpp
+CMakeFiles/test.dir/SX1262.cpp.obj: CMakeFiles/test.dir/flags.make
+CMakeFiles/test.dir/SX1262.cpp.obj: /Users/michaelshipman/Developer/command_module/Code/XbeeJoint/test/SX1262.cpp
+CMakeFiles/test.dir/SX1262.cpp.obj: CMakeFiles/test.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/michaelshipman/Developer/command_module/Code/XbeeJoint/test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/test.dir/SX1262.cpp.obj"
+	/opt/homebrew/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/test.dir/SX1262.cpp.obj -MF CMakeFiles/test.dir/SX1262.cpp.obj.d -o CMakeFiles/test.dir/SX1262.cpp.obj -c /Users/michaelshipman/Developer/command_module/Code/XbeeJoint/test/SX1262.cpp
 
-CMakeFiles/test.dir/SX126x.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/test.dir/SX126x.cpp.i"
-	/opt/homebrew/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/michaelshipman/Developer/command_module/Code/XbeeJoint/test/SX126x.cpp > CMakeFiles/test.dir/SX126x.cpp.i
+CMakeFiles/test.dir/SX1262.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/test.dir/SX1262.cpp.i"
+	/opt/homebrew/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/michaelshipman/Developer/command_module/Code/XbeeJoint/test/SX1262.cpp > CMakeFiles/test.dir/SX1262.cpp.i
 
-CMakeFiles/test.dir/SX126x.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/test.dir/SX126x.cpp.s"
-	/opt/homebrew/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/michaelshipman/Developer/command_module/Code/XbeeJoint/test/SX126x.cpp -o CMakeFiles/test.dir/SX126x.cpp.s
+CMakeFiles/test.dir/SX1262.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/test.dir/SX1262.cpp.s"
+	/opt/homebrew/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/michaelshipman/Developer/command_module/Code/XbeeJoint/test/SX1262.cpp -o CMakeFiles/test.dir/SX1262.cpp.s
 
 CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj: /Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c
@@ -1069,7 +1069,7 @@ CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/XbeeJoint
 # Object files for target test
 test_OBJECTS = \
 "CMakeFiles/test.dir/test.cpp.obj" \
-"CMakeFiles/test.dir/SX126x.cpp.obj" \
+"CMakeFiles/test.dir/SX1262.cpp.obj" \
 "CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj" \
 "CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj" \
 "CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/rp2_common/pico_platform/platform.c.obj" \
@@ -1145,7 +1145,7 @@ test_OBJECTS = \
 test_EXTERNAL_OBJECTS =
 
 test.elf: CMakeFiles/test.dir/test.cpp.obj
-test.elf: CMakeFiles/test.dir/SX126x.cpp.obj
+test.elf: CMakeFiles/test.dir/SX1262.cpp.obj
 test.elf: CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj
 test.elf: CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
 test.elf: CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/rp2_common/pico_platform/platform.c.obj

@@ -207,29 +207,29 @@ cyw43_driver_picow_cyw43_bus_pio_spi_pio_h/fast:
 	$(MAKE) $(MAKESILENT) -f pico-sdk/src/rp2_common/pico_cyw43_driver/CMakeFiles/cyw43_driver_picow_cyw43_bus_pio_spi_pio_h.dir/build.make pico-sdk/src/rp2_common/pico_cyw43_driver/CMakeFiles/cyw43_driver_picow_cyw43_bus_pio_spi_pio_h.dir/build
 .PHONY : cyw43_driver_picow_cyw43_bus_pio_spi_pio_h/fast
 
-SX126x.obj: SX126x.cpp.obj
-.PHONY : SX126x.obj
+SX1262.obj: SX1262.cpp.obj
+.PHONY : SX1262.obj
 
 # target to build an object file
-SX126x.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/SX126x.cpp.obj
-.PHONY : SX126x.cpp.obj
+SX1262.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/SX1262.cpp.obj
+.PHONY : SX1262.cpp.obj
 
-SX126x.i: SX126x.cpp.i
-.PHONY : SX126x.i
+SX1262.i: SX1262.cpp.i
+.PHONY : SX1262.i
 
 # target to preprocess a source file
-SX126x.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/SX126x.cpp.i
-.PHONY : SX126x.cpp.i
+SX1262.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/SX1262.cpp.i
+.PHONY : SX1262.cpp.i
 
-SX126x.s: SX126x.cpp.s
-.PHONY : SX126x.s
+SX1262.s: SX1262.cpp.s
+.PHONY : SX1262.s
 
 # target to generate assembly for a file
-SX126x.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/SX126x.cpp.s
-.PHONY : SX126x.cpp.s
+SX1262.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/SX1262.cpp.s
+.PHONY : SX1262.cpp.s
 
 Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/class/audio/audio_device.obj: Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.obj
 .PHONY : Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/class/audio/audio_device.obj
@@ -1774,9 +1774,9 @@ help:
 	@echo "... cyw43_driver_picow_cyw43_bus_pio_spi_pio_h"
 	@echo "... bs2_default"
 	@echo "... test"
-	@echo "... SX126x.obj"
-	@echo "... SX126x.i"
-	@echo "... SX126x.s"
+	@echo "... SX1262.obj"
+	@echo "... SX1262.i"
+	@echo "... SX1262.s"
 	@echo "... Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/class/audio/audio_device.obj"
 	@echo "... Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/class/audio/audio_device.i"
 	@echo "... Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/class/audio/audio_device.s"

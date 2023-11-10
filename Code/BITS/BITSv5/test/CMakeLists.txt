@@ -12,7 +12,7 @@ pico_sdk_init()
 
 add_executable(test
     test.cpp
-    SX126x.cpp
+    SX1262.cpp
 )
 
 pico_enable_stdio_usb(test 1)
