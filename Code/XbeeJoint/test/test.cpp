@@ -88,14 +88,14 @@ int main() {
 
     radio_spi_init();
 
+    printf("BUSY Pin: %d\n", gpio_get(busy_pin));
+
     // Step 1: Enter STDBY_RC
     set_radio_standby();
 
-    set_regulator_mode();
-
-    get_radio_errors();
-
     set_dio3_as_tcxo();
+    set_dio2_rf_switch();
+    set_regulator_mode();
 
     // Clearing device errors
     printf("Clearing errors\n");
@@ -107,8 +107,6 @@ int main() {
 
     get_radio_errors();
 
-    get_radio_status();
-
     // Step 2: Set Packet Type to LoRa
     set_radio_packet_type_lora();
 
@@ -116,7 +114,7 @@ int main() {
     set_radio_rf_freq();
 
     // Step 4: Set PA Config
-    // set_radio_pa_config();
+    set_radio_pa_config();
 
     // Step 5: Set TX Parameters
     set_tx_params();
@@ -134,7 +132,7 @@ int main() {
     // set_packet_parameters();
 
     // Step 10: Configure DIO
-    set_dio2_rf_switch();
+    // set_dio2_rf_switch();
 
     // Step 11: Define Sync Word
     // set_radio_sync_word();
@@ -217,6 +215,10 @@ void radio_spi_init() {
     gpio_set_dir(sw_pin, GPIO_OUT);
     gpio_put(sw_pin, 1);
 
+    gpio_init(txen_pin);
+    gpio_set_dir(txen_pin, GPIO_OUT);
+    gpio_put(txen_pin, 0);
+
     gpio_init(busy_pin);
     gpio_set_dir(busy_pin, GPIO_IN);
 
@@ -234,6 +236,8 @@ void radio_spi_init() {
 }
 
 void set_radio_packet_type_lora() {
+    printf("Setting Packet Type to LoRa");
+
     gpio_put(cs_pin, 0);
     spi_write_blocking(spi, &set_packet_type_cmd, 1);
     spi_write_blocking(spi, &packet_type_lora, 1);
@@ -245,6 +249,9 @@ void set_radio_pa_config() {
     const uint8_t hp_max = 0x02;
     const uint8_t device_sel = 0x00;
     const uint8_t pa_lut = 0x01;
+
+    printf("Setting PA Config\n");
+
     gpio_put(cs_pin, 0);
     spi_write_blocking(spi, &pa_config_cmd, 1);
     spi_write_blocking(spi, &pa_duty, 1);
