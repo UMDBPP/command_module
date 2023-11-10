@@ -53,6 +53,9 @@ const uint8_t tx_continuous_wave_cmd = 0xD1;
 const uint8_t set_tx_cmd = 0x83;
 const uint8_t set_dio2_rf_ctrl_cmd = 0x9D;
 const uint8_t set_packet_param_cmd = 0x8C;
+const uint8_t clear_radio_err_cmd = 0x07;
+const uint8_t set_dio3_as_tcxo_cmd = 0x97;
+const uint8_t set_regulator_mode_cmd = 0x96;
 
 void get_radio_status(void);
 void set_radio_standby(void);
@@ -69,6 +72,10 @@ void write_radio_buffer(void);
 void set_packet_parameters(void);
 void set_radio_sync_word(void);
 void set_tx(void);
+void set_tx_continuous_wave(void);
+void set_dio3_as_tcxo(void);
+void set_regulator_mode(void);
+void set_tx_params(void);
 
 // For the functionality of a BITSv5 board
 // NOT FLIGHT CODE
@@ -79,8 +86,27 @@ int main() {
 
     sleep_ms(5000);
 
+    radio_spi_init();
+
     // Step 1: Enter STDBY_RC
     set_radio_standby();
+
+    set_regulator_mode();
+
+    get_radio_errors();
+
+    set_dio3_as_tcxo();
+
+    // Clearing device errors
+    printf("Clearing errors\n");
+    gpio_put(cs_pin, 0);
+    spi_write_blocking(spi, &clear_radio_err_cmd, 1);
+    spi_write_read_blocking(spi, &nop_cmd, &msg, 1);
+    spi_write_read_blocking(spi, &nop_cmd, &msg, 1);
+    gpio_put(cs_pin, 1);
+
+    get_radio_errors();
+
     get_radio_status();
 
     // Step 2: Set Packet Type to LoRa
@@ -90,31 +116,34 @@ int main() {
     set_radio_rf_freq();
 
     // Step 4: Set PA Config
-    // nah
+    // set_radio_pa_config();
 
     // Step 5: Set TX Parameters
-    // nah
+    set_tx_params();
 
     // Step 6: Set Buffer Base Address
-    set_buffer_base_address();
+    // set_buffer_base_address();
 
     // Step 7: Write Buffer
-    write_radio_buffer();
+    // write_radio_buffer();
 
     // Step 8: Set Modulation Parameters
-    set_radio_modulation_param();
+    // set_radio_modulation_param();
 
     // Step 9: Set Packet Parameters
-    set_packet_parameters();
+    // set_packet_parameters();
 
     // Step 10: Configure DIO
     set_dio2_rf_switch();
 
     // Step 11: Define Sync Word
-    set_radio_sync_word();
+    // set_radio_sync_word();
 
     // Step 12: Set TX Mode
-    set_tx();
+    // set_tx();
+    set_tx_continuous_wave();
+
+    get_radio_errors();
 
     // Step 13: profit?
 
@@ -149,10 +178,10 @@ void get_radio_errors() {
     spi_write_read_blocking(spi, &nop_cmd, &msg, 1);
     printf("status: %x\n", msg);
     spi_write_read_blocking(spi, &nop_cmd, &msg, 1);
-    printf("status: %x\n", msg);
+    printf("err: %x\n", msg);
     spi_write_read_blocking(spi, &nop_cmd, &msg, 1);
     gpio_put(cs_pin, 1);
-    printf("status: %x\n", msg);
+    printf("err: %x\n", msg);
 }
 
 void read_radio_registers() {
@@ -178,9 +207,15 @@ void read_radio_registers() {
 }
 
 void radio_spi_init() {
+    printf("Init radio SPI\n");
+
     gpio_init(cs_pin);
     gpio_set_dir(cs_pin, GPIO_OUT);
     gpio_put(cs_pin, 1);
+
+    gpio_init(sw_pin);
+    gpio_set_dir(sw_pin, GPIO_OUT);
+    gpio_put(sw_pin, 1);
 
     gpio_init(busy_pin);
     gpio_set_dir(busy_pin, GPIO_IN);
@@ -230,6 +265,8 @@ void set_radio_rf_freq() {
     buf[1] = (uint8_t)((freq >> 16) & 0xFF);
     buf[2] = (uint8_t)((freq >> 8) & 0xFF);
     buf[3] = (uint8_t)(freq & 0xFF);
+
+    printf("Setting Frequency to %d\n", frequency);
 
     gpio_put(cs_pin, 0);
     spi_write_blocking(spi, &set_rf_freq_cmd, 1);
@@ -294,6 +331,8 @@ void set_packet_parameters() {
     const uint8_t crc = 0;
     const uint8_t iq = 0;
 
+    printf("Setting Packet Parameters\n");
+
     gpio_put(cs_pin, 0);
     spi_write_blocking(spi, &set_buffer_base_addr_cmd, 1);
     spi_write_blocking(spi, &preamble2, 1);
@@ -307,6 +346,8 @@ void set_packet_parameters() {
 
 void set_dio2_rf_switch() {
     const uint8_t enable = 1;
+
+    printf("Setting DIO2 as RF Switch\n");
 
     gpio_put(cs_pin, 0);
     spi_write_blocking(spi, &set_dio2_rf_ctrl_cmd, 1);
@@ -322,6 +363,8 @@ void set_radio_sync_word() {
     const uint8_t data2 = 0x34;
     const uint8_t data1 = 0x44;
 
+    printf("Setting Radio Sync Word\n");
+
     gpio_put(cs_pin, 0);
     spi_write_blocking(spi, &write_radio_register_cmd, 1);
     spi_write_blocking(spi, &msb2, 1);
@@ -334,6 +377,8 @@ void set_radio_sync_word() {
 }
 
 void set_tx_continuous_wave() {
+    printf("Setting Mode TX Tone\n");
+
     gpio_put(cs_pin, 0);
     spi_write_blocking(spi, &tx_continuous_wave_cmd, 1);
     gpio_put(cs_pin, 1);
@@ -344,10 +389,40 @@ void set_tx() {
     const uint8_t timeout2 = 0x7D;
     const uint8_t timeout1 = 0x00;
 
+    printf("Setting Mode TX\n");
+
     gpio_put(cs_pin, 0);
     spi_write_blocking(spi, &set_tx_cmd, 1);
     spi_write_blocking(spi, &timeout3, 1);
     spi_write_blocking(spi, &timeout2, 1);
     spi_write_blocking(spi, &timeout1, 1);
+    gpio_put(cs_pin, 1);
+}
+
+void set_dio3_as_tcxo() {
+    const uint8_t tcxoVoltage = 0x07;
+    const uint8_t timeout3 = 0x00;
+    const uint8_t timeout2 = 0x01;
+    const uint8_t timeout1 = 0x40;
+
+    printf("Setting DIO3 as TCXO CTRL\n");
+
+    gpio_put(cs_pin, 0);
+    spi_write_blocking(spi, &set_dio3_as_tcxo_cmd, 1);
+    spi_write_blocking(spi, &tcxoVoltage, 1);
+    spi_write_blocking(spi, &timeout3, 1);
+    spi_write_blocking(spi, &timeout2, 1);
+    spi_write_blocking(spi, &timeout1, 1);
+    gpio_put(cs_pin, 1);
+}
+
+void set_regulator_mode() {
+    const uint8_t mode = 0x01;
+
+    printf("Setting Regulator Mode to DC DC\n");
+
+    gpio_put(cs_pin, 0);
+    spi_write_blocking(spi, &set_regulator_mode_cmd, 1);
+    spi_write_blocking(spi, &mode, 1);
     gpio_put(cs_pin, 1);
 }
