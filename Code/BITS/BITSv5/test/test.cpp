@@ -22,6 +22,8 @@ int main() {
 
     sleep_ms(5000);
 
+    radio_init();
+
     // set init GPIO0 and set as output
     // gpio_init(0);
     // gpio_set_dir(0, GPIO_OUT);
@@ -35,12 +37,6 @@ int main() {
 
     int input = 0;
 
-    radio_receive_cont();
-
-    while () {
-        
-    }
-
     while (true) {
         // value = *p;  // Store the value at this address for later use
 
@@ -48,7 +44,9 @@ int main() {
         // printf("Enter a number: ");
         // scanf("%d", input);
 
-        printf("Hello, BITS!\n");
+        printf("Hello, BITS! Transmitting Now!\n");
+
+        radio_send();
 
         get_radio_errors();
 

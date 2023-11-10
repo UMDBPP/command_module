@@ -470,5 +470,6 @@ void radio_receive_cont(void);
 void set_dio_irq(void);
 void read_radio_buffer(void);
 void clear_irq_status(void);
+void get_irq_status(void);
 
 #endif

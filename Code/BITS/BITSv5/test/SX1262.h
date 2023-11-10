@@ -442,7 +442,7 @@
 #define SX126x_TXMODE_SYNC 0x02
 #define SX126x_TXMODE_BACK2RX 0x04
 
-#define CS_PIN 21
+#define CS_PIN 25
 
 void get_radio_status(void);
 void set_radio_standby(void);

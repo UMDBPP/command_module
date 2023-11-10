@@ -38,20 +38,28 @@ int main() {
     radio_init();
 
     while (true) {
-        printf("Hello, BITS! Transmitting now\n");
+        printf("Hello, Xbee Joint!\n");
         // set_tx_continuous_wave();
-        radio_send();
+        // radio_send();
         sleep_ms(3000);
         radio_receive_cont();
-        get_radio_errors();
+        // get_radio_errors();
 
         while (!gpio_get(dio1_pin)) {
             sleep_ms(1);
         }
 
+        get_irq_status();
+
         read_radio_buffer();
 
+        // printf("Clearing buffer\n");
+        // write_radio_buffer();
+        // read_radio_buffer();
+        // printf("Buffer cleared?\n");
+
         clear_irq_status();
+        get_irq_status();
 
         // set_radio_standby();
         sleep_ms(2000);
