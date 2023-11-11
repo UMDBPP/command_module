@@ -45,6 +45,10 @@ const uint8_t clear_radio_err_cmd = 0x07;
 const uint8_t set_dio3_as_tcxo_cmd = 0x97;
 const uint8_t set_regulator_mode_cmd = 0x96;
 const uint8_t set_radio_rx_cmd = SX126X_CMD_SET_RX;
+const uint8_t set_radio_clear_irq_cmd = SX126X_CMD_CLEAR_IRQ_STATUS;
+const uint8_t read_buffer_cmd = SX126X_CMD_READ_BUFFER;
+const uint8_t get_irq_status_cmd = SX126X_CMD_GET_IRQ_STATUS;
+const uint8_t set_radio_dio_irq_cmd = SX126X_CMD_SET_DIO_IRQ_PARAMS;
 
 void radio_init() {
     printf("Initializing Radio");
@@ -58,6 +62,7 @@ void radio_init() {
 
     set_dio3_as_tcxo();
     set_dio2_rf_switch();
+    set_dio_irq();
     set_regulator_mode();
 
     clear_radio_errors();
@@ -165,6 +170,9 @@ void radio_spi_init() {
     gpio_init(busy_pin);
     gpio_set_dir(busy_pin, GPIO_IN);
 
+    gpio_init(dio1_pin);
+    gpio_set_dir(dio1_pin, GPIO_IN);
+
     spi_init(spi, 500000);
 
     spi_set_format(spi,            // SPI instance
@@ -228,7 +236,7 @@ void set_radio_rf_freq() {
 }
 
 void set_tx_params() {
-    const uint8_t power = 0x16;
+    const uint8_t power = 0x01;
     const uint8_t ramp_time = 0x04;
 
     gpio_put(CS_PIN, 0);
@@ -261,15 +269,17 @@ void write_radio_buffer() {
 }
 
 void set_radio_modulation_param() {
-    const uint8_t spreading_factor = 11;
-    const uint8_t bandwidth = 1;
-    const uint8_t coding_rate = 1;
+    const uint8_t spreading_factor = 0x0B;
+    const uint8_t bandwidth = 0x04;
+    const uint8_t coding_rate = 0x01;
+    const uint8_t low_data_rate = 0x01;
 
     gpio_put(CS_PIN, 0);
     spi_write_blocking(spi, &set_modulation_param_cmd, 1);
     spi_write_blocking(spi, &spreading_factor, 1);
     spi_write_blocking(spi, &bandwidth, 1);
     spi_write_blocking(spi, &coding_rate, 1);
+    spi_write_blocking(spi, &low_data_rate, 1);
     gpio_put(CS_PIN, 1);
 }
 
@@ -278,7 +288,7 @@ void set_packet_parameters() {
     const uint8_t preamble1 = 8;
     const uint8_t header = 0;
     const uint8_t length = 1;
-    const uint8_t crc = 0;
+    const uint8_t crc = 1;
     const uint8_t iq = 0;
 
     printf("Setting Packet Parameters\n");
@@ -402,5 +412,97 @@ void radio_receive_cont() {
     spi_write_blocking(spi, &timeout3, 1);
     spi_write_blocking(spi, &timeout2, 1);
     spi_write_blocking(spi, &timeout1, 1);
+    gpio_put(cs_pin, 1);
+}
+
+void clear_irq_status() {
+    uint8_t irq_mask2 = 0xFF;
+    uint8_t irq_mask1 = 0xFF;
+
+    printf("Clearing IRQ\n");
+    gpio_put(cs_pin, 0);
+    spi_write_blocking(spi, &set_radio_clear_irq_cmd, 1);
+    spi_write_blocking(spi, &irq_mask2, 1);
+    spi_write_blocking(spi, &irq_mask1, 1);
+    gpio_put(cs_pin, 1);
+}
+
+void read_radio_buffer() {
+    uint8_t offset = 0x00;
+
+    uint8_t buf[20] = {0};
+
+    printf("Reading Radio Buffer\n");
+    gpio_put(cs_pin, 0);
+    spi_write_read_blocking(spi, &read_buffer_cmd, &msg, 1);
+    spi_write_read_blocking(spi, &offset, &msg, 1);
+    spi_write_read_blocking(spi, &nop_cmd, &msg, 1);
+    spi_write_read_blocking(spi, &nop_cmd, &buf[0], 1);
+    spi_write_read_blocking(spi, &nop_cmd, &buf[1], 1);
+    spi_write_read_blocking(spi, &nop_cmd, &buf[2], 1);
+    spi_write_read_blocking(spi, &nop_cmd, &buf[3], 1);
+    spi_write_read_blocking(spi, &nop_cmd, &buf[4], 1);
+    spi_write_read_blocking(spi, &nop_cmd, &buf[5], 1);
+    spi_write_read_blocking(spi, &nop_cmd, &buf[6], 1);
+    spi_write_read_blocking(spi, &nop_cmd, &buf[7], 1);
+    spi_write_read_blocking(spi, &nop_cmd, &buf[8], 1);
+    spi_write_read_blocking(spi, &nop_cmd, &buf[9], 1);
+    spi_write_read_blocking(spi, &nop_cmd, &buf[10], 1);
+    spi_write_read_blocking(spi, &nop_cmd, &buf[11], 1);
+    spi_write_read_blocking(spi, &nop_cmd, &buf[12], 1);
+    spi_write_read_blocking(spi, &nop_cmd, &buf[13], 1);
+    spi_write_read_blocking(spi, &nop_cmd, &buf[14], 1);
+    spi_write_read_blocking(spi, &nop_cmd, &buf[15], 1);
+    spi_write_read_blocking(spi, &nop_cmd, &buf[16], 1);
+    spi_write_read_blocking(spi, &nop_cmd, &buf[17], 1);
+    spi_write_read_blocking(spi, &nop_cmd, &buf[18], 1);
+    spi_write_read_blocking(spi, &nop_cmd, &buf[19], 1);
+    gpio_put(cs_pin, 1);
+
+    printf("Received data:");
+    for (int i = 0; i < 20; i++) {
+        printf(" %x", buf[i]);
+    }
+
+    printf("\n");
+}
+
+void get_irq_status() {
+    uint8_t status2 = 0xAA;
+    uint8_t status1 = 0xAA;
+
+    printf("Getting IRQ Status\n");
+    gpio_put(cs_pin, 0);
+    spi_write_blocking(spi, &get_irq_status_cmd, 1);
+    spi_write_blocking(spi, &nop_cmd, 1);
+    spi_write_read_blocking(spi, &nop_cmd, &status2, 1);
+    spi_write_read_blocking(spi, &nop_cmd, &status1, 1);
+    gpio_put(cs_pin, 1);
+
+    printf("IRQ Status Register %x %x\n", status2, status1);
+}
+
+void set_dio_irq() {
+    uint8_t irq_mask2 = 0xFF;
+    uint8_t irq_mask1 = 0xFF;
+
+    uint8_t dio1_mask2 = 0xFB;
+    uint8_t dio1_mask1 = 0xFB;
+    uint8_t dio2_mask2 = 0x00;
+    uint8_t dio2_mask1 = 0x00;
+    uint8_t dio3_mask2 = 0x00;
+    uint8_t dio3_mask1 = 0x00;
+
+    printf("Setting DIO1 IRQ\n");
+    gpio_put(cs_pin, 0);
+    spi_write_blocking(spi, &set_radio_dio_irq_cmd, 1);
+    spi_write_blocking(spi, &irq_mask2, 1);
+    spi_write_blocking(spi, &irq_mask1, 1);
+    spi_write_blocking(spi, &dio1_mask2, 1);
+    spi_write_blocking(spi, &dio1_mask1, 1);
+    spi_write_blocking(spi, &dio2_mask2, 1);
+    spi_write_blocking(spi, &dio2_mask1, 1);
+    spi_write_blocking(spi, &dio3_mask2, 1);
+    spi_write_blocking(spi, &dio3_mask1, 1);
     gpio_put(cs_pin, 1);
 }

@@ -15,12 +15,25 @@
 // Flash-based address of the last sector
 #define FLASH_TARGET_OFFSET (PICO_FLASH_SIZE_BYTES - FLASH_SECTOR_SIZE)
 
+const uint cs_pin = 25;
+const uint sck_pin = 26;
+const uint mosi_pin = 27;
+const uint miso_pin = 24;
+const uint txen_pin = 8;
+const uint dio1_pin = 10;
+const uint busy_pin = 11;
+const uint sw_pin = 9;
+
 // For the functionality of a BITSv5 board
 // NOT FLIGHT CODE
 int main() {
     stdio_init_all();
 
     sleep_ms(5000);
+
+    gpio_init(0);
+    gpio_set_dir(0, GPIO_OUT);
+    gpio_put(0, 0);
 
     radio_init();
 
@@ -46,9 +59,34 @@ int main() {
 
         printf("Hello, BITS! Transmitting Now!\n");
 
-        radio_send();
+        // radio_send();
 
-        get_radio_errors();
+        // sleep_ms(3000);
+
+        // get_radio_errors();
+
+        radio_receive_cont();
+        // get_radio_errors();
+
+        while (!gpio_get(dio1_pin)) {
+            sleep_ms(1);
+        }
+
+        get_irq_status();
+
+        read_radio_buffer();
+
+        get_irq_status();
+
+        // printf("Clearing buffer\n");
+        // write_radio_buffer();
+        // read_radio_buffer();
+        // printf("Buffer cleared?\n");
+
+        clear_irq_status();
+        get_irq_status();
+
+        printf("\n\n\n");
 
         gpio_put(0, true);
         sleep_ms(1000);

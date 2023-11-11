@@ -269,15 +269,17 @@ void write_radio_buffer() {
 }
 
 void set_radio_modulation_param() {
-    const uint8_t spreading_factor = 11;
-    const uint8_t bandwidth = 1;
-    const uint8_t coding_rate = 1;
+    const uint8_t spreading_factor = 0x0B;
+    const uint8_t bandwidth = 0x04;
+    const uint8_t coding_rate = 0x01;
+    const uint8_t low_data_rate = 0x01;
 
     gpio_put(CS_PIN, 0);
     spi_write_blocking(spi, &set_modulation_param_cmd, 1);
     spi_write_blocking(spi, &spreading_factor, 1);
     spi_write_blocking(spi, &bandwidth, 1);
     spi_write_blocking(spi, &coding_rate, 1);
+    spi_write_blocking(spi, &low_data_rate, 1);
     gpio_put(CS_PIN, 1);
 }
 
@@ -286,7 +288,7 @@ void set_packet_parameters() {
     const uint8_t preamble1 = 8;
     const uint8_t header = 0;
     const uint8_t length = 1;
-    const uint8_t crc = 0;
+    const uint8_t crc = 1;
     const uint8_t iq = 0;
 
     printf("Setting Packet Parameters\n");
@@ -453,23 +455,41 @@ void clear_irq_status() {
 void read_radio_buffer() {
     uint8_t offset = 0x00;
 
-    uint8_t data0 = 0x00;
-    uint8_t data1 = 0x00;
-    uint8_t data2 = 0x00;
-    uint8_t data3 = 0x00;
+    uint8_t buf[20] = {0};
 
     printf("Reading Radio Buffer\n");
     gpio_put(cs_pin, 0);
     spi_write_read_blocking(spi, &read_buffer_cmd, &msg, 1);
     spi_write_read_blocking(spi, &offset, &msg, 1);
     spi_write_read_blocking(spi, &nop_cmd, &msg, 1);
-    spi_write_read_blocking(spi, &nop_cmd, &data0, 1);
-    spi_write_read_blocking(spi, &nop_cmd, &data1, 1);
-    spi_write_read_blocking(spi, &nop_cmd, &data2, 1);
-    spi_write_read_blocking(spi, &nop_cmd, &data3, 1);
+    spi_write_read_blocking(spi, &nop_cmd, &buf[0], 1);
+    spi_write_read_blocking(spi, &nop_cmd, &buf[1], 1);
+    spi_write_read_blocking(spi, &nop_cmd, &buf[2], 1);
+    spi_write_read_blocking(spi, &nop_cmd, &buf[3], 1);
+    spi_write_read_blocking(spi, &nop_cmd, &buf[4], 1);
+    spi_write_read_blocking(spi, &nop_cmd, &buf[5], 1);
+    spi_write_read_blocking(spi, &nop_cmd, &buf[6], 1);
+    spi_write_read_blocking(spi, &nop_cmd, &buf[7], 1);
+    spi_write_read_blocking(spi, &nop_cmd, &buf[8], 1);
+    spi_write_read_blocking(spi, &nop_cmd, &buf[9], 1);
+    spi_write_read_blocking(spi, &nop_cmd, &buf[10], 1);
+    spi_write_read_blocking(spi, &nop_cmd, &buf[11], 1);
+    spi_write_read_blocking(spi, &nop_cmd, &buf[12], 1);
+    spi_write_read_blocking(spi, &nop_cmd, &buf[13], 1);
+    spi_write_read_blocking(spi, &nop_cmd, &buf[14], 1);
+    spi_write_read_blocking(spi, &nop_cmd, &buf[15], 1);
+    spi_write_read_blocking(spi, &nop_cmd, &buf[16], 1);
+    spi_write_read_blocking(spi, &nop_cmd, &buf[17], 1);
+    spi_write_read_blocking(spi, &nop_cmd, &buf[18], 1);
+    spi_write_read_blocking(spi, &nop_cmd, &buf[19], 1);
     gpio_put(cs_pin, 1);
 
-    printf("Received data: %x %x %x %x\n", data0, data1, data2, data3);
+    printf("Received data:");
+    for (int i = 0; i < 20; i++) {
+        printf(" %x", buf[i]);
+    }
+
+    printf("\n");
 }
 
 void get_irq_status() {
