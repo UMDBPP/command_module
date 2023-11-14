@@ -59,32 +59,32 @@ int main() {
 
         printf("Hello, BITS! Transmitting Now!\n");
 
-        // radio_send();
+        radio_send();
 
-        // sleep_ms(3000);
+        sleep_ms(3000);
 
+        get_radio_errors();
+
+        // radio_receive_cont();
         // get_radio_errors();
 
-        radio_receive_cont();
-        // get_radio_errors();
+        // while (!gpio_get(dio1_pin)) {
+        //     sleep_ms(1);
+        // }
 
-        while (!gpio_get(dio1_pin)) {
-            sleep_ms(1);
-        }
+        // get_irq_status();
 
-        get_irq_status();
+        // read_radio_buffer();
 
-        read_radio_buffer();
-
-        get_irq_status();
+        // get_irq_status();
 
         // printf("Clearing buffer\n");
         // write_radio_buffer();
         // read_radio_buffer();
         // printf("Buffer cleared?\n");
 
-        clear_irq_status();
-        get_irq_status();
+        // clear_irq_status();
+        // get_irq_status();
 
         printf("\n\n\n");
 

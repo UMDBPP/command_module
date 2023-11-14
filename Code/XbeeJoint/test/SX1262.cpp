@@ -259,7 +259,7 @@ void set_buffer_base_address() {
 
 void write_radio_buffer() {
     const uint8_t offset = 0x00;
-    const uint8_t data = 0x00;
+    const uint8_t data = 0x69;
 
     gpio_put(CS_PIN, 0);
     spi_write_blocking(spi, &write_radio_buffer_cmd, 1);
@@ -269,9 +269,9 @@ void write_radio_buffer() {
 }
 
 void set_radio_modulation_param() {
-    const uint8_t spreading_factor = 0x0B;
+    const uint8_t spreading_factor = 0x07;
     const uint8_t bandwidth = 0x04;
-    const uint8_t coding_rate = 0x01;
+    const uint8_t coding_rate = 0x04;
     const uint8_t low_data_rate = 0x01;
 
     gpio_put(CS_PIN, 0);
@@ -284,12 +284,12 @@ void set_radio_modulation_param() {
 }
 
 void set_packet_parameters() {
-    const uint8_t preamble2 = 0;
-    const uint8_t preamble1 = 8;
-    const uint8_t header = 0;
-    const uint8_t length = 1;
-    const uint8_t crc = 1;
-    const uint8_t iq = 0;
+    const uint8_t preamble2 = 0x00;
+    const uint8_t preamble1 = 0x08;
+    const uint8_t header = 0x00;
+    const uint8_t length = 0x01;
+    const uint8_t crc = 0x01;
+    const uint8_t iq = 0x00;
 
     printf("Setting Packet Parameters\n");
 
@@ -419,8 +419,8 @@ void set_dio_irq() {
     uint8_t irq_mask2 = 0xFF;
     uint8_t irq_mask1 = 0xFF;
 
-    uint8_t dio1_mask2 = 0xFB;
-    uint8_t dio1_mask1 = 0xFB;
+    uint8_t dio1_mask2 = 0x00;
+    uint8_t dio1_mask1 = 0x36;
     uint8_t dio2_mask2 = 0x00;
     uint8_t dio2_mask1 = 0x00;
     uint8_t dio3_mask2 = 0x00;

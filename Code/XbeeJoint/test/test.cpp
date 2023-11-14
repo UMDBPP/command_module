@@ -26,6 +26,8 @@ const uint dio1_pin = 3;
 const uint busy_pin = 6;
 const uint sw_pin = 9;
 
+void transmit_test(void);
+
 // For the functionality of a BITSv5 board
 // NOT FLIGHT CODE
 int main() {
@@ -38,35 +40,40 @@ int main() {
     radio_init();
 
     while (true) {
-        printf("Hello, Xbee Joint!\n");
+        printf("======Hello, Xbee Joint!======\n");
 
-        // set_tx_continuous_wave();
-        radio_send();
-        sleep_ms(3000);
-        radio_receive_cont();
-        get_radio_errors();
+        printf("Enter char to Receive: ");
+        printf("%c\n", getchar_timeout_us(0));
 
-        // while (!gpio_get(dio1_pin)) {
-        //     sleep_ms(1);
-        // }
-
-        // get_irq_status();
-
-        // read_radio_buffer();
-
-        // get_irq_status();
-
-        // printf("Clearing buffer\n");
-        // write_radio_buffer();
-        // read_radio_buffer();
-        // printf("Buffer cleared?\n");
-
-        // clear_irq_status();
-        // get_irq_status();
-
-        // printf("\n\n\n");
-
-        // set_radio_standby();
-        sleep_ms(2000);
+        transmit_test();
+        printf("\n\n\n");
     }
+}
+
+void transmit_test() {
+    printf("Transmit Test");
+
+    radio_send();
+
+    sleep_ms(3000);
+
+    get_radio_errors();
+
+    get_irq_status();
+    clear_irq_status();
+    get_irq_status();
+}
+
+void rx_test() {
+    radio_receive_cont();
+
+    while (!gpio_get(dio1_pin)) {
+        sleep_ms(10);
+    }
+
+    sleep_ms(1000);
+
+    get_irq_status();
+
+    read_radio_buffer();
 }
