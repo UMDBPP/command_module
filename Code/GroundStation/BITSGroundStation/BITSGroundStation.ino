@@ -15,7 +15,7 @@ const uint32_t BitsSL = 0x417B4A3B;   //BITS   (white)Specific to the XBee on Bi
 const uint32_t GroundSL = 0x417B4A36; //GndStn (u.fl)
 const uint32_t BlueSL = 0x417B4A3A;   //Choppy 2 (blue)
 const uint32_t WireSL = 0x419091AC;   //Choppy 1 (wire antenna)
-const uint32_t GHOULSL = 0x4210F7DD;  //GHOUL
+const uint32_t GHOULSL = 0x4210F7E4;  //GHOUL
 const uint32_t UniSH = 0x0013A200;    //Common across any and all XBees
 
 ZBTxStatusResponse txStatus = ZBTxStatusResponse(); //What lets the library check if things went through
