@@ -4,20 +4,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#include "(Not)XBee_Joint.h"
 #include "hardware/gpio.h"
 #include "hardware/spi.h"
 #include "pico/stdlib.h"
 
 spi_inst_t *spi = spi0;
-
-const uint cs_pin = 21;
-const uint sck_pin = 18;
-const uint mosi_pin = 19;
-const uint miso_pin = 20;
-const uint txen_pin = 1;
-const uint dio1_pin = 3;
-const uint busy_pin = 6;
-const uint sw_pin = 9;
 
 const uint8_t read_reg_cmd = 0x1D;
 const uint8_t get_status_cmd = 0xC0;
@@ -49,13 +41,14 @@ const uint8_t set_radio_dio_irq_cmd = SX126X_CMD_SET_DIO_IRQ_PARAMS;
 const uint8_t set_radio_clear_irq_cmd = SX126X_CMD_CLEAR_IRQ_STATUS;
 const uint8_t read_buffer_cmd = SX126X_CMD_READ_BUFFER;
 const uint8_t get_irq_status_cmd = SX126X_CMD_GET_IRQ_STATUS;
+const uint8_t get_rx_buffer_cmd = SX126X_CMD_GET_RX_BUFFER_STATUS;
 
 void radio_init() {
     printf("Initializing Radio\n");
 
     radio_spi_init();
 
-    printf("BUSY Pin: %d\n", gpio_get(busy_pin));
+    printf("BUSY Pin: %d\n", gpio_get(BUSY_PIN));
 
     // Step 1: Enter STDBY_RC
     set_radio_standby();
@@ -159,19 +152,19 @@ void radio_spi_init() {
     gpio_set_dir(CS_PIN, GPIO_OUT);
     gpio_put(CS_PIN, 1);
 
-    gpio_init(sw_pin);
-    gpio_set_dir(sw_pin, GPIO_OUT);
-    gpio_put(sw_pin, 1);
+    gpio_init(SW_PIN);
+    gpio_set_dir(SW_PIN, GPIO_OUT);
+    gpio_put(SW_PIN, 1);
 
-    gpio_init(txen_pin);
-    gpio_set_dir(txen_pin, GPIO_OUT);
-    gpio_put(txen_pin, 0);
+    gpio_init(TXEN_PIN);
+    gpio_set_dir(TXEN_PIN, GPIO_OUT);
+    gpio_put(TXEN_PIN, 0);
 
-    gpio_init(busy_pin);
-    gpio_set_dir(busy_pin, GPIO_IN);
+    gpio_init(BUSY_PIN);
+    gpio_set_dir(BUSY_PIN, GPIO_IN);
 
-    gpio_init(dio1_pin);
-    gpio_set_dir(dio1_pin, GPIO_IN);
+    gpio_init(DIO1_PIN);
+    gpio_set_dir(DIO1_PIN, GPIO_IN);
 
     spi_init(spi, 500000);
 
@@ -181,9 +174,9 @@ void radio_spi_init() {
                    (spi_cpha_t)0,  // Phase (CPHA)
                    SPI_MSB_FIRST);
 
-    gpio_set_function(sck_pin, GPIO_FUNC_SPI);
-    gpio_set_function(mosi_pin, GPIO_FUNC_SPI);
-    gpio_set_function(miso_pin, GPIO_FUNC_SPI);
+    gpio_set_function(SCK_PIN, GPIO_FUNC_SPI);
+    gpio_set_function(MOSI_PIN, GPIO_FUNC_SPI);
+    gpio_set_function(MISO_PIN, GPIO_FUNC_SPI);
 }
 
 void set_radio_packet_type_lora() {
@@ -259,7 +252,7 @@ void set_buffer_base_address() {
 
 void write_radio_buffer() {
     const uint8_t offset = 0x00;
-    const uint8_t data = 0x69;
+    const uint8_t data = 0x00;
 
     gpio_put(CS_PIN, 0);
     spi_write_blocking(spi, &write_radio_buffer_cmd, 1);
@@ -272,7 +265,7 @@ void set_radio_modulation_param() {
     const uint8_t spreading_factor = 0x07;
     const uint8_t bandwidth = 0x04;
     const uint8_t coding_rate = 0x04;
-    const uint8_t low_data_rate = 0x01;
+    const uint8_t low_data_rate = 0x00;
 
     gpio_put(CS_PIN, 0);
     spi_write_blocking(spi, &set_modulation_param_cmd, 1);
@@ -285,9 +278,9 @@ void set_radio_modulation_param() {
 
 void set_packet_parameters() {
     const uint8_t preamble2 = 0x00;
-    const uint8_t preamble1 = 0x08;
+    const uint8_t preamble1 = 0x0F;
     const uint8_t header = 0x00;
-    const uint8_t length = 0x01;
+    const uint8_t length = 0x02;
     const uint8_t crc = 0x01;
     const uint8_t iq = 0x00;
 
@@ -389,11 +382,11 @@ void set_regulator_mode() {
 
 void clear_radio_errors() {
     printf("Clearing radio errors\n");
-    gpio_put(cs_pin, 0);
+    gpio_put(CS_PIN, 0);
     spi_write_blocking(spi, &clear_radio_err_cmd, 1);
     spi_write_read_blocking(spi, &nop_cmd, &msg, 1);
     spi_write_read_blocking(spi, &nop_cmd, &msg, 1);
-    gpio_put(cs_pin, 1);
+    gpio_put(CS_PIN, 1);
 }
 
 void radio_send() {
@@ -407,12 +400,12 @@ void radio_receive_cont() {
     uint8_t timeout1 = 0xFF;
 
     printf("Entering Radio Receive Mode\n");
-    gpio_put(cs_pin, 0);
+    gpio_put(CS_PIN, 0);
     spi_write_blocking(spi, &set_radio_rx_cmd, 1);
     spi_write_blocking(spi, &timeout3, 1);
     spi_write_blocking(spi, &timeout2, 1);
     spi_write_blocking(spi, &timeout1, 1);
-    gpio_put(cs_pin, 1);
+    gpio_put(CS_PIN, 1);
 }
 
 void set_dio_irq() {
@@ -420,14 +413,14 @@ void set_dio_irq() {
     uint8_t irq_mask1 = 0xFF;
 
     uint8_t dio1_mask2 = 0x00;
-    uint8_t dio1_mask1 = 0x36;
+    uint8_t dio1_mask1 = 0x16;
     uint8_t dio2_mask2 = 0x00;
     uint8_t dio2_mask1 = 0x00;
     uint8_t dio3_mask2 = 0x00;
     uint8_t dio3_mask1 = 0x00;
 
     printf("Setting DIO1 IRQ\n");
-    gpio_put(cs_pin, 0);
+    gpio_put(CS_PIN, 0);
     spi_write_blocking(spi, &set_radio_dio_irq_cmd, 1);
     spi_write_blocking(spi, &irq_mask2, 1);
     spi_write_blocking(spi, &irq_mask1, 1);
@@ -437,7 +430,7 @@ void set_dio_irq() {
     spi_write_blocking(spi, &dio2_mask1, 1);
     spi_write_blocking(spi, &dio3_mask2, 1);
     spi_write_blocking(spi, &dio3_mask1, 1);
-    gpio_put(cs_pin, 1);
+    gpio_put(CS_PIN, 1);
 }
 
 void clear_irq_status() {
@@ -445,11 +438,11 @@ void clear_irq_status() {
     uint8_t irq_mask1 = 0xFF;
 
     printf("Clearing IRQ\n");
-    gpio_put(cs_pin, 0);
+    gpio_put(CS_PIN, 0);
     spi_write_blocking(spi, &set_radio_clear_irq_cmd, 1);
     spi_write_blocking(spi, &irq_mask2, 1);
     spi_write_blocking(spi, &irq_mask1, 1);
-    gpio_put(cs_pin, 1);
+    gpio_put(CS_PIN, 1);
 }
 
 void read_radio_buffer() {
@@ -458,7 +451,7 @@ void read_radio_buffer() {
     uint8_t buf[20] = {0};
 
     printf("Reading Radio Buffer\n");
-    gpio_put(cs_pin, 0);
+    gpio_put(CS_PIN, 0);
     spi_write_read_blocking(spi, &read_buffer_cmd, &msg, 1);
     spi_write_read_blocking(spi, &offset, &msg, 1);
     spi_write_read_blocking(spi, &nop_cmd, &msg, 1);
@@ -482,7 +475,7 @@ void read_radio_buffer() {
     spi_write_read_blocking(spi, &nop_cmd, &buf[17], 1);
     spi_write_read_blocking(spi, &nop_cmd, &buf[18], 1);
     spi_write_read_blocking(spi, &nop_cmd, &buf[19], 1);
-    gpio_put(cs_pin, 1);
+    gpio_put(CS_PIN, 1);
 
     printf("Received data:");
     for (int i = 0; i < 20; i++) {
@@ -497,12 +490,28 @@ void get_irq_status() {
     uint8_t status1 = 0xAA;
 
     printf("Getting IRQ Status\n");
-    gpio_put(cs_pin, 0);
+    gpio_put(CS_PIN, 0);
     spi_write_blocking(spi, &get_irq_status_cmd, 1);
     spi_write_blocking(spi, &nop_cmd, 1);
     spi_write_read_blocking(spi, &nop_cmd, &status2, 1);
     spi_write_read_blocking(spi, &nop_cmd, &status1, 1);
-    gpio_put(cs_pin, 1);
+    gpio_put(CS_PIN, 1);
 
     printf("IRQ Status Register %x %x\n", status2, status1);
+}
+
+void get_rx_buffer_status() {
+    uint8_t length = 0x00;
+    uint8_t buffer_start = 0x00;
+
+    printf("Getting RX Buffer Status\n");
+    gpio_put(CS_PIN, 0);
+    spi_write_blocking(spi, &get_rx_buffer_cmd, 1);
+    spi_write_blocking(spi, &nop_cmd, 1);
+    spi_write_read_blocking(spi, &nop_cmd, &length, 1);
+    spi_write_read_blocking(spi, &nop_cmd, &buffer_start, 1);
+    gpio_put(CS_PIN, 1);
+
+    printf("Payload Length %x\n", length);
+    printf("Buffer Pointer %x\n", buffer_start);
 }

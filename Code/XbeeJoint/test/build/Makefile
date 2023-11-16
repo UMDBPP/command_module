@@ -191,8 +191,34 @@ PioasmBuild: cmake_check_build_system
 
 # fast build rule for target.
 PioasmBuild/fast:
-	$(MAKE) $(MAKESILENT) -f pico-sdk/src/rp2_common/pico_cyw43_driver/CMakeFiles/PioasmBuild.dir/build.make pico-sdk/src/rp2_common/pico_cyw43_driver/CMakeFiles/PioasmBuild.dir/build
+	$(MAKE) $(MAKESILENT) -f pico-sdk/src/rp2_common/tinyusb/CMakeFiles/PioasmBuild.dir/build.make pico-sdk/src/rp2_common/tinyusb/CMakeFiles/PioasmBuild.dir/build
 .PHONY : PioasmBuild/fast
+
+#=============================================================================
+# Target rules for targets named tinyusb_pico_pio_usb_usb_tx_pio_h
+
+# Build rule for target.
+tinyusb_pico_pio_usb_usb_tx_pio_h: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tinyusb_pico_pio_usb_usb_tx_pio_h
+.PHONY : tinyusb_pico_pio_usb_usb_tx_pio_h
+
+# fast build rule for target.
+tinyusb_pico_pio_usb_usb_tx_pio_h/fast:
+	$(MAKE) $(MAKESILENT) -f pico-sdk/src/rp2_common/tinyusb/CMakeFiles/tinyusb_pico_pio_usb_usb_tx_pio_h.dir/build.make pico-sdk/src/rp2_common/tinyusb/CMakeFiles/tinyusb_pico_pio_usb_usb_tx_pio_h.dir/build
+.PHONY : tinyusb_pico_pio_usb_usb_tx_pio_h/fast
+
+#=============================================================================
+# Target rules for targets named tinyusb_pico_pio_usb_usb_rx_pio_h
+
+# Build rule for target.
+tinyusb_pico_pio_usb_usb_rx_pio_h: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tinyusb_pico_pio_usb_usb_rx_pio_h
+.PHONY : tinyusb_pico_pio_usb_usb_rx_pio_h
+
+# fast build rule for target.
+tinyusb_pico_pio_usb_usb_rx_pio_h/fast:
+	$(MAKE) $(MAKESILENT) -f pico-sdk/src/rp2_common/tinyusb/CMakeFiles/tinyusb_pico_pio_usb_usb_rx_pio_h.dir/build.make pico-sdk/src/rp2_common/tinyusb/CMakeFiles/tinyusb_pico_pio_usb_usb_rx_pio_h.dir/build
+.PHONY : tinyusb_pico_pio_usb_usb_rx_pio_h/fast
 
 #=============================================================================
 # Target rules for targets named cyw43_driver_picow_cyw43_bus_pio_spi_pio_h
@@ -590,6 +616,30 @@ Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/lib/tinyus
 Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/lib/tinyusb/src/device/usbd_control.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/lib/tinyusb/src/device/usbd_control.c.s
 .PHONY : Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/lib/tinyusb/src/device/usbd_control.c.s
+
+Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/lib/tinyusb/src/portable/raspberrypi/pio_usb/dcd_pio_usb.obj: Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/lib/tinyusb/src/portable/raspberrypi/pio_usb/dcd_pio_usb.c.obj
+.PHONY : Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/lib/tinyusb/src/portable/raspberrypi/pio_usb/dcd_pio_usb.obj
+
+# target to build an object file
+Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/lib/tinyusb/src/portable/raspberrypi/pio_usb/dcd_pio_usb.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/lib/tinyusb/src/portable/raspberrypi/pio_usb/dcd_pio_usb.c.obj
+.PHONY : Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/lib/tinyusb/src/portable/raspberrypi/pio_usb/dcd_pio_usb.c.obj
+
+Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/lib/tinyusb/src/portable/raspberrypi/pio_usb/dcd_pio_usb.i: Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/lib/tinyusb/src/portable/raspberrypi/pio_usb/dcd_pio_usb.c.i
+.PHONY : Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/lib/tinyusb/src/portable/raspberrypi/pio_usb/dcd_pio_usb.i
+
+# target to preprocess a source file
+Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/lib/tinyusb/src/portable/raspberrypi/pio_usb/dcd_pio_usb.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/lib/tinyusb/src/portable/raspberrypi/pio_usb/dcd_pio_usb.c.i
+.PHONY : Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/lib/tinyusb/src/portable/raspberrypi/pio_usb/dcd_pio_usb.c.i
+
+Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/lib/tinyusb/src/portable/raspberrypi/pio_usb/dcd_pio_usb.s: Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/lib/tinyusb/src/portable/raspberrypi/pio_usb/dcd_pio_usb.c.s
+.PHONY : Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/lib/tinyusb/src/portable/raspberrypi/pio_usb/dcd_pio_usb.s
+
+# target to generate assembly for a file
+Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/lib/tinyusb/src/portable/raspberrypi/pio_usb/dcd_pio_usb.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/lib/tinyusb/src/portable/raspberrypi/pio_usb/dcd_pio_usb.c.s
+.PHONY : Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/lib/tinyusb/src/portable/raspberrypi/pio_usb/dcd_pio_usb.c.s
 
 Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.obj: Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
 .PHONY : Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.obj
@@ -1772,6 +1822,8 @@ help:
 	@echo "... bs2_default_bin"
 	@echo "... bs2_default_padded_checksummed_asm"
 	@echo "... cyw43_driver_picow_cyw43_bus_pio_spi_pio_h"
+	@echo "... tinyusb_pico_pio_usb_usb_rx_pio_h"
+	@echo "... tinyusb_pico_pio_usb_usb_tx_pio_h"
 	@echo "... bs2_default"
 	@echo "... test"
 	@echo "... SX1262.obj"
@@ -1822,6 +1874,9 @@ help:
 	@echo "... Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/lib/tinyusb/src/device/usbd_control.obj"
 	@echo "... Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/lib/tinyusb/src/device/usbd_control.i"
 	@echo "... Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/lib/tinyusb/src/device/usbd_control.s"
+	@echo "... Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/lib/tinyusb/src/portable/raspberrypi/pio_usb/dcd_pio_usb.obj"
+	@echo "... Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/lib/tinyusb/src/portable/raspberrypi/pio_usb/dcd_pio_usb.i"
+	@echo "... Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/lib/tinyusb/src/portable/raspberrypi/pio_usb/dcd_pio_usb.s"
 	@echo "... Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.obj"
 	@echo "... Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.i"
 	@echo "... Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.s"
