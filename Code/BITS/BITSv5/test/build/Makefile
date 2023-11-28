@@ -233,6 +233,30 @@ cyw43_driver_picow_cyw43_bus_pio_spi_pio_h/fast:
 	$(MAKE) $(MAKESILENT) -f pico-sdk/src/rp2_common/pico_cyw43_driver/CMakeFiles/cyw43_driver_picow_cyw43_bus_pio_spi_pio_h.dir/build.make pico-sdk/src/rp2_common/pico_cyw43_driver/CMakeFiles/cyw43_driver_picow_cyw43_bus_pio_spi_pio_h.dir/build
 .PHONY : cyw43_driver_picow_cyw43_bus_pio_spi_pio_h/fast
 
+MS5607.obj: MS5607.cpp.obj
+.PHONY : MS5607.obj
+
+# target to build an object file
+MS5607.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/MS5607.cpp.obj
+.PHONY : MS5607.cpp.obj
+
+MS5607.i: MS5607.cpp.i
+.PHONY : MS5607.i
+
+# target to preprocess a source file
+MS5607.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/MS5607.cpp.i
+.PHONY : MS5607.cpp.i
+
+MS5607.s: MS5607.cpp.s
+.PHONY : MS5607.s
+
+# target to generate assembly for a file
+MS5607.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/MS5607.cpp.s
+.PHONY : MS5607.cpp.s
+
 SX1262.obj: SX1262.cpp.obj
 .PHONY : SX1262.obj
 
@@ -1033,6 +1057,30 @@ Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.s
 .PHONY : Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.s
 
+Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_i2c/i2c.obj: Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
+.PHONY : Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_i2c/i2c.obj
+
+# target to build an object file
+Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
+.PHONY : Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
+
+Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_i2c/i2c.i: Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.i
+.PHONY : Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_i2c/i2c.i
+
+# target to preprocess a source file
+Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.i
+.PHONY : Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.i
+
+Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_i2c/i2c.s: Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.s
+.PHONY : Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_i2c/i2c.s
+
+# target to generate assembly for a file
+Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.s
+.PHONY : Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.s
+
 Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_irq/irq.obj: Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
 .PHONY : Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_irq/irq.obj
 
@@ -1826,6 +1874,9 @@ help:
 	@echo "... tinyusb_pico_pio_usb_usb_tx_pio_h"
 	@echo "... bs2_default"
 	@echo "... test"
+	@echo "... MS5607.obj"
+	@echo "... MS5607.i"
+	@echo "... MS5607.s"
 	@echo "... SX1262.obj"
 	@echo "... SX1262.i"
 	@echo "... SX1262.s"
@@ -1926,6 +1977,9 @@ help:
 	@echo "... Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_gpio/gpio.obj"
 	@echo "... Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_gpio/gpio.i"
 	@echo "... Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_gpio/gpio.s"
+	@echo "... Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_i2c/i2c.obj"
+	@echo "... Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_i2c/i2c.i"
+	@echo "... Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_i2c/i2c.s"
 	@echo "... Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_irq/irq.obj"
 	@echo "... Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_irq/irq.i"
 	@echo "... Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_irq/irq.s"

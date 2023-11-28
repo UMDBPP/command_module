@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
+#include "BITSv5.h"
 #include "SX1262.h"
 #include "hardware/flash.h"
 #include "hardware/gpio.h"
@@ -15,14 +16,8 @@
 // Flash-based address of the last sector
 #define FLASH_TARGET_OFFSET (PICO_FLASH_SIZE_BYTES - FLASH_SECTOR_SIZE)
 
-const uint cs_pin = 25;
-const uint sck_pin = 26;
-const uint mosi_pin = 27;
-const uint miso_pin = 24;
-const uint txen_pin = 8;
-const uint dio1_pin = 10;
-const uint busy_pin = 11;
-const uint sw_pin = 9;
+void transmit_test(void);
+void rx_test(void);
 
 // For the functionality of a BITSv5 board
 // NOT FLIGHT CODE
@@ -37,54 +32,10 @@ int main() {
 
     radio_init();
 
-    // set init GPIO0 and set as output
-    // gpio_init(0);
-    // gpio_set_dir(0, GPIO_OUT);
-
-    // int *p, addr, value;
-
-    // Compute the memory-mapped address, remembering to include the offset
-    // for RAM (XIP_BASE)
-    // addr = XIP_BASE + FLASH_TARGET_OFFSET;
-    // p = (int *)addr;  // Place an int pointer at our memory-mapped address
-
-    int input = 0;
-
     while (true) {
-        // value = *p;  // Store the value at this address for later use
-
-        // printf("Value at %X is %X\n", p, value);
-        // printf("Enter a number: ");
-        // scanf("%d", input);
-
         printf("Hello, BITS! Transmitting Now!\n");
 
-        radio_send();
-
-        sleep_ms(3000);
-
-        get_radio_errors();
-
-        // radio_receive_cont();
-        // get_radio_errors();
-
-        // while (!gpio_get(dio1_pin)) {
-        //     sleep_ms(1);
-        // }
-
-        // get_irq_status();
-
-        // read_radio_buffer();
-
-        // get_irq_status();
-
-        // printf("Clearing buffer\n");
-        // write_radio_buffer();
-        // read_radio_buffer();
-        // printf("Buffer cleared?\n");
-
-        // clear_irq_status();
-        // get_irq_status();
+        transmit_test();
 
         printf("\n\n\n");
 
@@ -92,6 +43,37 @@ int main() {
         sleep_ms(1000);
         gpio_put(0, false);
         sleep_ms(1000);
-        // p++;
     }
+}
+
+void transmit_test() {
+    printf("Transmit Test\n");
+
+    radio_send();
+
+    sleep_ms(3000);
+
+    get_radio_errors();
+
+    get_irq_status();
+    clear_irq_status();
+    get_irq_status();
+}
+
+void rx_test() {
+    radio_receive_single();
+
+    while (!gpio_get(DIO1_PIN)) {
+        sleep_ms(10);
+    }
+
+    sleep_ms(1000);
+
+    get_rx_buffer_status();
+
+    get_irq_status();
+    clear_irq_status();
+    get_irq_status();
+
+    read_radio_buffer();
 }

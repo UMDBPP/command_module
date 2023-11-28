@@ -3,8 +3,8 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "SX1262.h"
 #include "(Not)XBee_Joint.h"
+#include "SX1262.h"
 #include "hardware/flash.h"
 #include "hardware/gpio.h"
 #include "hardware/spi.h"
@@ -17,6 +17,9 @@
 
 // Flash-based address of the last sector
 #define FLASH_TARGET_OFFSET (PICO_FLASH_SIZE_BYTES - FLASH_SECTOR_SIZE)
+
+#define RX_TEST 0
+#define TX_TEST 1
 
 void rx_test(void);
 void transmit_test(void);
@@ -37,12 +40,17 @@ int main() {
     while (true) {
         printf("======Hello, Xbee Joint!======\n");
 
-        printf("Enter char to Receive: ");
-        printf("%c\n", getchar_timeout_us(0));
+        // printf("Enter char to Receive: ");
+        // printf("%c\n", getchar_timeout_us(0));
 
+#if TX_TEST
+        transmit_test();
+#endif
+
+#if RX_TEST
         rx_test();
-
         get_radio_errors();
+#endif
 
         printf("\n\n\n");
     }

@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#include "BITSv5.h"
 #include "hardware/gpio.h"
 #include "hardware/spi.h"
 #include "pico/stdlib.h"
@@ -49,6 +50,7 @@ const uint8_t set_radio_clear_irq_cmd = SX126X_CMD_CLEAR_IRQ_STATUS;
 const uint8_t read_buffer_cmd = SX126X_CMD_READ_BUFFER;
 const uint8_t get_irq_status_cmd = SX126X_CMD_GET_IRQ_STATUS;
 const uint8_t set_radio_dio_irq_cmd = SX126X_CMD_SET_DIO_IRQ_PARAMS;
+const uint8_t get_rx_buffer_cmd = SX126X_CMD_GET_RX_BUFFER_STATUS;
 
 void radio_init() {
     printf("Initializing Radio");
@@ -505,4 +507,34 @@ void set_dio_irq() {
     spi_write_blocking(spi, &dio3_mask2, 1);
     spi_write_blocking(spi, &dio3_mask1, 1);
     gpio_put(cs_pin, 1);
+}
+
+void get_rx_buffer_status() {
+    uint8_t length = 0x00;
+    uint8_t buffer_start = 0x00;
+
+    printf("Getting RX Buffer Status\n");
+    gpio_put(CS_PIN, 0);
+    spi_write_blocking(spi, &get_rx_buffer_cmd, 1);
+    spi_write_blocking(spi, &nop_cmd, 1);
+    spi_write_read_blocking(spi, &nop_cmd, &length, 1);
+    spi_write_read_blocking(spi, &nop_cmd, &buffer_start, 1);
+    gpio_put(CS_PIN, 1);
+
+    printf("Payload Length %x\n", length);
+    printf("Buffer Pointer %x\n", buffer_start);
+}
+
+void radio_receive_single() {
+    uint8_t timeout3 = 0x00;
+    uint8_t timeout2 = 0x00;
+    uint8_t timeout1 = 0x00;
+
+    printf("Entering Radio Receive Mode\n");
+    gpio_put(CS_PIN, 0);
+    spi_write_blocking(spi, &set_radio_rx_cmd, 1);
+    spi_write_blocking(spi, &timeout3, 1);
+    spi_write_blocking(spi, &timeout2, 1);
+    spi_write_blocking(spi, &timeout1, 1);
+    gpio_put(CS_PIN, 1);
 }

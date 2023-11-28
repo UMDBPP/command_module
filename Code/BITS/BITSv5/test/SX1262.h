@@ -442,8 +442,6 @@
 #define SX126x_TXMODE_SYNC 0x02
 #define SX126x_TXMODE_BACK2RX 0x04
 
-#define CS_PIN 25
-
 void get_radio_status(void);
 void set_radio_standby(void);
 void get_radio_errors(void);
@@ -471,5 +469,7 @@ void set_dio_irq(void);
 void read_radio_buffer(void);
 void clear_irq_status(void);
 void get_irq_status(void);
+void get_rx_buffer_status(void);
+void radio_receive_single(void);
 
 #endif

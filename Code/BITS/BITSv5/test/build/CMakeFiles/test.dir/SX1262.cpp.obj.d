@@ -65,6 +65,7 @@ CMakeFiles/test.dir/SX1262.cpp.obj: \
  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/sys/stdio.h \
  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/c++/13.2.1/stdlib.h \
  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/c++/13.2.1/cstdlib \
+ /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/test/BITSv5.h \
  /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_gpio/include/hardware/gpio.h \
  /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_base/include/pico.h \
  /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_base/include/pico/types.h \
