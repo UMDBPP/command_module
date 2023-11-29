@@ -111,6 +111,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/rp2_common/pico_platform/platform.c.obj.d"
   "CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/rp2_common/pico_printf/printf.c.obj"
   "CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/rp2_common/pico_printf/printf.c.obj.d"
+  "CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/rp2_common/pico_rand/rand.c.obj"
+  "CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/rp2_common/pico_rand/rand.c.obj.d"
   "CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj"
   "CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj.d"
   "CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj"

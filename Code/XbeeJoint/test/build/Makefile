@@ -1537,6 +1537,30 @@ Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/rp2_co
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/rp2_common/pico_printf/printf.c.s
 .PHONY : Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/rp2_common/pico_printf/printf.c.s
 
+Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/rp2_common/pico_rand/rand.obj: Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/rp2_common/pico_rand/rand.c.obj
+.PHONY : Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/rp2_common/pico_rand/rand.obj
+
+# target to build an object file
+Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/rp2_common/pico_rand/rand.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/rp2_common/pico_rand/rand.c.obj
+.PHONY : Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/rp2_common/pico_rand/rand.c.obj
+
+Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/rp2_common/pico_rand/rand.i: Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/rp2_common/pico_rand/rand.c.i
+.PHONY : Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/rp2_common/pico_rand/rand.i
+
+# target to preprocess a source file
+Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/rp2_common/pico_rand/rand.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/rp2_common/pico_rand/rand.c.i
+.PHONY : Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/rp2_common/pico_rand/rand.c.i
+
+Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/rp2_common/pico_rand/rand.s: Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/rp2_common/pico_rand/rand.c.s
+.PHONY : Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/rp2_common/pico_rand/rand.s
+
+# target to generate assembly for a file
+Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/rp2_common/pico_rand/rand.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/rp2_common/pico_rand/rand.c.s
+.PHONY : Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/rp2_common/pico_rand/rand.c.s
+
 Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/rp2_common/pico_runtime/runtime.obj: Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
 .PHONY : Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/rp2_common/pico_runtime/runtime.obj
 
@@ -1989,6 +2013,9 @@ help:
 	@echo "... Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/rp2_common/pico_printf/printf.obj"
 	@echo "... Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/rp2_common/pico_printf/printf.i"
 	@echo "... Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/rp2_common/pico_printf/printf.s"
+	@echo "... Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/rp2_common/pico_rand/rand.obj"
+	@echo "... Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/rp2_common/pico_rand/rand.i"
+	@echo "... Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/rp2_common/pico_rand/rand.s"
 	@echo "... Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/rp2_common/pico_runtime/runtime.obj"
 	@echo "... Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/rp2_common/pico_runtime/runtime.i"
 	@echo "... Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/rp2_common/pico_runtime/runtime.s"

@@ -7,6 +7,7 @@
 #include "(Not)XBee_Joint.h"
 #include "hardware/gpio.h"
 #include "hardware/spi.h"
+#include "pico/rand.h"
 #include "pico/stdlib.h"
 
 spi_inst_t *spi = spi0;
@@ -14,8 +15,8 @@ spi_inst_t *spi = spi0;
 const uint8_t read_reg_cmd = 0x1D;
 const uint8_t get_status_cmd = 0xC0;
 const uint8_t nop_cmd = 0x00;
-const uint8_t addr2 = 0x06;
-const uint8_t addr1 = 0xB8;
+const uint8_t addr2 = 0x07;
+const uint8_t addr1 = 0x40;
 uint8_t msg = 0x00;
 const uint8_t StdbyConfig = 0x01;
 const uint8_t set_standby_cmd = 0x80;
@@ -42,6 +43,8 @@ const uint8_t set_radio_clear_irq_cmd = SX126X_CMD_CLEAR_IRQ_STATUS;
 const uint8_t read_buffer_cmd = SX126X_CMD_READ_BUFFER;
 const uint8_t get_irq_status_cmd = SX126X_CMD_GET_IRQ_STATUS;
 const uint8_t get_rx_buffer_cmd = SX126X_CMD_GET_RX_BUFFER_STATUS;
+const uint8_t set_lora_symb_timeout_cmd = SX126X_CMD_SET_LORA_SYMB_NUM_TIMEOUT;
+const uint8_t calibrate_image_cmd = SX126X_CMD_CALIBRATE_IMAGE;
 
 void radio_init() {
     printf("Initializing Radio\n");
@@ -81,7 +84,7 @@ void radio_init() {
     write_radio_buffer();
 
     // Step 8: Set Modulation Parameters
-    set_radio_modulation_param();
+    set_radio_lora_modulation_param();
 
     // Step 9: Set Packet Parameters
     set_packet_parameters();
@@ -91,6 +94,11 @@ void radio_init() {
 
     // Step 11: Define Sync Word
     set_radio_sync_word();
+    set_lora_symb_timeout();
+
+    // TODO calibrate image
+
+    read_radio_registers();
 }
 
 void get_radio_status() {
@@ -127,18 +135,15 @@ void read_radio_registers() {
     printf("reg: %x%x\n", addr2, addr1);
     gpio_put(CS_PIN, 0);
     spi_write_read_blocking(spi, &read_reg_cmd, &msg, 1);
-    printf("data: %x\n", msg);
 
     spi_write_read_blocking(spi, &addr2, &msg, 1);
-    printf("data: %x\n", msg);
 
     spi_write_read_blocking(spi, &addr1, &msg, 1);
-    printf("data: %x\n", msg);
 
     spi_write_read_blocking(spi, &nop_cmd, &msg, 1);
-    printf("data: %x\n", msg);
+    printf("status: %x\n", msg);
 
-    for (int j = 0; j < 4; j++) {
+    for (int j = 0; j <= 1; j++) {
         spi_write_read_blocking(spi, &nop_cmd, &msg, 1);
         printf("read: %x\n", msg);
     }
@@ -229,7 +234,7 @@ void set_radio_rf_freq() {
 }
 
 void set_tx_params() {
-    const uint8_t power = 0x16;
+    const uint8_t power = 0x0;
     const uint8_t ramp_time = 0x04;
 
     gpio_put(CS_PIN, 0);
@@ -252,16 +257,18 @@ void set_buffer_base_address() {
 
 void write_radio_buffer() {
     const uint8_t offset = 0x00;
-    const uint8_t data = 0x00;
+    const uint8_t data = (uint8_t)get_rand_32();
 
     gpio_put(CS_PIN, 0);
     spi_write_blocking(spi, &write_radio_buffer_cmd, 1);
     spi_write_blocking(spi, &offset, 1);
     spi_write_blocking(spi, &data, 1);
     gpio_put(CS_PIN, 1);
+
+    printf("Wrote %x to radio buffer\n", data);
 }
 
-void set_radio_modulation_param() {
+void set_radio_lora_modulation_param() {
     const uint8_t spreading_factor = 0x07;
     const uint8_t bandwidth = 0x04;
     const uint8_t coding_rate = 0x04;
@@ -323,6 +330,11 @@ void set_radio_sync_word() {
     spi_write_blocking(spi, &msb2, 1);
     spi_write_blocking(spi, &msb1, 1);
     spi_write_blocking(spi, &data2, 1);
+    gpio_put(CS_PIN, 1);
+    sleep_ms(10);
+
+    gpio_put(CS_PIN, 0);
+    spi_write_blocking(spi, &write_radio_register_cmd, 1);
     spi_write_blocking(spi, &lsb2, 1);
     spi_write_blocking(spi, &lsb1, 1);
     spi_write_blocking(spi, &data1, 1);
@@ -460,7 +472,7 @@ void clear_irq_status() {
 }
 
 void read_radio_buffer() {
-    uint8_t offset = 0x00;
+    uint8_t offset = 0x7F;
 
     uint8_t buf[20] = {0};
 
@@ -528,4 +540,20 @@ void get_rx_buffer_status() {
 
     printf("Payload Length %x\n", length);
     printf("Buffer Pointer %x\n", buffer_start);
+}
+
+void set_lora_symb_timeout() {
+    uint8_t symb_num = 0x0F;
+
+    spi_write_blocking(spi, &set_lora_symb_timeout_cmd, 1);
+    spi_write_blocking(spi, &symb_num, 1);
+}
+
+void calibrate_image() {
+    uint8_t freq1 = 0xE1;
+    uint8_t freq2 = 0xE9;
+
+    spi_write_blocking(spi, &calibrate_image_cmd, 1);
+    spi_write_blocking(spi, &freq1, 1);
+    spi_write_blocking(spi, &freq2, 1);
 }

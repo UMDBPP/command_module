@@ -451,7 +451,7 @@ void set_radio_packet_type_lora(void);
 void set_radio_pa_config(void);
 void set_radio_rf_freq(void);
 void set_buffer_base_address(void);
-void set_radio_modulation_param(void);
+void set_radio_lora_modulation_param(void);
 void set_dio2_rf_switch(void);
 void write_radio_buffer(void);
 void set_packet_parameters(void);
@@ -471,5 +471,9 @@ void clear_irq_status(void);
 void get_irq_status(void);
 void get_rx_buffer_status(void);
 void radio_receive_single(void);
+void set_radio_packet_type_fsk(void);
+void set_radio_fsk_modulation_param(void);
+void set_lora_symb_timeout(void);
+void calibrate_image(void);
 
 #endif

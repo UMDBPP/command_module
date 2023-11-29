@@ -18,7 +18,7 @@
 // Flash-based address of the last sector
 #define FLASH_TARGET_OFFSET (PICO_FLASH_SIZE_BYTES - FLASH_SECTOR_SIZE)
 
-#define RX_TEST 0
+#define RX_TEST 1
 #define TX_TEST 1
 
 void rx_test(void);
@@ -53,6 +53,8 @@ int main() {
 #endif
 
         printf("\n\n\n");
+
+        sleep_ms(5000);
     }
 }
 
@@ -61,7 +63,7 @@ void transmit_test() {
 
     radio_send();
 
-    sleep_ms(3000);
+    sleep_ms(100);
 
     get_radio_errors();
 
@@ -71,13 +73,13 @@ void transmit_test() {
 }
 
 void rx_test() {
-    radio_receive_cont();
+    radio_receive_single();
 
     while (!gpio_get(DIO1_PIN)) {
         sleep_ms(10);
     }
 
-    sleep_ms(1000);
+    sleep_ms(10);
 
     get_rx_buffer_status();
 
