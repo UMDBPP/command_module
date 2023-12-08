@@ -12,31 +12,32 @@
 
 spi_inst_t *spi = spi0;
 
-const uint8_t read_reg_cmd = 0x1D;
-const uint8_t get_status_cmd = 0xC0;
+const uint8_t read_reg_cmd = SX126X_CMD_READ_REGISTER;
+const uint8_t get_status_cmd = SX126X_CMD_GET_STATUS;
 const uint8_t nop_cmd = 0x00;
 const uint8_t addr2 = 0x07;
 const uint8_t addr1 = 0x40;
 uint8_t msg = 0x00;
 const uint8_t StdbyConfig = 0x01;
-const uint8_t set_standby_cmd = 0x80;
-const uint8_t get_err_cmd = 0x17;
-const uint8_t set_packet_type_cmd = 0x8A;
+const uint8_t set_standby_cmd = SX126X_CMD_SET_STANDBY;
+const uint8_t get_err_cmd = SX126X_CMD_GET_DEVICE_ERRORS;
+const uint8_t set_packet_type_cmd = SX126X_CMD_SET_PACKET_TYPE;
 const uint8_t packet_type_lora = 0x01;
-const uint8_t pa_config_cmd = 0x95;
-const uint8_t set_rf_freq_cmd = 0x95;
-const uint8_t set_tx_params_cmd = 0x8E;
-const uint8_t set_buffer_base_addr_cmd = 0x8F;
-const uint8_t write_radio_buffer_cmd = 0x0E;
-const uint8_t set_modulation_param_cmd = 0x8B;
-const uint8_t write_radio_register_cmd = 0x0D;
-const uint8_t tx_continuous_wave_cmd = 0xD1;
-const uint8_t set_tx_cmd = 0x83;
-const uint8_t set_dio2_rf_ctrl_cmd = 0x9D;
-const uint8_t set_packet_param_cmd = 0x8C;
-const uint8_t clear_radio_err_cmd = 0x07;
-const uint8_t set_dio3_as_tcxo_cmd = 0x97;
-const uint8_t set_regulator_mode_cmd = 0x96;
+const uint8_t packet_type_fsk = 0x00;
+const uint8_t pa_config_cmd = SX126X_CMD_SET_PA_CONFIG;
+const uint8_t set_rf_freq_cmd = SX126X_CMD_SET_RF_FREQUENCY;
+const uint8_t set_tx_params_cmd = SX126X_CMD_SET_TX_PARAMS;
+const uint8_t set_buffer_base_addr_cmd = SX126X_CMD_SET_BUFFER_BASE_ADDRESS;
+const uint8_t write_radio_buffer_cmd = SX126X_CMD_WRITE_BUFFER;
+const uint8_t set_modulation_param_cmd = SX126X_CMD_SET_MODULATION_PARAMS;
+const uint8_t write_radio_register_cmd = SX126X_CMD_WRITE_REGISTER;
+const uint8_t tx_continuous_wave_cmd = SX126X_CMD_SET_TX_CONTINUOUS_WAVE;
+const uint8_t set_tx_cmd = SX126X_CMD_SET_TX;
+const uint8_t set_dio2_rf_ctrl_cmd = SX126X_CMD_SET_DIO2_AS_RF_SWITCH_CTRL;
+const uint8_t set_packet_param_cmd = SX126X_CMD_SET_PACKET_PARAMS;
+const uint8_t clear_radio_err_cmd = SX126X_CMD_CLEAR_DEVICE_ERRORS;
+const uint8_t set_dio3_as_tcxo_cmd = SX126X_CMD_SET_DIO3_AS_TCXO_CTRL;
+const uint8_t set_regulator_mode_cmd = SX126X_CMD_SET_REGULATOR_MODE;
 const uint8_t set_radio_rx_cmd = SX126X_CMD_SET_RX;
 const uint8_t set_radio_dio_irq_cmd = SX126X_CMD_SET_DIO_IRQ_PARAMS;
 const uint8_t set_radio_clear_irq_cmd = SX126X_CMD_CLEAR_IRQ_STATUS;
@@ -65,8 +66,12 @@ void radio_init() {
 
     get_radio_errors();
 
-    // Step 2: Set Packet Type to LoRa
-    set_radio_packet_type_lora();
+    // Step 2: Set Packet Type
+    if (PACKET_LORA) {
+        set_radio_packet_type_lora();
+    } else {
+        set_radio_packet_type_fsk();
+    }
 
     // Step 3: Set RF Frequency
     set_radio_rf_freq();
@@ -90,7 +95,7 @@ void radio_init() {
     set_packet_parameters();
 
     // Step 10: Configure DIO
-    set_dio2_rf_switch();
+    // set_dio2_rf_switch();
 
     // Step 11: Define Sync Word
     set_radio_sync_word();
@@ -133,6 +138,7 @@ void get_radio_errors() {
 
 void read_radio_registers() {
     printf("reg: %x%x\n", addr2, addr1);
+
     gpio_put(CS_PIN, 0);
     spi_write_read_blocking(spi, &read_reg_cmd, &msg, 1);
 
@@ -147,7 +153,7 @@ void read_radio_registers() {
         spi_write_read_blocking(spi, &nop_cmd, &msg, 1);
         printf("read: %x\n", msg);
     }
-    gpio_put(CS_PIN, 0);
+    gpio_put(CS_PIN, 1);
 }
 
 void radio_spi_init() {
@@ -283,7 +289,7 @@ void set_radio_lora_modulation_param() {
     gpio_put(CS_PIN, 1);
 }
 
-void set_packet_parameters() {
+void set_lora_packet_parameters() {
     const uint8_t preamble2 = 0x00;
     const uint8_t preamble1 = 0x0F;
     const uint8_t header = 0x00;
@@ -291,16 +297,43 @@ void set_packet_parameters() {
     const uint8_t crc = 0x01;
     const uint8_t iq = 0x00;
 
-    printf("Setting Packet Parameters\n");
+    printf("Setting LoRa Packet Parameters\n");
 
     gpio_put(CS_PIN, 0);
-    spi_write_blocking(spi, &set_buffer_base_addr_cmd, 1);
+    spi_write_blocking(spi, &set_packet_param_cmd, 1);
     spi_write_blocking(spi, &preamble2, 1);
     spi_write_blocking(spi, &preamble1, 1);
     spi_write_blocking(spi, &header, 1);
     spi_write_blocking(spi, &length, 1);
     spi_write_blocking(spi, &crc, 1);
     spi_write_blocking(spi, &iq, 1);
+    gpio_put(CS_PIN, 1);
+}
+
+void set_fsk_packet_parameters() {
+    const uint8_t preamble2 = 0x00;
+    const uint8_t preamble1 = 0x0F;
+    const uint8_t preamble_det_len = 0x00;
+    const uint8_t sync_len = 0x08;
+    const uint8_t addr_comp = 0x00;
+    const uint8_t packet_type = 0x01;  // variable packet size
+    const uint8_t payload_len = 0x01;
+    const uint8_t crc = 0x01;        // CRC off
+    const uint8_t whitening = 0x00;  // no encoding
+
+    printf("Setting FSK Packet Parameters\n");
+
+    gpio_put(CS_PIN, 0);
+    spi_write_blocking(spi, &set_packet_param_cmd, 1);
+    spi_write_blocking(spi, &preamble2, 1);
+    spi_write_blocking(spi, &preamble1, 1);
+    spi_write_blocking(spi, &preamble_det_len, 1);
+    spi_write_blocking(spi, &sync_len, 1);
+    spi_write_blocking(spi, &addr_comp, 1);
+    spi_write_blocking(spi, &packet_type, 1);
+    spi_write_blocking(spi, &payload_len, 1);
+    spi_write_blocking(spi, &crc, 1);
+    spi_write_blocking(spi, &whitening, 1);
     gpio_put(CS_PIN, 1);
 }
 
@@ -411,7 +444,7 @@ void radio_receive_cont() {
     uint8_t timeout2 = 0xFF;
     uint8_t timeout1 = 0xFF;
 
-    printf("Entering Radio Receive Mode\n");
+    printf("Entering Radio Receive Mode (Continuous)\n");
     gpio_put(CS_PIN, 0);
     spi_write_blocking(spi, &set_radio_rx_cmd, 1);
     spi_write_blocking(spi, &timeout3, 1);
@@ -425,7 +458,7 @@ void radio_receive_single() {
     uint8_t timeout2 = 0x00;
     uint8_t timeout1 = 0x00;
 
-    printf("Entering Radio Receive Mode\n");
+    printf("Entering Radio Receive Mode (Single)\n");
     gpio_put(CS_PIN, 0);
     spi_write_blocking(spi, &set_radio_rx_cmd, 1);
     spi_write_blocking(spi, &timeout3, 1);
@@ -512,8 +545,8 @@ void read_radio_buffer() {
 }
 
 void get_irq_status() {
-    uint8_t status2 = 0xAA;
-    uint8_t status1 = 0xAA;
+    uint8_t status2 = 0x00;
+    uint8_t status1 = 0x00;
 
     printf("Getting IRQ Status\n");
     gpio_put(CS_PIN, 0);
@@ -556,4 +589,13 @@ void calibrate_image() {
     spi_write_blocking(spi, &calibrate_image_cmd, 1);
     spi_write_blocking(spi, &freq1, 1);
     spi_write_blocking(spi, &freq2, 1);
+}
+
+void set_radio_packet_type_fsk() {
+    printf("Setting Packet Type to FSK\n");
+
+    gpio_put(CS_PIN, 0);
+    spi_write_blocking(spi, &set_packet_type_cmd, 1);
+    spi_write_blocking(spi, &packet_type_fsk, 1);
+    gpio_put(CS_PIN, 1);
 }
