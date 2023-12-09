@@ -394,12 +394,12 @@ void set_tx_continuous_wave() {
 
 void set_tx() {
     const uint8_t timeout3 = 0x00;
-    const uint8_t timeout2 = 0x7D;
+    const uint8_t timeout2 = 0x00;
     const uint8_t timeout1 = 0x00;
 
-#if DEBUG
+    // #if DEBUG
     printf("Setting Mode TX\n");
-#endif
+    // #endif
 
     gpio_put(CS_PIN, 0);
     spi_write_blocking(spi, &set_tx_cmd, 1);

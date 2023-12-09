@@ -19,13 +19,13 @@
 #define FLASH_TARGET_OFFSET (PICO_FLASH_SIZE_BYTES - FLASH_SECTOR_SIZE)
 
 #define RX_TEST 1
-#define TX_TEST 1
+#define TX_TEST 0
 
 void rx_test(void);
 void transmit_test(void);
 
-// For the functionality of a BITSv5 board
-// NOT FLIGHT CODE
+// For the functionality of a (Not)Xbee Joint board
+// NOT PRODUCTION CODE
 int main() {
     uint8_t i = 0;
 
@@ -38,7 +38,6 @@ int main() {
     write_radio_buffer();
 
     while (true) {
-        printf("\n\n\n");
         printf("======Hello, Xbee Joint!======\n");
 
         // printf("Enter char to Receive: ");
@@ -46,59 +45,19 @@ int main() {
 
 #if TX_TEST
         transmit_test();
+        sleep_ms(5000);
 #endif
-
-        sleep_ms(1000);
 
 #if RX_TEST
         rx_test();
         get_radio_errors();
 #endif
 
-        sleep_ms(5000);
+        printf("\n\n\n");
+
+        sleep_ms(10);
     }
 }
-
-// void transmit_test() {
-//     printf("Transmitting\n");
-
-//     radio_send();
-
-//     sleep_ms(100);
-
-//     get_radio_errors();
-
-// // #if DEBUG
-
-//     get_irq_status();
-
-// // get_irq_status();
-// // #endif
-
-//     clear_irq_status();
-// }
-
-// void rx_test() {
-//     radio_receive_single();
-
-//     while (!gpio_get(DIO1_PIN)) {
-//         printf("%d", gpio_get(DIO1_PIN));
-//         sleep_ms(10);
-//     }
-
-//     sleep_ms(100);
-
-//     get_rx_buffer_status();
-
-// // #if DEBUG
-//     get_irq_status();
-// // #endif
-
-//     clear_irq_status();
-//     // get_irq_status();
-
-//     read_radio_buffer();
-// }
 
 void transmit_test() {
     printf("Transmit Test\n");
@@ -118,10 +77,10 @@ void rx_test() {
     radio_receive_single();
 
     while (!gpio_get(DIO1_PIN)) {
-        sleep_ms(10);
+        sleep_ms(1);
     }
 
-    sleep_ms(10);
+    // sleep_ms(10);
 
     get_rx_buffer_status();
 
