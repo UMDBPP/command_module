@@ -1,6 +1,8 @@
 #ifndef _SX126X_H
 #define _SX126X_H
 
+#include "pico/stdlib.h"
+
 #define PACKET_LORA 1  // 0 = FSK
 
 // return values
@@ -455,7 +457,7 @@ void set_radio_rf_freq(void);
 void set_buffer_base_address(void);
 void set_radio_lora_modulation_param(void);
 void set_dio2_rf_switch(void);
-void write_radio_buffer(void);
+uint8_t write_radio_buffer(void);
 void set_packet_parameters(void);
 void set_radio_sync_word(void);
 void set_tx(void);

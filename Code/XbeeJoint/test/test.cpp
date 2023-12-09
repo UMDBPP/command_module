@@ -35,16 +35,17 @@ int main() {
 
     radio_init();
 
-    write_radio_buffer();
-
     while (true) {
-        printf("======Hello, Xbee Joint!======\n");
+        printf("\n\n\n\n\n\n\n\n\n\n\n\n");
 
-        // printf("Enter char to Receive: ");
-        // printf("%c\n", getchar_timeout_us(0));
+#if DEBUG
+        printf("======Xbee Joint (DEBUG)======\n");
+#elif
+        printf("======Xbee Joint======\n");
+#endif
 
 #if TX_TEST
-        sleep_ms(5000);
+        sleep_ms(4500);
         transmit_test();
 #endif
 
@@ -53,9 +54,7 @@ int main() {
         get_radio_errors();
 #endif
 
-        printf("\n\n\n");
-
-        sleep_ms(10);
+        sleep_ms(500);
     }
 }
 
@@ -66,11 +65,16 @@ void transmit_test() {
 
     sleep_ms(100);
 
+#if DEBUG
     get_radio_errors();
+    get_irq_status();
+#endif
 
-    get_irq_status();
     clear_irq_status();
+
+#if DEBUG
     get_irq_status();
+#endif
 }
 
 void rx_test() {

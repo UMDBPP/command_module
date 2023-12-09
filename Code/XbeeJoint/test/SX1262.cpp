@@ -245,7 +245,7 @@ void set_radio_rf_freq() {
 
 void set_tx_params() {
     const uint8_t power = 0x00;
-    const uint8_t ramp_time = 0x04;
+    const uint8_t ramp_time = SX126X_PA_RAMP_200U;  // 200us ramp time
 
     gpio_put(CS_PIN, 0);
     spi_write_blocking(spi, &set_tx_params_cmd, 1);
@@ -265,7 +265,7 @@ void set_buffer_base_address() {
     gpio_put(CS_PIN, 1);
 }
 
-void write_radio_buffer() {
+uint8_t write_radio_buffer() {
     const uint8_t offset = 0x00;
     const uint8_t data = (uint8_t)get_rand_32();
 
@@ -276,6 +276,8 @@ void write_radio_buffer() {
     gpio_put(CS_PIN, 1);
 
     printf("Wrote %x to radio buffer\n", data);
+
+    return data;
 }
 
 void set_radio_lora_modulation_param() {
@@ -397,9 +399,9 @@ void set_tx() {
     const uint8_t timeout2 = 0x00;
     const uint8_t timeout1 = 0x00;
 
-    // #if DEBUG
+#if DEBUG
     printf("Setting Mode TX\n");
-    // #endif
+#endif
 
     gpio_put(CS_PIN, 0);
     spi_write_blocking(spi, &set_tx_cmd, 1);
@@ -456,7 +458,8 @@ void clear_radio_errors() {
 }
 
 void radio_send() {
-    write_radio_buffer();
+    uint8_t payload = write_radio_buffer();
+    printf("Transmitting %x%x", payload);
     set_tx();
 }
 
