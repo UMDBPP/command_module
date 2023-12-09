@@ -38,6 +38,7 @@ int main() {
     write_radio_buffer();
 
     while (true) {
+        printf("\n\n\n");
         printf("======Hello, Xbee Joint!======\n");
 
         // printf("Enter char to Receive: ");
@@ -47,16 +48,57 @@ int main() {
         transmit_test();
 #endif
 
+        sleep_ms(1000);
+
 #if RX_TEST
         rx_test();
         get_radio_errors();
 #endif
 
-        printf("\n\n\n");
-
         sleep_ms(5000);
     }
 }
+
+// void transmit_test() {
+//     printf("Transmitting\n");
+
+//     radio_send();
+
+//     sleep_ms(100);
+
+//     get_radio_errors();
+
+// // #if DEBUG
+
+//     get_irq_status();
+
+// // get_irq_status();
+// // #endif
+
+//     clear_irq_status();
+// }
+
+// void rx_test() {
+//     radio_receive_single();
+
+//     while (!gpio_get(DIO1_PIN)) {
+//         printf("%d", gpio_get(DIO1_PIN));
+//         sleep_ms(10);
+//     }
+
+//     sleep_ms(100);
+
+//     get_rx_buffer_status();
+
+// // #if DEBUG
+//     get_irq_status();
+// // #endif
+
+//     clear_irq_status();
+//     // get_irq_status();
+
+//     read_radio_buffer();
+// }
 
 void transmit_test() {
     printf("Transmit Test\n");

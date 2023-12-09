@@ -9,5 +9,6 @@
 #define DIO1_PIN 3
 #define BUSY_PIN 6
 #define SW_PIN 9
+#define DEBUG 1
 
 #endif

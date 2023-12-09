@@ -1,7 +1,7 @@
 #ifndef _SX126X_H
 #define _SX126X_H
 
-#define PACKET_LORA 1 //0 = FSK
+#define PACKET_LORA 1  // 0 = FSK
 
 // return values
 #define ERR_NONE 0
@@ -478,5 +478,6 @@ void set_radio_fsk_modulation_param(void);
 void set_lora_symb_timeout(void);
 void calibrate_image(void);
 void set_fsk_packet_parameters(void);
+void set_lora_packet_parameters(void);
 
 #endif
