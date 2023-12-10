@@ -1,5 +1,5 @@
 
-/Users/michaelshipman/Developer/command_module/Code/(Not)XbeeJoint/test/build/test.elf:     file format elf32-littlearm
+/Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/test/build/test.elf:     file format elf32-littlearm
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
@@ -36,7 +36,7 @@ Idx Name          Size      VMA       LMA       File off  Algn
  15 .debug_frame  00000028  00000000  00000000  0000c100  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
-/Users/michaelshipman/Developer/command_module/Code/(Not)XbeeJoint/test/build/test.elf:     file format elf32-littlearm
+/Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/test/build/test.elf:     file format elf32-littlearm
 
 
 Disassembly of section .boot2:

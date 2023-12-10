@@ -4,6 +4,6 @@
 
 method=source_dir
 command=
-source_dir=/Users/michaelshipman/Developer/command_module/Code/(Not)XbeeJoint/pico-sdk/tools/elf2uf2
+source_dir=/Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/pico-sdk/tools/elf2uf2
 work_dir=
 

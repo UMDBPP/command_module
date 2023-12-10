@@ -53,10 +53,10 @@ RM = /opt/homebrew/Cellar/cmake/3.27.7/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/Users/michaelshipman/Developer/command_module/Code/(Not)XbeeJoint/test"
+CMAKE_SOURCE_DIR = /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/test
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/Users/michaelshipman/Developer/command_module/Code/(Not)XbeeJoint/test/build"
+CMAKE_BINARY_DIR = /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/test/build
 
 # Utility rule file for bs2_default_bin.
 
@@ -69,8 +69,8 @@ include pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default_bin.dir/progr
 pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default_bin: pico-sdk/src/rp2_common/boot_stage2/bs2_default.bin
 
 pico-sdk/src/rp2_common/boot_stage2/bs2_default.bin: pico-sdk/src/rp2_common/boot_stage2/bs2_default.elf
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir="/Users/michaelshipman/Developer/command_module/Code/(Not)XbeeJoint/test/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Generating bs2_default.bin"
-	cd "/Users/michaelshipman/Developer/command_module/Code/(Not)XbeeJoint/test/build/pico-sdk/src/rp2_common/boot_stage2" && /opt/homebrew/bin/arm-none-eabi-objcopy -Obinary "/Users/michaelshipman/Developer/command_module/Code/(Not)XbeeJoint/test/build/pico-sdk/src/rp2_common/boot_stage2/bs2_default.elf" "/Users/michaelshipman/Developer/command_module/Code/(Not)XbeeJoint/test/build/pico-sdk/src/rp2_common/boot_stage2/bs2_default.bin"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating bs2_default.bin"
+	cd /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/test/build/pico-sdk/src/rp2_common/boot_stage2 && /opt/homebrew/bin/arm-none-eabi-objcopy -Obinary /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/test/build/pico-sdk/src/rp2_common/boot_stage2/bs2_default.elf /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/test/build/pico-sdk/src/rp2_common/boot_stage2/bs2_default.bin
 
 bs2_default_bin: pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default_bin
 bs2_default_bin: pico-sdk/src/rp2_common/boot_stage2/bs2_default.bin
@@ -82,10 +82,10 @@ pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default_bin.dir/build: bs2_de
 .PHONY : pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default_bin.dir/build
 
 pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default_bin.dir/clean:
-	cd "/Users/michaelshipman/Developer/command_module/Code/(Not)XbeeJoint/test/build/pico-sdk/src/rp2_common/boot_stage2" && $(CMAKE_COMMAND) -P CMakeFiles/bs2_default_bin.dir/cmake_clean.cmake
+	cd /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/test/build/pico-sdk/src/rp2_common/boot_stage2 && $(CMAKE_COMMAND) -P CMakeFiles/bs2_default_bin.dir/cmake_clean.cmake
 .PHONY : pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default_bin.dir/clean
 
 pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default_bin.dir/depend:
-	cd "/Users/michaelshipman/Developer/command_module/Code/(Not)XbeeJoint/test/build" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/Users/michaelshipman/Developer/command_module/Code/(Not)XbeeJoint/test" "/Users/michaelshipman/Developer/command_module/Code/(Not)XbeeJoint/pico-sdk/src/rp2_common/boot_stage2" "/Users/michaelshipman/Developer/command_module/Code/(Not)XbeeJoint/test/build" "/Users/michaelshipman/Developer/command_module/Code/(Not)XbeeJoint/test/build/pico-sdk/src/rp2_common/boot_stage2" "/Users/michaelshipman/Developer/command_module/Code/(Not)XbeeJoint/test/build/pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default_bin.dir/DependInfo.cmake" "--color=$(COLOR)"
+	cd /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/test/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/test /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp2_common/boot_stage2 /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/test/build /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/test/build/pico-sdk/src/rp2_common/boot_stage2 /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/test/build/pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default_bin.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default_bin.dir/depend
 

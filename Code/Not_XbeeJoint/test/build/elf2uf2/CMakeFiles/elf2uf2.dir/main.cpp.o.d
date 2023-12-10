@@ -1,5 +1,5 @@
 CMakeFiles/elf2uf2.dir/main.cpp.o: \
-  /Users/michaelshipman/Developer/command_module/Code/(Not)XbeeJoint/pico-sdk/tools/elf2uf2/main.cpp \
+  /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/pico-sdk/tools/elf2uf2/main.cpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/cstdio \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/__assert \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/__config \
@@ -737,6 +737,6 @@ CMakeFiles/elf2uf2.dir/main.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/__functional/unary_negate.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/set \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/cstdarg \
-  /Users/michaelshipman/Developer/command_module/Code/(Not)XbeeJoint/pico-sdk/src/common/boot_uf2/include/boot/uf2.h \
+  /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/pico-sdk/src/common/boot_uf2/include/boot/uf2.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/assert.h \
-  /Users/michaelshipman/Developer/command_module/Code/(Not)XbeeJoint/pico-sdk/tools/elf2uf2/elf.h
+  /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/pico-sdk/tools/elf2uf2/elf.h

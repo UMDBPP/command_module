@@ -1,4 +1,4 @@
-// Padded and checksummed version of: /Users/michaelshipman/Developer/command_module/Code/(Not)XbeeJoint/test/build/pico-sdk/src/rp2_common/boot_stage2/bs2_default.bin
+// Padded and checksummed version of: /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/test/build/pico-sdk/src/rp2_common/boot_stage2/bs2_default.bin
 
 .cpu cortex-m0plus
 .thumb

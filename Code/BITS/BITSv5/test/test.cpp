@@ -18,8 +18,13 @@
 // Flash-based address of the last sector
 #define FLASH_TARGET_OFFSET (PICO_FLASH_SIZE_BYTES - FLASH_SECTOR_SIZE)
 
+#ifndef RX_TEST
 #define RX_TEST 0
+#endif
+
+#ifndef TX_TEST
 #define TX_TEST 1
+#endif
 
 void rx_test(void);
 void transmit_test(void);
@@ -31,7 +36,7 @@ char id[2 * PICO_UNIQUE_BOARD_ID_SIZE_BYTES + 1] = {0};
 
 short debug_msgs = 1;  // controls if debug messages are printed
 
-// For the functionality of a BITSv5 board
+// For testing the functionality of a BITSv5 board
 // NOT FLIGHT CODE
 int main() {
     stdio_init_all();
@@ -60,7 +65,7 @@ int main() {
 
 #if RX_TEST
         rx_test();
-        get_radio_errors();
+        radio.get_radio_errors();
 #endif
 
         gpio_put(0, true);

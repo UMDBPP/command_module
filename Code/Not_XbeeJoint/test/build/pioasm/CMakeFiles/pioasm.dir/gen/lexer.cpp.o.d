@@ -1,5 +1,5 @@
 CMakeFiles/pioasm.dir/gen/lexer.cpp.o: \
-  /Users/michaelshipman/Developer/command_module/Code/(Not)XbeeJoint/pico-sdk/tools/pioasm/gen/lexer.cpp \
+  /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/pico-sdk/tools/pioasm/gen/lexer.cpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/stdio.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/__config \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/__config_site \
@@ -737,8 +737,8 @@ CMakeFiles/pioasm.dir/gen/lexer.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/__functional/pointer_to_binary_function.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/__functional/pointer_to_unary_function.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/__functional/unary_negate.h \
-  /Users/michaelshipman/Developer/command_module/Code/(Not)XbeeJoint/pico-sdk/tools/pioasm/pio_assembler.h \
-  /Users/michaelshipman/Developer/command_module/Code/(Not)XbeeJoint/pico-sdk/tools/pioasm/gen/parser.hpp \
+  /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/pico-sdk/tools/pioasm/pio_assembler.h \
+  /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/pico-sdk/tools/pioasm/gen/parser.hpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/fstream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/__locale \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/locale.h \
@@ -812,15 +812,15 @@ CMakeFiles/pioasm.dir/gen/lexer.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/__filesystem/recursive_directory_iterator.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/__filesystem/u8path.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/sstream \
-  /Users/michaelshipman/Developer/command_module/Code/(Not)XbeeJoint/pico-sdk/tools/pioasm/pio_types.h \
+  /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/pico-sdk/tools/pioasm/pio_types.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/map \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/__tree \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/set \
-  /Users/michaelshipman/Developer/command_module/Code/(Not)XbeeJoint/pico-sdk/tools/pioasm/gen/location.h \
+  /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/pico-sdk/tools/pioasm/gen/location.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/iostream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/cassert \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/assert.h \
-  /Users/michaelshipman/Developer/command_module/Code/(Not)XbeeJoint/pico-sdk/tools/pioasm/output_format.h \
+  /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/pico-sdk/tools/pioasm/output_format.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/unistd.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/sys/unistd.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/sys/_types/_posix_vdisable.h \

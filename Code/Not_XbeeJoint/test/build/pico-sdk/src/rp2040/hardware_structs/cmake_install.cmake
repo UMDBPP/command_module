@@ -1,4 +1,4 @@
-# Install script for directory: /Users/michaelshipman/Developer/command_module/Code/(Not)XbeeJoint/pico-sdk/src/rp2040/hardware_structs
+# Install script for directory: /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp2040/hardware_structs
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

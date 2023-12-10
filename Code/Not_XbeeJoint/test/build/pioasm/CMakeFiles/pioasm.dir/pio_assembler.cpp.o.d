@@ -1,5 +1,5 @@
 CMakeFiles/pioasm.dir/pio_assembler.cpp.o: \
-  /Users/michaelshipman/Developer/command_module/Code/(Not)XbeeJoint/pico-sdk/tools/pioasm/pio_assembler.cpp \
+  /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/pico-sdk/tools/pioasm/pio_assembler.cpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/cstdio \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/__assert \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/__config \
@@ -393,7 +393,7 @@ CMakeFiles/pioasm.dir/pio_assembler.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/__iterator/unreachable_sentinel.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/__iterator/wrap_iter.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/concepts \
-  /Users/michaelshipman/Developer/command_module/Code/(Not)XbeeJoint/pico-sdk/tools/pioasm/pio_assembler.h \
+  /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/pico-sdk/tools/pioasm/pio_assembler.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/algorithm \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/__algorithm/adjacent_find.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/__algorithm/comp.h \
@@ -734,7 +734,7 @@ CMakeFiles/pioasm.dir/pio_assembler.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/__chrono/year_month_weekday.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/__chrono/file_clock.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/__chrono/literals.h \
-  /Users/michaelshipman/Developer/command_module/Code/(Not)XbeeJoint/pico-sdk/tools/pioasm/gen/parser.hpp \
+  /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/pico-sdk/tools/pioasm/gen/parser.hpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/string \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/__ios/fpos.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/__string/extern_template_lists.h \
@@ -812,12 +812,12 @@ CMakeFiles/pioasm.dir/pio_assembler.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/__filesystem/recursive_directory_iterator.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/__filesystem/u8path.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/sstream \
-  /Users/michaelshipman/Developer/command_module/Code/(Not)XbeeJoint/pico-sdk/tools/pioasm/pio_types.h \
+  /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/pico-sdk/tools/pioasm/pio_types.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/map \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/__tree \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/set \
-  /Users/michaelshipman/Developer/command_module/Code/(Not)XbeeJoint/pico-sdk/tools/pioasm/gen/location.h \
+  /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/pico-sdk/tools/pioasm/gen/location.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/iostream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/cassert \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/assert.h \
-  /Users/michaelshipman/Developer/command_module/Code/(Not)XbeeJoint/pico-sdk/tools/pioasm/output_format.h
+  /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/pico-sdk/tools/pioasm/output_format.h

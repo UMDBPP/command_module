@@ -1,4 +1,4 @@
-# Install script for directory: /Users/michaelshipman/Developer/command_module/Code/(Not)XbeeJoint/pico-sdk/src/common/pico_stdlib
+# Install script for directory: /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/pico-sdk/src/common/pico_stdlib
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
