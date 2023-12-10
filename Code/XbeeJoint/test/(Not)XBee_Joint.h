@@ -12,6 +12,7 @@
 
 #define INCLUDE_DEBUG \
     1             // controls if debug conditionals are included at compile time
-short debug = 1;  // controls if debug messages are printed
+
+extern short xbee_joint_debug_msgs;  // controls if debug messages are printed
 
 #endif

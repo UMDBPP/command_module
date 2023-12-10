@@ -450,30 +450,42 @@
 class DRF1262 {
    public:
     spi_inst_t *spi = spi0;
-    const uint cs_pin;
-    const uint sck_pin;
-    const uint mosi_pin;
-    const uint miso_pin;
-    const uint txen_pin;
-    const uint dio1_pin;
-    const uint busy_pin;
-    const uint sw_pin;
-    const uint8_t tx_buffer = 0x00;
-    const uint8_t rx_buffer = 0x7F;
+    uint cs_pin;
+    uint sck_pin;
+    uint mosi_pin;
+    uint miso_pin;
+    uint txen_pin;
+    uint dio1_pin;
+    uint busy_pin;
+    uint sw_pin;
+    uint8_t tx_buffer = 0x00;
+    uint8_t rx_buffer = 0x7F;
 
-    void radio_init();
-    void get_radio_status();
-    void get_radio_errors();
-    void set_radio_standby();
-    void read_radio_registers();
-    void set_radio_packet_type_lora();
-    void set_radio_pa_config();
-    void set_radio_rf_freq();
-    void set_tx_params();
-    void set_radio_lora_modulation_param();
-    void set_lora_packet_parameters();
-    void clear_radio_errors(void);
+    DRF1262(spi_inst_t *spi_p, const uint cs, const uint sck, const uint mosi,
+            const uint miso, const uint txen, const uint dio1, const uint busy,
+            const uint sw) {
+        spi = spi_p;
+        cs_pin = cs;
+        sck_pin = sck;
+        mosi_pin = mosi;
+        miso_pin = miso;
+        txen_pin = txen;
+        dio1_pin = dio1;
+        busy_pin = busy;
+        sw_pin = sw;
+    }
+
     void radio_init(void);
+    void get_radio_status(void);
+    void get_radio_errors(void);
+    void set_radio_standby(void);
+    void read_radio_registers(void);
+    void set_radio_packet_type_lora(void);
+    void set_radio_pa_config(void);
+    void set_radio_rf_freq(void);
+    void set_tx_params(void);
+    void set_radio_lora_modulation_param();
+    void clear_radio_errors(void);
     void radio_send(uint8_t *data, short len);
     void radio_receive_cont(void);
     void set_dio_irq(void);

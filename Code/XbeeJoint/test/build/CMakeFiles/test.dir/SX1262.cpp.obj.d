@@ -1,7 +1,7 @@
 CMakeFiles/test.dir/SX1262.cpp.obj: \
  /Users/michaelshipman/Developer/command_module/Code/XbeeJoint/test/SX1262.cpp \
  /Users/michaelshipman/Developer/command_module/Code/XbeeJoint/test/SX1262.h \
- /Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/common/pico_stdlib/include/pico/stdlib.h \
+ /Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/rp2_common/hardware_spi/include/hardware/spi.h \
  /Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/common/pico_base/include/pico.h \
  /Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/common/pico_base/include/pico/types.h \
  /Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/common/pico_base/include/pico/assert.h \
@@ -36,11 +36,15 @@ CMakeFiles/test.dir/SX1262.cpp.obj: \
  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/sys/cdefs.h \
  /Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/common/pico_base/include/pico/types.h \
  /Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/common/pico_base/include/pico/error.h \
+ /Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/spi.h \
+ /Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h \
+ /Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/spi.h \
+ /Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/dreq.h \
+ /Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/common/pico_stdlib/include/pico/stdlib.h \
  /Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/rp2_common/pico_stdio/include/pico/stdio.h \
  /Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/common/pico_time/include/pico/time.h \
  /Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/rp2_common/hardware_timer/include/hardware/timer.h \
  /Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/timer.h \
- /Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h \
  /Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/timer.h \
  /Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/rp2_common/hardware_gpio/include/hardware/gpio.h \
  /Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/sio.h \
@@ -55,7 +59,6 @@ CMakeFiles/test.dir/SX1262.cpp.obj: \
  /Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/rp2_common/hardware_uart/include/hardware/uart.h \
  /Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/uart.h \
  /Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/uart.h \
- /Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/dreq.h \
  /Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/rp2_common/pico_stdio_uart/include/pico/stdio_uart.h \
  /Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/rp2_common/pico_stdio_usb/include/pico/stdio_usb.h \
  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/c++/13.2.1/math.h \
@@ -108,9 +111,4 @@ CMakeFiles/test.dir/SX1262.cpp.obj: \
  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/lib/gcc/arm-none-eabi/13.2.1/include/stdarg.h \
  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/sys/stdio.h \
  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/c++/13.2.1/stdlib.h \
- /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/c++/13.2.1/cstdlib \
- /Users/michaelshipman/Developer/command_module/Code/XbeeJoint/test/(Not)XBee_Joint.h \
- /Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/rp2_common/hardware_spi/include/hardware/spi.h \
- /Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/spi.h \
- /Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/spi.h \
- /Users/michaelshipman/Developer/command_module/Code/XbeeJoint/pico-sdk/src/rp2_common/pico_rand/include/pico/rand.h
+ /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/c++/13.2.1/cstdlib

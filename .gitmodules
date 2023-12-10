@@ -13,3 +13,7 @@
 	path = Code/XbeeJoint/pico-sdk
 	url = https://github.com/raspberrypi/pico-sdk.git
 	branch = master
+[submodule "Code/libraries/rp2040-drf1262-lib"]
+	path = Code/libraries/rp2040-drf1262-lib
+	url = https://github.com/UMDBPP/rp2040-drf1262-lib.git
+	branch = main
