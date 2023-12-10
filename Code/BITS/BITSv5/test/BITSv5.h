@@ -12,4 +12,9 @@
 #define SDA_PIN 20
 #define SCL_PIN 21
 
+#define INCLUDE_DEBUG \
+    1  // controls if debug conditionals are included at compile time
+
+extern short debug_msgs;  // controls if debug messages are printed
+
 #endif

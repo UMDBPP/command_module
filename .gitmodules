@@ -9,8 +9,8 @@
 [submodule "Code/BITS/BITSv5/test/littlefs"]
 	path = Code/BITS/BITSv5/test/littlefs
 	url = https://github.com/littlefs-project/littlefs.git
-[submodule "Code/XbeeJoint/pico-sdk"]
-	path = Code/XbeeJoint/pico-sdk
+[submodule "Code/Not_XbeeJoint/pico-sdk"]
+	path = Code/Not_XbeeJoint/pico-sdk
 	url = https://github.com/raspberrypi/pico-sdk.git
 	branch = master
 [submodule "Code/libraries/rp2040-drf1262-lib"]

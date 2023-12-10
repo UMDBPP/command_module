@@ -32,7 +32,7 @@ uint8_t* ms5607_read_prom(uint8_t* buf) {
 }
 
 uint8_t* ms5607_conversion(uint8_t* buf) {
-    uint8_t cmd = MS5607_CONV_CMD;
+    uint8_t cmd = MS5607_PRESS_CONV_CMD;
 
     i2c_write_blocking(i2c_p, MS5607_ADDR, &cmd, 1, false);
 
