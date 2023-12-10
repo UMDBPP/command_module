@@ -1,0 +1,63 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Build (Not) Xbee Joint
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "master" branch
+  push:
+    branches: ["master"]
+  pull_request:
+    branches: ["master"]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+
+      # Runs a set of commands using the runners shell
+      - name: Run a multi-line script
+        run: |
+          sudo apt update
+          sudo apt install -y cmake gcc-arm-none-eabi libnewlib-arm-none-eabi build-essential
+          pwd
+          git submodule update --init
+          cd Code/Not_XbeeJoint/test
+          rm -rf build
+          mkdir build
+          cd build
+          export PICO_SDK_PATH=../../pico-sdk
+          cmake ..
+          make
+
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: NotXbeeJoint-v0.0.0
+          files: |
+            /home/runner/work/command_module/command_module/Code/BITS/BITSv5/test/build/test.uf2
+            /home/runner/work/command_module/command_module/Code/BITS/BITSv5/test/build/test.bin
+            /home/runner/work/command_module/command_module/Code/BITS/BITSv5/test/build/test.hex
+            /home/runner/work/command_module/command_module/Code/BITS/BITSv5/test/build/test.elf
+            /home/runner/work/command_module/command_module/Code/BITS/BITSv5/test/build/test_rx.uf2
+            /home/runner/work/command_module/command_module/Code/BITS/BITSv5/test/build/test_rx.bin
+            /home/runner/work/command_module/command_module/Code/BITS/BITSv5/test/build/test_rx.hex
+            /home/runner/work/command_module/command_module/Code/BITS/BITSv5/test/build/test_rx.elf
+            /home/runner/work/command_module/command_module/Code/BITS/BITSv5/test/build/test_tx.uf2
+            /home/runner/work/command_module/command_module/Code/BITS/BITSv5/test/build/test_tx.bin
+            /home/runner/work/command_module/command_module/Code/BITS/BITSv5/test/build/test_tx.hex
+            /home/runner/work/command_module/command_module/Code/BITS/BITSv5/test/build/test_tx.elf
+            /home/runner/work/command_module/command_module/Code/BITS/BITSv5/test/build/test_rx_tx.uf2
+            /home/runner/work/command_module/command_module/Code/BITS/BITSv5/test/build/test_rx_tx.bin
+            /home/runner/work/command_module/command_module/Code/BITS/BITSv5/test/build/test_rx_tx.hex
+            /home/runner/work/command_module/command_module/Code/BITS/BITSv5/test/build/test_rx_tx.elf

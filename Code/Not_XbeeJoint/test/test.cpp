@@ -66,7 +66,7 @@ int main() {
 
 #if RX_TEST
         rx_test();
-        get_radio_errors();
+        radio.get_radio_errors();
 #endif
 
         sleep_ms(500);
@@ -86,15 +86,15 @@ void transmit_test() {
 
     sleep_ms(100);
 
-#if DEBUG
-    get_radio_errors();
-    get_irq_status();
+#if INCLUDE_DEBUG
+    radio.get_radio_errors();
+    radio.get_irq_status();
 #endif
 
     radio.clear_irq_status();
 
-#if DEBUG
-    get_irq_status();
+#if INCLUDE_DEBUG
+    radio.get_irq_status();
 #endif
 }
 

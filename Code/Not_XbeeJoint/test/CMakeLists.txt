@@ -36,3 +36,35 @@ target_compile_definitions(test_rx_tx PRIVATE
     RX_TEST=1
     TX_TEST=1
 )
+
+add_executable(test_rx
+    test.cpp
+    ../../libraries/rp2040-drf1262-lib/SX1262.cpp
+)
+
+pico_enable_stdio_usb(test_rx 1)
+
+pico_add_extra_outputs(test_rx)
+
+target_link_libraries(test_rx pico_stdlib hardware_flash hardware_sync hardware_spi pico_rand pico_unique_id)
+
+target_compile_definitions(test_rx PRIVATE
+    RX_TEST=1
+    TX_TEST=0
+)
+
+add_executable(test_tx
+    test.cpp
+    ../../libraries/rp2040-drf1262-lib/SX1262.cpp
+)
+
+pico_enable_stdio_usb(test_tx 1)
+
+pico_add_extra_outputs(test_tx)
+
+target_link_libraries(test_tx pico_stdlib hardware_flash hardware_sync hardware_spi pico_rand pico_unique_id)
+
+target_compile_definitions(test_tx PRIVATE
+    RX_TEST=0
+    TX_TEST=1
+)
