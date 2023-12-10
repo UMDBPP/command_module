@@ -9,6 +9,9 @@
 #define DIO1_PIN 3
 #define BUSY_PIN 6
 #define SW_PIN 9
-#define DEBUG 1
+
+#define INCLUDE_DEBUG \
+    1             // controls if debug conditionals are included at compile time
+short debug = 1;  // controls if debug messages are printed
 
 #endif

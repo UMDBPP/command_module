@@ -1,6 +1,7 @@
 #ifndef _SX126X_H
 #define _SX126X_H
 
+#include "hardware/spi.h"
 #include "pico/stdlib.h"
 
 #define PACKET_LORA 1  // 0 = FSK
@@ -446,40 +447,81 @@
 #define SX126x_TXMODE_SYNC 0x02
 #define SX126x_TXMODE_BACK2RX 0x04
 
-void get_radio_status(void);
-void set_radio_standby(void);
-void get_radio_errors(void);
-void read_radio_registers(void);
-void radio_spi_init(void);
-void set_radio_packet_type_lora(void);
-void set_radio_pa_config(void);
-void set_radio_rf_freq(void);
-void set_buffer_base_address(void);
-void set_radio_lora_modulation_param(void);
-void set_dio2_rf_switch(void);
-uint8_t write_radio_buffer(void);
-void set_packet_parameters(void);
-void set_radio_sync_word(void);
-void set_tx(void);
-void set_tx_continuous_wave(void);
-void set_dio3_as_tcxo(void);
-void set_regulator_mode(void);
-void set_tx_params(void);
-void clear_radio_errors(void);
-void radio_init(void);
-void radio_send(void);
-void radio_receive_cont(void);
-void set_dio_irq(void);
-void read_radio_buffer(void);
-void clear_irq_status(void);
-void get_irq_status(void);
-void get_rx_buffer_status(void);
-void radio_receive_single(void);
-void set_radio_packet_type_fsk(void);
-void set_radio_fsk_modulation_param(void);
-void set_lora_symb_timeout(void);
-void calibrate_image(void);
-void set_fsk_packet_parameters(void);
-void set_lora_packet_parameters(void);
+class DRF1262 {
+   public:
+    spi_inst_t *spi = spi0;
+    const uint cs_pin;
+    const uint sck_pin;
+    const uint mosi_pin;
+    const uint miso_pin;
+    const uint txen_pin;
+    const uint dio1_pin;
+    const uint busy_pin;
+    const uint sw_pin;
+    const uint8_t tx_buffer = 0x00;
+    const uint8_t rx_buffer = 0x7F;
+
+    void radio_init();
+    void get_radio_status();
+    void get_radio_errors();
+    void set_radio_standby();
+    void read_radio_registers();
+    void set_radio_packet_type_lora();
+    void set_radio_pa_config();
+    void set_radio_rf_freq();
+    void set_tx_params();
+    void set_radio_lora_modulation_param();
+    void set_lora_packet_parameters();
+    void clear_radio_errors(void);
+    void radio_init(void);
+    void radio_send(uint8_t *data, short len);
+    void radio_receive_cont(void);
+    void set_dio_irq(void);
+
+    /**
+     * Reads payload data from the SX1262's buffer
+     *
+     * @param data pointer to payload data buffer
+     * @param num_bytes length of buffer, should not exceed 255
+     *
+     * @return -1 if buffer length is too large
+     */
+    short read_radio_buffer(uint8_t *data, short num_bytes);
+
+    void clear_irq_status(void);
+    void get_irq_status(void);
+    void get_rx_buffer_status(void);
+    void radio_receive_single(void);
+    void set_radio_packet_type_fsk(void);
+    void set_radio_fsk_modulation_param(void);
+    void set_lora_symb_timeout(void);
+    void calibrate_image(void);
+    void set_radio_sync_word(void);
+    void set_tx_continuous_wave(void);
+
+   private:
+    uint8_t length = 0x00;
+    uint8_t rx_buffer_start = 0x00;
+
+    void radio_spi_init();
+    void set_buffer_base_address();
+    void set_dio2_rf_switch(void);
+    void set_tx(void);
+    void set_fsk_packet_parameters(void);
+    void set_lora_packet_parameters(void);
+    void set_dio3_as_tcxo(void);
+    void set_regulator_mode(void);
+
+    /**
+     * Writes payload data to the SX1262's buffer
+     *
+     * @param offset address to start writing data at
+     * @param data pointer to payload data buffer
+     * @param num_bytes length of buffer, should not exceed 255
+     *
+     * @return -1 if buffer length is too large
+     */
+    short write_radio_buffer(uint8_t offset, uint8_t *data, short num_bytes);
+};
 
 #endif

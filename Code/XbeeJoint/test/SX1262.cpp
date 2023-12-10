@@ -10,7 +10,7 @@
 #include "pico/rand.h"
 #include "pico/stdlib.h"
 
-spi_inst_t *spi = spi0;
+// spi_inst_t *spi = spi0;
 
 const uint8_t read_reg_cmd = SX126X_CMD_READ_REGISTER;
 const uint8_t get_status_cmd = SX126X_CMD_GET_STATUS;
@@ -47,7 +47,7 @@ const uint8_t get_rx_buffer_cmd = SX126X_CMD_GET_RX_BUFFER_STATUS;
 const uint8_t set_lora_symb_timeout_cmd = SX126X_CMD_SET_LORA_SYMB_NUM_TIMEOUT;
 const uint8_t calibrate_image_cmd = SX126X_CMD_CALIBRATE_IMAGE;
 
-void radio_init() {
+void DRF1262::radio_init() {
     printf("Initializing Radio\n");
 
     radio_spi_init();
@@ -85,9 +85,6 @@ void radio_init() {
     // Step 6: Set Buffer Base Address
     set_buffer_base_address();
 
-    // Step 7: Write Buffer
-    write_radio_buffer();
-
     // Step 8: Set Modulation Parameters
     set_radio_lora_modulation_param();
 
@@ -106,7 +103,7 @@ void radio_init() {
     read_radio_registers();
 }
 
-void get_radio_status() {
+void DRF1262::get_radio_status() {
     gpio_put(CS_PIN, 0);
     spi_write_blocking(spi, &get_status_cmd, 1);
     spi_write_read_blocking(spi, &nop_cmd, &msg, 1);
@@ -114,7 +111,7 @@ void get_radio_status() {
     printf("radio status: %x\n", msg);
 }
 
-void set_radio_standby() {
+void DRF1262::set_radio_standby() {
     gpio_put(CS_PIN, 0);
     spi_write_blocking(spi, &set_standby_cmd, 1);
     spi_write_blocking(spi, &StdbyConfig, 1);
@@ -124,7 +121,7 @@ void set_radio_standby() {
     gpio_put(CS_PIN, 1);
 }
 
-void get_radio_errors() {
+void DRF1262::get_radio_errors() {
     gpio_put(CS_PIN, 0);
     spi_write_blocking(spi, &get_err_cmd, 1);
     spi_write_read_blocking(spi, &nop_cmd, &msg, 1);
@@ -136,7 +133,7 @@ void get_radio_errors() {
     printf("err: %x\n", msg);
 }
 
-void read_radio_registers() {
+void DRF1262::read_radio_registers() {
     printf("reg: %x%x\n", addr2, addr1);
 
     gpio_put(CS_PIN, 0);
@@ -156,7 +153,7 @@ void read_radio_registers() {
     gpio_put(CS_PIN, 1);
 }
 
-void radio_spi_init() {
+void DRF1262::radio_spi_init() {
     printf("Init radio SPI\n");
 
     gpio_init(CS_PIN);
@@ -190,9 +187,11 @@ void radio_spi_init() {
     gpio_set_function(MISO_PIN, GPIO_FUNC_SPI);
 }
 
-void set_radio_packet_type_lora() {
-#if DEBUG
-    printf("Setting Packet Type to LoRa\n");
+void DRF1262::set_radio_packet_type_lora() {
+#if INCLUDE_DEBUG
+    if (debug) {
+        printf("Setting Packet Type to LoRa\n");
+    }
 #endif
 
     gpio_put(CS_PIN, 0);
@@ -201,14 +200,16 @@ void set_radio_packet_type_lora() {
     gpio_put(CS_PIN, 1);
 }
 
-void set_radio_pa_config() {
+void DRF1262::set_radio_pa_config() {
     const uint8_t pa_duty = 0x04;
     const uint8_t hp_max = 0x07;
     const uint8_t device_sel = 0x00;
     const uint8_t pa_lut = 0x01;
 
-#if DEBUG
-    printf("Setting PA Config\n");
+#if INCLUDE_DEBUG
+    if (debug) {
+        printf("Setting PA Config\n");
+    }
 #endif
 
     gpio_put(CS_PIN, 0);
@@ -220,7 +221,7 @@ void set_radio_pa_config() {
     gpio_put(CS_PIN, 1);
 }
 
-void set_radio_rf_freq() {
+void DRF1262::set_radio_rf_freq() {
     const uint32_t frequency = 915000000;
 
     uint8_t buf[4];
@@ -243,7 +244,7 @@ void set_radio_rf_freq() {
     gpio_put(CS_PIN, 1);
 }
 
-void set_tx_params() {
+void DRF1262::set_tx_params() {
     const uint8_t power = 0x00;
     const uint8_t ramp_time = SX126X_PA_RAMP_200U;  // 200us ramp time
 
@@ -254,10 +255,7 @@ void set_tx_params() {
     gpio_put(CS_PIN, 1);
 }
 
-void set_buffer_base_address() {
-    const uint8_t tx_buffer = 0x00;
-    const uint8_t rx_buffer = 0x7F;
-
+void DRF1262::set_buffer_base_address() {
     gpio_put(CS_PIN, 0);
     spi_write_blocking(spi, &set_buffer_base_addr_cmd, 1);
     spi_write_blocking(spi, &tx_buffer, 1);
@@ -265,22 +263,20 @@ void set_buffer_base_address() {
     gpio_put(CS_PIN, 1);
 }
 
-uint8_t write_radio_buffer() {
-    const uint8_t offset = 0x00;
-    const uint8_t data = (uint8_t)get_rand_32();
+short DRF1262::write_radio_buffer(uint8_t offset, uint8_t *data,
+                                  short num_bytes) {
+    if (num_bytes > 255) return -1;
 
     gpio_put(CS_PIN, 0);
     spi_write_blocking(spi, &write_radio_buffer_cmd, 1);
     spi_write_blocking(spi, &offset, 1);
-    spi_write_blocking(spi, &data, 1);
+    spi_write_blocking(spi, data, num_bytes);
     gpio_put(CS_PIN, 1);
 
-    printf("Wrote %x to radio buffer\n", data);
-
-    return data;
+    return 0;
 }
 
-void set_radio_lora_modulation_param() {
+void DRF1262::set_radio_lora_modulation_param() {
     const uint8_t spreading_factor = 0x07;
     const uint8_t bandwidth = 0x04;
     const uint8_t coding_rate = 0x04;
@@ -295,7 +291,7 @@ void set_radio_lora_modulation_param() {
     gpio_put(CS_PIN, 1);
 }
 
-void set_lora_packet_parameters() {
+void DRF1262::set_lora_packet_parameters() {
     const uint8_t preamble2 = 0x00;
     const uint8_t preamble1 = 0x0F;
     const uint8_t header = 0x00;
@@ -316,7 +312,7 @@ void set_lora_packet_parameters() {
     gpio_put(CS_PIN, 1);
 }
 
-void set_fsk_packet_parameters() {
+void DRF1262::set_fsk_packet_parameters() {
     const uint8_t preamble2 = 0x00;
     const uint8_t preamble1 = 0x0F;
     const uint8_t preamble_det_len = 0x00;
@@ -346,8 +342,10 @@ void set_fsk_packet_parameters() {
 void set_dio2_rf_switch() {
     const uint8_t enable = 1;
 
-#if DEBUG
-    printf("Setting DIO2 as RF Switch\n");
+#if INCLUDE_DEBUG
+    if (debug) {
+        printf("Setting DIO2 as RF Switch\n");
+    }
 #endif
 
     gpio_put(CS_PIN, 0);
@@ -356,7 +354,7 @@ void set_dio2_rf_switch() {
     gpio_put(CS_PIN, 1);
 }
 
-void set_radio_sync_word() {
+void DRF1262::set_radio_sync_word() {
     const uint8_t msb2 = 0x07;
     const uint8_t msb1 = 0x40;
     const uint8_t lsb2 = 0x07;
@@ -364,8 +362,10 @@ void set_radio_sync_word() {
     const uint8_t data2 = 0x34;
     const uint8_t data1 = 0x44;
 
-#if DEBUG
-    printf("Setting Radio Sync Word\n");
+#if INCLUDE_DEBUG
+    if (debug) {
+        printf("Setting Radio Sync Word\n");
+    }
 #endif
 
     gpio_put(CS_PIN, 0);
@@ -384,9 +384,11 @@ void set_radio_sync_word() {
     gpio_put(CS_PIN, 1);
 }
 
-void set_tx_continuous_wave() {
-#if DEBUG
-    printf("Setting Mode TX Tone\n");
+void DRF1262::set_tx_continuous_wave() {
+#if INCLUDE_DEBUG
+    if (debug) {
+        printf("Setting Mode TX Tone\n");
+    }
 #endif
 
     gpio_put(CS_PIN, 0);
@@ -394,13 +396,15 @@ void set_tx_continuous_wave() {
     gpio_put(CS_PIN, 1);
 }
 
-void set_tx() {
+void DRF1262::set_tx() {
     const uint8_t timeout3 = 0x00;
     const uint8_t timeout2 = 0x00;
     const uint8_t timeout1 = 0x00;
 
-#if DEBUG
-    printf("Setting Mode TX\n");
+#if INCLUDE_DEBUG
+    if (debug) {
+        printf("Setting Mode TX\n");
+    }
 #endif
 
     gpio_put(CS_PIN, 0);
@@ -411,14 +415,16 @@ void set_tx() {
     gpio_put(CS_PIN, 1);
 }
 
-void set_dio3_as_tcxo() {
+void DRF1262::set_dio3_as_tcxo() {
     const uint8_t tcxoVoltage = 0x07;
     const uint8_t timeout3 = 0x01;
     const uint8_t timeout2 = 0x02;
     const uint8_t timeout1 = 0x80;
 
-#if DEBUG
-    printf("Setting DIO3 as TCXO CTRL\n");
+#if INCLUDE_DEBUG
+    if (debug) {
+        printf("Setting DIO3 as TCXO CTRL\n");
+    }
 #endif
 
     gpio_put(CS_PIN, 0);
@@ -433,10 +439,12 @@ void set_dio3_as_tcxo() {
     sleep_ms(10);
 }
 
-void set_regulator_mode() {
+void DRF1262::set_regulator_mode() {
     const uint8_t mode = 0x01;
-#if DEBUG
-    printf("Setting Regulator Mode to DC DC\n");
+#if INCLUDE_DEBUG
+    if (debug) {
+        printf("Setting Regulator Mode to DC DC\n");
+    }
 #endif
 
     gpio_put(CS_PIN, 0);
@@ -445,9 +453,11 @@ void set_regulator_mode() {
     gpio_put(CS_PIN, 1);
 }
 
-void clear_radio_errors() {
-#if DEBUG
-    printf("Clearing radio errors\n");
+void DRF1262::clear_radio_errors() {
+#if INCLUDE_DEBUG
+    if (debug) {
+        printf("Clearing radio errors\n");
+    }
 #endif
 
     gpio_put(CS_PIN, 0);
@@ -457,19 +467,20 @@ void clear_radio_errors() {
     gpio_put(CS_PIN, 1);
 }
 
-void radio_send() {
-    uint8_t payload = write_radio_buffer();
-    printf("Transmitting %x%x", payload);
+void DRF1262::radio_send(uint8_t *data, short len) {
+    uint8_t payload = write_radio_buffer(tx_buffer, data, len);
     set_tx();
 }
 
-void radio_receive_cont() {
+void DRF1262::radio_receive_cont() {
     uint8_t timeout3 = 0xFF;
     uint8_t timeout2 = 0xFF;
     uint8_t timeout1 = 0xFF;
 
-#if DEBUG
-    printf("Entering Radio Receive Mode (Continuous)\n");
+#if INCLUDE_DEBUG
+    if (debug) {
+        printf("Entering Radio Receive Mode (Continuous)\n");
+    }
 #endif
 
     gpio_put(CS_PIN, 0);
@@ -480,13 +491,15 @@ void radio_receive_cont() {
     gpio_put(CS_PIN, 1);
 }
 
-void radio_receive_single() {
+void DRF1262::radio_receive_single() {
     uint8_t timeout3 = 0x00;
     uint8_t timeout2 = 0x00;
     uint8_t timeout1 = 0x00;
 
-#if DEBUG
-    printf("Entering Radio Receive Mode (Single)\n");
+#if INCLUDE_DEBUG
+    if (debug) {
+        printf("Entering Radio Receive Mode (Single)\n");
+    }
 #endif
 
     gpio_put(CS_PIN, 0);
@@ -497,7 +510,7 @@ void radio_receive_single() {
     gpio_put(CS_PIN, 1);
 }
 
-void set_dio_irq() {
+void DRF1262::set_dio_irq() {
     uint8_t irq_mask2 = 0xFF;
     uint8_t irq_mask1 = 0xFF;
 
@@ -522,12 +535,14 @@ void set_dio_irq() {
     gpio_put(CS_PIN, 1);
 }
 
-void clear_irq_status() {
+void DRF1262::clear_irq_status() {
     uint8_t irq_mask2 = 0xFF;
     uint8_t irq_mask1 = 0xFF;
 
-#if DEBUG
-    printf("Clearing IRQ\n");
+#if INCLUDE_DEBUG
+    if (debug) {
+        printf("Clearing IRQ\n");
+    }
 #endif
 
     gpio_put(CS_PIN, 0);
@@ -537,54 +552,43 @@ void clear_irq_status() {
     gpio_put(CS_PIN, 1);
 }
 
-void read_radio_buffer() {
-    uint8_t offset = 0x7F;
+short DRF1262::read_radio_buffer(uint8_t *data, short num_bytes) {
+    get_rx_buffer_status();
 
-    uint8_t buf[20] = {0};
+    if (num_bytes > 255 || num_bytes < length) return -1;
 
     printf("Reading Radio Buffer\n");
     gpio_put(CS_PIN, 0);
     spi_write_read_blocking(spi, &read_buffer_cmd, &msg, 1);
-    spi_write_read_blocking(spi, &offset, &msg, 1);
+
+    // these next two return the status of the radio
+    spi_write_read_blocking(spi, &rx_buffer_start, &msg, 1);
     spi_write_read_blocking(spi, &nop_cmd, &msg, 1);
-    spi_write_read_blocking(spi, &nop_cmd, &buf[0], 1);
-    // spi_write_read_blocking(spi, &nop_cmd, &buf[1], 1);
-    // spi_write_read_blocking(spi, &nop_cmd, &buf[2], 1);
-    // spi_write_read_blocking(spi, &nop_cmd, &buf[3], 1);
-    // spi_write_read_blocking(spi, &nop_cmd, &buf[4], 1);
-    // spi_write_read_blocking(spi, &nop_cmd, &buf[5], 1);
-    // spi_write_read_blocking(spi, &nop_cmd, &buf[6], 1);
-    // spi_write_read_blocking(spi, &nop_cmd, &buf[7], 1);
-    // spi_write_read_blocking(spi, &nop_cmd, &buf[8], 1);
-    // spi_write_read_blocking(spi, &nop_cmd, &buf[9], 1);
-    // spi_write_read_blocking(spi, &nop_cmd, &buf[10], 1);
-    // spi_write_read_blocking(spi, &nop_cmd, &buf[11], 1);
-    // spi_write_read_blocking(spi, &nop_cmd, &buf[12], 1);
-    // spi_write_read_blocking(spi, &nop_cmd, &buf[13], 1);
-    // spi_write_read_blocking(spi, &nop_cmd, &buf[14], 1);
-    // spi_write_read_blocking(spi, &nop_cmd, &buf[15], 1);
-    // spi_write_read_blocking(spi, &nop_cmd, &buf[16], 1);
-    // spi_write_read_blocking(spi, &nop_cmd, &buf[17], 1);
-    // spi_write_read_blocking(spi, &nop_cmd, &buf[18], 1);
-    // spi_write_read_blocking(spi, &nop_cmd, &buf[19], 1);
+
+    spi_write_read_blocking(spi, &nop_cmd, data, num_bytes);
     gpio_put(CS_PIN, 1);
 
-    printf("Received data:");
-    printf(" %x", buf[0]);
+#if INCLUDE_DEBUG
+    if (debug) {
+        printf("Received data:");
 
-    // for (int i = 0; i < 1; i++) {
-    //     printf(" %x", buf[i]);
-    // }
+        for (short i = 0; i < num_bytes; i++) {
+            printf(" %x", data[i]);
+        }
 
-    printf("\n");
+        printf("\n");
+    }
+#endif
 }
 
-void get_irq_status() {
+void DRF1262::get_irq_status() {
     uint8_t status2 = 0x00;
     uint8_t status1 = 0x00;
 
-#if DEBUG
-    printf("Getting IRQ Status\n");
+#if INCLUDE_DEBUG
+    if (debug) {
+        printf("Getting IRQ Status\n");
+    }
 #endif
 
     gpio_put(CS_PIN, 0);
@@ -597,33 +601,36 @@ void get_irq_status() {
     printf("IRQ Status Register %x %x\n", status2, status1);
 }
 
-void get_rx_buffer_status() {
-    uint8_t length = 0x00;
-    uint8_t buffer_start = 0x00;
-
-#if DEBUG
-    printf("Getting RX Buffer Status\n");
+void DRF1262::get_rx_buffer_status() {
+#if INCLUDE_DEBUG
+    if (debug) {
+        printf("Getting RX Buffer Status\n");
+    }
 #endif
 
     gpio_put(CS_PIN, 0);
     spi_write_blocking(spi, &get_rx_buffer_cmd, 1);
     spi_write_blocking(spi, &nop_cmd, 1);
     spi_write_read_blocking(spi, &nop_cmd, &length, 1);
-    spi_write_read_blocking(spi, &nop_cmd, &buffer_start, 1);
+    spi_write_read_blocking(spi, &nop_cmd, &rx_buffer_start, 1);
     gpio_put(CS_PIN, 1);
 
-    printf("Payload Length %x\n", length);
-    printf("Buffer Pointer %x\n", buffer_start);
+#if INCLUDE_DEBUG
+    if (debug) {
+        printf("Payload Length %x\n", length);
+        printf("Buffer Pointer %x\n", rx_buffer_start);
+    }
+#endif
 }
 
-void set_lora_symb_timeout() {
+void DRF1262::set_lora_symb_timeout() {
     uint8_t symb_num = 0x0F;
 
     spi_write_blocking(spi, &set_lora_symb_timeout_cmd, 1);
     spi_write_blocking(spi, &symb_num, 1);
 }
 
-void calibrate_image() {
+void DRF1262::calibrate_image() {
     uint8_t freq1 = 0xE1;
     uint8_t freq2 = 0xE9;
 
@@ -632,9 +639,11 @@ void calibrate_image() {
     spi_write_blocking(spi, &freq2, 1);
 }
 
-void set_radio_packet_type_fsk() {
-#if DEBUG
-    printf("Setting Packet Type to FSK\n");
+void DRF1262::set_radio_packet_type_fsk() {
+#if INCLUDE_DEBUG
+    if (debug) {
+        printf("Setting Packet Type to FSK\n");
+    }
 #endif
 
     gpio_put(CS_PIN, 0);
