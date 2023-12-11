@@ -11,7 +11,7 @@
 #define SW_PIN 9
 
 #define INCLUDE_DEBUG \
-    1             // controls if debug conditionals are included at compile time
+    1  // controls if debug conditionals are included at compile time
 
 extern short debug_msgs;  // controls if debug messages are printed
 

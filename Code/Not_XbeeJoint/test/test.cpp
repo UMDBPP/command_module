@@ -45,6 +45,7 @@ int main() {
 
     sleep_ms(5000);
 
+    radio.debug_msg_en = debug_msgs;
     radio.radio_init();
 
     pico_get_unique_board_id_string(id,
@@ -80,7 +81,7 @@ void transmit_test() {
 
     data[4] = (char)get_rand_32();
 
-    printf("Sending payload: %s", data);
+    printf("Sending payload: %s\n", data);
 
     radio.radio_send((uint8_t *)data, 5);
 
@@ -103,6 +104,8 @@ void rx_test() {
         '\0', '\0', '\0', '\0', '\0', '\0',
     };
 
+    printf("Receive Test\n");
+
     radio.radio_receive_single();
 
     while (!gpio_get(DIO1_PIN)) {
@@ -119,5 +122,5 @@ void rx_test() {
 
     radio.read_radio_buffer((uint8_t *)data, 5);
 
-    printf("Got some data: %s | %x%x", data, data[4]);
+    printf("Got some data: %s | %x", data, data[4]);
 }
