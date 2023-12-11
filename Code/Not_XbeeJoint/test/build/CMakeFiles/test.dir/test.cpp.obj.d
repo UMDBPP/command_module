@@ -1,5 +1,5 @@
 CMakeFiles/test.dir/test.cpp.obj: \
- /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/test/test.cpp \
+ /Users/michaelshipman/Desktop/command_module/Code/Not_XbeeJoint/test/test.cpp \
  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/c++/13.2.1/math.h \
  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/c++/13.2.1/cmath \
  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/c++/13.2.1/bits/requires_hosted.h \
@@ -68,12 +68,12 @@ CMakeFiles/test.dir/test.cpp.obj: \
  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/sys/_locale.h \
  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/strings.h \
  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/sys/string.h \
- /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/test/(Not)XBee_Joint.h \
- /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/test/../../libraries/rp2040-drf1262-lib/SX1262.h \
- /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp2_common/hardware_spi/include/hardware/spi.h \
- /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/pico-sdk/src/common/pico_base/include/pico.h \
- /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/pico-sdk/src/common/pico_base/include/pico/types.h \
- /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/pico-sdk/src/common/pico_base/include/pico/assert.h \
+ /Users/michaelshipman/Desktop/command_module/Code/Not_XbeeJoint/test/(Not)XBee_Joint.h \
+ /Users/michaelshipman/Desktop/command_module/Code/Not_XbeeJoint/test/../../libraries/rp2040-drf1262-lib/SX1262.h \
+ /Users/michaelshipman/Desktop/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp2_common/hardware_spi/include/hardware/spi.h \
+ /Users/michaelshipman/Desktop/command_module/Code/Not_XbeeJoint/pico-sdk/src/common/pico_base/include/pico.h \
+ /Users/michaelshipman/Desktop/command_module/Code/Not_XbeeJoint/pico-sdk/src/common/pico_base/include/pico/types.h \
+ /Users/michaelshipman/Desktop/command_module/Code/Not_XbeeJoint/pico-sdk/src/common/pico_base/include/pico/assert.h \
  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/lib/gcc/arm-none-eabi/13.2.1/include/stdbool.h \
  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/c++/13.2.1/cassert \
  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/assert.h \
@@ -81,46 +81,46 @@ CMakeFiles/test.dir/test.cpp.obj: \
  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/stdint.h \
  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/sys/_intsup.h \
  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/sys/_stdint.h \
- /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/test/build/generated/pico_base/pico/version.h \
- /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/pico-sdk/src/common/pico_base/include/pico/config.h \
- /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/test/build/generated/pico_base/pico/config_autogen.h \
- /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/pico-sdk/src/boards/include/boards/pico.h \
- /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
- /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp2_common/pico_platform/include/pico/platform.h \
- /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
- /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
- /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
- /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/pico-sdk/src/common/pico_base/include/pico/types.h \
- /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/pico-sdk/src/common/pico_base/include/pico/error.h \
- /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/spi.h \
- /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h \
- /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/spi.h \
- /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/dreq.h \
- /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/pico-sdk/src/common/pico_stdlib/include/pico/stdlib.h \
- /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp2_common/pico_stdio/include/pico/stdio.h \
- /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/pico-sdk/src/common/pico_time/include/pico/time.h \
- /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp2_common/hardware_timer/include/hardware/timer.h \
- /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/timer.h \
- /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/timer.h \
- /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp2_common/hardware_gpio/include/hardware/gpio.h \
- /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/sio.h \
- /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/interp.h \
- /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/padsbank0.h \
- /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/pads_bank0.h \
- /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/iobank0.h \
- /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/io_bank0.h \
- /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp2_common/hardware_irq/include/hardware/irq.h \
- /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/intctrl.h \
- /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/m0plus.h \
- /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp2_common/hardware_uart/include/hardware/uart.h \
- /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/uart.h \
- /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/uart.h \
- /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp2_common/pico_stdio_uart/include/pico/stdio_uart.h \
- /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp2_common/pico_stdio_usb/include/pico/stdio_usb.h \
- /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp2_common/hardware_flash/include/hardware/flash.h \
- /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/pico-sdk/src/common/pico_binary_info/include/pico/binary_info.h \
- /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/pico-sdk/src/common/pico_binary_info/include/pico/binary_info/defs.h \
- /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/pico-sdk/src/common/pico_binary_info/include/pico/binary_info/structure.h \
- /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/pico-sdk/src/common/pico_binary_info/include/pico/binary_info/code.h \
- /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp2_common/pico_rand/include/pico/rand.h \
- /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp2_common/pico_unique_id/include/pico/unique_id.h
+ /Users/michaelshipman/Desktop/command_module/Code/Not_XbeeJoint/test/build/generated/pico_base/pico/version.h \
+ /Users/michaelshipman/Desktop/command_module/Code/Not_XbeeJoint/pico-sdk/src/common/pico_base/include/pico/config.h \
+ /Users/michaelshipman/Desktop/command_module/Code/Not_XbeeJoint/test/build/generated/pico_base/pico/config_autogen.h \
+ /Users/michaelshipman/Desktop/command_module/Code/Not_XbeeJoint/pico-sdk/src/boards/include/boards/pico.h \
+ /Users/michaelshipman/Desktop/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
+ /Users/michaelshipman/Desktop/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp2_common/pico_platform/include/pico/platform.h \
+ /Users/michaelshipman/Desktop/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
+ /Users/michaelshipman/Desktop/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
+ /Users/michaelshipman/Desktop/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
+ /Users/michaelshipman/Desktop/command_module/Code/Not_XbeeJoint/pico-sdk/src/common/pico_base/include/pico/types.h \
+ /Users/michaelshipman/Desktop/command_module/Code/Not_XbeeJoint/pico-sdk/src/common/pico_base/include/pico/error.h \
+ /Users/michaelshipman/Desktop/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/spi.h \
+ /Users/michaelshipman/Desktop/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h \
+ /Users/michaelshipman/Desktop/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/spi.h \
+ /Users/michaelshipman/Desktop/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/dreq.h \
+ /Users/michaelshipman/Desktop/command_module/Code/Not_XbeeJoint/pico-sdk/src/common/pico_stdlib/include/pico/stdlib.h \
+ /Users/michaelshipman/Desktop/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp2_common/pico_stdio/include/pico/stdio.h \
+ /Users/michaelshipman/Desktop/command_module/Code/Not_XbeeJoint/pico-sdk/src/common/pico_time/include/pico/time.h \
+ /Users/michaelshipman/Desktop/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp2_common/hardware_timer/include/hardware/timer.h \
+ /Users/michaelshipman/Desktop/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/timer.h \
+ /Users/michaelshipman/Desktop/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/timer.h \
+ /Users/michaelshipman/Desktop/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp2_common/hardware_gpio/include/hardware/gpio.h \
+ /Users/michaelshipman/Desktop/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/sio.h \
+ /Users/michaelshipman/Desktop/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/interp.h \
+ /Users/michaelshipman/Desktop/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/padsbank0.h \
+ /Users/michaelshipman/Desktop/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/pads_bank0.h \
+ /Users/michaelshipman/Desktop/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/iobank0.h \
+ /Users/michaelshipman/Desktop/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/io_bank0.h \
+ /Users/michaelshipman/Desktop/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp2_common/hardware_irq/include/hardware/irq.h \
+ /Users/michaelshipman/Desktop/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/intctrl.h \
+ /Users/michaelshipman/Desktop/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/m0plus.h \
+ /Users/michaelshipman/Desktop/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp2_common/hardware_uart/include/hardware/uart.h \
+ /Users/michaelshipman/Desktop/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/uart.h \
+ /Users/michaelshipman/Desktop/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/uart.h \
+ /Users/michaelshipman/Desktop/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp2_common/pico_stdio_uart/include/pico/stdio_uart.h \
+ /Users/michaelshipman/Desktop/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp2_common/pico_stdio_usb/include/pico/stdio_usb.h \
+ /Users/michaelshipman/Desktop/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp2_common/hardware_flash/include/hardware/flash.h \
+ /Users/michaelshipman/Desktop/command_module/Code/Not_XbeeJoint/pico-sdk/src/common/pico_binary_info/include/pico/binary_info.h \
+ /Users/michaelshipman/Desktop/command_module/Code/Not_XbeeJoint/pico-sdk/src/common/pico_binary_info/include/pico/binary_info/defs.h \
+ /Users/michaelshipman/Desktop/command_module/Code/Not_XbeeJoint/pico-sdk/src/common/pico_binary_info/include/pico/binary_info/structure.h \
+ /Users/michaelshipman/Desktop/command_module/Code/Not_XbeeJoint/pico-sdk/src/common/pico_binary_info/include/pico/binary_info/code.h \
+ /Users/michaelshipman/Desktop/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp2_common/pico_rand/include/pico/rand.h \
+ /Users/michaelshipman/Desktop/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp2_common/pico_unique_id/include/pico/unique_id.h

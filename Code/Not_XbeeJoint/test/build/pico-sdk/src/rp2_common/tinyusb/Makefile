@@ -57,10 +57,10 @@ RM = /opt/homebrew/Cellar/cmake/3.27.7/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/test
+CMAKE_SOURCE_DIR = /Users/michaelshipman/Desktop/command_module/Code/Not_XbeeJoint/test
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/test/build
+CMAKE_BINARY_DIR = /Users/michaelshipman/Desktop/command_module/Code/Not_XbeeJoint/test/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/test/build && $(CMAKE_COMMAND) -E cmake_progress_start /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/test/build/CMakeFiles /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/test/build/pico-sdk/src/rp2_common/tinyusb//CMakeFiles/progress.marks
-	cd /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/test/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 pico-sdk/src/rp2_common/tinyusb/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/test/build/CMakeFiles 0
+	cd /Users/michaelshipman/Desktop/command_module/Code/Not_XbeeJoint/test/build && $(CMAKE_COMMAND) -E cmake_progress_start /Users/michaelshipman/Desktop/command_module/Code/Not_XbeeJoint/test/build/CMakeFiles /Users/michaelshipman/Desktop/command_module/Code/Not_XbeeJoint/test/build/pico-sdk/src/rp2_common/tinyusb//CMakeFiles/progress.marks
+	cd /Users/michaelshipman/Desktop/command_module/Code/Not_XbeeJoint/test/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 pico-sdk/src/rp2_common/tinyusb/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/michaelshipman/Desktop/command_module/Code/Not_XbeeJoint/test/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/test/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 pico-sdk/src/rp2_common/tinyusb/clean
+	cd /Users/michaelshipman/Desktop/command_module/Code/Not_XbeeJoint/test/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 pico-sdk/src/rp2_common/tinyusb/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,22 +103,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/test/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 pico-sdk/src/rp2_common/tinyusb/preinstall
+	cd /Users/michaelshipman/Desktop/command_module/Code/Not_XbeeJoint/test/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 pico-sdk/src/rp2_common/tinyusb/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/test/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 pico-sdk/src/rp2_common/tinyusb/preinstall
+	cd /Users/michaelshipman/Desktop/command_module/Code/Not_XbeeJoint/test/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 pico-sdk/src/rp2_common/tinyusb/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/test/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /Users/michaelshipman/Desktop/command_module/Code/Not_XbeeJoint/test/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 pico-sdk/src/rp2_common/tinyusb/CMakeFiles/PioasmBuild.dir/rule:
-	cd /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/test/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 pico-sdk/src/rp2_common/tinyusb/CMakeFiles/PioasmBuild.dir/rule
+	cd /Users/michaelshipman/Desktop/command_module/Code/Not_XbeeJoint/test/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 pico-sdk/src/rp2_common/tinyusb/CMakeFiles/PioasmBuild.dir/rule
 .PHONY : pico-sdk/src/rp2_common/tinyusb/CMakeFiles/PioasmBuild.dir/rule
 
 # Convenience name for target.
@@ -127,12 +127,12 @@ PioasmBuild: pico-sdk/src/rp2_common/tinyusb/CMakeFiles/PioasmBuild.dir/rule
 
 # fast build rule for target.
 PioasmBuild/fast:
-	cd /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/test/build && $(MAKE) $(MAKESILENT) -f pico-sdk/src/rp2_common/tinyusb/CMakeFiles/PioasmBuild.dir/build.make pico-sdk/src/rp2_common/tinyusb/CMakeFiles/PioasmBuild.dir/build
+	cd /Users/michaelshipman/Desktop/command_module/Code/Not_XbeeJoint/test/build && $(MAKE) $(MAKESILENT) -f pico-sdk/src/rp2_common/tinyusb/CMakeFiles/PioasmBuild.dir/build.make pico-sdk/src/rp2_common/tinyusb/CMakeFiles/PioasmBuild.dir/build
 .PHONY : PioasmBuild/fast
 
 # Convenience name for target.
 pico-sdk/src/rp2_common/tinyusb/CMakeFiles/tinyusb_pico_pio_usb_usb_tx_pio_h.dir/rule:
-	cd /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/test/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 pico-sdk/src/rp2_common/tinyusb/CMakeFiles/tinyusb_pico_pio_usb_usb_tx_pio_h.dir/rule
+	cd /Users/michaelshipman/Desktop/command_module/Code/Not_XbeeJoint/test/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 pico-sdk/src/rp2_common/tinyusb/CMakeFiles/tinyusb_pico_pio_usb_usb_tx_pio_h.dir/rule
 .PHONY : pico-sdk/src/rp2_common/tinyusb/CMakeFiles/tinyusb_pico_pio_usb_usb_tx_pio_h.dir/rule
 
 # Convenience name for target.
@@ -141,12 +141,12 @@ tinyusb_pico_pio_usb_usb_tx_pio_h: pico-sdk/src/rp2_common/tinyusb/CMakeFiles/ti
 
 # fast build rule for target.
 tinyusb_pico_pio_usb_usb_tx_pio_h/fast:
-	cd /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/test/build && $(MAKE) $(MAKESILENT) -f pico-sdk/src/rp2_common/tinyusb/CMakeFiles/tinyusb_pico_pio_usb_usb_tx_pio_h.dir/build.make pico-sdk/src/rp2_common/tinyusb/CMakeFiles/tinyusb_pico_pio_usb_usb_tx_pio_h.dir/build
+	cd /Users/michaelshipman/Desktop/command_module/Code/Not_XbeeJoint/test/build && $(MAKE) $(MAKESILENT) -f pico-sdk/src/rp2_common/tinyusb/CMakeFiles/tinyusb_pico_pio_usb_usb_tx_pio_h.dir/build.make pico-sdk/src/rp2_common/tinyusb/CMakeFiles/tinyusb_pico_pio_usb_usb_tx_pio_h.dir/build
 .PHONY : tinyusb_pico_pio_usb_usb_tx_pio_h/fast
 
 # Convenience name for target.
 pico-sdk/src/rp2_common/tinyusb/CMakeFiles/tinyusb_pico_pio_usb_usb_rx_pio_h.dir/rule:
-	cd /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/test/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 pico-sdk/src/rp2_common/tinyusb/CMakeFiles/tinyusb_pico_pio_usb_usb_rx_pio_h.dir/rule
+	cd /Users/michaelshipman/Desktop/command_module/Code/Not_XbeeJoint/test/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 pico-sdk/src/rp2_common/tinyusb/CMakeFiles/tinyusb_pico_pio_usb_usb_rx_pio_h.dir/rule
 .PHONY : pico-sdk/src/rp2_common/tinyusb/CMakeFiles/tinyusb_pico_pio_usb_usb_rx_pio_h.dir/rule
 
 # Convenience name for target.
@@ -155,7 +155,7 @@ tinyusb_pico_pio_usb_usb_rx_pio_h: pico-sdk/src/rp2_common/tinyusb/CMakeFiles/ti
 
 # fast build rule for target.
 tinyusb_pico_pio_usb_usb_rx_pio_h/fast:
-	cd /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/test/build && $(MAKE) $(MAKESILENT) -f pico-sdk/src/rp2_common/tinyusb/CMakeFiles/tinyusb_pico_pio_usb_usb_rx_pio_h.dir/build.make pico-sdk/src/rp2_common/tinyusb/CMakeFiles/tinyusb_pico_pio_usb_usb_rx_pio_h.dir/build
+	cd /Users/michaelshipman/Desktop/command_module/Code/Not_XbeeJoint/test/build && $(MAKE) $(MAKESILENT) -f pico-sdk/src/rp2_common/tinyusb/CMakeFiles/tinyusb_pico_pio_usb_usb_rx_pio_h.dir/build.make pico-sdk/src/rp2_common/tinyusb/CMakeFiles/tinyusb_pico_pio_usb_usb_rx_pio_h.dir/build
 .PHONY : tinyusb_pico_pio_usb_usb_rx_pio_h/fast
 
 # Help Target
@@ -180,6 +180,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/test/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /Users/michaelshipman/Desktop/command_module/Code/Not_XbeeJoint/test/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 
