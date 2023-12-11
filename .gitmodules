@@ -1,7 +1,3 @@
-[submodule "Boards/kicad-lib"]
-	path = Boards/kicad-lib
-	url = https://github.com/UMDBPP/kicad-lib.git
-	branch = master
 [submodule "Code/BITS/BITSv5/pico-sdk"]
 	path = Code/BITS/BITSv5/pico-sdk
 	url = https://github.com/raspberrypi/pico-sdk.git
