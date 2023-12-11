@@ -31,7 +31,8 @@ jobs:
           sudo apt update
           sudo apt install -y cmake gcc-arm-none-eabi libnewlib-arm-none-eabi build-essential
           pwd
-          git submodule update --init
+          git submodule update --init --recursive
+          git submodule update --remote --recursive
           cd Code/BITS/BITSv5/test
           rm -rf build
           mkdir build
