@@ -13,3 +13,7 @@
 	path = Code/libraries/rp2040-drf1262-lib
 	url = https://github.com/UMDBPP/rp2040-drf1262-lib.git
 	branch = main
+[submodule "Boards/kicad-lib"]
+	path = Boards/kicad-lib
+	url = https://github.com/UMDBPP/kicad-lib.git
+	branch = main
