@@ -5,6 +5,7 @@ This folder contains the code needed to operate BITS (Balloon Iridium Telemetry 
 The test project below currently features 3 executable binaries that are automatically built using a GitHub action. This is a proof of concept and enables the BITSv5 software to be built independent of any single user which makes the process of changing and rebuilding the project more approachable to everyone.
 
 The action that builds the test project can be seen here: [https://github.com/UMDBPP/command_module/actions/workflows/build-BITSv5.yml](https://github.com/UMDBPP/command_module/actions/workflows/build-BITSv5.yml)
+
 And the release product that it creates can be seen here: [https://github.com/UMDBPP/command_module/releases/tag/BITSv5-v0.0.0](https://github.com/UMDBPP/command_module/releases/tag/BITSv5-v0.0.0)
 
 ## Test
