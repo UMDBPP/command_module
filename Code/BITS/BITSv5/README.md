@@ -11,9 +11,13 @@ And the release product that it creates can be seen here: [https://github.com/UM
 This is the current working space for developing BITSv5 software. Currently basic radio communications have been implemented and verified with hardware. Below are features that need to be implemented for a minimum viable product in the the next month or two.
 
 [x] Basic long range radio communications
+
 [] Serial console
+
 [] Non-volatile configuration
+
 [] GPS geolocation
+
 [] Iridium interface and comms
 
 ## Radio Test
