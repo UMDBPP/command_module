@@ -1,4 +1,4 @@
-# Install script for directory: /Users/michaelshipman/Desktop/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp2040/hardware_regs
+# Install script for directory: /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp2040/hardware_regs
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

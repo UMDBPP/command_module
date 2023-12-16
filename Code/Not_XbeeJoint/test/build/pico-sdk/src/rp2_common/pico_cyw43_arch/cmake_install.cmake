@@ -1,4 +1,4 @@
-# Install script for directory: /Users/michaelshipman/Desktop/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp2_common/pico_cyw43_arch
+# Install script for directory: /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp2_common/pico_cyw43_arch
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
