@@ -43,7 +43,7 @@ jobs:
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
-          tag_name: BITSv5-v0.0.0
+          tag_name: BITSv5-v0.0.1
           files: |
             /home/runner/work/command_module/command_module/Code/BITS/BITSv5/test/build/test.uf2
             /home/runner/work/command_module/command_module/Code/BITS/BITSv5/test/build/test.bin
