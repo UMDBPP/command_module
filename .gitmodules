@@ -19,3 +19,7 @@
 	branch = main
 [submodule "rp2040-drf1262-lib/"]
 	branch = main
+[submodule "Code/libraries/rp2040-ms5607-lib"]
+	path = Code/libraries/rp2040-ms5607-lib
+	url = https://github.com/UMDBPP/rp2040-ms5607-lib.git
+	branch = main
