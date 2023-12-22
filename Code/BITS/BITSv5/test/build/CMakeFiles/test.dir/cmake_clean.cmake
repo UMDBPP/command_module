@@ -1,6 +1,4 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/test.dir/MS5607.cpp.obj"
-  "CMakeFiles/test.dir/MS5607.cpp.obj.d"
   "CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.obj"
   "CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.obj.d"
   "CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj"
@@ -138,6 +136,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj.d"
   "CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj"
   "CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj.d"
+  "CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-ms5607-lib/MS5607.cpp.obj"
+  "CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-ms5607-lib/MS5607.cpp.obj.d"
   "CMakeFiles/test.dir/test.cpp.obj"
   "CMakeFiles/test.dir/test.cpp.obj.d"
   "test.elf"

@@ -97,19 +97,19 @@ CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/libraries
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.s"
 	/opt/homebrew/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp -o CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.s
 
-CMakeFiles/test.dir/MS5607.cpp.obj: CMakeFiles/test.dir/flags.make
-CMakeFiles/test.dir/MS5607.cpp.obj: /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/test/MS5607.cpp
-CMakeFiles/test.dir/MS5607.cpp.obj: CMakeFiles/test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/test.dir/MS5607.cpp.obj"
-	/opt/homebrew/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/test.dir/MS5607.cpp.obj -MF CMakeFiles/test.dir/MS5607.cpp.obj.d -o CMakeFiles/test.dir/MS5607.cpp.obj -c /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/test/MS5607.cpp
+CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-ms5607-lib/MS5607.cpp.obj: CMakeFiles/test.dir/flags.make
+CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-ms5607-lib/MS5607.cpp.obj: /Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-ms5607-lib/MS5607.cpp
+CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-ms5607-lib/MS5607.cpp.obj: CMakeFiles/test.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-ms5607-lib/MS5607.cpp.obj"
+	/opt/homebrew/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-ms5607-lib/MS5607.cpp.obj -MF CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-ms5607-lib/MS5607.cpp.obj.d -o CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-ms5607-lib/MS5607.cpp.obj -c /Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-ms5607-lib/MS5607.cpp
 
-CMakeFiles/test.dir/MS5607.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/test.dir/MS5607.cpp.i"
-	/opt/homebrew/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/test/MS5607.cpp > CMakeFiles/test.dir/MS5607.cpp.i
+CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-ms5607-lib/MS5607.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-ms5607-lib/MS5607.cpp.i"
+	/opt/homebrew/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-ms5607-lib/MS5607.cpp > CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-ms5607-lib/MS5607.cpp.i
 
-CMakeFiles/test.dir/MS5607.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/test.dir/MS5607.cpp.s"
-	/opt/homebrew/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/test/MS5607.cpp -o CMakeFiles/test.dir/MS5607.cpp.s
+CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-ms5607-lib/MS5607.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-ms5607-lib/MS5607.cpp.s"
+	/opt/homebrew/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-ms5607-lib/MS5607.cpp -o CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-ms5607-lib/MS5607.cpp.s
 
 CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj: /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c
@@ -1126,7 +1126,7 @@ CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITS
 test_OBJECTS = \
 "CMakeFiles/test.dir/test.cpp.obj" \
 "CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj" \
-"CMakeFiles/test.dir/MS5607.cpp.obj" \
+"CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-ms5607-lib/MS5607.cpp.obj" \
 "CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj" \
 "CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj" \
 "CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_platform/platform.c.obj" \
@@ -1206,7 +1206,7 @@ test_EXTERNAL_OBJECTS =
 
 test.elf: CMakeFiles/test.dir/test.cpp.obj
 test.elf: CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
-test.elf: CMakeFiles/test.dir/MS5607.cpp.obj
+test.elf: CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-ms5607-lib/MS5607.cpp.obj
 test.elf: CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj
 test.elf: CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
 test.elf: CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_platform/platform.c.obj

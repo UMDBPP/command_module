@@ -163,22 +163,22 @@ Discarded input sections
                 0x00000000        0x1 CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
  .rodata._ZL14get_status_cmd
                 0x00000000        0x1 CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
- .text          0x00000000        0x0 CMakeFiles/test.dir/MS5607.cpp.obj
- .data          0x00000000        0x0 CMakeFiles/test.dir/MS5607.cpp.obj
- .bss           0x00000000        0x0 CMakeFiles/test.dir/MS5607.cpp.obj
+ .text          0x00000000        0x0 CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-ms5607-lib/MS5607.cpp.obj
+ .data          0x00000000        0x0 CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-ms5607-lib/MS5607.cpp.obj
+ .bss           0x00000000        0x0 CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-ms5607-lib/MS5607.cpp.obj
  .text._ZN6MS56079read_promEv
-                0x00000000      0x154 CMakeFiles/test.dir/MS5607.cpp.obj
+                0x00000000      0x154 CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-ms5607-lib/MS5607.cpp.obj
  .text._ZN6MS56074initEv
-                0x00000000       0x2c CMakeFiles/test.dir/MS5607.cpp.obj
+                0x00000000       0x2c CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-ms5607-lib/MS5607.cpp.obj
  .text._ZN6MS56075resetEv
-                0x00000000       0x30 CMakeFiles/test.dir/MS5607.cpp.obj
+                0x00000000       0x30 CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-ms5607-lib/MS5607.cpp.obj
  .text._ZN6MS560710conversionEv
-                0x00000000       0x84 CMakeFiles/test.dir/MS5607.cpp.obj
+                0x00000000       0x84 CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-ms5607-lib/MS5607.cpp.obj
  .text._ZN6MS560721ms5607_get_press_tempEPdS0_
-                0x00000000       0xb8 CMakeFiles/test.dir/MS5607.cpp.obj
- .comment       0x00000000       0x45 CMakeFiles/test.dir/MS5607.cpp.obj
+                0x00000000       0xb8 CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-ms5607-lib/MS5607.cpp.obj
+ .comment       0x00000000       0x45 CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-ms5607-lib/MS5607.cpp.obj
  .ARM.attributes
-                0x00000000       0x2c CMakeFiles/test.dir/MS5607.cpp.obj
+                0x00000000       0x2c CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-ms5607-lib/MS5607.cpp.obj
  .text          0x00000000        0x0 CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj
  .data          0x00000000        0x0 CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj
  .bss           0x00000000        0x0 CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj
@@ -1337,9 +1337,9 @@ Discarded input sections
  .bss           0x00000000        0x0 CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_rand/rand.c.obj
  .text.get_rand_128
                 0x00000000       0x18 CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_rand/rand.c.obj
- .text          0x00000000        0x0 /var/folders/n7/t1959y0j4_gczygmz5tcw0qc0000gn/T//cc7Lstnj.o
- .data          0x00000000        0x0 /var/folders/n7/t1959y0j4_gczygmz5tcw0qc0000gn/T//cc7Lstnj.o
- .bss           0x00000000        0x0 /var/folders/n7/t1959y0j4_gczygmz5tcw0qc0000gn/T//cc7Lstnj.o
+ .text          0x00000000        0x0 /var/folders/n7/t1959y0j4_gczygmz5tcw0qc0000gn/T//cc6EQP8M.o
+ .data          0x00000000        0x0 /var/folders/n7/t1959y0j4_gczygmz5tcw0qc0000gn/T//cc6EQP8M.o
+ .bss           0x00000000        0x0 /var/folders/n7/t1959y0j4_gczygmz5tcw0qc0000gn/T//cc6EQP8M.o
  .data          0x00000000        0x0 /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
  .bss           0x00000000        0x0 /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
  .text          0x00000000        0x0 /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(libc_a-calloc.o)
@@ -1658,7 +1658,7 @@ LOAD /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-no
 .boot2          0x10000000      0x100
                 0x10000000                        __boot2_start__ = .
  *(.boot2)
- .boot2         0x10000000      0x100 /var/folders/n7/t1959y0j4_gczygmz5tcw0qc0000gn/T//cc7Lstnj.o
+ .boot2         0x10000000      0x100 /var/folders/n7/t1959y0j4_gczygmz5tcw0qc0000gn/T//cc6EQP8M.o
                 0x10000100                        __boot2_end__ = .
                 0x00000001                        ASSERT (((__boot2_end__ - __boot2_start__) == 0x100), ERROR: Pico second stage bootloader must be 256 bytes in size)
 
@@ -2924,7 +2924,7 @@ LOAD /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-no
                 0x00000001                        ASSERT (((__binary_info_header_end - __logical_binary_start) <= 0x100), Binary info must be in first 256 bytes of the binary)
 LOAD CMakeFiles/test.dir/test.cpp.obj
 LOAD CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
-LOAD CMakeFiles/test.dir/MS5607.cpp.obj
+LOAD CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-ms5607-lib/MS5607.cpp.obj
 LOAD CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj
 LOAD CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
 LOAD CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
@@ -2998,7 +2998,7 @@ LOAD CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/BITS
 LOAD CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_spi/spi.c.obj
 LOAD CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
 LOAD CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_rand/rand.c.obj
-LOAD /var/folders/n7/t1959y0j4_gczygmz5tcw0qc0000gn/T//cc7Lstnj.o
+LOAD /var/folders/n7/t1959y0j4_gczygmz5tcw0qc0000gn/T//cc6EQP8M.o
 LOAD /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libstdc++.a
 LOAD /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libm.a
 START GROUP
@@ -3122,7 +3122,7 @@ LOAD linker stubs
  .ARM.attributes
                 0x00000852       0x2c CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_rand/rand.c.obj
  .ARM.attributes
-                0x0000087e       0x22 /var/folders/n7/t1959y0j4_gczygmz5tcw0qc0000gn/T//cc7Lstnj.o
+                0x0000087e       0x22 /var/folders/n7/t1959y0j4_gczygmz5tcw0qc0000gn/T//cc6EQP8M.o
  .ARM.attributes
                 0x000008a0       0x1e /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
  .ARM.attributes

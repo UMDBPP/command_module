@@ -15769,7 +15769,7 @@ Disassembly of section .data:
 20000156:	f381 8810 	msr	PRIMASK, r1
 2000015a:	0028      	movs	r0, r5
 2000015c:	0031      	movs	r1, r6
-2000015e:	f000 fe8b 	bl	20000e78 <__best_effort_wfe_or_timeout_veneer>
+2000015e:	f000 fe83 	bl	20000e68 <__best_effort_wfe_or_timeout_veneer>
 20000162:	2800      	cmp	r0, #0
 20000164:	d1ed      	bne.n	20000142 <mutex_try_enter_block_until+0x42>
 20000166:	6822      	ldr	r2, [r4, #0]
@@ -15802,7 +15802,7 @@ Disassembly of section .data:
 200001a0:	b500      	push	{lr}
 200001a2:	000d      	movs	r5, r1
 200001a4:	0004      	movs	r4, r0
-200001a6:	f000 fe47 	bl	20000e38 <__time_us_64_veneer>
+200001a6:	f000 fe4f 	bl	20000e48 <__time_us_64_veneer>
 200001aa:	22fa      	movs	r2, #250	@ 0xfa
 200001ac:	0006      	movs	r6, r0
 200001ae:	000f      	movs	r7, r1
@@ -15832,7 +15832,7 @@ Disassembly of section .data:
 200001e2:	f381 8810 	msr	PRIMASK, r1
 200001e6:	0030      	movs	r0, r6
 200001e8:	0039      	movs	r1, r7
-200001ea:	f000 fe45 	bl	20000e78 <__best_effort_wfe_or_timeout_veneer>
+200001ea:	f000 fe3d 	bl	20000e68 <__best_effort_wfe_or_timeout_veneer>
 200001ee:	2800      	cmp	r0, #0
 200001f0:	d118      	bne.n	20000224 <mutex_enter_timeout_ms+0x88>
 200001f2:	6822      	ldr	r2, [r4, #0]
@@ -16747,7 +16747,7 @@ Disassembly of section .data:
 20000994:	0021      	movs	r1, r4
 20000996:	4805      	ldr	r0, [pc, #20]	@ (200009ac <dcd_rp2040_irq+0x50c>)
 20000998:	4069      	eors	r1, r5
-2000099a:	f000 fa5d 	bl	20000e58 <__panic_veneer>
+2000099a:	f000 fa4d 	bl	20000e38 <__panic_veneer>
 2000099e:	46c0      	nop			@ (mov r8, r8)
 200009a0:	000003ba 	.word	0x000003ba
 200009a4:	000003fb 	.word	0x000003fb
@@ -16843,7 +16843,7 @@ Disassembly of section .data:
 20000a5c:	18c0      	adds	r0, r0, r3
 20000a5e:	0032      	movs	r2, r6
 20000a60:	6921      	ldr	r1, [r4, #16]
-20000a62:	f000 fa01 	bl	20000e68 <____wrap_memcpy_veneer>
+20000a62:	f000 f9f9 	bl	20000e58 <____wrap_memcpy_veneer>
 20000a66:	6923      	ldr	r3, [r4, #16]
 20000a68:	199b      	adds	r3, r3, r6
 20000a6a:	6123      	str	r3, [r4, #16]
@@ -16882,7 +16882,7 @@ Disassembly of section .data:
 20000aa8:	1859      	adds	r1, r3, r1
 20000aaa:	002a      	movs	r2, r5
 20000aac:	6920      	ldr	r0, [r4, #16]
-20000aae:	f000 f9db 	bl	20000e68 <____wrap_memcpy_veneer>
+20000aae:	f000 f9d3 	bl	20000e58 <____wrap_memcpy_veneer>
 20000ab2:	8ae3      	ldrh	r3, [r4, #22]
 20000ab4:	18eb      	adds	r3, r5, r3
 20000ab6:	82e3      	strh	r3, [r4, #22]
@@ -16956,7 +16956,7 @@ Disassembly of section .data:
 20000b36:	4001      	ands	r1, r0
 20000b38:	58d2      	ldr	r2, [r2, r3]
 20000b3a:	4803      	ldr	r0, [pc, #12]	@ (20000b48 <_hw_endpoint_buffer_control_update32+0x54>)
-20000b3c:	f000 f98c 	bl	20000e58 <__panic_veneer>
+20000b3c:	f000 f97c 	bl	20000e38 <__panic_veneer>
 20000b40:	fffffbff 	.word	0xfffffbff
 20000b44:	20000f70 	.word	0x20000f70
 20000b48:	100084a8 	.word	0x100084a8
@@ -17043,7 +17043,7 @@ Disassembly of section .data:
 20000bf6:	4001      	ands	r1, r0
 20000bf8:	58d2      	ldr	r2, [r2, r3]
 20000bfa:	4802      	ldr	r0, [pc, #8]	@ (20000c04 <hw_endpoint_xfer_continue+0x4c>)
-20000bfc:	f000 f92c 	bl	20000e58 <__panic_veneer>
+20000bfc:	f000 f91c 	bl	20000e38 <__panic_veneer>
 20000c00:	20000f70 	.word	0x20000f70
 20000c04:	100084c8 	.word	0x100084c8
 
@@ -17158,7 +17158,7 @@ Disassembly of section .data:
 20000cea:	61a1      	str	r1, [r4, #24]
 20000cec:	0029      	movs	r1, r5
 20000cee:	0020      	movs	r0, r4
-20000cf0:	f000 f8aa 	bl	20000e48 <__tu_fifo_write_veneer>
+20000cf0:	f000 f8c2 	bl	20000e78 <__tu_fifo_write_veneer>
 20000cf4:	6962      	ldr	r2, [r4, #20]
 20000cf6:	69a3      	ldr	r3, [r4, #24]
 20000cf8:	f3bf 8f5f 	dmb	sy
@@ -17319,50 +17319,50 @@ Disassembly of section .data:
 20000e34:	4770      	bx	lr
 20000e36:	46c0      	nop			@ (mov r8, r8)
 
-20000e38 <__time_us_64_veneer>:
+20000e38 <__panic_veneer>:
 20000e38:	b401      	push	{r0}
-20000e3a:	4802      	ldr	r0, [pc, #8]	@ (20000e44 <__time_us_64_veneer+0xc>)
+20000e3a:	4802      	ldr	r0, [pc, #8]	@ (20000e44 <__panic_veneer+0xc>)
 20000e3c:	4684      	mov	ip, r0
 20000e3e:	bc01      	pop	{r0}
 20000e40:	4760      	bx	ip
 20000e42:	bf00      	nop
-20000e44:	10001ebd 	.word	0x10001ebd
+20000e44:	10002b61 	.word	0x10002b61
 
-20000e48 <__tu_fifo_write_veneer>:
+20000e48 <__time_us_64_veneer>:
 20000e48:	b401      	push	{r0}
-20000e4a:	4802      	ldr	r0, [pc, #8]	@ (20000e54 <__tu_fifo_write_veneer+0xc>)
+20000e4a:	4802      	ldr	r0, [pc, #8]	@ (20000e54 <__time_us_64_veneer+0xc>)
 20000e4c:	4684      	mov	ip, r0
 20000e4e:	bc01      	pop	{r0}
 20000e50:	4760      	bx	ip
 20000e52:	bf00      	nop
-20000e54:	10007659 	.word	0x10007659
+20000e54:	10001ebd 	.word	0x10001ebd
 
-20000e58 <__panic_veneer>:
+20000e58 <____wrap_memcpy_veneer>:
 20000e58:	b401      	push	{r0}
-20000e5a:	4802      	ldr	r0, [pc, #8]	@ (20000e64 <__panic_veneer+0xc>)
+20000e5a:	4802      	ldr	r0, [pc, #8]	@ (20000e64 <____wrap_memcpy_veneer+0xc>)
 20000e5c:	4684      	mov	ip, r0
 20000e5e:	bc01      	pop	{r0}
 20000e60:	4760      	bx	ip
 20000e62:	bf00      	nop
-20000e64:	10002b61 	.word	0x10002b61
+20000e64:	100050cd 	.word	0x100050cd
 
-20000e68 <____wrap_memcpy_veneer>:
+20000e68 <__best_effort_wfe_or_timeout_veneer>:
 20000e68:	b401      	push	{r0}
-20000e6a:	4802      	ldr	r0, [pc, #8]	@ (20000e74 <____wrap_memcpy_veneer+0xc>)
+20000e6a:	4802      	ldr	r0, [pc, #8]	@ (20000e74 <__best_effort_wfe_or_timeout_veneer+0xc>)
 20000e6c:	4684      	mov	ip, r0
 20000e6e:	bc01      	pop	{r0}
 20000e70:	4760      	bx	ip
 20000e72:	bf00      	nop
-20000e74:	100050cd 	.word	0x100050cd
+20000e74:	10001d1d 	.word	0x10001d1d
 
-20000e78 <__best_effort_wfe_or_timeout_veneer>:
+20000e78 <__tu_fifo_write_veneer>:
 20000e78:	b401      	push	{r0}
-20000e7a:	4802      	ldr	r0, [pc, #8]	@ (20000e84 <__best_effort_wfe_or_timeout_veneer+0xc>)
+20000e7a:	4802      	ldr	r0, [pc, #8]	@ (20000e84 <__tu_fifo_write_veneer+0xc>)
 20000e7c:	4684      	mov	ip, r0
 20000e7e:	bc01      	pop	{r0}
 20000e80:	4760      	bx	ip
 20000e82:	bf00      	nop
-20000e84:	10001d1d 	.word	0x10001d1d
+20000e84:	10007659 	.word	0x10007659
 
 20000e88 <____wrap___aeabi_lmul_veneer>:
 20000e88:	b401      	push	{r0}

@@ -31,7 +31,7 @@ pico_enable_stdio_usb(test_rx 1)
 
 pico_add_extra_outputs(test_rx)
 
-target_link_libraries(test_rx pico_stdlib hardware_flash hardware_sync hardware_spi pico_rand pico_unique_id)
+target_link_libraries(test_rx pico_stdlib hardware_flash hardware_sync hardware_spi hardware_i2c pico_rand pico_unique_id)
 
 target_compile_definitions(test_rx PRIVATE
     RX_TEST=1
@@ -47,7 +47,7 @@ pico_enable_stdio_usb(test_tx 1)
 
 pico_add_extra_outputs(test_tx)
 
-target_link_libraries(test_tx pico_stdlib hardware_flash hardware_sync hardware_spi pico_rand pico_unique_id)
+target_link_libraries(test_tx pico_stdlib hardware_flash hardware_sync hardware_spi hardware_i2c pico_rand pico_unique_id)
 
 target_compile_definitions(test_tx PRIVATE
     RX_TEST=0
@@ -63,7 +63,7 @@ pico_enable_stdio_usb(test_rx_tx 1)
 
 pico_add_extra_outputs(test_rx_tx)
 
-target_link_libraries(test_rx_tx pico_stdlib hardware_flash hardware_sync hardware_spi pico_rand pico_unique_id)
+target_link_libraries(test_rx_tx pico_stdlib hardware_flash hardware_sync hardware_spi hardware_i2c pico_rand pico_unique_id)
 
 target_compile_definitions(test_rx_tx PRIVATE
     RX_TEST=1

@@ -272,30 +272,6 @@ cyw43_driver_picow_cyw43_bus_pio_spi_pio_h/fast:
 	$(MAKE) $(MAKESILENT) -f pico-sdk/src/rp2_common/pico_cyw43_driver/CMakeFiles/cyw43_driver_picow_cyw43_bus_pio_spi_pio_h.dir/build.make pico-sdk/src/rp2_common/pico_cyw43_driver/CMakeFiles/cyw43_driver_picow_cyw43_bus_pio_spi_pio_h.dir/build
 .PHONY : cyw43_driver_picow_cyw43_bus_pio_spi_pio_h/fast
 
-MS5607.obj: MS5607.cpp.obj
-.PHONY : MS5607.obj
-
-# target to build an object file
-MS5607.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/MS5607.cpp.obj
-.PHONY : MS5607.cpp.obj
-
-MS5607.i: MS5607.cpp.i
-.PHONY : MS5607.i
-
-# target to preprocess a source file
-MS5607.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/MS5607.cpp.i
-.PHONY : MS5607.cpp.i
-
-MS5607.s: MS5607.cpp.s
-.PHONY : MS5607.s
-
-# target to generate assembly for a file
-MS5607.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/MS5607.cpp.s
-.PHONY : MS5607.cpp.s
-
 Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/class/audio/audio_device.obj: Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.obj
 .PHONY : Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/class/audio/audio_device.obj
 
@@ -1369,6 +1345,9 @@ Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_
 # target to build an object file
 Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_rx.dir/build.make CMakeFiles/test_rx.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_tx.dir/build.make CMakeFiles/test_tx.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_rx_tx.dir/build.make CMakeFiles/test_rx_tx.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
 .PHONY : Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
 
 Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_i2c/i2c.i: Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.i
@@ -1377,6 +1356,9 @@ Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_
 # target to preprocess a source file
 Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_rx.dir/build.make CMakeFiles/test_rx.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_tx.dir/build.make CMakeFiles/test_tx.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_rx_tx.dir/build.make CMakeFiles/test_rx_tx.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.i
 .PHONY : Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.i
 
 Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_i2c/i2c.s: Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.s
@@ -1385,6 +1367,9 @@ Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_
 # target to generate assembly for a file
 Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_rx.dir/build.make CMakeFiles/test_rx.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_tx.dir/build.make CMakeFiles/test_tx.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_rx_tx.dir/build.make CMakeFiles/test_rx_tx.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.s
 .PHONY : Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.s
 
 Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_irq/irq.obj: Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
@@ -2487,6 +2472,30 @@ Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_rx_tx.dir/build.make CMakeFiles/test_rx_tx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.s
 .PHONY : Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.s
 
+Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-ms5607-lib/MS5607.obj: Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-ms5607-lib/MS5607.cpp.obj
+.PHONY : Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-ms5607-lib/MS5607.obj
+
+# target to build an object file
+Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-ms5607-lib/MS5607.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-ms5607-lib/MS5607.cpp.obj
+.PHONY : Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-ms5607-lib/MS5607.cpp.obj
+
+Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-ms5607-lib/MS5607.i: Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-ms5607-lib/MS5607.cpp.i
+.PHONY : Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-ms5607-lib/MS5607.i
+
+# target to preprocess a source file
+Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-ms5607-lib/MS5607.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-ms5607-lib/MS5607.cpp.i
+.PHONY : Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-ms5607-lib/MS5607.cpp.i
+
+Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-ms5607-lib/MS5607.s: Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-ms5607-lib/MS5607.cpp.s
+.PHONY : Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-ms5607-lib/MS5607.s
+
+# target to generate assembly for a file
+Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-ms5607-lib/MS5607.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-ms5607-lib/MS5607.cpp.s
+.PHONY : Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-ms5607-lib/MS5607.cpp.s
+
 test.obj: test.cpp.obj
 .PHONY : test.obj
 
@@ -2540,9 +2549,6 @@ help:
 	@echo "... test_rx"
 	@echo "... test_rx_tx"
 	@echo "... test_tx"
-	@echo "... MS5607.obj"
-	@echo "... MS5607.i"
-	@echo "... MS5607.s"
 	@echo "... Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/class/audio/audio_device.obj"
 	@echo "... Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/class/audio/audio_device.i"
 	@echo "... Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/class/audio/audio_device.s"
@@ -2743,6 +2749,9 @@ help:
 	@echo "... Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.obj"
 	@echo "... Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.i"
 	@echo "... Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.s"
+	@echo "... Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-ms5607-lib/MS5607.obj"
+	@echo "... Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-ms5607-lib/MS5607.i"
+	@echo "... Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-ms5607-lib/MS5607.s"
 	@echo "... test.obj"
 	@echo "... test.i"
 	@echo "... test.s"
