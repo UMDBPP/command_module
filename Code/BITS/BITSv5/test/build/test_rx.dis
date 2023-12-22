@@ -432,29 +432,29 @@ Disassembly of section .text:
 1000041c:	22fe      	movs	r2, #254	@ 0xfe
 1000041e:	4b0c      	ldr	r3, [pc, #48]	@ (10000450 <_GLOBAL__sub_I_radio+0x34>)
 10000420:	01d2      	lsls	r2, r2, #7
-10000422:	2100      	movs	r1, #0
-10000424:	625a      	str	r2, [r3, #36]	@ 0x24
-10000426:	2228      	movs	r2, #40	@ 0x28
-10000428:	5499      	strb	r1, [r3, r2]
-1000042a:	4a0a      	ldr	r2, [pc, #40]	@ (10000454 <_GLOBAL__sub_I_radio+0x38>)
-1000042c:	601a      	str	r2, [r3, #0]
-1000042e:	2219      	movs	r2, #25
-10000430:	605a      	str	r2, [r3, #4]
-10000432:	3201      	adds	r2, #1
-10000434:	609a      	str	r2, [r3, #8]
-10000436:	3201      	adds	r2, #1
-10000438:	60da      	str	r2, [r3, #12]
-1000043a:	3a03      	subs	r2, #3
-1000043c:	611a      	str	r2, [r3, #16]
-1000043e:	3a10      	subs	r2, #16
-10000440:	615a      	str	r2, [r3, #20]
-10000442:	3202      	adds	r2, #2
-10000444:	619a      	str	r2, [r3, #24]
-10000446:	3201      	adds	r2, #1
-10000448:	61da      	str	r2, [r3, #28]
-1000044a:	3a02      	subs	r2, #2
-1000044c:	621a      	str	r2, [r3, #32]
-1000044e:	4770      	bx	lr
+10000422:	625a      	str	r2, [r3, #36]	@ 0x24
+10000424:	2200      	movs	r2, #0
+10000426:	851a      	strh	r2, [r3, #40]	@ 0x28
+10000428:	4a0a      	ldr	r2, [pc, #40]	@ (10000454 <_GLOBAL__sub_I_radio+0x38>)
+1000042a:	601a      	str	r2, [r3, #0]
+1000042c:	2219      	movs	r2, #25
+1000042e:	605a      	str	r2, [r3, #4]
+10000430:	3201      	adds	r2, #1
+10000432:	609a      	str	r2, [r3, #8]
+10000434:	3201      	adds	r2, #1
+10000436:	60da      	str	r2, [r3, #12]
+10000438:	3a03      	subs	r2, #3
+1000043a:	611a      	str	r2, [r3, #16]
+1000043c:	3a10      	subs	r2, #16
+1000043e:	615a      	str	r2, [r3, #20]
+10000440:	3202      	adds	r2, #2
+10000442:	619a      	str	r2, [r3, #24]
+10000444:	3201      	adds	r2, #1
+10000446:	61da      	str	r2, [r3, #28]
+10000448:	3a02      	subs	r2, #2
+1000044a:	621a      	str	r2, [r3, #32]
+1000044c:	4770      	bx	lr
+1000044e:	46c0      	nop			@ (mov r8, r8)
 10000450:	20001d1c 	.word	0x20001d1c
 10000454:	40040000 	.word	0x40040000
 
@@ -1702,14 +1702,14 @@ Disassembly of section .text:
 10000f48:	0022      	movs	r2, r4
 10000f4a:	2301      	movs	r3, #1
 10000f4c:	0029      	movs	r1, r5
-10000f4e:	3227      	adds	r2, #39	@ 0x27
+10000f4e:	3228      	adds	r2, #40	@ 0x28
 10000f50:	6820      	ldr	r0, [r4, #0]
 10000f52:	f006 fe6d 	bl	10007c30 <__spi_write_read_blocking_veneer>
 10000f56:	0022      	movs	r2, r4
 10000f58:	2301      	movs	r3, #1
 10000f5a:	0029      	movs	r1, r5
 10000f5c:	6820      	ldr	r0, [r4, #0]
-10000f5e:	3228      	adds	r2, #40	@ 0x28
+10000f5e:	3229      	adds	r2, #41	@ 0x29
 10000f60:	f006 fe66 	bl	10007c30 <__spi_write_read_blocking_veneer>
 10000f64:	6863      	ldr	r3, [r4, #4]
 10000f66:	409e      	lsls	r6, r3
@@ -1722,11 +1722,11 @@ Disassembly of section .text:
 10000f74:	4809      	ldr	r0, [pc, #36]	@ (10000f9c <_ZN7DRF126220get_rx_buffer_statusEv+0x84>)
 10000f76:	f004 fa07 	bl	10005388 <__wrap_puts>
 10000f7a:	e7d3      	b.n	10000f24 <_ZN7DRF126220get_rx_buffer_statusEv+0xc>
-10000f7c:	2327      	movs	r3, #39	@ 0x27
+10000f7c:	2328      	movs	r3, #40	@ 0x28
 10000f7e:	4808      	ldr	r0, [pc, #32]	@ (10000fa0 <_ZN7DRF126220get_rx_buffer_statusEv+0x88>)
 10000f80:	5ce1      	ldrb	r1, [r4, r3]
 10000f82:	f004 faf3 	bl	1000556c <__wrap_printf>
-10000f86:	2328      	movs	r3, #40	@ 0x28
+10000f86:	2329      	movs	r3, #41	@ 0x29
 10000f88:	4806      	ldr	r0, [pc, #24]	@ (10000fa4 <_ZN7DRF126220get_rx_buffer_statusEv+0x8c>)
 10000f8a:	5ce1      	ldrb	r1, [r4, r3]
 10000f8c:	f004 faee 	bl	1000556c <__wrap_printf>
@@ -1749,7 +1749,7 @@ Disassembly of section .text:
 10000fb6:	f7ff ffaf 	bl	10000f18 <_ZN7DRF126220get_rx_buffer_statusEv>
 10000fba:	2eff      	cmp	r6, #255	@ 0xff
 10000fbc:	dc4e      	bgt.n	1000105c <_ZN7DRF126217read_radio_bufferEPhs+0xb4>
-10000fbe:	2327      	movs	r3, #39	@ 0x27
+10000fbe:	2328      	movs	r3, #40	@ 0x28
 10000fc0:	5ce3      	ldrb	r3, [r4, r3]
 10000fc2:	429e      	cmp	r6, r3
 10000fc4:	db4a      	blt.n	1000105c <_ZN7DRF126217read_radio_bufferEPhs+0xb4>
@@ -1774,7 +1774,7 @@ Disassembly of section .text:
 10000fee:	0021      	movs	r1, r4
 10000ff0:	003a      	movs	r2, r7
 10000ff2:	2301      	movs	r3, #1
-10000ff4:	3128      	adds	r1, #40	@ 0x28
+10000ff4:	3129      	adds	r1, #41	@ 0x29
 10000ff6:	6820      	ldr	r0, [r4, #0]
 10000ff8:	f006 fe1a 	bl	10007c30 <__spi_write_read_blocking_veneer>
 10000ffc:	491c      	ldr	r1, [pc, #112]	@ (10001070 <_ZN7DRF126217read_radio_bufferEPhs+0xc8>)
