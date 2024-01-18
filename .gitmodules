@@ -23,3 +23,15 @@
 	path = Code/libraries/rp2040-ms5607-lib
 	url = https://github.com/UMDBPP/rp2040-ms5607-lib.git
 	branch = main
+[submodule "Code/libraries/rp2040-config"]
+	path = Code/libraries/rp2040-config
+	url = https://github.com/UMDBPP/rp2040-config.git
+	branch = main
+[submodule "Code/libraries/rp2040-console"]
+	path = Code/libraries/rp2040-console
+	url = https://github.com/UMDBPP/rp2040-console.git
+	branch = main
+[submodule "Code/libraries/std-cmd"]
+	path = Code/libraries/std-cmd
+	url = https://github.com/UMDBPP/std-cmd.git
+	branch = main
