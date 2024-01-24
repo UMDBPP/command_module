@@ -13,6 +13,8 @@ pico_sdk_init()
 add_executable(test
     test.cpp
     ../../libraries/rp2040-drf1262-lib/SX1262.cpp
+    ../../libraries/rp2040-console/console.c
+    ../../libraries/rp2040-console/std-cmd/command.c
 )
 
 pico_enable_stdio_usb(test 1)
@@ -24,6 +26,8 @@ target_link_libraries(test pico_stdlib hardware_flash hardware_sync hardware_spi
 add_executable(test_rx_tx
     test.cpp
     ../../libraries/rp2040-drf1262-lib/SX1262.cpp
+    ../../libraries/rp2040-console/console.c
+    ../../libraries/rp2040-console/std-cmd/command.c
 )
 
 pico_enable_stdio_usb(test_rx_tx 1)
@@ -40,6 +44,8 @@ target_compile_definitions(test_rx_tx PRIVATE
 add_executable(test_rx
     test.cpp
     ../../libraries/rp2040-drf1262-lib/SX1262.cpp
+    ../../libraries/rp2040-console/console.c
+    ../../libraries/rp2040-console/std-cmd/command.c
 )
 
 pico_enable_stdio_usb(test_rx 1)
@@ -56,6 +62,8 @@ target_compile_definitions(test_rx PRIVATE
 add_executable(test_tx
     test.cpp
     ../../libraries/rp2040-drf1262-lib/SX1262.cpp
+    ../../libraries/rp2040-console/console.c
+    ../../libraries/rp2040-console/std-cmd/command.c
 )
 
 pico_enable_stdio_usb(test_tx 1)

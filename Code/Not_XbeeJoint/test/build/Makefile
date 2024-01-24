@@ -2406,6 +2406,72 @@ Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_tx.dir/build.make CMakeFiles/test_tx.dir/Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.s
 .PHONY : Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.s
 
+Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-console/console.obj: Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-console/console.c.obj
+.PHONY : Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-console/console.obj
+
+# target to build an object file
+Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-console/console.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-console/console.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_rx_tx.dir/build.make CMakeFiles/test_rx_tx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-console/console.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_rx.dir/build.make CMakeFiles/test_rx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-console/console.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_tx.dir/build.make CMakeFiles/test_tx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-console/console.c.obj
+.PHONY : Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-console/console.c.obj
+
+Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-console/console.i: Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-console/console.c.i
+.PHONY : Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-console/console.i
+
+# target to preprocess a source file
+Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-console/console.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-console/console.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_rx_tx.dir/build.make CMakeFiles/test_rx_tx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-console/console.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_rx.dir/build.make CMakeFiles/test_rx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-console/console.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_tx.dir/build.make CMakeFiles/test_tx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-console/console.c.i
+.PHONY : Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-console/console.c.i
+
+Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-console/console.s: Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-console/console.c.s
+.PHONY : Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-console/console.s
+
+# target to generate assembly for a file
+Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-console/console.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-console/console.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_rx_tx.dir/build.make CMakeFiles/test_rx_tx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-console/console.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_rx.dir/build.make CMakeFiles/test_rx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-console/console.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_tx.dir/build.make CMakeFiles/test_tx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-console/console.c.s
+.PHONY : Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-console/console.c.s
+
+Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-console/std-cmd/command.obj: Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-console/std-cmd/command.c.obj
+.PHONY : Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-console/std-cmd/command.obj
+
+# target to build an object file
+Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-console/std-cmd/command.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-console/std-cmd/command.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_rx_tx.dir/build.make CMakeFiles/test_rx_tx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-console/std-cmd/command.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_rx.dir/build.make CMakeFiles/test_rx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-console/std-cmd/command.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_tx.dir/build.make CMakeFiles/test_tx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-console/std-cmd/command.c.obj
+.PHONY : Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-console/std-cmd/command.c.obj
+
+Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-console/std-cmd/command.i: Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-console/std-cmd/command.c.i
+.PHONY : Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-console/std-cmd/command.i
+
+# target to preprocess a source file
+Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-console/std-cmd/command.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-console/std-cmd/command.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_rx_tx.dir/build.make CMakeFiles/test_rx_tx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-console/std-cmd/command.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_rx.dir/build.make CMakeFiles/test_rx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-console/std-cmd/command.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_tx.dir/build.make CMakeFiles/test_tx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-console/std-cmd/command.c.i
+.PHONY : Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-console/std-cmd/command.c.i
+
+Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-console/std-cmd/command.s: Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-console/std-cmd/command.c.s
+.PHONY : Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-console/std-cmd/command.s
+
+# target to generate assembly for a file
+Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-console/std-cmd/command.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-console/std-cmd/command.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_rx_tx.dir/build.make CMakeFiles/test_rx_tx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-console/std-cmd/command.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_rx.dir/build.make CMakeFiles/test_rx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-console/std-cmd/command.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_tx.dir/build.make CMakeFiles/test_tx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-console/std-cmd/command.c.s
+.PHONY : Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-console/std-cmd/command.c.s
+
 Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.obj: Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
 .PHONY : Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.obj
 
@@ -2686,6 +2752,12 @@ help:
 	@echo "... Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp2_common/pico_unique_id/unique_id.obj"
 	@echo "... Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp2_common/pico_unique_id/unique_id.i"
 	@echo "... Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp2_common/pico_unique_id/unique_id.s"
+	@echo "... Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-console/console.obj"
+	@echo "... Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-console/console.i"
+	@echo "... Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-console/console.s"
+	@echo "... Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-console/std-cmd/command.obj"
+	@echo "... Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-console/std-cmd/command.i"
+	@echo "... Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-console/std-cmd/command.s"
 	@echo "... Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.obj"
 	@echo "... Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.i"
 	@echo "... Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.s"

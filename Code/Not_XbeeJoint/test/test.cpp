@@ -4,6 +4,10 @@
 #include <string.h>
 
 #include "(Not)XBee_Joint.h"
+extern "C" {
+#include "../../libraries/rp2040-console/console.h"
+#include "../../libraries/rp2040-console/std-cmd/command.h"
+}
 #include "../../libraries/rp2040-drf1262-lib/SX1262.h"
 #include "hardware/flash.h"
 #include "hardware/gpio.h"
@@ -38,6 +42,12 @@ char id[2 * PICO_UNIQUE_BOARD_ID_SIZE_BYTES + 1] = {0};
 
 short debug_msgs = 1;  // controls if debug messages are printed
 
+enum Commands_Ext { HELP = STAT + 1 };  // how to add extra op codes for fun
+
+command cmd = {0x00, NOP, {0, 0, 0, 0, 0, 0, 0}, NULL};
+
+void help_handler(uint8_t *args);
+
 // For the functionality of a (Not)Xbee Joint board
 // NOT PRODUCTION CODE
 int main() {
@@ -51,6 +61,7 @@ int main() {
     pico_get_unique_board_id_string(id,
                                     2 * PICO_UNIQUE_BOARD_ID_SIZE_BYTES + 1);
 
+    help_handler(NULL);
     while (true) {
         printf("\n\n\n\n\n\n\n\n\n\n\n\n");
 
@@ -59,6 +70,10 @@ int main() {
         } else {
             printf("============Xbee Joint: %s============\n", id);
         }
+
+        get_command(&cmd);
+        print_command(&cmd);
+        cmd.handler(cmd.params);
 
 #if TX_TEST
         sleep_ms(4500);
@@ -123,4 +138,21 @@ void rx_test() {
     radio.read_radio_buffer((uint8_t *)data, 5);
 
     printf("Got some data: %s | %x", data, data[4]);
+}
+
+void no_op_handler(uint8_t *args) { printf("handler not implemented\n"); }
+void test_handler(uint8_t *args) { printf("handler not implemented\n"); }
+void text_handler(uint8_t *args) { printf("handler not implemented\n"); }
+void vent_handler(uint8_t *args) { printf("handler not implemented\n"); }
+void reset_handler(uint8_t *args) { printf("handler not implemented\n"); }
+void pos_handler(uint8_t *args) { printf("handler not implemented\n"); }
+void term_handler(uint8_t *args) { printf("handler not implemented\n"); }
+void ack_handler(uint8_t *args) { printf("handler not implemented\n"); }
+void nack_handler(uint8_t *args) { printf("handler not implemented\n"); }
+void err_handler(uint8_t *args) { printf("handler not implemented\n"); }
+void stat_handler(uint8_t *args) { printf("handler not implemented\n"); }
+void get_handler(uint8_t *args) { printf("handler not implemented\n"); }
+void set_handler(uint8_t *args) { printf("handler not implemented\n"); }
+void help_handler(uint8_t *args) {
+    printf("Enter commands at the promp below\nCommand format: Op-Code args\n");
 }
