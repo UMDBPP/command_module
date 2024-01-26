@@ -34,7 +34,7 @@ extern "C" {
 #define TX_TEST 1
 #endif
 
-void rx_test(void);
+void rx_test(char *buf, short len);
 void transmit_test(uint8_t *buf, short len);
 
 DRF1262 radio(spi0, CS_PIN, SCK_PIN, MOSI_PIN, MISO_PIN, TXEN_PIN, DIO1_PIN,
@@ -77,16 +77,6 @@ int main() {
         print_command(&cmd);
         cmd.handler(cmd.params);
 
-#if TX_TEST
-        sleep_ms(4500);
-        transmit_test();
-#endif
-
-#if RX_TEST
-        rx_test();
-        radio.get_radio_errors();
-#endif
-
         sleep_ms(500);
     }
 }
@@ -112,15 +102,17 @@ void transmit_test(uint8_t *buf, short len) {
 #endif
 }
 
-void rx_test() {
-    char data[100] = {0};
-
-    printf("Receive Test\n");
+void rx_test(char *buf, short len) {
+    printf("Receive Test, press 'c' to cancel\n");
 
     radio.radio_receive_single();
 
     while (!gpio_get(DIO1_PIN)) {
         sleep_ms(1);
+        if (getchar_timeout_us(0) == 'c') {
+            radio.clear_irq_status();
+            return;
+        }
     }
 
     // sleep_ms(10);
@@ -131,9 +123,7 @@ void rx_test() {
     radio.clear_irq_status();
     radio.get_irq_status();
 
-    radio.read_radio_buffer((uint8_t *)data, 5);
-
-    printf("Got some data: %s | %x", data, data[4]);
+    radio.read_radio_buffer((uint8_t *)buf, len);
 }
 
 void no_op_handler(uint8_t *args) { printf("handler not implemented\n"); }
@@ -155,35 +145,19 @@ void help_handler(uint8_t *args) {
 }
 
 void send_handler(uint8_t *args) {
-    int current = 0;
-    char curr_char = 0;
     char buf[100] = {0};
 
     printf("\nEnter string to send: ");
 
-    do {
-        curr_char = getchar_timeout_us(0);
-
-        if (is_valid_char(&curr_char)) {
-            putchar_raw(curr_char);
-
-            buf[current] = curr_char;
-
-            switch (curr_char) {
-                case 8:
-                case 127:
-                    if (current > 0) current--;
-                    break;
-                default:
-                    current++;
-            }
-        }
-
-    } while (curr_char != 0x0A);
-
-    buf[current] = 0;
+    get_string(buf);
 
     transmit_test((uint8_t *)(&buf), sizeof(buf));
 }
 
-void lstn_handler(uint8_t *args) {}
+void lstn_handler(uint8_t *args) {
+    char buf[100] = {0};
+
+    rx_test(buf, sizeof(buf));
+
+    printf("rx: %s\n", buf);
+}
