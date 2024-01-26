@@ -4,7 +4,7 @@
 
 #include "../../../libraries/rp2040-drf1262-lib/SX1262.h"
 #include "../../../libraries/rp2040-ms5607-lib/MS5607.h"
-#include "BITSv5.h"
+#include "../BITSv5.h"
 #include "hardware/flash.h"
 #include "hardware/gpio.h"
 #include "pico/binary_info.h"

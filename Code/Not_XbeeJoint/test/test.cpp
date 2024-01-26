@@ -4,10 +4,12 @@
 #include <string.h>
 
 #include "(Not)XBee_Joint.h"
+
 extern "C" {
 #include "../../libraries/rp2040-console/console.h"
 #include "../../libraries/rp2040-console/std-cmd/command.h"
 }
+
 #include "../../libraries/rp2040-drf1262-lib/SX1262.h"
 #include "hardware/flash.h"
 #include "hardware/gpio.h"
@@ -33,7 +35,7 @@ extern "C" {
 #endif
 
 void rx_test(void);
-void transmit_test(void);
+void transmit_test(uint8_t *buf, short len);
 
 DRF1262 radio(spi0, CS_PIN, SCK_PIN, MOSI_PIN, MISO_PIN, TXEN_PIN, DIO1_PIN,
               BUSY_PIN, SW_PIN);
@@ -89,16 +91,12 @@ int main() {
     }
 }
 
-void transmit_test() {
+void transmit_test(uint8_t *buf, short len) {
     printf("Transmit Test\n");
 
-    char data[] = "hello";
+    printf("Sending payload: %s\n", buf);
 
-    data[4] = (char)get_rand_32();
-
-    printf("Sending payload: %s\n", data);
-
-    radio.radio_send((uint8_t *)data, 5);
+    radio.radio_send(buf, len);
 
     sleep_ms(100);
 
@@ -115,9 +113,7 @@ void transmit_test() {
 }
 
 void rx_test() {
-    char data[6] = {
-        '\0', '\0', '\0', '\0', '\0', '\0',
-    };
+    char data[100] = {0};
 
     printf("Receive Test\n");
 
@@ -142,7 +138,7 @@ void rx_test() {
 
 void no_op_handler(uint8_t *args) { printf("handler not implemented\n"); }
 void test_handler(uint8_t *args) { printf("handler not implemented\n"); }
-void text_handler(uint8_t *args) { printf("handler not implemented\n"); }
+
 void vent_handler(uint8_t *args) { printf("handler not implemented\n"); }
 void reset_handler(uint8_t *args) { printf("handler not implemented\n"); }
 void pos_handler(uint8_t *args) { printf("handler not implemented\n"); }
@@ -153,6 +149,41 @@ void err_handler(uint8_t *args) { printf("handler not implemented\n"); }
 void stat_handler(uint8_t *args) { printf("handler not implemented\n"); }
 void get_handler(uint8_t *args) { printf("handler not implemented\n"); }
 void set_handler(uint8_t *args) { printf("handler not implemented\n"); }
+
 void help_handler(uint8_t *args) {
     printf("Enter commands at the promp below\nCommand format: Op-Code args\n");
 }
+
+void send_handler(uint8_t *args) {
+    int current = 0;
+    char curr_char = 0;
+    char buf[100] = {0};
+
+    printf("\nEnter string to send: ");
+
+    do {
+        curr_char = getchar_timeout_us(0);
+
+        if (is_valid_char(&curr_char)) {
+            putchar_raw(curr_char);
+
+            buf[current] = curr_char;
+
+            switch (curr_char) {
+                case 8:
+                case 127:
+                    if (current > 0) current--;
+                    break;
+                default:
+                    current++;
+            }
+        }
+
+    } while (curr_char != 0x0A);
+
+    buf[current] = 0;
+
+    transmit_test((uint8_t *)(&buf), sizeof(buf));
+}
+
+void lstn_handler(uint8_t *args) {}
