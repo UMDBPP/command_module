@@ -10,6 +10,8 @@ extern "C" {
 #include "../../libraries/rp2040-console/std-cmd/command.h"
 }
 
+#include "../../libraries/rp2040-config/MB85RS16N.h"
+#include "../../libraries/rp2040-config/config.h"
 #include "../../libraries/rp2040-drf1262-lib/SX1262.h"
 #include "hardware/flash.h"
 #include "hardware/gpio.h"
@@ -48,6 +50,8 @@ enum Commands_Ext { HELP = STAT + 1 };  // how to add extra op codes for fun
 
 command cmd = {0x00, NOP, {0, 0, 0, 0, 0, 0, 0}, NULL};
 
+Config not_xbee_test_config;
+
 void help_handler(uint8_t *args);
 
 // For the functionality of a (Not)Xbee Joint board
@@ -83,8 +87,6 @@ int main() {
 
 void transmit_test(uint8_t *buf, short len) {
     printf("Transmit Test\n");
-
-    printf("Sending payload: %s\n", buf);
 
     radio.radio_send(buf, len);
 
@@ -145,13 +147,13 @@ void help_handler(uint8_t *args) {
 }
 
 void send_handler(uint8_t *args) {
-    char buf[100] = {0};
+    char buf[100] = {'\0'};
 
     printf("\nEnter string to send: ");
 
     get_string(buf);
 
-    transmit_test((uint8_t *)(&buf), sizeof(buf));
+    transmit_test((uint8_t *)(buf), sizeof(buf));
 }
 
 void lstn_handler(uint8_t *args) {

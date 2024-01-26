@@ -15,6 +15,8 @@ add_executable(test
     ../../libraries/rp2040-drf1262-lib/SX1262.cpp
     ../../libraries/rp2040-console/console.c
     ../../libraries/rp2040-console/std-cmd/command.c
+    ../../libraries/rp2040-config/MB85RS16N.cpp
+    ../../libraries/rp2040-config/config.cpp
 )
 
 pico_enable_stdio_usb(test 1)
@@ -28,6 +30,8 @@ add_executable(test_rx_tx
     ../../libraries/rp2040-drf1262-lib/SX1262.cpp
     ../../libraries/rp2040-console/console.c
     ../../libraries/rp2040-console/std-cmd/command.c
+    ../../libraries/rp2040-config/MB85RS16N.cpp
+    ../../libraries/rp2040-config/config.cpp
 )
 
 pico_enable_stdio_usb(test_rx_tx 1)
@@ -46,6 +50,8 @@ add_executable(test_rx
     ../../libraries/rp2040-drf1262-lib/SX1262.cpp
     ../../libraries/rp2040-console/console.c
     ../../libraries/rp2040-console/std-cmd/command.c
+    ../../libraries/rp2040-config/MB85RS16N.cpp
+    ../../libraries/rp2040-config/config.cpp
 )
 
 pico_enable_stdio_usb(test_rx 1)
@@ -64,6 +70,8 @@ add_executable(test_tx
     ../../libraries/rp2040-drf1262-lib/SX1262.cpp
     ../../libraries/rp2040-console/console.c
     ../../libraries/rp2040-console/std-cmd/command.c
+    ../../libraries/rp2040-config/MB85RS16N.cpp
+    ../../libraries/rp2040-config/config.cpp
 )
 
 pico_enable_stdio_usb(test_tx 1)
