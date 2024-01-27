@@ -57,7 +57,7 @@ int main() {
     printf("\n%s %s\n", __DATE__, __TIME__);
 
     while (true) {
-        printf("\n\n\n\n\n\n\n\n\n\n\n\n");
+        printf("\n\n\n\n\n\n\n\n\n\n\n\n\n");
 
         if (debug_msgs) {
             printf("============BITSv5: %s (DEBUG)============\n", id);
