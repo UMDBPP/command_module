@@ -3054,12 +3054,10 @@ CMakeFiles/test_rx_tx.dir/test.cpp.obj: /Users/michaelshipman/Developer/command_
   /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_unique_id/include/pico/unique_id.h \
   /Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.h \
   /Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-ms5607-lib/MS5607.h \
-  /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/test/BITSv5.h \
+  /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5.h \
   generated/pico_base/pico/config_autogen.h \
   generated/pico_base/pico/version.h
 
-
-/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/test/BITSv5.h:
 
 /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/test/test.cpp:
 
@@ -3392,6 +3390,8 @@ generated/pico_base/pico/config_autogen.h:
 /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/c++/13.2.1/debug/assertions.h:
 
 /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/lib/gcc/arm-none-eabi/13.2.1/include/float.h:
+
+/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5.h:
 
 /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c:
 

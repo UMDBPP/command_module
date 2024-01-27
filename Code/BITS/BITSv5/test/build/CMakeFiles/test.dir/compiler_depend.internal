@@ -3228,7 +3228,7 @@ CMakeFiles/test.dir/test.cpp.obj
  /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_unique_id/include/pico/unique_id.h
  /Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.h
  /Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-ms5607-lib/MS5607.h
- /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/test/BITSv5.h
+ /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5.h
  /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/test/build/generated/pico_base/pico/config_autogen.h
  /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/test/build/generated/pico_base/pico/version.h
 
