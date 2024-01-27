@@ -54,6 +54,8 @@ int main() {
     pico_get_unique_board_id_string(id,
                                     2 * PICO_UNIQUE_BOARD_ID_SIZE_BYTES + 1);
 
+    printf("\n%s %s\n", __DATE__, __TIME__);
+
     while (true) {
         printf("\n\n\n\n\n\n\n\n\n\n\n\n");
 
