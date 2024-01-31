@@ -3,13 +3,10 @@
 
 #include "../BITSv5.h"
 #include "hardware/i2c.h"
-// #include "hardware/uart.h"
 #include "pico/binary_info.h"
 #include "pico/stdlib.h"
 
 #define NO_GPS_DATA 0xFF
-
-#define GPS_ADDR 0x42
 
 // Registers
 static const uint8_t REG_NUM_BYTES_MSB = 0xFD;
@@ -45,33 +42,16 @@ int main() {
 
     // i2c_set_slave_mode(i2c, false, 0x00);
 
-    sleep_ms(5000);
-
-    printf("Start GPS BITSv5 Test - Compiled: %s %s\n", __DATE__, __TIME__);
-
     uint8_t rx_msg = 0;
 
     while (true) {
         // printf("%c", uart_getc(uart0));
 
-        // result2 = i2c_read_blocking(i2c, GPS_ADDR, &rx_msg, 1, false);
-
-        // printf("passed\n");
-
-        // if (result2 == PICO_ERROR_GENERIC)
-        //     printf("\ni2c error occurred %x\n\n", result2);
-        // else
-        //     printf(" %c", rx_msg);
-
-        for (int address = 1; address < 127; address++) {
-            result2 = i2c_read_blocking(i2c, address, &rx_msg, 1, false);
-
-            printf("passed\n");
-
-            if (result2 == PICO_ERROR_GENERIC)
-                printf("\ni2c error occurred %x\n\n", result2);
-            else
-                printf(" %c", rx_msg);
+        result2 = i2c_read_blocking(i2c, GPS_ADDR, &rx_msg, 1, false);
+        if (result2 == PICO_ERROR_GENERIC)
+            printf("\ni2c error occurred %x\n\n", result2);
+        else {
+            if (rx_msg != NO_GPS_DATA) printf("%c", rx_msg);
         }
     }
 }
