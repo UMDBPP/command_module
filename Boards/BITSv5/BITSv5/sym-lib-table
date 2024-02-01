@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "BPP_Lib")(type "KiCad")(uri "/Users/michaelshipman/Developer/command_module/Boards/kicad-lib/BPP_Lib.kicad_sym")(options "")(descr ""))
+)

@@ -2,4 +2,5 @@
   (version 7)
   (lib (name "BITSv5")(type "KiCad")(uri "${KIPRJMOD}/libraries/BITSv5.pretty")(options "")(descr ""))
   (lib (name "BPP_Lib")(type "KiCad")(uri "/Users/michaelshipman/Developer/command_module/Boards/kicad-lib/BPP_Lib.pretty")(options "")(descr ""))
+  (lib (name "kicad-lib")(type "KiCad")(uri "/Users/michaelshipman/Developer/command_module/Boards/kicad-lib.pretty")(options "")(descr ""))
 )
