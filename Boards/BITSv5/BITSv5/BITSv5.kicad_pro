@@ -580,7 +580,7 @@
       "idf": "",
       "netlist": "",
       "specctra_dsn": "",
-      "step": "",
+      "step": "Models/BITSv5-1.step",
       "vrml": ""
     },
     "page_layout_descr_file": ""
