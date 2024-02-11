@@ -42,6 +42,8 @@ short debug_msgs = 1;  // controls if debug messages are printed
 int main() {
     stdio_init_all();
 
+    set_sys_clock_48mhz();
+
     sleep_ms(5000);
 
     gpio_init(0);
@@ -66,7 +68,7 @@ int main() {
         }
 
 #if TX_TEST
-        sleep_ms(4500);
+        // sleep_ms(4500);
         transmit_test();
 #endif
 
