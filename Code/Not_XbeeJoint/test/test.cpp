@@ -15,6 +15,7 @@ extern "C" {
 #include "../../libraries/rp2040-drf1262-lib/SX1262.h"
 #include "hardware/flash.h"
 #include "hardware/gpio.h"
+#include "hardware/irq.h"
 #include "hardware/spi.h"
 #include "pico/binary_info.h"
 #include "pico/rand.h"
@@ -29,7 +30,7 @@ extern "C" {
 #define FLASH_TARGET_OFFSET (PICO_FLASH_SIZE_BYTES - FLASH_SECTOR_SIZE)
 
 #ifndef RX_TEST
-#define RX_TEST 0
+#define RX_TEST 1
 #endif
 
 #ifndef TX_TEST
@@ -52,12 +53,17 @@ command cmd = {0x00, NOP, {0, 0, 0, 0, 0, 0, 0}, NULL};
 
 Config not_xbee_test_config;
 
+char radio_buf[100] = {0};
+
 void help_handler(uint8_t *args);
+void gpio_callback(uint gpio, uint32_t events);
 
 // For the functionality of a (Not)Xbee Joint board
 // NOT PRODUCTION CODE
 int main() {
     stdio_init_all();
+
+    gpio_set_irq_callback(&gpio_callback);
 
     sleep_ms(5000);
 
@@ -90,14 +96,14 @@ void transmit_test(uint8_t *buf, short len) {
 
     radio.radio_send(buf, len);
 
-    sleep_ms(100);
+    // sleep_ms(100);
 
 #if INCLUDE_DEBUG
     radio.get_radio_errors();
     radio.get_irq_status();
 #endif
 
-    radio.clear_irq_status();
+    // radio.clear_irq_status();
 
 #if INCLUDE_DEBUG
     radio.get_irq_status();
@@ -109,23 +115,23 @@ void rx_test(char *buf, short len) {
 
     radio.radio_receive_single();
 
-    while (!gpio_get(DIO1_PIN)) {
-        sleep_ms(1);
-        if (getchar_timeout_us(0) == 'c') {
-            radio.clear_irq_status();
-            return;
-        }
-    }
+    // while (!gpio_get(DIO1_PIN)) {
+    //     sleep_ms(1);
+    //     if (getchar_timeout_us(0) == 'c') {
+    //         radio.clear_irq_status();
+    //         return;
+    //     }
+    // }
 
     // sleep_ms(10);
 
     // radio.get_rx_buffer_status();
 
-    radio.get_irq_status();
-    radio.clear_irq_status();
-    radio.get_irq_status();
+    // radio.get_irq_status();
+    // radio.clear_irq_status();
+    // radio.get_irq_status();
 
-    radio.read_radio_buffer((uint8_t *)buf, len);
+    // radio.read_radio_buffer((uint8_t *)buf, len);
 }
 
 void no_op_handler(uint8_t *args) { printf("handler not implemented\n"); }
@@ -157,9 +163,24 @@ void send_handler(uint8_t *args) {
 }
 
 void lstn_handler(uint8_t *args) {
-    char buf[100] = {0};
+    // char buf[100] = {0};
 
-    rx_test(buf, sizeof(buf));
+    // rx_test(buf, sizeof(buf));
 
-    printf("rx: %s\n", buf);
+    // printf("rx: %s\n", buf);
+
+    radio.radio_receive_single();
+}
+
+void gpio_callback(uint gpio, uint32_t events) {
+    if (gpio == DIO1_PIN) {
+        radio.get_irq_status();
+
+        if (radio.irqs.RX_DONE)
+            radio.read_radio_buffer((uint8_t *)radio_buf, sizeof(radio_buf));
+
+        if (radio.irqs.TX_DONE) radio.disable_tx();
+
+        radio.clear_irq_status();
+    }
 }
