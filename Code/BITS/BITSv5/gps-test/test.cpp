@@ -1,6 +1,10 @@
 #include <stdio.h>
 #include <string.h>
 
+#include "../../../libraries/rp2040-drf1262-lib/SX1262.h"
+#include "../../../libraries/libnmea/src/nmea/nmea.h"
+#include "nmea/gpgll.h"
+#include "nmea/gpgga.h"
 #include "../BITSv5.h"
 #include "hardware/i2c.h"
 #include "pico/binary_info.h"
@@ -15,6 +19,9 @@ static const uint8_t REG_DATA = 0xFF;
 
 // Ports
 i2c_inst_t *i2c = i2c0;
+
+DRF1262 radio(spi1, CS_PIN, SCK_PIN, MOSI_PIN, MISO_PIN, TXEN_PIN, DIO1_PIN,
+              BUSY_PIN, SW_PIN);
 
 void ubx_inf_debug(void);
 void ubx_cfg_prt(void);
@@ -32,6 +39,9 @@ int main() {
     uint8_t msg[3] = {0x00, 0x00, 0x00};
 
     stdio_init_all();
+
+    radio.debug_msg_en = 0;
+    radio.radio_init();
 
     // Initialize I2C port at 100 kHz
     i2c_init(i2c, 100 * 1000);

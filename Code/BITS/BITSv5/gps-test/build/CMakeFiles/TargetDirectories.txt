@@ -1,4 +1,4 @@
-/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/gps-test/build/CMakeFiles/test.dir
+/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/gps-test/build/CMakeFiles/gps-test.dir
 /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/gps-test/build/CMakeFiles/ELF2UF2Build.dir
 /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/gps-test/build/CMakeFiles/edit_cache.dir
 /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/gps-test/build/CMakeFiles/rebuild_cache.dir
