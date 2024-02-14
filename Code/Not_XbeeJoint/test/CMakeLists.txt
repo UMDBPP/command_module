@@ -23,7 +23,7 @@ pico_enable_stdio_usb(test 1)
 
 pico_add_extra_outputs(test)
 
-target_link_libraries(test pico_stdlib hardware_flash hardware_sync hardware_spi pico_rand pico_unique_id hardware_irq)
+target_link_libraries(test pico_stdlib hardware_flash hardware_sync hardware_spi pico_rand pico_unique_id)
 
 add_executable(test_rx_tx
     test.cpp

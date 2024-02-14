@@ -35,3 +35,7 @@
 	path = Code/libraries/std-cmd
 	url = https://github.com/UMDBPP/std-cmd.git
 	branch = main
+[submodule "Code/libraries/libnmea"]
+	path = Code/libraries/libnmea
+	url = https://github.com/jacketizer/libnmea.git
+	branch = master

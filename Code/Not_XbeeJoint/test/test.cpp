@@ -15,7 +15,7 @@ extern "C" {
 #include "../../libraries/rp2040-drf1262-lib/SX1262.h"
 #include "hardware/flash.h"
 #include "hardware/gpio.h"
-#include "hardware/irq.h"
+// #include "hardware/irq.h"
 #include "hardware/spi.h"
 #include "pico/binary_info.h"
 #include "pico/rand.h"
@@ -45,7 +45,7 @@ DRF1262 radio(spi0, CS_PIN, SCK_PIN, MOSI_PIN, MISO_PIN, TXEN_PIN, DIO1_PIN,
 
 char id[2 * PICO_UNIQUE_BOARD_ID_SIZE_BYTES + 1] = {0};
 
-short debug_msgs = 1;  // controls if debug messages are printed
+short debug_msgs = 0;  // controls if debug messages are printed
 
 enum Commands_Ext { HELP = STAT + 1 };  // how to add extra op codes for fun
 
@@ -55,6 +55,8 @@ Config not_xbee_test_config;
 
 char radio_buf[100] = {0};
 
+bool tx_done = true;
+
 void help_handler(uint8_t *args);
 void gpio_callback(uint gpio, uint32_t events);
 
@@ -63,7 +65,10 @@ void gpio_callback(uint gpio, uint32_t events);
 int main() {
     stdio_init_all();
 
-    gpio_set_irq_callback(&gpio_callback);
+    // gpio_set_irq_callback(&gpio_callback);
+
+    gpio_set_irq_enabled_with_callback(DIO1_PIN, GPIO_IRQ_EDGE_RISE, true,
+                                       &gpio_callback);
 
     sleep_ms(5000);
 
@@ -87,16 +92,21 @@ int main() {
         print_command(&cmd);
         cmd.handler(cmd.params);
 
-        sleep_ms(500);
+        // sleep_ms(500);
     }
 }
 
 void transmit_test(uint8_t *buf, short len) {
     printf("Transmit Test\n");
 
+    tx_done = false;
+
     radio.radio_send(buf, len);
 
-    // sleep_ms(100);
+    while (!tx_done)
+        ;
+
+        // sleep_ms(100);
 
 #if INCLUDE_DEBUG
     radio.get_radio_errors();
@@ -149,7 +159,9 @@ void get_handler(uint8_t *args) { printf("handler not implemented\n"); }
 void set_handler(uint8_t *args) { printf("handler not implemented\n"); }
 
 void help_handler(uint8_t *args) {
-    printf("Enter commands at the promp below\nCommand format: Op-Code args\n");
+    printf(
+        "Enter commands at the promp below\nCommand format: Op-Code "
+        "args\n");
 }
 
 void send_handler(uint8_t *args) {
@@ -176,10 +188,15 @@ void gpio_callback(uint gpio, uint32_t events) {
     if (gpio == DIO1_PIN) {
         radio.get_irq_status();
 
-        if (radio.irqs.RX_DONE)
+        if (radio.irqs.RX_DONE) {
             radio.read_radio_buffer((uint8_t *)radio_buf, sizeof(radio_buf));
+            printf("%s\n", radio_buf);
+        }
 
-        if (radio.irqs.TX_DONE) radio.disable_tx();
+        if (radio.irqs.TX_DONE) {
+            tx_done = true;
+            radio.disable_tx();
+        }
 
         radio.clear_irq_status();
     }
