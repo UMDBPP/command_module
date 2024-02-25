@@ -12,6 +12,9 @@
 #define SDA_PIN 20
 #define SCL_PIN 21
 #define GPS_ADDR 0x42
+#define EXTINT_PIN 17
+#define TIMEPULSE_PIN 18
+#define LED_PIN 0
 
 #define INCLUDE_DEBUG \
     1  // controls if debug conditionals are included at compile time

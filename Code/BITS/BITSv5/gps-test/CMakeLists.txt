@@ -21,6 +21,6 @@ pico_add_extra_outputs(gps-test)
 
 target_link_libraries(gps-test pico_stdlib hardware_flash hardware_sync hardware_spi hardware_i2c pico_unique_id pico_rand)
 
-target_compile_definitions(test_rx_tx PRIVATE
-    NMEA_STATIC=GPGLL,GPRMC,GPGGA,GPGSA,GPGSV,GPTXT,GPVTG
-)
+# target_compile_definitions(test_rx_tx PRIVATE
+#     NMEA_STATIC=GPGLL,GPRMC,GPGGA,GPGSA,GPGSV,GPTXT,GPVTG
+# )
