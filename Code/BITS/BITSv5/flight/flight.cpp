@@ -25,8 +25,6 @@ DRF1262 radio(spi1, CS_PIN, SCK_PIN, MOSI_PIN, MISO_PIN, TXEN_PIN, DIO1_PIN,
 
 char id[2 * PICO_UNIQUE_BOARD_ID_SIZE_BYTES + 1] = {0};
 
-short debug_msgs = 0;  // controls if debug messages are printed
-
 char radio_rx_buf[100] = {0};
 uint8_t radio_tx_buf[100] = {0};
 uint8_t radio_ack_buf[100] = {0};
@@ -46,21 +44,16 @@ void led_on();
 void led_off();
 void gpio_callback(uint gpio, uint32_t events);
 bool tx_timer_callback(repeating_timer_t *rt);
+void get_gps_data(void);
 
 // FLIGHT CODE
 int main() {
     stdio_init_all();
 
-    // set_sys_clock_48mhz();
-
-    gpio_set_irq_enabled_with_callback(DIO1_PIN, GPIO_IRQ_EDGE_RISE, true,
-                                       &gpio_callback);
-
     uart_init(uart1, 9600);
     gpio_set_function(SCL_PIN, GPIO_FUNC_UART);
 
     setup_led();
-
     led_off();
 
     sleep_ms(5000);
@@ -73,15 +66,13 @@ int main() {
         return 1;
     }
 
-    radio.debug_msg_en = debug_msgs;
+    radio.debug_msg_en = 0;
     radio.radio_init();
 
     pico_get_unique_board_id_string(id,
                                     2 * PICO_UNIQUE_BOARD_ID_SIZE_BYTES + 1);
 
     printf("\n%s %s\n", __DATE__, __TIME__);
-
-    // radio.radio_receive_single();
 
     while (true) {
         // printf("\n\n\n\n\n\n\n\n\n\n\n\n\n");
@@ -109,29 +100,39 @@ int main() {
         //     transmit_test(radio_ack_buf, strlen((char *)radio_ack_buf));
         // }
 
+        // RX THING TO TRY
+        // rx_test();
+
+        // RX THING TO TRY
+        if (gpio_get(DIO1_PIN) && !gpio_get(BUSY_PIN)) {
+            printf("DIO1 is high and BUSY is low!\n");
+            char data[6] = {
+                '\0', '\0', '\0', '\0', '\0', '\0',
+            };
+
+            char ack_msg[] = "_ack-__________";
+
+            radio.get_irq_status();
+
+            if (radio.irqs.RX_DONE) {
+                printf("got some data!\n");
+                radio.read_radio_buffer((uint8_t *)data, 5);
+
+                printf("Got some data: %s\n", data);
+
+                strcpy(ack_msg + 4, data);
+
+                transmit_test((uint8_t *)ack_msg, sizeof(ack_msg));
+            }
+            printf("moving on!\n");
+        }
+
         if (transmit) {
             transmit_test((uint8_t *)radio_tx_buf, sizeof(radio_tx_buf));
             transmit = false;
         }
 
-        // if (tx_done) {
-        // }
-
-        while (uart_is_readable(uart1) > 0) {
-            char c = uart_getc(uart1);
-            if (c == '*') {
-                strcpy((char *)radio_tx_buf, gps_buf);
-                gps_buf_offset = 0;
-            }
-
-            if (gps_buf_offset >= 89) gps_buf_offset = 0;
-
-            if (c == '$') gps_buf_offset = 0;
-
-            gps_buf[gps_buf_offset] = c;
-            gps_buf_offset++;
-            printf("%c", c);
-        }
+        get_gps_data();
     }
 }
 
@@ -146,23 +147,17 @@ void transmit_test(uint8_t *buf, size_t len) {
 
     radio.radio_send(buf, len);
 
-    sleep_ms(10);
+    while (gpio_get(BUSY_PIN))
+        ;
+
+    sleep_ms(20);
 
     led_off();
     printf("%s\n", (char *)buf);
     // radio.disable_tx();
     // radio.radio_receive_single();
 
-#if INCLUDE_DEBUG
-    radio.get_radio_errors();
-    radio.get_irq_status();
-#endif
-
     radio.clear_irq_status();
-
-#if INCLUDE_DEBUG
-    radio.get_irq_status();
-#endif
 }
 
 void setup_led() {
@@ -175,25 +170,52 @@ void led_on() { gpio_put(LED_PIN, true); }
 
 void led_off() { gpio_put(LED_PIN, false); }
 
-void gpio_callback(uint gpio, uint32_t events) {
-    printf("i\n");
-    if (gpio == DIO1_PIN) {
-        radio.get_irq_status();
-
-        if (radio.irqs.RX_DONE) {
-            rx_done = true;
-        }
-
-        if (radio.irqs.TX_DONE) {
-            tx_done = true;
-        }
-
-        radio.clear_irq_status();
-    }
-}
-
 bool tx_timer_callback(repeating_timer_t *rt) {
     transmit = true;
 
     return true;  // keep repeating
+}
+
+void rx_test() {
+    char data[6] = {
+        '\0', '\0', '\0', '\0', '\0', '\0',
+    };
+
+    char ack_msg[] = "_ack-__________";
+
+    printf("Receive Test\n");
+
+    radio.radio_receive_single();
+
+    while (!gpio_get(DIO1_PIN) && !transmit) {
+        sleep_ms(1);
+    }
+
+    radio.clear_irq_status();
+
+    radio.read_radio_buffer((uint8_t *)data, 5);
+
+    printf("Got some data: %s\n", data);
+
+    strcpy(ack_msg + 4, data);
+
+    transmit_test((uint8_t *)ack_msg, sizeof(ack_msg));
+}
+
+void get_gps_data(void) {
+    while (uart_is_readable(uart1) > 0) {
+        char c = uart_getc(uart1);
+        if (c == '*') {
+            strcpy((char *)radio_tx_buf, gps_buf);
+            gps_buf_offset = 0;
+        }
+
+        if (gps_buf_offset >= 89) gps_buf_offset = 0;
+
+        if (c == '$') gps_buf_offset = 0;
+
+        gps_buf[gps_buf_offset] = c;
+        gps_buf_offset++;
+        printf("%c", c);
+    }
 }
