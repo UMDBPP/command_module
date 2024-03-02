@@ -44,6 +44,8 @@ DRF1262 radio(spi0, CS_PIN, SCK_PIN, MOSI_PIN, MISO_PIN, TXEN_PIN, DIO1_PIN,
               BUSY_PIN, SW_PIN);
 
 char id[2 * PICO_UNIQUE_BOARD_ID_SIZE_BYTES + 1] = {0};
+char alive[] = "xbee joint alive!";
+char ack[] = "ack - xbee joint alive!";
 
 short debug_msgs = 0;  // controls if debug messages are printed
 
@@ -56,6 +58,7 @@ Config not_xbee_test_config;
 char radio_buf[100] = {0};
 
 bool tx_done = true;
+bool send_ack = false;
 
 void help_handler(uint8_t *args);
 void gpio_callback(uint gpio, uint32_t events);
@@ -103,8 +106,7 @@ void transmit_test(uint8_t *buf, short len) {
 
     radio.radio_send(buf, len);
 
-    while (!tx_done)
-        ;
+    while (!tx_done) busy_wait_us_32(1);
 
         // sleep_ms(100);
 
@@ -181,21 +183,57 @@ void lstn_handler(uint8_t *args) {
 
     // printf("rx: %s\n", buf);
 
-    radio.radio_receive_single();
+    radio.radio_receive_cont();
+
+    while (true) {  //! gpio_get(DIO1_PIN)
+        char c = getchar_timeout_us(1000);
+
+        switch (c) {
+            case 'c':
+                return;
+                break;
+            case 's':
+                transmit_test((uint8_t *)(alive), sizeof(alive));
+        }
+        // if (getchar_timeout_us(1000) == 'c') return;
+        // sleep_ms(1);
+
+        if (send_ack) {
+            transmit_test((uint8_t *)(ack), sizeof(ack));
+            sleep_ms(100);
+            send_ack = false;
+        }
+    }
+
+    radio.read_radio_buffer((uint8_t *)radio_buf, sizeof(radio_buf));
+
+    printf("Got some data: %s\n", radio_buf);
 }
 
 void gpio_callback(uint gpio, uint32_t events) {
     if (gpio == DIO1_PIN) {
+        printf("DIO1 ISR\n");
         radio.get_irq_status();
 
-        if (radio.irqs.RX_DONE) {
-            radio.read_radio_buffer((uint8_t *)radio_buf, sizeof(radio_buf));
-            printf("%s\n", radio_buf);
-        }
-
         if (radio.irqs.TX_DONE) {
+            printf("TX ISR\n");
             tx_done = true;
             radio.disable_tx();
+            radio.radio_receive_cont();
+            radio.irqs.TX_DONE = false;
+        }
+
+        if (radio.irqs.RX_DONE) {
+            printf("RX ISR\n");
+            radio.read_radio_buffer((uint8_t *)radio_buf, sizeof(radio_buf));
+            printf("%s\n", radio_buf);
+            radio.get_packet_status();
+            printf("RSSI: %d dBm Signal RSSI: %d SNR: %d dB\n",
+                   radio.pkt_stat.rssi_pkt, radio.pkt_stat.signal_rssi_pkt,
+                   radio.pkt_stat.snr_pkt);
+
+            radio.irqs.RX_DONE = false;
+            send_ack = true;
         }
 
         radio.clear_irq_status();
