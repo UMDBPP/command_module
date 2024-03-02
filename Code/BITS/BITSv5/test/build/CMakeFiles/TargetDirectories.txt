@@ -1,8 +1,5 @@
 /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/test/build/CMakeFiles/test.dir
 /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/test/build/CMakeFiles/ELF2UF2Build.dir
-/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/test/build/CMakeFiles/test_rx.dir
-/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/test/build/CMakeFiles/test_tx.dir
-/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/test/build/CMakeFiles/test_rx_tx.dir
 /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/test/build/CMakeFiles/edit_cache.dir
 /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/test/build/CMakeFiles/rebuild_cache.dir
 /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/test/build/pico-sdk/CMakeFiles/edit_cache.dir

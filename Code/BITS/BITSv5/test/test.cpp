@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 
+#include "../../../libraries/rp2040-config/MB85RS1MT.h"
+#include "../../../libraries/rp2040-config/config.h"
 #include "../../../libraries/rp2040-drf1262-lib/SX1262.h"
 #include "../../../libraries/rp2040-ms5607-lib/MS5607.h"
 #include "../BITSv5.h"
@@ -16,97 +18,140 @@
 #undef PICO_FLASH_SIZE_BYTES
 #define PICO_FLASH_SIZE_BYTES (16 * 1024 * 1024)
 
-// Flash-based address of the last sector
-#define FLASH_TARGET_OFFSET (PICO_FLASH_SIZE_BYTES - FLASH_SECTOR_SIZE)
-
-#ifndef RX_TEST
-#define RX_TEST 0
-#endif
-
-#ifndef TX_TEST
-#define TX_TEST 1
-#endif
-
-void rx_test(void);
-void transmit_test(void);
-
-DRF1262 radio(spi1, CS_PIN, SCK_PIN, MOSI_PIN, MISO_PIN, TXEN_PIN, DIO1_PIN,
+DRF1262 radio(spi1, RADIO_CS, SCK_PIN, MOSI_PIN, MISO_PIN, TXEN_PIN, DIO1_PIN,
               BUSY_PIN, SW_PIN);
+
+MB85RS1MT mem(spi1, FRAM_CS, SCK_PIN, MOSI_PIN, MISO_PIN);
+
+Config test_config;
 
 char id[2 * PICO_UNIQUE_BOARD_ID_SIZE_BYTES + 1] = {0};
 
-short debug_msgs = 1;  // controls if debug messages are printed
+char radio_rx_buf[100] = {0};
+uint8_t radio_tx_buf[100] = {0};
+uint8_t radio_ack_buf[100] = {0};
+char gps_buf[90] = {0};
+uint gps_buf_offset = 0;
 
-// For testing the functionality of a BITSv5 board
-// NOT FLIGHT CODE
+volatile bool tx_done = false;
+volatile bool transmit = false;
+volatile bool rx_done = false;
+
+repeating_timer_t tx_timer;
+
+void rx_test(void);
+void transmit_test(uint8_t *buf, size_t len);
+void setup_led();
+void led_on();
+void led_off();
+void gpio_callback(uint gpio, uint32_t events);
+bool tx_timer_callback(repeating_timer_t *rt);
+void get_gps_data(void);
+int start_tx_repeating(void);
+
 int main() {
     stdio_init_all();
 
-    set_sys_clock_48mhz();
+    setup_led();
+    led_off();
+
+    spi_init(spi1, 500000);
+
+    spi_set_format(spi1,            // SPI instance
+                   8,              // Number of bits per transfer
+                   (spi_cpol_t)0,  // Polarity (CPOL)
+                   (spi_cpha_t)0,  // Phase (CPHA)
+                   SPI_MSB_FIRST);
 
     sleep_ms(5000);
 
-    gpio_init(0);
-    gpio_set_dir(0, GPIO_OUT);
-    gpio_put(0, 0);
-
-    radio.debug_msg_en = debug_msgs;
+    radio.debug_msg_en = 0;
     radio.radio_init();
+
+    mem.mem_init();
 
     pico_get_unique_board_id_string(id,
                                     2 * PICO_UNIQUE_BOARD_ID_SIZE_BYTES + 1);
-
-    printf("\n%s %s\n", __DATE__, __TIME__);
-
     while (true) {
-        printf("\n\n\n\n\n\n\n\n\n\n\n\n\n");
+        printf("\n%s %s\n", __DATE__, __TIME__);
 
-        if (debug_msgs) {
-            printf("============BITSv5: %s (DEBUG)============\n", id);
-        } else {
-            printf("============BITSv5: %s============\n", id);
-        }
+        printf("Config Lib Test Compiled %s %s\n", __DATE__, __TIME__);
 
-#if TX_TEST
-        // sleep_ms(4500);
-        transmit_test();
-#endif
+        printf("Device ID: %d\n", mem.device_id);
 
-#if RX_TEST
-        rx_test();
-        radio.get_radio_errors();
-#endif
+        printf("DEVICE NAME: %s\n", test_config.name);
 
-        gpio_put(0, true);
-        sleep_ms(1000);
-        gpio_put(0, false);
-        sleep_ms(1000);
+        // Read and print the NAME config setting
+        read_config(NAME, test_config, (uint8_t *)test_config.name,
+                    sizeof(test_config.name), &mem);
+
+        printf("DEVICE NAME: %s\n", test_config.name);
+
+        // Write the time that this file was last compiled to the config struct
+        strcpy(test_config.name, __TIME__);
+
+        // Write the changed setting to the FRAM
+        write_config(NAME, test_config, (uint8_t *)test_config.name,
+                     sizeof(test_config.name), &mem);
+
+        // Read and print again
+        strcpy(test_config.name, "something broke");
+
+        read_config(NAME, test_config, (uint8_t *)test_config.name,
+                    sizeof(test_config.name), &mem);
+
+        printf("DEVICE NAME: %s\n", test_config.name);
+
+        sleep_ms(100);
     }
 }
 
-void transmit_test() {
+void transmit_test(uint8_t *buf, size_t len) {
     printf("Transmit Test\n");
 
-    char data[] = "bits5";
+    led_on();
 
-    data[4] = (char)get_rand_32();
+    tx_done = false;
 
-    printf("Sending payload: %s\n", data);
+    buf[0] = (char)get_rand_32();
 
-    radio.radio_send((uint8_t *)data, 5);
+    radio.radio_send(buf, len);
 
-    sleep_ms(100);
+    while (gpio_get(BUSY_PIN) && !gpio_get(DIO1_PIN))
+        ;
 
-#if INCLUDE_DEBUG
+    printf("Starting wait\n");
+
+    sleep_ms(10000);
+
+    led_off();
+    printf("%s\n", (char *)buf);
+    // radio.disable_tx();
+    // radio.radio_receive_single();
+
     radio.get_radio_errors();
-    radio.get_irq_status();
-#endif
 
     radio.clear_irq_status();
 
-#if INCLUDE_DEBUG
-    radio.get_irq_status();
-#endif
+    radio.radio_receive_single();
+
+    radio.get_radio_errors();
+}
+
+void setup_led() {
+    gpio_init(LED_PIN);
+    gpio_set_dir(0, GPIO_OUT);
+    gpio_put(LED_PIN, 0);
+}
+
+void led_on() { gpio_put(LED_PIN, true); }
+
+void led_off() { gpio_put(LED_PIN, false); }
+
+bool tx_timer_callback(repeating_timer_t *rt) {
+    transmit = true;
+
+    return true;  // keep repeating
 }
 
 void rx_test() {
@@ -114,23 +159,52 @@ void rx_test() {
         '\0', '\0', '\0', '\0', '\0', '\0',
     };
 
+    char ack_msg[] = "_ack-__________";
+
     printf("Receive Test\n");
 
     radio.radio_receive_single();
 
-    while (!gpio_get(DIO1_PIN)) {
+    while (!gpio_get(DIO1_PIN) && !transmit) {
         sleep_ms(1);
     }
 
-    // sleep_ms(10);
-
-    // radio.get_rx_buffer_status();
-
-    radio.get_irq_status();
     radio.clear_irq_status();
-    radio.get_irq_status();
 
     radio.read_radio_buffer((uint8_t *)data, 5);
 
-    printf("Got some data: %s | %x\n", data, data[4]);
+    printf("Got some data: %s\n", data);
+
+    strcpy(ack_msg + 4, data);
+
+    transmit_test((uint8_t *)ack_msg, sizeof(ack_msg));
+}
+
+void get_gps_data(void) {
+    while (uart_is_readable(uart1) > 0) {
+        char c = uart_getc(uart1);
+        if (c == '\r') {
+            strcpy((char *)radio_tx_buf, gps_buf);
+            gps_buf_offset = 0;
+        }
+
+        if (gps_buf_offset >= 89) gps_buf_offset = 0;
+
+        if (c == '$') gps_buf_offset = 0;
+
+        if (c != '\r') gps_buf[gps_buf_offset] = c;
+        gps_buf_offset++;
+        // printf("%c", c);
+    }
+}
+
+int start_tx_repeating() {
+    // negative timeout means exact delay (rather than delay between
+    // callbacks)
+    if (!add_repeating_timer_us(-20000000, tx_timer_callback, NULL,
+                                &tx_timer)) {
+        printf("Failed to add timer\n");
+        return 1;
+    }
+    return 0;
 }

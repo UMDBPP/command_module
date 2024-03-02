@@ -1,6 +1,6 @@
-set(CMAKE_HOST_SYSTEM "Darwin-23.1.0")
+set(CMAKE_HOST_SYSTEM "Darwin-23.3.0")
 set(CMAKE_HOST_SYSTEM_NAME "Darwin")
-set(CMAKE_HOST_SYSTEM_VERSION "23.1.0")
+set(CMAKE_HOST_SYSTEM_VERSION "23.3.0")
 set(CMAKE_HOST_SYSTEM_PROCESSOR "arm64")
 
 include("/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/cmake/preload/toolchains/pico_arm_gcc.cmake")

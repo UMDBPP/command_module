@@ -91,7 +91,7 @@ Discarded input sections
  .text._Z13ubx_inf_debugv
                 0x00000000       0x6c CMakeFiles/gps-test.dir/test.cpp.obj
  .rodata._Z11ubx_cfg_prtv.str1.4
-                0x00000000       0x52 CMakeFiles/gps-test.dir/test.cpp.obj
+                0x00000000       0x36 CMakeFiles/gps-test.dir/test.cpp.obj
  .text._Z11ubx_cfg_prtv
                 0x00000000       0xa8 CMakeFiles/gps-test.dir/test.cpp.obj
  .rodata._Z11ubx_cfg_cfgv.str1.4
@@ -102,7 +102,6 @@ Discarded input sections
                 0x00000000       0x1f CMakeFiles/gps-test.dir/test.cpp.obj
  .text._Z11ubx_cfg_datv
                 0x00000000       0xa8 CMakeFiles/gps-test.dir/test.cpp.obj
- .data.i2c      0x00000000        0x4 CMakeFiles/gps-test.dir/test.cpp.obj
  .rodata        0x00000000       0x22 CMakeFiles/gps-test.dir/test.cpp.obj
  .text          0x00000000        0x0 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
  .data          0x00000000        0x0 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
@@ -119,7 +118,7 @@ Discarded input sections
                 0x00000000       0x5c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
  .text._ZN7DRF126223set_buffer_base_addressEv
                 0x00000000       0x40 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
- .text._ZN7DRF126218write_radio_bufferEhPhs
+ .text._ZN7DRF126218write_radio_bufferEhPhj
                 0x00000000       0x6c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
  .rodata._ZN7DRF126225set_fsk_packet_parametersEv.str1.4
                 0x00000000       0x1e CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
@@ -139,7 +138,7 @@ Discarded input sections
                 0x00000000       0x54 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
  .text._ZN7DRF126218clear_radio_errorsEv
                 0x00000000       0x70 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
- .text._ZN7DRF126210radio_sendEPhs
+ .text._ZN7DRF126210radio_sendEPhj
                 0x00000000       0xcc CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
  .text._ZN7DRF126210disable_txEv
                 0x00000000       0x10 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
@@ -154,17 +153,17 @@ Discarded input sections
  .rodata._ZN7DRF126216clear_irq_statusEv.str1.4
                 0x00000000        0xd CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
  .text._ZN7DRF126216clear_irq_statusEv
-                0x00000000       0x74 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
+                0x00000000       0x70 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
  .text._ZN7DRF126214get_irq_statusEv
-                0x00000000       0x7c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
+                0x00000000       0x88 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
  .rodata._ZN7DRF126220get_rx_buffer_statusEv.str1.4
                 0x00000000       0x43 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
  .text._ZN7DRF126220get_rx_buffer_statusEv
                 0x00000000       0x90 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
- .rodata._ZN7DRF126217read_radio_bufferEPhs.str1.4
+ .rodata._ZN7DRF126217read_radio_bufferEPhj.str1.4
                 0x00000000       0x2c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
- .text._ZN7DRF126217read_radio_bufferEPhs
-                0x00000000       0xd4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
+ .text._ZN7DRF126217read_radio_bufferEPhj
+                0x00000000       0xd0 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
  .text._ZN7DRF126221set_lora_symb_timeoutEv
                 0x00000000       0x2c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
  .text._ZN7DRF126215calibrate_imageEv
@@ -173,6 +172,10 @@ Discarded input sections
                 0x00000000       0x1b CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
  .text._ZN7DRF126225set_radio_packet_type_fskEv
                 0x00000000       0x4c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
+ .text._ZN7DRF126217get_packet_statusEv
+                0x00000000       0xb8 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
+ .text._Z17print_radio_statev
+                0x00000000        0x4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
  .rodata._ZL19calibrate_image_cmd
                 0x00000000        0x1 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
  .rodata._ZL17get_rx_buffer_cmd
@@ -1314,10 +1317,6 @@ Discarded input sections
                 0x00000000       0xf4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
  .text.i2c_deinit
                 0x00000000       0x1c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
- .text.i2c_set_baudrate
-                0x00000000       0xc4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
- .text.i2c_init
-                0x00000000       0x50 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
  .text.i2c_set_slave_mode
                 0x00000000       0x40 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
  .text.i2c_write_blocking
@@ -1326,19 +1325,12 @@ Discarded input sections
                 0x00000000       0x48 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
  .text.i2c_write_timeout_per_char_us
                 0x00000000       0x48 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
- .text.i2c_read_blocking
-                0x00000000       0x90 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
  .text.i2c_read_blocking_until
                 0x00000000       0x48 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
  .text.i2c_read_timeout_per_char_us
                 0x00000000       0x48 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
  .data.i2c1_inst
                 0x00000000        0x8 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
- .data.i2c0_inst
-                0x00000000        0x8 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
- .comment       0x00000000       0x45 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
- .ARM.attributes
-                0x00000000       0x2c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
  .text          0x00000000        0x0 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_rand/rand.c.obj
  .data          0x00000000        0x0 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_rand/rand.c.obj
  .bss           0x00000000        0x0 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_rand/rand.c.obj
@@ -1369,9 +1361,9 @@ Discarded input sections
  .comment       0x00000000       0x45 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_rand/rand.c.obj
  .ARM.attributes
                 0x00000000       0x2c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_rand/rand.c.obj
- .text          0x00000000        0x0 /var/folders/n7/t1959y0j4_gczygmz5tcw0qc0000gn/T//ccfI5QOg.o
- .data          0x00000000        0x0 /var/folders/n7/t1959y0j4_gczygmz5tcw0qc0000gn/T//ccfI5QOg.o
- .bss           0x00000000        0x0 /var/folders/n7/t1959y0j4_gczygmz5tcw0qc0000gn/T//ccfI5QOg.o
+ .text          0x00000000        0x0 /var/folders/n7/t1959y0j4_gczygmz5tcw0qc0000gn/T//ccoWJQmP.o
+ .data          0x00000000        0x0 /var/folders/n7/t1959y0j4_gczygmz5tcw0qc0000gn/T//ccoWJQmP.o
+ .bss           0x00000000        0x0 /var/folders/n7/t1959y0j4_gczygmz5tcw0qc0000gn/T//ccoWJQmP.o
  .data          0x00000000        0x0 /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
  .bss           0x00000000        0x0 /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
  .text          0x00000000        0x0 /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(libc_a-calloc.o)
@@ -1690,11 +1682,11 @@ LOAD /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-no
 .boot2          0x10000000      0x100
                 0x10000000                        __boot2_start__ = .
  *(.boot2)
- .boot2         0x10000000      0x100 /var/folders/n7/t1959y0j4_gczygmz5tcw0qc0000gn/T//ccfI5QOg.o
+ .boot2         0x10000000      0x100 /var/folders/n7/t1959y0j4_gczygmz5tcw0qc0000gn/T//ccoWJQmP.o
                 0x10000100                        __boot2_end__ = .
                 0x00000001                        ASSERT (((__boot2_end__ - __boot2_start__) == 0x100), ERROR: Pico second stage bootloader must be 256 bytes in size)
 
-.text           0x10000100     0x79c8
+.text           0x10000100     0x7b98
                 0x10000100                        __logical_binary_start = .
  *(.vectors)
  .vectors       0x10000100       0xd4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
@@ -1759,633 +1751,642 @@ LOAD /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-no
  .text.frame_dummy
                 0x100002e4       0x24 /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtbegin.o
  .text.startup.main
-                0x10000308       0x64 CMakeFiles/gps-test.dir/test.cpp.obj
+                0x10000308       0x90 CMakeFiles/gps-test.dir/test.cpp.obj
                 0x10000308                main
  .text.startup._GLOBAL__sub_I_i2c
-                0x1000036c       0x3c CMakeFiles/gps-test.dir/test.cpp.obj
+                0x10000398       0x3c CMakeFiles/gps-test.dir/test.cpp.obj
  .text._ZN7DRF126216get_radio_errorsEv
-                0x100003a8       0x94 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
-                0x100003a8                DRF1262::get_radio_errors()
+                0x100003d4       0x94 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
+                0x100003d4                DRF1262::get_radio_errors()
  .text._ZN7DRF126220read_radio_registersEv
-                0x1000043c       0xc0 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
-                0x1000043c                DRF1262::read_radio_registers()
+                0x10000468       0xc0 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
+                0x10000468                DRF1262::read_radio_registers()
  .text._ZN7DRF126214radio_spi_initEv
-                0x100004fc       0xa4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
-                0x100004fc                DRF1262::radio_spi_init()
+                0x10000528       0xa4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
+                0x10000528                DRF1262::radio_spi_init()
  .text._ZN7DRF126219set_radio_pa_configEv
-                0x100005a0       0xa4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
-                0x100005a0                DRF1262::set_radio_pa_config()
+                0x100005cc       0xa4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
+                0x100005cc                DRF1262::set_radio_pa_config()
  .text._ZN7DRF126217set_radio_rf_freqEv
-                0x10000644       0x74 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
-                0x10000644                DRF1262::set_radio_rf_freq()
+                0x10000670       0x74 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
+                0x10000670                DRF1262::set_radio_rf_freq()
  .text._ZN7DRF126231set_radio_lora_modulation_paramEv
-                0x100006b8       0x8c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
-                0x100006b8                DRF1262::set_radio_lora_modulation_param()
+                0x100006e4       0x8c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
+                0x100006e4                DRF1262::set_radio_lora_modulation_param()
  .text._ZN7DRF126226set_lora_packet_parametersEv
-                0x10000744       0xbc CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
-                0x10000744                DRF1262::set_lora_packet_parameters()
+                0x10000770       0xbc CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
+                0x10000770                DRF1262::set_lora_packet_parameters()
  .text._ZN7DRF126219set_radio_sync_wordEv
-                0x10000800       0xec CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
-                0x10000800                DRF1262::set_radio_sync_word()
+                0x1000082c       0xec CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
+                0x1000082c                DRF1262::set_radio_sync_word()
  .text._ZN7DRF126216set_dio3_as_tcxoEv
-                0x100008ec       0xa8 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
-                0x100008ec                DRF1262::set_dio3_as_tcxo()
+                0x10000918       0xa8 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
+                0x10000918                DRF1262::set_dio3_as_tcxo()
  .text._ZN7DRF126211set_dio_irqEv
-                0x10000994       0xe4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
-                0x10000994                DRF1262::set_dio_irq()
+                0x100009c0       0xe4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
+                0x100009c0                DRF1262::set_dio_irq()
  .text._ZN7DRF126210radio_initEv
-                0x10000a78      0x27c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
-                0x10000a78                DRF1262::radio_init()
+                0x10000aa4      0x27c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
+                0x10000aa4                DRF1262::radio_init()
  .text.set_sys_clock_48mhz
-                0x10000cf4       0x40 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj
-                0x10000cf4                set_sys_clock_48mhz
+                0x10000d20       0x40 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj
+                0x10000d20                set_sys_clock_48mhz
  .text.gpio_set_function
-                0x10000d34       0x30 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
-                0x10000d34                gpio_set_function
+                0x10000d60       0x30 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
+                0x10000d60                gpio_set_function
  .text.gpio_set_irq_enabled
-                0x10000d64       0x54 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
-                0x10000d64                gpio_set_irq_enabled
+                0x10000d90       0x54 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
+                0x10000d90                gpio_set_irq_enabled
  .text.gpio_init
-                0x10000db8       0x3c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
-                0x10000db8                gpio_init
+                0x10000de4       0x3c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
+                0x10000de4                gpio_init
  .text.running_on_fpga
-                0x10000df4       0x10 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
-                0x10000df4                running_on_fpga
+                0x10000e20       0x10 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
+                0x10000e20                running_on_fpga
  .text.hw_claim_or_assert
-                0x10000e04       0x44 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
-                0x10000e04                hw_claim_or_assert
+                0x10000e30       0x44 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
+                0x10000e30                hw_claim_or_assert
  .text.hw_claim_unused_from_range
-                0x10000e48       0x9c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
-                0x10000e48                hw_claim_unused_from_range
+                0x10000e74       0x9c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
+                0x10000e74                hw_claim_unused_from_range
  .text.spin_locks_reset
-                0x10000ee4       0x1c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
-                0x10000ee4                spin_locks_reset
+                0x10000f10       0x1c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
+                0x10000f10                spin_locks_reset
  .text.next_striped_spin_lock_num
-                0x10000f00       0x18 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
-                0x10000f00                next_striped_spin_lock_num
+                0x10000f2c       0x18 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
+                0x10000f2c                next_striped_spin_lock_num
  .text.spin_lock_claim_unused
-                0x10000f18       0x24 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
-                0x10000f18                spin_lock_claim_unused
+                0x10000f44       0x24 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
+                0x10000f44                spin_lock_claim_unused
  .text.irq_set_enabled
-                0x10000f3c       0x24 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
-                0x10000f3c                irq_set_enabled
+                0x10000f68       0x24 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x10000f68                irq_set_enabled
  .text.irq_set_pending
-                0x10000f60       0x10 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
-                0x10000f60                irq_set_pending
+                0x10000f8c       0x10 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x10000f8c                irq_set_pending
  .text.irq_has_shared_handler
-                0x10000f70       0x2c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
-                0x10000f70                irq_has_shared_handler
+                0x10000f9c       0x2c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x10000f9c                irq_has_shared_handler
  .text.irq_get_vtable_handler
-                0x10000f9c       0x10 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
-                0x10000f9c                irq_get_vtable_handler
+                0x10000fc8       0x10 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x10000fc8                irq_get_vtable_handler
  .text.irq_set_exclusive_handler
-                0x10000fac       0x54 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
-                0x10000fac                irq_set_exclusive_handler
+                0x10000fd8       0x54 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x10000fd8                irq_set_exclusive_handler
  .text.irq_add_shared_handler
-                0x10001000      0x1f4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
-                0x10001000                irq_add_shared_handler
+                0x1000102c      0x1f4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x1000102c                irq_add_shared_handler
  .text.irq_remove_handler
-                0x100011f4      0x1c4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
-                0x100011f4                irq_remove_handler
+                0x10001220      0x1c4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x10001220                irq_remove_handler
  .text.irq_add_tail_to_free_list
-                0x100013b8       0xb4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
-                0x100013b8                irq_add_tail_to_free_list
+                0x100013e4       0xb4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x100013e4                irq_add_tail_to_free_list
  .text.irq_init_priorities
-                0x1000146c       0x24 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
-                0x1000146c                irq_init_priorities
+                0x10001498       0x24 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x10001498                irq_init_priorities
  .text.user_irq_claim_unused
-                0x10001490       0x2c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
-                0x10001490                user_irq_claim_unused
+                0x100014bc       0x2c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x100014bc                user_irq_claim_unused
  .text.lock_init
-                0x100014bc       0x10 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_sync/lock_core.c.obj
-                0x100014bc                lock_init
+                0x100014e8       0x10 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_sync/lock_core.c.obj
+                0x100014e8                lock_init
  .text.mutex_init
-                0x100014cc       0x1c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_sync/mutex.c.obj
-                0x100014cc                mutex_init
+                0x100014f8       0x1c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_sync/mutex.c.obj
+                0x100014f8                mutex_init
  .text.recursive_mutex_init
-                0x100014e8       0x1c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_sync/mutex.c.obj
-                0x100014e8                recursive_mutex_init
+                0x10001514       0x1c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_sync/mutex.c.obj
+                0x10001514                recursive_mutex_init
  .text.critical_section_init
-                0x10001504       0x1c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_sync/critical_section.c.obj
-                0x10001504                critical_section_init
+                0x10001530       0x1c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_sync/critical_section.c.obj
+                0x10001530                critical_section_init
  .text.critical_section_init_with_lock_num
-                0x10001520       0x14 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_sync/critical_section.c.obj
-                0x10001520                critical_section_init_with_lock_num
+                0x1000154c       0x14 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_sync/critical_section.c.obj
+                0x1000154c                critical_section_init_with_lock_num
  .text.timer_pool_entry_comparator
-                0x10001534       0x34 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_time/time.c.obj
-                0x10001534                timer_pool_entry_comparator
+                0x10001560       0x34 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_time/time.c.obj
+                0x10001560                timer_pool_entry_comparator
  .text.sleep_until_callback
-                0x10001568       0x30 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_time/time.c.obj
+                0x10001594       0x30 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_time/time.c.obj
  .text.add_alarm_under_lock.isra.0
-                0x10001598      0x100 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_time/time.c.obj
+                0x100015c4      0x100 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_time/time.c.obj
  .text.alarm_pool_alarm_callback
-                0x10001698      0x1c0 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_time/time.c.obj
+                0x100016c4      0x1c0 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_time/time.c.obj
  .text.alarm_pool_init_default
-                0x10001858       0x6c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_time/time.c.obj
-                0x10001858                alarm_pool_init_default
+                0x10001884       0x6c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_time/time.c.obj
+                0x10001884                alarm_pool_init_default
  .text.alarm_pool_get_default
-                0x100018c4        0x8 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_time/time.c.obj
-                0x100018c4                alarm_pool_get_default
+                0x100018f0        0x8 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_time/time.c.obj
+                0x100018f0                alarm_pool_get_default
  .text.alarm_pool_add_alarm_at
-                0x100018cc      0x17c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_time/time.c.obj
-                0x100018cc                alarm_pool_add_alarm_at
+                0x100018f8      0x17c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_time/time.c.obj
+                0x100018f8                alarm_pool_add_alarm_at
  .text.alarm_pool_core_num
-                0x10001a48        0x4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_time/time.c.obj
-                0x10001a48                alarm_pool_core_num
+                0x10001a74        0x4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_time/time.c.obj
+                0x10001a74                alarm_pool_core_num
  .text.sleep_until
-                0x10001a4c       0xc4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_time/time.c.obj
-                0x10001a4c                sleep_until
+                0x10001a78       0xc4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_time/time.c.obj
+                0x10001a78                sleep_until
  .text.sleep_ms
-                0x10001b10       0x38 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_time/time.c.obj
-                0x10001b10                sleep_ms
+                0x10001b3c       0x38 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_time/time.c.obj
+                0x10001b3c                sleep_ms
  .text.best_effort_wfe_or_timeout
-                0x10001b48       0xcc CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_time/time.c.obj
-                0x10001b48                best_effort_wfe_or_timeout
+                0x10001b74       0xcc CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_time/time.c.obj
+                0x10001b74                best_effort_wfe_or_timeout
  .text.hardware_alarm_irq_handler
-                0x10001c14       0xbc CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x10001c40       0xbc CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
  .text.hardware_alarm_claim
-                0x10001cd0       0x18 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
-                0x10001cd0                hardware_alarm_claim
+                0x10001cfc       0x18 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x10001cfc                hardware_alarm_claim
  .text.time_us_64
-                0x10001ce8       0x14 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
-                0x10001ce8                time_us_64
+                0x10001d14       0x14 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x10001d14                time_us_64
  .text.busy_wait_us
-                0x10001cfc       0x68 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
-                0x10001cfc                busy_wait_us
+                0x10001d28       0x68 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x10001d28                busy_wait_us
  .text.busy_wait_until
-                0x10001d64       0x20 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
-                0x10001d64                busy_wait_until
+                0x10001d90       0x20 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x10001d90                busy_wait_until
  .text.hardware_alarm_set_callback
-                0x10001d84       0x8c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
-                0x10001d84                hardware_alarm_set_callback
+                0x10001db0       0x8c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x10001db0                hardware_alarm_set_callback
  .text.hardware_alarm_set_target
-                0x10001e10       0xd0 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
-                0x10001e10                hardware_alarm_set_target
+                0x10001e3c       0xd0 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x10001e3c                hardware_alarm_set_target
  .text.hardware_alarm_cancel
-                0x10001ee0       0x3c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
-                0x10001ee0                hardware_alarm_cancel
+                0x10001f0c       0x3c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x10001f0c                hardware_alarm_cancel
  .text.ph_merge_nodes
-                0x10001f1c       0x58 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_util/pheap.c.obj
+                0x10001f48       0x58 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_util/pheap.c.obj
  .text.ph_post_alloc_init
-                0x10001f74       0x3c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_util/pheap.c.obj
-                0x10001f74                ph_post_alloc_init
+                0x10001fa0       0x3c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_util/pheap.c.obj
+                0x10001fa0                ph_post_alloc_init
  .text.ph_merge_two_pass
-                0x10001fb0       0x8c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_util/pheap.c.obj
-                0x10001fb0                ph_merge_two_pass
+                0x10001fdc       0x8c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_util/pheap.c.obj
+                0x10001fdc                ph_merge_two_pass
  .text.ph_remove_any_head
-                0x1000203c      0x100 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_util/pheap.c.obj
+                0x10002068      0x100 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_util/pheap.c.obj
  .text.ph_remove_head
-                0x1000213c      0x104 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_util/pheap.c.obj
-                0x1000213c                ph_remove_head
+                0x10002168      0x104 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_util/pheap.c.obj
+                0x10002168                ph_remove_head
  .text.ph_remove_and_free_node
-                0x10002240       0x78 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_util/pheap.c.obj
-                0x10002240                ph_remove_and_free_node
+                0x1000226c       0x78 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_util/pheap.c.obj
+                0x1000226c                ph_remove_and_free_node
  .text.uart_init
-                0x100022b8      0x18c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
-                0x100022b8                uart_init
+                0x100022e4      0x18c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
+                0x100022e4                uart_init
  .text.clock_configure
-                0x10002444      0x114 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
-                0x10002444                clock_configure
+                0x10002470      0x114 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
+                0x10002470                clock_configure
  .text.clocks_init
-                0x10002558      0x2c8 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
-                0x10002558                clocks_init
+                0x10002584      0x2c8 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
+                0x10002584                clocks_init
  .text.clock_get_hz
-                0x10002820        0xc CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
-                0x10002820                clock_get_hz
+                0x1000284c        0xc CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
+                0x1000284c                clock_get_hz
  .text.pll_init
-                0x1000282c       0xa4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
-                0x1000282c                pll_init
+                0x10002858       0xa4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
+                0x10002858                pll_init
  .text.pll_deinit
-                0x100028d0        0x8 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
-                0x100028d0                pll_deinit
+                0x100028fc        0x8 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
+                0x100028fc                pll_deinit
  .text.watchdog_start_tick
-                0x100028d8       0x10 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
-                0x100028d8                watchdog_start_tick
+                0x10002904       0x10 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
+                0x10002904                watchdog_start_tick
  .text.watchdog_reboot
-                0x100028e8       0x9c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
-                0x100028e8                watchdog_reboot
+                0x10002914       0x9c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
+                0x10002914                watchdog_reboot
  .text.xosc_init
-                0x10002984       0x28 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
-                0x10002984                xosc_init
+                0x100029b0       0x28 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
+                0x100029b0                xosc_init
  .text.runtime_init
-                0x100029ac       0xf0 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
-                0x100029ac                runtime_init
- .text._exit    0x10002a9c        0x4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
-                0x10002a9c                _exit
- .text.exit     0x10002aa0        0x8 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
-                0x10002aa0                exit
- .text.panic    0x10002aa8       0x30 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
-                0x10002aa8                panic
+                0x100029d8       0xf0 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+                0x100029d8                runtime_init
+ .text._exit    0x10002ac8        0x4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+                0x10002ac8                _exit
+ .text.exit     0x10002acc        0x8 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+                0x10002acc                exit
+ .text.panic    0x10002ad4       0x30 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+                0x10002ad4                panic
  .text.hard_assertion_failure
-                0x10002ad8        0xc CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
-                0x10002ad8                hard_assertion_failure
+                0x10002b04        0xc CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+                0x10002b04                hard_assertion_failure
  .text._out_null
-                0x10002ae4        0x4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x10002b10        0x4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
  .text._out_rev
-                0x10002ae8       0xac CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x10002b14       0xac CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
  .text._ntoa_format
-                0x10002b94      0x250 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x10002bc0      0x250 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
  .text._out_char
-                0x10002de4       0x10 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x10002e10       0x10 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
  .text._out_fct
-                0x10002df4       0x10 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
- .text._etoa    0x10002e04      0x464 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
- .text._ftoa    0x10003268      0x3c0 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x10002e20       0x10 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+ .text._etoa    0x10002e30      0x464 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+ .text._ftoa    0x10003294      0x3c0 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
  .text._vsnprintf
-                0x10003628      0xbc8 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x10003654      0xbc8 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
  .text.vfctprintf
-                0x100041f0       0x20 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
-                0x100041f0                vfctprintf
+                0x1000421c       0x20 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x1000421c                vfctprintf
  .text.weak_raw_vprintf
-                0x10004210       0x30 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
-                0x10004210                weak_raw_vprintf
- .text          0x10004240       0x10 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
+                0x1000423c       0x30 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x1000423c                weak_raw_vprintf
+ .text          0x1000426c       0x10 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
  .text.rom_func_lookup
-                0x10004250       0x10 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
-                0x10004250                rom_func_lookup
+                0x1000427c       0x10 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
+                0x1000427c                rom_func_lookup
  .text.rom_data_lookup
-                0x10004260       0x10 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
-                0x10004260                rom_data_lookup
+                0x1000428c       0x10 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
+                0x1000428c                rom_data_lookup
  .text.rom_funcs_lookup
-                0x10004270       0x44 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
-                0x10004270                rom_funcs_lookup
+                0x1000429c       0x44 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
+                0x1000429c                rom_funcs_lookup
  .text.__wrap___aeabi_idiv
-                0x100042b4       0x50 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
-                0x100042b4                __wrap___aeabi_idivmod
-                0x100042b4                divmod_s32s32
-                0x100042b4                div_s32s32
-                0x100042b4                __wrap___aeabi_idiv
-                0x100042bc                divmod_s32s32_unsafe
-                0x100042e8                divmod_s32s32_savestate
+                0x100042e0       0x50 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
+                0x100042e0                __wrap___aeabi_idivmod
+                0x100042e0                divmod_s32s32
+                0x100042e0                div_s32s32
+                0x100042e0                __wrap___aeabi_idiv
+                0x100042e8                divmod_s32s32_unsafe
+                0x10004314                divmod_s32s32_savestate
  .text.__wrap___aeabi_uidiv
-                0x10004304       0x4c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
-                0x10004304                __wrap___aeabi_uidiv
-                0x10004304                __wrap___aeabi_uidivmod
-                0x10004304                div_u32u32
-                0x10004304                divmod_u32u32
-                0x1000430c                divmod_u32u32_unsafe
-                0x10004334                divmod_u32u32_savestate
+                0x10004330       0x4c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
+                0x10004330                __wrap___aeabi_uidiv
+                0x10004330                __wrap___aeabi_uidivmod
+                0x10004330                div_u32u32
+                0x10004330                divmod_u32u32
+                0x10004338                divmod_u32u32_unsafe
+                0x10004360                divmod_u32u32_savestate
  .text.__wrap___aeabi_ldiv
-                0x10004350      0x424 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
-                0x10004350                __wrap___aeabi_ldivmod
-                0x10004350                div_s64s64
-                0x10004350                divmod_s64s64
-                0x10004380                divmod_u64u64
-                0x10004380                div_u64u64
-                0x10004380                __wrap___aeabi_uldivmod
-                0x10004390                divmod_u64u64_savestate
-                0x100043b0                divmod_s64s64_unsafe
-                0x10004438                divmod_u64u64_unsafe
+                0x1000437c      0x424 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
+                0x1000437c                __wrap___aeabi_ldivmod
+                0x1000437c                div_s64s64
+                0x1000437c                divmod_s64s64
+                0x100043ac                divmod_u64u64
+                0x100043ac                div_u64u64
+                0x100043ac                __wrap___aeabi_uldivmod
+                0x100043bc                divmod_u64u64_savestate
+                0x100043dc                divmod_s64s64_unsafe
+                0x10004464                divmod_u64u64_unsafe
  .text.__wrap___aeabi_darithmetic
-                0x10004774       0x80 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x10004774                __wrap___aeabi_drsub
-                0x1000477a                __wrap___aeabi_dsub
-                0x1000478c                __wrap___aeabi_dadd
-                0x1000479e                __wrap___aeabi_ddiv
-                0x100047da                __wrap___aeabi_dmul
+                0x100047a0       0x80 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x100047a0                __wrap___aeabi_drsub
+                0x100047a6                __wrap___aeabi_dsub
+                0x100047b8                __wrap___aeabi_dadd
+                0x100047ca                __wrap___aeabi_ddiv
+                0x10004806                __wrap___aeabi_dmul
  .text.__wrap___aeabi_cdcmple
-                0x100047f4       0x6c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x100047f4                __wrap___aeabi_cdrcmple
-                0x10004804                __wrap___aeabi_cdcmple
-                0x10004804                __wrap___aeabi_cdcmpeq
+                0x10004820       0x6c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x10004820                __wrap___aeabi_cdrcmple
+                0x10004830                __wrap___aeabi_cdcmple
+                0x10004830                __wrap___aeabi_cdcmpeq
  .text.__wrap___aeabi_dcmplt
-                0x10004860        0xc CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x10004860                __wrap___aeabi_dcmplt
+                0x1000488c        0xc CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x1000488c                __wrap___aeabi_dcmplt
  .text.__wrap___aeabi_dcmpge
-                0x1000486c       0x10 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x1000486c                __wrap___aeabi_dcmpge
+                0x10004898       0x10 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x10004898                __wrap___aeabi_dcmpge
  .text.__wrap___aeabi_dcmpgt
-                0x1000487c        0xa CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x1000487c                __wrap___aeabi_dcmpgt
+                0x100048a8        0xa CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x100048a8                __wrap___aeabi_dcmpgt
  .text.__wrap___aeabi_dcmpun
-                0x10004886       0x1c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x10004886                __wrap___aeabi_dcmpun
- *fill*         0x100048a2        0x2 
+                0x100048b2       0x1c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x100048b2                __wrap___aeabi_dcmpun
+ *fill*         0x100048ce        0x2 
  .text.__wrap___aeabi_i2d
-                0x100048a4       0x38 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x100048a4                __wrap___aeabi_ui2d
-                0x100048ac                __wrap___aeabi_i2d
+                0x100048d0       0x38 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x100048d0                __wrap___aeabi_ui2d
+                0x100048d8                __wrap___aeabi_i2d
  .text.__wrap___aeabi_d2iz
-                0x100048dc       0x48 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x100048dc                __wrap___aeabi_d2iz
-                0x100048dc                double2int_z
+                0x10004908       0x48 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x10004908                __wrap___aeabi_d2iz
+                0x10004908                double2int_z
  .text.__wrap___aeabi_d2uiz
-                0x10004924       0x18 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x10004924                double2uint
-                0x10004924                __wrap___aeabi_d2uiz
+                0x10004950       0x18 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x10004950                double2uint
+                0x10004950                __wrap___aeabi_d2uiz
  .text.__aeabi_double_init
-                0x1000493c       0x98 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
-                0x1000493c                __aeabi_double_init
+                0x10004968       0x98 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
+                0x10004968                __aeabi_double_init
  .text.double_table_shim_on_use_helper
-                0x100049d4       0x2c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
-                0x100049d4                double_table_shim_on_use_helper
+                0x10004a00       0x2c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+                0x10004a00                double_table_shim_on_use_helper
  .text.__wrap___aeabi_dsub
-                0x10004a00       0x10 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
-                0x10004a00                drsub_shim
-                0x10004a06                dsub_shim
+                0x10004a2c       0x10 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+                0x10004a2c                drsub_shim
+                0x10004a32                dsub_shim
  .text.dadd_shim
-                0x10004a10      0x15c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
-                0x10004a10                dadd_shim
+                0x10004a3c      0x15c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+                0x10004a3c                dadd_shim
  .text.dmul_shim
-                0x10004b6c      0x15c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
-                0x10004b6c                dmul_shim
+                0x10004b98      0x15c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+                0x10004b98                dmul_shim
  .text.ddiv_shim
-                0x10004cc8      0x1b0 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
-                0x10004cc8                ddiv_shim
+                0x10004cf4      0x1b0 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+                0x10004cf4                ddiv_shim
  .text.double2uint_shim
-                0x10004e78        0xe CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
-                0x10004e78                double2uint_shim
-                0x10004e7a                double2ufix_shim
- *fill*         0x10004e86        0x2 
+                0x10004ea4        0xe CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+                0x10004ea4                double2uint_shim
+                0x10004ea6                double2ufix_shim
+ *fill*         0x10004eb2        0x2 
  .text.double2uint64_shim
-                0x10004e88       0x70 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
-                0x10004e88                double2uint64_shim
-                0x10004e8a                double2ufix64_shim
-                0x10004eaa                d2fix_a
+                0x10004eb4       0x70 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+                0x10004eb4                double2uint64_shim
+                0x10004eb6                double2ufix64_shim
+                0x10004ed6                d2fix_a
  .text.dunpacks
-                0x10004ef8       0x3c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
-                0x10004ef8                dunpacks
+                0x10004f24       0x3c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+                0x10004f24                dunpacks
  .text.__aeabi_lmul
-                0x10004f34       0x32 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
-                0x10004f34                __wrap___aeabi_lmul
- *fill*         0x10004f66        0x2 
+                0x10004f60       0x32 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
+                0x10004f60                __wrap___aeabi_lmul
+ *fill*         0x10004f92        0x2 
  .text.__aeabi_float_init
-                0x10004f68       0x64 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
-                0x10004f68                __aeabi_float_init
+                0x10004f94       0x64 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
+                0x10004f94                __aeabi_float_init
  .text.float_table_shim_on_use_helper
-                0x10004fcc       0x2c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj
-                0x10004fcc                float_table_shim_on_use_helper
- .text          0x10004ff8       0x10 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
-                0x10004ff8                __aeabi_mem_init
- .text.memset   0x10005008        0xc CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
-                0x10005008                __wrap_memset
- .text.memcpy   0x10005014        0xc CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
-                0x10005014                __wrap___aeabi_memcpy
-                0x10005014                __wrap_memcpy
+                0x10004ff8       0x2c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj
+                0x10004ff8                float_table_shim_on_use_helper
+ .text          0x10005024       0x10 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
+                0x10005024                __aeabi_mem_init
+ .text.memset   0x10005034        0xc CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
+                0x10005034                __wrap_memset
+ .text.memcpy   0x10005040        0xc CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
+                0x10005040                __wrap___aeabi_memcpy
+                0x10005040                __wrap_memcpy
  .text.stdio_out_chars_crlf
-                0x10005020       0x94 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x1000504c       0x94 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
  .text.stdio_buffered_printer
-                0x100050b4       0x64 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x100050e0       0x64 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
  .text.__wrap_putchar
-                0x10005118       0x98 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
-                0x10005118                __wrap_putchar
+                0x10005144       0x98 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x10005144                __wrap_putchar
  .text.__wrap_puts
-                0x100051b0       0xe0 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
-                0x100051b0                __wrap_puts
+                0x100051dc       0xe0 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x100051dc                __wrap_puts
  .text.stdio_set_driver_enabled
-                0x10005290       0x30 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
-                0x10005290                stdio_set_driver_enabled
+                0x100052bc       0x30 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x100052bc                stdio_set_driver_enabled
  .text.__wrap_vprintf
-                0x100052c0       0xd4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
-                0x100052c0                __wrap_vprintf
+                0x100052ec       0xd4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x100052ec                __wrap_vprintf
  .text.__wrap_printf
-                0x10005394       0x18 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
-                0x10005394                __wrap_printf
+                0x100053c0       0x18 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x100053c0                __wrap_printf
  .text.stdio_init_all
-                0x100053ac       0x10 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
-                0x100053ac                stdio_init_all
+                0x100053d8       0x10 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x100053d8                stdio_init_all
  .text.stdio_uart_out_chars
-                0x100053bc       0x4c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
+                0x100053e8       0x4c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
  .text.stdio_uart_in_chars
-                0x10005408       0x90 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
-                0x10005408                stdio_uart_in_chars
+                0x10005434       0x90 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
+                0x10005434                stdio_uart_in_chars
  .text.on_uart_rx
-                0x10005498       0x28 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
+                0x100054c4       0x28 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
  .text.stdio_uart_set_chars_available_callback
-                0x100054c0       0x8c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
+                0x100054ec       0x8c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
  .text.stdio_uart_init
-                0x1000554c       0x48 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
-                0x1000554c                stdio_uart_init
+                0x10005578       0x48 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
+                0x10005578                stdio_uart_init
  .text.resetd_init
-                0x10005594        0x4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
+                0x100055c0        0x4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
  .text.resetd_reset
-                0x10005598        0xc CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
+                0x100055c4        0xc CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
  .text.resetd_open
-                0x100055a4       0x28 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
+                0x100055d0       0x28 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
  .text.resetd_xfer_cb
-                0x100055cc        0x4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
+                0x100055f8        0x4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
  .text.resetd_control_xfer_cb
-                0x100055d0       0x60 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
+                0x100055fc       0x60 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
  .text.usbd_app_driver_get_cb
-                0x10005630        0xc CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
-                0x10005630                usbd_app_driver_get_cb
+                0x1000565c        0xc CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
+                0x1000565c                usbd_app_driver_get_cb
  .text.tud_cdc_line_coding_cb
-                0x1000563c       0x34 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
-                0x1000563c                tud_cdc_line_coding_cb
+                0x10005668       0x34 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
+                0x10005668                tud_cdc_line_coding_cb
  .text.stdio_usb_set_chars_available_callback
-                0x10005670       0x14 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
-                0x10005670                stdio_usb_set_chars_available_callback
- .text.usb_irq  0x10005684       0x10 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
+                0x1000569c       0x14 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
+                0x1000569c                stdio_usb_set_chars_available_callback
+ .text.usb_irq  0x100056b0       0x10 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
  .text.timer_task
-                0x10005694       0x54 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
+                0x100056c0       0x54 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
  .text.stdio_usb_in_chars
-                0x100056e8       0x90 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
-                0x100056e8                stdio_usb_in_chars
+                0x10005714       0x90 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
+                0x10005714                stdio_usb_in_chars
  .text.stdio_usb_out_chars
-                0x10005778      0x104 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
+                0x100057a4      0x104 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
  .text.low_priority_worker_irq
-                0x1000587c       0xa8 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
+                0x100058a8       0xa8 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
  .text.tud_cdc_rx_cb
-                0x10005924       0x20 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
-                0x10005924                tud_cdc_rx_cb
+                0x10005950       0x20 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
+                0x10005950                tud_cdc_rx_cb
  .text.stdio_usb_init
-                0x10005944       0xe0 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
-                0x10005944                stdio_usb_init
+                0x10005970       0xe0 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
+                0x10005970                stdio_usb_init
  .text.tud_descriptor_device_cb
-                0x10005a24        0x8 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
-                0x10005a24                tud_descriptor_device_cb
+                0x10005a50        0x8 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
+                0x10005a50                tud_descriptor_device_cb
  .text.tud_descriptor_configuration_cb
-                0x10005a2c        0x8 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
-                0x10005a2c                tud_descriptor_configuration_cb
+                0x10005a58        0x8 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
+                0x10005a58                tud_descriptor_configuration_cb
  .text.tud_descriptor_string_cb
-                0x10005a34       0x78 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
-                0x10005a34                tud_descriptor_string_cb
+                0x10005a60       0x78 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
+                0x10005a60                tud_descriptor_string_cb
  .text.startup._retrieve_unique_id_on_boot
-                0x10005aac       0x10 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
+                0x10005ad8       0x10 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
  .text.pico_get_unique_board_id_string
-                0x10005abc      0x1a8 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
-                0x10005abc                pico_get_unique_board_id_string
+                0x10005ae8      0x1a8 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
+                0x10005ae8                pico_get_unique_board_id_string
  .text.flash_get_unique_id
-                0x10005c64       0x3c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
-                0x10005c64                flash_get_unique_id
+                0x10005c90       0x3c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
+                0x10005c90                flash_get_unique_id
  .text.dcd_int_enable
-                0x10005ca0        0xc CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
-                0x10005ca0                dcd_int_enable
+                0x10005ccc        0xc CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+                0x10005ccc                dcd_int_enable
  .text.dcd_set_address
-                0x10005cac       0x14 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
-                0x10005cac                dcd_set_address
+                0x10005cd8       0x14 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+                0x10005cd8                dcd_set_address
  .text.dcd_connect
-                0x10005cc0       0x10 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
-                0x10005cc0                dcd_connect
+                0x10005cec       0x10 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+                0x10005cec                dcd_connect
  .text.dcd_init
-                0x10005cd0       0x98 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
-                0x10005cd0                dcd_init
+                0x10005cfc       0x98 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+                0x10005cfc                dcd_init
  .text.dcd_edpt0_status_complete
-                0x10005d68       0x1c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
-                0x10005d68                dcd_edpt0_status_complete
+                0x10005d94       0x1c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+                0x10005d94                dcd_edpt0_status_complete
  .text.dcd_edpt_open
-                0x10005d84      0x108 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
-                0x10005d84                dcd_edpt_open
+                0x10005db0      0x108 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+                0x10005db0                dcd_edpt_open
  .text.dcd_edpt_close_all
-                0x10005e8c        0x8 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
-                0x10005e8c                dcd_edpt_close_all
+                0x10005eb8        0x8 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+                0x10005eb8                dcd_edpt_close_all
  .text.dcd_edpt_xfer
-                0x10005e94       0x24 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
-                0x10005e94                dcd_edpt_xfer
+                0x10005ec0       0x24 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+                0x10005ec0                dcd_edpt_xfer
  .text.dcd_edpt_stall
-                0x10005eb8       0x34 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
-                0x10005eb8                dcd_edpt_stall
+                0x10005ee4       0x34 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+                0x10005ee4                dcd_edpt_stall
  .text.dcd_edpt_clear_stall
-                0x10005eec       0x30 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
-                0x10005eec                dcd_edpt_clear_stall
+                0x10005f18       0x30 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+                0x10005f18                dcd_edpt_clear_stall
  .text.rp2040_usb_init
-                0x10005f1c       0x4c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
-                0x10005f1c                rp2040_usb_init
+                0x10005f48       0x4c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
+                0x10005f48                rp2040_usb_init
  .text.hw_endpoint_xfer_start
-                0x10005f68       0x40 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
-                0x10005f68                hw_endpoint_xfer_start
+                0x10005f94       0x40 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
+                0x10005f94                hw_endpoint_xfer_start
  .text.tud_mounted
-                0x10005fa8       0x10 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
-                0x10005fa8                tud_mounted
+                0x10005fd4       0x10 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+                0x10005fd4                tud_mounted
  .text.tud_suspended
-                0x10005fb8       0x10 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
-                0x10005fb8                tud_suspended
+                0x10005fe4       0x10 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+                0x10005fe4                tud_suspended
  .text.tud_inited
-                0x10005fc8       0x14 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
-                0x10005fc8                tud_inited
+                0x10005ff4       0x14 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+                0x10005ff4                tud_inited
  .text.tud_init
-                0x10005fdc       0xdc CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
-                0x10005fdc                tud_init
+                0x10006008       0xdc CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+                0x10006008                tud_init
  .text.tud_task_ext
-                0x100060b8      0x850 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
-                0x100060b8                tud_task_ext
+                0x100060e4      0x850 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+                0x100060e4                tud_task_ext
  .text.usbd_open_edpt_pair
-                0x10006908       0x9c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
-                0x10006908                usbd_open_edpt_pair
+                0x10006934       0x9c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+                0x10006934                usbd_open_edpt_pair
  .text.usbd_defer_func
-                0x100069a4       0x48 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
-                0x100069a4                usbd_defer_func
+                0x100069d0       0x48 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+                0x100069d0                usbd_defer_func
  .text.usbd_edpt_open
-                0x100069ec       0x34 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
-                0x100069ec                usbd_edpt_open
+                0x10006a18       0x34 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+                0x10006a18                usbd_edpt_open
  .text.usbd_edpt_claim
-                0x10006a20       0x28 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
-                0x10006a20                usbd_edpt_claim
+                0x10006a4c       0x28 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+                0x10006a4c                usbd_edpt_claim
  .text.usbd_edpt_release
-                0x10006a48       0x28 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
-                0x10006a48                usbd_edpt_release
+                0x10006a74       0x28 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+                0x10006a74                usbd_edpt_release
  .text.usbd_edpt_xfer
-                0x10006a70       0x4c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
-                0x10006a70                usbd_edpt_xfer
+                0x10006a9c       0x4c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+                0x10006a9c                usbd_edpt_xfer
  .text.tud_control_status
-                0x10006abc       0x2c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
-                0x10006abc                tud_control_status
+                0x10006ae8       0x2c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
+                0x10006ae8                tud_control_status
  .text.tud_control_xfer
-                0x10006ae8       0xac CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
-                0x10006ae8                tud_control_xfer
+                0x10006b14       0xac CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
+                0x10006b14                tud_control_xfer
  .text.usbd_control_reset
-                0x10006b94       0x14 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
-                0x10006b94                usbd_control_reset
+                0x10006bc0       0x14 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
+                0x10006bc0                usbd_control_reset
  .text.usbd_control_set_complete_callback
-                0x10006ba8        0xc CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
-                0x10006ba8                usbd_control_set_complete_callback
+                0x10006bd4        0xc CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
+                0x10006bd4                usbd_control_set_complete_callback
  .text.usbd_control_set_request
-                0x10006bb4       0x1c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
-                0x10006bb4                usbd_control_set_request
+                0x10006be0       0x1c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
+                0x10006be0                usbd_control_set_request
  .text.usbd_control_xfer_cb
-                0x10006bd0       0xf4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
-                0x10006bd0                usbd_control_xfer_cb
+                0x10006bfc       0xf4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
+                0x10006bfc                usbd_control_xfer_cb
  .text.tud_cdc_n_connected
-                0x10006cc4       0x30 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
-                0x10006cc4                tud_cdc_n_connected
+                0x10006cf0       0x30 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
+                0x10006cf0                tud_cdc_n_connected
  .text.tud_cdc_n_available
-                0x10006cf4       0x18 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
-                0x10006cf4                tud_cdc_n_available
+                0x10006d20       0x18 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
+                0x10006d20                tud_cdc_n_available
  .text.tud_cdc_n_read
-                0x10006d0c       0x70 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
-                0x10006d0c                tud_cdc_n_read
+                0x10006d38       0x70 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
+                0x10006d38                tud_cdc_n_read
  .text.tud_cdc_n_write_flush
-                0x10006d7c       0x78 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
-                0x10006d7c                tud_cdc_n_write_flush
+                0x10006da8       0x78 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
+                0x10006da8                tud_cdc_n_write_flush
  .text.tud_cdc_n_write
-                0x10006df4       0x34 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
-                0x10006df4                tud_cdc_n_write
+                0x10006e20       0x34 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
+                0x10006e20                tud_cdc_n_write
  .text.tud_cdc_n_write_available
-                0x10006e28       0x18 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
-                0x10006e28                tud_cdc_n_write_available
+                0x10006e54       0x18 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
+                0x10006e54                tud_cdc_n_write_available
  .text.cdcd_init
-                0x10006e40       0x7c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
-                0x10006e40                cdcd_init
+                0x10006e6c       0x7c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
+                0x10006e6c                cdcd_init
  .text.cdcd_reset
-                0x10006ebc       0x2c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
-                0x10006ebc                cdcd_reset
+                0x10006ee8       0x2c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
+                0x10006ee8                cdcd_reset
  .text.cdcd_open
-                0x10006ee8       0xe4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
-                0x10006ee8                cdcd_open
+                0x10006f14       0xe4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
+                0x10006f14                cdcd_open
  .text.cdcd_control_xfer_cb
-                0x10006fcc       0xe4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
-                0x10006fcc                cdcd_control_xfer_cb
+                0x10006ff8       0xe4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
+                0x10006ff8                cdcd_control_xfer_cb
  .text.cdcd_xfer_cb
-                0x100070b0      0x13c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
-                0x100070b0                cdcd_xfer_cb
+                0x100070dc      0x13c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
+                0x100070dc                cdcd_xfer_cb
  .text.tusb_init
-                0x100071ec        0xc CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/tusb.c.obj
-                0x100071ec                tusb_init
+                0x10007218        0xc CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/tusb.c.obj
+                0x10007218                tusb_init
  .text.tusb_inited
-                0x100071f8        0x8 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/tusb.c.obj
-                0x100071f8                tusb_inited
+                0x10007224        0x8 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/tusb.c.obj
+                0x10007224                tusb_inited
  .text.tu_edpt_claim
-                0x10007200       0x50 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/tusb.c.obj
-                0x10007200                tu_edpt_claim
+                0x1000722c       0x50 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/tusb.c.obj
+                0x1000722c                tu_edpt_claim
  .text.tu_edpt_release
-                0x10007250       0x38 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/tusb.c.obj
-                0x10007250                tu_edpt_release
+                0x1000727c       0x38 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/tusb.c.obj
+                0x1000727c                tu_edpt_release
  .text.tu_edpt_validate
-                0x10007288       0x7c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/tusb.c.obj
-                0x10007288                tu_edpt_validate
+                0x100072b4       0x7c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/tusb.c.obj
+                0x100072b4                tu_edpt_validate
  .text.tu_edpt_bind_driver
-                0x10007304       0x34 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/tusb.c.obj
-                0x10007304                tu_edpt_bind_driver
+                0x10007330       0x34 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/tusb.c.obj
+                0x10007330                tu_edpt_bind_driver
  .text.tu_fifo_config
-                0x10007338       0x6c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
-                0x10007338                tu_fifo_config
+                0x10007364       0x6c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
+                0x10007364                tu_fifo_config
  .text.tu_fifo_count
-                0x100073a4       0x2c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
-                0x100073a4                tu_fifo_count
+                0x100073d0       0x2c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
+                0x100073d0                tu_fifo_count
  .text.tu_fifo_empty
-                0x100073d0       0x10 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
-                0x100073d0                tu_fifo_empty
+                0x100073fc       0x10 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
+                0x100073fc                tu_fifo_empty
  .text.tu_fifo_remaining
-                0x100073e0       0x2c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
-                0x100073e0                tu_fifo_remaining
+                0x1000740c       0x2c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
+                0x1000740c                tu_fifo_remaining
  .text.tu_fifo_read
-                0x1000740c       0x9c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
-                0x1000740c                tu_fifo_read
+                0x10007438       0x9c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
+                0x10007438                tu_fifo_read
  .text.tu_fifo_read_n
-                0x100074a8       0xe8 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
-                0x100074a8                tu_fifo_read_n
+                0x100074d4       0xe8 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
+                0x100074d4                tu_fifo_read_n
  .text.tu_fifo_write
-                0x10007590       0xa8 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
-                0x10007590                tu_fifo_write
+                0x100075bc       0xa8 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
+                0x100075bc                tu_fifo_write
  .text.tu_fifo_write_n
-                0x10007638      0x178 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
-                0x10007638                tu_fifo_write_n
+                0x10007664      0x178 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
+                0x10007664                tu_fifo_write_n
  .text.tu_fifo_clear
-                0x100077b0       0x40 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
-                0x100077b0                tu_fifo_clear
+                0x100077dc       0x40 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
+                0x100077dc                tu_fifo_clear
  .text.tu_fifo_set_overwritable
-                0x100077f0       0x48 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
-                0x100077f0                tu_fifo_set_overwritable
+                0x1000781c       0x48 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
+                0x1000781c                tu_fifo_set_overwritable
  .text.spi_init
-                0x10007838      0x14c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_spi/spi.c.obj
-                0x10007838                spi_init
- .text.strlen   0x10007984       0x5c /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(libc_a-strlen-stub.o)
-                0x10007984                strlen
+                0x10007864      0x14c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_spi/spi.c.obj
+                0x10007864                spi_init
+ .text.i2c_set_baudrate
+                0x100079b0       0xc4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
+                0x100079b0                i2c_set_baudrate
+ .text.i2c_init
+                0x10007a74       0x50 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
+                0x10007a74                i2c_init
+ .text.i2c_read_blocking
+                0x10007ac4       0x90 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
+                0x10007ac4                i2c_read_blocking
+ .text.strlen   0x10007b54       0x5c /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(libc_a-strlen-stub.o)
+                0x10007b54                strlen
  *(.fini)
- .fini          0x100079e0        0x4 /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crti.o
-                0x100079e0                _fini
- *fill*         0x100079e4        0x4 
- .fini.__stub   0x100079e8       0xe0 linker stubs
+ .fini          0x10007bb0        0x4 /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crti.o
+                0x10007bb0                _fini
+ *fill*         0x10007bb4        0x4 
+ .fini.__stub   0x10007bb8       0xe0 linker stubs
  *crtbegin.o(.ctors)
  *crtbegin?.o(.ctors)
  *(EXCLUDE_FILE(*crtend.o *crtend?.o) .ctors)
@@ -2397,198 +2398,201 @@ LOAD /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-no
  *(SORT_BY_NAME(.dtors.*))
  *(.dtors)
  *(.eh_frame*)
- .eh_frame      0x10007ac8        0x0 /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtbegin.o
-                0x10007ac8                        . = ALIGN (0x4)
+ .eh_frame      0x10007c98        0x0 /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtbegin.o
+                0x10007c98                        . = ALIGN (0x4)
 
-.glue_7         0x10007ac8        0x0
- .glue_7        0x10007ac8        0x0 linker stubs
+.glue_7         0x10007c98        0x0
+ .glue_7        0x10007c98        0x0 linker stubs
 
-.glue_7t        0x10007ac8        0x0
- .glue_7t       0x10007ac8        0x0 linker stubs
+.glue_7t        0x10007c98        0x0
+ .glue_7t       0x10007c98        0x0 linker stubs
 
-.vfp11_veneer   0x10007ac8        0x0
- .vfp11_veneer  0x10007ac8        0x0 linker stubs
+.vfp11_veneer   0x10007c98        0x0
+ .vfp11_veneer  0x10007c98        0x0 linker stubs
 
-.v4_bx          0x10007ac8        0x0
- .v4_bx         0x10007ac8        0x0 linker stubs
+.v4_bx          0x10007c98        0x0
+ .v4_bx         0x10007c98        0x0 linker stubs
 
-.iplt           0x10007ac8        0x0
- .iplt          0x10007ac8        0x0 /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtbegin.o
+.iplt           0x10007c98        0x0
+ .iplt          0x10007c98        0x0 /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtbegin.o
 
-.rodata         0x10007ac8      0x68c
+.rodata         0x10007c98      0x6ac
  *(EXCLUDE_FILE(*libm.a: *libc.a:*lib_a-mem*.o *libgcc.a:) .rodata*)
+ .rodata.main.str1.4
+                0x10007c98      0x320 CMakeFiles/gps-test.dir/test.cpp.obj
+                                 0x19 (size before relaxing)
  .rodata._ZN7DRF126216get_radio_errorsEv.str1.4
-                0x10007ac8      0x304 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
-                                 0x15 (size before relaxing)
+                0x10007fb8       0x15 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
  .rodata._ZN7DRF126220read_radio_registersEv.str1.4
-                0x10007dcc       0x16 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
+                0x10007fb8       0x16 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
  .rodata._ZN7DRF126214radio_spi_initEv.str1.4
-                0x10007dcc        0xf CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
+                0x10007fb8        0xf CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
  .rodata._ZN7DRF126226set_radio_packet_type_loraEv.str1.4
-                0x10007dcc       0x1c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
+                0x10007fb8       0x1c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
  .rodata._ZN7DRF126219set_radio_pa_configEv.str1.4
-                0x10007dcc       0x12 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
+                0x10007fb8       0x12 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
  .rodata._ZN7DRF126217set_radio_rf_freqEv.str1.4
-                0x10007dcc       0x19 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
+                0x10007fb8       0x19 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
  .rodata._ZN7DRF126226set_lora_packet_parametersEv.str1.4
-                0x10007dcc       0x1f CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
+                0x10007fb8       0x1f CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
  .rodata._ZN7DRF126218set_dio2_rf_switchEv.str1.4
-                0x10007dcc       0x1a CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
+                0x10007fb8       0x1a CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
  .rodata._ZN7DRF126219set_radio_sync_wordEv.str1.4
-                0x10007dcc       0x18 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
+                0x10007fb8       0x18 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
  .rodata._ZN7DRF126216set_dio3_as_tcxoEv.str1.4
-                0x10007dcc       0x1a CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
+                0x10007fb8       0x1a CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
  .rodata._ZN7DRF126218set_regulator_modeEv.str1.4
-                0x10007dcc       0x20 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
+                0x10007fb8       0x20 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
  .rodata._ZN7DRF126218clear_radio_errorsEv.str1.4
-                0x10007dcc       0x16 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
+                0x10007fb8       0x16 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
  .rodata._ZN7DRF126211set_dio_irqEv.str1.4
-                0x10007dcc       0x11 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
+                0x10007fb8       0x11 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
  .rodata._ZN7DRF126210radio_initEv.str1.4
-                0x10007dcc       0x13 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
+                0x10007fb8       0x13 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
  .rodata._ZL25set_lora_symb_timeout_cmd
-                0x10007dcc        0x1 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
+                0x10007fb8        0x1 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
  .rodata._ZL21set_radio_dio_irq_cmd
-                0x10007dcd        0x1 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
+                0x10007fb9        0x1 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
  .rodata._ZL22set_regulator_mode_cmd
-                0x10007dce        0x1 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
+                0x10007fba        0x1 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
  .rodata._ZL20set_dio3_as_tcxo_cmd
-                0x10007dcf        0x1 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
+                0x10007fbb        0x1 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
  .rodata._ZL19clear_radio_err_cmd
-                0x10007dd0        0x1 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
+                0x10007fbc        0x1 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
  .rodata._ZL20set_packet_param_cmd
-                0x10007dd1        0x1 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
+                0x10007fbd        0x1 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
  .rodata._ZL20set_dio2_rf_ctrl_cmd
-                0x10007dd2        0x1 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
+                0x10007fbe        0x1 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
  .rodata._ZL24write_radio_register_cmd
-                0x10007dd3        0x1 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
+                0x10007fbf        0x1 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
  .rodata._ZL24set_modulation_param_cmd
-                0x10007dd4        0x1 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
+                0x10007fc0        0x1 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
  .rodata._ZL24set_buffer_base_addr_cmd
-                0x10007dd5        0x1 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
+                0x10007fc1        0x1 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
  .rodata._ZL17set_tx_params_cmd
-                0x10007dd6        0x1 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
+                0x10007fc2        0x1 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
  .rodata._ZL15set_rf_freq_cmd
-                0x10007dd7        0x1 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
+                0x10007fc3        0x1 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
  .rodata._ZL13pa_config_cmd
-                0x10007dd8        0x1 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
+                0x10007fc4        0x1 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
  .rodata._ZL16packet_type_lora
-                0x10007dd9        0x1 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
+                0x10007fc5        0x1 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
  .rodata._ZL19set_packet_type_cmd
-                0x10007dda        0x1 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
+                0x10007fc6        0x1 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
  .rodata._ZL11get_err_cmd
-                0x10007ddb        0x1 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
+                0x10007fc7        0x1 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
  .rodata._ZL15set_standby_cmd
-                0x10007ddc        0x1 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
+                0x10007fc8        0x1 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
  .rodata._ZL11StdbyConfig
-                0x10007ddd        0x1 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
+                0x10007fc9        0x1 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
  .rodata._ZL5addr1
-                0x10007dde        0x1 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
+                0x10007fca        0x1 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
  .rodata._ZL5addr2
-                0x10007ddf        0x1 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
+                0x10007fcb        0x1 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
  .rodata._ZL7nop_cmd
-                0x10007de0        0x1 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
+                0x10007fcc        0x1 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
  .rodata._ZL12read_reg_cmd
-                0x10007de1        0x1 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
+                0x10007fcd        0x1 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
  .rodata.spin_lock_claim_unused.str1.4
-                0x10007de2       0x1b CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
+                0x10007fce       0x1b CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
  .rodata.user_irq_claim_unused.str1.4
-                0x10007de2       0x1b CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x10007fce       0x1b CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
  .rodata.hardware_alarm_claim.str1.4
-                0x10007de2       0x22 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x10007fce       0x22 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
  .rodata.panic.str1.4
-                0x10007de2       0x12 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+                0x10007fce       0x12 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
  .rodata.hard_assertion_failure.str1.4
-                0x10007de2        0xc CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+                0x10007fce        0xc CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
  .rodata._ftoa.str1.4
-                0x10007de2       0x15 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
- *fill*         0x10007de2        0x2 
+                0x10007fce       0x15 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+ *fill*         0x10007fce        0x2 
  .rodata._vsnprintf
-                0x10007de4      0x19c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x10007fd0      0x19c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+ *fill*         0x1000816c        0x4 
  .rodata.pow10.0
-                0x10007f80       0x50 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x10008170       0x50 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
  .rodata.str1.4
-                0x10007fd0       0x40 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x100081c0       0x40 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .rodata.__bi_81
-                0x10007fd0        0xc CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x100081c0        0xc CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .rodata.__bi_75
-                0x10007fdc        0xc CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x100081cc        0xc CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .rodata.__bi_44
-                0x10007fe8        0xc CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x100081d8        0xc CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .rodata.crlf_str.0
-                0x10007ff4        0x2 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x100081e4        0x2 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
  .rodata.str1.4
-                0x10007ff6       0x2c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
- *fill*         0x10007ff6        0x2 
+                0x100081e6       0x2c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
+ *fill*         0x100081e6        0x2 
  .rodata.__bi_33.4
-                0x10007ff8        0xc CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
+                0x100081e8        0xc CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
  .rodata.__bi_34.5
-                0x10008004        0x8 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
+                0x100081f4        0x8 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
  .rodata._resetd_driver
-                0x1000800c       0x18 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
+                0x100081fc       0x18 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
  .rodata.str1.4
-                0x10008024       0x13 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
+                0x10008214       0x13 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
  .rodata.__bi_182.0
-                0x10008024        0xc CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
+                0x10008214        0xc CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
  .rodata.str1.4
-                0x10008030       0x2a CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
+                0x10008220       0x2a CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
  .rodata.usbd_desc_str
-                0x10008030       0x18 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
+                0x10008220       0x18 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
  .rodata.usbd_desc_cfg
-                0x10008048       0x54 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
+                0x10008238       0x54 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
  .rodata.usbd_desc_device
-                0x1000809c       0x12 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
+                0x1000828c       0x12 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
  .rodata.str1.4
-                0x100080ae       0x14 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+                0x1000829e       0x14 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
  .rodata.str1.4
-                0x100080ae       0x53 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
- *fill*         0x100080ae        0x2 
+                0x1000829e       0x53 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
+ *fill*         0x1000829e        0x2 
  .rodata.tud_task_ext
-                0x100080b0       0x8c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+                0x100082a0       0x8c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
  .rodata._usbd_driver
-                0x1000813c       0x18 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
-                0x10008154                        . = ALIGN (0x4)
+                0x1000832c       0x18 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+                0x10008344                        . = ALIGN (0x4)
  *(SORT_BY_ALIGNMENT(SORT_BY_NAME(.flashdata*)))
-                0x10008154                        . = ALIGN (0x4)
+                0x10008344                        . = ALIGN (0x4)
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x10008154                        __exidx_start = .
+                0x10008344                        __exidx_start = .
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x10008154                        __exidx_end = .
-                0x10008154                        . = ALIGN (0x4)
-                0x10008154                        __binary_info_start = .
+                0x10008344                        __exidx_end = .
+                0x10008344                        . = ALIGN (0x4)
+                0x10008344                        __binary_info_start = .
 
-.binary_info    0x10008154       0x28
+.binary_info    0x10008344       0x28
  *(.binary_info.keep.*)
  .binary_info.keep.__bi_ptr81
-                0x10008154        0x4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x10008344        0x4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .binary_info.keep.__bi_ptr75
-                0x10008158        0x4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x10008348        0x4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .binary_info.keep.__bi_ptr50
-                0x1000815c        0x4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x1000834c        0x4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .binary_info.keep.__bi_ptr44
-                0x10008160        0x4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x10008350        0x4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .binary_info.keep.__bi_ptr38
-                0x10008164        0x4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x10008354        0x4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .binary_info.keep.__bi_ptr30
-                0x10008168        0x4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x10008358        0x4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .binary_info.keep.__bi_ptr22
-                0x1000816c        0x4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x1000835c        0x4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  *(.binary_info.*)
  .binary_info.__bi_ptr34
-                0x10008170        0x4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
+                0x10008360        0x4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
  .binary_info.__bi_ptr33
-                0x10008174        0x4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
+                0x10008364        0x4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
  .binary_info.__bi_ptr182
-                0x10008178        0x4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
-                0x1000817c                        __binary_info_end = .
+                0x10008368        0x4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
+                0x1000836c                        __binary_info_end = .
 
-.rel.dyn        0x1000817c        0x0
- .rel.iplt      0x1000817c        0x0 /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtbegin.o
-                0x1000817c                        . = ALIGN (0x4)
+.rel.dyn        0x1000836c        0x0
+ .rel.iplt      0x1000836c        0x0 /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtbegin.o
+                0x1000836c                        . = ALIGN (0x4)
 
 .ram_vector_table
                 0x20000000       0xc0
@@ -2597,7 +2601,7 @@ LOAD /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-no
                 0x20000000       0xc0 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
                 0x20000000                ram_vector_table
 
-.data           0x200000c0      0xefc load address 0x1000817c
+.data           0x200000c0      0xf04 load address 0x1000836c
                 0x200000c0                        __data_start__ = .
  *(vtable)
  *(.time_critical*)
@@ -2668,18 +2672,19 @@ LOAD /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-no
  *(.rodata*)
                 0x20000ea8                        . = ALIGN (0x4)
  *(.data*)
+ .data.i2c      0x20000ea8        0x4 CMakeFiles/gps-test.dir/test.cpp.obj
+                0x20000ea8                i2c
  .data.striped_spin_lock_num
-                0x20000ea8        0x1 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
- *fill*         0x20000ea9        0x3 
- .data          0x20000eac       0x48 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.obj
-                0x20000eac                irq_handler_chain_slots
-                0x20000edc                irq_handler_chain_first_slot
-                0x20000ee6                irq_handler_chain_remove_tail
+                0x20000eac        0x1 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
+ *fill*         0x20000ead        0x3 
+ .data          0x20000eb0       0x48 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.obj
+                0x20000eb0                irq_handler_chain_slots
+                0x20000ee0                irq_handler_chain_first_slot
+                0x20000eea                irq_handler_chain_remove_tail
  .data.default_alarm_pool
-                0x20000ef4       0x18 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_time/time.c.obj
+                0x20000ef8       0x18 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_time/time.c.obj
  .data.default_alarm_pool_heap
-                0x20000f0c       0x10 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_time/time.c.obj
- *fill*         0x20000f1c        0x4 
+                0x20000f10       0x10 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_time/time.c.obj
  .data.aeabi_bits_funcs
                 0x20000f20       0x10 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
                 0x20000f20                aeabi_bits_funcs
@@ -2702,194 +2707,197 @@ LOAD /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-no
                 0x20000f78                _usbd_qdef
  .data._usbd_rhport
                 0x20000f94        0x1 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
-                0x20000f98                        . = ALIGN (0x4)
  *fill*         0x20000f95        0x3 
+ .data.i2c0_inst
+                0x20000f98        0x8 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
+                0x20000f98                i2c0_inst
+                0x20000fa0                        . = ALIGN (0x4)
  *(.after_data.*)
-                0x20000f98                        . = ALIGN (0x4)
-                0x20000f98                        PROVIDE (__mutex_array_start = .)
+                0x20000fa0                        . = ALIGN (0x4)
+                0x20000fa0                        PROVIDE (__mutex_array_start = .)
  *(SORT_BY_NAME(.mutex_array.*))
  *(.mutex_array)
- .mutex_array   0x20000f98        0x8 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
-                0x20000fa0                        PROVIDE (__mutex_array_end = .)
-                0x20000fa0                        . = ALIGN (0x4)
-                0x20000fa0                        PROVIDE (__preinit_array_start = .)
+ .mutex_array   0x20000fa0        0x8 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x20000fa8                        PROVIDE (__mutex_array_end = .)
+                0x20000fa8                        . = ALIGN (0x4)
+                0x20000fa8                        PROVIDE (__preinit_array_start = .)
  *(SORT_BY_NAME(.preinit_array.*))
  .preinit_array.00001
-                0x20000fa0        0x4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
+                0x20000fa8        0x4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
  .preinit_array.00010
-                0x20000fa4        0x4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
+                0x20000fac        0x4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
  .preinit_array.00020
-                0x20000fa8        0x4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x20000fb0        0x4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
  .preinit_array.00020
-                0x20000fac        0x4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj
+                0x20000fb4        0x4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj
  *(.preinit_array)
-                0x20000fb0                        PROVIDE (__preinit_array_end = .)
-                0x20000fb0                        . = ALIGN (0x4)
-                0x20000fb0                        PROVIDE (__init_array_start = .)
+                0x20000fb8                        PROVIDE (__preinit_array_end = .)
+                0x20000fb8                        . = ALIGN (0x4)
+                0x20000fb8                        PROVIDE (__init_array_start = .)
  *(SORT_BY_NAME(.init_array.*))
  *(.init_array)
- .init_array    0x20000fb0        0x4 /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtbegin.o
- .init_array    0x20000fb4        0x4 CMakeFiles/gps-test.dir/test.cpp.obj
- .init_array    0x20000fb8        0x4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
-                0x20000fbc                        PROVIDE (__init_array_end = .)
-                0x20000fbc                        . = ALIGN (0x4)
+ .init_array    0x20000fb8        0x4 /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtbegin.o
+ .init_array    0x20000fbc        0x4 CMakeFiles/gps-test.dir/test.cpp.obj
+ .init_array    0x20000fc0        0x4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
+                0x20000fc4                        PROVIDE (__init_array_end = .)
+                0x20000fc4                        . = ALIGN (0x4)
                 [!provide]                        PROVIDE (__fini_array_start = .)
  *(SORT_BY_NAME(.fini_array.*))
  *(.fini_array)
                 [!provide]                        PROVIDE (__fini_array_end = .)
  *(.jcr)
-                0x20000fbc                        . = ALIGN (0x4)
-                0x20000fbc                        __data_end__ = .
-                0x1000817c                        __etext = LOADADDR (.data)
+                0x20000fc4                        . = ALIGN (0x4)
+                0x20000fc4                        __data_end__ = .
+                0x1000836c                        __etext = LOADADDR (.data)
 
 .tm_clone_table
-                0x20000fbc        0x0 load address 0x10009078
+                0x20000fc4        0x0 load address 0x10009270
  .tm_clone_table
-                0x20000fbc        0x0 /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtbegin.o
+                0x20000fc4        0x0 /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtbegin.o
  .tm_clone_table
-                0x20000fbc        0x0 /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtend.o
+                0x20000fc4        0x0 /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtend.o
 
-.igot.plt       0x20000fbc        0x0 load address 0x10009078
- .igot.plt      0x20000fbc        0x0 /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtbegin.o
+.igot.plt       0x20000fc4        0x0 load address 0x10009270
+ .igot.plt      0x20000fc4        0x0 /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtbegin.o
 
 .uninitialized_data
-                0x20000fbc        0x0 load address 0x10009078
-                0x20000fbc                        . = ALIGN (0x4)
+                0x20000fc4        0x0 load address 0x10009270
+                0x20000fc4                        . = ALIGN (0x4)
  *(.uninitialized_data*)
 
-.scratch_x      0x20040000        0x0 load address 0x10009078
+.scratch_x      0x20040000        0x0 load address 0x10009270
                 0x20040000                        __scratch_x_start__ = .
  *(.scratch_x.*)
                 0x20040000                        . = ALIGN (0x4)
                 0x20040000                        __scratch_x_end__ = .
-                0x10009078                        __scratch_x_source__ = LOADADDR (.scratch_x)
+                0x10009270                        __scratch_x_source__ = LOADADDR (.scratch_x)
 
-.scratch_y      0x20041000        0x0 load address 0x10009078
+.scratch_y      0x20041000        0x0 load address 0x10009270
                 0x20041000                        __scratch_y_start__ = .
  *(.scratch_y.*)
                 0x20041000                        . = ALIGN (0x4)
                 0x20041000                        __scratch_y_end__ = .
-                0x10009078                        __scratch_y_source__ = LOADADDR (.scratch_y)
+                0x10009270                        __scratch_y_source__ = LOADADDR (.scratch_y)
 
-.bss            0x20000fc0      0xdc0
-                0x20000fc0                        . = ALIGN (0x4)
-                0x20000fc0                        __bss_start__ = .
+.bss            0x20000fc8      0xdd0
+                0x20000fc8                        . = ALIGN (0x4)
+                0x20000fc8                        __bss_start__ = .
  *(SORT_BY_ALIGNMENT(SORT_BY_NAME(.bss*)))
  .bss.configured_freq
-                0x20000fc0       0x28 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
+                0x20000fc8       0x28 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
  .bss.default_alarm_pool_entries
-                0x20000fe8      0x100 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_time/time.c.obj
+                0x20000ff0      0x100 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_time/time.c.obj
  .bss.last_avail_time.1
-                0x200010e8        0x8 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
- .bss.sd_table  0x200010f0      0x100 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
-                0x200010f0                sd_table
- .bss.sf_table  0x200011f0      0x100 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
-                0x200011f0                sf_table
+                0x200010f0        0x8 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
+ .bss.sd_table  0x200010f8      0x100 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
+                0x200010f8                sd_table
+ .bss.sf_table  0x200011f8      0x100 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
+                0x200011f8                sf_table
  .bss._app_driver
-                0x200012f0        0x4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+                0x200012f8        0x4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
  .bss._cdcd_itf
-                0x200012f4      0x2c8 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
+                0x200012fc      0x2c8 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
  .bss._ctrl_xfer
-                0x200015bc       0x14 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
+                0x200015c4       0x14 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
  .bss._ubsd_mutexdef
-                0x200015d0        0x8 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+                0x200015d8        0x8 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
  .bss._usbd_ctrl_buf
-                0x200015d8       0x40 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
+                0x200015e0       0x40 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
  .bss._usbd_dev
-                0x20001618       0x53 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
- *fill*         0x2000166b        0x1 
+                0x20001620       0x53 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+ *fill*         0x20001673        0x1 
  .bss._usbd_mutex
-                0x2000166c        0x4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
- .bss._usbd_q   0x20001670        0x4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+                0x20001674        0x4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+ .bss._usbd_q   0x20001678        0x4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
  .bss._usbd_qdef_buf
-                0x20001674       0xc0 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
-                0x20001674                _usbd_qdef_buf
+                0x2000167c       0xc0 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+                0x2000167c                _usbd_qdef_buf
  .bss.alarm_callbacks
-                0x20001734       0x10 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x2000173c       0x10 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
  .bss.boot2_copyout
-                0x20001744      0x100 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
+                0x2000174c      0x100 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
  .bss.chars_available_callback
-                0x20001844        0x4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
- .bss.chars_available_callback
-                0x20001848        0x4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
- .bss.chars_available_param
                 0x2000184c        0x4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
- .bss.chars_available_param
+ .bss.chars_available_callback
                 0x20001850        0x4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
- .bss.claimed   0x20001854        0x4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
+ .bss.chars_available_param
+                0x20001854        0x4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
+ .bss.chars_available_param
+                0x20001858        0x4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
+ .bss.claimed   0x2000185c        0x4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
  .bss.default_alarm_pool_entry_ids_high
-                0x20001858       0x10 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_time/time.c.obj
+                0x20001860       0x10 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_time/time.c.obj
  .bss.default_alarm_pool_heap_nodes
-                0x20001868       0x30 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_time/time.c.obj
+                0x20001870       0x30 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_time/time.c.obj
  .bss.desc_str.0
-                0x20001898       0x28 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
- .bss.drivers   0x200018c0        0x4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x200018a0       0x28 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
+ .bss.drivers   0x200018c8        0x4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
  .bss.e15_last_sof
-                0x200018c4        0x4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
-                0x200018c4                e15_last_sof
- .bss.filter    0x200018c8        0x4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x200018cc        0x4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
+                0x200018cc                e15_last_sof
+ .bss.filter    0x200018d0        0x4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
  .bss.hw_endpoints
-                0x200018cc      0x400 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+                0x200018d4      0x400 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
  .bss.lazy_vsnprintf
-                0x20001ccc        0x4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x20001cd4        0x4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
  .bss.load_value
-                0x20001cd0        0x4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
+                0x20001cd8        0x4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
  .bss.next_buffer_ptr
-                0x20001cd4        0x4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
- .bss.object.0  0x20001cd8       0x18 /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtbegin.o
+                0x20001cdc        0x4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+ .bss.object.0  0x20001ce0       0x18 /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtbegin.o
  .bss.one_shot_timer_crit_sec
-                0x20001cf0        0x8 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
- .bss.pools     0x20001cf8       0x10 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_time/time.c.obj
- .bss.radio     0x20001d08       0x2c CMakeFiles/gps-test.dir/test.cpp.obj
-                0x20001d08                radio
+                0x20001cf8        0x8 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
+ .bss.pools     0x20001d00       0x10 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_time/time.c.obj
+ .bss.radio     0x20001d10       0x3c CMakeFiles/gps-test.dir/test.cpp.obj
+                0x20001d10                radio
  .bss.retrieved_id
-                0x20001d34        0x8 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
+                0x20001d4c        0x8 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
  .bss.sf_clz_func
-                0x20001d3c        0x4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
-                0x20001d3c                sf_clz_func
+                0x20001d54        0x4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
+                0x20001d54                sf_clz_func
  .bss.sleep_notifier
-                0x20001d40        0x4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_time/time.c.obj
+                0x20001d58        0x4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_time/time.c.obj
  .bss.stdio_usb_mutex
-                0x20001d44        0x8 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
+                0x20001d5c        0x8 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
  .bss.target_hi
-                0x20001d4c       0x10 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x20001d64       0x10 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
  .bss.uart_char_to_line_feed
-                0x20001d5c        0x4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
-                0x20001d5c                uart_char_to_line_feed
+                0x20001d74        0x4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
+                0x20001d74                uart_char_to_line_feed
  .bss.uart_instance
-                0x20001d60        0x4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
+                0x20001d78        0x4 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
  .bss.usbd_serial_str
-                0x20001d64       0x11 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
+                0x20001d7c       0x11 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
  .bss._app_driver_count
-                0x20001d75        0x1 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+                0x20001d8d        0x1 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
  .bss._sof_enable
-                0x20001d76        0x1 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+                0x20001d8e        0x1 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
  .bss.boot2_copyout_valid
-                0x20001d77        0x1 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
- .bss.claimed   0x20001d78        0x1 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x20001d8f        0x1 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
+ .bss.claimed   0x20001d90        0x1 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
  .bss.irq_hander_chain_free_slot_head
-                0x20001d79        0x1 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
- .bss.itf_num   0x20001d7a        0x1 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
+                0x20001d91        0x1 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+ .bss.itf_num   0x20001d92        0x1 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
  .bss.low_priority_irq_num
-                0x20001d7b        0x1 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
- .bss.msg       0x20001d7c        0x1 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
-                0x20001d7c                msg
+                0x20001d93        0x1 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
+ .bss.msg       0x20001d94        0x1 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
+                0x20001d94                msg
  .bss.one_shot_timer_pending
-                0x20001d7d        0x1 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
+                0x20001d95        0x1 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
  .bss.timer_callbacks_pending
-                0x20001d7e        0x1 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x20001d96        0x1 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
  .bss.user_irq_claimed
-                0x20001d7f        0x1 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x20001d97        0x1 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
  *(COMMON)
-                0x20001d80                        . = ALIGN (0x4)
-                0x20001d80                        __bss_end__ = .
+                0x20001d98                        . = ALIGN (0x4)
+                0x20001d98                        __bss_end__ = .
 
-.heap           0x20001d80      0x800
-                0x20001d80                        __end__ = .
-                0x20001d80                        end = __end__
+.heap           0x20001d98      0x800
+                0x20001d98                        __end__ = .
+                0x20001d98                        end = __end__
  *(.heap*)
- .heap          0x20001d80      0x800 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
-                0x20002580                        __HeapLimit = .
+ .heap          0x20001d98      0x800 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
+                0x20002598                        __HeapLimit = .
 
 .stack1_dummy
  *(.stack1*)
@@ -2898,8 +2906,8 @@ LOAD /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-no
  *(.stack*)
  .stack         0x20041000      0x800 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
 
-.flash_end      0x10009078        0x0
-                0x10009078                        PROVIDE (__flash_binary_end = .)
+.flash_end      0x10009270        0x0
+                0x10009270                        PROVIDE (__flash_binary_end = .)
                 0x20040000                        __StackLimit = (ORIGIN (RAM) + LENGTH (RAM))
                 0x20041000                        __StackOneTop = (ORIGIN (SCRATCH_X) + LENGTH (SCRATCH_X))
                 0x20042000                        __StackTop = (ORIGIN (SCRATCH_Y) + LENGTH (SCRATCH_Y))
@@ -2983,7 +2991,7 @@ LOAD CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/
 LOAD CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_spi/spi.c.obj
 LOAD CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
 LOAD CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_rand/rand.c.obj
-LOAD /var/folders/n7/t1959y0j4_gczygmz5tcw0qc0000gn/T//ccfI5QOg.o
+LOAD /var/folders/n7/t1959y0j4_gczygmz5tcw0qc0000gn/T//ccoWJQmP.o
 LOAD /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libstdc++.a
 LOAD /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libm.a
 START GROUP
@@ -3107,13 +3115,15 @@ LOAD linker stubs
  .ARM.attributes
                 0x00000852       0x2c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_spi/spi.c.obj
  .ARM.attributes
-                0x0000087e       0x22 /var/folders/n7/t1959y0j4_gczygmz5tcw0qc0000gn/T//ccfI5QOg.o
+                0x0000087e       0x2c CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
  .ARM.attributes
-                0x000008a0       0x1e /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
+                0x000008aa       0x22 /var/folders/n7/t1959y0j4_gczygmz5tcw0qc0000gn/T//ccoWJQmP.o
  .ARM.attributes
-                0x000008be       0x2c /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(libc_a-strlen-stub.o)
+                0x000008cc       0x1e /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
  .ARM.attributes
-                0x000008ea       0x2c /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtend.o
+                0x000008ea       0x2c /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(libc_a-strlen-stub.o)
+ .ARM.attributes
+                0x00000916       0x2c /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtend.o
 
 .comment        0x00000000       0x44
  .comment       0x00000000       0x44 CMakeFiles/gps-test.dir/test.cpp.obj
@@ -3157,6 +3167,7 @@ LOAD linker stubs
  .comment       0x00000044       0x45 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/tusb.c.obj
  .comment       0x00000044       0x45 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
  .comment       0x00000044       0x45 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_spi/spi.c.obj
+ .comment       0x00000044       0x45 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
 
 .debug_line_str
                 0x00000000       0xd2

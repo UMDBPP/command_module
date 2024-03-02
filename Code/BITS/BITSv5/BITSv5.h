@@ -1,7 +1,7 @@
 #ifndef _BITSv5_H
 #define _BITSv5_H
 
-#define CS_PIN 25
+#define RADIO_CS 25
 #define SCK_PIN 26
 #define MOSI_PIN 27
 #define MISO_PIN 24
@@ -12,9 +12,10 @@
 #define SDA_PIN 20
 #define SCL_PIN 21
 #define GPS_ADDR 0x42
-#define EXTINT_PIN 17
-#define TIMEPULSE_PIN 18
+#define EXTINT_PIN 18
+#define TIMEPULSE_PIN 17
 #define LED_PIN 0
+#define FRAM_CS 29
 
 #define INCLUDE_DEBUG \
     1  // controls if debug conditionals are included at compile time

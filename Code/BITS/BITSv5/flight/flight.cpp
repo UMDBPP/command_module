@@ -16,9 +16,9 @@
 #undef PICO_FLASH_SIZE_BYTES
 #define PICO_FLASH_SIZE_BYTES (16 * 1024 * 1024)
 
-#define FIFO_LENGTH 32
+// #define FIFO_LENGTH 32
 
-queue_t gps_message_fifo;
+// queue_t gps_message_fifo;
 
 DRF1262 radio(spi1, CS_PIN, SCK_PIN, MOSI_PIN, MISO_PIN, TXEN_PIN, DIO1_PIN,
               BUSY_PIN, SW_PIN);
@@ -46,7 +46,6 @@ void gpio_callback(uint gpio, uint32_t events);
 bool tx_timer_callback(repeating_timer_t *rt);
 void get_gps_data(void);
 
-// FLIGHT CODE
 int main() {
     stdio_init_all();
 
@@ -60,7 +59,7 @@ int main() {
 
     // negative timeout means exact delay (rather than delay between
     // callbacks)
-    if (!add_repeating_timer_us(-60000000, tx_timer_callback, NULL,
+    if (!add_repeating_timer_us(-20000000, tx_timer_callback, NULL,
                                 &tx_timer)) {
         printf("Failed to add timer\n");
         return 1;
@@ -73,6 +72,8 @@ int main() {
                                     2 * PICO_UNIQUE_BOARD_ID_SIZE_BYTES + 1);
 
     printf("\n%s %s\n", __DATE__, __TIME__);
+
+    radio.radio_receive_single();
 
     while (true) {
         // printf("\n\n\n\n\n\n\n\n\n\n\n\n\n");
@@ -104,7 +105,7 @@ int main() {
         // rx_test();
 
         // RX THING TO TRY
-        if (gpio_get(DIO1_PIN) && !gpio_get(BUSY_PIN)) {
+        if (gpio_get(DIO1_PIN)) {  //&& !gpio_get(BUSY_PIN)
             printf("DIO1 is high and BUSY is low!\n");
             char data[6] = {
                 '\0', '\0', '\0', '\0', '\0', '\0',
@@ -147,17 +148,25 @@ void transmit_test(uint8_t *buf, size_t len) {
 
     radio.radio_send(buf, len);
 
-    while (gpio_get(BUSY_PIN))
+    while (gpio_get(BUSY_PIN) && !gpio_get(DIO1_PIN))
         ;
 
-    sleep_ms(20);
+    printf("Starting wait\n");
+
+    sleep_ms(10000);
 
     led_off();
     printf("%s\n", (char *)buf);
     // radio.disable_tx();
     // radio.radio_receive_single();
 
+    radio.get_radio_errors();
+
     radio.clear_irq_status();
+
+    radio.radio_receive_single();
+
+    radio.get_radio_errors();
 }
 
 void setup_led() {
@@ -205,7 +214,7 @@ void rx_test() {
 void get_gps_data(void) {
     while (uart_is_readable(uart1) > 0) {
         char c = uart_getc(uart1);
-        if (c == '*') {
+        if (c == '\r') {
             strcpy((char *)radio_tx_buf, gps_buf);
             gps_buf_offset = 0;
         }
@@ -214,8 +223,8 @@ void get_gps_data(void) {
 
         if (c == '$') gps_buf_offset = 0;
 
-        gps_buf[gps_buf_offset] = c;
+        if (c != '\r') gps_buf[gps_buf_offset] = c;
         gps_buf_offset++;
-        printf("%c", c);
+        // printf("%c", c);
     }
 }

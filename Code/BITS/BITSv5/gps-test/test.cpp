@@ -20,7 +20,7 @@ static const uint8_t REG_DATA = 0xFF;
 // Ports
 i2c_inst_t *i2c = i2c0;
 
-DRF1262 radio(spi1, CS_PIN, SCK_PIN, MOSI_PIN, MISO_PIN, TXEN_PIN, DIO1_PIN,
+DRF1262 radio(spi1, RADIO_CS, SCK_PIN, MOSI_PIN, MISO_PIN, TXEN_PIN, DIO1_PIN,
               BUSY_PIN, SW_PIN);
 
 void ubx_inf_debug(void);
@@ -50,28 +50,28 @@ int main() {
     radio.debug_msg_en = 0;
     radio.radio_init();
 
-    uart_init(uart1, 9600);
+    // uart_init(uart1, 9600);
 
     // Initialize I2C port at 100 kHz
-    // i2c_init(i2c, 100 * 1000);
+    i2c_init(i2c, 100 * 1000);
 
     // Initialize I2C pins
-    // gpio_set_function(sda_pin, GPIO_FUNC_I2C);
-    gpio_set_function(scl_pin, GPIO_FUNC_UART);
+    gpio_set_function(sda_pin, GPIO_FUNC_I2C);
+    gpio_set_function(scl_pin, GPIO_FUNC_I2C);
 
     // i2c_set_slave_mode(i2c, false, 0x00);
 
     uint8_t rx_msg = 0;
 
     while (true) {
-        printf("%c", uart_getc(uart1));
+        // printf("%c", uart_getc(uart1));
 
-        // result2 = i2c_read_blocking(i2c, GPS_ADDR, &rx_msg, 1, false);
-        // if (result2 == PICO_ERROR_GENERIC)
-        //     printf("\ni2c error occurred %x\n\n", result2);
-        // else {
-        //     if (rx_msg != NO_GPS_DATA) printf("%c", rx_msg);
-        // }
+        result2 = i2c_read_blocking(i2c, GPS_ADDR, &rx_msg, 1, false);
+        if (result2 == PICO_ERROR_GENERIC)
+            printf("\ni2c error occurred %x\n\n", result2);
+        else {
+            if (rx_msg != NO_GPS_DATA) printf("%c", rx_msg);
+        }
     }
 }
 
