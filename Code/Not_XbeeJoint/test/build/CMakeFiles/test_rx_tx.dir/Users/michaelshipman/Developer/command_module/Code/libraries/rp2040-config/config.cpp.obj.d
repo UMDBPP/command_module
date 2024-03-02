@@ -1,7 +1,7 @@
 CMakeFiles/test_rx_tx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/config.cpp.obj: \
  /Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/config.cpp \
  /Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/config.h \
- /Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS16N.h \
+ /Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS1MT.h \
  /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp2_common/hardware_gpio/include/hardware/gpio.h \
  /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/pico-sdk/src/common/pico_base/include/pico.h \
  /Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/pico-sdk/src/common/pico_base/include/pico/types.h \

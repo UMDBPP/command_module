@@ -10,7 +10,7 @@ extern "C" {
 #include "../../libraries/rp2040-console/std-cmd/command.h"
 }
 
-#include "../../libraries/rp2040-config/MB85RS16N.h"
+#include "../../libraries/rp2040-config/MB85RS1MT.h"
 #include "../../libraries/rp2040-config/config.h"
 #include "../../libraries/rp2040-drf1262-lib/SX1262.h"
 #include "hardware/flash.h"

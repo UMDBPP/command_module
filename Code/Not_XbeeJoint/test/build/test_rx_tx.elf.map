@@ -175,54 +175,54 @@ Discarded input sections
  .text          0x00000000        0x0 CMakeFiles/test_rx_tx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-console/std-cmd/command.c.obj
  .data          0x00000000        0x0 CMakeFiles/test_rx_tx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-console/std-cmd/command.c.obj
  .bss           0x00000000        0x0 CMakeFiles/test_rx_tx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-console/std-cmd/command.c.obj
- .text          0x00000000        0x0 CMakeFiles/test_rx_tx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS16N.cpp.obj
- .data          0x00000000        0x0 CMakeFiles/test_rx_tx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS16N.cpp.obj
- .bss           0x00000000        0x0 CMakeFiles/test_rx_tx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS16N.cpp.obj
- .text._ZN9MB85RS16N7set_welEv
-                0x00000000       0x2c CMakeFiles/test_rx_tx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS16N.cpp.obj
- .text._ZN9MB85RS16N9reset_welEv
-                0x00000000       0x2c CMakeFiles/test_rx_tx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS16N.cpp.obj
- .text._ZN9MB85RS16N20read_status_registerEv
-                0x00000000       0x68 CMakeFiles/test_rx_tx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS16N.cpp.obj
- .text._ZN9MB85RS16N21write_status_registerEh
-                0x00000000       0x50 CMakeFiles/test_rx_tx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS16N.cpp.obj
- .text._ZN9MB85RS16N11read_memoryEtPhj
-                0x00000000       0x64 CMakeFiles/test_rx_tx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS16N.cpp.obj
- .rodata._ZN9MB85RS16N12write_memoryEtPhj.str1.4
-                0x00000000       0x67 CMakeFiles/test_rx_tx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS16N.cpp.obj
- .text._ZN9MB85RS16N12write_memoryEtPhj
-                0x00000000      0x118 CMakeFiles/test_rx_tx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS16N.cpp.obj
- .text._ZN9MB85RS16N14read_device_idEv
-                0x00000000       0x38 CMakeFiles/test_rx_tx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS16N.cpp.obj
- .text._ZN9MB85RS16N8mem_initEv
-                0x00000000       0x98 CMakeFiles/test_rx_tx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS16N.cpp.obj
+ .text          0x00000000        0x0 CMakeFiles/test_rx_tx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS1MT.cpp.obj
+ .data          0x00000000        0x0 CMakeFiles/test_rx_tx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS1MT.cpp.obj
+ .bss           0x00000000        0x0 CMakeFiles/test_rx_tx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS1MT.cpp.obj
+ .text._ZN9MB85RS1MT7set_welEv
+                0x00000000       0x2c CMakeFiles/test_rx_tx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS1MT.cpp.obj
+ .text._ZN9MB85RS1MT9reset_welEv
+                0x00000000       0x2c CMakeFiles/test_rx_tx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS1MT.cpp.obj
+ .text._ZN9MB85RS1MT20read_status_registerEv
+                0x00000000       0x68 CMakeFiles/test_rx_tx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS1MT.cpp.obj
+ .text._ZN9MB85RS1MT21write_status_registerEh
+                0x00000000       0x40 CMakeFiles/test_rx_tx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS1MT.cpp.obj
+ .text._ZN9MB85RS1MT11read_memoryEmPhj
+                0x00000000       0x64 CMakeFiles/test_rx_tx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS1MT.cpp.obj
+ .rodata._ZN9MB85RS1MT12write_memoryEmPhj.str1.4
+                0x00000000       0x67 CMakeFiles/test_rx_tx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS1MT.cpp.obj
+ .text._ZN9MB85RS1MT12write_memoryEmPhj
+                0x00000000      0x11c CMakeFiles/test_rx_tx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS1MT.cpp.obj
+ .text._ZN9MB85RS1MT14read_device_idEv
+                0x00000000       0x38 CMakeFiles/test_rx_tx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS1MT.cpp.obj
+ .text._ZN9MB85RS1MT8mem_initEv
+                0x00000000       0xb4 CMakeFiles/test_rx_tx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS1MT.cpp.obj
  .rodata._ZL4rdid
-                0x00000000        0x1 CMakeFiles/test_rx_tx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS16N.cpp.obj
+                0x00000000        0x1 CMakeFiles/test_rx_tx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS1MT.cpp.obj
  .rodata._ZL5write
-                0x00000000        0x1 CMakeFiles/test_rx_tx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS16N.cpp.obj
+                0x00000000        0x1 CMakeFiles/test_rx_tx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS1MT.cpp.obj
  .rodata._ZL4read
-                0x00000000        0x1 CMakeFiles/test_rx_tx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS16N.cpp.obj
+                0x00000000        0x1 CMakeFiles/test_rx_tx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS1MT.cpp.obj
  .rodata._ZL4wrsr
-                0x00000000        0x1 CMakeFiles/test_rx_tx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS16N.cpp.obj
+                0x00000000        0x1 CMakeFiles/test_rx_tx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS1MT.cpp.obj
  .rodata._ZL4rdsr
-                0x00000000        0x1 CMakeFiles/test_rx_tx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS16N.cpp.obj
+                0x00000000        0x1 CMakeFiles/test_rx_tx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS1MT.cpp.obj
  .rodata._ZL4wrdi
-                0x00000000        0x1 CMakeFiles/test_rx_tx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS16N.cpp.obj
+                0x00000000        0x1 CMakeFiles/test_rx_tx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS1MT.cpp.obj
  .rodata._ZL4wren
-                0x00000000        0x1 CMakeFiles/test_rx_tx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS16N.cpp.obj
- .comment       0x00000000       0x45 CMakeFiles/test_rx_tx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS16N.cpp.obj
+                0x00000000        0x1 CMakeFiles/test_rx_tx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS1MT.cpp.obj
+ .comment       0x00000000       0x45 CMakeFiles/test_rx_tx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS1MT.cpp.obj
  .ARM.attributes
-                0x00000000       0x2c CMakeFiles/test_rx_tx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS16N.cpp.obj
+                0x00000000       0x2c CMakeFiles/test_rx_tx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS1MT.cpp.obj
  .text          0x00000000        0x0 CMakeFiles/test_rx_tx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/config.cpp.obj
  .data          0x00000000        0x0 CMakeFiles/test_rx_tx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/config.cpp.obj
  .bss           0x00000000        0x0 CMakeFiles/test_rx_tx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/config.cpp.obj
- .rodata._Z12write_config12Config_Names6ConfigPhjP9MB85RS16N.str1.4
+ .rodata._Z12write_config12Config_Names6ConfigPhjP9MB85RS1MT.str1.4
                 0x00000000       0x2d CMakeFiles/test_rx_tx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/config.cpp.obj
- .text._Z12write_config12Config_Names6ConfigPhjP9MB85RS16N
+ .text._Z12write_config12Config_Names6ConfigPhjP9MB85RS1MT
                 0x00000000       0x40 CMakeFiles/test_rx_tx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/config.cpp.obj
- .rodata._Z11read_config12Config_Names6ConfigPhjP9MB85RS16N.str1.4
+ .rodata._Z11read_config12Config_Names6ConfigPhjP9MB85RS1MT.str1.4
                 0x00000000       0x40 CMakeFiles/test_rx_tx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/config.cpp.obj
- .text._Z11read_config12Config_Names6ConfigPhjP9MB85RS16N
+ .text._Z11read_config12Config_Names6ConfigPhjP9MB85RS1MT
                 0x00000000       0x40 CMakeFiles/test_rx_tx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/config.cpp.obj
  .comment       0x00000000       0x45 CMakeFiles/test_rx_tx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/config.cpp.obj
  .ARM.attributes
@@ -1360,9 +1360,9 @@ Discarded input sections
  .comment       0x00000000       0x45 CMakeFiles/test_rx_tx.dir/Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp2_common/pico_rand/rand.c.obj
  .ARM.attributes
                 0x00000000       0x2c CMakeFiles/test_rx_tx.dir/Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp2_common/pico_rand/rand.c.obj
- .text          0x00000000        0x0 /var/folders/n7/t1959y0j4_gczygmz5tcw0qc0000gn/T//ccVYvbIW.o
- .data          0x00000000        0x0 /var/folders/n7/t1959y0j4_gczygmz5tcw0qc0000gn/T//ccVYvbIW.o
- .bss           0x00000000        0x0 /var/folders/n7/t1959y0j4_gczygmz5tcw0qc0000gn/T//ccVYvbIW.o
+ .text          0x00000000        0x0 /var/folders/n7/t1959y0j4_gczygmz5tcw0qc0000gn/T//ccZNmcbm.o
+ .data          0x00000000        0x0 /var/folders/n7/t1959y0j4_gczygmz5tcw0qc0000gn/T//ccZNmcbm.o
+ .bss           0x00000000        0x0 /var/folders/n7/t1959y0j4_gczygmz5tcw0qc0000gn/T//ccZNmcbm.o
  .data          0x00000000        0x0 /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
  .bss           0x00000000        0x0 /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
  .text          0x00000000        0x0 /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(libc_a-atoi.o)
@@ -1693,7 +1693,7 @@ LOAD /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-no
 .boot2          0x10000000      0x100
                 0x10000000                        __boot2_start__ = .
  *(.boot2)
- .boot2         0x10000000      0x100 /var/folders/n7/t1959y0j4_gczygmz5tcw0qc0000gn/T//ccVYvbIW.o
+ .boot2         0x10000000      0x100 /var/folders/n7/t1959y0j4_gczygmz5tcw0qc0000gn/T//ccZNmcbm.o
                 0x10000100                        __boot2_end__ = .
                 0x00000001                        ASSERT (((__boot2_end__ - __boot2_start__) == 0x100), ERROR: Pico second stage bootloader must be 256 bytes in size)
 
@@ -3111,7 +3111,7 @@ LOAD CMakeFiles/test_rx_tx.dir/test.cpp.obj
 LOAD CMakeFiles/test_rx_tx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
 LOAD CMakeFiles/test_rx_tx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-console/console.c.obj
 LOAD CMakeFiles/test_rx_tx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-console/std-cmd/command.c.obj
-LOAD CMakeFiles/test_rx_tx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS16N.cpp.obj
+LOAD CMakeFiles/test_rx_tx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS1MT.cpp.obj
 LOAD CMakeFiles/test_rx_tx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/config.cpp.obj
 LOAD CMakeFiles/test_rx_tx.dir/Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj
 LOAD CMakeFiles/test_rx_tx.dir/Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
@@ -3185,7 +3185,7 @@ LOAD CMakeFiles/test_rx_tx.dir/Users/michaelshipman/Developer/command_module/Cod
 LOAD CMakeFiles/test_rx_tx.dir/Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.obj
 LOAD CMakeFiles/test_rx_tx.dir/Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp2_common/hardware_spi/spi.c.obj
 LOAD CMakeFiles/test_rx_tx.dir/Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp2_common/pico_rand/rand.c.obj
-LOAD /var/folders/n7/t1959y0j4_gczygmz5tcw0qc0000gn/T//ccVYvbIW.o
+LOAD /var/folders/n7/t1959y0j4_gczygmz5tcw0qc0000gn/T//ccZNmcbm.o
 LOAD /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libstdc++.a
 LOAD /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libm.a
 START GROUP
@@ -3311,7 +3311,7 @@ LOAD linker stubs
  .ARM.attributes
                 0x0000087e       0x2c CMakeFiles/test_rx_tx.dir/Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp2_common/hardware_spi/spi.c.obj
  .ARM.attributes
-                0x000008aa       0x22 /var/folders/n7/t1959y0j4_gczygmz5tcw0qc0000gn/T//ccVYvbIW.o
+                0x000008aa       0x22 /var/folders/n7/t1959y0j4_gczygmz5tcw0qc0000gn/T//ccZNmcbm.o
  .ARM.attributes
                 0x000008cc       0x1e /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
  .ARM.attributes

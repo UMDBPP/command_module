@@ -2406,38 +2406,38 @@ Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_tx.dir/build.make CMakeFiles/test_tx.dir/Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.s
 .PHONY : Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.s
 
-Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS16N.obj: Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS16N.cpp.obj
-.PHONY : Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS16N.obj
+Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS1MT.obj: Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS1MT.cpp.obj
+.PHONY : Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS1MT.obj
 
 # target to build an object file
-Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS16N.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS16N.cpp.obj
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_rx_tx.dir/build.make CMakeFiles/test_rx_tx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS16N.cpp.obj
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_rx.dir/build.make CMakeFiles/test_rx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS16N.cpp.obj
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_tx.dir/build.make CMakeFiles/test_tx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS16N.cpp.obj
-.PHONY : Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS16N.cpp.obj
+Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS1MT.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS1MT.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_rx_tx.dir/build.make CMakeFiles/test_rx_tx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS1MT.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_rx.dir/build.make CMakeFiles/test_rx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS1MT.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_tx.dir/build.make CMakeFiles/test_tx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS1MT.cpp.obj
+.PHONY : Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS1MT.cpp.obj
 
-Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS16N.i: Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS16N.cpp.i
-.PHONY : Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS16N.i
+Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS1MT.i: Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS1MT.cpp.i
+.PHONY : Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS1MT.i
 
 # target to preprocess a source file
-Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS16N.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS16N.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_rx_tx.dir/build.make CMakeFiles/test_rx_tx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS16N.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_rx.dir/build.make CMakeFiles/test_rx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS16N.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_tx.dir/build.make CMakeFiles/test_tx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS16N.cpp.i
-.PHONY : Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS16N.cpp.i
+Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS1MT.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS1MT.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_rx_tx.dir/build.make CMakeFiles/test_rx_tx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS1MT.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_rx.dir/build.make CMakeFiles/test_rx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS1MT.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_tx.dir/build.make CMakeFiles/test_tx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS1MT.cpp.i
+.PHONY : Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS1MT.cpp.i
 
-Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS16N.s: Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS16N.cpp.s
-.PHONY : Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS16N.s
+Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS1MT.s: Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS1MT.cpp.s
+.PHONY : Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS1MT.s
 
 # target to generate assembly for a file
-Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS16N.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS16N.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_rx_tx.dir/build.make CMakeFiles/test_rx_tx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS16N.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_rx.dir/build.make CMakeFiles/test_rx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS16N.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_tx.dir/build.make CMakeFiles/test_tx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS16N.cpp.s
-.PHONY : Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS16N.cpp.s
+Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS1MT.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS1MT.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_rx_tx.dir/build.make CMakeFiles/test_rx_tx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS1MT.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_rx.dir/build.make CMakeFiles/test_rx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS1MT.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_tx.dir/build.make CMakeFiles/test_tx.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS1MT.cpp.s
+.PHONY : Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS1MT.cpp.s
 
 Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/config.obj: Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/config.cpp.obj
 .PHONY : Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/config.obj
@@ -2818,9 +2818,9 @@ help:
 	@echo "... Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp2_common/pico_unique_id/unique_id.obj"
 	@echo "... Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp2_common/pico_unique_id/unique_id.i"
 	@echo "... Users/michaelshipman/Developer/command_module/Code/Not_XbeeJoint/pico-sdk/src/rp2_common/pico_unique_id/unique_id.s"
-	@echo "... Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS16N.obj"
-	@echo "... Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS16N.i"
-	@echo "... Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS16N.s"
+	@echo "... Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS1MT.obj"
+	@echo "... Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS1MT.i"
+	@echo "... Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS1MT.s"
 	@echo "... Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/config.obj"
 	@echo "... Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/config.i"
 	@echo "... Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/config.s"
