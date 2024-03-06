@@ -17,6 +17,12 @@ static const uint8_t REG_NUM_BYTES_MSB = 0xFD;
 static const uint8_t REG_NUM_BYTES_LSB = 0xFE;
 static const uint8_t REG_DATA = 0xFF;
 
+volatile bool transmit;
+
+repeating_timer_t tx_timer;
+
+uint8_t radio_tx_buf[100] = "hello!";
+
 // Ports
 i2c_inst_t *i2c = i2c0;
 
@@ -27,6 +33,11 @@ void ubx_inf_debug(void);
 void ubx_cfg_prt(void);
 void ubx_cfg_cfg(void);
 void ubx_cfg_dat(void);
+bool tx_timer_callback(repeating_timer_t *rt);
+void setup_led();
+void led_on();
+void led_off();
+void transmit_test(uint8_t *buf, size_t len);
 
 int main() {
     // Pins
@@ -42,15 +53,26 @@ int main() {
 
     set_sys_clock_48mhz();
 
+    setup_led();
+    led_off();
+
     gpio_init(EXTINT_PIN);
     gpio_set_dir(EXTINT_PIN, GPIO_IN);
     gpio_init(TIMEPULSE_PIN);
     gpio_set_dir(TIMEPULSE_PIN, GPIO_IN);
 
+    sleep_ms(5000);
+
     radio.debug_msg_en = 0;
     radio.radio_init();
 
-    // uart_init(uart1, 9600);
+    // negative timeout means exact delay (rather than delay between
+    // callbacks)
+    if (!add_repeating_timer_us(-20000000, tx_timer_callback, NULL,
+                                &tx_timer)) {
+        printf("Failed to add timer\n");
+        return 1;
+    }
 
     // Initialize I2C port at 100 kHz
     i2c_init(i2c, 100 * 1000);
@@ -59,12 +81,15 @@ int main() {
     gpio_set_function(sda_pin, GPIO_FUNC_I2C);
     gpio_set_function(scl_pin, GPIO_FUNC_I2C);
 
-    // i2c_set_slave_mode(i2c, false, 0x00);
-
     uint8_t rx_msg = 0;
 
     while (true) {
         // printf("%c", uart_getc(uart1));
+
+        // if (transmit) {
+        //     transmit_test((uint8_t *)radio_tx_buf, sizeof(radio_tx_buf));
+        //     transmit = false;
+        // }
 
         result2 = i2c_read_blocking(i2c, GPS_ADDR, &rx_msg, 1, false);
         if (result2 == PICO_ERROR_GENERIC)
@@ -217,3 +242,51 @@ void ubx_cfg_dat() {
 
     printf("\n\n");
 }
+
+bool tx_timer_callback(repeating_timer_t *rt) {
+    transmit = true;
+
+    return true;  // keep repeating
+}
+
+void transmit_test(uint8_t *buf, size_t len) {
+    printf("Transmit Test\n");
+
+    led_on();
+
+    // tx_done = false;
+
+    // buf[0] = (char)get_rand_32();
+
+    radio.radio_send(buf, len);
+
+    while (gpio_get(BUSY_PIN) && !gpio_get(DIO1_PIN))
+        ;
+
+    printf("Starting wait\n");
+
+    sleep_ms(10000);
+
+    led_off();
+    printf("%s\n", (char *)buf);
+    // radio.disable_tx();
+    // radio.radio_receive_single();
+
+    radio.get_radio_errors();
+
+    radio.clear_irq_status();
+
+    radio.radio_receive_single();
+
+    radio.get_radio_errors();
+}
+
+void setup_led() {
+    gpio_init(LED_PIN);
+    gpio_set_dir(0, GPIO_OUT);
+    gpio_put(LED_PIN, 0);
+}
+
+void led_on() { gpio_put(LED_PIN, true); }
+
+void led_off() { gpio_put(LED_PIN, false); }
