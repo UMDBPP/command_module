@@ -22,4 +22,4 @@ pico_enable_stdio_usb(test 1)
 
 pico_add_extra_outputs(test)
 
-target_link_libraries(test pico_stdlib hardware_flash hardware_sync hardware_spi hardware_i2c pico_unique_id pico_rand hardware_irq)
+target_link_libraries(test pico_stdlib hardware_flash hardware_sync hardware_spi hardware_i2c pico_unique_id pico_rand hardware_irq hardware_watchdog)

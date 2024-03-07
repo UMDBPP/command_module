@@ -3289,6 +3289,7 @@ CMakeFiles/test.dir/test.cpp.obj: /Users/michaelshipman/Developer/command_module
   /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/spi.h \
   /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/timer.h \
   /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/uart.h \
+  /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/watchdog.h \
   /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/i2c.h \
   /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/interp.h \
   /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/iobank0.h \
@@ -3297,6 +3298,7 @@ CMakeFiles/test.dir/test.cpp.obj: /Users/michaelshipman/Developer/command_module
   /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/spi.h \
   /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/timer.h \
   /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/uart.h \
+  /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/watchdog.h \
   /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
   /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h \
   /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_flash/include/hardware/flash.h \
@@ -3306,6 +3308,7 @@ CMakeFiles/test.dir/test.cpp.obj: /Users/michaelshipman/Developer/command_module
   /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_spi/include/hardware/spi.h \
   /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_timer/include/hardware/timer.h \
   /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_uart/include/hardware/uart.h \
+  /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_watchdog/include/hardware/watchdog.h \
   /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_platform/include/pico/platform.h \
   /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_rand/include/pico/rand.h \
   /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio/include/pico/stdio.h \

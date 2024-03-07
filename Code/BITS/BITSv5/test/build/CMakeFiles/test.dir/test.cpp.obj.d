@@ -88,6 +88,9 @@ CMakeFiles/test.dir/test.cpp.obj: \
  /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/i2c.h \
  /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/test/../BITSv5.h \
  /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_flash/include/hardware/flash.h \
+ /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_watchdog/include/hardware/watchdog.h \
+ /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/watchdog.h \
+ /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/watchdog.h \
  /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_binary_info/include/pico/binary_info.h \
  /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_binary_info/include/pico/binary_info/defs.h \
  /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_binary_info/include/pico/binary_info/structure.h \

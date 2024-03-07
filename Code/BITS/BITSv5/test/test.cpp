@@ -9,6 +9,7 @@
 #include "../BITSv5.h"
 #include "hardware/flash.h"
 #include "hardware/gpio.h"
+#include "hardware/watchdog.h"
 #include "pico/binary_info.h"
 #include "pico/rand.h"
 #include "pico/stdlib.h"
@@ -24,8 +25,9 @@ DRF1262 radio(spi1, RADIO_CS, SCK_PIN, MOSI_PIN, MISO_PIN, TXEN_PIN, DIO1_PIN,
 MB85RS1MT mem(spi1, FRAM_CS, SCK_PIN, MOSI_PIN, MISO_PIN);
 
 static uint32_t log_addr = LOG_INIT_ADDR;
-char log_str[] = "log item ";
-uint32_t log_cnt = 0;
+char log_str[11] = "a b c d ef";
+char log_str1[11] = "h i j k lm";
+uint8_t log_buf[11] = {0};
 
 Config test_config;
 
@@ -87,41 +89,86 @@ int main() {
 
     mem.mem_init();
 
+    // Enable the watchdog, requiring the watchdog to be updated every 100ms or
+    // the chip will reboot second arg is pause on debug which means the
+    // watchdog will pause when stepping through code
+    watchdog_enable(2000, 1);
+
+    if (watchdog_caused_reboot()) {
+        printf("Rebooted by Watchdog!\n");
+    } else {
+        printf("Clean boot\n");
+    }
+
+    strcpy(test_config.name, "BITSv5.2-0");
+    write_config(NAME, test_config, (uint8_t *)test_config.name,
+                 sizeof(test_config.name), &mem);
+
+    printf("\n%s %s\n", __DATE__, __TIME__);
+
+    printf("BITSv5 Test (Compiled %s %s)\n", __DATE__, __TIME__);
+    printf("Device ID: %d\n", mem.device_id);
+    read_config(NAME, test_config, (uint8_t *)test_config.name,
+                sizeof(test_config.name), &mem);
+    printf("DEVICE NAME: %s\n", test_config.name);
+
+    printf("Dumping FRAM\n");
+    for (log_addr = LOG_INIT_ADDR; log_addr <= LOG_INIT_ADDR + 1 + 20 * (11);
+         log_addr = log_addr + sizeof(log_buf)) {  //= log_addr + sizeof(log_buf)
+        watchdog_update();
+        mem.read_memory(log_addr, log_buf, sizeof(log_buf));  // sizeof(log_buf)
+        printf("%d - %s\n", log_addr, log_buf);
+        memset(log_buf, 0, sizeof(log_buf));
+    }
+
+    printf("Writing FRAM\n");
+    for (log_addr = LOG_INIT_ADDR; log_addr <= LOG_INIT_ADDR + 1 + 20 * (11);
+         log_addr = log_addr + sizeof(log_str)) {
+        // printf("%d\n", log_addr);
+        watchdog_update();
+
+        log_str[1] = (char)get_rand_32();
+        log_str1[1] = (char)get_rand_32();
+
+        if (log_addr % 2 != 0) {
+            mem.write_memory(log_addr, (uint8_t *)log_str, sizeof(log_str));
+            printf("%d - %s\n", log_addr, log_str);
+        } else {
+            mem.write_memory(log_addr, (uint8_t *)log_str1, sizeof(log_str1));
+            printf("%d - %s\n", log_addr, log_str1);
+        }
+    }
+
+    read_config(NAME, test_config, (uint8_t *)test_config.name,
+                sizeof(test_config.name), &mem);
+    printf("DEVICE NAME: %s\n", test_config.name);
+
     while (true) {
-        printf("\n%s %s\n", __DATE__, __TIME__);
+        // printf("Updating watchdog \n");
+        // watchdog_update();
 
-        printf("Config Lib Test Compiled %s %s\n", __DATE__, __TIME__);
+        // printf("DEVICE NAME: %s\n", test_config.name);
 
-        printf("Device ID: %d\n", mem.device_id);
+        // // Read and print the NAME config setting
+        // read_config(NAME, test_config, (uint8_t *)test_config.name,
+        //             sizeof(test_config.name), &mem);
 
-        printf("DEVICE NAME: %s\n", test_config.name);
+        // printf("DEVICE NAME: %s\n", test_config.name);
 
-        // Read and print the NAME config setting
-        read_config(NAME, test_config, (uint8_t *)test_config.name,
-                    sizeof(test_config.name), &mem);
+        // // Write the time that this file was last compiled to the config
+        // strcpy(test_config.name, __TIME__);
 
-        printf("DEVICE NAME: %s\n", test_config.name);
+        // // Write the changed setting to the FRAM
+        // write_config(NAME, test_config, (uint8_t *)test_config.name,
+        //              sizeof(test_config.name), &mem);
 
-        // Write the time that this file was last compiled to the config
-        strcpy(test_config.name, __TIME__);
+        // // Read and print again
+        // strcpy(test_config.name, "something broke");
 
-        // Write the changed setting to the FRAM
-        write_config(NAME, test_config, (uint8_t *)test_config.name,
-                     sizeof(test_config.name), &mem);
+        // read_config(NAME, test_config, (uint8_t *)test_config.name,
+        //             sizeof(test_config.name), &mem);
 
-        // Read and print again
-        strcpy(test_config.name, "something broke");
-
-        read_config(NAME, test_config, (uint8_t *)test_config.name,
-                    sizeof(test_config.name), &mem);
-
-        printf("DEVICE NAME: %s\n", test_config.name);
-
-        mem.write_memory(log_addr, (uint8_t *)log_str, strlen(log_str));
-        log_addr = log_addr + strlen(log_str);
-        mem.write_memory(log_addr, (uint8_t *)(&log_cnt), sizeof(log_cnt));
-        log_addr = log_addr + sizeof(log_str);
-        log_cnt++;
+        // printf("DEVICE NAME: %s\n", test_config.name);
 
         // transmit_test((uint8_t *)radio_tx_buf, sizeof(radio_tx_buf));
 
@@ -140,7 +187,7 @@ void transmit_test(uint8_t *buf, size_t len) {
 
     radio.radio_send(buf, len);
 
-    while (!tx_done) busy_wait_us_32(1);
+    // while (!tx_done) busy_wait_us_32(1);
 
     // printf("Starting wait\n");
 
@@ -247,7 +294,8 @@ void gpio_callback(uint gpio, uint32_t events) {
 
         if (radio.irqs.RX_DONE) {
             printf("RX ISR\n");
-            radio.read_radio_buffer((uint8_t *)radio_rx_buf, sizeof(radio_rx_buf));
+            radio.read_radio_buffer((uint8_t *)radio_rx_buf,
+                                    sizeof(radio_rx_buf));
             printf("%s\n", radio_rx_buf);
             radio.get_packet_status();
             printf("RSSI: %d dBm Signal RSSI: %d SNR: %d dB\n",
