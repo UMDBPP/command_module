@@ -19,9 +19,9 @@
 #undef PICO_FLASH_SIZE_BYTES
 #define PICO_FLASH_SIZE_BYTES (16 * 1024 * 1024)
 
-DRF1262 radio(spi1, RADIO_CS, SCK_PIN, MOSI_PIN, MISO_PIN, TXEN_PIN, DIO1_PIN,
-              BUSY_PIN, SW_PIN);
+char id[2 * PICO_UNIQUE_BOARD_ID_SIZE_BYTES + 1] = {0};
 
+// logging
 MB85RS1MT mem(spi1, FRAM_CS, SCK_PIN, MOSI_PIN, MISO_PIN);
 
 static uint32_t log_addr = LOG_INIT_ADDR;
@@ -31,32 +31,38 @@ uint8_t log_buf = 0;
 
 Config test_config;
 
-char id[2 * PICO_UNIQUE_BOARD_ID_SIZE_BYTES + 1] = {0};
-
-char radio_rx_buf[100] = {0};
-uint8_t radio_tx_buf[100] = "_hello!";
-uint8_t radio_ack_buf[100] = {0};
-char ack[] = "ack - xbee joint alive!";
-
+// GPS
 char gps_buf[90] = {0};
 uint gps_buf_offset = 0;
+void get_gps_data(void);
+
+// radio
+DRF1262 radio(spi1, RADIO_CS, SCK_PIN, MOSI_PIN, MISO_PIN, TXEN_PIN, DIO1_PIN,
+              BUSY_PIN, SW_PIN, RADIO_RST);
 
 volatile bool tx_done = false;
 volatile bool transmit = false;
 volatile bool rx_done = false;
 volatile bool send_ack = false;
+char radio_rx_buf[100] = {0};
+uint8_t radio_tx_buf[100] = "_hello!";
+uint8_t radio_ack_buf[100] = {0};
+char ack[] = "ack - xbee joint alive!";
 
 repeating_timer_t tx_timer;
 
 void rx_test(void);
 void transmit_test(uint8_t *buf, size_t len);
+int start_tx_repeating(void);
+bool tx_timer_callback(repeating_timer_t *rt);
+
+// misc
 void setup_led();
 void led_on();
 void led_off();
 void gpio_callback(uint gpio, uint32_t events);
-bool tx_timer_callback(repeating_timer_t *rt);
-void get_gps_data(void);
-int start_tx_repeating(void);
+void setup_spi();
+void write_name_config();
 
 int main() {
     stdio_init_all();
@@ -64,34 +70,24 @@ int main() {
     gpio_set_irq_enabled_with_callback(DIO1_PIN, GPIO_IRQ_EDGE_RISE, true,
                                        &gpio_callback);
 
+    setup_spi();
+
     setup_led();
     led_off();
-
-    spi_init(spi1, 500000);
-
-    spi_set_format(spi1,           // SPI instance
-                   8,              // Number of bits per transfer
-                   (spi_cpol_t)0,  // Polarity (CPOL)
-                   (spi_cpha_t)0,  // Phase (CPHA)
-                   SPI_MSB_FIRST);
-
-    gpio_init(RADIO_RST);
-    gpio_set_dir(RADIO_RST, GPIO_OUT);
-    gpio_put(RADIO_RST, 1);
 
     pico_get_unique_board_id_string(id,
                                     2 * PICO_UNIQUE_BOARD_ID_SIZE_BYTES + 1);
 
+    radio.debug_msg_en = 0;
+
     sleep_ms(5000);
 
-    radio.debug_msg_en = 0;
+    // setup devices
     radio.radio_init();
-
     mem.mem_init();
 
-    // Enable the watchdog, requiring the watchdog to be updated every 100ms or
-    // the chip will reboot second arg is pause on debug which means the
-    // watchdog will pause when stepping through code
+    // Enable the watchdog, requiring the watchdog to be updated every 2000ms or
+    // the chip will reboot
     watchdog_enable(2000, 1);
 
     if (watchdog_caused_reboot()) {
@@ -99,10 +95,6 @@ int main() {
     } else {
         printf("Clean boot\n");
     }
-
-    strcpy(test_config.name, "BITSv5.2-0");
-    write_config(NAME, test_config, (uint8_t *)test_config.name,
-                 sizeof(test_config.name), &mem);
 
     printf("BITSv5 Test (Compiled %s %s)\n", __DATE__, __TIME__);
     printf("Device ID: %d\n", mem.device_id);
@@ -316,4 +308,19 @@ void gpio_callback(uint gpio, uint32_t events) {
 
         radio.clear_irq_status();
     }
+}
+
+void setup_spi() {
+    spi_init(spi1, 500000);
+    spi_set_format(spi1,           // SPI instance
+                   8,              // Number of bits per transfer
+                   (spi_cpol_t)0,  // Polarity (CPOL)
+                   (spi_cpha_t)0,  // Phase (CPHA)
+                   SPI_MSB_FIRST);
+}
+
+void write_name_config() {
+    strcpy(test_config.name, "BITSv5.2-0");
+    write_config(NAME, test_config, (uint8_t *)test_config.name,
+                 sizeof(test_config.name), &mem);
 }
