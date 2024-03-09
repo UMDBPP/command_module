@@ -6,11 +6,9 @@ set(CMAKE_CXX_STANDARD 17)
 pico_sdk_init()
 add_executable(radio-test
     radio_test.cpp
-    radio.cpp
-    sx126x-board.cpp
-    sx126x.cpp
+    ../../../libraries/rp2040-drf1262-lib/SX1262.cpp
 )
 pico_enable_stdio_usb(radio-test 1)
 pico_enable_stdio_uart(radio-test 1)
 pico_add_extra_outputs(radio-test) 
-target_link_libraries(radio-test pico_stdlib hardware_spi hardware_gpio hardware_sync)
+target_link_libraries(radio-test pico_stdlib hardware_spi hardware_gpio hardware_sync pico_unique_id pico_rand hardware_irq hardware_flash hardware_i2c)

@@ -1,128 +1,167 @@
-#include "radio.h"
-
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
+#include "../../../libraries/rp2040-drf1262-lib/SX1262.h"
+#include "../BITSv5.h"
 #include "hardware/gpio.h"
-#include "hardware/spi.h"
 #include "pico/binary_info.h"
+#include "pico/rand.h"
 #include "pico/stdlib.h"
-#include "sx126x-board.h"
-#include "sx126x.h"
+#include "pico/unique_id.h"
 
-/*
- * if you want to use TCXO please open sx1262.h line 29
- */
+DRF1262 radio(spi1, RADIO_CS, SCK_PIN, MOSI_PIN, MISO_PIN, TXEN_PIN, DIO1_PIN,
+              BUSY_PIN, SW_PIN, RADIO_RST);
 
-uint8_t mode = USER_MODE_TX; /*mode  SET current work mode: TX or RX*/
-/*Default frequency：868MHZ Bandwidth：125KHZ，RF_FACTOR：11 */
-#define RF_FREQUENCY 868000000  // Hz  center frequency
-#define TX_OUTPUT_POWER 22      // dBm tx output power
-#define LORA_BANDWIDTH \
-    1  // bandwidth=125khz   0:250kHZ,1:125kHZ,2:62kHZ,3:20kHZ.... lookfor radio
-       // line 392
-#define LORA_SPREADING_FACTOR 11  // spreading factor=11 [SF5..SF12]
-#define LORA_CODINGRATE \
-    1                                     // [1: 4/5,
-                                          //  2: 4/6,
-                                          //  3: 4/7,
-                                          //  4: 4/8]
-#define LORA_PREAMBLE_LENGTH 8            // Same for Tx and Rx
-#define LORA_SYMBOL_TIMEOUT 0             // Symbols
-#define LORA_FIX_LENGTH_PAYLOAD_ON false  // variable data payload
-#define LORA_IQ_INVERSION_ON false
+char id[2 * PICO_UNIQUE_BOARD_ID_SIZE_BYTES + 1] = {0};
 
-typedef enum {
-    LOWPOWER,
-    RX,
-    RX_TIMEOUT,
-    RX_ERROR,
-    TX,
-    TX_TIMEOUT,
-} States_t;
+char radio_rx_buf[100] = {0};
+uint8_t radio_tx_buf[100] = "_hello!";
+uint8_t radio_ack_buf[100] = {0};
 
-#define RX_TIMEOUT_VALUE 1000
-#define BUFFER_SIZE 64  // Define the payload size here
-States_t State = LOWPOWER;
+volatile bool tx_done = false;
+volatile bool transmit = false;
+volatile bool rx_done = false;
+volatile bool send_ack = false;
 
-RadioEvents_t RadioEvents;
-uint16_t BufferSize = BUFFER_SIZE;
-uint8_t Buffer[BUFFER_SIZE];
-int8_t RssiValue = 0;
-int8_t SnrValue = 0;
+repeating_timer_t tx_timer;
 
-void OnTxDone(void);
-void OnRxDone(uint8_t *payload, uint16_t size, int16_t rssi, int8_t snr);
-void OnTxTimeout(void);
-void OnRxTimeout(void);
-void OnRxError(void);
-
-uint8_t i = 0;
+void rx_test(void);
+void transmit_test(uint8_t *buf, size_t len);
+void setup_led();
+void led_on();
+void led_off();
+void gpio_callback(uint gpio, uint32_t events);
+bool tx_timer_callback(repeating_timer_t *rt);
+void setup_spi();
 
 int main() {
     stdio_init_all();
 
-    SX126xIoInit();  // Initializes the radio I/Os pins
+    gpio_set_irq_enabled_with_callback(DIO1_PIN, GPIO_IRQ_EDGE_RISE, true,
+                                       &gpio_callback);
 
-    spi_init(spi0, 2000000);
+    setup_led();
+    led_off();
 
-    // Radio initialization
-    RadioEvents.TxDone = OnTxDone;
-    RadioEvents.RxDone = OnRxDone;
-    RadioEvents.TxTimeout = OnTxTimeout;
-    RadioEvents.RxTimeout = OnRxTimeout;
-    RadioEvents.RxError = OnRxError;
+    gpio_init(EXTINT_PIN);
+    gpio_set_dir(EXTINT_PIN, GPIO_IN);
+    gpio_init(TIMEPULSE_PIN);
+    gpio_set_dir(TIMEPULSE_PIN, GPIO_IN);
 
-    Radio.Init(&RadioEvents);
-    Radio.SetChannel(RF_FREQUENCY);
+    gpio_init(RADIO_RST);
+    gpio_set_dir(RADIO_RST, GPIO_OUT);
+    gpio_put(RADIO_RST, 1);
 
-    Radio.SetTxConfig(MODEM_LORA, TX_OUTPUT_POWER, 0, LORA_BANDWIDTH,
-                      LORA_SPREADING_FACTOR, LORA_CODINGRATE,
-                      LORA_PREAMBLE_LENGTH, LORA_FIX_LENGTH_PAYLOAD_ON, true, 0,
-                      0, LORA_IQ_INVERSION_ON, 3000);
+    sleep_ms(5000);
 
-    Radio.SetRxConfig(MODEM_LORA, LORA_BANDWIDTH, LORA_SPREADING_FACTOR,
-                      LORA_CODINGRATE, 0, LORA_PREAMBLE_LENGTH,
-                      LORA_SYMBOL_TIMEOUT, LORA_FIX_LENGTH_PAYLOAD_ON, 0, true,
-                      0, 0, LORA_IQ_INVERSION_ON, true);
+    radio.debug_msg_en = 0;
+    radio.radio_init();
 
-    if (USER_MODE_RX == mode) {
-        Radio.Rx(0);
-        printf("Now is RX");
-    } else {
-        Radio.Send((uint8_t *)&i, 1);
+    // negative timeout means exact delay (rather than delay between
+    // callbacks)
+    if (!add_repeating_timer_us(-20000000, tx_timer_callback, NULL,
+                                &tx_timer)) {
+        printf("Failed to add timer\n");
+        return 1;
     }
+
+    printf("\n%s %s\n", __DATE__, __TIME__);
 
     while (true) {
-        printf("Hello, BITS!\n");
-        sleep_ms(1000);
+        if (transmit) {
+            transmit_test((uint8_t *)radio_tx_buf, sizeof(radio_tx_buf));
+            transmit = false;
+        }
     }
 }
-void OnTxDone(void) {
-    //    Radio.Sleep( );
-    State = TX;
+
+void transmit_test(uint8_t *buf, size_t len) {
+    printf("Transmit Test\n");
+
+    led_on();
+
+    tx_done = false;
+
+    buf[0] = (char)get_rand_32();
+
+    radio.radio_send(buf, len);
+
+    printf("%s\n", (char *)buf);
+
+    radio.get_radio_errors();
 }
 
-void OnRxDone(uint8_t *payload, uint16_t size, int16_t rssi, int8_t snr) {
-    //    Radio.Sleep( );
-    BufferSize = size;
-    memcpy(Buffer, payload, BufferSize);
-    RssiValue = rssi;
-    SnrValue = snr;
-    State = RX;
+void setup_led() {
+    gpio_init(LED_PIN);
+    gpio_set_dir(0, GPIO_OUT);
+    gpio_put(LED_PIN, 0);
 }
 
-void OnTxTimeout(void) {
-    //   Radio.Sleep( );
-    State = TX_TIMEOUT;
+void led_on() { gpio_put(LED_PIN, true); }
+
+void led_off() { gpio_put(LED_PIN, false); }
+
+bool tx_timer_callback(repeating_timer_t *rt) {
+    transmit = true;
+
+    return true;  // keep repeating
 }
 
-void OnRxTimeout(void) {
-    //    Radio.Sleep( );
-    State = RX_TIMEOUT;
+void rx_test() {
+    char data[6] = {
+        '\0', '\0', '\0', '\0', '\0', '\0',
+    };
+
+    char ack_msg[] = "_ack-__________";
+
+    printf("Receive Test\n");
+
+    radio.radio_receive_single();
+
+    while (!gpio_get(DIO1_PIN) && !transmit) {
+        sleep_ms(1);
+    }
+
+    radio.clear_irq_status();
+
+    radio.read_radio_buffer((uint8_t *)data, 5);
+
+    printf("Got some data: %s\n", data);
+
+    strcpy(ack_msg + 4, data);
+
+    transmit_test((uint8_t *)ack_msg, sizeof(ack_msg));
 }
 
-void OnRxError(void) {
-    //    Radio.Sleep( );
-    State = RX_ERROR;
+void gpio_callback(uint gpio, uint32_t events) {
+    if (gpio == DIO1_PIN) {
+        printf("DIO1 ISR\n");
+        radio.get_irq_status();
+
+        if (radio.irqs.TX_DONE) {
+            printf("TX ISR\n");
+            radio.disable_tx();
+            radio.radio_receive_cont();
+            tx_done = true;
+            radio.irqs.TX_DONE = false;
+            led_off();
+        }
+
+        if (radio.irqs.RX_DONE) {
+            printf("RX ISR\n");
+            radio.read_radio_buffer((uint8_t *)radio_rx_buf,
+                                    sizeof(radio_rx_buf));
+            printf("%s\n", radio_rx_buf);
+            radio.get_packet_status();
+            printf("RSSI: %d dBm Signal RSSI: %d SNR: %d dB\n",
+                   radio.pkt_stat.rssi_pkt, radio.pkt_stat.signal_rssi_pkt,
+                   radio.pkt_stat.snr_pkt);
+
+            radio.irqs.RX_DONE = false;
+            send_ack = true;
+        }
+
+        radio.clear_irq_status();
+    }
 }
