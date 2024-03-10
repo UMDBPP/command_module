@@ -47,15 +47,28 @@ int main() {
                 sizeof(test_config.name), &mem);
     printf("DEVICE NAME: %s\n", test_config.name);
 
+    printf("\nPress \"d\" to dump memory, \"w\" to write memory\n");
     while (true) {
         c = getchar_timeout_us(0);
-        printf("Press \"d\" to dump memory, \"w\" to write memory\n");
+
         if (c == 'd') {
-            sleep_ms(1000);
+            sleep_ms(500);
+            printf("BITSv5 Test (Compiled %s %s)\n", __DATE__, __TIME__);
+            printf("Device ID: %d\n", mem.device_id);
+            read_config(NAME, test_config, (uint8_t *)test_config.name,
+                        sizeof(test_config.name), &mem);
+            printf("DEVICE NAME: %s\n", test_config.name);
             dump_fram();
+            printf(
+                "\nDump complete, press \"d\" to dump memory, \"w\" to write "
+                "memory\n");
         } else if (c == 'w') {
-            sleep_ms(1000);
+            sleep_ms(500);
+            write_name_config();
             write_fram();
+            printf(
+                "\nWrite complete, press \"d\" to dump memory, \"w\" to write "
+                "memory\n");
         }
     }
 }
@@ -97,8 +110,7 @@ void write_fram() {
     printf("\n\nWriting FRAM\n");
     mem.write_memory(log_addr, (uint8_t *)log_str, sizeof(log_str));
     printf("%d - %s\n", log_addr, log_str);
-    for (log_addr = LOG_INIT_ADDR + sizeof(log_str);
-         log_addr <= LOG_INIT_ADDR + 1 + 20 * (sizeof(log_str1));
+    for (log_addr = LOG_INIT_ADDR + sizeof(log_str); log_addr <= LOG_MAX_ADDR;
          log_addr = log_addr + sizeof(log_str1)) {
         // printf("%d\n", log_addr);
 

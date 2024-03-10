@@ -92,8 +92,6 @@ Discarded input sections
                 0x00000000        0xc CMakeFiles/log.dir/log.cpp.obj
  .text._Z7led_offv
                 0x00000000        0xc CMakeFiles/log.dir/log.cpp.obj
- .rodata._Z17write_name_configv.str1.4
-                0x00000000        0xb CMakeFiles/log.dir/log.cpp.obj
  .text._Z17write_name_configv
                 0x00000000       0x48 CMakeFiles/log.dir/log.cpp.obj
  .text._Z9dump_framv
@@ -116,10 +114,6 @@ Discarded input sections
  .text          0x00000000        0x0 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/config.cpp.obj
  .data          0x00000000        0x0 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/config.cpp.obj
  .bss           0x00000000        0x0 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/config.cpp.obj
- .rodata._Z12write_config12Config_Names6ConfigPhjP9MB85RS1MT.str1.4
-                0x00000000       0x2d CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/config.cpp.obj
- .text._Z12write_config12Config_Names6ConfigPhjP9MB85RS1MT
-                0x00000000       0x40 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/config.cpp.obj
  .text          0x00000000        0x0 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj
  .data          0x00000000        0x0 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj
  .bss           0x00000000        0x0 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj
@@ -1276,9 +1270,9 @@ Discarded input sections
  .bss           0x00000000        0x0 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_rand/rand.c.obj
  .text.get_rand_128
                 0x00000000       0x18 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_rand/rand.c.obj
- .text          0x00000000        0x0 /var/folders/n7/t1959y0j4_gczygmz5tcw0qc0000gn/T//ccGoL6xy.o
- .data          0x00000000        0x0 /var/folders/n7/t1959y0j4_gczygmz5tcw0qc0000gn/T//ccGoL6xy.o
- .bss           0x00000000        0x0 /var/folders/n7/t1959y0j4_gczygmz5tcw0qc0000gn/T//ccGoL6xy.o
+ .text          0x00000000        0x0 /var/folders/n7/t1959y0j4_gczygmz5tcw0qc0000gn/T//ccx0AW7a.o
+ .data          0x00000000        0x0 /var/folders/n7/t1959y0j4_gczygmz5tcw0qc0000gn/T//ccx0AW7a.o
+ .bss           0x00000000        0x0 /var/folders/n7/t1959y0j4_gczygmz5tcw0qc0000gn/T//ccx0AW7a.o
  .data          0x00000000        0x0 /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
  .bss           0x00000000        0x0 /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
  .text          0x00000000        0x0 /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(libc_a-calloc.o)
@@ -1597,11 +1591,11 @@ LOAD /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-no
 .boot2          0x10000000      0x100
                 0x10000000                        __boot2_start__ = .
  *(.boot2)
- .boot2         0x10000000      0x100 /var/folders/n7/t1959y0j4_gczygmz5tcw0qc0000gn/T//ccGoL6xy.o
+ .boot2         0x10000000      0x100 /var/folders/n7/t1959y0j4_gczygmz5tcw0qc0000gn/T//ccx0AW7a.o
                 0x10000100                        __boot2_end__ = .
                 0x00000001                        ASSERT (((__boot2_end__ - __boot2_start__) == 0x100), ERROR: Pico second stage bootloader must be 256 bytes in size)
 
-.text           0x10000100     0x7910
+.text           0x10000100     0x7a20
                 0x10000100                        __logical_binary_start = .
  *(.vectors)
  .vectors       0x10000100       0xd4 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
@@ -1669,618 +1663,621 @@ LOAD /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-no
                 0x10000308       0x40 CMakeFiles/log.dir/log.cpp.obj
                 0x10000308                setup_spi()
  .text._Z10write_framv
-                0x10000348       0x88 CMakeFiles/log.dir/log.cpp.obj
+                0x10000348       0x84 CMakeFiles/log.dir/log.cpp.obj
                 0x10000348                write_fram()
  .text.startup.main
-                0x100003d0      0x13c CMakeFiles/log.dir/log.cpp.obj
-                0x100003d0                main
+                0x100003cc      0x1ec CMakeFiles/log.dir/log.cpp.obj
+                0x100003cc                main
  .text.startup._GLOBAL__sub_I_mem
-                0x1000050c       0x2c CMakeFiles/log.dir/log.cpp.obj
+                0x100005b8       0x2c CMakeFiles/log.dir/log.cpp.obj
  .text._ZN9MB85RS1MT11read_memoryEmPhj
-                0x10000538       0x68 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS1MT.cpp.obj
-                0x10000538                MB85RS1MT::read_memory(unsigned long, unsigned char*, unsigned int)
+                0x100005e4       0x68 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS1MT.cpp.obj
+                0x100005e4                MB85RS1MT::read_memory(unsigned long, unsigned char*, unsigned int)
  .text._ZN9MB85RS1MT12write_memoryEmPhj
-                0x100005a0      0x120 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS1MT.cpp.obj
-                0x100005a0                MB85RS1MT::write_memory(unsigned long, unsigned char*, unsigned int)
+                0x1000064c      0x144 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS1MT.cpp.obj
+                0x1000064c                MB85RS1MT::write_memory(unsigned long, unsigned char*, unsigned int)
  .text._ZN9MB85RS1MT8mem_initEv
-                0x100006c0       0xb4 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS1MT.cpp.obj
-                0x100006c0                MB85RS1MT::mem_init()
+                0x10000790       0xb4 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS1MT.cpp.obj
+                0x10000790                MB85RS1MT::mem_init()
+ .text._Z12write_config12Config_Names6ConfigPhjP9MB85RS1MT
+                0x10000844       0x40 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/config.cpp.obj
+                0x10000844                write_config(Config_Names, Config, unsigned char*, unsigned int, MB85RS1MT*)
  .text._Z11read_config12Config_Names6ConfigPhjP9MB85RS1MT
-                0x10000774       0x40 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/config.cpp.obj
-                0x10000774                read_config(Config_Names, Config, unsigned char*, unsigned int, MB85RS1MT*)
+                0x10000884       0x40 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/config.cpp.obj
+                0x10000884                read_config(Config_Names, Config, unsigned char*, unsigned int, MB85RS1MT*)
  .text.gpio_set_function
-                0x100007b4       0x30 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
-                0x100007b4                gpio_set_function
+                0x100008c4       0x30 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
+                0x100008c4                gpio_set_function
  .text.gpio_init
-                0x100007e4       0x3c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
-                0x100007e4                gpio_init
+                0x100008f4       0x3c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
+                0x100008f4                gpio_init
  .text.running_on_fpga
-                0x10000820       0x10 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
-                0x10000820                running_on_fpga
+                0x10000930       0x10 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
+                0x10000930                running_on_fpga
  .text.hw_claim_or_assert
-                0x10000830       0x44 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
-                0x10000830                hw_claim_or_assert
+                0x10000940       0x44 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
+                0x10000940                hw_claim_or_assert
  .text.hw_claim_unused_from_range
-                0x10000874       0x9c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
-                0x10000874                hw_claim_unused_from_range
+                0x10000984       0x9c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
+                0x10000984                hw_claim_unused_from_range
  .text.spin_locks_reset
-                0x10000910       0x1c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
-                0x10000910                spin_locks_reset
+                0x10000a20       0x1c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
+                0x10000a20                spin_locks_reset
  .text.next_striped_spin_lock_num
-                0x1000092c       0x18 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
-                0x1000092c                next_striped_spin_lock_num
+                0x10000a3c       0x18 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
+                0x10000a3c                next_striped_spin_lock_num
  .text.spin_lock_claim_unused
-                0x10000944       0x24 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
-                0x10000944                spin_lock_claim_unused
+                0x10000a54       0x24 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
+                0x10000a54                spin_lock_claim_unused
  .text.irq_set_enabled
-                0x10000968       0x24 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
-                0x10000968                irq_set_enabled
+                0x10000a78       0x24 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x10000a78                irq_set_enabled
  .text.irq_set_pending
-                0x1000098c       0x10 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
-                0x1000098c                irq_set_pending
+                0x10000a9c       0x10 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x10000a9c                irq_set_pending
  .text.irq_has_shared_handler
-                0x1000099c       0x2c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
-                0x1000099c                irq_has_shared_handler
+                0x10000aac       0x2c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x10000aac                irq_has_shared_handler
  .text.irq_get_vtable_handler
-                0x100009c8       0x10 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
-                0x100009c8                irq_get_vtable_handler
+                0x10000ad8       0x10 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x10000ad8                irq_get_vtable_handler
  .text.irq_set_exclusive_handler
-                0x100009d8       0x54 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
-                0x100009d8                irq_set_exclusive_handler
+                0x10000ae8       0x54 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x10000ae8                irq_set_exclusive_handler
  .text.irq_add_shared_handler
-                0x10000a2c      0x1f4 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
-                0x10000a2c                irq_add_shared_handler
+                0x10000b3c      0x1f4 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x10000b3c                irq_add_shared_handler
  .text.irq_remove_handler
-                0x10000c20      0x1c4 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
-                0x10000c20                irq_remove_handler
+                0x10000d30      0x1c4 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x10000d30                irq_remove_handler
  .text.irq_add_tail_to_free_list
-                0x10000de4       0xb4 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
-                0x10000de4                irq_add_tail_to_free_list
+                0x10000ef4       0xb4 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x10000ef4                irq_add_tail_to_free_list
  .text.irq_init_priorities
-                0x10000e98       0x24 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
-                0x10000e98                irq_init_priorities
+                0x10000fa8       0x24 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x10000fa8                irq_init_priorities
  .text.user_irq_claim_unused
-                0x10000ebc       0x2c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
-                0x10000ebc                user_irq_claim_unused
+                0x10000fcc       0x2c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x10000fcc                user_irq_claim_unused
  .text.lock_init
-                0x10000ee8       0x10 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_sync/lock_core.c.obj
-                0x10000ee8                lock_init
+                0x10000ff8       0x10 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_sync/lock_core.c.obj
+                0x10000ff8                lock_init
  .text.mutex_init
-                0x10000ef8       0x1c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_sync/mutex.c.obj
-                0x10000ef8                mutex_init
+                0x10001008       0x1c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_sync/mutex.c.obj
+                0x10001008                mutex_init
  .text.recursive_mutex_init
-                0x10000f14       0x1c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_sync/mutex.c.obj
-                0x10000f14                recursive_mutex_init
+                0x10001024       0x1c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_sync/mutex.c.obj
+                0x10001024                recursive_mutex_init
  .text.critical_section_init
-                0x10000f30       0x1c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_sync/critical_section.c.obj
-                0x10000f30                critical_section_init
+                0x10001040       0x1c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_sync/critical_section.c.obj
+                0x10001040                critical_section_init
  .text.critical_section_init_with_lock_num
-                0x10000f4c       0x14 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_sync/critical_section.c.obj
-                0x10000f4c                critical_section_init_with_lock_num
+                0x1000105c       0x14 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_sync/critical_section.c.obj
+                0x1000105c                critical_section_init_with_lock_num
  .text.timer_pool_entry_comparator
-                0x10000f60       0x34 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_time/time.c.obj
-                0x10000f60                timer_pool_entry_comparator
+                0x10001070       0x34 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_time/time.c.obj
+                0x10001070                timer_pool_entry_comparator
  .text.sleep_until_callback
-                0x10000f94       0x30 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_time/time.c.obj
+                0x100010a4       0x30 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_time/time.c.obj
  .text.add_alarm_under_lock.isra.0
-                0x10000fc4      0x100 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_time/time.c.obj
+                0x100010d4      0x100 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_time/time.c.obj
  .text.alarm_pool_alarm_callback
-                0x100010c4      0x1c0 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_time/time.c.obj
+                0x100011d4      0x1c0 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_time/time.c.obj
  .text.alarm_pool_init_default
-                0x10001284       0x6c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_time/time.c.obj
-                0x10001284                alarm_pool_init_default
+                0x10001394       0x6c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_time/time.c.obj
+                0x10001394                alarm_pool_init_default
  .text.alarm_pool_get_default
-                0x100012f0        0x8 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_time/time.c.obj
-                0x100012f0                alarm_pool_get_default
+                0x10001400        0x8 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_time/time.c.obj
+                0x10001400                alarm_pool_get_default
  .text.alarm_pool_add_alarm_at
-                0x100012f8      0x17c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_time/time.c.obj
-                0x100012f8                alarm_pool_add_alarm_at
+                0x10001408      0x17c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_time/time.c.obj
+                0x10001408                alarm_pool_add_alarm_at
  .text.alarm_pool_core_num
-                0x10001474        0x4 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_time/time.c.obj
-                0x10001474                alarm_pool_core_num
+                0x10001584        0x4 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_time/time.c.obj
+                0x10001584                alarm_pool_core_num
  .text.sleep_until
-                0x10001478       0xc4 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_time/time.c.obj
-                0x10001478                sleep_until
+                0x10001588       0xc4 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_time/time.c.obj
+                0x10001588                sleep_until
  .text.sleep_ms
-                0x1000153c       0x38 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_time/time.c.obj
-                0x1000153c                sleep_ms
+                0x1000164c       0x38 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_time/time.c.obj
+                0x1000164c                sleep_ms
  .text.best_effort_wfe_or_timeout
-                0x10001574       0xcc CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_time/time.c.obj
-                0x10001574                best_effort_wfe_or_timeout
+                0x10001684       0xcc CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_time/time.c.obj
+                0x10001684                best_effort_wfe_or_timeout
  .text.hardware_alarm_irq_handler
-                0x10001640       0xbc CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x10001750       0xbc CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
  .text.hardware_alarm_claim
-                0x100016fc       0x18 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
-                0x100016fc                hardware_alarm_claim
+                0x1000180c       0x18 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x1000180c                hardware_alarm_claim
  .text.time_us_64
-                0x10001714       0x14 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
-                0x10001714                time_us_64
+                0x10001824       0x14 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x10001824                time_us_64
  .text.busy_wait_us
-                0x10001728       0x68 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
-                0x10001728                busy_wait_us
+                0x10001838       0x68 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x10001838                busy_wait_us
  .text.busy_wait_until
-                0x10001790       0x20 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
-                0x10001790                busy_wait_until
+                0x100018a0       0x20 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x100018a0                busy_wait_until
  .text.hardware_alarm_set_callback
-                0x100017b0       0x8c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
-                0x100017b0                hardware_alarm_set_callback
+                0x100018c0       0x8c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x100018c0                hardware_alarm_set_callback
  .text.hardware_alarm_set_target
-                0x1000183c       0xd0 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
-                0x1000183c                hardware_alarm_set_target
+                0x1000194c       0xd0 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x1000194c                hardware_alarm_set_target
  .text.hardware_alarm_cancel
-                0x1000190c       0x3c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
-                0x1000190c                hardware_alarm_cancel
+                0x10001a1c       0x3c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x10001a1c                hardware_alarm_cancel
  .text.ph_merge_nodes
-                0x10001948       0x58 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_util/pheap.c.obj
+                0x10001a58       0x58 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_util/pheap.c.obj
  .text.ph_post_alloc_init
-                0x100019a0       0x3c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_util/pheap.c.obj
-                0x100019a0                ph_post_alloc_init
+                0x10001ab0       0x3c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_util/pheap.c.obj
+                0x10001ab0                ph_post_alloc_init
  .text.ph_merge_two_pass
-                0x100019dc       0x8c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_util/pheap.c.obj
-                0x100019dc                ph_merge_two_pass
+                0x10001aec       0x8c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_util/pheap.c.obj
+                0x10001aec                ph_merge_two_pass
  .text.ph_remove_any_head
-                0x10001a68      0x100 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_util/pheap.c.obj
+                0x10001b78      0x100 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_util/pheap.c.obj
  .text.ph_remove_head
-                0x10001b68      0x104 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_util/pheap.c.obj
-                0x10001b68                ph_remove_head
+                0x10001c78      0x104 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_util/pheap.c.obj
+                0x10001c78                ph_remove_head
  .text.ph_remove_and_free_node
-                0x10001c6c       0x78 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_util/pheap.c.obj
-                0x10001c6c                ph_remove_and_free_node
+                0x10001d7c       0x78 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_util/pheap.c.obj
+                0x10001d7c                ph_remove_and_free_node
  .text.uart_init
-                0x10001ce4      0x18c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
-                0x10001ce4                uart_init
+                0x10001df4      0x18c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
+                0x10001df4                uart_init
  .text.clocks_init
-                0x10001e70      0x2c8 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
-                0x10001e70                clocks_init
+                0x10001f80      0x2c8 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
+                0x10001f80                clocks_init
  .text.clock_get_hz
-                0x10002138        0xc CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
-                0x10002138                clock_get_hz
+                0x10002248        0xc CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
+                0x10002248                clock_get_hz
  .text.pll_init
-                0x10002144       0xa4 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
-                0x10002144                pll_init
+                0x10002254       0xa4 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
+                0x10002254                pll_init
  .text.watchdog_start_tick
-                0x100021e8       0x10 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
-                0x100021e8                watchdog_start_tick
+                0x100022f8       0x10 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
+                0x100022f8                watchdog_start_tick
  .text.watchdog_reboot
-                0x100021f8       0x9c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
-                0x100021f8                watchdog_reboot
+                0x10002308       0x9c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
+                0x10002308                watchdog_reboot
  .text.xosc_init
-                0x10002294       0x28 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
-                0x10002294                xosc_init
+                0x100023a4       0x28 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
+                0x100023a4                xosc_init
  .text.runtime_init
-                0x100022bc       0xf0 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
-                0x100022bc                runtime_init
- .text._exit    0x100023ac        0x4 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
-                0x100023ac                _exit
- .text.exit     0x100023b0        0x8 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
-                0x100023b0                exit
- .text.panic    0x100023b8       0x30 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
-                0x100023b8                panic
+                0x100023cc       0xf0 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+                0x100023cc                runtime_init
+ .text._exit    0x100024bc        0x4 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+                0x100024bc                _exit
+ .text.exit     0x100024c0        0x8 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+                0x100024c0                exit
+ .text.panic    0x100024c8       0x30 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+                0x100024c8                panic
  .text.hard_assertion_failure
-                0x100023e8        0xc CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
-                0x100023e8                hard_assertion_failure
+                0x100024f8        0xc CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+                0x100024f8                hard_assertion_failure
  .text._out_null
-                0x100023f4        0x4 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x10002504        0x4 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
  .text._out_rev
-                0x100023f8       0xac CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x10002508       0xac CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
  .text._ntoa_format
-                0x100024a4      0x250 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x100025b4      0x250 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
  .text._out_char
-                0x100026f4       0x10 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x10002804       0x10 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
  .text._out_fct
-                0x10002704       0x10 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
- .text._etoa    0x10002714      0x464 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
- .text._ftoa    0x10002b78      0x3c0 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x10002814       0x10 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+ .text._etoa    0x10002824      0x464 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+ .text._ftoa    0x10002c88      0x3c0 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
  .text._vsnprintf
-                0x10002f38      0xbc8 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x10003048      0xbc8 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
  .text.vfctprintf
-                0x10003b00       0x20 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
-                0x10003b00                vfctprintf
+                0x10003c10       0x20 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x10003c10                vfctprintf
  .text.weak_raw_vprintf
-                0x10003b20       0x30 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
-                0x10003b20                weak_raw_vprintf
- .text          0x10003b50       0x10 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
+                0x10003c30       0x30 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x10003c30                weak_raw_vprintf
+ .text          0x10003c60       0x10 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
  .text.rom_func_lookup
-                0x10003b60       0x10 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
-                0x10003b60                rom_func_lookup
+                0x10003c70       0x10 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
+                0x10003c70                rom_func_lookup
  .text.rom_data_lookup
-                0x10003b70       0x10 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
-                0x10003b70                rom_data_lookup
+                0x10003c80       0x10 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
+                0x10003c80                rom_data_lookup
  .text.rom_funcs_lookup
-                0x10003b80       0x44 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
-                0x10003b80                rom_funcs_lookup
+                0x10003c90       0x44 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
+                0x10003c90                rom_funcs_lookup
  .text.__wrap___aeabi_idiv
-                0x10003bc4       0x50 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
-                0x10003bc4                __wrap___aeabi_idivmod
-                0x10003bc4                divmod_s32s32
-                0x10003bc4                div_s32s32
-                0x10003bc4                __wrap___aeabi_idiv
-                0x10003bcc                divmod_s32s32_unsafe
-                0x10003bf8                divmod_s32s32_savestate
+                0x10003cd4       0x50 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
+                0x10003cd4                __wrap___aeabi_idivmod
+                0x10003cd4                divmod_s32s32
+                0x10003cd4                div_s32s32
+                0x10003cd4                __wrap___aeabi_idiv
+                0x10003cdc                divmod_s32s32_unsafe
+                0x10003d08                divmod_s32s32_savestate
  .text.__wrap___aeabi_uidiv
-                0x10003c14       0x4c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
-                0x10003c14                __wrap___aeabi_uidiv
-                0x10003c14                __wrap___aeabi_uidivmod
-                0x10003c14                div_u32u32
-                0x10003c14                divmod_u32u32
-                0x10003c1c                divmod_u32u32_unsafe
-                0x10003c44                divmod_u32u32_savestate
+                0x10003d24       0x4c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
+                0x10003d24                __wrap___aeabi_uidiv
+                0x10003d24                __wrap___aeabi_uidivmod
+                0x10003d24                div_u32u32
+                0x10003d24                divmod_u32u32
+                0x10003d2c                divmod_u32u32_unsafe
+                0x10003d54                divmod_u32u32_savestate
  .text.__wrap___aeabi_ldiv
-                0x10003c60      0x424 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
-                0x10003c60                __wrap___aeabi_ldivmod
-                0x10003c60                div_s64s64
-                0x10003c60                divmod_s64s64
-                0x10003c90                divmod_u64u64
-                0x10003c90                div_u64u64
-                0x10003c90                __wrap___aeabi_uldivmod
-                0x10003ca0                divmod_u64u64_savestate
-                0x10003cc0                divmod_s64s64_unsafe
-                0x10003d48                divmod_u64u64_unsafe
+                0x10003d70      0x424 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
+                0x10003d70                __wrap___aeabi_ldivmod
+                0x10003d70                div_s64s64
+                0x10003d70                divmod_s64s64
+                0x10003da0                divmod_u64u64
+                0x10003da0                div_u64u64
+                0x10003da0                __wrap___aeabi_uldivmod
+                0x10003db0                divmod_u64u64_savestate
+                0x10003dd0                divmod_s64s64_unsafe
+                0x10003e58                divmod_u64u64_unsafe
  .text.__wrap___aeabi_darithmetic
-                0x10004084       0x80 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x10004084                __wrap___aeabi_drsub
-                0x1000408a                __wrap___aeabi_dsub
-                0x1000409c                __wrap___aeabi_dadd
-                0x100040ae                __wrap___aeabi_ddiv
-                0x100040ea                __wrap___aeabi_dmul
+                0x10004194       0x80 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x10004194                __wrap___aeabi_drsub
+                0x1000419a                __wrap___aeabi_dsub
+                0x100041ac                __wrap___aeabi_dadd
+                0x100041be                __wrap___aeabi_ddiv
+                0x100041fa                __wrap___aeabi_dmul
  .text.__wrap___aeabi_cdcmple
-                0x10004104       0x6c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x10004104                __wrap___aeabi_cdrcmple
-                0x10004114                __wrap___aeabi_cdcmple
-                0x10004114                __wrap___aeabi_cdcmpeq
+                0x10004214       0x6c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x10004214                __wrap___aeabi_cdrcmple
+                0x10004224                __wrap___aeabi_cdcmple
+                0x10004224                __wrap___aeabi_cdcmpeq
  .text.__wrap___aeabi_dcmplt
-                0x10004170        0xc CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x10004170                __wrap___aeabi_dcmplt
+                0x10004280        0xc CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x10004280                __wrap___aeabi_dcmplt
  .text.__wrap___aeabi_dcmpge
-                0x1000417c       0x10 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x1000417c                __wrap___aeabi_dcmpge
+                0x1000428c       0x10 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x1000428c                __wrap___aeabi_dcmpge
  .text.__wrap___aeabi_dcmpgt
-                0x1000418c        0xa CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x1000418c                __wrap___aeabi_dcmpgt
+                0x1000429c        0xa CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x1000429c                __wrap___aeabi_dcmpgt
  .text.__wrap___aeabi_dcmpun
-                0x10004196       0x1c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x10004196                __wrap___aeabi_dcmpun
- *fill*         0x100041b2        0x2 
+                0x100042a6       0x1c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x100042a6                __wrap___aeabi_dcmpun
+ *fill*         0x100042c2        0x2 
  .text.__wrap___aeabi_i2d
-                0x100041b4       0x38 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x100041b4                __wrap___aeabi_ui2d
-                0x100041bc                __wrap___aeabi_i2d
+                0x100042c4       0x38 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x100042c4                __wrap___aeabi_ui2d
+                0x100042cc                __wrap___aeabi_i2d
  .text.__wrap___aeabi_d2iz
-                0x100041ec       0x48 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x100041ec                __wrap___aeabi_d2iz
-                0x100041ec                double2int_z
+                0x100042fc       0x48 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x100042fc                __wrap___aeabi_d2iz
+                0x100042fc                double2int_z
  .text.__wrap___aeabi_d2uiz
-                0x10004234       0x18 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x10004234                double2uint
-                0x10004234                __wrap___aeabi_d2uiz
+                0x10004344       0x18 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x10004344                double2uint
+                0x10004344                __wrap___aeabi_d2uiz
  .text.__aeabi_double_init
-                0x1000424c       0x98 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
-                0x1000424c                __aeabi_double_init
+                0x1000435c       0x98 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
+                0x1000435c                __aeabi_double_init
  .text.double_table_shim_on_use_helper
-                0x100042e4       0x2c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
-                0x100042e4                double_table_shim_on_use_helper
+                0x100043f4       0x2c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+                0x100043f4                double_table_shim_on_use_helper
  .text.__wrap___aeabi_dsub
-                0x10004310       0x10 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
-                0x10004310                drsub_shim
-                0x10004316                dsub_shim
+                0x10004420       0x10 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+                0x10004420                drsub_shim
+                0x10004426                dsub_shim
  .text.dadd_shim
-                0x10004320      0x15c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
-                0x10004320                dadd_shim
+                0x10004430      0x15c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+                0x10004430                dadd_shim
  .text.dmul_shim
-                0x1000447c      0x15c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
-                0x1000447c                dmul_shim
+                0x1000458c      0x15c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+                0x1000458c                dmul_shim
  .text.ddiv_shim
-                0x100045d8      0x1b0 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
-                0x100045d8                ddiv_shim
+                0x100046e8      0x1b0 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+                0x100046e8                ddiv_shim
  .text.double2uint_shim
-                0x10004788        0xe CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
-                0x10004788                double2uint_shim
-                0x1000478a                double2ufix_shim
- *fill*         0x10004796        0x2 
+                0x10004898        0xe CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+                0x10004898                double2uint_shim
+                0x1000489a                double2ufix_shim
+ *fill*         0x100048a6        0x2 
  .text.double2uint64_shim
-                0x10004798       0x70 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
-                0x10004798                double2uint64_shim
-                0x1000479a                double2ufix64_shim
-                0x100047ba                d2fix_a
+                0x100048a8       0x70 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+                0x100048a8                double2uint64_shim
+                0x100048aa                double2ufix64_shim
+                0x100048ca                d2fix_a
  .text.dunpacks
-                0x10004808       0x3c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
-                0x10004808                dunpacks
+                0x10004918       0x3c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+                0x10004918                dunpacks
  .text.__aeabi_lmul
-                0x10004844       0x32 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
-                0x10004844                __wrap___aeabi_lmul
- *fill*         0x10004876        0x2 
+                0x10004954       0x32 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
+                0x10004954                __wrap___aeabi_lmul
+ *fill*         0x10004986        0x2 
  .text.__aeabi_float_init
-                0x10004878       0x64 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
-                0x10004878                __aeabi_float_init
+                0x10004988       0x64 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
+                0x10004988                __aeabi_float_init
  .text.float_table_shim_on_use_helper
-                0x100048dc       0x2c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj
-                0x100048dc                float_table_shim_on_use_helper
- .text          0x10004908       0x10 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
-                0x10004908                __aeabi_mem_init
- .text.memset   0x10004918        0xc CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
-                0x10004918                __wrap_memset
- .text.memcpy   0x10004924        0xc CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
-                0x10004924                __wrap___aeabi_memcpy
-                0x10004924                __wrap_memcpy
+                0x100049ec       0x2c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj
+                0x100049ec                float_table_shim_on_use_helper
+ .text          0x10004a18       0x10 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
+                0x10004a18                __aeabi_mem_init
+ .text.memset   0x10004a28        0xc CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
+                0x10004a28                __wrap_memset
+ .text.memcpy   0x10004a34        0xc CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
+                0x10004a34                __wrap___aeabi_memcpy
+                0x10004a34                __wrap_memcpy
  .text.stdio_out_chars_crlf
-                0x10004930       0x94 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x10004a40       0x94 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
  .text.stdio_buffered_printer
-                0x100049c4       0x64 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x10004ad4       0x64 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
  .text.__wrap_putchar
-                0x10004a28       0x98 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
-                0x10004a28                __wrap_putchar
+                0x10004b38       0x98 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x10004b38                __wrap_putchar
  .text.__wrap_puts
-                0x10004ac0       0xe0 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
-                0x10004ac0                __wrap_puts
+                0x10004bd0       0xe0 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x10004bd0                __wrap_puts
  .text.stdio_set_driver_enabled
-                0x10004ba0       0x30 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
-                0x10004ba0                stdio_set_driver_enabled
+                0x10004cb0       0x30 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x10004cb0                stdio_set_driver_enabled
  .text.__wrap_vprintf
-                0x10004bd0       0xd4 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
-                0x10004bd0                __wrap_vprintf
+                0x10004ce0       0xd4 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x10004ce0                __wrap_vprintf
  .text.__wrap_printf
-                0x10004ca4       0x18 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
-                0x10004ca4                __wrap_printf
+                0x10004db4       0x18 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x10004db4                __wrap_printf
  .text.stdio_init_all
-                0x10004cbc       0x10 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
-                0x10004cbc                stdio_init_all
+                0x10004dcc       0x10 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x10004dcc                stdio_init_all
  .text.getchar_timeout_us
-                0x10004ccc       0x98 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
-                0x10004ccc                getchar_timeout_us
+                0x10004ddc       0x98 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x10004ddc                getchar_timeout_us
  .text.stdio_uart_out_chars
-                0x10004d64       0x4c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
+                0x10004e74       0x4c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
  .text.stdio_uart_in_chars
-                0x10004db0       0x90 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
-                0x10004db0                stdio_uart_in_chars
+                0x10004ec0       0x90 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
+                0x10004ec0                stdio_uart_in_chars
  .text.on_uart_rx
-                0x10004e40       0x28 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
+                0x10004f50       0x28 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
  .text.stdio_uart_set_chars_available_callback
-                0x10004e68       0x8c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
+                0x10004f78       0x8c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
  .text.stdio_uart_init
-                0x10004ef4       0x48 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
-                0x10004ef4                stdio_uart_init
+                0x10005004       0x48 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
+                0x10005004                stdio_uart_init
  .text.resetd_init
-                0x10004f3c        0x4 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
+                0x1000504c        0x4 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
  .text.resetd_reset
-                0x10004f40        0xc CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
+                0x10005050        0xc CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
  .text.resetd_open
-                0x10004f4c       0x28 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
+                0x1000505c       0x28 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
  .text.resetd_xfer_cb
-                0x10004f74        0x4 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
+                0x10005084        0x4 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
  .text.resetd_control_xfer_cb
-                0x10004f78       0x60 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
+                0x10005088       0x60 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
  .text.usbd_app_driver_get_cb
-                0x10004fd8        0xc CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
-                0x10004fd8                usbd_app_driver_get_cb
+                0x100050e8        0xc CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
+                0x100050e8                usbd_app_driver_get_cb
  .text.tud_cdc_line_coding_cb
-                0x10004fe4       0x34 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
-                0x10004fe4                tud_cdc_line_coding_cb
+                0x100050f4       0x34 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
+                0x100050f4                tud_cdc_line_coding_cb
  .text.stdio_usb_set_chars_available_callback
-                0x10005018       0x14 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
-                0x10005018                stdio_usb_set_chars_available_callback
- .text.usb_irq  0x1000502c       0x10 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
+                0x10005128       0x14 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
+                0x10005128                stdio_usb_set_chars_available_callback
+ .text.usb_irq  0x1000513c       0x10 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
  .text.timer_task
-                0x1000503c       0x54 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
+                0x1000514c       0x54 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
  .text.stdio_usb_in_chars
-                0x10005090       0x90 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
-                0x10005090                stdio_usb_in_chars
+                0x100051a0       0x90 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
+                0x100051a0                stdio_usb_in_chars
  .text.stdio_usb_out_chars
-                0x10005120      0x104 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
+                0x10005230      0x104 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
  .text.low_priority_worker_irq
-                0x10005224       0xa8 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
+                0x10005334       0xa8 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
  .text.tud_cdc_rx_cb
-                0x100052cc       0x20 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
-                0x100052cc                tud_cdc_rx_cb
+                0x100053dc       0x20 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
+                0x100053dc                tud_cdc_rx_cb
  .text.stdio_usb_init
-                0x100052ec       0xe0 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
-                0x100052ec                stdio_usb_init
+                0x100053fc       0xe0 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
+                0x100053fc                stdio_usb_init
  .text.tud_descriptor_device_cb
-                0x100053cc        0x8 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
-                0x100053cc                tud_descriptor_device_cb
+                0x100054dc        0x8 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
+                0x100054dc                tud_descriptor_device_cb
  .text.tud_descriptor_configuration_cb
-                0x100053d4        0x8 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
-                0x100053d4                tud_descriptor_configuration_cb
+                0x100054e4        0x8 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
+                0x100054e4                tud_descriptor_configuration_cb
  .text.tud_descriptor_string_cb
-                0x100053dc       0x78 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
-                0x100053dc                tud_descriptor_string_cb
+                0x100054ec       0x78 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
+                0x100054ec                tud_descriptor_string_cb
  .text.startup._retrieve_unique_id_on_boot
-                0x10005454       0x10 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
+                0x10005564       0x10 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
  .text.pico_get_unique_board_id
-                0x10005464       0x10 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
-                0x10005464                pico_get_unique_board_id
+                0x10005574       0x10 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
+                0x10005574                pico_get_unique_board_id
  .text.pico_get_unique_board_id_string
-                0x10005474      0x1a8 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
-                0x10005474                pico_get_unique_board_id_string
+                0x10005584      0x1a8 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
+                0x10005584                pico_get_unique_board_id_string
  .text.flash_get_unique_id
-                0x1000561c       0x3c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
-                0x1000561c                flash_get_unique_id
+                0x1000572c       0x3c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
+                0x1000572c                flash_get_unique_id
  .text.dcd_int_enable
-                0x10005658        0xc CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
-                0x10005658                dcd_int_enable
+                0x10005768        0xc CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+                0x10005768                dcd_int_enable
  .text.dcd_set_address
-                0x10005664       0x14 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
-                0x10005664                dcd_set_address
+                0x10005774       0x14 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+                0x10005774                dcd_set_address
  .text.dcd_connect
-                0x10005678       0x10 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
-                0x10005678                dcd_connect
+                0x10005788       0x10 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+                0x10005788                dcd_connect
  .text.dcd_init
-                0x10005688       0x98 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
-                0x10005688                dcd_init
+                0x10005798       0x98 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+                0x10005798                dcd_init
  .text.dcd_edpt0_status_complete
-                0x10005720       0x1c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
-                0x10005720                dcd_edpt0_status_complete
+                0x10005830       0x1c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+                0x10005830                dcd_edpt0_status_complete
  .text.dcd_edpt_open
-                0x1000573c      0x108 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
-                0x1000573c                dcd_edpt_open
+                0x1000584c      0x108 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+                0x1000584c                dcd_edpt_open
  .text.dcd_edpt_close_all
-                0x10005844        0x8 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
-                0x10005844                dcd_edpt_close_all
+                0x10005954        0x8 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+                0x10005954                dcd_edpt_close_all
  .text.dcd_edpt_xfer
-                0x1000584c       0x24 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
-                0x1000584c                dcd_edpt_xfer
+                0x1000595c       0x24 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+                0x1000595c                dcd_edpt_xfer
  .text.dcd_edpt_stall
-                0x10005870       0x34 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
-                0x10005870                dcd_edpt_stall
+                0x10005980       0x34 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+                0x10005980                dcd_edpt_stall
  .text.dcd_edpt_clear_stall
-                0x100058a4       0x30 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
-                0x100058a4                dcd_edpt_clear_stall
+                0x100059b4       0x30 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+                0x100059b4                dcd_edpt_clear_stall
  .text.rp2040_usb_init
-                0x100058d4       0x4c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
-                0x100058d4                rp2040_usb_init
+                0x100059e4       0x4c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
+                0x100059e4                rp2040_usb_init
  .text.hw_endpoint_xfer_start
-                0x10005920       0x40 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
-                0x10005920                hw_endpoint_xfer_start
+                0x10005a30       0x40 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
+                0x10005a30                hw_endpoint_xfer_start
  .text.tud_mounted
-                0x10005960       0x10 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
-                0x10005960                tud_mounted
+                0x10005a70       0x10 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+                0x10005a70                tud_mounted
  .text.tud_suspended
-                0x10005970       0x10 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
-                0x10005970                tud_suspended
+                0x10005a80       0x10 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+                0x10005a80                tud_suspended
  .text.tud_inited
-                0x10005980       0x14 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
-                0x10005980                tud_inited
+                0x10005a90       0x14 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+                0x10005a90                tud_inited
  .text.tud_init
-                0x10005994       0xdc CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
-                0x10005994                tud_init
+                0x10005aa4       0xdc CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+                0x10005aa4                tud_init
  .text.tud_task_ext
-                0x10005a70      0x850 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
-                0x10005a70                tud_task_ext
+                0x10005b80      0x850 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+                0x10005b80                tud_task_ext
  .text.usbd_open_edpt_pair
-                0x100062c0       0x9c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
-                0x100062c0                usbd_open_edpt_pair
+                0x100063d0       0x9c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+                0x100063d0                usbd_open_edpt_pair
  .text.usbd_defer_func
-                0x1000635c       0x48 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
-                0x1000635c                usbd_defer_func
+                0x1000646c       0x48 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+                0x1000646c                usbd_defer_func
  .text.usbd_edpt_open
-                0x100063a4       0x34 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
-                0x100063a4                usbd_edpt_open
+                0x100064b4       0x34 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+                0x100064b4                usbd_edpt_open
  .text.usbd_edpt_claim
-                0x100063d8       0x28 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
-                0x100063d8                usbd_edpt_claim
+                0x100064e8       0x28 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+                0x100064e8                usbd_edpt_claim
  .text.usbd_edpt_release
-                0x10006400       0x28 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
-                0x10006400                usbd_edpt_release
+                0x10006510       0x28 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+                0x10006510                usbd_edpt_release
  .text.usbd_edpt_xfer
-                0x10006428       0x4c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
-                0x10006428                usbd_edpt_xfer
+                0x10006538       0x4c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+                0x10006538                usbd_edpt_xfer
  .text.tud_control_status
-                0x10006474       0x2c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
-                0x10006474                tud_control_status
+                0x10006584       0x2c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
+                0x10006584                tud_control_status
  .text.tud_control_xfer
-                0x100064a0       0xac CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
-                0x100064a0                tud_control_xfer
+                0x100065b0       0xac CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
+                0x100065b0                tud_control_xfer
  .text.usbd_control_reset
-                0x1000654c       0x14 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
-                0x1000654c                usbd_control_reset
+                0x1000665c       0x14 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
+                0x1000665c                usbd_control_reset
  .text.usbd_control_set_complete_callback
-                0x10006560        0xc CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
-                0x10006560                usbd_control_set_complete_callback
+                0x10006670        0xc CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
+                0x10006670                usbd_control_set_complete_callback
  .text.usbd_control_set_request
-                0x1000656c       0x1c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
-                0x1000656c                usbd_control_set_request
+                0x1000667c       0x1c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
+                0x1000667c                usbd_control_set_request
  .text.usbd_control_xfer_cb
-                0x10006588       0xf4 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
-                0x10006588                usbd_control_xfer_cb
+                0x10006698       0xf4 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
+                0x10006698                usbd_control_xfer_cb
  .text.tud_cdc_n_connected
-                0x1000667c       0x30 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
-                0x1000667c                tud_cdc_n_connected
+                0x1000678c       0x30 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
+                0x1000678c                tud_cdc_n_connected
  .text.tud_cdc_n_available
-                0x100066ac       0x18 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
-                0x100066ac                tud_cdc_n_available
+                0x100067bc       0x18 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
+                0x100067bc                tud_cdc_n_available
  .text.tud_cdc_n_read
-                0x100066c4       0x70 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
-                0x100066c4                tud_cdc_n_read
+                0x100067d4       0x70 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
+                0x100067d4                tud_cdc_n_read
  .text.tud_cdc_n_write_flush
-                0x10006734       0x78 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
-                0x10006734                tud_cdc_n_write_flush
+                0x10006844       0x78 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
+                0x10006844                tud_cdc_n_write_flush
  .text.tud_cdc_n_write
-                0x100067ac       0x34 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
-                0x100067ac                tud_cdc_n_write
+                0x100068bc       0x34 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
+                0x100068bc                tud_cdc_n_write
  .text.tud_cdc_n_write_available
-                0x100067e0       0x18 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
-                0x100067e0                tud_cdc_n_write_available
+                0x100068f0       0x18 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
+                0x100068f0                tud_cdc_n_write_available
  .text.cdcd_init
-                0x100067f8       0x7c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
-                0x100067f8                cdcd_init
+                0x10006908       0x7c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
+                0x10006908                cdcd_init
  .text.cdcd_reset
-                0x10006874       0x2c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
-                0x10006874                cdcd_reset
+                0x10006984       0x2c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
+                0x10006984                cdcd_reset
  .text.cdcd_open
-                0x100068a0       0xe4 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
-                0x100068a0                cdcd_open
+                0x100069b0       0xe4 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
+                0x100069b0                cdcd_open
  .text.cdcd_control_xfer_cb
-                0x10006984       0xe4 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
-                0x10006984                cdcd_control_xfer_cb
+                0x10006a94       0xe4 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
+                0x10006a94                cdcd_control_xfer_cb
  .text.cdcd_xfer_cb
-                0x10006a68      0x13c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
-                0x10006a68                cdcd_xfer_cb
+                0x10006b78      0x13c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
+                0x10006b78                cdcd_xfer_cb
  .text.tusb_init
-                0x10006ba4        0xc CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/tusb.c.obj
-                0x10006ba4                tusb_init
+                0x10006cb4        0xc CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/tusb.c.obj
+                0x10006cb4                tusb_init
  .text.tusb_inited
-                0x10006bb0        0x8 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/tusb.c.obj
-                0x10006bb0                tusb_inited
+                0x10006cc0        0x8 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/tusb.c.obj
+                0x10006cc0                tusb_inited
  .text.tu_edpt_claim
-                0x10006bb8       0x50 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/tusb.c.obj
-                0x10006bb8                tu_edpt_claim
+                0x10006cc8       0x50 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/tusb.c.obj
+                0x10006cc8                tu_edpt_claim
  .text.tu_edpt_release
-                0x10006c08       0x38 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/tusb.c.obj
-                0x10006c08                tu_edpt_release
+                0x10006d18       0x38 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/tusb.c.obj
+                0x10006d18                tu_edpt_release
  .text.tu_edpt_validate
-                0x10006c40       0x7c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/tusb.c.obj
-                0x10006c40                tu_edpt_validate
+                0x10006d50       0x7c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/tusb.c.obj
+                0x10006d50                tu_edpt_validate
  .text.tu_edpt_bind_driver
-                0x10006cbc       0x34 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/tusb.c.obj
-                0x10006cbc                tu_edpt_bind_driver
+                0x10006dcc       0x34 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/tusb.c.obj
+                0x10006dcc                tu_edpt_bind_driver
  .text.tu_fifo_config
-                0x10006cf0       0x6c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
-                0x10006cf0                tu_fifo_config
+                0x10006e00       0x6c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
+                0x10006e00                tu_fifo_config
  .text.tu_fifo_count
-                0x10006d5c       0x2c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
-                0x10006d5c                tu_fifo_count
+                0x10006e6c       0x2c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
+                0x10006e6c                tu_fifo_count
  .text.tu_fifo_empty
-                0x10006d88       0x10 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
-                0x10006d88                tu_fifo_empty
+                0x10006e98       0x10 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
+                0x10006e98                tu_fifo_empty
  .text.tu_fifo_remaining
-                0x10006d98       0x2c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
-                0x10006d98                tu_fifo_remaining
+                0x10006ea8       0x2c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
+                0x10006ea8                tu_fifo_remaining
  .text.tu_fifo_read
-                0x10006dc4       0x9c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
-                0x10006dc4                tu_fifo_read
+                0x10006ed4       0x9c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
+                0x10006ed4                tu_fifo_read
  .text.tu_fifo_read_n
-                0x10006e60       0xe8 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
-                0x10006e60                tu_fifo_read_n
+                0x10006f70       0xe8 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
+                0x10006f70                tu_fifo_read_n
  .text.tu_fifo_write
-                0x10006f48       0xa8 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
-                0x10006f48                tu_fifo_write
+                0x10007058       0xa8 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
+                0x10007058                tu_fifo_write
  .text.tu_fifo_write_n
-                0x10006ff0      0x178 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
-                0x10006ff0                tu_fifo_write_n
+                0x10007100      0x178 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
+                0x10007100                tu_fifo_write_n
  .text.tu_fifo_clear
-                0x10007168       0x40 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
-                0x10007168                tu_fifo_clear
+                0x10007278       0x40 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
+                0x10007278                tu_fifo_clear
  .text.tu_fifo_set_overwritable
-                0x100071a8       0x48 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
-                0x100071a8                tu_fifo_set_overwritable
+                0x100072b8       0x48 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
+                0x100072b8                tu_fifo_set_overwritable
  .text.spi_init
-                0x100071f0      0x14c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_spi/spi.c.obj
-                0x100071f0                spi_init
+                0x10007300      0x14c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_spi/spi.c.obj
+                0x10007300                spi_init
  .text.splitmix64
-                0x1000733c       0x58 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_rand/rand.c.obj
+                0x1000744c       0x58 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_rand/rand.c.obj
  .text.xoroshiro128ss
-                0x10007394       0x90 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_rand/rand.c.obj
+                0x100074a4       0x90 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_rand/rand.c.obj
  .text.get_rand_64
-                0x10007424      0x4a4 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_rand/rand.c.obj
-                0x10007424                get_rand_64
+                0x10007534      0x4a4 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_rand/rand.c.obj
+                0x10007534                get_rand_64
  .text.get_rand_32
-                0x100078c8        0x8 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_rand/rand.c.obj
-                0x100078c8                get_rand_32
- .text.strlen   0x100078d0       0x5c /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(libc_a-strlen-stub.o)
-                0x100078d0                strlen
+                0x100079d8        0x8 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_rand/rand.c.obj
+                0x100079d8                get_rand_32
+ .text.strlen   0x100079e0       0x5c /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(libc_a-strlen-stub.o)
+                0x100079e0                strlen
  *(.fini)
- .fini          0x1000792c        0x4 /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crti.o
-                0x1000792c                _fini
- .fini.__stub   0x10007930       0xe0 linker stubs
+ .fini          0x10007a3c        0x4 /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crti.o
+                0x10007a3c                _fini
+ .fini.__stub   0x10007a40       0xe0 linker stubs
  *crtbegin.o(.ctors)
  *crtbegin?.o(.ctors)
  *(EXCLUDE_FILE(*crtend.o *crtend?.o) .ctors)
@@ -2292,149 +2289,152 @@ LOAD /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-no
  *(SORT_BY_NAME(.dtors.*))
  *(.dtors)
  *(.eh_frame*)
- .eh_frame      0x10007a10        0x0 /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtbegin.o
-                0x10007a10                        . = ALIGN (0x4)
+ .eh_frame      0x10007b20        0x0 /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtbegin.o
+                0x10007b20                        . = ALIGN (0x4)
 
-.glue_7         0x10007a10        0x0
- .glue_7        0x10007a10        0x0 linker stubs
+.glue_7         0x10007b20        0x0
+ .glue_7        0x10007b20        0x0 linker stubs
 
-.glue_7t        0x10007a10        0x0
- .glue_7t       0x10007a10        0x0 linker stubs
+.glue_7t        0x10007b20        0x0
+ .glue_7t       0x10007b20        0x0 linker stubs
 
-.vfp11_veneer   0x10007a10        0x0
- .vfp11_veneer  0x10007a10        0x0 linker stubs
+.vfp11_veneer   0x10007b20        0x0
+ .vfp11_veneer  0x10007b20        0x0 linker stubs
 
-.v4_bx          0x10007a10        0x0
- .v4_bx         0x10007a10        0x0 linker stubs
+.v4_bx          0x10007b20        0x0
+ .v4_bx         0x10007b20        0x0 linker stubs
 
-.iplt           0x10007a10        0x0
- .iplt          0x10007a10        0x0 /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtbegin.o
+.iplt           0x10007b20        0x0
+ .iplt          0x10007b20        0x0 /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtbegin.o
 
-.rodata         0x10007a10      0x66c
+.rodata         0x10007b20      0x744
  *(EXCLUDE_FILE(*libm.a: *libc.a:*lib_a-mem*.o *libgcc.a:) .rodata*)
+ .rodata._Z17write_name_configv.str1.4
+                0x10007b20      0x3cc CMakeFiles/log.dir/log.cpp.obj
+                                  0xb (size before relaxing)
  .rodata._Z9dump_framv.str1.4
-                0x10007a10      0x2f0 CMakeFiles/log.dir/log.cpp.obj
-                                  0xd (size before relaxing)
+                0x10007eec        0xd CMakeFiles/log.dir/log.cpp.obj
  .rodata._Z10write_framv.str1.4
-                0x10007d00       0x19 CMakeFiles/log.dir/log.cpp.obj
+                0x10007eec       0x19 CMakeFiles/log.dir/log.cpp.obj
  .rodata.main.str1.4
-                0x10007d00       0x8a CMakeFiles/log.dir/log.cpp.obj
+                0x10007eec      0x10b CMakeFiles/log.dir/log.cpp.obj
  .rodata._ZN9MB85RS1MT12write_memoryEmPhj.str1.4
-                0x10007d00       0x67 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS1MT.cpp.obj
+                0x10007eec       0x7b CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS1MT.cpp.obj
  .rodata._ZL4rdid
-                0x10007d00        0x1 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS1MT.cpp.obj
+                0x10007eec        0x1 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS1MT.cpp.obj
  .rodata._ZL5write
-                0x10007d01        0x1 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS1MT.cpp.obj
+                0x10007eed        0x1 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS1MT.cpp.obj
  .rodata._ZL4read
-                0x10007d02        0x1 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS1MT.cpp.obj
+                0x10007eee        0x1 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS1MT.cpp.obj
  .rodata._ZL4rdsr
-                0x10007d03        0x1 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS1MT.cpp.obj
+                0x10007eef        0x1 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS1MT.cpp.obj
  .rodata._ZL4wrdi
-                0x10007d04        0x1 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS1MT.cpp.obj
+                0x10007ef0        0x1 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS1MT.cpp.obj
  .rodata._ZL4wren
-                0x10007d05        0x1 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS1MT.cpp.obj
+                0x10007ef1        0x1 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS1MT.cpp.obj
+ .rodata._Z12write_config12Config_Names6ConfigPhjP9MB85RS1MT.str1.4
+                0x10007ef2       0x2d CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/config.cpp.obj
  .rodata._Z11read_config12Config_Names6ConfigPhjP9MB85RS1MT.str1.4
-                0x10007d06       0x40 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/config.cpp.obj
+                0x10007ef2       0x40 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/config.cpp.obj
  .rodata.spin_lock_claim_unused.str1.4
-                0x10007d06       0x1b CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
+                0x10007ef2       0x1b CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
  .rodata.user_irq_claim_unused.str1.4
-                0x10007d06       0x1b CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x10007ef2       0x1b CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
  .rodata.hardware_alarm_claim.str1.4
-                0x10007d06       0x22 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x10007ef2       0x22 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
  .rodata.panic.str1.4
-                0x10007d06       0x12 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+                0x10007ef2       0x12 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
  .rodata.hard_assertion_failure.str1.4
-                0x10007d06        0xc CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+                0x10007ef2        0xc CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
  .rodata._ftoa.str1.4
-                0x10007d06       0x15 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
- *fill*         0x10007d06        0x2 
+                0x10007ef2       0x15 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+ *fill*         0x10007ef2        0x2 
  .rodata._vsnprintf
-                0x10007d08      0x19c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
- *fill*         0x10007ea4        0x4 
+                0x10007ef4      0x19c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
  .rodata.pow10.0
-                0x10007ea8       0x50 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x10008090       0x50 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
  .rodata.str1.4
-                0x10007ef8       0x38 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x100080e0       0x38 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .rodata.__bi_81
-                0x10007ef8        0xc CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x100080e0        0xc CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .rodata.__bi_75
-                0x10007f04        0xc CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x100080ec        0xc CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .rodata.__bi_44
-                0x10007f10        0xc CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x100080f8        0xc CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .rodata.crlf_str.0
-                0x10007f1c        0x2 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x10008104        0x2 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
  .rodata.str1.4
-                0x10007f1e       0x2c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
- *fill*         0x10007f1e        0x2 
+                0x10008106       0x2c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
+ *fill*         0x10008106        0x2 
  .rodata.__bi_33.4
-                0x10007f20        0xc CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
+                0x10008108        0xc CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
  .rodata.__bi_34.5
-                0x10007f2c        0x8 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
+                0x10008114        0x8 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
  .rodata._resetd_driver
-                0x10007f34       0x18 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
+                0x1000811c       0x18 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
  .rodata.str1.4
-                0x10007f4c       0x13 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
+                0x10008134       0x13 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
  .rodata.__bi_182.0
-                0x10007f4c        0xc CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
+                0x10008134        0xc CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
  .rodata.str1.4
-                0x10007f58       0x2a CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
+                0x10008140       0x2a CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
  .rodata.usbd_desc_str
-                0x10007f58       0x18 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
+                0x10008140       0x18 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
  .rodata.usbd_desc_cfg
-                0x10007f70       0x54 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
+                0x10008158       0x54 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
  .rodata.usbd_desc_device
-                0x10007fc4       0x12 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
+                0x100081ac       0x12 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
  .rodata.str1.4
-                0x10007fd6       0x14 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+                0x100081be       0x14 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
  .rodata.str1.4
-                0x10007fd6       0x53 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
- *fill*         0x10007fd6        0x2 
+                0x100081be       0x53 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
+ *fill*         0x100081be        0x2 
  .rodata.tud_task_ext
-                0x10007fd8       0x8c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+                0x100081c0       0x8c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
  .rodata._usbd_driver
-                0x10008064       0x18 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
-                0x1000807c                        . = ALIGN (0x4)
+                0x1000824c       0x18 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+                0x10008264                        . = ALIGN (0x4)
  *(SORT_BY_ALIGNMENT(SORT_BY_NAME(.flashdata*)))
-                0x1000807c                        . = ALIGN (0x4)
+                0x10008264                        . = ALIGN (0x4)
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x1000807c                        __exidx_start = .
+                0x10008264                        __exidx_start = .
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x1000807c                        __exidx_end = .
-                0x1000807c                        . = ALIGN (0x4)
-                0x1000807c                        __binary_info_start = .
+                0x10008264                        __exidx_end = .
+                0x10008264                        . = ALIGN (0x4)
+                0x10008264                        __binary_info_start = .
 
-.binary_info    0x1000807c       0x28
+.binary_info    0x10008264       0x28
  *(.binary_info.keep.*)
  .binary_info.keep.__bi_ptr81
-                0x1000807c        0x4 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x10008264        0x4 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .binary_info.keep.__bi_ptr75
-                0x10008080        0x4 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x10008268        0x4 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .binary_info.keep.__bi_ptr50
-                0x10008084        0x4 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x1000826c        0x4 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .binary_info.keep.__bi_ptr44
-                0x10008088        0x4 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x10008270        0x4 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .binary_info.keep.__bi_ptr38
-                0x1000808c        0x4 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x10008274        0x4 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .binary_info.keep.__bi_ptr30
-                0x10008090        0x4 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x10008278        0x4 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .binary_info.keep.__bi_ptr22
-                0x10008094        0x4 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x1000827c        0x4 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  *(.binary_info.*)
  .binary_info.__bi_ptr34
-                0x10008098        0x4 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
+                0x10008280        0x4 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
  .binary_info.__bi_ptr33
-                0x1000809c        0x4 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
+                0x10008284        0x4 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
  .binary_info.__bi_ptr182
-                0x100080a0        0x4 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
-                0x100080a4                        __binary_info_end = .
+                0x10008288        0x4 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
+                0x1000828c                        __binary_info_end = .
 
-.rel.dyn        0x100080a4        0x0
- .rel.iplt      0x100080a4        0x0 /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtbegin.o
-                0x100080a4                        . = ALIGN (0x4)
+.rel.dyn        0x1000828c        0x0
+ .rel.iplt      0x1000828c        0x0 /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtbegin.o
+                0x1000828c                        . = ALIGN (0x4)
 
 .ram_vector_table
                 0x20000000       0xc0
@@ -2443,7 +2443,7 @@ LOAD /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-no
                 0x20000000       0xc0 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
                 0x20000000                ram_vector_table
 
-.data           0x200000c0      0xf6c load address 0x100080a4
+.data           0x200000c0      0xf6c load address 0x1000828c
                 0x200000c0                        __data_start__ = .
  *(vtable)
  *(.time_critical*)
@@ -2600,20 +2600,20 @@ LOAD /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-no
  *(.jcr)
                 0x2000102c                        . = ALIGN (0x4)
                 0x2000102c                        __data_end__ = .
-                0x100080a4                        __etext = LOADADDR (.data)
+                0x1000828c                        __etext = LOADADDR (.data)
 
 .tm_clone_table
-                0x2000102c        0x0 load address 0x10009010
+                0x2000102c        0x0 load address 0x100091f8
  .tm_clone_table
                 0x2000102c        0x0 /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtbegin.o
  .tm_clone_table
                 0x2000102c        0x0 /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtend.o
 
-.igot.plt       0x2000102c        0x0 load address 0x10009010
+.igot.plt       0x2000102c        0x0 load address 0x100091f8
  .igot.plt      0x2000102c        0x0 /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtbegin.o
 
 .uninitialized_data
-                0x20001030       0x20 load address 0x10009010
+                0x20001030       0x20 load address 0x100091f8
                 0x20001030                        . = ALIGN (0x4)
  *(.uninitialized_data*)
  .uninitialized_data.rosc_samples
@@ -2623,19 +2623,19 @@ LOAD /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-no
  .uninitialized_data.rng_state
                 0x20001040       0x10 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_rand/rand.c.obj
 
-.scratch_x      0x20040000        0x0 load address 0x10009010
+.scratch_x      0x20040000        0x0 load address 0x100091f8
                 0x20040000                        __scratch_x_start__ = .
  *(.scratch_x.*)
                 0x20040000                        . = ALIGN (0x4)
                 0x20040000                        __scratch_x_end__ = .
-                0x10009010                        __scratch_x_source__ = LOADADDR (.scratch_x)
+                0x100091f8                        __scratch_x_source__ = LOADADDR (.scratch_x)
 
-.scratch_y      0x20041000        0x0 load address 0x10009010
+.scratch_y      0x20041000        0x0 load address 0x100091f8
                 0x20041000                        __scratch_y_start__ = .
  *(.scratch_y.*)
                 0x20041000                        . = ALIGN (0x4)
                 0x20041000                        __scratch_y_end__ = .
-                0x10009010                        __scratch_y_source__ = LOADADDR (.scratch_y)
+                0x100091f8                        __scratch_y_source__ = LOADADDR (.scratch_y)
 
 .bss            0x20001050      0xdc4
                 0x20001050                        . = ALIGN (0x4)
@@ -2774,8 +2774,8 @@ LOAD /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-no
  *(.stack*)
  .stack         0x20041000      0x800 CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
 
-.flash_end      0x10009010        0x0
-                0x10009010                        PROVIDE (__flash_binary_end = .)
+.flash_end      0x100091f8        0x0
+                0x100091f8                        PROVIDE (__flash_binary_end = .)
                 0x20040000                        __StackLimit = (ORIGIN (RAM) + LENGTH (RAM))
                 0x20041000                        __StackOneTop = (ORIGIN (SCRATCH_X) + LENGTH (SCRATCH_X))
                 0x20042000                        __StackTop = (ORIGIN (SCRATCH_Y) + LENGTH (SCRATCH_Y))
@@ -2860,7 +2860,7 @@ LOAD CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/
 LOAD CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_spi/spi.c.obj
 LOAD CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
 LOAD CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_rand/rand.c.obj
-LOAD /var/folders/n7/t1959y0j4_gczygmz5tcw0qc0000gn/T//ccGoL6xy.o
+LOAD /var/folders/n7/t1959y0j4_gczygmz5tcw0qc0000gn/T//ccx0AW7a.o
 LOAD /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libstdc++.a
 LOAD /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libm.a
 START GROUP
@@ -2986,7 +2986,7 @@ LOAD linker stubs
  .ARM.attributes
                 0x0000087e       0x2c CMakeFiles/log.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_rand/rand.c.obj
  .ARM.attributes
-                0x000008aa       0x22 /var/folders/n7/t1959y0j4_gczygmz5tcw0qc0000gn/T//ccGoL6xy.o
+                0x000008aa       0x22 /var/folders/n7/t1959y0j4_gczygmz5tcw0qc0000gn/T//ccx0AW7a.o
  .ARM.attributes
                 0x000008cc       0x1e /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
  .ARM.attributes
