@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <time.h>
 
 #include "../../../libraries/libnmea/src/nmea/nmea.h"
 #include "../../../libraries/rp2040-drf1262-lib/SX1262.h"
@@ -22,6 +23,31 @@ volatile bool transmit;
 repeating_timer_t tx_timer;
 
 uint8_t radio_tx_buf[100] = "hello!";
+unsigned char pos = 0;  // Keep track of current position in radio_tx_buf
+
+// These structs have been largely lifted from libnmea.
+/* NMEA cardinal direction types */
+typedef char nmea_cardinal_t;
+#define NMEA_CARDINAL_DIR_NORTH		(nmea_cardinal_t) 'N'
+#define NMEA_CARDINAL_DIR_EAST		(nmea_cardinal_t) 'E'
+#define NMEA_CARDINAL_DIR_SOUTH		(nmea_cardinal_t) 'S'
+#define NMEA_CARDINAL_DIR_WEST		(nmea_cardinal_t) 'W'
+#define NMEA_CARDINAL_DIR_UNKNOWN	(nmea_cardinal_t) '\0'
+
+/* GPS position struct */
+typedef struct {
+	double minutes;
+	int degrees;
+	nmea_cardinal_t cardinal;
+} nmea_position;
+
+/* Pared down struct for GGA sentence data */
+typedef struct {
+    struct tm time;
+    nmea_position longitude;
+    nmea_position latitude;
+    unsigned char position_fix;
+} nmea_gga;
 
 // Ports
 i2c_inst_t *i2c = i2c0;
@@ -95,7 +121,22 @@ int main() {
         if (result2 == PICO_ERROR_GENERIC)
             printf("\ni2c error occurred %x\n\n", result2);
         else {
-            if (rx_msg != NO_GPS_DATA) printf("%c", rx_msg);
+            if (rx_msg != NO_GPS_DATA) {
+                // printf("%c", rx_msg);
+                // End sequence is "\r\n"
+                if (rx_msg != '\n')
+                    radio_tx_buf[pos++] = rx_msg;
+                else {
+                    // Parse NMEA sentence, only if GNGGA for now
+                    if (/* is GGA*/){
+                        /* allocate memory for nmea_gga struct
+                         * parse out each element of interest from the sentence
+                         * and put it in the struct
+                        */
+                    }
+                    pos = 0;
+                }
+            }
         }
     }
 }
