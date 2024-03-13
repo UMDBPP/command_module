@@ -128,11 +128,14 @@ int main() {
                     radio_tx_buf[pos++] = rx_msg;
                 else {
                     // Parse NMEA sentence, only if GNGGA for now
-                    if (/* is GGA*/){
-                        /* allocate memory for nmea_gga struct
-                         * parse out each element of interest from the sentence
-                         * and put it in the struct
-                        */
+                    if (strncmp(&radio_tx_buf[1], &"GNGGA", 5)){
+                        nmea_gga data;
+                        /*
+                        data.time = 
+                        data.longitude = 
+                        data.latitude = 
+                        data.position_fix = 
+                        */                         
                     }
                     pos = 0;
                 }
