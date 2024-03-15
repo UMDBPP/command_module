@@ -41,7 +41,7 @@ typedef char nmea_cardinal_t;
 
 /* GPS position struct */
 typedef struct {
-	double minutes;
+	double minutes;  // don't like that this is stored as a double
 	int degrees;
 	nmea_cardinal_t cardinal;
 } nmea_position;
@@ -70,6 +70,9 @@ void led_on();
 void led_off();
 void transmit_test(uint8_t *buf, size_t len);
 static int _split_string_by_comma(char *string, char **values, int max_values);
+int nmea_position_parse(char *s, nmea_position *pos);
+nmea_cardinal_t nmea_cardinal_direction_parse(char *s);
+int nmea_date_parse(char *s, struct tm *date);
 
 int main() {
     // Pins
@@ -140,12 +143,18 @@ int main() {
                         // each result to appropriate place in struct
                         _split_string_by_comma(radio_tx_buf, values, 7);
                         nmea_gga data;
-                        /*
-                        data.time = values[1]
-                        data.longitude = values[4, 5]
-                        data.latitude = values[2, 3]
-                        data.position_fix = atoi(&values[6]);
-                        */                         
+                        struct tm date;
+                        struct nmea_position lon;
+                        struct nmea_position lat;
+                        nmea_date_parse(&values[1], &date);
+                        data.time = date;
+                        nmea_position_parse(&values[4], &lon);
+                        lon.cardinal = nmea_cardinal_direction_parse(&[values[5]]);
+                        data.longitude = lon;
+                        nmea_position_parse(&values[2], &lat);
+                        lon.cardinal = nmea_cardinal_direction_parse(&[values[3]]);
+                        data.latitude = lat;
+                        data.position_fix = atoi(&values[6]);                     
                     }
                     pos = 0;  // Reset pos for reading in the next sentence
                 }
@@ -373,7 +382,11 @@ _split_string_by_comma(char *string, char **values, int max_values)
 }
 
 /**
- * Parses a position (latitude or longitude).
+ * Parses a position (latitude or longitude). TODO: Need to modify if want minutes as int.
+ * 
+ * s is the string containing the data in string form.
+ * pos is a pointer to an nmea_position struct which will be filled with the 
+ *      data.
  * 
  * Copied from libnmea/src/parsers/parse.c.
 */
@@ -408,6 +421,10 @@ nmea_position_parse(char *s, nmea_position *pos)
 
 /**
  * Parses a cardinal direction.
+ * 
+ * s is a pointer to a char, which contains the data to be parsed.
+ * 
+ * Returns an nmea_cardinal_t (basically an enum).
  * 
  * Copied from libnmea/src/parsers/parse.c.
 */
