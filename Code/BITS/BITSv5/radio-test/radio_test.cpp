@@ -8,6 +8,7 @@
 #include "pico/binary_info.h"
 #include "pico/rand.h"
 #include "pico/stdlib.h"
+#include "pico/time.h"
 #include "pico/unique_id.h"
 
 DRF1262 radio(spi1, RADIO_CS, SCK_PIN, MOSI_PIN, MISO_PIN, TXEN_PIN, DIO1_PIN,
@@ -18,6 +19,7 @@ char id[2 * PICO_UNIQUE_BOARD_ID_SIZE_BYTES + 1] = {0};
 char radio_rx_buf[100] = {0};
 uint8_t radio_tx_buf[100] = "_hello!";
 uint8_t radio_ack_buf[100] = {0};
+char ack[] = "ack - bitsv5 alive!";
 
 volatile bool tx_done = false;
 volatile bool transmit = false;
@@ -25,6 +27,8 @@ volatile bool rx_done = false;
 volatile bool send_ack = false;
 
 repeating_timer_t tx_timer;
+alarm_pool_t *ack_alarm_pool;
+alarm_id_t ack_alarm_id;
 
 void rx_test(void);
 void transmit_test(uint8_t *buf, size_t len);
@@ -33,6 +37,8 @@ void led_on();
 void led_off();
 void gpio_callback(uint gpio, uint32_t events);
 bool tx_timer_callback(repeating_timer_t *rt);
+
+static int64_t ack_timer_callback(alarm_id_t id, void *user_data);
 void setup_spi();
 
 int main() {
@@ -53,6 +59,12 @@ int main() {
     gpio_set_dir(RADIO_RST, GPIO_OUT);
     gpio_put(RADIO_RST, 1);
 
+    ack_alarm_pool = alarm_pool_create_with_unused_hardware_alarm(4);
+
+    // while (!stdio_usb_connected()) {
+    //     sleep_ms(10);
+    // }
+
     sleep_ms(5000);
 
     radio.debug_msg_en = 0;
@@ -60,7 +72,7 @@ int main() {
 
     // negative timeout means exact delay (rather than delay between
     // callbacks)
-    if (!add_repeating_timer_us(-20000000, tx_timer_callback, NULL,
+    if (!add_repeating_timer_us(-30000000, tx_timer_callback, NULL,
                                 &tx_timer)) {
         printf("Failed to add timer\n");
         return 1;
@@ -68,22 +80,45 @@ int main() {
 
     printf("\n%s %s\n", __DATE__, __TIME__);
 
+    radio.radio_receive_cont();
+
     while (true) {
         if (transmit) {
             transmit_test((uint8_t *)radio_tx_buf, sizeof(radio_tx_buf));
             transmit = false;
         }
+
+        if (rx_done) {
+            printf("Received\n");
+            printf("%s\n", radio_rx_buf);
+            printf("RSSI: %d dBm Signal RSSI: %d SNR: %d dB\n",
+                   radio.pkt_stat.rssi_pkt, radio.pkt_stat.signal_rssi_pkt,
+                   radio.pkt_stat.snr_pkt);
+
+            if (strncmp("ack", radio_rx_buf, 3) != 0) {
+                ack_alarm_id = alarm_pool_add_alarm_in_ms(
+                    ack_alarm_pool, 1000, ack_timer_callback, NULL, true);
+            }
+
+            rx_done = false;
+        }
+
+        if (send_ack) {
+            printf("ACK\n");
+            transmit_test((uint8_t *)ack, sizeof(ack));
+            send_ack = false;
+        }
     }
 }
 
 void transmit_test(uint8_t *buf, size_t len) {
-    printf("Transmit Test\n");
+    printf("Transmit\n");
 
     led_on();
 
     tx_done = false;
 
-    buf[0] = (char)get_rand_32();
+    // buf[0] = (char)get_rand_32();
 
     radio.radio_send(buf, len);
 
@@ -104,8 +139,12 @@ void led_off() { gpio_put(LED_PIN, false); }
 
 bool tx_timer_callback(repeating_timer_t *rt) {
     transmit = true;
-
     return true;  // keep repeating
+}
+
+static int64_t ack_timer_callback(alarm_id_t id, void *user_data) {
+    send_ack = true;
+    return 0;  // don't repeat
 }
 
 void rx_test() {
@@ -152,14 +191,10 @@ void gpio_callback(uint gpio, uint32_t events) {
             printf("RX ISR\n");
             radio.read_radio_buffer((uint8_t *)radio_rx_buf,
                                     sizeof(radio_rx_buf));
-            printf("%s\n", radio_rx_buf);
-            radio.get_packet_status();
-            printf("RSSI: %d dBm Signal RSSI: %d SNR: %d dB\n",
-                   radio.pkt_stat.rssi_pkt, radio.pkt_stat.signal_rssi_pkt,
-                   radio.pkt_stat.snr_pkt);
 
+            radio.get_packet_status();
             radio.irqs.RX_DONE = false;
-            send_ack = true;
+            rx_done = true;
         }
 
         radio.clear_irq_status();
