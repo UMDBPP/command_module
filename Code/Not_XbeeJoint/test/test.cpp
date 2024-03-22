@@ -41,7 +41,7 @@ void rx_test(char *buf, short len);
 void transmit_test(uint8_t *buf, short len);
 
 DRF1262 radio(spi0, CS_PIN, SCK_PIN, MOSI_PIN, MISO_PIN, TXEN_PIN, DIO1_PIN,
-              BUSY_PIN, SW_PIN);
+              BUSY_PIN, SW_PIN, 29);
 
 char id[2 * PICO_UNIQUE_BOARD_ID_SIZE_BYTES + 1] = {0};
 char alive[] = "xbee joint alive!";
@@ -186,7 +186,7 @@ void lstn_handler(uint8_t *args) {
     radio.radio_receive_cont();
 
     while (true) {  //! gpio_get(DIO1_PIN)
-        char c = getchar_timeout_us(1000);
+        char c = getchar_timeout_us(0);
 
         switch (c) {
             case 'c':
@@ -199,8 +199,11 @@ void lstn_handler(uint8_t *args) {
         // sleep_ms(1);
 
         if (send_ack) {
-            transmit_test((uint8_t *)(ack), sizeof(ack));
-            sleep_ms(100);
+            if (strncmp("ack", radio_buf, 3) != 0) {
+                sleep_ms(1000);
+                transmit_test((uint8_t *)(ack), sizeof(ack));
+            }
+
             send_ack = false;
         }
     }
