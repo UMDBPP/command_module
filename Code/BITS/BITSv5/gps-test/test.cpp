@@ -6,8 +6,6 @@
 #include "../../../libraries/rp2040-drf1262-lib/SX1262.h"
 #include "../BITSv5.h"
 #include "hardware/i2c.h"
-// #include "nmea/gpgga.h"
-// #include "nmea/gpgll.h"
 #include "pico/binary_info.h"
 #include "pico/stdlib.h"
 
@@ -24,41 +22,49 @@ repeating_timer_t tx_timer;
 
 uint8_t radio_tx_buf[100] = "hello!";
 unsigned char pos = 0;  // Keep track of current position in radio_tx_buf
-char *values[10];  // Array of char pointers, for pointing to positons in 
-                   // radio_tx_buf
+char *values[10];       // Array of char pointers, for pointing to positons in
+                        // radio_tx_buf
 
 // These structs have been largely lifted from libnmea.
 /* NMEA cardinal direction types */
 typedef char nmea_cardinal_t;
-#define NMEA_CARDINAL_DIR_NORTH		(nmea_cardinal_t) 'N'
-#define NMEA_CARDINAL_DIR_EAST		(nmea_cardinal_t) 'E'
-#define NMEA_CARDINAL_DIR_SOUTH		(nmea_cardinal_t) 'S'
-#define NMEA_CARDINAL_DIR_WEST		(nmea_cardinal_t) 'W'
-#define NMEA_CARDINAL_DIR_UNKNOWN	(nmea_cardinal_t) '\0'
+#define NMEA_CARDINAL_DIR_NORTH (nmea_cardinal_t)'N'
+#define NMEA_CARDINAL_DIR_EAST (nmea_cardinal_t)'E'
+#define NMEA_CARDINAL_DIR_SOUTH (nmea_cardinal_t)'S'
+#define NMEA_CARDINAL_DIR_WEST (nmea_cardinal_t)'W'
+#define NMEA_CARDINAL_DIR_UNKNOWN (nmea_cardinal_t)'\0'
+
+#define NMEA_TIME_FORMAT "%H%M%S"
+#define NMEA_TIME_FORMAT_LEN 6
 
 #define TM_YEAR_START 1900
 #define RMC_YEAR_START 2000
 
 /* GPS position struct */
-typedef struct {
-	double minutes;  // don't like that this is stored as a double
-	int degrees;
-	nmea_cardinal_t cardinal;
-} nmea_position;
+// typedef struct _nmea_position {
+//     double minutes;  // don't like that this is stored as a double
+//     int degrees;
+//     nmea_cardinal_t cardinal;
+// } nmea_position;
 
 /* Pared down struct for GGA sentence data */
-typedef struct {
+typedef struct _nmea_gga {
     struct tm time;
     nmea_position longitude;
     nmea_position latitude;
     unsigned char position_fix;
 } nmea_gga;
 
+nmea_gga data;
+tm date;
+nmea_position lon;
+nmea_position lat;
+
 // Ports
 i2c_inst_t *i2c = i2c0;
 
 DRF1262 radio(spi1, RADIO_CS, SCK_PIN, MOSI_PIN, MISO_PIN, TXEN_PIN, DIO1_PIN,
-              BUSY_PIN, SW_PIN);
+              BUSY_PIN, SW_PIN, RADIO_RST);
 
 void ubx_inf_debug(void);
 void ubx_cfg_prt(void);
@@ -73,6 +79,7 @@ static int _split_string_by_comma(char *string, char **values, int max_values);
 int nmea_position_parse(char *s, nmea_position *pos);
 nmea_cardinal_t nmea_cardinal_direction_parse(char *s);
 int nmea_date_parse(char *s, struct tm *date);
+int nmea_time_parse(char *s, struct tm *time);
 
 int main() {
     // Pins
@@ -96,6 +103,10 @@ int main() {
     gpio_init(TIMEPULSE_PIN);
     gpio_set_dir(TIMEPULSE_PIN, GPIO_IN);
 
+    gpio_init(RADIO_RST);
+    gpio_set_dir(RADIO_RST, GPIO_OUT);
+    gpio_put(RADIO_RST, 1);
+
     sleep_ms(5000);
 
     radio.debug_msg_en = 0;
@@ -103,7 +114,7 @@ int main() {
 
     // negative timeout means exact delay (rather than delay between
     // callbacks)
-    if (!add_repeating_timer_us(-20000000, tx_timer_callback, NULL,
+    if (!add_repeating_timer_us(-60000000, tx_timer_callback, NULL,
                                 &tx_timer)) {
         printf("Failed to add timer\n");
         return 1;
@@ -138,23 +149,29 @@ int main() {
                     // We've reached the end of the sentence/line.
                     radio_tx_buf[pos++] = '\0';  // NULL-terminate for safety
                     // Parse NMEA sentence, only if GNGGA for now
-                    if (strlen(radio_tx_buf) >= 6 && strncmp(&radio_tx_buf[3], &"GGA", 3)){
+                    if (strlen((char *)radio_tx_buf) >= 6 &&
+                        strncmp((char *)(&radio_tx_buf[3]), "GGA", 3) == 0) {
+                        printf("%s\n", radio_tx_buf);
                         // Split msg into values, parse each value, then assign
                         // each result to appropriate place in struct
-                        _split_string_by_comma(radio_tx_buf, values, 7);
-                        nmea_gga data;
-                        struct tm date;
-                        struct nmea_position lon;
-                        struct nmea_position lat;
-                        nmea_date_parse(&values[1], &date);
+                        _split_string_by_comma((char *)radio_tx_buf, values, 7);
+                        // nmea_gga data;
+                        // tm date;
+                        // nmea_position lon;
+                        // nmea_position lat;
+                        // nmea_date_parse(values[1], &date);
+                        nmea_time_parse(values[1], &date);
                         data.time = date;
-                        nmea_position_parse(&values[4], &lon);
-                        lon.cardinal = nmea_cardinal_direction_parse(&[values[5]]);
+                        nmea_position_parse(values[4], &lon);
+                        lon.cardinal = nmea_cardinal_direction_parse(values[5]);
                         data.longitude = lon;
-                        nmea_position_parse(&values[2], &lat);
-                        lon.cardinal = nmea_cardinal_direction_parse(&[values[3]]);
+                        nmea_position_parse(values[2], &lat);
+                        lon.cardinal = nmea_cardinal_direction_parse(values[3]);
                         data.latitude = lat;
-                        data.position_fix = atoi(&values[6]);                     
+                        data.position_fix = atoi(values[6]);
+
+                        printf("Hour: %d Min: %d Sec: %d\n", date.tm_hour,
+                               date.tm_min, date.tm_sec);
                     }
                     pos = 0;  // Reset pos for reading in the next sentence
                 }
@@ -364,124 +381,140 @@ void led_off() { gpio_put(LED_PIN, false); }
  * max_values is the maximum number of values to be parsed.
  *
  * Returns the number of values found in string.
- * 
+ *
  * Copied from libnmea/src/nmea/nmea.c.
  */
-static int
-_split_string_by_comma(char *string, char **values, int max_values)
-{
-	int i = 0;
+static int _split_string_by_comma(char *string, char **values, int max_values) {
+    int i = 0;
 
-	values[i++] = string;
-	while (i < max_values && NULL != (string = strchr(string, ','))) {
-		*string = '\0';
-		values[i++] = ++string;
-	}
+    values[i++] = string;
+    while (i < max_values && NULL != (string = strchr(string, ','))) {
+        *string = '\0';
+        values[i++] = ++string;
+    }
 
-	return i;
+    return i;
 }
 
 /**
- * Parses a position (latitude or longitude). TODO: Need to modify if want minutes as int.
- * 
+ * Parses a position (latitude or longitude). TODO: Need to modify if want
+ * minutes as int.
+ *
  * s is the string containing the data in string form.
- * pos is a pointer to an nmea_position struct which will be filled with the 
+ * pos is a pointer to an nmea_position struct which will be filled with the
  *      data.
- * 
+ *
  * Copied from libnmea/src/parsers/parse.c.
-*/
-int
-nmea_position_parse(char *s, nmea_position *pos)
-{
-	char *cursor;
+ */
+int nmea_position_parse(char *s, nmea_position *pos) {
+    char *cursor;
 
-	pos->degrees = 0;
-	pos->minutes = 0;
+    pos->degrees = 0;
+    pos->minutes = 0;
 
-	if (s == NULL || *s == '\0') {
-		return -1;
-	}
+    if (s == NULL || *s == '\0') {
+        return -1;
+    }
 
-	/* decimal minutes */
-	if (NULL == (cursor = strchr(s, '.'))) {
-		return -1;
-	}
+    /* decimal minutes */
+    if (NULL == (cursor = strchr(s, '.'))) {
+        return -1;
+    }
 
-	/* minutes starts 2 digits before dot */
-	cursor -= 2;
-	pos->minutes = atof(cursor);
-	*cursor = '\0';
+    /* minutes starts 2 digits before dot */
+    cursor -= 2;
+    pos->minutes = atof(cursor);
+    *cursor = '\0';
 
-	/* integer degrees */
-	cursor = s;
-	pos->degrees = atoi(cursor);
+    /* integer degrees */
+    cursor = s;
+    pos->degrees = atoi(cursor);
 
-	return 0;
+    return 0;
 }
 
 /**
  * Parses a cardinal direction.
- * 
+ *
  * s is a pointer to a char, which contains the data to be parsed.
- * 
+ *
  * Returns an nmea_cardinal_t (basically an enum).
- * 
+ *
  * Copied from libnmea/src/parsers/parse.c.
-*/
-nmea_cardinal_t
-nmea_cardinal_direction_parse(char *s)
-{
-	if (NULL == s || '\0'== *s) {
-		return NMEA_CARDINAL_DIR_UNKNOWN;
-	}
+ */
+nmea_cardinal_t nmea_cardinal_direction_parse(char *s) {
+    if (NULL == s || '\0' == *s) {
+        return NMEA_CARDINAL_DIR_UNKNOWN;
+    }
 
-	switch (*s) {
-	case NMEA_CARDINAL_DIR_NORTH:
-		return NMEA_CARDINAL_DIR_NORTH;
-	case NMEA_CARDINAL_DIR_EAST:
-		return NMEA_CARDINAL_DIR_EAST;
-	case NMEA_CARDINAL_DIR_SOUTH:
-		return NMEA_CARDINAL_DIR_SOUTH;
-	case NMEA_CARDINAL_DIR_WEST:
-		return NMEA_CARDINAL_DIR_WEST;
-	default:
-		break;
-	}
+    switch (*s) {
+        case NMEA_CARDINAL_DIR_NORTH:
+            return NMEA_CARDINAL_DIR_NORTH;
+        case NMEA_CARDINAL_DIR_EAST:
+            return NMEA_CARDINAL_DIR_EAST;
+        case NMEA_CARDINAL_DIR_SOUTH:
+            return NMEA_CARDINAL_DIR_SOUTH;
+        case NMEA_CARDINAL_DIR_WEST:
+            return NMEA_CARDINAL_DIR_WEST;
+        default:
+            break;
+    }
 
-	return NMEA_CARDINAL_DIR_UNKNOWN;
+    return NMEA_CARDINAL_DIR_UNKNOWN;
 }
 
 /**
  * Parses a date.
- * 
+ *
  * s is the string containng the date.
  * date is a pointer to a struct that gets filled with data.
- * 
+ *
  * Returns 0 on success and -1 on failure.
- * 
+ *
  * Copied from libnmea/src/parsers/parse.c.
-*/
-int
-nmea_date_parse(char *s, struct tm *date)
-{
-	char *rv;
-	uint32_t x;
+ */
+int nmea_date_parse(char *s, struct tm *date) {
+    char *rv;
+    uint32_t x;
 
-	if (s == NULL || *s == '\0') {
-		return -1;
-	}
+    if (s == NULL || *s == '\0') {
+        return -1;
+    }
 
-	x = strtoul(s, &rv, 10);
-	date->tm_mday = x / 10000;
-	date->tm_mon = ((x % 10000) / 100) - 1;
-	date->tm_year = x % 100;
+    x = strtoul(s, &rv, 10);
+    date->tm_mday = x / 10000;
+    date->tm_mon = ((x % 10000) / 100) - 1;
+    date->tm_year = x % 100;
 
-	// Normalize tm_year according to C standard library
-	if (date->tm_year > 1900) { // ZDA message case
-		date->tm_year -= TM_YEAR_START;
-	} else { // RMC message case
-		date->tm_year += (RMC_YEAR_START - TM_YEAR_START);
-	}
+    // Normalize tm_year according to C standard library
+    if (date->tm_year > 1900) {  // ZDA message case
+        date->tm_year -= TM_YEAR_START;
+    } else {  // RMC message case
+        date->tm_year += (RMC_YEAR_START - TM_YEAR_START);
+    }
 
-	return 0;
+    return 0;
+}
+
+int nmea_time_parse(char *s, struct tm *time) {
+    char *rv;
+    uint32_t x;
+
+    if (s == NULL || *s == '\0') {
+        return -1;
+    }
+
+    x = strtoul(s, &rv, 10);
+    time->tm_hour = x / 10000;
+    time->tm_min = (x % 10000) / 100;
+    time->tm_sec = x % 100;
+    if (time->tm_hour > 23 || time->tm_min > 59 || time->tm_sec > 59 ||
+        (int)(rv - s) < NMEA_TIME_FORMAT_LEN) {
+        return -1;
+    }
+    if (*rv == '.') {
+        /* TODO There is a sub-second field. */
+    }
+
+    return 0;
 }
