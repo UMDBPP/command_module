@@ -12,10 +12,26 @@
 #define SBDRB_CMD "AT+SBDRB\r"
 #define SBDRT_CMD "AT+SBDRT\r"
 #define CGMR_CMD "AT+CGMR\r"
+#define CGMM_CMD "AT+CGMM\r"
 #define SBDWB_CMD "AT+SBDWB="
 
 char sbd_rx_buf[120] = {0};
 char sbd_tx_buf[120] = {0};
+
+void IridiumSBD::get_info() {
+    printf("Writing CGMM\n");
+
+    uart_write_blocking(uart, (uint8_t *)CGMM_CMD, strlen(CGMM_CMD));
+
+    read_uart_until_return();
+    printf("%s\n", sbd_rx_buf);
+    read_uart_until_return();
+    printf("%s\n", sbd_rx_buf);
+    read_uart_until_return();
+    printf("%s\n", sbd_rx_buf);
+    read_uart_until_return();
+    printf("%s\n", sbd_rx_buf);
+}
 
 void IridiumSBD::start_session() {
     int mo = 0;
@@ -26,10 +42,13 @@ void IridiumSBD::start_session() {
     int mt_queued = 0;
     char trash[10] = {0};
 
-    uart_write_blocking(uart, SBDIX_CMD, strlen(SBDIX_CMD));
+    printf("Writing SBDIX\n");
+
+    uart_write_blocking(uart, (uint8_t *)SBDIX_CMD, strlen(SBDIX_CMD));
 
     read_uart_until_return();
-
+    printf("%s\n", sbd_rx_buf);
+    read_uart_until_return();
     printf("%s\n", sbd_rx_buf);
 
     sscanf(sbd_rx_buf, "%s %d, %d, %d, %d, %d, %d", trash, mo, momsn, mt, mtmsn,
@@ -37,6 +56,12 @@ void IridiumSBD::start_session() {
 
     printf("Parsed values: %d, %d, %d, %d, %d, %d\n", mo, momsn, mt, mtmsn,
            mt_len, mt_queued);
+
+    read_uart_until_return();
+    printf("%s\n", sbd_rx_buf);
+
+    read_uart_until_return();
+    printf("%s\n", sbd_rx_buf);
 }
 
 void IridiumSBD::write_SBD_text(char *data, uint len) {
@@ -54,7 +79,7 @@ void IridiumSBD::write_SBD_text(char *data, uint len) {
 void IridiumSBD::get_SBD_status() {}
 
 void IridiumSBD::read_SBD_text() {
-    uart_write_blocking(uart, SBDRT_CMD, strlen(SBDRT_CMD));
+    uart_write_blocking(uart, (uint8_t *)SBDRT_CMD, strlen(SBDRT_CMD));
 
     read_uart_until_return();
 
@@ -66,7 +91,8 @@ void IridiumSBD::read_uart_until_return() {
     uint pos = 0;
 
     c = uart_getc(uart);
-    while (c != '\n' && c != '\r') {
+    // printf("%c", c);
+    while (c != '\n') {  // c != '\n' && c != '\r' //c != '\n'
         if (pos >= 119) {
             printf("SBD read buf full\n");
             pos = 119;
@@ -75,6 +101,7 @@ void IridiumSBD::read_uart_until_return() {
         sbd_rx_buf[pos] = c;
         pos++;
         c = uart_getc(uart);
+        // printf("%c", c);
     }
     sbd_rx_buf[pos] = '\0';
 }

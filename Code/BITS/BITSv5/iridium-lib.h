@@ -1,6 +1,8 @@
 #ifndef IRIDIUM_LIB_H
 #define IRIDIUM_LIB_H
 
+#include "hardware/uart.h"
+
 // AT+SBDIX - Initiate an Short Burst Data session, i.e. talk to the satellites.
 // Make sure you have loaded message data first. AT+SBDWT - Write text message
 // into outbound buffer AT+SBDWB - Write binary data into outbound buffer
@@ -23,6 +25,15 @@ class IridiumSBD {
     uint tx_pin;
     uart_inst_t* uart;
 
+    struct sbd_status {
+        bool out_stat;
+        int next_seq_num;
+        bool in_stat;
+        int last_seq_num;
+        bool ring_alert;
+        int msg_waiting;
+    };
+
     IridiumSBD(uart_inst_t* p, const uint rx, const uint cts, const uint rts,
                const uint netav, const uint ring, const uint tx) {
         rx_pin = rx;
@@ -32,15 +43,6 @@ class IridiumSBD {
         ring_pin = ring;
         tx_pin = tx;
         uart = p;
-
-        struct sbd_status {
-            bool out_stat;
-            int next_seq_num;
-            bool in_stat;
-            int last_seq_num;
-            bool ring_alert;
-            int msg_waiting;
-        };
     }
 
     void start_session(void);
@@ -49,6 +51,7 @@ class IridiumSBD {
     void read_SBD_text(void);
     void read_SBD_binary(void);
     void get_SBD_status(void);
+    void get_info(void);
 
    private:
     void read_uart_until_return(void);
