@@ -3,7 +3,7 @@
 Command is the primary tracking payload flown by BPP. This repository contains design files and software required to run the current version of command.
 
 Current POC:
-Shipman + JB
+Shipman
 
  ## Design Priciples
 As the command module needs to fly on every flight mass reduction is a primary focus. For this reason a switch from perfboard to custom PCB's was done, and a substantial reduction in box volume is underway. Reliability is incredibly important and for this reason the payload operates its tracking systems in a full 4N redundant method.
