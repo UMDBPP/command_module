@@ -80,9 +80,10 @@ CMakeFiles/radio-test.dir/radio_test.cpp.obj: \
  /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_uart/include/pico/stdio_uart.h \
  /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdio_usb/include/pico/stdio_usb.h \
  /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/radio-test/../BITSv5.h \
+ /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_unique_id/include/pico/unique_id.h \
+ /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/radio-test/../BITSv5_Radio.h \
+ /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_rand/include/pico/rand.h \
  /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_binary_info/include/pico/binary_info.h \
  /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_binary_info/include/pico/binary_info/defs.h \
  /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_binary_info/include/pico/binary_info/structure.h \
- /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_binary_info/include/pico/binary_info/code.h \
- /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_rand/include/pico/rand.h \
- /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_unique_id/include/pico/unique_id.h
+ /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_binary_info/include/pico/binary_info/code.h

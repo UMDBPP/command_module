@@ -7,6 +7,8 @@
 #include "../../../libraries/rp2040-drf1262-lib/SX1262.h"
 #include "../../../libraries/rp2040-ms5607-lib/MS5607.h"
 #include "../BITSv5.h"
+#include "../BITSv5_GPS.h"
+#include "../BITSv5_Radio.h"
 #include "hardware/flash.h"
 #include "hardware/gpio.h"
 #include "hardware/watchdog.h"
@@ -14,12 +16,6 @@
 #include "pico/rand.h"
 #include "pico/stdlib.h"
 #include "pico/unique_id.h"
-
-// Define the correct flash size for BITSv5 (16MB)
-#undef PICO_FLASH_SIZE_BYTES
-#define PICO_FLASH_SIZE_BYTES (16 * 1024 * 1024)
-
-char id[2 * PICO_UNIQUE_BOARD_ID_SIZE_BYTES + 1] = {0};
 
 // logging
 MB85RS1MT mem(spi1, FRAM_CS, SCK_PIN, MOSI_PIN, MISO_PIN);
@@ -40,43 +36,16 @@ void get_gps_data(void);
 DRF1262 radio(spi1, RADIO_CS, SCK_PIN, MOSI_PIN, MISO_PIN, TXEN_PIN, DIO1_PIN,
               BUSY_PIN, SW_PIN, RADIO_RST);
 
-volatile bool tx_done = false;
-volatile bool transmit = false;
-volatile bool rx_done = false;
-volatile bool send_ack = false;
-char radio_rx_buf[100] = {0};
-uint8_t radio_tx_buf[100] = "_hello!";
-uint8_t radio_ack_buf[100] = {0};
-char ack[] = "ack - xbee joint alive!";
-
-repeating_timer_t tx_timer;
-
 void rx_test(void);
 void transmit_test(uint8_t *buf, size_t len);
-int start_tx_repeating(void);
-bool tx_timer_callback(repeating_timer_t *rt);
 
 // misc
-void setup_led();
-void led_on();
-void led_off();
 void gpio_callback(uint gpio, uint32_t events);
 void setup_spi();
 void write_name_config();
 
 int main() {
-    stdio_init_all();
-
-    gpio_set_irq_enabled_with_callback(DIO1_PIN, GPIO_IRQ_EDGE_RISE, true,
-                                       &gpio_callback);
-
-    setup_spi();
-
-    setup_led();
-    led_off();
-
-    pico_get_unique_board_id_string(id,
-                                    2 * PICO_UNIQUE_BOARD_ID_SIZE_BYTES + 1);
+    setup();
 
     radio.debug_msg_en = 0;
 
@@ -208,22 +177,6 @@ void transmit_test(uint8_t *buf, size_t len) {
     // radio.clear_radio_errors();
 }
 
-void setup_led() {
-    gpio_init(LED_PIN);
-    gpio_set_dir(0, GPIO_OUT);
-    gpio_put(LED_PIN, 0);
-}
-
-void led_on() { gpio_put(LED_PIN, true); }
-
-void led_off() { gpio_put(LED_PIN, false); }
-
-bool tx_timer_callback(repeating_timer_t *rt) {
-    transmit = true;
-
-    return true;  // keep repeating
-}
-
 void rx_test() {
     char data[6] = {
         '\0', '\0', '\0', '\0', '\0', '\0',
@@ -268,31 +221,20 @@ void get_gps_data(void) {
     }
 }
 
-int start_tx_repeating() {
-    // negative timeout means exact delay (rather than delay between
-    // callbacks)
-    if (!add_repeating_timer_us(-20000000, tx_timer_callback, NULL,
-                                &tx_timer)) {
-        printf("Failed to add timer\n");
-        return 1;
-    }
-    return 0;
-}
-
 void gpio_callback(uint gpio, uint32_t events) {
     if (gpio == DIO1_PIN) {
         printf("DIO1 ISR\n");
         radio.get_irq_status();
 
-        if (radio.irqs.TX_DONE) {
+        if (radio.irqs.tx_done) {
             printf("TX ISR\n");
             radio.disable_tx();
             radio.radio_receive_cont();
             tx_done = true;
-            radio.irqs.TX_DONE = false;
+            radio.irqs.tx_done = false;
         }
 
-        if (radio.irqs.RX_DONE) {
+        if (radio.irqs.rx_done) {
             printf("RX ISR\n");
             radio.read_radio_buffer((uint8_t *)radio_rx_buf,
                                     sizeof(radio_rx_buf));
@@ -302,21 +244,12 @@ void gpio_callback(uint gpio, uint32_t events) {
                    radio.pkt_stat.rssi_pkt, radio.pkt_stat.signal_rssi_pkt,
                    radio.pkt_stat.snr_pkt);
 
-            radio.irqs.RX_DONE = false;
+            radio.irqs.rx_done = false;
             send_ack = true;
         }
 
         radio.clear_irq_status();
     }
-}
-
-void setup_spi() {
-    spi_init(spi1, 500000);
-    spi_set_format(spi1,           // SPI instance
-                   8,              // Number of bits per transfer
-                   (spi_cpol_t)0,  // Polarity (CPOL)
-                   (spi_cpha_t)0,  // Phase (CPHA)
-                   SPI_MSB_FIRST);
 }
 
 void write_name_config() {

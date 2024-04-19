@@ -87,6 +87,24 @@ CMakeFiles/test.dir/test.cpp.obj: \
  /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/i2c.h \
  /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/i2c.h \
  /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/test/../BITSv5.h \
+ /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_unique_id/include/pico/unique_id.h \
+ /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/test/../BITSv5_GPS.h \
+ /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/time.h \
+ /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/machine/time.h \
+ /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/sys/types.h \
+ /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/machine/endian.h \
+ /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/machine/_endian.h \
+ /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/sys/select.h \
+ /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/sys/_sigset.h \
+ /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/sys/_timeval.h \
+ /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/sys/timespec.h \
+ /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/sys/_timespec.h \
+ /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/sys/_pthreadtypes.h \
+ /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/sys/sched.h \
+ /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/machine/types.h \
+ /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/test/../../../libraries/libnmea/src/nmea/nmea.h \
+ /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/test/../BITSv5_Radio.h \
+ /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_rand/include/pico/rand.h \
  /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_flash/include/hardware/flash.h \
  /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_watchdog/include/hardware/watchdog.h \
  /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/watchdog.h \
@@ -94,6 +112,4 @@ CMakeFiles/test.dir/test.cpp.obj: \
  /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_binary_info/include/pico/binary_info.h \
  /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_binary_info/include/pico/binary_info/defs.h \
  /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_binary_info/include/pico/binary_info/structure.h \
- /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_binary_info/include/pico/binary_info/code.h \
- /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_rand/include/pico/rand.h \
- /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_unique_id/include/pico/unique_id.h
+ /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/pico_binary_info/include/pico/binary_info/code.h

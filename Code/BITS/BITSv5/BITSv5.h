@@ -1,6 +1,12 @@
 #ifndef _BITSv5_H
 #define _BITSv5_H
 
+#include "pico/unique_id.h"
+
+// Define the correct flash size for BITSv5 (16MB)
+#undef PICO_FLASH_SIZE_BYTES
+#define PICO_FLASH_SIZE_BYTES (16 * 1024 * 1024)
+
 #define SCK_PIN 26
 #define MOSI_PIN 27
 #define MISO_PIN 24
@@ -31,28 +37,13 @@
 
 extern short debug_msgs;  // controls if debug messages are printed
 
-/* NMEA cardinal direction types */
-typedef char nmea_cardinal_t;
-#define NMEA_CARDINAL_DIR_NORTH (nmea_cardinal_t)'N'
-#define NMEA_CARDINAL_DIR_EAST (nmea_cardinal_t)'E'
-#define NMEA_CARDINAL_DIR_SOUTH (nmea_cardinal_t)'S'
-#define NMEA_CARDINAL_DIR_WEST (nmea_cardinal_t)'W'
-#define NMEA_CARDINAL_DIR_UNKNOWN (nmea_cardinal_t)'\0'
+// extern void log_to_string(log_config *log, char *dst);
 
-/* GPS position struct */
-typedef struct {
-    double minutes;
-    int degrees;
-    nmea_cardinal_t cardinal;
-} nmea_position;
+extern char id[2 * PICO_UNIQUE_BOARD_ID_SIZE_BYTES + 1];
 
-typedef struct _log_config {
-    int pressure;
-    int temperature;
-    nmea_position pos;
-    uint log_addr;
-} log_config;
-
-extern void log_to_string(log_config *log, char *dst);
+int setup();
+void led_on();
+void led_off();
+void gpio_callback(uint gpio, uint32_t events);
 
 #endif

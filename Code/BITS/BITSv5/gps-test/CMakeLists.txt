@@ -12,6 +12,9 @@ pico_sdk_init()
 
 add_executable(gps-test
     test.cpp
+    ../BITSv5.cpp
+    ../BITSv5_GPS.cpp
+    ../BITSv5_Radio.cpp
     ../../../libraries/rp2040-drf1262-lib/SX1262.cpp
 )
 

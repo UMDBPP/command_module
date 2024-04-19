@@ -233,6 +233,54 @@ cyw43_driver_picow_cyw43_bus_pio_spi_pio_h/fast:
 	$(MAKE) $(MAKESILENT) -f pico-sdk/src/rp2_common/pico_cyw43_driver/CMakeFiles/cyw43_driver_picow_cyw43_bus_pio_spi_pio_h.dir/build.make pico-sdk/src/rp2_common/pico_cyw43_driver/CMakeFiles/cyw43_driver_picow_cyw43_bus_pio_spi_pio_h.dir/build
 .PHONY : cyw43_driver_picow_cyw43_bus_pio_spi_pio_h/fast
 
+Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5.obj: Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5.cpp.obj
+.PHONY : Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5.obj
+
+# target to build an object file
+Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/radio-test.dir/build.make CMakeFiles/radio-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5.cpp.obj
+.PHONY : Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5.cpp.obj
+
+Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5.i: Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5.cpp.i
+.PHONY : Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5.i
+
+# target to preprocess a source file
+Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/radio-test.dir/build.make CMakeFiles/radio-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5.cpp.i
+.PHONY : Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5.cpp.i
+
+Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5.s: Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5.cpp.s
+.PHONY : Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5.s
+
+# target to generate assembly for a file
+Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/radio-test.dir/build.make CMakeFiles/radio-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5.cpp.s
+.PHONY : Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5.cpp.s
+
+Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5_Radio.obj: Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5_Radio.cpp.obj
+.PHONY : Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5_Radio.obj
+
+# target to build an object file
+Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5_Radio.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/radio-test.dir/build.make CMakeFiles/radio-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5_Radio.cpp.obj
+.PHONY : Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5_Radio.cpp.obj
+
+Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5_Radio.i: Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5_Radio.cpp.i
+.PHONY : Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5_Radio.i
+
+# target to preprocess a source file
+Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5_Radio.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/radio-test.dir/build.make CMakeFiles/radio-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5_Radio.cpp.i
+.PHONY : Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5_Radio.cpp.i
+
+Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5_Radio.s: Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5_Radio.cpp.s
+.PHONY : Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5_Radio.s
+
+# target to generate assembly for a file
+Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5_Radio.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/radio-test.dir/build.make CMakeFiles/radio-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5_Radio.cpp.s
+.PHONY : Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5_Radio.cpp.s
+
 Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/class/audio/audio_device.obj: Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.obj
 .PHONY : Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/class/audio/audio_device.obj
 
@@ -1874,6 +1922,12 @@ help:
 	@echo "... tinyusb_pico_pio_usb_usb_tx_pio_h"
 	@echo "... bs2_default"
 	@echo "... radio-test"
+	@echo "... Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5.obj"
+	@echo "... Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5.i"
+	@echo "... Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5.s"
+	@echo "... Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5_Radio.obj"
+	@echo "... Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5_Radio.i"
+	@echo "... Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5_Radio.s"
 	@echo "... Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/class/audio/audio_device.obj"
 	@echo "... Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/class/audio/audio_device.i"
 	@echo "... Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/class/audio/audio_device.s"

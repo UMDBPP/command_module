@@ -4,39 +4,21 @@
 #include "../../../libraries/libnmea/src/nmea/nmea.h"
 #include "../../../libraries/rp2040-drf1262-lib/SX1262.h"
 #include "../BITSv5.h"
+#include "../BITSv5_GPS.h"
+#include "../BITSv5_Radio.h"
 #include "hardware/i2c.h"
-// #include "nmea/gpgga.h"
-// #include "nmea/gpgll.h"
+
 #include "pico/binary_info.h"
 #include "pico/stdlib.h"
 
-#define NO_GPS_DATA 0xFF
-
-// Registers
-static const uint8_t REG_NUM_BYTES_MSB = 0xFD;
-static const uint8_t REG_NUM_BYTES_LSB = 0xFE;
-static const uint8_t REG_DATA = 0xFF;
-
-volatile bool transmit;
-
-repeating_timer_t tx_timer;
-
-uint8_t radio_tx_buf[100] = "hello!";
-
-// Ports
-i2c_inst_t *i2c = i2c0;
-
 DRF1262 radio(spi1, RADIO_CS, SCK_PIN, MOSI_PIN, MISO_PIN, TXEN_PIN, DIO1_PIN,
-              BUSY_PIN, SW_PIN);
+              BUSY_PIN, SW_PIN, RADIO_RST);
 
 void ubx_inf_debug(void);
 void ubx_cfg_prt(void);
 void ubx_cfg_cfg(void);
 void ubx_cfg_dat(void);
-bool tx_timer_callback(repeating_timer_t *rt);
-void setup_led();
-void led_on();
-void led_off();
+
 void transmit_test(uint8_t *buf, size_t len);
 
 int main() {
@@ -49,33 +31,12 @@ int main() {
 
     uint8_t msg[3] = {0x00, 0x00, 0x00};
 
-    stdio_init_all();
-
-    set_sys_clock_48mhz();
-
-    setup_led();
-    led_off();
-
-    gpio_init(EXTINT_PIN);
-    gpio_set_dir(EXTINT_PIN, GPIO_IN);
-    gpio_init(TIMEPULSE_PIN);
-    gpio_set_dir(TIMEPULSE_PIN, GPIO_IN);
+    setup();
 
     sleep_ms(5000);
 
     radio.debug_msg_en = 0;
     radio.radio_init();
-
-    // negative timeout means exact delay (rather than delay between
-    // callbacks)
-    if (!add_repeating_timer_us(-20000000, tx_timer_callback, NULL,
-                                &tx_timer)) {
-        printf("Failed to add timer\n");
-        return 1;
-    }
-
-    // Initialize I2C port at 100 kHz
-    i2c_init(i2c, 100 * 1000);
 
     // Initialize I2C pins
     gpio_set_function(sda_pin, GPIO_FUNC_I2C);
@@ -91,12 +52,7 @@ int main() {
         //     transmit = false;
         // }
 
-        result2 = i2c_read_blocking(i2c, GPS_ADDR, &rx_msg, 1, false);
-        if (result2 == PICO_ERROR_GENERIC)
-            printf("\ni2c error occurred %x\n\n", result2);
-        else {
-            if (rx_msg != NO_GPS_DATA) printf("%c", rx_msg);
-        }
+        get_gps_data();
     }
 }
 
@@ -243,12 +199,6 @@ void ubx_cfg_dat() {
     printf("\n\n");
 }
 
-bool tx_timer_callback(repeating_timer_t *rt) {
-    transmit = true;
-
-    return true;  // keep repeating
-}
-
 void transmit_test(uint8_t *buf, size_t len) {
     printf("Transmit Test\n");
 
@@ -281,12 +231,33 @@ void transmit_test(uint8_t *buf, size_t len) {
     radio.get_radio_errors();
 }
 
-void setup_led() {
-    gpio_init(LED_PIN);
-    gpio_set_dir(0, GPIO_OUT);
-    gpio_put(LED_PIN, 0);
+void gpio_callback(uint gpio, uint32_t events) {
+    if (gpio == DIO1_PIN) {
+        printf("DIO1 ISR\n");
+        radio.get_irq_status();
+
+        if (radio.irqs.tx_done) {
+            printf("TX ISR\n");
+            radio.disable_tx();
+            radio.radio_receive_cont();
+            tx_done = true;
+            radio.irqs.tx_done = false;
+        }
+
+        if (radio.irqs.rx_done) {
+            printf("RX ISR\n");
+            radio.read_radio_buffer((uint8_t *)radio_rx_buf,
+                                    sizeof(radio_rx_buf));
+            printf("%s\n", radio_rx_buf);
+            radio.get_packet_status();
+            printf("RSSI: %d dBm Signal RSSI: %d SNR: %d dB\n",
+                   radio.pkt_stat.rssi_pkt, radio.pkt_stat.signal_rssi_pkt,
+                   radio.pkt_stat.snr_pkt);
+
+            radio.irqs.rx_done = false;
+            send_ack = true;
+        }
+
+        radio.clear_irq_status();
+    }
 }
-
-void led_on() { gpio_put(LED_PIN, true); }
-
-void led_off() { gpio_put(LED_PIN, false); }

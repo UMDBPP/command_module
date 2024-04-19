@@ -1,4 +1,8 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5.cpp.obj"
+  "CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5.cpp.obj.d"
+  "CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5_Radio.cpp.obj"
+  "CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5_Radio.cpp.obj.d"
   "CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.obj"
   "CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.obj.d"
   "CMakeFiles/test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj"

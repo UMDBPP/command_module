@@ -12,6 +12,8 @@ pico_sdk_init()
 
 add_executable(test
     test.cpp
+    ../BITSv5.cpp
+    ../BITSv5_Radio.cpp
     ../../../libraries/rp2040-drf1262-lib/SX1262.cpp
     ../../../libraries/rp2040-ms5607-lib/MS5607.cpp
     ../../../libraries/rp2040-config/MB85RS1MT.cpp
