@@ -28,9 +28,15 @@
 #define LED_PIN 0
 
 #define FRAM_CS 29
-
 #define LOG_INIT_ADDR 8192
 #define LOG_MAX_ADDR 131072
+
+#define IR_TX_PIN 12
+#define IR_RX_PIN 1
+#define IR_CTS_PIN 2
+#define IR_RTS_PIN 3
+#define IR_NETAV_PIN 4
+#define IR_RING_PIN 5
 
 #define INCLUDE_DEBUG \
     1  // controls if debug conditionals are included at compile time

@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <time.h>
 
 #include "../../../libraries/libnmea/src/nmea/nmea.h"
 #include "../../../libraries/rp2040-drf1262-lib/SX1262.h"
@@ -7,7 +8,6 @@
 #include "../BITSv5_GPS.h"
 #include "../BITSv5_Radio.h"
 #include "hardware/i2c.h"
-
 #include "pico/binary_info.h"
 #include "pico/stdlib.h"
 
@@ -20,6 +20,11 @@ void ubx_cfg_cfg(void);
 void ubx_cfg_dat(void);
 
 void transmit_test(uint8_t *buf, size_t len);
+static int _split_string_by_comma(char *string, char **values, int max_values);
+int nmea_position_parse(char *s, nmea_position *pos);
+nmea_cardinal_t nmea_cardinal_direction_parse(char *s);
+int nmea_date_parse(char *s, struct tm *date);
+int nmea_time_parse(char *s, struct tm *time);
 
 int main() {
     // Pins
@@ -32,6 +37,10 @@ int main() {
     uint8_t msg[3] = {0x00, 0x00, 0x00};
 
     setup();
+
+    gpio_init(RADIO_RST);
+    gpio_set_dir(RADIO_RST, GPIO_OUT);
+    gpio_put(RADIO_RST, 1);
 
     sleep_ms(5000);
 
