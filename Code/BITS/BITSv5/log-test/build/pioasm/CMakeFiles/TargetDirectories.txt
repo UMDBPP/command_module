@@ -1,0 +1,3 @@
+/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/test/build/pioasm/CMakeFiles/pioasm.dir
+/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/test/build/pioasm/CMakeFiles/edit_cache.dir
+/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/test/build/pioasm/CMakeFiles/rebuild_cache.dir

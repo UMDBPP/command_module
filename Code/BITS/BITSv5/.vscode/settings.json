@@ -1,5 +1,7 @@
 {
     "files.associations": {
-        "sx126x.h": "c"
-    }
+        "sx126x.h": "c",
+        "__locale": "cpp"
+    },
+    "cmake.sourceDirectory": "/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/test"
 }

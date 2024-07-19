@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "pico-sdk/src/common/boot_uf2",
+		"source" : "/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common/boot_uf2"
+	}
+}

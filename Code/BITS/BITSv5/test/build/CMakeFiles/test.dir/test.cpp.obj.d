@@ -86,9 +86,9 @@ CMakeFiles/test.dir/test.cpp.obj: \
  /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_i2c/include/hardware/i2c.h \
  /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/i2c.h \
  /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/i2c.h \
- /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/test/../BITSv5.h \
+ /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/test/../BITS_common/BITSv5.h \
  /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_unique_id/include/pico/unique_id.h \
- /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/test/../BITSv5_GPS.h \
+ /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/test/../BITS_common/BITSv5_GPS.h \
  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/time.h \
  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/machine/time.h \
  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/sys/types.h \
@@ -102,8 +102,7 @@ CMakeFiles/test.dir/test.cpp.obj: \
  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/sys/_pthreadtypes.h \
  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/sys/sched.h \
  /Applications/ArmGNUToolchain/13.2.Rel1/arm-none-eabi/arm-none-eabi/include/machine/types.h \
- /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/test/../../../libraries/libnmea/src/nmea/nmea.h \
- /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/test/../BITSv5_Radio.h \
+ /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/test/../BITS_common/BITSv5_Radio.h \
  /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_rand/include/pico/rand.h \
  /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_flash/include/hardware/flash.h \
  /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_watchdog/include/hardware/watchdog.h \
