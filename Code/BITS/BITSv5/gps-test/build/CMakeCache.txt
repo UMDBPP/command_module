@@ -498,12 +498,12 @@ DOXYGEN_DOT_EXECUTABLE-ADVANCED:INTERNAL=1
 DOXYGEN_EXECUTABLE-ADVANCED:INTERNAL=1
 FAMILY_MCUS:INTERNAL=RP2040
 //Details about finding Python3
-FIND_PACKAGE_MESSAGE_DETAILS_Python3:INTERNAL=[/opt/homebrew/Frameworks/Python.framework/Versions/3.12/bin/python3.12][cfound components: Interpreter ][v3.12.0()]
+FIND_PACKAGE_MESSAGE_DETAILS_Python3:INTERNAL=[/opt/homebrew/Frameworks/Python.framework/Versions/3.13/bin/python3.13][cfound components: Interpreter ][v3.13.1()]
 PICO_BOOT_STAGE2_DIR:INTERNAL=/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/boot_stage2
 PICO_CMAKE_PRELOAD_PLATFORM_DIR:INTERNAL=/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/cmake/preload/platforms
 PICO_CMAKE_PRELOAD_PLATFORM_FILE:INTERNAL=/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/cmake/preload/platforms/rp2040.cmake
 PICO_COMPILER_ASM:INTERNAL=/opt/homebrew/bin/arm-none-eabi-gcc
-PICO_DOXYGEN_EXCLUDE_PATHS:INTERNAL= /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/cmsis /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2040/hardware_regs /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/cmsis /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2040/hardware_regs /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/cmsis /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2040/hardware_regs /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/cmsis /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2040/hardware_regs
+PICO_DOXYGEN_EXCLUDE_PATHS:INTERNAL= /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/cmsis /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2040/hardware_regs /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/cmsis /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2040/hardware_regs /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/cmsis /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2040/hardware_regs
 PICO_DOXYGEN_PATHS:INTERNAL= /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/common /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/lib/cyw43-driver/src /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2040
 PICO_NO_HARDWARE:INTERNAL=0
 PICO_ON_DEVICE:INTERNAL=1
@@ -516,10 +516,10 @@ _Python3_Compiler_REASON_FAILURE:INTERNAL=
 //Development reason failure
 _Python3_Development_REASON_FAILURE:INTERNAL=
 //Path to a program.
-_Python3_EXECUTABLE:INTERNAL=/opt/homebrew/Frameworks/Python.framework/Versions/3.12/bin/python3.12
+_Python3_EXECUTABLE:INTERNAL=/opt/homebrew/Frameworks/Python.framework/Versions/3.13/bin/python3.13
 //Python3 Properties
-_Python3_INTERPRETER_PROPERTIES:INTERNAL=Python;3;12;0;32;64;;;abi3;/opt/homebrew/opt/python@3.12/Frameworks/Python.framework/Versions/3.12/lib/python3.12;/opt/homebrew/opt/python@3.12/Frameworks/Python.framework/Versions/3.12/lib/python3.12;/opt/homebrew/lib/python3.12/site-packages;/opt/homebrew/lib/python3.12/site-packages
-_Python3_INTERPRETER_SIGNATURE:INTERNAL=4a88e62a1732031393af8d56e6300efe
+_Python3_INTERPRETER_PROPERTIES:INTERNAL=Python;3;13;1;32;64;;;abi3;/opt/homebrew/opt/python@3.13/Frameworks/Python.framework/Versions/3.13/lib/python3.13;/opt/homebrew/opt/python@3.13/Frameworks/Python.framework/Versions/3.13/lib/python3.13;/opt/homebrew/lib/python3.13/site-packages;/opt/homebrew/lib/python3.13/site-packages
+_Python3_INTERPRETER_SIGNATURE:INTERNAL=7a1f714cc7198cb3c0d06752fabdd0bf
 //NumPy reason failure
 _Python3_NumPy_REASON_FAILURE:INTERNAL=
 

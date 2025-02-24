@@ -83,47 +83,47 @@ CMakeFiles/gps-test.dir/test.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/gps-test.dir/test.cpp.s"
 	/opt/homebrew/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/gps-test/test.cpp -o CMakeFiles/gps-test.dir/test.cpp.s
 
-CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5.cpp.obj: CMakeFiles/gps-test.dir/flags.make
-CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5.cpp.obj: /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5.cpp
-CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5.cpp.obj: CMakeFiles/gps-test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/gps-test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5.cpp.obj"
-	/opt/homebrew/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5.cpp.obj -MF CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5.cpp.obj.d -o CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5.cpp.obj -c /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5.cpp
+CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITS_common/BITSv5.cpp.obj: CMakeFiles/gps-test.dir/flags.make
+CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITS_common/BITSv5.cpp.obj: /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITS_common/BITSv5.cpp
+CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITS_common/BITSv5.cpp.obj: CMakeFiles/gps-test.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/gps-test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITS_common/BITSv5.cpp.obj"
+	/opt/homebrew/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITS_common/BITSv5.cpp.obj -MF CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITS_common/BITSv5.cpp.obj.d -o CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITS_common/BITSv5.cpp.obj -c /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITS_common/BITSv5.cpp
 
-CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5.cpp.i"
-	/opt/homebrew/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5.cpp > CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5.cpp.i
+CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITS_common/BITSv5.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITS_common/BITSv5.cpp.i"
+	/opt/homebrew/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITS_common/BITSv5.cpp > CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITS_common/BITSv5.cpp.i
 
-CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5.cpp.s"
-	/opt/homebrew/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5.cpp -o CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5.cpp.s
+CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITS_common/BITSv5.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITS_common/BITSv5.cpp.s"
+	/opt/homebrew/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITS_common/BITSv5.cpp -o CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITS_common/BITSv5.cpp.s
 
-CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5_GPS.cpp.obj: CMakeFiles/gps-test.dir/flags.make
-CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5_GPS.cpp.obj: /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5_GPS.cpp
-CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5_GPS.cpp.obj: CMakeFiles/gps-test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/gps-test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5_GPS.cpp.obj"
-	/opt/homebrew/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5_GPS.cpp.obj -MF CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5_GPS.cpp.obj.d -o CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5_GPS.cpp.obj -c /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5_GPS.cpp
+CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITS_common/BITSv5_GPS.cpp.obj: CMakeFiles/gps-test.dir/flags.make
+CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITS_common/BITSv5_GPS.cpp.obj: /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITS_common/BITSv5_GPS.cpp
+CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITS_common/BITSv5_GPS.cpp.obj: CMakeFiles/gps-test.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/gps-test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITS_common/BITSv5_GPS.cpp.obj"
+	/opt/homebrew/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITS_common/BITSv5_GPS.cpp.obj -MF CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITS_common/BITSv5_GPS.cpp.obj.d -o CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITS_common/BITSv5_GPS.cpp.obj -c /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITS_common/BITSv5_GPS.cpp
 
-CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5_GPS.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5_GPS.cpp.i"
-	/opt/homebrew/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5_GPS.cpp > CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5_GPS.cpp.i
+CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITS_common/BITSv5_GPS.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITS_common/BITSv5_GPS.cpp.i"
+	/opt/homebrew/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITS_common/BITSv5_GPS.cpp > CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITS_common/BITSv5_GPS.cpp.i
 
-CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5_GPS.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5_GPS.cpp.s"
-	/opt/homebrew/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5_GPS.cpp -o CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5_GPS.cpp.s
+CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITS_common/BITSv5_GPS.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITS_common/BITSv5_GPS.cpp.s"
+	/opt/homebrew/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITS_common/BITSv5_GPS.cpp -o CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITS_common/BITSv5_GPS.cpp.s
 
-CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5_Radio.cpp.obj: CMakeFiles/gps-test.dir/flags.make
-CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5_Radio.cpp.obj: /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5_Radio.cpp
-CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5_Radio.cpp.obj: CMakeFiles/gps-test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/gps-test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5_Radio.cpp.obj"
-	/opt/homebrew/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5_Radio.cpp.obj -MF CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5_Radio.cpp.obj.d -o CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5_Radio.cpp.obj -c /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5_Radio.cpp
+CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITS_common/BITSv5_Radio.cpp.obj: CMakeFiles/gps-test.dir/flags.make
+CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITS_common/BITSv5_Radio.cpp.obj: /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITS_common/BITSv5_Radio.cpp
+CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITS_common/BITSv5_Radio.cpp.obj: CMakeFiles/gps-test.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/gps-test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITS_common/BITSv5_Radio.cpp.obj"
+	/opt/homebrew/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITS_common/BITSv5_Radio.cpp.obj -MF CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITS_common/BITSv5_Radio.cpp.obj.d -o CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITS_common/BITSv5_Radio.cpp.obj -c /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITS_common/BITSv5_Radio.cpp
 
-CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5_Radio.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5_Radio.cpp.i"
-	/opt/homebrew/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5_Radio.cpp > CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5_Radio.cpp.i
+CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITS_common/BITSv5_Radio.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITS_common/BITSv5_Radio.cpp.i"
+	/opt/homebrew/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITS_common/BITSv5_Radio.cpp > CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITS_common/BITSv5_Radio.cpp.i
 
-CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5_Radio.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5_Radio.cpp.s"
-	/opt/homebrew/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5_Radio.cpp -o CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5_Radio.cpp.s
+CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITS_common/BITSv5_Radio.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITS_common/BITSv5_Radio.cpp.s"
+	/opt/homebrew/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITS_common/BITSv5_Radio.cpp -o CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITS_common/BITSv5_Radio.cpp.s
 
 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj: CMakeFiles/gps-test.dir/flags.make
 CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj: /Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp
@@ -1153,9 +1153,9 @@ CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/
 # Object files for target gps-test
 gps__test_OBJECTS = \
 "CMakeFiles/gps-test.dir/test.cpp.obj" \
-"CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5.cpp.obj" \
-"CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5_GPS.cpp.obj" \
-"CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5_Radio.cpp.obj" \
+"CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITS_common/BITSv5.cpp.obj" \
+"CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITS_common/BITSv5_GPS.cpp.obj" \
+"CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITS_common/BITSv5_Radio.cpp.obj" \
 "CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj" \
 "CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj" \
 "CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj" \
@@ -1235,9 +1235,9 @@ gps__test_OBJECTS = \
 gps__test_EXTERNAL_OBJECTS =
 
 gps-test.elf: CMakeFiles/gps-test.dir/test.cpp.obj
-gps-test.elf: CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5.cpp.obj
-gps-test.elf: CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5_GPS.cpp.obj
-gps-test.elf: CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITSv5_Radio.cpp.obj
+gps-test.elf: CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITS_common/BITSv5.cpp.obj
+gps-test.elf: CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITS_common/BITSv5_GPS.cpp.obj
+gps-test.elf: CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITS_common/BITSv5_Radio.cpp.obj
 gps-test.elf: CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-drf1262-lib/SX1262.cpp.obj
 gps-test.elf: CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj
 gps-test.elf: CMakeFiles/gps-test.dir/Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj

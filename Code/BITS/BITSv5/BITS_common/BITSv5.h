@@ -39,47 +39,47 @@
 #define IR_NETAV_PIN 4
 #define IR_RING_PIN 5
 
-#define INCLUDE_DEBUG \
-    1  // controls if debug conditionals are included at compile time
+#define INCLUDE_DEBUG                                                          \
+  1 // controls if debug conditionals are included at compile time
 
-extern short debug_msgs;  // controls if debug messages are printed
+extern short debug_msgs; // controls if debug messages are printed
 
 // extern void log_to_string(log_config *log, char *dst);
 
 extern char id[2 * PICO_UNIQUE_BOARD_ID_SIZE_BYTES + 1];
 
 typedef struct {
-    uint32_t count;
-    uint32_t pressure;
-    struct {
-        uint32_t integer;
-        uint32_t decimal;
-    } temperature;
-    struct {
-        uint32_t integer;
-        uint32_t decimal;
-        char cardinal;
-    } latitude;
-    struct {
-        uint32_t integer;
-        uint32_t decimal;
-        char cardinal;
-    } longitude;
-    struct {
-        uint8_t hours;
-        uint8_t minutes;
-        uint8_t seconds;
-    } time;
-    struct {
-        uint8_t day;
-        uint8_t month;
-        uint8_t year;
-    } date;
+  uint32_t count;
+  uint32_t pressure;
+  struct {
+    uint32_t integer;
+    uint32_t decimal;
+  } temperature;
+  struct {
+    uint32_t integer;
+    uint32_t decimal;
+    char cardinal;
+  } latitude;
+  struct {
+    uint32_t integer;
+    uint32_t decimal;
+    char cardinal;
+  } longitude;
+  struct {
+    uint8_t hours;
+    uint8_t minutes;
+    uint8_t seconds;
+  } time;
+  struct {
+    uint8_t day;
+    uint8_t month;
+    uint8_t year;
+  } date;
 } log_item;
 
 typedef struct {
-    uint start_addr;
-    uint end_addr;
+  uint start_addr;
+  uint end_addr;
 } log_file;
 
 extern log_item periodic_log_item;
@@ -89,10 +89,12 @@ extern log_item periodic_log_item;
  * platform. This function sets up the on-board LED, enables I2C and SPI, gets
  * unique board ID, and runs the Radio and GPS setup functions.
  *
+ * @param periodic_log enables or disables periodic logging
+ *
  * @return int - maybe at somepoint this can be a status code although frankly
  * the program should probably crash if this function encounters an issue
  */
-int setup(MB85RS1MT *mem);
+int setup(bool periodic_log);
 
 void led_on();
 void led_off();
