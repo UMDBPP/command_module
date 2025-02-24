@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../pico-sdk"
+		},
+		{
+			"path": "../BITS_common"
+		},
+		{
+			"path": "../../../libraries"
+		}
+	],
+	"settings": {}
+}
