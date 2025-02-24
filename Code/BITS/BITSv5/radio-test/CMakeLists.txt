@@ -7,8 +7,10 @@ pico_sdk_init()
 add_executable(radio-test
     radio_test.cpp
     ../../../libraries/rp2040-drf1262-lib/SX1262.cpp
-    ../BITSv5.cpp
-    ../BITSv5_Radio.cpp
+		../BITS_common/BITSv5.cpp
+		../BITS_common/BITSv5_Radio.cpp
+		../BITS_common/BITSv5_GPS.cpp
+
 )
 pico_enable_stdio_usb(radio-test 1)
 pico_enable_stdio_uart(radio-test 1)
