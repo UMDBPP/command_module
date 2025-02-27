@@ -28,7 +28,6 @@ int main() {
 
   radio.debug_msg_en = 0; // disable debug messages
   radio.radio_init();
-
   radio.radio_receive_cont(); // enter continuous receive mode
 
   while (true) {
@@ -36,10 +35,27 @@ int main() {
   }
 }
 
+// This task checks 3 flags to determine what, if anything, needs to be done. It
+// is designed to be run on some regular interval, or as frequently as possible
+// in order to ensure reliable message servicing.
 void radio_task() {
   if (transmit) {
-    transmit_buffer((uint8_t *)radio_tx_buf, sizeof(radio_tx_buf));
-    transmit = false;
+
+    radio.set_cad();
+
+    uint32_t timeout = to_ms_since_boot(delayed_by_ms(get_absolute_time(), 10));
+
+    // poll before timeout
+    while (to_ms_since_boot(get_absolute_time()) < timeout) {
+      if (cad_done == true) {
+        if (channel_active != true) {
+          transmit_buffer((uint8_t *)radio_tx_buf, sizeof(radio_tx_buf));
+          transmit = false;
+          cad_done = false;
+        }
+        break;
+      }
+    }
   }
 
   if (rx_done) {
@@ -94,8 +110,9 @@ void gpio_callback(uint gpio, uint32_t events) {
       printf("TX ISR\n");
       radio.disable_tx();
       radio.radio_receive_cont();
-      tx_done = true;
       radio.irqs.tx_done = false;
+      tx_done = true;
+
       led_off();
     }
 
@@ -106,6 +123,13 @@ void gpio_callback(uint gpio, uint32_t events) {
       radio.get_packet_status();
       radio.irqs.rx_done = false;
       rx_done = true;
+    }
+
+    if (radio.irqs.cad_done) {
+      printf("CAD ISR\n");
+      radio.irqs.cad_done = false;
+      cad_done = true;
+      channel_active = radio.irqs.cad_det;
     }
 
     radio.clear_irq_status();

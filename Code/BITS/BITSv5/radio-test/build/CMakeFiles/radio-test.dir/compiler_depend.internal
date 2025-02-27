@@ -54,6 +54,7 @@ CMakeFiles/radio-test.dir/Users/michaelshipman/Developer/command_module/Code/BIT
  /Applications/ArmGNUToolchain/13.3.rel1/arm-none-eabi/lib/gcc/arm-none-eabi/13.3.1/include/stddef.h
  /Applications/ArmGNUToolchain/13.3.rel1/arm-none-eabi/lib/gcc/arm-none-eabi/13.3.1/include/stdint.h
  /Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/MB85RS1MT.h
+ /Users/michaelshipman/Developer/command_module/Code/libraries/rp2040-config/config.h
  /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITS_common/BITSv5.h
  /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITS_common/BITSv5_GPS.h
  /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITS_common/BITSv5_Radio.h

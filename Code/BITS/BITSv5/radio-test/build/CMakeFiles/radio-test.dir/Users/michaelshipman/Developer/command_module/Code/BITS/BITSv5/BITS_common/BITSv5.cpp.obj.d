@@ -60,6 +60,7 @@ CMakeFiles/radio-test.dir/Users/michaelshipman/Developer/command_module/Code/BIT
  /Applications/ArmGNUToolchain/13.3.rel1/arm-none-eabi/arm-none-eabi/include/strings.h \
  /Applications/ArmGNUToolchain/13.3.rel1/arm-none-eabi/arm-none-eabi/include/sys/string.h \
  /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITS_common/../../../libraries/rp2040-config/MB85RS1MT.h \
+ /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/BITS_common/../../../libraries/rp2040-config/config.h \
  /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2_common/hardware_gpio/include/hardware/gpio.h \
  /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/sio.h \
  /Users/michaelshipman/Developer/command_module/Code/BITS/BITSv5/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/interp.h \
