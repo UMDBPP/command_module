@@ -1,0 +1,7 @@
+sketch: sketch.ino
+version: 1.0.0
+
+target:
+  core: rp2040:rp2040
+  board: rp2040:rp2040:generic
+  url: https://github.com/earlephilhower/arduino-pico/releases/download/global/package_rp2040_index.json 
