@@ -8,6 +8,5 @@ target:
 
 libraries:
   - XBee-Arduino library
-  - SD
   - Iridium SBD
-  - TinyGPS
+  - SparkFun u-blox GNSS v3

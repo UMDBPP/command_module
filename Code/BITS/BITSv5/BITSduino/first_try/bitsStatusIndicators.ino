@@ -1,49 +1,46 @@
-//Advanced blinking
-void startBlinks(){
-//LED Indicators
-  //pinMode(redLED,OUTPUT);//Red
-  pinMode(greenLED,OUTPUT);//Green
+// Advanced blinking
+void startBlinks() {
+  // LED Indicators
+  // pinMode(redLED,OUTPUT);//Red
+  pinMode(LED_PIN, OUTPUT); // Green
   digitalWrite(4, LOW);
   digitalWrite(5, LOW);
-  for (int i = 0; i < 10; i++)
-  {
+  for (int i = 0; i < 10; i++) {
     Serial.println(i);
     delay(100);
-    //digitalWrite(redLED, HIGH);
-    digitalWrite(greenLED, HIGH);
+    // digitalWrite(redLED, HIGH);
+    digitalWrite(LED_PIN, HIGH);
     delay(25);
-    //digitalWrite(redLED, LOW);
-    digitalWrite(greenLED, LOW);
+    // digitalWrite(redLED, LOW);
+    digitalWrite(LED_PIN, LOW);
   }
 }
 
-void pingBlink(){
-  for (int i = 0; i < 20; i++)
-  {
+void pingBlink() {
+  for (int i = 0; i < 20; i++) {
     delay(250);
-    digitalWrite(greenLED, HIGH);
+    digitalWrite(LED_PIN, HIGH);
     delay(250);
-    digitalWrite(greenLED, LOW);
+    digitalWrite(LED_PIN, LOW);
   }
 }
 
-void gpsLockBlink(){
-  for (int i = 0; i < 5; i++)
-  {
+void gpsLockBlink() {
+  for (int i = 0; i < 5; i++) {
     delay(500);
-    digitalWrite(greenLED, HIGH);
+    digitalWrite(LED_PIN, HIGH);
     delay(250);
-    digitalWrite(greenLED, LOW);
+    digitalWrite(LED_PIN, LOW);
   }
 }
 
-void transmitBlink(){
-  for (int i=0;i<3;i++){
-    //digitalWrite(redLED,HIGH);
-    //delay(100);
-    //digitalWrite(redLED,LOW);
-    digitalWrite(greenLED,HIGH);
+void transmitBlink() {
+  for (int i = 0; i < 3; i++) {
+    // digitalWrite(redLED,HIGH);
+    // delay(100);
+    // digitalWrite(redLED,LOW);
+    digitalWrite(LED_PIN, HIGH);
     delay(100);
-    digitalWrite(greenLED,LOW);
+    digitalWrite(LED_PIN, LOW);
   }
 }
