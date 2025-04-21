@@ -79,10 +79,10 @@ File gpsLogFile;
 File rxLogFile;
 File txLogFile;
 
-const String gpsLogName =   "GPS.LOG";  //1 sec position/altitude updates
-const String eventLogName = "EVENT.LOG";//Events Iridium/XBee (Special one thanks to Luke)
-const String rxLogName =    "RX.LOG";   //Iridium Uplinks   (toBalloon)
-const String txLogName =    "TX.LOG";   //Iridium Downlinks (toGround)
+const char *gpsLogName =   "GPS.LOG";  //1 sec position/altitude updates
+const char *eventLogName = "EVENT.LOG";//Events Iridium/XBee (Special one thanks to Luke)
+const char *rxLogName =    "RX.LOG";   //Iridium Uplinks   (toBalloon)
+const char *txLogName =    "TX.LOG";   //Iridium Downlinks (toGround)
 
 // Program Timing
 unsigned long startTime;
