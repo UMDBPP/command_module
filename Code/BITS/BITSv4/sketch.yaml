@@ -1,0 +1,13 @@
+profiles:
+  bitsv4:
+    fqbn: teensy:avr:teensy31 
+    platforms:
+      - platform: teensy:avr (1.59.0)
+        platform_index_url: https://www.pjrc.com/teensy/package_teensy_index.json
+    libraries:
+      - SD (1.3.0)
+      - Iridium SBD (2.0.0)
+      - XBee-Arduino library (0.6.0)
+      - TinyGPSPlus (1.0.3)
+
+default_profile: bitsv4

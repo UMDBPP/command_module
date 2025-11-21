@@ -4,3 +4,7 @@ The UMDBPP Iridium payload, armed with an Iridium 9603 on a RockBlock carrier bo
 WIP: XBee Mesh net support for other payloads
      New PCB for smaller, lighter, better looking tracking
      Battery Voltage sensing for long haul flights
+
+
+# SHIPMAN 2025 WIP
+Hi, from the `BITS` folder, run `arduino-cli compile -e BITSv4` to do reproducible builds!
