@@ -222,10 +222,14 @@ GPSdata getGPS(){
     int GPSSats;
     long GPSAlt;
     unsigned long date,fix_age,GPSTime;
-    gps.f_get_position(&GPSLat, &GPSLon, &fix_age);
-    GPSSats = gps.satellites();
-    gps.get_datetime(&date, &GPSTime, &fix_age);
-    GPSAlt = gps.altitude()/100.;
+    //gps.f_get_position(&GPSLat, &GPSLon, &fix_age);
+    GPSLat = gps.location.lat();
+    GPSLon = gps.location.lng();
+    GPSSats = gps.satellites.value();
+    GPSTime = (gps.time.hour()+10000)+(gps.time.minute()+100)+gps.time.second();
+
+    //gps.get_datetime(&date, &GPSTime, &fix_age);
+    GPSAlt = gps.altitude.meters();
 
     gpsInfo.GPSLat = GPSLat;
     gpsInfo.GPSLon = GPSLon;

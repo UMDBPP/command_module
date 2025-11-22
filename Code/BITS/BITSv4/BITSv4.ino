@@ -9,7 +9,7 @@
 #include <XBee.h> //If using 900HP's this must be the custom cpp (or really any post gen2 XBees)
 #include <IridiumSBD.h>
 #include <SD.h>
-#include <TinyGPS.h>
+#include <TinyGPSPlus.h>
 
 //Serial Ports (sketch requires 4 {Wellll technically 3 + DEBUG})
 #define OutputSerial Serial     //USB debug
@@ -62,7 +62,7 @@ struct GPSdata{
   long GPSAlt=-1;
   int GPSSats=-1;
 };
-TinyGPS gps;
+TinyGPSPlus gps;
 GPSdata gpsInfo;
 
 //Interval definitions
@@ -230,7 +230,7 @@ if(USEGPS){
       //delay(500);
       //output();
       while (gpsserial.available()){
-          if (gps.encode(gpsserial.read())){
+        if (gps.encode(gpsserial.read())){
           gpsInfo = getGPS();
         break;
         }
