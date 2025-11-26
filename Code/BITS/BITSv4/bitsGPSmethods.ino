@@ -215,20 +215,18 @@ void gps_write(const char* config_string, int char_length){
 //}
 
 
-GPSdata getGPS(){
+GPSdata getGPS() {
   GPSdata gpsInfo;
   
     float GPSLat, GPSLon;
     int GPSSats;
     long GPSAlt;
     unsigned long date,fix_age,GPSTime;
-    //gps.f_get_position(&GPSLat, &GPSLon, &fix_age);
+
     GPSLat = gps.location.lat();
     GPSLon = gps.location.lng();
     GPSSats = gps.satellites.value();
-    GPSTime = (gps.time.hour()+10000)+(gps.time.minute()+100)+gps.time.second();
-
-    //gps.get_datetime(&date, &GPSTime, &fix_age);
+    GPSTime = gps.time.value();
     GPSAlt = gps.altitude.meters();
 
     gpsInfo.GPSLat = GPSLat;

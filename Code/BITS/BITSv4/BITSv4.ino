@@ -229,7 +229,7 @@ if(USEGPS){
     {
       //delay(500);
       //output();
-      while (gpsserial.available()){
+      while (gpsserial.available()){        
         if (gps.encode(gpsserial.read())){
           gpsInfo = getGPS();
         break;
