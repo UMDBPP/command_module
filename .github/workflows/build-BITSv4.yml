@@ -33,7 +33,7 @@ jobs:
       - name: Run a multi-line script
         run: |
           sudo apt update
-          curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | BINDIR=/usr/bin sh
+          curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | BINDIR=/usr/local/bin sh
           pwd
           cd Code/BITS/
           arduino-cli compile -e BITSv4
