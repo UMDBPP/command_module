@@ -37,6 +37,9 @@ jobs:
           pwd
           cd Code/BITS/
           arduino-cli compile -e BITSv4
+          cd BITSv4/build
+          ls
+          pwd
 
       - name: Release
         uses: softprops/action-gh-release@v1
