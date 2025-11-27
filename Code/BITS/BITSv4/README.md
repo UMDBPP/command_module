@@ -6,5 +6,5 @@ WIP: XBee Mesh net support for other payloads
      Battery Voltage sensing for long haul flights
 
 
-# SHIPMAN 2025 WIP
-Hi, from the `BITS` folder, run `arduino-cli compile -e BITSv4` to do reproducible builds!
+# Building Code
+Hi, from the `BITS` folder, run `arduino-cli compile -e BITSv4` to do reproducible builds. I also created a Github Action that will automatically build the BITSv4 code when you push any changes to the master branch. You can find the build artifacts at [https://github.com/UMDBPP/command_module/releases](https://github.com/UMDBPP/command_module/releases).
