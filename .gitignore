@@ -11,5 +11,5 @@
 *.l#7
 *.l#8
 *.l#9
-.DS_Store
+**/.DS_Store
 build/
