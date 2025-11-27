@@ -46,10 +46,10 @@ jobs:
         with:
           tag_name: BITSv5-latest-unstable
           files: |
-            /home/runner/work/command_module/command_module/Code/BITS/BITSv4/build/BITSv4.ino.hex
-            /home/runner/work/command_module/command_module/Code/BITS/BITSv4/build/BITSv4.ino.elf
-            /home/runner/work/command_module/command_module/Code/BITS/BITSv4/build/BITSv4.ino.eep
-            /home/runner/work/command_module/command_module/Code/BITS/BITSv4/build/BITSv4.ino.lst
-            /home/runner/work/command_module/command_module/Code/BITS/BITSv4/build/BITSv4.ino.sym
+            /home/runner/work/command_module/command_module/Code/BITS/BITSv4/build/teensy.avr.teensy31/BITSv4.ino.hex
+            /home/runner/work/command_module/command_module/Code/BITS/BITSv4/build/teensy.avr.teensy31/BITSv4.ino.elf
+            /home/runner/work/command_module/command_module/Code/BITS/BITSv4/build/teensy.avr.teensy31/BITSv4.ino.eep
+            /home/runner/work/command_module/command_module/Code/BITS/BITSv4/build/teensy.avr.teensy31/BITSv4.ino.lst
+            /home/runner/work/command_module/command_module/Code/BITS/BITSv4/build/teensy.avr.teensy31/BITSv4.ino.sym
 
 
